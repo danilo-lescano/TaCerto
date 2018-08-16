@@ -107,6 +107,8 @@ TaCerto.Controladora.PreLoad = {
 	},
 	checkIfLoaded: function(){
 		var loaded = TaCerto.Controladora.PreLoad.leftSOUND + TaCerto.Controladora.PreLoad.leftIMAGEM + TaCerto.Controladora.PreLoad.leftHTML;
+		JSParaTeste.loadGif = JSParaTeste.loadGif || 2000;
+		JSParaTeste.loading = JSParaTeste.loading || 3000;
 		if (loaded <= 0) {
 			TaCerto.Controladora.PreLoad.tempoDeLoading = new Date().getTime() - TaCerto.Controladora.PreLoad.tempoDeLoading;
 			console.log("---------------\npaginas + imagens carregadas em: " + TaCerto.Controladora.PreLoad.tempoDeLoading + "ms\n---------------");
@@ -114,8 +116,8 @@ TaCerto.Controladora.PreLoad = {
 				TaCerto.Controladora.CarregarPagina.htmlCorpo("gif");
 				setTimeout(function(){
 					TaCerto.Controladora.CarregarPagina.htmlCorpo("menuInicial"); //ORIGINAL:login || menuInicial
-				},10); //ORIGINAL:3000
-			},10); //ORIGINAL:2000
+				},JSParaTeste.loading); //ORIGINAL:3000
+			},JSParaTeste.loadGif); //ORIGINAL:2000
 		}
 	},
 	start: function(){

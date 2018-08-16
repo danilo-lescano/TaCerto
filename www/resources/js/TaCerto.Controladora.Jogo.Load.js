@@ -43,8 +43,8 @@ TaCerto.Controladora.Jogo.Load = function(tipo, nivelMissao){
 		}
 		iteracao++;
 	}
-
-	var count = 0; //ORIGINAL:6
+	JSParaTeste.countTimer = JSParaTeste.countTimer || 6;
+	var count = JSParaTeste.countTimer; //ORIGINAL:6
 	var tictac = TaCerto.SOUND.find("clock");
 
 	TaCerto.Controladora.CarregarPagina.htmlCorpo("loading");
