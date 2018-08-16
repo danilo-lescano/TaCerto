@@ -1,0 +1,66 @@
+[
+	{
+		"palavra": "lorem",
+		"resposta": false
+	},
+	{
+		"palavra": "ipsom",
+		"resposta": true
+	},
+	{
+		"palavra": "dolor",
+		"resposta": false
+	},
+	{
+		"palavra": "cor",
+		"resposta": true
+	},
+	{
+		"palavra": "ramo",
+		"resposta": false
+	},
+	{
+		"palavra": "javascript",
+		"resposta": true
+	},
+	{
+		"palavra": "cachorro",
+		"resposta": false
+	},
+	{
+		"palavra": "doge",
+		"resposta": true
+	},
+	{
+		"palavra": "martelo",
+		"resposta": false
+	},
+	{
+		"palavra": "dinheiro",
+		"resposta": true
+	},
+	{
+		"palavra": "chinelo",
+		"resposta": true
+	},
+	{
+		"palavra": "cabelo",
+		"resposta": false
+	},
+	{
+		"palavra": "coxinha",
+		"resposta": true
+	},
+	{
+		"palavra": "rocambole",
+		"resposta": false
+	},
+	{
+		"palavra": "queijo",
+		"resposta": false
+	},
+	{
+		"palavra": "manga",
+		"resposta": false
+	}
+]

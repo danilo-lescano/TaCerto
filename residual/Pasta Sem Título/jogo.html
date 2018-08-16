@@ -1,0 +1,97 @@
+<!-- MODAL PAUSE -->
+<div id="pauseModal" class="jogo_pauseModal" onclick="TaCerto.Jogo.modalClick(this, 'none')">
+	<!-- conteudo do modal-->
+	<div class="modal-content">
+		<img class="pause-icon" onclick="TaCerto.Jogo.modalClick(this, 'menuInicial')" id="home_button" src="resources/media/image/home.png" alt="Botão ir para página inicial">
+		<img class="pause-icon" onclick="TaCerto.Jogo.modalClick(this, 'normal')" id="restart_button" src="resources/media/image/reiniciar.png" alt="Botão reiniciar o jogo">
+		<img class="pause-icon" onclick="TaCerto.Jogo.modalClick(this, 'none')" id="play_button" src="resources/media/image/voltar_ao_jogo.png" alt="Botão voltar ao jogo">
+		<img class="pause-icon" onclick="TaCerto.Jogo.modalClick(this, 'missao')" id="mission_button" src="resources/media/image/missoes_atalho.png" alt="Botão consultar missões">
+	</div>
+</div>
+
+<div class="jogo_wrapper">
+	<div class="jogoPlacar" id="acertos"> 0 </div>
+	<div class="jogoPlacar" id="erros"> 0 </div>
+	<div class="jogoPlacar" id="economia"> 0 </div>
+	<div id="jogoPause" onclick="TaCerto.Jogo.pauseBtn()">
+		<img class="pause" src="resources/media/image/pause.png" alt="botão para pausar o jogo">
+	</div>
+
+	<div class="barraProgresso1">
+		<div class="barraProgresso2" id="barraProgresso2"></div>
+		<div class="barraProgresso3"></div>
+	</div>
+	<!-- relogio -->
+	<div class="JogoClockDivWrapper animated flash">
+		<div class="JogoClockDiv">
+			<div class="clock">
+				<div class="top">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="right">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="bottom">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="left">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="center"></div>
+				<div class="T1h">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="T2h">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="T4h">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="T5h">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="T7h">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="T8h">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="T10h">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="T11h">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="second">
+					<div class="secHalfTop"></div>
+					<div class="secHalfBot"></div>
+				</div>
+			</div>
+		</div>
+		<div id="tempo"> -- </div>		
+	</div>
+	<!--relogio fim-->
+	<div>
+		<div class="JogoPalavraDiv">
+			<h1 id="palavra"> -- </h1>
+		</div>
+		<div class="JogoBotoesDiv">
+			<div id ="botoes">
+				<img src="resources/media/image/cliqueerrado.png" onclick="TaCerto.Jogo.btnResposta(this)" class="action-button animate" id="botao1">
+				<img src="resources/media/image/CERTO.png" onclick="TaCerto.Jogo.btnResposta(this)" class="action-button animate"  id="botao2"> 
+			</div>
+		</div>
+	</div>
+</div>
