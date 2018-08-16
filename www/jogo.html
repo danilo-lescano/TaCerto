@@ -1,0 +1,129 @@
+<!-- MODAL PAUSE -->
+<div id="pauseModal" class="modalBlur" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick()">
+	<!-- conteudo do modal-->
+	<div class="modalWrapper">
+		<img class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick('home')" src="resources/media/image/home.png" alt="Botão ir para página inicial">
+		<img class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick('reiniciar')" src="resources/media/image/reiniciar.png" alt="Botão reiniciar o jogo">
+		<img class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick('loja')" src="resources/media/image/carrinho.png" alt="Botão abrir loja">
+		<img id="modalBtnMissao" style="display: none;" class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick('missao')" src="resources/media/image/menumissaobtn.png" alt="Botão ir para página missões">
+		<img id="modalBtnCasual" class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick('casual')" src="resources/media/image/menucasualbtn.png" alt="Botão ir para página menu casual">
+		<img class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick()" src="resources/media/image/voltar_ao_jogo.png" alt="Botão voltar ao jogo">
+	</div>
+</div>
+
+<!-- MODAL start -->
+<div id="despauseModal" class="modalBlur">
+	<div class="modalWrapper">
+		<span id="despauseCountdown"></span>
+	</div>
+</div>
+
+<div class="comboWrapper">
+	<div id="combo2x" data-timing="1000" data-tada="false" data-animacoesTotal="12" data-framesX="3" data-framesY="5"></div>
+	<div id="combo3x" data-timing="1000" data-tada="false" data-animacoesTotal="12" data-framesX="3" data-framesY="4"></div>
+</div>
+
+<div class="jogo_wrapper">
+	<div class="h20">
+		<div class="jogoPlacarWrapper">
+			<div class="spanWrapper" id="acertosSpan">
+				<div class="jogoPlacar" id="acertos"> 0 </div>
+			</div>
+			<div class="spanWrapper" id="errosSpan">
+				<div class="jogoPlacar" id="erros"> 0 </div>
+			</div>
+			<div class="spanWrapper" id="economiaSpan">
+				<div class="jogoPlacar" id="economia"> 0 </div>
+			</div>
+			<div id="jogoPause" onclick="TaCerto.Controladora.Jogo.Geral.pauseBtn('pauseModal')">
+				<img class="pause" src="resources/media/image/pause.png" alt="botão para pausar o jogo">
+			</div>
+		</div>
+		<div class="barraProgressoWrapper">
+			<div class="barraProgressoBack"></div>
+			<div class="barraProgressoFront"></div>
+		</div>
+	</div>
+
+	<div id="flagCardExists" class="cartaWrapper">
+		<div class="barraCartaBG">
+			<div class="bucketCards">
+				<div id="cartaVermelha" class="cardSpan"></div>
+				<div id="cartaAzul" class="cardSpan"></div>
+				<div id="cartaAmarela" class="cardSpan"></div>
+				<div id="cartaVerde" class="cardSpan"></div>
+			</div>
+			<div class="invBtn" onclick="TaCerto.Controladora.Jogo.Geral.toggleBarraCarta();"></div>
+		</div>
+	</div>
+
+	<!-- relogio -->
+	<div class="JogoClockDivWrapper animated flash">
+
+		<div class="JogoClockDiv">
+			<div class="clock">
+				<div class="top">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="right">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="bottom">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="left">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="center"></div>
+				<div class="T1h">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="T2h">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="T4h">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="T5h">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="T7h">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="T8h">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="T10h">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="T11h">
+					<div class="halfTop"></div>
+					<div class="halfBot"></div>
+				</div>
+				<div class="second">
+					<div class="secHalfTop"></div>
+					<div class="secHalfBot"></div>
+				</div>
+			</div>
+		</div>
+		<div id="clockIce" data-timing="3000" data-tada="false" data-animacoesTotal="21" data-framesX="4" data-framesY="6"></div>
+
+		<div id="tempo"> -- </div>		
+	</div>
+
+	<!--conteudo do tipo de jogo abaixo-->
+	<div id="JogoTipo"></div>
+	<div id="block" data-timing="1000" data-tada="false" data-animacoesTotal="21" data-framesX="4" data-framesY="6"></div>
+	<div id="vassoura" data-timing="1000" data-tada="false" data-animacoesTotal="32" data-framesX="5" data-framesY="7"></div>
+</div>

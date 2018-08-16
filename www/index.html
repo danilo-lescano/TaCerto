@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<link rel="icon" type="image/png" href="resources/media/image/LOGO-ABERTURA.png">
+	<title>Ta Certo?</title>
+
+	<link href='resources/css/fonts.css' rel='stylesheet' type='text/css'>
+	<link href='resources/css/ta-certo.css' rel='stylesheet' type='text/css'>
+	<link href='vendors/animate/animate.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div id="fontDB">
+		<span style="font-family: 'Pacifico'!important;">abc</span>
+		<span style="font-family: 'Roboto'!important;">abc</span>
+		<span style="font-family: 'panton'!important;">abc</span>
+	</div>
+	<div id="imageDB"></div>
+	<div id="soundDB"></div>
+	<div class="layer whiteBG"></div>
+	<div class="layer brownGradient"></div>
+	<div class="layer softBlue"></div>
+	<div class="layer marineBlue"></div>
+	<div class="layer gameBlend">
+		<div class="layer JogoBg1"></div>
+		<div class="layer JogoBg2"></div>
+		<div class="layer JogoBg3"></div>
+		<div class="layer JogoBg3"></div>
+		<div class="layer JogoBg4-1x1"></div>
+		<div class="layer JogoBg4-1x2"></div>
+		<div class="layer JogoBg4-2x1"></div>
+		<div class="layer JogoBg4-2x2"></div>
+		<div class="layer JogoBg4-3x1"></div>
+		<div class="layer JogoBg4-3x2"></div>
+		<div class="layer JogoBg5"></div>
+		<div class="layer JogoBg5-3x1"></div>
+		<div class="layer JogoBg6"></div>
+		<div class="layer JogoBg6-3x1"></div>
+		<div class="layer JogoBg7"></div>
+
+	</div>
+	<div class="layer loading">
+		<div class="verticalAlign">
+			<span class="one"></span>
+			<span class="two"></span>
+			<span class="three"></span>
+			<span class="four"></span>
+			<span class="five"></span>
+			<span class="six"></span>
+			<span class="seven"></span>
+			<span class="eight"></span>
+			<span class="nine"></span>
+		</div>
+	</div>
+	<div class="corpo"></div>
+</body>
+
+<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+<script src="vendors/touchpunch/jquery.ui.touch-punch.min.js"></script>
+<script src="vendors/font-awesome/fontawesome.js"></script>
+<script src="vendors/animated-modal/animatedModal.min.js"></script>
+
+<script src="resources/js/TaCerto.HTML.js"></script>
+<script src="resources/js/TaCerto.IMAGEM.js"></script>
+<script src="resources/js/TaCerto.SOUND.js"></script>
+
+<script src="resources/js/TaCerto.Controladora.Cadastro.js"></script>
+<script src="resources/js/TaCerto.Controladora.CarregarPagina.js"></script>
+<script src="resources/js/TaCerto.Controladora.FimJogo.js"></script>
+<script src="resources/js/TaCerto.Controladora.Jogo.Aleatorio.js"></script>
+<script src="resources/js/TaCerto.Controladora.Jogo.Aurelio.js"></script>
+<script src="resources/js/TaCerto.Controladora.Jogo.Explorador.js"></script>
+<script src="resources/js/TaCerto.Controladora.Jogo.Geral.js"></script>
+<script src="resources/js/TaCerto.Controladora.Jogo.HardCore.js"></script>
+<script src="resources/js/TaCerto.Controladora.Jogo.Lacuna.js"></script>
+<script src="resources/js/TaCerto.Controladora.Jogo.Load.js"></script>
+<script src="resources/js/TaCerto.Controladora.Jogo.Missao.js"></script>
+<script src="resources/js/TaCerto.Controladora.Jogo.Normal.js"></script>
+<script src="resources/js/TaCerto.Controladora.Login.js"></script>
+<script src="resources/js/TaCerto.Controladora.MenuCasual.js"></script>
+<script src="resources/js/TaCerto.Controladora.MenuInicial.js"></script>
+<script src="resources/js/TaCerto.Controladora.MenuMissao.js"></script>
+<script src="resources/js/TaCerto.Controladora.PreLoad.js"></script>
+<script src="resources/js/TaCerto.Estrutura.Carta.js"></script>
+<script src="resources/js/TaCerto.Estrutura.DesafioDeFase.js"></script>
+<script src="resources/js/TaCerto.Estrutura.Fase.js"></script>
+<script src="resources/js/TaCerto.Estrutura.Jogador.js"></script>
+
+<script src="resources/js/TaCerto.Save.playerData.js"></script>
+
+<script>
+	//misturar - array de palavras
+	Array.prototype.shuffle = function() {
+		var i = this.length, j, temp;
+		if ( i == 0 ) return this;
+		while ( --i ) {
+			j = Math.floor( Math.random() * ( i + 1 ) );
+			temp = this[i];
+			this[i] = this[j];
+			this[j] = temp;
+		}
+		return this;
+	};
+	Array.prototype.pickFase = function(arr) {
+		var length = this.length, temp = [];
+		if ( length == 0 || arr === undefined || arr == 0) return this;
+		for (var i = length-1; i >= 0; i--){
+			for (var j = 0; j < arr.length; j++)
+				if(this[i].nivel === arr[j])
+					temp[temp.length] = this[i];
+			this.pop();
+		}
+		for (var j = 0; j < temp.length; j++)
+			this[j] = temp[j];
+		return this;
+	};
+
+	function Timer(callback, delay){
+		function Timer(callback, delay) {
+			var timerId, start, remaining = delay;
+
+			this.pause = function() {
+				window.clearTimeout(timerId);
+				remaining -= new Date() - start;
+			};
+
+			this.resume = function() {
+				start = new Date();
+				window.clearTimeout(timerId);
+				timerId = window.setTimeout(callback, remaining);
+			};
+
+			this.resume();
+		}
+		return new Timer(callback, delay);
+	}
+	var timer = Timer(function() {
+		//console.log("Done!");
+	}, 1000);
+
+	timer.pause();
+		//console.log("paused!");
+	timer.resume();
+
+	function allowDrop(ev) {
+		ev.preventDefault();
+	}
+
+	function drag(ev) {
+		ev.dataTransfer.setData("Text", ev.target.id);
+	}
+
+	function drop(ev) {
+		var data = ev.dataTransfer.getData("Text");
+		ev.target.appendChild(document.getElementById(data));
+		ev.preventDefault();
+	}
+
+
+	TaCerto.Controladora.PreLoad.start();
+
+</script>
+</html> 

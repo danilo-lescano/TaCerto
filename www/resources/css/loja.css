@@ -1,0 +1,61 @@
+/* tela loja */
+@font-face {
+	font-family: panton;
+	src: url("../media/font/panton3/Panton-BlackCaps.otf");
+}
+
+.containerLojaTop {
+	display: grid;
+	grid-template-columns: 25% auto 50%;
+	grid-template-rows: 45px;
+}
+
+.item1 img {
+	width: 15%;
+	position: fixed;
+	left: 2%;
+	top: 1%;
+}
+
+.item3-loja img {
+	width: 15%;
+	position: fixed;
+	top: 1%;
+	right: 2%;
+}
+
+.item3-loja span {
+	font-size: 40px;
+	color: white;
+	margin-right: 15%;
+}
+
+.up {
+	margin-top: 5% !important;
+}
+
+.containerLojaTitulo {
+	font-family: panton, 'Pacifico', cursive;
+	font-size: 35px;
+	color: white;
+	margin-bottom: 10%;
+}
+
+.containerLojaCarta img {
+	width: 400px;
+	margin: auto;
+}
+
+.JogoBgEscuro {
+		background: url("../media/image/fundoEscuro.png") 0% 0% no-repeat;
+		background-size: cover;
+		top: 0px;
+		width: 100%;
+		max-width: 420px;
+		height: 736px;
+		position: fixed;
+		z-index: -100;
+		margin-left: -13px;
+}
+
+
