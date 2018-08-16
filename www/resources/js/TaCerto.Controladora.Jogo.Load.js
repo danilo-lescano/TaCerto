@@ -28,22 +28,12 @@ TaCerto.Controladora.Jogo.Load = function(tipo, nivelMissao){
 			}, 950); //era pra ser 1000, mas 950 ta mais alinhado com o som
 		}
 		else{
-			tictac.play(); //cuzisse do chrome
-			startCountDown(true);/*
-			.then(()=>{
-				startCountDown(true);
-			})
-			.catch((error)=>{
-				console.log(error);
-				if (iteracao === 9)
-					loadDesafio(tipo);
-				else
-					setTimeout(startCountDown(true, iteracao), 100);
-			});*/
+			tictac.play();
+			startCountDown(true);
 		}
 		iteracao++;
 	}
-	JSParaTeste.countTimer = JSParaTeste.countTimer || 6;
+	JSParaTeste.countTimer = JSParaTeste.countTimer !== undefined ? JSParaTeste.countTimer : 6;
 	var count = JSParaTeste.countTimer; //ORIGINAL:6
 	var tictac = TaCerto.SOUND.find("clock");
 

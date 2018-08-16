@@ -583,7 +583,7 @@ span {
 .relativeDiv{
 	position: relative;
 	height: inherit;
-	line-height: : 200px;
+	line-height: 200px;
 	margin: 0 auto;
 }
 .relativeDiv div{
@@ -1057,7 +1057,6 @@ span {
 	color: black;
 	/*box-shadow: 2px 2px #0E214B;*/
 }
-/*flag*/
 .comboWrapper{
 	position: absolute;
 	top: 23%;
@@ -1286,17 +1285,12 @@ span {
 	margin: 2%;
 	width: 25%;
 	height: 100%;
-	background-color: rgba(255,255,255,0.5);
-}
-.btnModalFJ:nth-child(2){
-	background-color: rgba(0,0,0,0.5);
 }
 .btnModalFJclose{
 	position: absolute;
 	right: 0;
 	width: 12%;
 	height: 39%;
-	background-color: rgba(0,0,0,0.5);
 }
 .btnModalFJcloseEstrela{
 	position: absolute;
@@ -1304,7 +1298,6 @@ span {
 	right: 0;
 	width: 12%;
 	height: 30%;
-	background-color: rgba(0,0,0,0.5);
 	z-index: 1;
 }
 .fimPonto span, .fimPontoE span{

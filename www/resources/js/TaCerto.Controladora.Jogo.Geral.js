@@ -197,30 +197,7 @@ TaCerto.Controladora.Jogo.Geral = {
 				}, 300);
 			}, timeout);
 		}
-/*
-		var comboMult = resp ? ++TaCerto.Controladora.Jogo.Geral.gameModel.acertosConsecutivos : 0;
-		var barra = document.getElementsByClassName("barraProgressoBack")[0];
-		if(comboMult <= 2){
-			barra.classList.remove("combo1", "combo2", "combo3");
-			barra.classList.add("combo1");
 
-			TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus = 1;
-		}
-		else if(comboMult === 3){
-			barra.classList.remove("combo1", "combo2", "combo3");
-			barra.classList.add("combo2");
-
-			TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus = 2;
-			TaCerto.Controladora.Jogo.Geral.showCombo("combo" + TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus + "x");
-		}
-		else if(comboMult === 5){
-			barra.classList.remove("combo1", "combo2", "combo3");
-			barra.classList.add("combo3");
-
-			TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus = 3;
-			TaCerto.Controladora.Jogo.Geral.showCombo("combo" + TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus + "x");
-		}
-*/
 		if (resp){
 			++TaCerto.Controladora.Jogo.Geral.gameModel.acertosConsecutivos;
 			document.getElementById('acertos').innerHTML = ++TaCerto.Controladora.Jogo.Geral.gameModel.acerto;
@@ -307,8 +284,6 @@ TaCerto.Controladora.Jogo.Geral = {
 		};
 
 		var cartaClicada = document.getElementById(card).childNodes;
-//		var numCartas = document.getElementById(card).childNodes.length;
-//		var flagLeng = document.getElementById(card).childNodes.length;
 
 		for (var i = cartaClicada.length - 1, flag = true; i >= 0 && flag; i--) {
 			if (cartaClicada[i].classList.length === 2){
@@ -327,21 +302,6 @@ TaCerto.Controladora.Jogo.Geral = {
 				flag = false;
 			}
 		}
-		/*
-		while(numCartas){
-			if (cartaClicada[numCartas-1].classList.length === 2) {
-				cartaClicada[numCartas-1].classList.add("animated", "bounceUpOut", "flipCard"+card);
-				setTimeout(function(){
-					if(document.getElementById(card) && cartaClicada[document.getElementById(card).childNodes.length - 1].classList.length > 2 && flagLeng === document.getElementById(card).childNodes.length && (TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo !== "Aleatorio" || card!=="cartaVermelha"))
-						document.getElementById(card).removeChild(document.getElementById(card).childNodes[document.getElementById(card).childNodes.length - 1]);
-				}, 1000);
-				callCarta[card]();
-				numCartas = 0;
-				TaCerto.Estrutura.Jogador[card]--;
-			}
-			else
-				numCartas--;
-		}*/
 	},
 	calculaLvl: function(xp){
 		var level = 1;
@@ -409,7 +369,9 @@ TaCerto.Controladora.Jogo.Geral = {
 			document.getElementById("showMoeda").innerHTML = document.getElementById("showMoedaE").innerHTML = "Moedas:\t" + auxMoeda;
 			document.getElementById("showTempo").innerHTML = document.getElementById("showTempoE").innerHTML = "Segundos:\t" + auxTempo;
 
-			document.getElementsByClassName("wrapperestrela")[0].style.height = flagMissao ? (flagMissao/3)*100 + "%" : "0px";
+			setTimeout(function(){
+				document.getElementsByClassName("wrapperestrela")[0].style.height = flagMissao ? (flagMissao/3)*100 + "%" : "0px";
+			}, 10);
 
 			document.getElementById('fimjogonormal').style.display = flagMissao === -1 ? "block" : "none";
 			document.getElementById('fimjogoestrela').style.display = flagMissao > -1 ? "block" : "none";
