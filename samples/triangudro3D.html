@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<style type="text/css">
+		*, html, body{
+			margin: 0;
+			padding: 0;
+		}
+.scene {
+	width: 200px;
+	height: 100px;
+	position: relative;
+	left: 250px;
+	top: 250px;
+	transform: translateZ(22px);
+	  animation-name: example;
+	animation-duration: 4s;
+	transform-style: preserve-3d;
+	animation-iteration-count: infinite;
+}
+
+/* Standard syntax */
+@keyframes example {
+	from {transform: rotateX(  0deg) translateZ(22px)}
+	to {transform: rotateX(  360deg) translateZ(22px)}
+}
+.triangulo {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transform-style: preserve-3d;
+}
+
+.lado {
+	background-color: white;
+	position: absolute;
+	border: 2px solid black;
+	width: 200px;
+	height: 100px;
+}
+.lado--frente  { transform: rotateY(  0deg) }
+.lado--cima  { transform: rotateX( 300deg); transform-origin: top; }
+.lado--baixo   { transform: rotateX(-300deg); transform-origin: bottom; }
+	</style>
+
+</head>
+<body>
+
+<div class="scene">
+  <div class="triangulo">
+    <div class="lado lado--frente">front</div>
+    <div class="lado lado--cima">right</div>
+    <div class="lado lado--baixo">back</div>
+  </div>
+</div>
+
+</body>
+</html>
+<script type="text/javascript">
+	function pray(){
+		var x = document.getElementsByClassName('x');
+		for (var i = 0; i < x.length; i++) {
+			x[i].play();
+		}
+	}
+
+</script>
+<!--9165 : samuel marcel -->
+<!--9103 : daniel -->
+<!--9223 : andre -->
+
+<!-- MEU HORARIO -->
+<!--
+	https://codetabs.com/count-loc/count-loc-online.html
+-->

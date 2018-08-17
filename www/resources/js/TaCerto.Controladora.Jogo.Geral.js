@@ -340,43 +340,8 @@ TaCerto.Controladora.Jogo.Geral = {
 		}, Math.ceil(tempo/animacoes));
 	},
 	fimDeJogo: function(){
-		var flagMissao = -1;
-
-		TaCerto.Controladora.FimJogo.model.tipoDeJogo = TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo;
-		TaCerto.Controladora.FimJogo.model.missao = TaCerto.Controladora.Jogo.Missao.parametros.missao;
-
-		if(!isNaN(TaCerto.Controladora.Jogo.Missao.parametros.missao)){
-			var missNum = TaCerto.Controladora.Jogo.Missao.parametros.missao;
-			TaCerto.Controladora.Jogo.Missao.parametros.fimDeJogo = true;
-			TaCerto.Controladora.Jogo.Missao.checkObjetivo();
-			flagMissao = TaCerto.Estrutura.Jogador.missoes[missNum][0] ? 1 : 0;
-			flagMissao += TaCerto.Estrutura.Jogador.missoes[missNum][1] ? 1 : 0;
-			flagMissao += TaCerto.Estrutura.Jogador.missoes[missNum][2] ? 1 : 0;
-		}
-
-		var auxAcerto = TaCerto.Controladora.Jogo.Geral.gameModel.acerto;
-		var auxErro = TaCerto.Controladora.Jogo.Geral.gameModel.erro;
-		var auxMoeda = TaCerto.Controladora.Jogo.Geral.gameModel.moeda;
-		var auxTempo = TaCerto.Controladora.Jogo.Geral.gameModel.tempo;
-
+		TaCerto.Controladora.FimJogo.start();
 		TaCerto.Controladora.Jogo.Geral.zerarVars();
-
-		setTimeout(function(){
-			TaCerto.Controladora.CarregarPagina.htmlCorpo('fimDeJogo');
-
-			document.getElementById("showAcerto").innerHTML = document.getElementById("showAcertoE").innerHTML = "Acertos:\t" + auxAcerto;
-			document.getElementById("showErro").innerHTML = document.getElementById("showErroE").innerHTML = "Erros:\t" + auxErro;
-			document.getElementById("showMoeda").innerHTML = document.getElementById("showMoedaE").innerHTML = "Moedas:\t" + auxMoeda;
-			document.getElementById("showTempo").innerHTML = document.getElementById("showTempoE").innerHTML = "Segundos:\t" + auxTempo;
-
-			setTimeout(function(){
-				document.getElementsByClassName("wrapperestrela")[0].style.height = flagMissao ? (flagMissao/3)*100 + "%" : "0px";
-			}, 10);
-
-			document.getElementById('fimjogonormal').style.display = flagMissao === -1 ? "block" : "none";
-			document.getElementById('fimjogoestrela').style.display = flagMissao > -1 ? "block" : "none";
-
-		}, 100);
 	},
 	start: function(tipo){
 		TaCerto.Controladora.Jogo.Geral.zerarVars();
