@@ -1518,6 +1518,46 @@ span {
 /*--------------------------------------------------------------*/
 /*fimDeJogo*//*fim*/
 /*--------------------------------------------------------------*/
+.wrapper3D {
+	width: 200px;
+	height: 100px;
+	position: relative;
+	transform: translateZ(22px);
+	animation-name: example;
+	animation-duration: 4s;
+	transform-style: preserve-3d;
+	animation-iteration-count: infinite;
+}
+
+/* Standard syntax */
+@keyframes example {
+	from {transform: rotateX(  0deg) translateZ(0px)}
+	to {transform: rotateX(  360deg) translateZ(0px)}
+}
+.triangulo {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transform-style: preserve-3d;
+}
+
+.lado {
+	background-color: white;
+	position: absolute;
+	border: 2px solid black;
+	width: 200px;
+	height: 100px;
+}
+.ladofrente { transform: rotateY(   0deg) }
+.ladocima  	{ transform: rotateX( 300deg); transform-origin: top; }
+.ladobaixo  { transform: rotateX(-300deg); transform-origin: bottom; }
+/*flag*/
+/*--------------------------------------------------------------*/
+/*fimDeJogo*//*fim*/
+/*--------------------------------------------------------------*/
+
+
+
 
 
 .container1{

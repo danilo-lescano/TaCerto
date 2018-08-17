@@ -80,6 +80,14 @@ TaCerto.Controladora.FimJogo = {
 				html =
 				"<div class='tpFimJogo'>" + mis.tipo + "</div>" +
 				
+				"<div class='wrapper3D'>"+
+					"<div class='triangulo'>"+
+						"<div class='lado ladofrente'>front</div>"+
+						"<div class='lado ladocima'>right</div>"+
+						"<div class='lado ladobaixo'>back</div>"+
+					"</div>"+
+				"</div>";
+/*
 				"<div class='missaoFJWrapper'>"+
 					"<div class='missaoPiramide'>"+
 						"<div class='missCard'>"+
@@ -102,7 +110,7 @@ TaCerto.Controladora.FimJogo = {
 						"</div>"+
 					"</div>"+
 				"</div>";
-
+*/
 				el.innerHTML = html;
 			}
 			document.getElementById('fimjogonormal').style.display = flagMissaoAcertos === -1 ? "block" : "none";
