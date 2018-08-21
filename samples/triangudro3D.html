@@ -12,19 +12,18 @@
 			width: 200px;
 			height: 100px;
 			position: relative;
-			perspective: 86.6025px;
+			perspective: 86.60px;
 			left: 250px;
 			top: 250px;
-			animation-name: example;
-			animation-duration: 4s;
 			transform-style: preserve-3d;
-			animation-iteration-count: infinite;
+    		transform-origin: 50% 50% 50%;
 		}
 
 		/* Standard syntax */
 		@keyframes example {
-			from {transform: rotateX(  0deg) translateZ(22px)}
-			to {transform: rotateX(  360deg) translateZ(22px)}
+			to {
+				transform: rotateX(720deg);
+			}
 		}
 		.triangulo {
 			width: 100%;
@@ -32,11 +31,13 @@
 			position: relative;
 			perspective-origin: 150% 150%;
 			transform-style: preserve-3d;
+			animation: example 4s linear infinite;
 		}
 
 		.lado {
 			background-color: white;
 			position: absolute;
+			perspective: 86.60px;
 			border: 2px solid black;
 			width: 200px;
 			height: 100px;
