@@ -79,14 +79,47 @@ TaCerto.Controladora.FimJogo = {
 
 				html =
 				"<div class='tpFimJogo'>" + mis.tipo + "</div>" +
-				
-				"<div class='wrapper3D'>"+
-					"<div class='triangulo'>"+
-						"<div class='lado ladofrente'>front</div>"+
-						"<div class='lado ladocima'>right</div>"+
-						"<div class='lado ladobaixo'>back</div>"+
-					"</div>"+
-				"</div>";
+				'<div class="piramideWrapper">'+
+				'<div class="piramideWrapper2">'+
+				'<div class="piramide">'+
+						'<div class="facePiramide facePiramide-frente">'+
+						'<img src="resources/media/image/' + (misJogadorFlag[0] ? '' : 'un') + 'checkedbox.png">'+
+						'<div class="piramideText">' + mis.descricaoObjetivos[0] + '</div>' +
+						'</div>'+
+						'<div class="facePiramide facePiramide-topo">'+
+						'<img src="resources/media/image/' + (misJogadorFlag[1] ? '' : 'un') + 'checkedbox.png">'+
+						'<div class="piramideText">' + mis.descricaoObjetivos[1] + '</div>' +
+						'</div>'+
+						'<div class="facePiramide facePiramide-baixo">'+
+						'<img src="resources/media/image/' + (misJogadorFlag[2] ? '' : 'un') + 'checkedbox.png">'+
+						'<div class="piramideText">' + mis.descricaoObjetivos[2] + '</div>' +
+						'</div>'+
+					'</div>'+
+				'</div>'+
+				'<div class="coverPiramide"></div>'+
+				'</div>';
+
+				el.innerHTML = html;
+			}
+			document.getElementById('fimjogonormal').style.display = flagMissaoAcertos === -1 ? "block" : "none";
+			document.getElementById('fimjogoestrela').style.display = flagMissaoAcertos > -1 ? "block" : "none";
+
+			var index = 0;
+			intervaloCarrosel = setInterval(function(){
+				var el = document.getElementsByClassName('missCardWrapper');
+				if(index === 0)
+					for (let i = 0; i < el.length; i++);
+						//el[i].style.width = "33.3333%";
+				else;
+					//el[index-1].style.width = "0";
+
+				index = ++index % el.length;
+
+			}, 2000);
+		}, 100);
+
+	}
+};
 /*
 				"<div class='missaoFJWrapper'>"+
 					"<div class='missaoPiramide'>"+
@@ -111,24 +144,3 @@ TaCerto.Controladora.FimJogo = {
 					"</div>"+
 				"</div>";
 */
-				el.innerHTML = html;
-			}
-			document.getElementById('fimjogonormal').style.display = flagMissaoAcertos === -1 ? "block" : "none";
-			document.getElementById('fimjogoestrela').style.display = flagMissaoAcertos > -1 ? "block" : "none";
-
-			var index = 0;
-			intervaloCarrosel = setInterval(function(){
-				var el = document.getElementsByClassName('missCardWrapper');
-				if(index === 0)
-					for (let i = 0; i < el.length; i++);
-						//el[i].style.width = "33.3333%";
-				else;
-					//el[index-1].style.width = "0";
-
-				index = ++index % el.length;
-
-			}, 2000);
-		}, 100);
-
-	}
-};

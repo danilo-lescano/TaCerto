@@ -16,6 +16,7 @@ TaCerto.IMAGEM = [
 	{path:'resources/media/image/block.png'},
 	{path:'resources/media/image/botao-colecoes.png'},
 	{path:'resources/media/image/botao-jogar.png'},
+	{path:'resources/media/image/box_janela.png'},
 	{path:'resources/media/image/carrinho.png'},
 	{path:'resources/media/image/cartaAmarela.png'},
 	{path:'resources/media/image/cartaAmarelaBack.png'},
