@@ -71,6 +71,14 @@ TaCerto.Controladora.FimJogo = {
 			setTimeout(function(){//precisa do timeout se n ele n ativa o transform dele
 				document.getElementsByClassName("wrapperestrela")[0].style.height = flagMissaoAcertos ? (flagMissaoAcertos/3)*100 + "%" : "0px";
 			}, 10);
+
+			var displyModal = flagMissaoAcertos === -1 ? 'fimjogonormal' : 'fimjogoestrela';
+			var hiddeModal = flagMissaoAcertos === -1 ? 'fimjogoestrela' : 'fimjogonormal';
+			hiddeModal = document.getElementById(hiddeModal);
+			hiddeModal.style.display = "none";
+			displyModal = document.getElementById(displyModal);
+			displyModal.classList.add("flipInY");
+
 			if(flagMissaoAcertos){
 				var el = document.getElementsByClassName("fimPontoE")[1];
 				var html;
@@ -101,21 +109,7 @@ TaCerto.Controladora.FimJogo = {
 
 				el.innerHTML = html;
 			}
-			document.getElementById('fimjogonormal').style.display = flagMissaoAcertos === -1 ? "block" : "none";
-			document.getElementById('fimjogoestrela').style.display = flagMissaoAcertos > -1 ? "block" : "none";
 
-			var index = 0;
-			intervaloCarrosel = setInterval(function(){
-				var el = document.getElementsByClassName('missCardWrapper');
-				if(index === 0)
-					for (let i = 0; i < el.length; i++);
-						//el[i].style.width = "33.3333%";
-				else;
-					//el[index-1].style.width = "0";
-
-				index = ++index % el.length;
-
-			}, 2000);
 		}, 100);
 
 	}

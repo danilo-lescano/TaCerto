@@ -63,35 +63,44 @@ TaCerto.Controladora.Jogo.Geral = {
 		TaCerto.Controladora.Jogo.Geral.gameModel.cartaUsada.cartaAmarela = 0;
 		TaCerto.Controladora.Jogo.Geral.gameModel.cartaUsada.cartaVerde = 0;
 	},
-	pauseModalClick: function(botao){
-		if (TaCerto.Controladora.Jogo.Geral[botao]){
-			TaCerto.Controladora.Jogo.Geral.pauseJogo(false);
-			TaCerto.Controladora.Jogo.Geral[botao]();
-		}
-		//clicou em despausar ou  play
-		else{
-			document.getElementById("pauseModal").style.display = "none";
-			document.getElementById("despauseModal").style.display = "block";
-			for (var i = 4; i >= 0; i--) {
-				let auxTime = i ? (4000 - i*1000) : 3050;
-				let auxI = i ? i - 1 : "";
-				setTimeout(function(){
-					document.getElementById("despauseCountdown").innerHTML = auxI;
-					if (auxTime === 3050) {
-						document.getElementById("despauseCountdown").innerHTML = "";
-						document.getElementById("despauseModal").style.display = "none";
-						TaCerto.Controladora.Jogo.Geral.pauseJogo(false);
-					}
-				},auxTime);
+	pauseModalClick: function(el, botao){
+		function logica() {
+			if (TaCerto.Controladora.Jogo.Geral[botao]){
+				TaCerto.Controladora.Jogo.Geral.pauseJogo(false);
+				TaCerto.Controladora.Jogo.Geral[botao]();
+			}
+			//clicou em despausar ou  play
+			else{
+				document.getElementById("pauseModal").style.display = "none";
+				document.getElementById("despauseModal").style.display = "block";
+				for (var i = 4; i >= 0; i--) {
+					let auxTime = i ? (4000 - i*1000) : 3050;
+					let auxI = i ? i - 1 : "";
+					setTimeout(function(){
+						document.getElementById("despauseCountdown").innerHTML = auxI;
+						if (auxTime === 3050) {
+							document.getElementById("despauseCountdown").innerHTML = "";
+							document.getElementById("despauseModal").style.display = "none";
+							TaCerto.Controladora.Jogo.Geral.pauseJogo(false);
+						}
+					},auxTime);
+				}
 			}
 		}
+		if(el)
+			TaCerto.GenFunc.fadeInBtnClick(el,logica);
+		else
+			logica();
 
 		var e = window.event;
 		e.cancelBubble = true;
 		if (e.stopPropagation) e.stopPropagation();
 	},
-	pauseBtn: function(){
-		TaCerto.Controladora.Jogo.Geral.pauseJogo(true);
+	pauseBtn: function(el){
+		TaCerto.GenFunc.fadeInBtnClick(el,
+		function(){
+			TaCerto.Controladora.Jogo.Geral.pauseJogo(true);
+		});
 	},
 	pauseJogo: function (flag) {
 		TaCerto.Controladora.Jogo.Geral.gameModel.paused = flag;

@@ -2,12 +2,12 @@
 <div id="pauseModal" class="modalBlur" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick()">
 	<!-- conteudo do modal-->
 	<div class="modalWrapper">
-		<img class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick('home')" src="resources/media/image/home.png" alt="Botão ir para página inicial">
-		<img class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick('reiniciar')" src="resources/media/image/reiniciar.png" alt="Botão reiniciar o jogo">
-		<img class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick('loja')" src="resources/media/image/carrinho.png" alt="Botão abrir loja">
-		<img id="modalBtnMissao" style="display: none;" class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick('missao')" src="resources/media/image/menumissaobtn.png" alt="Botão ir para página missões">
-		<img id="modalBtnCasual" class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick('casual')" src="resources/media/image/menucasualbtn.png" alt="Botão ir para página menu casual">
-		<img class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick()" src="resources/media/image/voltar_ao_jogo.png" alt="Botão voltar ao jogo">
+		<img class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick(this, 'home')" src="resources/media/image/home.png" alt="Botão ir para página inicial">
+		<img class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick(this, 'reiniciar')" src="resources/media/image/reiniciar.png" alt="Botão reiniciar o jogo">
+		<img class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick(this, 'loja')" src="resources/media/image/carrinho.png" alt="Botão abrir loja">
+		<img id="modalBtnMissao" style="display: none;" class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick(this, 'missao')" src="resources/media/image/menumissaobtn.png" alt="Botão ir para página missões">
+		<img id="modalBtnCasual" class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick(this, 'casual')" src="resources/media/image/menucasualbtn.png" alt="Botão ir para página menu casual">
+		<img class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick(this)" src="resources/media/image/voltar_ao_jogo.png" alt="Botão voltar ao jogo">
 	</div>
 </div>
 
@@ -35,7 +35,7 @@
 			<div class="spanWrapper" id="economiaSpan">
 				<div class="jogoPlacar" id="economia"> 0 </div>
 			</div>
-			<div id="jogoPause" onclick="TaCerto.Controladora.Jogo.Geral.pauseBtn('pauseModal')">
+			<div id="jogoPause" onclick="TaCerto.Controladora.Jogo.Geral.pauseBtn(this)">
 				<img class="pause" src="resources/media/image/pause.png" alt="botão para pausar o jogo">
 			</div>
 		</div>

@@ -80,33 +80,41 @@ TaCerto.Controladora.MenuMissao = {
 	clickMissao: function(mission){
 		var missao = document.getElementById('imgMissa' + (mission+1));
 		if (!missao.src.includes("resources/media/image/lock.png")){
-			TaCerto.Controladora.MenuMissao.modalOpenClose(true);
+			missao.classList.add("animated"); missao.classList.add("flash"); 
+			setTimeout(function () {missao.classList.remove("animated", "flash");}, 1000);
 
-			document.getElementById('objetivoP1').innerHTML = TaCerto.Estrutura.Fase[mission].descricaoObjetivos[0];
-			document.getElementById('objetivoP2').innerHTML = TaCerto.Estrutura.Fase[mission].descricaoObjetivos[1];
-			document.getElementById('objetivoP3').innerHTML = TaCerto.Estrutura.Fase[mission].descricaoObjetivos[2];
-			TaCerto.Controladora.MenuMissao.modoTipo = document.getElementById('modoTipo').innerHTML = TaCerto.Estrutura.Fase[mission].tipo;
-			TaCerto.Controladora.MenuMissao.modoNivel = mission;
+			setTimeout(function(){
+				TaCerto.Controladora.MenuMissao.modalOpenClose(true);
 
-			var aux = TaCerto.Estrutura.Jogador.missoes[mission];
-			if (aux[0]) document.getElementById('modalImgMissao1').src = "resources/media/image/checkedbox.png";
-			else document.getElementById('modalImgMissao1').src = "resources/media/image/uncheckedbox.png";
-			if (aux[1]) document.getElementById('modalImgMissao2').src = "resources/media/image/checkedbox.png";
-			else document.getElementById('modalImgMissao2').src = "resources/media/image/uncheckedbox.png";
-			if (aux[2]) document.getElementById('modalImgMissao3').src = "resources/media/image/checkedbox.png";
-			else document.getElementById('modalImgMissao3').src = "resources/media/image/uncheckedbox.png";
+				document.getElementById('objetivoP1').innerHTML = TaCerto.Estrutura.Fase[mission].descricaoObjetivos[0];
+				document.getElementById('objetivoP2').innerHTML = TaCerto.Estrutura.Fase[mission].descricaoObjetivos[1];
+				document.getElementById('objetivoP3').innerHTML = TaCerto.Estrutura.Fase[mission].descricaoObjetivos[2];
+				TaCerto.Controladora.MenuMissao.modoTipo = document.getElementById('modoTipo').innerHTML = TaCerto.Estrutura.Fase[mission].tipo;
+				TaCerto.Controladora.MenuMissao.modoNivel = mission;
+
+				var aux = TaCerto.Estrutura.Jogador.missoes[mission];
+				if (aux[0]) document.getElementById('modalImgMissao1').src = "resources/media/image/checkedbox.png";
+				else document.getElementById('modalImgMissao1').src = "resources/media/image/uncheckedbox.png";
+				if (aux[1]) document.getElementById('modalImgMissao2').src = "resources/media/image/checkedbox.png";
+				else document.getElementById('modalImgMissao2').src = "resources/media/image/uncheckedbox.png";
+				if (aux[2]) document.getElementById('modalImgMissao3').src = "resources/media/image/checkedbox.png";
+				else document.getElementById('modalImgMissao3').src = "resources/media/image/uncheckedbox.png";
+			}, 200);				
 		}
 		else{
 			missao.classList.add("animated"); missao.classList.add("flash"); 
 			setTimeout(function () {missao.classList.remove("animated", "flash");}, 1000);
 		}
 	},
-	modalClick: function(botao){
-		if(botao)
-			TaCerto.Controladora.MenuMissao.modalOpenClose(false);
-		if(botao === "play"){
-			TaCerto.Controladora.Jogo.Load(TaCerto.Controladora.MenuMissao.modoTipo, TaCerto.Controladora.MenuMissao.modoNivel);
-		}
+	modalClick: function(el, botao){
+		TaCerto.GenFunc.waveBtnClick(el,
+		function(){
+			if(botao)
+				TaCerto.Controladora.MenuMissao.modalOpenClose(false);
+			if(botao === "play"){
+				TaCerto.Controladora.Jogo.Load(TaCerto.Controladora.MenuMissao.modoTipo, TaCerto.Controladora.MenuMissao.modoNivel);
+			}
+		},);
 
 		var e = window.event;
 		e.cancelBubble = true;
@@ -121,5 +129,17 @@ TaCerto.Controladora.MenuMissao = {
 		for (var i = 0; i < blurThis.length; i++) {
 			blurThis[i].style.filter = flag ? "blur(5px)" : "none";
 		}
+	},
+	homebtn: function(el){
+		TaCerto.GenFunc.fadeInBtnClick(el,
+		function(){
+			TaCerto.Controladora.CarregarPagina.htmlCorpo('menuInicial');
+		});
+	},
+	lojabtn: function(el){
+		TaCerto.GenFunc.fadeInBtnClick(el,
+		function(){
+			TaCerto.Controladora.CarregarPagina.htmlCorpo('loja');
+		});
 	},
 };

@@ -9,6 +9,16 @@ body {
 /****************************************************************/
 /*classes gerais*//*inicio*/
 /****************************************************************/
+.waveEffect{
+	background-image: radial-gradient(circle,  rgba(238, 220, 139, 0.7), rgba(109, 64, 5, 0.7));
+	background-blend-mode: lighten;
+
+	transition: all 500ms;
+	border-radius: 100%;
+}
+.overflow-hidden{
+	overflow: hidden;
+}
 #imageDB, #fontDB{
 	position: fixed;
 	width: 10%;
@@ -542,7 +552,7 @@ span {
 }
 .menuMissao_xpBar{
 	width: 100%;
-	height: 10vh;
+	height: 11vh;
 }
 .wrapper_xpBar{
 	color: #294B95;
@@ -556,7 +566,7 @@ span {
 	background-color: white;
 	background-repeat: no-repeat;
 	margin-left: 11%;
-	margin-top: 3vh;
+	transform: translateY(3vh);
 }	
 .back_xpBar{
 	position: absolute; 
@@ -583,7 +593,6 @@ span {
 .relativeDiv{
 	position: relative;
 	height: inherit;
-	line-height: 200px;
 	margin: 0 auto;
 }
 .relativeDiv div{
@@ -666,9 +675,13 @@ span {
 	transform: translate(-50%, -50%);
 }
 .playMissionBtn{
+	width: 100%;
+	height: 100%;
+}
+.playMissionBtnWrapper{
 	position: absolute;
-	width: 20%;
-	height: 20%;
+	width: 24%;
+	height: 24%;
 	left: 50%;
 	bottom: 0px;
 	transform: translateX(-50%);
@@ -965,7 +978,7 @@ span {
 	background-color: white;
 	background-repeat: no-repeat;
 	margin-left: 11%;
-	margin-top: 3vh;
+	transform: translateY(3vh);
 }	
 .barraProgressoBack{
 	position: absolute;
@@ -1423,6 +1436,12 @@ span {
 		max-height: 539.07941px;
 	}
 }
+#fimjogonormal{
+	display: block;
+}
+#fimjogoestrela{
+	display: block;
+}
 /*--------------------------------------------------------------*/
 /*fimDeJogo*//* \/ piramide */
 /*--------------------------------------------------------------*/
@@ -1432,14 +1451,14 @@ span {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 200px;
-	width: 110%;
+	width: 130%;
 	height: 100px;
 	perspective: 600px;
 }
 .piramideWrapper2 {
 	overflow: hidden;
 	background-color: #103180;
-	border-radius: 5%;
+	border: 1px solid #e1e1e1;
 	transform: translateZ(-300px);
 }
 .coverPiramide{
@@ -1448,7 +1467,8 @@ span {
 	height: 100px;
 	background-image: url("../media/image/box_janela.png");
 	background-repeat: no-repeat;
-	background-size: cover;
+	border: 1px solid #e1e1e1;
+	background-size: 100% 100%;
 	top: 0px;
 	transform: translateZ(-300px);
 }
@@ -1487,7 +1507,7 @@ span {
 	position: absolute;
 	left: calc(15% + 10px);
 	top:50%;
-	margin: 1%;
+	margin: 1% 4% 1% 1%;
 	transform: translateY(-50%);
 }
 .facePiramide-frente  { 

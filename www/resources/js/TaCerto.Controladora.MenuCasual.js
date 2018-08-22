@@ -4,10 +4,16 @@ TaCerto.Controladora.MenuCasual = {
 	load: function(){
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("menuCasual");
 	},
-	callGame: function(tipo){
-		TaCerto.Controladora.Jogo.Load(tipo);
+	callGame: function(tipo, el){
+		TaCerto.GenFunc.fadeInBtnClick(el,
+		function(){
+			TaCerto.Controladora.Jogo.Load(tipo);
+		});
 	},
-	homeBtn: function () {
-		TaCerto.Controladora.CarregarPagina.htmlCorpo("menuInicial");
+	homeBtn: function (el) {
+		TaCerto.GenFunc.fadeInBtnClick(el,
+		function(){
+			TaCerto.Controladora.CarregarPagina.htmlCorpo("menuInicial");
+		});
 	}
 };
