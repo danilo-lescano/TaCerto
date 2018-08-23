@@ -25,7 +25,7 @@ TaCerto.Controladora.CarregarPagina = {
 			document.getElementsByClassName(theLayer)[0].style.display = "block";
 		};
 		if(pagina === "menuInicial" || pagina === "login") resetLayers("softBlue");
-		else if(pagina === "menuCasual"){
+		else if(pagina === "menuCasual" || pagina === "loja"){
 			resetLayers("brownGradient");
 			document.getElementsByClassName("whiteBG")[0].style.display = "block";
 		}
