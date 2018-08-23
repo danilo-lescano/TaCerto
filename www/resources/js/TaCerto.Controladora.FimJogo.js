@@ -4,30 +4,35 @@ TaCerto.Controladora.FimJogo = {
 	model:{
 		tipoDeJogo: undefined,
 		missao: undefined,
-		intervaloCarrosel: undefined,
 
 	},
 	zerarVars: function(){
 		TaCerto.Controladora.FimJogo.tipoDeJogo = undefined;
 		TaCerto.Controladora.FimJogo.missao = undefined;
-		clearInterval(TaCerto.Controladora.FimJogo.intervaloCarrosel);
-		TaCerto.Controladora.FimJogo.intervaloCarrosel = undefined;
 	},
-	btnHome: function(){
-		TaCerto.Controladora.CarregarPagina.htmlCorpo('menuInicial');
-		TaCerto.Controladora.FimJogo.zerarVars();
+	btnHome: function(el){
+		TaCerto.GenFunc.pressClick(el,function(){
+			TaCerto.Controladora.CarregarPagina.htmlCorpo('menuInicial');
+			TaCerto.Controladora.FimJogo.zerarVars();
+		});
 	},
-	btnCasual: function(){
-		TaCerto.Controladora.MenuCasual.load();
-		TaCerto.Controladora.FimJogo.zerarVars();
+	btnCasual: function(el){
+		TaCerto.GenFunc.pressClick(el,function(){
+			TaCerto.Controladora.MenuCasual.load();
+			TaCerto.Controladora.FimJogo.zerarVars();
+		});
 	},
-	btnMissao: function(){
-		TaCerto.Controladora.MenuMissao.load();
-		TaCerto.Controladora.FimJogo.zerarVars();
+	btnMissao: function(el){
+		TaCerto.GenFunc.pressClick(el,function(){
+			TaCerto.Controladora.MenuMissao.load();
+			TaCerto.Controladora.FimJogo.zerarVars();
+		});
 	},
-	btnReiniciar: function(){
-		TaCerto.Controladora.Jogo.Load(TaCerto.Controladora.FimJogo.model.tipoDeJogo, TaCerto.Controladora.FimJogo.model.missao);
-		TaCerto.Controladora.FimJogo.zerarVars();
+	btnReiniciar: function(el){
+		TaCerto.GenFunc.pressClick(el,function(){
+			TaCerto.Controladora.Jogo.Load(TaCerto.Controladora.FimJogo.model.tipoDeJogo, TaCerto.Controladora.FimJogo.model.missao);
+			TaCerto.Controladora.FimJogo.zerarVars();
+		});
 	},
 
 

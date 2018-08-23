@@ -3,6 +3,8 @@ TaCerto.Controladora = TaCerto.Controladora || {};
 TaCerto.Controladora.Jogo = TaCerto.Controladora.Jogo || {};
 TaCerto.Controladora.Jogo.Load = function(tipo, nivelMissao){
 	function loadDesafio(tipo) {
+		if(tipo === "Explorador")
+		nivelMissao = 0;
 		console.log("LOADING GAME TYPE: " + tipo + "   MISSION LEVEL: " + (isNaN(nivelMissao) ? "NONE" : (nivelMissao+1)));
 		TaCerto.Controladora.Jogo[tipo].called();
 		if (!isNaN(nivelMissao)) TaCerto.Controladora.Jogo.Missao.start(nivelMissao);

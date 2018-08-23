@@ -80,10 +80,8 @@ TaCerto.Controladora.MenuMissao = {
 	clickMissao: function(mission){
 		var missao = document.getElementById('imgMissa' + (mission+1));
 		if (!missao.src.includes("resources/media/image/lock.png")){
-			missao.classList.add("animated"); missao.classList.add("flash"); 
-			setTimeout(function () {missao.classList.remove("animated", "flash");}, 1000);
-
-			setTimeout(function(){
+			
+			TaCerto.GenFunc.fadeInBtnClick(missao, function(){
 				TaCerto.Controladora.MenuMissao.modalOpenClose(true);
 
 				document.getElementById('objetivoP1').innerHTML = TaCerto.Estrutura.Fase[mission].descricaoObjetivos[0];
@@ -99,7 +97,7 @@ TaCerto.Controladora.MenuMissao = {
 				else document.getElementById('modalImgMissao2').src = "resources/media/image/uncheckedbox.png";
 				if (aux[2]) document.getElementById('modalImgMissao3').src = "resources/media/image/checkedbox.png";
 				else document.getElementById('modalImgMissao3').src = "resources/media/image/uncheckedbox.png";
-			}, 200);				
+			});				
 		}
 		else{
 			missao.classList.add("animated"); missao.classList.add("flash"); 
@@ -107,14 +105,14 @@ TaCerto.Controladora.MenuMissao = {
 		}
 	},
 	modalClick: function(el, botao){
-		TaCerto.GenFunc.waveBtnClick(el,
+		TaCerto.GenFunc.pressClick(el,
 		function(){
 			if(botao)
 				TaCerto.Controladora.MenuMissao.modalOpenClose(false);
 			if(botao === "play"){
 				TaCerto.Controladora.Jogo.Load(TaCerto.Controladora.MenuMissao.modoTipo, TaCerto.Controladora.MenuMissao.modoNivel);
 			}
-		},);
+		});
 
 		var e = window.event;
 		e.cancelBubble = true;
