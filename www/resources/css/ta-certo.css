@@ -1543,203 +1543,30 @@ span {
 		transform: translateZ(-500px);
 	}
 }
-/*flag*/
 /*--------------------------------------------------------------*/
 /*fimDeJogo*//*fim*/
 /*--------------------------------------------------------------*/
 
 
-
-
-
-.container1{
-	display: grid;
-	grid-template-columns: 33.33% 33.33% 33.33%;
-	grid-template-rows: 90px 40px  20px; /*altura da linha*/
-	margin-bottom: 1%;
-	margin-left: 2%;
-	margin-top: 20%;
-}
-
-.JogoPalavraDiv{
-	color: #294B95;
-}
-.container {
-	display: grid;
-	grid-template-columns: 33.33% 33.33% 33.33%;
-	grid-template-rows: 90px 40px  20px; /*altura da linha*/
-	margin-bottom: 1%;
-	margin-left: 2%;
-}
-
-/*div:nth-child(8) {
-	margin-top: 24%;
-}*/
-
-.minicontainer {
-	display: grid;
-	grid-template-columns: 45% 10% 45%;
-	grid-template-rows: 55px;
-	margin-bottom: 5%;
-	margin-left: -35px;
-	margin-top: 3%;
-	margin-right: -24px;
-}
-
-.oneContainer {
-	display: grid;
-	grid-template-columns: 100%;
-	grid-template-rows: 50px;
-}
-
-.mini-item3{
-	display: flex;
-	flex-direction: row;
-}
-
-.JogoBgBranco {
-	background: url("../media/image/fundo_missoes.png") 0% 0% no-repeat;
-	background-size: cover;
-	top: 0px;
-	width: 100%;
-	position: fixed;
-	z-index: -100;
-	max-width: 414px;
-	height: 100%;
-	/* vish */
-}
-
-.item-1, .item-2, .item-3 {
+/****************************************************************/
+/*fimDeJogo*//*inicio*/
+/****************************************************************/
+.lojaHeader{
 
 }
+.lojaCartaWrapper{
 
-.iconeMissao{
-	width:65%;
 }
+.lojaImgWrapper{
 
-.iconeExperiencia {
-	width: 30%;
-	margin-left: 5px;
 }
+.cartaBtnWrapper{
 
-.iconeHome{
-	width: 30%;
-	margin-left: 2%;
-	margin-top: 2%;
-	margin-bottom: 2%;
 }
-
-.iconeCompra {
-	width: 30%;
-	margin-left: 0;
-	margin-top: 2%;
-	margin-bottom: 2%;
+.cartaBtnImg{
+	
 }
-
-.mini-item3 span {
-	font-size: 37px;
-	color: white;
-	margin-top: 10px !important;
-	margin-right: 0 !important;
-}
-
-.botaoMissoes{
-	width: 15%;
-	position: fixed;
-	right: 8px;
-}
-
-.item-4, .item-5, .item-6 {
-	margin-top: 0;
-	display: flex;
-	flex-direction: row;
-}
-
-
-
-
-
-#bigBtn{
-	width: 33.33%;
-}
-.mediumBtn{
-	width: 49%;
-	display: inline-block;
-}
-.mediumBtn img{
-	width: 50%;
-}
-
-
-
-
-#dinheiroAtual, #xpAtual {
-	padding-top: 3px;
-}
-
-
-
-h1 {
-	font-family: 'panton', 'Pacifico', cursive;
-	color: #294B95;
-	max-height: 40px;
-	margin-top: 5%;
-}
-
-/**/
-.imagemCheck {
-	margin-top: 2%;
-	margin-bottom: 1%;
-	width: 50%;
-}
-
-/*botão fechar */
-.close {
-    color: #aaa;
-    float: top right;
-    font-size: 28px;
-    font-weight: bold;
-}
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* DICAS */
-.snackbar {
-    min-width: 35%;
-    margin-left: -25%;
-    margin-right: -25%;
-    background-color: #000080;
-    color: #fff;
-    text-align: center;
-    border-top-right-radius:15px;
-    border-top-left-radius: 15px;
-    padding: 5%;
-    position: fixed;
-    z-index: 1;
-    left: 50%;
-    bottom: 0;
-    font-size: 100%;
-	font-family: 'panton',  'Pacifico', cursive;
-}
-
-.mostraDicas {
-	width: 100%;
-	height: 100%;
-	padding: 0;
-	margin: 0;
-	position: absolute; 
-	top: 45px;
-	left: 0; 
-	display: none;
-	font-family: 'panton',  'Pacifico', cursive;
-	font-size: 100%;
-	color: #fff;
-	background-color: #000080 ;
-	border-top-left-radius: 15px;
-	border-top-right-radius: 15px;
-	padding-top: 10%;
-}
+/*flag*/
+/*--------------------------------------------------------------*/
+/*clock*//*fim*/
+/*--------------------------------------------------------------*/
