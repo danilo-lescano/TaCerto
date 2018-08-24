@@ -1551,20 +1551,96 @@ span {
 /****************************************************************/
 /*fimDeJogo*//*inicio*/
 /****************************************************************/
-.lojaHeader{
+.absolutediv{
+	width: 100%;
+	max-width: 414px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
 
+}
+.lojaHeader{
+}
+.btnVoltarLoja{
+	float: left;
+    margin: 2% 0 0 2%;
+    width: 12%;
 }
 .lojaCartaWrapper{
-
+	top: 50%;
+	padding-bottom: 124.8685%;
+	max-height: 645.2957px;
+	transform: translate(-50%, -46%);
 }
 .lojaImgWrapper{
-
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80%;
+}
+.lojaImgWrapper img{
+	width: 100%;
 }
 .cartaBtnWrapper{
-
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80%;
+	height: 100%;
 }
-.cartaBtnImg{
-	
+.cartaBtnWrapper::before{
+	content: 'LOJA';
+	position: absolute;
+    left: 50%;
+    top: 0;
+	transform: translate(-50%, -130%);
+    color: #123996;
+    font-size: 24px;
+    font-family: 'panton', sans-serif;
+}
+.blockLojaModal{
+	position: relative;
+}
+.blockLojaModal:nth-child(1){
+	height: 10%;
+}
+.blockLojaModal:nth-child(2){
+	height: 20%;
+}
+.blockLojaModal:nth-child(3){
+	height: 20%;
+}
+.blockLojaModal:nth-child(4){
+	height: 20%;
+}
+.blockLojaModal:nth-child(5){
+	height: 20%;
+}
+.blockLojaModal:nth-child(6){
+	height: 10%;
+}
+.cardBtnLoja{
+	width: 84%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: absolute;
+}
+.inviBtnCloseLoja{
+	position: absolute;
+	width: 10%;
+	padding-bottom: 10%;
+	top: 0;
+	right: 0;
+	height: 0;
+}
+@media only screen and (max-width: 319px) {
+	.lojaImgWrapper{
+		width: 70%;
+	}
+	.lojaCartaWrapper{
+		padding-bottom: 108.8685%;
+	}
 }
 /*flag*/
 /*--------------------------------------------------------------*/
