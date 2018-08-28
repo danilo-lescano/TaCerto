@@ -112,7 +112,7 @@ TaCerto.Controladora.Jogo.Geral = {
 		secondClock.style.WebkitAnimationPlayState = flag ? "paused" : "running";
 		secondClock.style.animationPlayState = flag ? "paused" : "running";
 		//blur game blend
-		var blurThis = [document.getElementsByClassName('gameBlend')[0], document.getElementsByClassName('jogo_wrapper')[0]];
+		var blurThis = [document.getElementsByClassName('gameBlend')[0], document.getElementsByClassName('corpo')[0]];
 		for (var i = 0; i < blurThis.length; i++) {
 			blurThis[i].style.filter = flag ? "blur(5px)" : "none";
 		}

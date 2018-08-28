@@ -1551,12 +1551,28 @@ span {
 /****************************************************************/
 /*fimDeJogo*//*inicio*/
 /****************************************************************/
+#loja{
+	position: fixed;
+    height: 100%;
+	width: 100%;
+	max-width: 414px;
+	top: 0;
+	left: 0;
+	display: none;
+	background-color: rgba(0,0,0,0.4);
+}
 .absolutediv{
 	width: 100%;
 	max-width: 414px;
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
+}
+.lojaHeader{
+	top: 0;
+}
+.lojaHeader .rightDiv span{
+    color: #5377ce;
 }
 .btnVoltarLoja{
 	float: left;
@@ -1592,7 +1608,7 @@ span {
     left: 50%;
     top: 0;
 	transform: translate(-50%, -130%);
-    color: #123996;
+    color: #5377ce;
     font-size: 24px;
     font-family: 'panton', sans-serif;
 }
@@ -1641,7 +1657,6 @@ span {
 		max-height: 451.7px;
 	}
 }
-/*flag*/
 /*--------------------------------------------------------------*/
 /*clock*//*fim*/
 /*--------------------------------------------------------------*/

@@ -6,7 +6,6 @@ TaCerto.HTML = [
 	{name:"menuCasual", conteudo:""},
 	{name:"countDown", conteudo:""},
 	{name:"loading", conteudo:""},
-	{name:"loja", conteudo:""},
 	{name:"jogo", conteudo:""},
 	{name:"jogo.normal", conteudo:""},
 	{name:"jogo.aleatorio", conteudo:""},
