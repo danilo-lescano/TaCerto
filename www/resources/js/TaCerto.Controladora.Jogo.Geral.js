@@ -83,7 +83,7 @@ TaCerto.Controladora.Jogo.Geral = {
 							document.getElementById("despauseModal").style.display = "none";
 							TaCerto.Controladora.Jogo.Geral.pauseJogo(false);
 						}
-					},auxTime);
+					},JSParaTeste.unPause ? JSParaTeste.unPause : auxTime);
 				}
 			}
 		}
@@ -112,7 +112,7 @@ TaCerto.Controladora.Jogo.Geral = {
 		secondClock.style.WebkitAnimationPlayState = flag ? "paused" : "running";
 		secondClock.style.animationPlayState = flag ? "paused" : "running";
 		//blur game blend
-		var blurThis = [document.getElementsByClassName('gameBlend')[0], document.getElementsByClassName('corpo')[0]];
+		var blurThis = [document.getElementsByClassName('gameBlend')[0], document.getElementsByClassName('jogo_wrapper')[0]];
 		for (var i = 0; i < blurThis.length; i++) {
 			blurThis[i].style.filter = flag ? "blur(5px)" : "none";
 		}
@@ -128,7 +128,8 @@ TaCerto.Controladora.Jogo.Geral = {
 		TaCerto.Controladora.Jogo.Geral.zerarVars();
 	},
 	loja: function(){
-
+		TaCerto.Controladora.Loja.display(true);
+		TaCerto.Controladora.Jogo.Geral.pauseJogo(true);
 	},
 	missao: function(){
 		TaCerto.Controladora.MenuMissao.load();
