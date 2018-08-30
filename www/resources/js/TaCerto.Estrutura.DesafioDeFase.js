@@ -60,6 +60,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 		{palavra: "Mexer",			flag: true,		nivel: 0},
 		{palavra: "Enxer",			flag: false,	nivel: 0},
 		{palavra: "hesitar",		flag: true,		nivel: 0},
+		{palavra: "ambíguo",		flag: true,		nivel: 0},
 	],
 	lacuna: [
 		{
