@@ -20,10 +20,10 @@ TaCerto.Controladora.Loja = {
             }
         });
     },
-    cardBtn: function(el){
-        TaCerto.GenFunc.fadeInBtnClick(el.parentElement,function(){
-            getElementById(el.id+"-modal").style.display = "block";
-         });
+    openCardModal: function(el){
+        //TaCerto.GenFunc.fadeInBtnClick(el.parentElement,function(){
+           // getElementById(el.id+"-modal").style.display = "block";
+        // });
     },
 	display: function(isModal){
         TaCerto.Controladora.Loja.modal = isModal;
