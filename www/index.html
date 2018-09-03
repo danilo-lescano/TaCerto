@@ -58,7 +58,7 @@
 		<div class="lojaHeader absolutediv">
 			<img class="btnVoltarLoja" src="resources/media/image/btn-voltar.png" alt="botao voltar" onclick="TaCerto.Controladora.Loja.voltarBtn(this)">
 			<div class="rightDiv">
-				<span id="moedas">100</span>
+				<span id="moedasLoja">100</span>
 				<img src="resources/media/image/missoes_atalho.png" alt="ilustracao dinheiro">
 			</div>
 		</div>
@@ -88,15 +88,28 @@
 		</div>
 
 		<div id="cartaVermelhaLoja-modal" class="modalComprarCarta">
+			<img class="modalComprarCartaImg" src="resources/media/image/modalComprarCartaImgVermelha.png">
 		</div>
 		<div id="cartaAzulLoja-modal" class="modalComprarCarta">
+			<img class="modalComprarCartaImg" src="resources/media/image/modalComprarCartaImgAzul.png">
 		</div>
-		<div id="cartaAmareloLoja-modal" class="modalComprarCarta">
+		<div id="cartaAmarelaLoja-modal" class="modalComprarCarta">
+			<img class="modalComprarCartaImg" src="resources/media/image/modalComprarCartaImgAmarela.png">
 		</div>
 		<div id="cartaVerdeLoja-modal" class="modalComprarCarta">
+			<img class="modalComprarCartaImg" src="resources/media/image/modalComprarCartaImgVerde.png">
+		</div>
+
+		<div class="cartaLojaModalBtn1">
+			<img class="modalComprarCartaImg" src="resources/media/image/modalcomprarbtn.png" onclick="TaCerto.Controladora.Loja.buyCard(this)">
+		</div>
+		<div class="cartaLojaModalBtn2" onclick="TaCerto.Controladora.Loja.closeMiniModal()"></div>
+
+		<div class="efeitoEspecial">
+			<img class="efeitoEspecialImg" src="resources/media/image/cartaVermelhaBack.png">
+			<img class="efeitoEspecialImg" src="resources/media/image/cartaVermelha.png">
 		</div>
 	</div>
-	
 </body>
 
 <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>

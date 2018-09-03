@@ -11,11 +11,12 @@ TaCerto.GenFunc = {
 		setTimeout(function(){
 			btn.classList.add("animated", "fadeIn");
         },10);*/
+        if(!btn){callback(); return;}
         btn.style.transform = "translateY(4px)";
         setTimeout(function(){
             callback();
             btn.style.transform = "translateY(0px)";
-    }, !isNaN(timeout) ? timeout : 200);
+        }, !isNaN(timeout) ? timeout : 200);
     },
     pressClick: function(btn, callback, timeout){
         if(!btn){callback(); return;}

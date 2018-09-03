@@ -1,12 +1,12 @@
 var TaCerto = TaCerto || {};
 TaCerto.Estrutura = TaCerto.Estrutura || {};
 TaCerto.Estrutura.Jogador = {
-	cartaVermelha: 999999,
-	cartaVerde: 999999,
-	cartaAmarela: 999999,
-	cartaAzul: 999999,
+	cartaVermelha: 1,
+	cartaVerde: 1,
+	cartaAmarela: 1,
+	cartaAzul: 1,
 
-	moeda: 0,
+	moeda: 10,
 	xp: 0,
 
 	missoes: {

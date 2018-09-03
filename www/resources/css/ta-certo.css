@@ -1649,6 +1649,64 @@ span {
 	right: 0;
 	height: 0;
 }
+.modalComprarCarta{
+    display: none;
+    width: 75%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-57.325%, -50%);
+}
+.modalComprarCartaImg{
+	width: 100%;
+}
+.cartaLojaModalBtn1{
+    width: 25%;
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-15%, 80%);
+}
+.cartaLojaModalBtn2{
+    display: none;
+	width: 7.5%;
+    padding-bottom: 7.5%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: rgba(0,0,0,0.4);
+    transform: translate(325%, -340%);
+}
+.efeitoEspecial{
+	width: 25%;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+	transform: translate(-50%, -50%);
+	animation: efeitoEspecial 10s;
+}
+@keyframes efeitoEspecial{
+	0%{transform: rotateY(36deg) translate(-50%, -50%);}
+	10%{transform: rotateY(72deg) translate(-50%, -50%);}
+	20%{transform: rotateY(108deg) translate(-50%, -50%);}
+	30%{transform: rotateY(144deg) translate(-50%, -50%);}
+	40%{transform: rotateY(180deg) translate(-50%, -50%);}
+	50%{transform: rotateY(216deg) translate(-50%, -50%);}
+	60%{transform: rotateY(252deg) translate(-50%, -50%);}
+	70%{transform: rotateY(288deg) translate(-50%, -50%);}
+	80%{transform: rotateY(324deg) translate(-50%, -50%);}
+	90%{transform: rotateY(360deg) translate(-50%, -50%);}
+}
+.efeitoEspecialImg{
+	width: 100%;
+	position: absolute;
+	backface-visibility: hidden;
+}
+.efeitoEspecialImg:nth-child(2){
+	transform: rotateY(180deg);
+}
 @media only screen and (max-width: 319px) {
 	.lojaImgWrapper, .cartaBtnWrapper{
 		width: 70%;
