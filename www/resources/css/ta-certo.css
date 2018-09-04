@@ -1679,25 +1679,21 @@ span {
     transform: translate(325%, -340%);
 }
 .efeitoEspecial{
+    top: 50%;
+	left: 50%;
 	width: 25%;
     display: block;
     position: absolute;
-    left: 50%;
-    top: 50%;
 	transform: translate(-50%, -50%);
-	animation: efeitoEspecial 10s;
+}
+.giragira{
+	width: 100%;
+	transform-style: preserve-3d;
+	animation: efeitoEspecial 1s infinite linear;
 }
 @keyframes efeitoEspecial{
-	0%{transform: rotateY(36deg) translate(-50%, -50%);}
-	10%{transform: rotateY(72deg) translate(-50%, -50%);}
-	20%{transform: rotateY(108deg) translate(-50%, -50%);}
-	30%{transform: rotateY(144deg) translate(-50%, -50%);}
-	40%{transform: rotateY(180deg) translate(-50%, -50%);}
-	50%{transform: rotateY(216deg) translate(-50%, -50%);}
-	60%{transform: rotateY(252deg) translate(-50%, -50%);}
-	70%{transform: rotateY(288deg) translate(-50%, -50%);}
-	80%{transform: rotateY(324deg) translate(-50%, -50%);}
-	90%{transform: rotateY(360deg) translate(-50%, -50%);}
+	from{transform: rotateY(0deg);}
+	to{transform: rotateY(359deg);}
 }
 .efeitoEspecialImg{
 	width: 100%;
