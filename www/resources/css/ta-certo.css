@@ -714,7 +714,9 @@ span {
 	display: block;
 	left: 0;
     right: 0;
-    margin: 0 auto;
+	margin: 0 auto;
+	font-family: 'panton';
+	color: #294B95;
 }
 #pauseModal .modalWrapper {
  	background-color: transparent;
@@ -817,11 +819,12 @@ span {
 #erros, #acertos, #economia {
 	font-size: 120%;
 	margin-top: 5%;
+	font-family: "Roboto";
 }
 #tempo{
 	color: #294B95;
 	font-size: 27px;
-	font-family:'Pacifico', cursive;
+	font-family:'Roboto';
 }
 .cartaWrapper{
 	position: absolute;
@@ -1675,7 +1678,6 @@ span {
     position: absolute;
     left: 50%;
     top: 50%;
-    background-color: rgba(0,0,0,0.4);
     transform: translate(325%, -340%);
 }
 .efeitoEspecial{
@@ -1698,10 +1700,10 @@ span {
 .efeitoEspecialImg{
 	width: 100%;
 	position: absolute;
-	backface-visibility: hidden;
+	transform: translateZ(0.1px);
 }
 .efeitoEspecialImg:nth-child(2){
-	transform: rotateY(180deg);
+	transform: translateZ(-0.1px);
 }
 @media only screen and (max-width: 319px) {
 	.lojaImgWrapper, .cartaBtnWrapper{
