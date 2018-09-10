@@ -7,31 +7,35 @@ TaCerto.Estrutura.Fase = {
 			0:{
 			},
 			1:{
-				maxAcertoConsecutivo: 3,
+				maxAcertoConsecutivo: 10,
 			},
 			2:{
 				acertoXtempo: [5, 20000],
 			},
 		},
 		funcObjetivos: ['terminarFase', 'acertoConsecutivo', 'acertoXtempo'],
-		descricaoObjetivos: ['complete a fase até o fim para receber essa conquista','consiga 3 respostas corretas consecutivas','consiga 5 respostas corretas em 20s',],
+		descricaoObjetivos: ['complete a fase até o fim para receber essa conquista','consiga 10 respostas corretas consecutivas','consiga 5 respostas corretas em 20s',],
 	},
 	1: {
 		tipo: 'Lacuna',
 		param:{
 			0:{
-				
-//consiga 30 moedas
+				moeda: 30,
 			},
 			1:{
-
+				cartaUsada:{
+					azul: 0,
+					vermelho: 1,
+					amarelo: 0,
+					verde: 0,
+				}
 			},
 			2:{
-
+				tempoMaximo:40000
 			},
 		},
-		funcObjetivos: ['acertoConsecutivo', 'acertoTotal', 'acertoXtempo'],
-		descricaoObjetivos: ['consiga 10 respostas corretas consecutivas','consiga 12 respostas corretas consecutivas','consiga 13 respostas corretas consecutivas',],
+		funcObjetivos: ['moedasMinimas', 'usarMinimoCarta', 'tempoMaximo'],
+		descricaoObjetivos: ['consiga 30 moedas ao fim do jogo','pule uma pergunta utilizando a carta vermelha','Termine o jogo com no máximo 30s',],
 	},
 	2: {
 		tipo: 'Normal',

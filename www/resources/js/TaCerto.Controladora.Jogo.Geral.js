@@ -350,6 +350,7 @@ TaCerto.Controladora.Jogo.Geral = {
 		}, Math.ceil(tempo/animacoes));
 	},
 	fimDeJogo: function(){
+		TaCerto.Estrutura.Jogador.moeda += TaCerto.Controladora.Jogo.Geral.gameModel.moeda;
 		TaCerto.Controladora.FimJogo.start();
 		TaCerto.Controladora.Jogo.Geral.zerarVars();
 	},

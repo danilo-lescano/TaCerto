@@ -200,8 +200,8 @@ TaCerto.Estrutura.DesafioDeFase = {
 		{
 			resposta: [
 				{conteudo: "Fazem", position: -1},
-				{conteudo: "Faz", position: 1},
-				{conteudo: "Há", position: 1},
+				{conteudo: "Faz", position: 0},
+				{conteudo: "Há", position: 0},
 			],
 			fraseXlacuna: [
 				{frase: false},
@@ -212,7 +212,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 		{
 			resposta: [
 				{conteudo: "Houveram", position: -1},
-				{conteudo: "Houve", position: 1},
+				{conteudo: "Houve", position: 0},
 			],
 			fraseXlacuna: [
 				{frase: false},
@@ -234,8 +234,8 @@ TaCerto.Estrutura.DesafioDeFase = {
 		},
 		{
 			resposta: [
-				{conteudo: "Aonde", position: -1},
-				{conteudo: "Onde", position: 1},
+				{conteudo: "Aonde", position: 0},
+				{conteudo: "Onde", position: -1},
 			],
 			fraseXlacuna: [
 				{frase: false},
@@ -245,49 +245,157 @@ TaCerto.Estrutura.DesafioDeFase = {
 		},
 		{
 			resposta: [
-				{conteudo: "", position: -1},
-				{conteudo: "", position: 1},
+				{conteudo: "Aonde", position: -1},
+				{conteudo: "Onde", position: 0},
 			],
 			fraseXlacuna: [
-				{frase: true, conteudo: ""},
 				{frase: false},
-				{frase: true, conteudo: ""},
+				{frase: true, conteudo: "você mora?"},
 			],
 			nivel: 0,
 		},
 		{
 			resposta: [
-				{conteudo: "", position: -1},
-				{conteudo: "", position: 1},
+				{conteudo: "há", position: 1},
+				{conteudo: "a", position: -1},
+				{conteudo: "à", position: -1},
 			],
 			fraseXlacuna: [
-				{frase: true, conteudo: ""},
+				{frase: true, conteudo: "Eu moro aqui"},
 				{frase: false},
-				{frase: true, conteudo: ""},
+				{frase: true, conteudo: "muito tempo."},
 			],
 			nivel: 0,
 		},
 		{
 			resposta: [
-				{conteudo: "", position: -1},
-				{conteudo: "", position: 1},
+				{conteudo: "há", position: 1},
+				{conteudo: "a", position: -1},
+				{conteudo: "à", position: -1},
 			],
 			fraseXlacuna: [
-				{frase: true, conteudo: ""},
+				{frase: true, conteudo: "Jacinta chegou"},
 				{frase: false},
-				{frase: true, conteudo: ""},
+				{frase: true, conteudo: "duas horas."},
 			],
 			nivel: 0,
 		},
 		{
 			resposta: [
-				{conteudo: "", position: -1},
-				{conteudo: "", position: 1},
+				{conteudo: "Vem", position: -1},
+				{conteudo: "Vêm", position: 1},
+				{conteudo: "Vêem", position: -1},
 			],
 			fraseXlacuna: [
-				{frase: true, conteudo: ""},
+				{frase: true, conteudo: "Rafael e Lucas"},
 				{frase: false},
-				{frase: true, conteudo: ""},
+				{frase: true, conteudo: "aqui sempre"},
+			],
+			nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Tem", position: -1},
+				{conteudo: "Têm", position: 1},
+				{conteudo: "Têns", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Joana"},
+				{frase: false},
+				{frase: true, conteudo: "rinite"},
+			],
+			nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Mesma", position: 1},
+				{conteudo: "Mesmo", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Isabella"},
+				{frase: false},
+				{frase: true, conteudo: "disse isso."},
+			],
+			nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Em vez", position: -1},
+				{conteudo: "Ao invés", position: 0},
+			],
+			fraseXlacuna: [
+				{frase: false},
+				{frase: true, conteudo: "de falar, poderia calar a boca."},
+			],
+			nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Em vez", position: 0},
+				{conteudo: "Ao invés", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Não trabalhe hoje, se está doente."},
+				{frase: false},
+				{frase: true, conteudo: "disso, vá ao médico."},
+			],
+			nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "viagem", position: 0},
+				{conteudo: "viajem", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "A"},
+				{frase: false},
+				{frase: true, conteudo: "de Chihiro é um filme estranho."},
+			],
+			nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "traz", position: 1},
+				{conteudo: "trás", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Me"},
+				{frase: false},
+				{frase: true, conteudo: "uma água."},
+			],
+			nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "traz", position: -1},
+				{conteudo: "trás", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Crianças no banco de"},
+				{frase: false},
+				{frase: true, conteudo: "sempre."},
+			],
+			nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "demais", position: 1},
+				{conteudo: "de mais", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "O guri gritou"},
+				{frase: false},
+			],
+			nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "demais", position: -1},
+				{conteudo: "de mais", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Eu tenho dinheiro"},
+				{frase: false},
 			],
 			nivel: 0,
 		},

@@ -148,9 +148,9 @@ TaCerto.Controladora.Jogo.Missao = {
 				return true;
 			return false;
 		},
-		tempoExato: function(objetivo){
+		tempoMaximo: function(objetivo){
 			var param = TaCerto.Estrutura.Fase[TaCerto.Controladora.Jogo.Missao.parametros.missao].param[objetivo];
-			if(TaCerto.Controladora.Jogo.Missao.parametros.fimDeJogo && TaCerto.Controladora.Jogo.Geral.gameModel.tempo === param.tempoExato)
+			if(TaCerto.Controladora.Jogo.Missao.parametros.fimDeJogo && TaCerto.Controladora.Jogo.Geral.gameModel.tempo <= param.tempoMaximo)
 				return true;
 			return false;
 		},

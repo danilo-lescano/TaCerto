@@ -69,10 +69,12 @@ TaCerto.Controladora.MenuMissao = {
 			var level = calculaLvl(TaCerto.Estrutura.Jogador.xp);
 			for (var i = 0; i < level+3 && i < 9; i++) {
 				let aux = TaCerto.Estrutura.Jogador.missoes[i];
-				if (aux[0] && aux[1] && aux[2])
-					document.getElementById('imgMissa'+(i+1)).src = "resources/media/image/missao" + (i+1) + ".png";
-				else
-					document.getElementById('imgMissa'+(i+1)).src = "resources/media/image/missao" + (i+1) + "SE.png";
+				if(document.getElementById('imgMissa'+(i+1))){
+					if (aux[0] && aux[1] && aux[2])
+						document.getElementById('imgMissa'+(i+1)).src = "resources/media/image/missao" + (i+1) + ".png";
+					else
+						document.getElementById('imgMissa'+(i+1)).src = "resources/media/image/missao" + (i+1) + "SE.png";
+				}
 			}
 		} displayMissao();
 	},
