@@ -343,7 +343,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 		},
 		{
 			resposta: [
-				{conteudo: "viagem", position: 0},
+				{conteudo: "viagem", position: 1},
 				{conteudo: "viajem", position: -1},
 			],
 			fraseXlacuna: [

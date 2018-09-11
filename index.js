@@ -19,7 +19,7 @@ http.createServer(function (req, res) {
 	console.log(fs.existsSync(pastaDeHTMLs+pathnameURL) + " request for path: " + req.url);
 
 	function errou404(){
-			res.end();
+		res.end();
 	}
 	//ignorados
 	if(pathnameURL === '/favicon.ico') {

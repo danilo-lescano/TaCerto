@@ -2,8 +2,8 @@ var TaCerto = TaCerto || {};
 TaCerto.Controladora = TaCerto.Controladora || {};
 TaCerto.Controladora.PreLoad = {
 	leftHTML: TaCerto.HTML.length,
-	leftIMAGEM: 0,//TaCerto.IMAGEM.length,
-	leftSOUND: 0,//TaCerto.SOUND.length,
+	leftIMAGEM: TaCerto.IMAGEM.length,
+	leftSOUND: TaCerto.SOUND.length,
 	tempoDeLoading: new Date().getTime(),
 	preloadHTML: function(){
 		for (var i = 0; i < TaCerto.HTML.length; i++) {

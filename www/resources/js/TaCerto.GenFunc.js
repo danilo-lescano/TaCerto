@@ -25,9 +25,6 @@ TaCerto.GenFunc = {
             img = btn.style.backgroundImage;
             img = img.replace('url(','').replace(')','').replace('"','').replace("'",'').replace('"','').replace("'",'').replace('.png','') + "press.png";
             btn.style.backgroundImage = "url("+img+")";
-            console.log(btn.style.backgroundImage);
-            console.log(img);
-            console.log("humhum");
         }
         setTimeout(function(){
             callback();
