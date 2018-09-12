@@ -26,21 +26,6 @@ TaCerto.Controladora.Jogo.Missao = {
 
 		missao: undefined,
 		flagObjetivo: [false, false, false],
-		/*tipo: '',
-		acertoMinimo: 0,
-		acertoMinimoConsecutivo: 0,
-		erroMaximo: 0,
-		erroMaximoConsecutivo: 0,
-		acertoXtempo: {
-			xAcerto: 0,
-			xSegundo: 0
-		},
-		maxCartaUsada: {
-			azul: 0,
-			vermelho: 0,
-			amarelo: 0,
-			verde: 0
-		},*/
 	},
 
 	zerarVars: function(){
@@ -67,17 +52,6 @@ TaCerto.Controladora.Jogo.Missao = {
 		TaCerto.Controladora.Jogo.Missao.parametros.flagObjetivo[0] = false;
 		TaCerto.Controladora.Jogo.Missao.parametros.flagObjetivo[1] = false;
 		TaCerto.Controladora.Jogo.Missao.parametros.flagObjetivo[2] = false;
-		/*TaCerto.Controladora.Jogo.Missao.parametros.tipo = '';
-		TaCerto.Controladora.Jogo.Missao.parametros.acertoMinimo = 0;
-		TaCerto.Controladora.Jogo.Missao.parametros.acertoMinimoConsecutivo = 0;
-		TaCerto.Controladora.Jogo.Missao.parametros.erroMaximo = 0;
-		TaCerto.Controladora.Jogo.Missao.parametros.erroMaximoConsecutivo = 0;
-		TaCerto.Controladora.Jogo.Missao.parametros.acertoXtempo.xAcerto = 0;
-		TaCerto.Controladora.Jogo.Missao.parametros.acertoXtempo.xSegundo = 0;
-		TaCerto.Controladora.Jogo.Missao.parametros.maxCartaUsada.azul = 0;
-		TaCerto.Controladora.Jogo.Missao.parametros.maxCartaUsada.vermelho = 0;
-		TaCerto.Controladora.Jogo.Missao.parametros.maxCartaUsada.amarelo = 0;
-		TaCerto.Controladora.Jogo.Missao.parametros.maxCartaUsada.verde = 0;*/
 	},
 
 	objetivo: {
@@ -160,9 +134,7 @@ TaCerto.Controladora.Jogo.Missao = {
 			return false;
 		},
 	},
-	trocarBtn: function(){
-
-	},
+	
 	checkObjetivo: function(){
 		function atualizarVars(){
 			if(TaCerto.Controladora.Jogo.Missao.parametros.acerto < TaCerto.Controladora.Jogo.Geral.gameModel.acerto){
@@ -202,7 +174,5 @@ TaCerto.Controladora.Jogo.Missao = {
 		TaCerto.Controladora.Jogo.Geral.zerarVars();
 
 		TaCerto.Controladora.Jogo.Missao.parametros.missao = nivelMissao;
-
-		TaCerto.Controladora.Jogo.Missao.trocarBtn();
 	},
 };
