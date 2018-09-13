@@ -84,7 +84,7 @@ TaCerto.Controladora.FimJogo = {
 			displyModal = document.getElementById(displyModal);
 			displyModal.classList.add("flipInY");
 
-			if(flagMissaoAcertos >= 0){
+			if(flagMissaoAcertos){
 				var el = document.getElementsByClassName("fimPontoE")[1];
 				var html;
 				var mis = TaCerto.Estrutura.Fase[TaCerto.Controladora.FimJogo.model.missao];

@@ -87,6 +87,8 @@ TaCerto.Controladora.Jogo.Missao = {
 		},
 		usarMinimoCarta: function(objetivo){
 			var param = TaCerto.Estrutura.Fase[TaCerto.Controladora.Jogo.Missao.parametros.missao].param[objetivo];
+			console.log(param);
+			console.log(TaCerto.Controladora.Jogo.Missao.parametros.cartaUsada);
 
 			if (TaCerto.Controladora.Jogo.Missao.parametros.cartaUsada.cartaAzul >= param.cartaUsada.azul &&
 				TaCerto.Controladora.Jogo.Missao.parametros.cartaUsada.cartaVerde >= param.cartaUsada.verde &&
@@ -153,12 +155,9 @@ TaCerto.Controladora.Jogo.Missao = {
 			}
 
 			TaCerto.Controladora.Jogo.Missao.parametros.cartaUsada = TaCerto.Controladora.Jogo.Geral.gameModel.cartaUsada;
-		} 
-		
-		if(!TaCerto.Controladora.Jogo.Missao.parametros.fimDeJogo) atualizarVars();
+		} if(!TaCerto.Controladora.Jogo.Missao.parametros.fimDeJogo) atualizarVars();
 
 		var fase = isNaN(TaCerto.Controladora.Jogo.Missao.parametros.missao) ? [] : TaCerto.Estrutura.Fase[TaCerto.Controladora.Jogo.Missao.parametros.missao].funcObjetivos;
-		
 		for (var i = 0; i < fase.length; i++){
 			if(!TaCerto.Controladora.Jogo.Missao.parametros.flagObjetivo[i]){
 				var flag = TaCerto.Controladora.Jogo.Missao.objetivo[fase[i]](i);
@@ -171,7 +170,6 @@ TaCerto.Controladora.Jogo.Missao = {
 		}
 		if(TaCerto.Controladora.Jogo.Missao.parametros.fimDeJogo) TaCerto.Controladora.Jogo.Missao.zerarVars();
 	},
-	
 	start: function(nivelMissao){
 		TaCerto.Controladora.Jogo.Geral.zerarVars();
 

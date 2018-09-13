@@ -398,7 +398,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 			],
 			nivel: 0,
-		}
+		},
 	],
 
 };
