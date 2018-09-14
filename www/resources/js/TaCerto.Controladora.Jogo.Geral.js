@@ -27,10 +27,19 @@ TaCerto.Controladora.Jogo.Geral = {
 		},
 	},
 	gameClockInterval: function () {
-		TaCerto.Controladora.Jogo.Geral.gameModel.tempo = 0;
+		if(this.gameModel.tipoDeJogo.equals("HardCore"))
+			this.gameModel.tempo = 60;
+		else
+			this.gameModel.tempo = 0;
+
 		TaCerto.Controladora.Jogo.Geral.gameModel.intervalo = setInterval(function (){
-			if (!TaCerto.Controladora.Jogo.Geral.gameModel.paused && !TaCerto.Controladora.Jogo.Geral.gameModel.frozen)
+			if (!TaCerto.Controladora.Jogo.Geral.gameModel.paused && !TaCerto.Controladora.Jogo.Geral.gameModel.frozen && !(TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo.equals("HardCore")))
 				document.getElementById('tempo').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.tempo++;
+			else{
+				document.getElementById('tempo').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.tempo--;
+				if(TaCerto.Controladora.Jogo.Geral.gameModel.tempo === 0)
+					TaCerto.Controladora.Jogo.Geral.fimDeJogo();
+			}
 		}, 1000);
 	},
 	loadDesafio: function(){
@@ -40,7 +49,7 @@ TaCerto.Controladora.Jogo.Geral = {
 		if(TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo !== ''){
 			TaCerto.Controladora.Jogo[TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo].zerarVars();
 		}
-
+		
 		TaCerto.Controladora.Jogo.Geral.gameModel.acerto = 0;
 		TaCerto.Controladora.Jogo.Geral.gameModel.erro = 0;
 		TaCerto.Controladora.Jogo.Geral.gameModel.moeda = 0;

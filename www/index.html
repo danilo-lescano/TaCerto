@@ -181,6 +181,15 @@
 		return this;
 	};
 
+	String.prototype.equals = function(str){
+		
+		if(this.toString() === str){
+			return true;
+		}
+
+		return false;
+	}
+
 	function Timer(callback, delay){
 		function Timer(callback, delay) {
 			var timerId, start, remaining = delay;
