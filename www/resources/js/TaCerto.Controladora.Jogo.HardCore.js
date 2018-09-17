@@ -8,7 +8,7 @@ TaCerto.Controladora.Jogo.HardCore = {
 		document.getElementsByClassName("second")[0].style.animation = "timeRev 60s infinite linear";
 	},
 	loadDesafio: function () {
-		var desafioNum = TaCerto.Controladora.Jogo.Geral.gameModel.desafioNum = 57;//ORIGINAL: 15
+		var desafioNum = TaCerto.Controladora.Jogo.Geral.gameModel.desafioNum = 300;//ORIGINAL: 15
 		var shuffledDesafio = this.shuffleDesafio();
 
 		for (var i = 0; i < desafioNum; i++)
