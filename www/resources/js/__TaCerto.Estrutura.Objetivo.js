@@ -1,7 +1,7 @@
 var TaCerto = TaCerto || {};
 TaCerto.Estrutura = TaCerto.Estrutura || {};
 TaCerto.Estrutura.Objetivo = {
-	0: [
+	0: [//iniciando nova branch
 		'consiga 00 respostas corretas consecutivas',
 		'consiga 01 respostas corretas consecutivas',
 		'consiga 02 respostas corretas consecutivas',

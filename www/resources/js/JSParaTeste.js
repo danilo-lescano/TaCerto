@@ -1,5 +1,5 @@
 var JSParaTeste = {
-    /*     */
+    /*      */
 
     loadGif: 1,
     loading: 1,
