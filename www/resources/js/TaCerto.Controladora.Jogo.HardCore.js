@@ -22,6 +22,7 @@ TaCerto.Controladora.Jogo.HardCore = {
 			document.getElementsByClassName("JogoBg7")[0].style.backgroundImage = 'url("resources/media/image/fundo.png")';
 			document.getElementsByClassName("JogoBg6")[0].style.backgroundImage = 'url("resources/media/image/fundo.png")';
 		}, 500);
+		// asasd
 	},
 	btnResposta: function(resp){
 		var botao, flagResp;
