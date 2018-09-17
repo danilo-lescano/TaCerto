@@ -5,9 +5,6 @@ TaCerto.Controladora.Jogo.Aurelio = {
 	DESAFIO: [],
 	called: function () {
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("jogo", ["aurelio"], ["JogoTipo"]);
-		setTimeout(function(){
-			TaCerto.Controladora.Jogo.Geral.fimDeJogo();
-		}, 100);
 	},
 	loadDesafio: function () {
 
