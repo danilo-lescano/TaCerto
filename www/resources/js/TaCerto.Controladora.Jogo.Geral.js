@@ -83,7 +83,7 @@ TaCerto.Controladora.Jogo.Geral = {
 							document.getElementById("despauseModal").style.display = "none";
 							TaCerto.Controladora.Jogo.Geral.pauseJogo(false);
 						}
-					},JSParaTeste.unPause ? JSParaTeste.unPause : auxTime);
+					},isNaN(JSParaTeste.unPause) ? auxTime : JSParaTeste.unPause);
 				}
 			}
 		}

@@ -222,6 +222,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 		},
 		{
 			resposta: [
+				{conteudo: "à", position: -1},
 				{conteudo: "a", position: 1},
 				{conteudo: "do que", position: -1},
 			],
