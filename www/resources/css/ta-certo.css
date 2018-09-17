@@ -442,7 +442,7 @@ span {
 	color: #294B95;
 	font-size: 18px;
 	font-family: 'Roboto', sans-serif;
-	margin: 0.5vw 0.5vw 0 0.5vw;
+	margin: 2.5vw 2.5vw 0 2.5vw;
 	float: right;
 }
 .leftDiv {
@@ -640,7 +640,6 @@ span {
 	position: fixed;
 	z-index: 10;
 	width: 100%;
-	max-width: 414px;
 	height: 100%;
 	overflow: auto;
 	background-color: rgba(0,0,0,0.4);
@@ -898,21 +897,9 @@ span {
 }
 .combo3{
 	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-	-webkit-animation: Gradient 0.5s ease infinite;
-	-moz-animation: Gradient 0.5s ease infinite;
 	animation: Gradient 0.5s ease infinite;
 	background-repeat: no-repeat;
 	background-size: 400% 400%;
-}
-@-webkit-keyframes Gradient {
-	0% {background-position: 0% 50%;}
-	50% {background-position: 100% 50%;}
-	100% {background-position: 0% 50%;}
-}
-@-moz-keyframes Gradient {
-	0% {background-position: 0% 50%;}
-	50% {background-position: 100% 50%;}
-	100% {background-position: 0% 50%;}
 }
 @keyframes Gradient {
 	0% {background-position: 0% 50%;}
@@ -929,10 +916,10 @@ span {
 	width: 100%;
 }
 .lacunaAlternativa{
-	padding: 1px 2px 1px 2px;
+	padding: 5px 10px 5px 10px;
 	color: white;
 	display: inline-block;
-	margin: 2px 0 2px 0;
+	margin: 3px 0 3px 0;
 	background-color: #3055a7;
 	border-radius: 3px;
 	font-size: 18px;
@@ -947,11 +934,11 @@ span {
 	position: relative;
 	bottom: -3px;
 	display: inline-block;
-	margin: 0px 2px 0px 2px;
-	border-radius: 3px;
-	background-color: #c7c4ab;
-	min-height: 22px;
-	min-width: 44px;
+    margin: 0px 5px 0px 5px;
+    border-radius: 3px;
+    background-color: #c7c4ab;
+    min-height: 25px;
+    min-width: 60px;
 	color: black;
 	/*box-shadow: 2px 2px #0E214B;*/
 }
@@ -995,8 +982,6 @@ span {
 	background-repeat: no-repeat;
 	background-position: 0% 0%;
 }
-
-
 @media only screen and (min-width: 415px) {
 	#botoes img {
 		margin: 0 12%;
@@ -1451,13 +1436,12 @@ span {
 
 
 /****************************************************************/
-/*fimDeJogo*//*inicio*/
+/*loja*//*inicio*/
 /****************************************************************/
 #loja{
 	position: fixed;
     height: 100%;
 	width: 100%;
-	max-width: 414px;
 	z-index: 11;
 	top: 0;
 	left: 0;
@@ -1466,7 +1450,6 @@ span {
 }
 .absolutediv{
 	width: 100%;
-	max-width: 414px;
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
@@ -1483,16 +1466,18 @@ span {
     width: 12%;
 }
 .lojaCartaWrapper{
+    --position: calc(2vw);
+	--proporcao: calc(1660 / 1065);
 	top: 50%;
-	height: 124.69vw;
-	max-height: 520.8px;
-	transform: translate(-50%, -46%);
+	height: calc(70vw * var(--proporcao));
+	transform: translate(-50%, calc(-50% + var(--position)));
 }
 .lojaImgWrapper{
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 80%;
+    --position: calc(2vw);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 70%;
 }
 .lojaImgWrapper img{
 	width: 100%;
@@ -1501,9 +1486,8 @@ span {
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
-	width: 80%;
+	width: 70%;
 	height: 100%;
-	max-height: 520.2px;
 }
 .cartaBtnWrapper::before{
 	content: 'LOJA';
@@ -1518,28 +1502,16 @@ span {
 .blockLojaModal{
 	position: relative;
 }
-.blockLojaModal:nth-child(1){
+.blockLojaModal:nth-child(1), .blockLojaModal:nth-child(6){
 	height: 10%;
 }
-.blockLojaModal:nth-child(2){
+.blockLojaModal:nth-child(2), .blockLojaModal:nth-child(3), .blockLojaModal:nth-child(4), .blockLojaModal:nth-child(5){
 	height: 20%;
-}
-.blockLojaModal:nth-child(3){
-	height: 20%;
-}
-.blockLojaModal:nth-child(4){
-	height: 20%;
-}
-.blockLojaModal:nth-child(5){
-	height: 20%;
-}
-.blockLojaModal:nth-child(6){
-	height: 10%;
 }
 .cardBtnLoja{
-	width: 84%;
 	top: 50%;
 	left: 50%;
+	width: 84%;
 	transform: translate(-50%, -50%);
 	position: absolute;
 }
@@ -1614,5 +1586,5 @@ span {
 	}
 }
 /*--------------------------------------------------------------*/
-/*clock*//*fim*/
+/*loja*//*fim*/
 /*--------------------------------------------------------------*/
