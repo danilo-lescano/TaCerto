@@ -231,7 +231,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 		{palavra: "Indentidade",	flag: false,	nivel: 0},
 		{palavra: "Iminente",		flag: false,	nivel: 0},
 		{palavra: "Igual",			flag: true,		nivel: 0},
-		{palavra: "Ingual",		flag: false,	nivel: 0},
+		{palavra: "Ingual",			flag: false,	nivel: 0},
 
 		{palavra: "Jeito",			flag: true,		nivel: 0},
 
@@ -387,7 +387,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 		{palavra: "Xingar",			flag: true,		nivel: 0},
 		{palavra: "Xuxu",			flag: false,	nivel: 0},
 		{palavra: "Xícara",			flag: true,		nivel: 0},
-		{palavra: "Xenofobia",		flag: true,	nivel: 0},
+		{palavra: "Xenofobia",		flag: true,		nivel: 0},
 		{palavra: "Xarope",			flag: true,		nivel: 0},
 		{palavra: "Xifre",			flag: false,	nivel: 0},
 	],

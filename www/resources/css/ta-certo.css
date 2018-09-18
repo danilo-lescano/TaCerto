@@ -999,6 +999,47 @@ span {
 
 
 /****************************************************************/
+/*jogo explorador*//*inicio*/
+/****************************************************************/
+.mesaDeDesafiosExplorador{
+	width: 100%;
+	text-align: auto;
+}
+.emojiExploradorWrapper, .palavraExploradorWrapper{
+	display: inline-block;
+	width: 49%;
+}
+.emojiExplorador, .palavraExplorador{
+	position: relative;
+	width: 100%;
+	height: calc(50px + 3vh);
+}
+.palavraExplorador .exploradorSpan{
+	font-size: calc(20px + 1vw);
+	padding: 15px 10px;
+}
+.emojiExplorador .exploradorSpan{
+	font-size: calc(50px + 1vw);
+	padding: 0 5px;
+}
+.exploradorSpan{
+	position: absolute;
+	margin: 0 auto;
+	top: 50%;
+	left: 50%;
+	line-height: 1;
+	transform: translate(-50%, -50%);
+	border-radius: 5px;
+	border: 3px double red;
+	box-shadow: 2px 2px rgb(117, 114, 93);
+	background-color: whitesmoke;
+}
+/*--------------------------------------------------------------*/
+/*jogo explorador*//*fim*/
+/*--------------------------------------------------------------*/
+
+
+/****************************************************************/
 /*efeito*//*inicio*/
 /****************************************************************/
 #clockIce{
