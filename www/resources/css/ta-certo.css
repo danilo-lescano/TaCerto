@@ -1005,11 +1005,11 @@ span {
 	width: 100%;
 	text-align: auto;
 }
-.emojiExploradorWrapper, .palavraExploradorWrapper{
+.colunaWrapper{
 	display: inline-block;
 	width: 49%;
 }
-.emojiExplorador, .palavraExplorador{
+.itemColunaExplorador{
 	position: relative;
 	width: 100%;
 	height: calc(50px + 3vh);
@@ -1024,29 +1024,29 @@ span {
 	border-radius: 5px;
 	border: 3px double darkgrey;
 	box-shadow: 2px 2px rgb(117, 114, 93);
-	background-image: url("../media/image/box_janela.png");
 	background-size: cover;
 	background-color: whitesmoke;
+	background-image: url("../media/image/box_janela.png");
 	background-blend-mode: multiply;
 }
-.palavraExplorador .exploradorSpan{
+.palavraSpan{
 	font-size: calc(20px + 1vw);
 	text-shadow: 1.5px 1.5px darkgrey;
 	padding: 15px 10px;
 }
-.emojiExplorador .exploradorSpan{
+.emojiSpan{
 	font-size: calc(50px + 1vw);
 	text-shadow: 2.5px 2.5px darkgrey;
 	padding: 0 5px;
 }
-.emojiExplorador:nth-child(1) .exploradorSpan{
-	border: 3px double red;
+.itemColunaPrincipal:nth-child(1) .exploradorSpan{
+	border: 3px solid red;
 }
-.emojiExplorador:nth-child(2) .exploradorSpan{
-	border: 3px double blue;
+.itemColunaPrincipal:nth-child(2) .exploradorSpan{
+	border: 3px solid rgb(75, 75, 156);
 }
-.emojiExplorador:nth-child(3) .exploradorSpan{
-	border: 3px double green;
+.itemColunaPrincipal:nth-child(3) .exploradorSpan{
+	border: 3px solid green;
 }
 /*--------------------------------------------------------------*/
 /*jogo explorador*//*fim*/

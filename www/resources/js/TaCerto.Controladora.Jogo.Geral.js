@@ -33,12 +33,14 @@ TaCerto.Controladora.Jogo.Geral = {
 			this.gameModel.tempo = 0;
 
 		TaCerto.Controladora.Jogo.Geral.gameModel.intervalo = setInterval(function (){
-			if (!TaCerto.Controladora.Jogo.Geral.gameModel.paused && !TaCerto.Controladora.Jogo.Geral.gameModel.frozen && !(TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo.equals("HardCore")))
+			if (!TaCerto.Controladora.Jogo.Geral.gameModel.paused && !TaCerto.Controladora.Jogo.Geral.gameModel.frozen && !(TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo.equals("HardCore"))){
 				document.getElementById('tempo').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.tempo++;
-			else{
+			}
+			else if(TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo.equals("HardCore")){
 				document.getElementById('tempo').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.tempo--;
-				if(TaCerto.Controladora.Jogo.Geral.gameModel.tempo === 0)
+				if(TaCerto.Controladora.Jogo.Geral.gameModel.tempo === 0){
 					TaCerto.Controladora.Jogo.Geral.fimDeJogo();
+				}
 			}
 		}, 1000);
 	},
