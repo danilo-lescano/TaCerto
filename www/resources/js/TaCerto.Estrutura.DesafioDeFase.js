@@ -717,5 +717,48 @@ TaCerto.Estrutura.DesafioDeFase = {
 			nivel: 0,
 		},
 	],
-
+	explorador: [
+		{
+			palavra: false,
+			coluna1: [
+				{id: 0,		emoji: true,	conteudo:"🚲"},
+				{id: 1,		emoji: true,	conteudo:"🦎"},
+				{id: 2,		emoji: true,	conteudo:"🍊"}
+			],
+			coluna2: [
+				{id: 0,		conteudo:"Magrela"},
+				{id: 1,		conteudo:"Briba"},
+				{id: 2,		conteudo:"Tangerina"}
+			],
+			nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{id: 0,		emoji: true,	conteudo:"🚲"},
+				{id: 1,		emoji: true,	conteudo:"🦎"},
+				{id: 2,		emoji: true,	conteudo:"🍊"}
+			],
+			coluna2: [
+				{id: 0,		conteudo:"Magrela"},
+				{id: 1,		conteudo:"Briba"},
+				{id: 2,		conteudo:"Tangerina"}
+			],
+			nivel: 0
+		},
+		{
+			palavra: true,
+			coluna1: [
+				{id: 0,		conteudo:"Charlar"},
+				{id: 0,		conteudo:"Conversar"},
+				{id: 0,		conteudo:"Prosear"}
+			],
+			coluna2: [
+				{id: 1,		conteudo:"Magrela"},
+				{id: 2,		conteudo:"Briba"},
+				{id: 3,		conteudo:"Tangerina"}
+			],
+			nivel: 0
+		},
+	]
 };
