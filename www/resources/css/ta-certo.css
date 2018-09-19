@@ -676,7 +676,9 @@ span {
     width: 100%;
     left: 50%;
     transform: translate(-50%);
-    text-align: center;
+	text-align: center;
+	z-index: 5;
+
 }
 #botoes img{
 	width: 25%;
@@ -736,6 +738,7 @@ span {
 	min-height: 4vh;
 	width: 100%;
 	max-width: 414px;
+	z-index: 5;
 }
 .bucketCards{
 	width: 85%;
@@ -1587,3 +1590,23 @@ span {
 /*--------------------------------------------------------------*/
 /*loja*//*fim*/
 /*--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------*/
+/*hardcore*/
+/*--------------------------------------------------------------*/
+
+#parede{
+	position: absolute;
+	width: 100%;
+	opacity: 0.5;
+	bottom: 7vh;
+	overflow: hidden;
+	height: 0vh;
+	/* height máximo = 72vh;*/
+}
+
+.img-parede{
+	width: 100%;
+}

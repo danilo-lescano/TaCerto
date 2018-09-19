@@ -269,6 +269,9 @@ TaCerto.Estrutura.DesafioDeFase = {
 		{palavra: "Maxo",			flag: false,	nivel: 0},
 		{palavra: "Molusco",		flag: true,		nivel: 0},
 		{palavra: "Molúsculo",		flag: false,	nivel: 0},
+		{palavra: "Murcho",			flag: true,		nivel: 0},
+		{palavra: "Mucho",			flag: false,	nivel: 0},
+		{palavra: "Muxo",			flag: false,	nivel: 0},
 
 		{palavra: "Opinião",		flag: true,		nivel: 0},
 		{palavra: "Opnião",			flag: false,	nivel: 0},
