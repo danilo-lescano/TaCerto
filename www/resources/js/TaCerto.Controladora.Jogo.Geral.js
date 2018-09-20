@@ -172,6 +172,7 @@ TaCerto.Controladora.Jogo.Geral = {
 			widthVal = aux > 10 ? aux : 10;
 		}
 
+		
 		barra.style.width = widthVal + "%";
 		barra.classList.remove("combo1", "combo2", "combo3");
 
