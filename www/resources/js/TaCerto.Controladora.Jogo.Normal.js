@@ -13,7 +13,7 @@ TaCerto.Controladora.Jogo.Normal = {
 		for (var i = 0; i < desafioNum; i++)
 			TaCerto.Controladora.Jogo.Normal.DESAFIO[i] = shuffledDesafio[i];
 		document.getElementById('palavra').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].palavra;
-		document.getElementById('significado').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length].significado;
+		document.getElementById('significado').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].significado;
 	},
 	efeitoResposta: function(flag){
 		document.getElementsByClassName("JogoBg7")[0].style.backgroundImage = flag ? 'url("resources/media/image/fundo-certo.png")' : 'url("resources/media/image/fundo-errado.png")';
@@ -39,8 +39,10 @@ TaCerto.Controladora.Jogo.Normal = {
 		}
 				
 		if(TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo === "Normal"){
-			if(TaCerto.Controladora.Jogo.Normal.DESAFIO.length)
+			if(TaCerto.Controladora.Jogo.Normal.DESAFIO.length){
 				document.getElementById('palavra').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].palavra;
+				document.getElementById('significado').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].significado;
+			}
 			else
 				TaCerto.Controladora.Jogo.Geral.fimDeJogo();
 		}
@@ -53,6 +55,8 @@ TaCerto.Controladora.Jogo.Normal = {
 		TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1] = shuffledDesafio[0];
 		document.getElementById('palavra').classList.add("animated", "bounce");
 		document.getElementById('palavra').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].palavra;
+		document.getElementById('significado').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].significado;
+
 		setTimeout(function(){
 			if (!flag && document.getElementById('palavra'))
 				document.getElementById('palavra').classList.remove("animated", "bounce");

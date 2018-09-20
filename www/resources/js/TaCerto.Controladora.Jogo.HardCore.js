@@ -8,7 +8,7 @@ TaCerto.Controladora.Jogo.HardCore = {
 		speed: 1,
 	},
 	called: function () {
-		TaCerto.Controladora.Jogo.HardCore.zerarVars();
+		this.zerarVars();
 
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("jogo", ["hardcore"], ["JogoTipo"]);
 		//document.getElementsByClassName("second")[0].style.animation = "timeRev 60s infinite linear";
@@ -27,7 +27,6 @@ TaCerto.Controladora.Jogo.HardCore = {
 						TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual = 72;
 					alturaDaParede.style.height = TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual + "vh";
 				}
-				console.log("Altura atual = " + TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual + "  Velocidade atual = " + TaCerto.Controladora.Jogo.HardCore.gameModel.speed);
 			}, 1000);
 	},
 	loadDesafio: function () {
@@ -35,8 +34,9 @@ TaCerto.Controladora.Jogo.HardCore = {
 		var shuffledDesafio = this.shuffleDesafio();
 
 		for (var i = 0; i < desafioNum; i++)
-			TaCerto.Controladora.Jogo.HardCore.DESAFIO[i] = shuffledDesafio[i];
+			this.DESAFIO[i] = shuffledDesafio[i];
 		document.getElementById('palavra').innerHTML = TaCerto.Controladora.Jogo.HardCore.DESAFIO[TaCerto.Controladora.Jogo.HardCore.DESAFIO.length - 1].palavra;
+		document.getElementById('significado').innerHTML = TaCerto.Controladora.Jogo.HardCore.DESAFIO[TaCerto.Controladora.Jogo.HardCore.DESAFIO.length - 1].significado;
 	},
 	efeitoResposta: function(flag){
 		document.getElementsByClassName("JogoBg7")[0].style.backgroundImage = flag ? 'url("resources/media/image/fundo-certo.png")' : 'url("resources/media/image/fundo-errado.png")';
@@ -65,9 +65,10 @@ TaCerto.Controladora.Jogo.HardCore = {
 		}
 
 		if(TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo === "HardCore"){
-			if(TaCerto.Controladora.Jogo.HardCore.DESAFIO.length)
+			if(TaCerto.Controladora.Jogo.HardCore.DESAFIO.length){
 				document.getElementById('palavra').innerHTML = TaCerto.Controladora.Jogo.HardCore.DESAFIO[TaCerto.Controladora.Jogo.HardCore.DESAFIO.length - 1].palavra;
-			else
+				document.getElementById('significado').innerHTML = TaCerto.Controladora.Jogo.HardCore.DESAFIO[TaCerto.Controladora.Jogo.HardCore.DESAFIO.length - 1].significado;
+			}else
 				TaCerto.Controladora.Jogo.Geral.fimDeJogo();
 		}
 	},
@@ -88,6 +89,7 @@ TaCerto.Controladora.Jogo.HardCore = {
 		TaCerto.Controladora.Jogo.HardCore.DESAFIO[TaCerto.Controladora.Jogo.HardCore.DESAFIO.length - 1] = shuffledDesafio[0];
 		document.getElementById('palavra').classList.add("animated", "bounce");
 		document.getElementById('palavra').innerHTML = TaCerto.Controladora.Jogo.HardCore.DESAFIO[TaCerto.Controladora.Jogo.HardCore.DESAFIO.length - 1].palavra;
+		document.getElementById('significado').innerHTML = TaCerto.Controladora.Jogo.HardCore.DESAFIO[TaCerto.Controladora.Jogo.HardCore.DESAFIO.length - 1].significado; 
 		setTimeout(function(){
 			if (!flag && document.getElementById('palavra'))
 				document.getElementById('palavra').classList.remove("animated", "bounce");
