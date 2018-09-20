@@ -181,7 +181,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 		{palavra: "Enchergar",		flag: false,	nivel: 0,	significado: "descricao"},
 		{palavra: "Enxuto",			flag: true,		nivel: 0,	significado: "descricao"},
 		{palavra: "Enchuto",		flag: false,	nivel: 0,	significado: "descricao"},
-		{palavra: "Enxame",			flag: true,		nivel: 0},
+		{palavra: "Enxame",			flag: true,		nivel: 0,	significado: "descricao"},
 		{palavra: "Enchame",		flag: false,	nivel: 0},
 		{palavra: "Encharcar",		flag: true,		nivel: 0},
 		{palavra: "Enxarcar",		flag: false,	nivel: 0},
@@ -269,6 +269,9 @@ TaCerto.Estrutura.DesafioDeFase = {
 		{palavra: "Maxo",			flag: false,	nivel: 0},
 		{palavra: "Molusco",		flag: true,		nivel: 0},
 		{palavra: "Molúsculo",		flag: false,	nivel: 0},
+		{palavra: "Murcho",			flag: true,		nivel: 0},
+		{palavra: "Mucho",			flag: false,	nivel: 0},
+		{palavra: "Muxo",			flag: false,	nivel: 0},
 
 		{palavra: "Opinião",		flag: true,		nivel: 0},
 		{palavra: "Opnião",			flag: false,	nivel: 0},
