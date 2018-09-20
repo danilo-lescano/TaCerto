@@ -7,20 +7,20 @@ TaCerto.Estrutura.Fase = {
 			0:{
 			},
 			1:{
-				maxAcertoConsecutivo: 10,
+				maxAcertoConsecutivo: 5,
 			},
 			2:{
 				acertoXtempo: [5, 20000],
 			},
 		},
 		funcObjetivos: ['terminarFase', 'acertoConsecutivo', 'acertoXtempo'],
-		descricaoObjetivos: ['complete a fase até o fim para receber essa conquista','consiga 10 respostas corretas consecutivas','consiga 5 respostas corretas em 20s',],
+		descricaoObjetivos: ['complete a fase até o fim para receber essa conquista','consiga 5 respostas corretas consecutivas','consiga 5 respostas corretas em 20s',],
 	},
 	1: {
 		tipo: 'Lacuna',
 		param:{
 			0:{
-				moeda: 30,
+				moeda: 20,
 			},
 			1:{
 				cartaUsada:{
@@ -31,14 +31,14 @@ TaCerto.Estrutura.Fase = {
 				}
 			},
 			2:{
-				tempoMaximo:40000
+				tempoMaximo:60000,
 			},
 		},
 		funcObjetivos: ['moedasMinimas', 'usarMinimoCarta', 'tempoMaximo'],
-		descricaoObjetivos: ['consiga 30 moedas ao fim do jogo','pule uma pergunta utilizando a carta vermelha','Termine o jogo com no máximo 30s',],
+		descricaoObjetivos: ['consiga 20 moedas ao fim do jogo','pule uma pergunta utilizando a carta vermelha','Termine o jogo com no máximo 60s',],
 	},
 	2: {
-		tipo: 'Normal',
+		tipo: 'Aleatorio',
 		param:{
 			0:{
 				acertoTotal: 10,
@@ -59,100 +59,110 @@ TaCerto.Estrutura.Fase = {
 		descricaoObjetivos: ['consiga 10 respostas corretas no total','não erre mais do que 3 respostas consecutivas','utilize pelo menos uma carta azul',],
 	},
 	3: {
-		tipo: 'Lacuna',
-		param:{
-			0:{
-
-			},
-			1:{
-
-			},
-			2:{
-
-			},
-		},
-		funcObjetivos: ['acertoConsecutivo', 'acertoTotal', 'acertoXtempo'],
-		descricaoObjetivos: ['consiga 30 respostas corretas consecutivas','consiga 31 respostas corretas consecutivas','consiga 32 respostas corretas consecutivas',],
-	},
-	4: {
 		tipo: 'Normal',
 		param:{
 			0:{
-
+				moeda: 20,
 			},
 			1:{
-
+				maxAcertoConsecutivo: 10,
 			},
 			2:{
-
+				acertoXtempo: [7, 20000],
 			},
 		},
-		funcObjetivos: ['acertoConsecutivo', 'acertoTotal', 'acertoXtempo'],
-		descricaoObjetivos: ['consiga 40 respostas corretas consecutivas','consiga 41 respostas corretas consecutivas','consiga 42 respostas corretas consecutivas',],
+		funcObjetivos: ['moedasMinimas', 'acertoConsecutivo', 'acertoXtempo'],
+		descricaoObjetivos: ['consiga 20 moedas ao fim do jogo','consiga 10 respostas corretas consecutivas','consiga 7 respostas corretas em 20s',],
 	},
-	5: {
+	4: {
 		tipo: 'Lacuna',
 		param:{
 			0:{
-
+				moeda: 25,
 			},
 			1:{
-
+				cartaUsada:{
+					azul: 0,
+					vermelho: 1,
+					amarelo: 0,
+					verde: 0,
+				}
 			},
 			2:{
-
+				tempoMaximo:40000,
 			},
 		},
-		funcObjetivos: ['acertoConsecutivo', 'acertoTotal', 'acertoXtempo'],
-		descricaoObjetivos: ['consiga 50 respostas corretas consecutivas','consiga 51 respostas corretas consecutivas','consiga 52 respostas corretas consecutivas',],
+		funcObjetivos: ['moedasMinimas', 'usarMinimoCarta', 'tempoMaximo'],
+		descricaoObjetivos: ['consiga 30 moedas ao fim do jogo','pule uma pergunta utilizando a carta vermelha','Termine o jogo com no máximo 40s',],
+	},
+	5: {
+		tipo: 'Aleatorio',
+		param:{
+			0:{
+				acertoTotal: 10,
+			},
+			1:{
+				maxErroConsecutivo:3,
+			},
+			2:{
+				cartaUsada:{
+					azul: 1,
+					vermelho: 0,
+					amarelo: 0,
+					verde: 0,
+				}
+			},
+		},
+		funcObjetivos: ['acertoTotal', 'erroConsecutivo', 'usarMinimoCarta'],
+		descricaoObjetivos: ['consiga 10 respostas corretas no total','não erre mais do que 3 respostas consecutivas','utilize pelo menos uma carta azul',],
 	},
 	6: {
-		tipo: 'Aurelio',
+		tipo: 'Normal',
 		param:{
 			0:{
-
+				moeda: 32,
 			},
 			1:{
-
+				maxAcertoConsecutivo: 12,
 			},
 			2:{
-
+				acertoXtempo: [10, 20000],
 			},
 		},
-		funcObjetivos: ['acertoConsecutivo', 'acertoTotal', 'acertoXtempo'],
-		descricaoObjetivos: ['consiga 60 respostas corretas consecutivas','consiga 61 respostas corretas consecutivas','consiga 62 respostas corretas consecutivas',],
+		funcObjetivos: ['moedasMinimas', 'acertoConsecutivo', 'acertoXtempo'],
+		descricaoObjetivos: ['consiga 32 moedas ao fim do jogo','consiga 12 respostas corretas consecutivas','consiga 10 respostas corretas em 20s',],
 	},
 	7: {
-		tipo: 'Aurelio',
+		tipo: 'Lacuna',
 		param:{
 			0:{
-
+				moeda: 32,
 			},
 			1:{
-
+				acertoTotal: 10,
 			},
 			2:{
-
+				tempoMaximo:40000,
 			},
 		},
-		funcObjetivos: ['acertoConsecutivo', 'acertoTotal', 'acertoXtempo'],
-		descricaoObjetivos: ['consiga 70 respostas corretas consecutivas','consiga 71 respostas corretas consecutivas','consiga 72 respostas corretas consecutivas',],
+		funcObjetivos: ['moedasMinimas', 'acertoTotal', 'tempoMaximo'],
+		descricaoObjetivos: ['consiga 32 moedas ao fim do jogo','consiga 10 respostas corretas no total','termine o jogo com no máximo 40s',],
 	},
 	8: {
 		tipo: 'Aleatorio',
 		param:{
 			0:{
-
+				acertoTotal: 13,
 			},
 			1:{
-
+				maxErroConsecutivo: 3,
 			},
 			2:{
-
+				moeda: 32,
 			},
 		},
-		funcObjetivos: ['acertoConsecutivo', 'acertoTotal', 'acertoXtempo'],
-		descricaoObjetivos: ['consiga 80 respostas corretas consecutivas','consiga 81 respostas corretas consecutivas','consiga 82 respostas corretas consecutivas',],
+		funcObjetivos: ['acertoTotal', 'erroConsecutivo', 'moedasMinimas'],
+		descricaoObjetivos: ['consiga 13 respostas corretas no total','não erre mais do que 3 respostas consecutivas','consiga 32 moedas ao fim do jogo',],
 	},
 
 };

@@ -27,19 +27,13 @@ TaCerto.Controladora.Jogo.Geral = {
 		},
 	},
 	gameClockInterval: function () {
-		if(this.gameModel.tipoDeJogo.equals("HardCore"))
-			this.gameModel.tempo = 60;
-		else
-			this.gameModel.tempo = 0;
+
+		this.gameModel.tempo = 0;
 
 		TaCerto.Controladora.Jogo.Geral.gameModel.intervalo = setInterval(function (){
-			if (!TaCerto.Controladora.Jogo.Geral.gameModel.paused && !TaCerto.Controladora.Jogo.Geral.gameModel.frozen && !(TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo.equals("HardCore")))
+			if (!TaCerto.Controladora.Jogo.Geral.gameModel.paused && !TaCerto.Controladora.Jogo.Geral.gameModel.frozen)
 				document.getElementById('tempo').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.tempo++;
-			else{
-				document.getElementById('tempo').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.tempo--;
-				if(TaCerto.Controladora.Jogo.Geral.gameModel.tempo === 0)
-					TaCerto.Controladora.Jogo.Geral.fimDeJogo();
-			}
+			
 		}, 1000);
 	},
 	loadDesafio: function(){
@@ -172,7 +166,6 @@ TaCerto.Controladora.Jogo.Geral = {
 			widthVal = aux > 10 ? aux : 10;
 		}
 
-		
 		barra.style.width = widthVal + "%";
 		barra.classList.remove("combo1", "combo2", "combo3");
 

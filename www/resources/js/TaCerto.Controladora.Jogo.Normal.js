@@ -13,6 +13,7 @@ TaCerto.Controladora.Jogo.Normal = {
 		for (var i = 0; i < desafioNum; i++)
 			TaCerto.Controladora.Jogo.Normal.DESAFIO[i] = shuffledDesafio[i];
 		document.getElementById('palavra').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].palavra;
+		document.getElementById('significado').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length].significado;
 	},
 	efeitoResposta: function(flag){
 		document.getElementsByClassName("JogoBg7")[0].style.backgroundImage = flag ? 'url("resources/media/image/fundo-certo.png")' : 'url("resources/media/image/fundo-errado.png")';
