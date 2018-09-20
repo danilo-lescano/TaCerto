@@ -119,5 +119,6 @@ TaCerto.Controladora.Jogo.HardCore = {
 	zerarVars: function(){
 		TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual = 0;
 		TaCerto.Controladora.Jogo.HardCore.gameModel.speed = 1;
-	}
+	} 
+	
 };
