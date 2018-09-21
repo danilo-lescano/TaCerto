@@ -115,9 +115,12 @@ TaCerto.Controladora.Jogo.Explorador = {
 					var contAcertos = 0;
 					var contTotalGabarito = 0;
 					
-					for(let i = 0; i < itensCol.length; i++)
-						if(itensCol[i].dataset.clicked && itensCol[i].dataset.equivalente)
+					for(let i = 0; i < itensCol.length; i++){
+						console.log(itensCol[i].dataset.clicked);
+						console.log(itensCol[i].dataset.equivalente);
+						if(itensCol[i].dataset.clicked && itensCol[i].dataset.equivalente == "0")
 							contAcertos++;
+					}
 
 					for(let i = 0; i < resposta.length; i++)
 						if(resposta[i].equivalente)
@@ -134,17 +137,29 @@ TaCerto.Controladora.Jogo.Explorador = {
 			el.dataset.clicked = "true";
 			el.classList.add(bgColor+"BGExplorador");
 
-			var isSecondClick = TaCerto.Controladora.Jogo.Explorador.getChangeClick(isTipoPalavra, isColunaPrincipal, el);
+			var isSecondClick = TaCerto.Controladora.Jogo.Explorador.getSecondClick(isTipoPalavra, isColunaPrincipal, el);
 			if(isSecondClick){//se clicar em um e tiver outro clicado (só da mesma coluna e !tipoPalavra)
-				var newClicked = document.getElementById(isSecondClick);
-				newClicked.dataset.clicked = "";
-				var newBgColor = TaCerto.Controladora.Jogo.Explorador.getBG(isColunaPrincipal, newClicked);
-				newClicked.classList.remove(newBgColor+"BGExplorador");
+				isSecondClick.dataset.clicked = "";
+				var newBgColor = TaCerto.Controladora.Jogo.Explorador.getBG(isColunaPrincipal, isSecondClick);
+				isSecondClick.classList.remove(newBgColor+"BGExplorador");
 				return;
 			}
 
 			var isMatchClick = TaCerto.Controladora.Jogo.Explorador.getMatchClick(isTipoPalavra, isColunaPrincipal, el);
+			if(isMatchClick){
+				el.dataset.clicked = "";
+				el.classList.remove(bgColor+"BGExplorador");
 
+				var newBgColor = TaCerto.Controladora.Jogo.Explorador.getBG(!isColunaPrincipal, isMatchClick);
+				isMatchClick.dataset.clicked = "";
+				isMatchClick.classList.remove(newBgColor+"BGExplorador");
+				el.classList.add((isColunaPrincipal ? bgColor : newBgColor) + "BorderExplorador");
+				isMatchClick.classList.add((isColunaPrincipal ? bgColor : newBgColor) + "BorderExplorador");
+
+				console.log(bgColor);
+				console.log(newBgColor);
+				return;
+			}
 			/*console.log(
 				"isTipoPalavra: " + isTipoPalavra + "\n" +
 				"isColunaPrincipal: " + isColunaPrincipal + "\n" +
@@ -160,25 +175,31 @@ TaCerto.Controladora.Jogo.Explorador = {
 		var ret = "grey";
 		if(isColunaPrincipal){
 			var itensCol = document.querySelectorAll(".itemColunaExplorador span");
-			var colors= ["red", "green", "blue"];
+			var colors= ["red", "blue", "green"];
+			console.log("--------------");
 			for (let i = 0; i < 3; i++) {
-				if(itensCol[i].dataset.equivalente === el.dataset.equivalente)
-					ret = colors[i];
+				let index = i;
+				console.log("é igual " + (itensCol[i] === el));
+				console.log(colors[i]);
+				if(itensCol[i] === el){
+					console.log("porra vai tomar no cu");
+				console.log(colors[i]);
+				console.log(colors[index]);
+				return ret = colors[index];
+
+				}
 			}
 		}
 		return ret;
 	},
-	getChangeClick: function(isTipoPalavra, isColunaPrincipal, el){//retorna o equivalente se for um click na msm coluna se não retorna falso
+	getSecondClick: function(isTipoPalavra, isColunaPrincipal, el){//retorna o equivalente se for um click na msm coluna se não retorna falso
 		if(!isTipoPalavra){
 			var itensCol = document.querySelectorAll(".itemColunaExplorador span");
 			var inicio = isColunaPrincipal ? 0 : 3;
 			var fim = inicio + 3;
-			console.log("--------------");
 			for (let i = inicio; i < fim; i++){
-				console.log(itensCol[i].dataset.equivalente + " " + el.dataset.equivalente + " !=?" + (itensCol[i].dataset.equivalente !== el.dataset.equivalente));
-				console.log("clicked:" + itensCol[i].dataset.clicked)
-				if(itensCol[i].dataset.equivalente !== el.dataset.equivalente && itensCol[i].dataset.clicked)
-					return itensCol[i].dataset.equivalente;
+				if(itensCol[i] !== el && itensCol[i].dataset.clicked)
+					return itensCol[i];
 			}
 		}
 		return false;
@@ -186,11 +207,12 @@ TaCerto.Controladora.Jogo.Explorador = {
 	getMatchClick: function(isTipoPalavra, isColunaPrincipal, el){//verifica se possui matchClick
 		if(!isTipoPalavra){
 			var itensCol = document.querySelectorAll(".itemColunaExplorador span");
-			var inicio = isColunaPrincipal ? 0 : 3;
+			var inicio = isColunaPrincipal ? 3 : 0;
 			var fim = inicio + 3;
-			for (let i = inicio; i < fim; i++)
-				if(itensCol[i].dataset.equivalente !== el.dataset.equivalente && itensCol[i].dataset.clicked)
-					return itensCol[i].dataset.equivalente;
+			for (let i = inicio; i < fim; i++){
+				if(itensCol[i].dataset.equivalente === el.dataset.equivalente && itensCol[i].dataset.clicked)
+					return itensCol[i];
+			}
 		}
 		return false;
 	},

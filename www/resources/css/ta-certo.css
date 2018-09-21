@@ -1065,18 +1065,18 @@ span {
 	50% {background-color: rgb(255, 130, 130);}
 	99% {background-color: whitesmoke;}
 }
-.greenBGExplorador{
-	animation: greenBGExplorador 1s infinite ease-in-out;
-}
-@keyframes greenBGExplorador{
-	from {background-color: whitesmoke;}
-	50% {background-color: rgb(118, 118, 161);}
-	99% {background-color: whitesmoke;}
-}
 .blueBGExplorador{
 	animation: blueBGExplorador 1s infinite ease-in-out;
 }
 @keyframes blueBGExplorador{
+	from {background-color: whitesmoke;}
+	50% {background-color: rgb(118, 118, 161);}
+	99% {background-color: whitesmoke;}
+}
+.greenBGExplorador{
+	animation: greenBGExplorador 1s infinite ease-in-out;
+}
+@keyframes greenBGExplorador{
 	from {background-color: whitesmoke;}
 	50% {background-color: rgb(9, 140, 9);}
 	99% {background-color: whitesmoke;}
@@ -1088,6 +1088,16 @@ span {
 	from {background-color: whitesmoke;}
 	50% {background-color: darkgrey;}
 	99% {background-color: whitesmoke;}
+}
+
+.redBorderExplorador{
+	border: 3px solid red;
+}
+.blueBorderExplorador{
+	border: 3px solid rgb(75, 75, 156);
+}
+.greenBorderExplorador{
+	border: 3px solid green;
 }
 /*--------------------------------------------------------------*/
 /*jogo explorador*//*fim*/
