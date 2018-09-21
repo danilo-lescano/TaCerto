@@ -6,6 +6,9 @@
 .AppleDouble
 .LSOverride
 
+### visual studio ###
+.vs
+
 # Icon must end with two \r
 Icon
 
