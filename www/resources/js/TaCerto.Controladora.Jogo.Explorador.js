@@ -35,7 +35,7 @@ TaCerto.Controladora.Jogo.Explorador = {
 				var emojiPalavra = itens[i].emoji ? "emojiSpan" : "palavraSpan";
 				span.classList.add("exploradorSpan", emojiPalavra);
 				span.innerHTML = itens[i].conteudo;
-				span.id = itens[i].id;
+				span.dataset.equivalente = itens[i].equivalente;
 				span.onclick = function (){
 					TaCerto.Controladora.Jogo.Explorador.btnPressionado(this);
 				};
@@ -92,57 +92,50 @@ TaCerto.Controladora.Jogo.Explorador = {
 	btnPressionado: function(el){//verificar que tipo de botao foi pressionado(1) / 
 		TaCerto.GenFunc.translate5050(el,
 		function(){
-			var isTipoPalavra = TaCerto.Controladora.Jogo.Explorador.gameModel.tipoPalavra;
-			var isEvenClick = TaCerto.Controladora.Jogo.Explorador.gameModel.isEvenClick;
 			var isColunaPrincipal = el.parentElement.classList.contains("itemColunaPrincipal");
-			var isSecondClick = TaCerto.Controladora.Jogo.Explorador.getChangeClick(isTipoPalavra, isColunaPrincipal, el);
-			var isDoubleClicked = el.dataset.clicked ? true : false;
-			var isAllClicked = TaCerto.Controladora.Jogo.Explorador.getAllClicked(isTipoPalavra, isDoubleClicked);
-
 			var bgColor = TaCerto.Controladora.Jogo.Explorador.getBG(isColunaPrincipal, el);
 
-			console.log(
-				"isTipoPalavra: " + isTipoPalavra + "\n" +
-				"isEvenClick: " + isEvenClick + "\n" +
-				"isColunaPrincipal: " + isColunaPrincipal + "\n" +
-				"isSecondClick: " + isSecondClick + "\n" +
-				"isDoubleClicked: " + isDoubleClicked + "\n" +
-				"bgColor: " + bgColor + "\n" +
-				"isAllClicked: " + isAllClicked + "\n" +
-				""
-			);
-
+			var isDoubleClicked = el.dataset.clicked ? true : false;
 			if(isDoubleClicked){//se já foi clicado então desclicar
 				el.dataset.clicked = "";
 				el.classList.remove(bgColor+"BGExplorador");
 				return;
 			}
-			else if(isTipoPalavra && isAllClicked){
-				var resposta = TaCerto.Controladora.Jogo.Explorador.DESAFIO;
-				resposta = resposta[resposta.length - 1];
-				var itensCol = document.querySelectorAll(".itemColunaExplorador span");
-				var flagResp = false;
-				var contAcertos = 0;
-				var contTotalGabarito = 0;
-				
-				for(let i = 0; i < itensCol.length; i++)
-					if(itensCol[i].dataset.clicked && itensCol[i].id)
-						contAcertos++;
 
-				for(let i = 0; i < resposta.length; i++)
-					if(resposta[i].id)
-						contTotalGabarito++;
+			var isTipoPalavra = TaCerto.Controladora.Jogo.Explorador.gameModel.tipoPalavra;
+			var isAllClicked = TaCerto.Controladora.Jogo.Explorador.getAllClicked(isTipoPalavra, isDoubleClicked);
+			if(isTipoPalavra){
+				el.classList.add(bgColor+"BGExplorador");
+				el.dataset.clicked = "true";
+				if(isAllClicked){
+					var resposta = TaCerto.Controladora.Jogo.Explorador.DESAFIO;
+					resposta = resposta[resposta.length - 1];
+					var itensCol = document.querySelectorAll(".itemColunaExplorador span");
+					var flagResp = false;
+					var contAcertos = 0;
+					var contTotalGabarito = 0;
+					
+					for(let i = 0; i < itensCol.length; i++)
+						if(itensCol[i].dataset.clicked && itensCol[i].dataset.equivalente)
+							contAcertos++;
 
-				flagResp = contAcertos === contTotalGabarito;
+					for(let i = 0; i < resposta.length; i++)
+						if(resposta[i].equivalente)
+							contTotalGabarito++;
 
-				TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResp);
-				TaCerto.Controladora.Jogo.Explorador.proximaPergunta();
+					flagResp = contAcertos === contTotalGabarito;
+
+					TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResp);
+					TaCerto.Controladora.Jogo.Explorador.proximaPergunta();
+				}
 				return;
 			}
-			else if(!isTipoPalavra && isSecondClick){//se clicar em um e tiver outro clicado (só da mesma coluna e !tipoPalavra)
-				el.dataset.clicked = "true";
-				el.classList.add(bgColor+"BGExplorador");
 
+			el.dataset.clicked = "true";
+			el.classList.add(bgColor+"BGExplorador");
+
+			var isSecondClick = TaCerto.Controladora.Jogo.Explorador.getChangeClick(isTipoPalavra, isColunaPrincipal, el);
+			if(isSecondClick){//se clicar em um e tiver outro clicado (só da mesma coluna e !tipoPalavra)
 				var newClicked = document.getElementById(isSecondClick);
 				newClicked.dataset.clicked = "";
 				var newBgColor = TaCerto.Controladora.Jogo.Explorador.getBG(isColunaPrincipal, newClicked);
@@ -150,8 +143,17 @@ TaCerto.Controladora.Jogo.Explorador = {
 				return;
 			}
 
-			el.classList.add(bgColor+"BGExplorador");
-			el.dataset.clicked = "true";
+			var isMatchClick = TaCerto.Controladora.Jogo.Explorador.getMatchClick(isTipoPalavra, isColunaPrincipal, el);
+
+			/*console.log(
+				"isTipoPalavra: " + isTipoPalavra + "\n" +
+				"isColunaPrincipal: " + isColunaPrincipal + "\n" +
+				"isSecondClick: " + isSecondClick + "\n" +
+				"isDoubleClicked: " + isDoubleClicked + "\n" +
+				"bgColor: " + bgColor + "\n" +
+				"isAllClicked: " + isAllClicked + "\n" +
+				""
+			);*/
 		},50);
 	},
 	getBG: function(isColunaPrincipal, el){
@@ -160,20 +162,35 @@ TaCerto.Controladora.Jogo.Explorador = {
 			var itensCol = document.querySelectorAll(".itemColunaExplorador span");
 			var colors= ["red", "green", "blue"];
 			for (let i = 0; i < 3; i++) {
-				if(itensCol[i].id === el.id)
+				if(itensCol[i].dataset.equivalente === el.dataset.equivalente)
 					ret = colors[i];
 			}
 		}
 		return ret;
 	},
-	getChangeClick: function(isTipoPalavra, isColunaPrincipal, el){
+	getChangeClick: function(isTipoPalavra, isColunaPrincipal, el){//retorna o equivalente se for um click na msm coluna se não retorna falso
+		if(!isTipoPalavra){
+			var itensCol = document.querySelectorAll(".itemColunaExplorador span");
+			var inicio = isColunaPrincipal ? 0 : 3;
+			var fim = inicio + 3;
+			console.log("--------------");
+			for (let i = inicio; i < fim; i++){
+				console.log(itensCol[i].dataset.equivalente + " " + el.dataset.equivalente + " !=?" + (itensCol[i].dataset.equivalente !== el.dataset.equivalente));
+				console.log("clicked:" + itensCol[i].dataset.clicked)
+				if(itensCol[i].dataset.equivalente !== el.dataset.equivalente && itensCol[i].dataset.clicked)
+					return itensCol[i].dataset.equivalente;
+			}
+		}
+		return false;
+	},
+	getMatchClick: function(isTipoPalavra, isColunaPrincipal, el){//verifica se possui matchClick
 		if(!isTipoPalavra){
 			var itensCol = document.querySelectorAll(".itemColunaExplorador span");
 			var inicio = isColunaPrincipal ? 0 : 3;
 			var fim = inicio + 3;
 			for (let i = inicio; i < fim; i++)
-				if(itensCol[i].id !== el.id && itensCol[i].dataset.clicked)
-					return itensCol[i].id;
+				if(itensCol[i].dataset.equivalente !== el.dataset.equivalente && itensCol[i].dataset.clicked)
+					return itensCol[i].dataset.equivalente;
 		}
 		return false;
 	},

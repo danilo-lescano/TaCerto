@@ -724,51 +724,51 @@ TaCerto.Estrutura.DesafioDeFase = {
 		{
 			palavra: false,
 			coluna1: [
-				{id: 0,	emoji: true,	conteudo:"🚲"},
-				{id: 1,	emoji: true,	conteudo:"🦎"},
-				{id: 2,	emoji: true,	conteudo:"🍊"}
+				{equivalente: 0,	emoji: true,	conteudo:"🚲"},
+				{equivalente: 1,	emoji: true,	conteudo:"🦎"},
+				{equivalente: 2,	emoji: true,	conteudo:"🍊"}
 			],
 			coluna2: [
-				{id: 0,	emoji: false,	conteudo:"Magrela"},
-				{id: 1,	emoji: false,	conteudo:"Taruira"},
-				{id: 2,	emoji: false,	conteudo:"Tangerina"}
+				{equivalente: 0,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: 1,	emoji: false,	conteudo:"Taruira"},
+				{equivalente: 2,	emoji: false,	conteudo:"Tangerina"}
 			],
 			nivel: 0
 		},
 		{
 			palavra: false,
 			coluna1: [
-				{id: 0,	emoji: true,	conteudo:"🥖"},
-				{id: 1,	emoji: true,	conteudo:"🐢"},
-				{id: 2,	emoji: true,	conteudo:"👦"}
+				{equivalente: 0,	emoji: true,	conteudo:"🥖"},
+				{equivalente: 1,	emoji: true,	conteudo:"🐢"},
+				{equivalente: 2,	emoji: true,	conteudo:"👦"}
 			],
 			coluna2: [
-				{id: 0,	emoji: false,	conteudo:"Filão"},
-				{id: 1,	emoji: false,	conteudo:"Tracajá"},
-				{id: 2,	emoji: false,	conteudo:"Piá"}
+				{equivalente: 0,	emoji: false,	conteudo:"Filão"},
+				{equivalente: 1,	emoji: false,	conteudo:"Tracajá"},
+				{equivalente: 2,	emoji: false,	conteudo:"Piá"}
 			],
 			nivel: 0
 		},
 		{
 			palavra: false,
 			coluna1: [
-				{id: 0,	emoji: false,	conteudo:"Naco"},
-				{id: 1,	emoji: false,	conteudo:"Pandorga"},
-				{id: 2,	emoji: false,	conteudo:"Califom"}
+				{equivalente: 0,	emoji: false,	conteudo:"Naco"},
+				{equivalente: 1,	emoji: false,	conteudo:"Pandorga"},
+				{equivalente: 2,	emoji: false,	conteudo:"Califom"}
 			],
 			coluna2: [
-				{id: 0,	emoji: false,	conteudo:"Pedaço"},
-				{id: 1,	emoji: false,	conteudo:"Pipa"},
-				{id: 2,	emoji: false,	conteudo:"Sutiã"}
+				{equivalente: 0,	emoji: false,	conteudo:"Pedaço"},
+				{equivalente: 1,	emoji: false,	conteudo:"Pipa"},
+				{equivalente: 2,	emoji: false,	conteudo:"Sutiã"}
 			],
 			nivel: 0
 		},
 		{
 			palavra: true,
 			coluna1: [
-				{id: 0,	emoji: false,	conteudo:"Charlar"},
-				{id: 0,	emoji: false,	conteudo:"Conversar"},
-				{id: 0,	emoji: false,	conteudo:"Prosear"}
+				{equivalente: 0,	emoji: false,	conteudo:"Charlar"},
+				{equivalente: 0,	emoji: false,	conteudo:"Conversar"},
+				{equivalente: 0,	emoji: false,	conteudo:"Prosear"}
 			],
 			coluna2: [
 				{		emoji: false,	conteudo:"Magrela"},
@@ -781,11 +781,11 @@ TaCerto.Estrutura.DesafioDeFase = {
 		{
 			palavra: true,
 			coluna1: [
-				{id: 0,	emoji: false,	conteudo:"Promessa"},
-				{id: 0,	emoji: false,	conteudo:"Compromisso"},
-				{id: 0,	emoji: false,	conteudo:"Pacto"},
-				{id: 0,	emoji: false,	conteudo:"Trato"},
-				{id: 0,	emoji: false,	conteudo:"Acordo"}
+				{equivalente: 0,	emoji: false,	conteudo:"Promessa"},
+				{equivalente: 0,	emoji: false,	conteudo:"Compromisso"},
+				{equivalente: 0,	emoji: false,	conteudo:"Pacto"},
+				{equivalente: 0,	emoji: false,	conteudo:"Trato"},
+				{equivalente: 0,	emoji: false,	conteudo:"Acordo"}
 			],
 			coluna2: [
 				{		emoji: false,	conteudo:"Juro"},
@@ -796,51 +796,51 @@ TaCerto.Estrutura.DesafioDeFase = {
 		{
 			palavra: false,
 			coluna1: [
-				{id: 0,	emoji: true,	conteudo:"🚲"},
-				{id: 1,	emoji: true,	conteudo:"🦎"},
-				{id: 2,	emoji: true,	conteudo:"🍊"}
+				{equivalente: 0,	emoji: true,	conteudo:"🚲"},
+				{equivalente: 1,	emoji: true,	conteudo:"🦎"},
+				{equivalente: 2,	emoji: true,	conteudo:"🍊"}
 			],
 			coluna2: [
-				{id: 0,	emoji: false,	conteudo:"Magrela"},
-				{id: 1,	emoji: false,	conteudo:"Taruira"},
-				{id: 2,	emoji: false,	conteudo:"Tangerina"}
+				{equivalenteid: 0,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: 1,	emoji: false,	conteudo:"Taruira"},
+				{equivalente: 2,	emoji: false,	conteudo:"Tangerina"}
 			],
 			nivel: 0
 		},
 		{
 			palavra: false,
 			coluna1: [
-				{id: 0,	emoji: true,	conteudo:"🥖"},
-				{id: 1,	emoji: true,	conteudo:"🐢"},
-				{id: 2,	emoji: true,	conteudo:"👦"}
+				{equivalente: 0,	emoji: true,	conteudo:"🥖"},
+				{equivalente: 1,	emoji: true,	conteudo:"🐢"},
+				{equivalente: 2,	emoji: true,	conteudo:"👦"}
 			],
 			coluna2: [
-				{id: 0,	emoji: false,	conteudo:"Filão"},
-				{id: 1,	emoji: false,	conteudo:"Tracajá"},
-				{id: 2,	emoji: false,	conteudo:"Piá"}
+				{equivalente: 0,	emoji: false,	conteudo:"Filão"},
+				{equivalente: 1,	emoji: false,	conteudo:"Tracajá"},
+				{equivalente: 2,	emoji: false,	conteudo:"Piá"}
 			],
 			nivel: 0
 		},
 		{
 			palavra: false,
 			coluna1: [
-				{id: 0,	emoji: false,	conteudo:"Naco"},
-				{id: 1,	emoji: false,	conteudo:"Pandorga"},
-				{id: 2,	emoji: false,	conteudo:"Califom"}
+				{equivalente: 0,	emoji: false,	conteudo:"Naco"},
+				{equivalente: 1,	emoji: false,	conteudo:"Pandorga"},
+				{equivalente: 2,	emoji: false,	conteudo:"Califom"}
 			],
 			coluna2: [
-				{id: 0,	emoji: false,	conteudo:"Pedaço"},
-				{id: 1,	emoji: false,	conteudo:"Pipa"},
-				{id: 2,	emoji: false,	conteudo:"Sutiã"}
+				{equivalente: 0,	emoji: false,	conteudo:"Pedaço"},
+				{equivalente: 1,	emoji: false,	conteudo:"Pipa"},
+				{equivalente: 2,	emoji: false,	conteudo:"Sutiã"}
 			],
 			nivel: 0
 		},
 		{
 			palavra: true,
 			coluna1: [
-				{id: 0,	emoji: false,	conteudo:"Charlar"},
-				{id: 0,	emoji: false,	conteudo:"Conversar"},
-				{id: 0,	emoji: false,	conteudo:"Prosear"}
+				{equivalente: 0,	emoji: false,	conteudo:"Charlar"},
+				{equivalente: 0,	emoji: false,	conteudo:"Conversar"},
+				{equivalente: 0,	emoji: false,	conteudo:"Prosear"}
 			],
 			coluna2: [
 				{		emoji: false,	conteudo:"Magrela"},
@@ -853,11 +853,11 @@ TaCerto.Estrutura.DesafioDeFase = {
 		{
 			palavra: true,
 			coluna1: [
-				{id: 0,	emoji: false,	conteudo:"Promessa"},
-				{id: 0,	emoji: false,	conteudo:"Compromisso"},
-				{id: 0,	emoji: false,	conteudo:"Pacto"},
-				{id: 0,	emoji: false,	conteudo:"Trato"},
-				{id: 0,	emoji: false,	conteudo:"Acordo"}
+				{equivalente: 0,	emoji: false,	conteudo:"Promessa"},
+				{equivalente: 0,	emoji: false,	conteudo:"Compromisso"},
+				{equivalente: 0,	emoji: false,	conteudo:"Pacto"},
+				{equivalente: 0,	emoji: false,	conteudo:"Trato"},
+				{equivalente: 0,	emoji: false,	conteudo:"Acordo"}
 			],
 			coluna2: [
 				{		emoji: false,	conteudo:"Juro"},
@@ -868,51 +868,51 @@ TaCerto.Estrutura.DesafioDeFase = {
 		{
 			palavra: false,
 			coluna1: [
-				{id: 0,	emoji: true,	conteudo:"🚲"},
-				{id: 1,	emoji: true,	conteudo:"🦎"},
-				{id: 2,	emoji: true,	conteudo:"🍊"}
+				{equivalente: 0,	emoji: true,	conteudo:"🚲"},
+				{equivalente: 1,	emoji: true,	conteudo:"🦎"},
+				{equivalente: 2,	emoji: true,	conteudo:"🍊"}
 			],
 			coluna2: [
-				{id: 0,	emoji: false,	conteudo:"Magrela"},
-				{id: 1,	emoji: false,	conteudo:"Taruira"},
-				{id: 2,	emoji: false,	conteudo:"Tangerina"}
+				{equivalente: 0,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: 1,	emoji: false,	conteudo:"Taruira"},
+				{equivalente: 2,	emoji: false,	conteudo:"Tangerina"}
 			],
 			nivel: 0
 		},
 		{
 			palavra: false,
 			coluna1: [
-				{id: 0,	emoji: true,	conteudo:"🥖"},
-				{id: 1,	emoji: true,	conteudo:"🐢"},
-				{id: 2,	emoji: true,	conteudo:"👦"}
+				{equivalente: 0,	emoji: true,	conteudo:"🥖"},
+				{equivalente: 1,	emoji: true,	conteudo:"🐢"},
+				{equivalente: 2,	emoji: true,	conteudo:"👦"}
 			],
 			coluna2: [
-				{id: 0,	emoji: false,	conteudo:"Filão"},
-				{id: 1,	emoji: false,	conteudo:"Tracajá"},
-				{id: 2,	emoji: false,	conteudo:"Piá"}
+				{equivalente: 0,	emoji: false,	conteudo:"Filão"},
+				{equivalente: 1,	emoji: false,	conteudo:"Tracajá"},
+				{equivalente: 2,	emoji: false,	conteudo:"Piá"}
 			],
 			nivel: 0
 		},
 		{
 			palavra: false,
 			coluna1: [
-				{id: 0,	emoji: false,	conteudo:"Naco"},
-				{id: 1,	emoji: false,	conteudo:"Pandorga"},
-				{id: 2,	emoji: false,	conteudo:"Califom"}
+				{equivalente: 0,	emoji: false,	conteudo:"Naco"},
+				{equivalente: 1,	emoji: false,	conteudo:"Pandorga"},
+				{equivalente: 2,	emoji: false,	conteudo:"Califom"}
 			],
 			coluna2: [
-				{id: 0,	emoji: false,	conteudo:"Pedaço"},
-				{id: 1,	emoji: false,	conteudo:"Pipa"},
-				{id: 2,	emoji: false,	conteudo:"Sutiã"}
+				{equivalente: 0,	emoji: false,	conteudo:"Pedaço"},
+				{equivalente: 1,	emoji: false,	conteudo:"Pipa"},
+				{equivalente: 2,	emoji: false,	conteudo:"Sutiã"}
 			],
 			nivel: 0
 		},
 		{
 			palavra: true,
 			coluna1: [
-				{id: 0,	emoji: false,	conteudo:"Charlar"},
-				{id: 0,	emoji: false,	conteudo:"Conversar"},
-				{id: 0,	emoji: false,	conteudo:"Prosear"}
+				{equivalente: 0,	emoji: false,	conteudo:"Charlar"},
+				{equivalente: 0,	emoji: false,	conteudo:"Conversar"},
+				{equivalente: 0,	emoji: false,	conteudo:"Prosear"}
 			],
 			coluna2: [
 				{		emoji: false,	conteudo:"Magrela"},
@@ -925,11 +925,11 @@ TaCerto.Estrutura.DesafioDeFase = {
 		{
 			palavra: true,
 			coluna1: [
-				{id: 0,	emoji: false,	conteudo:"Promessa"},
-				{id: 0,	emoji: false,	conteudo:"Compromisso"},
-				{id: 0,	emoji: false,	conteudo:"Pacto"},
-				{id: 0,	emoji: false,	conteudo:"Trato"},
-				{id: 0,	emoji: false,	conteudo:"Acordo"}
+				{equivalente: 0,	emoji: false,	conteudo:"Promessa"},
+				{equivalente: 0,	emoji: false,	conteudo:"Compromisso"},
+				{equivalente: 0,	emoji: false,	conteudo:"Pacto"},
+				{equivalente: 0,	emoji: false,	conteudo:"Trato"},
+				{equivalente: 0,	emoji: false,	conteudo:"Acordo"}
 			],
 			coluna2: [
 				{		emoji: false,	conteudo:"Juro"},
