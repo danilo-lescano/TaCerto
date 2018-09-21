@@ -6,19 +6,36 @@ TaCerto.Controladora.Gabarito = {
     },
     open: function () {
         console.log("oi");
-        var telaGabarito = document.getElementById("gabaritoScreen");
-        this.gameModel.openned = !this.gameModel.openned;
-        if(this.gameModel.openned){
+		var telaGabarito = document.getElementById("gabaritoScreen");
+		var gabaritoBotao = document.getElementById("gabaritoBotao");
+		//gabaritoBotao.style.display === "none";
+		//telaGabarito.style.display === "none";
+		this.gameModel.openned = !this.gameModel.openned;
+		//telaGabarito.classList.remove("animated","slideInUp","slideInDown");
+		
+		
+		if(this.gameModel.openned){
             console.log("levanta a tela");
+            setTimeout(function(){
+				telaGabarito.style.height = 70 + "vh";
+            	//telaGabarito.classList.add("animated","slideInUp");
+			}, 10);
             
-            telaGabarito.style.height = 70 + "vh";
-            telaGabarito.classList.add("animated","zoomInUp","fadeIn");
 
         }else{
-            console.log("desce a tela");
-            telaGabarito.style.height = 0 + "vh";
-            telaGabarito.classList.add("animated","zoomInDown","fadeOut");
+			console.log("desce a tela");
+			
+			setTimeout(function(){
+				telaGabarito.style.height = 0 + "vh";
+            	//telaGabarito.classList.add("animated","slideInDown");
+			}, 10);
+			
 
+			/*
+			setTimeout(function(){
+				telaGabarito.style.height = 0 + "vh";
+			}, 1000);
+*/
         }
         
 

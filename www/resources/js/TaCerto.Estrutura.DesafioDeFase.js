@@ -456,6 +456,17 @@ TaCerto.Estrutura.DesafioDeFase = {
 		},
 		{
 			resposta: [
+				{conteudo: "exceção", position: 1},
+				{conteudo: "excessão", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Você é a única "},
+				{frase: false},
+			],
+			nivel: 0,
+		},
+		{
+			resposta: [
 				{conteudo: "mau", position: -1},
 				{conteudo: "mal", position: 1},
 			],

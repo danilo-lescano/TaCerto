@@ -67,12 +67,23 @@ TaCerto.Controladora.CarregarPagina = {
 	},
 	apendiceLoad: function(pagina, apendice, apendiceid){
 		for (var i = 0; i < apendice.length; i++) {
-			apendice[i] = (pagina + "." + apendice[i]).trim();
+			apendice[i] = (apendice[i]).trim();
+			console.log(apendice[i]);
+			if(!apendice[i])
+				apendice[i] = (apendice[i]).trim();
+
 			var flagFound = false;
 			for (var j = 0; j < TaCerto.HTML.length; j++)
 				if (apendice[i] === TaCerto.HTML[j].name){
 					flagFound = true;
-					document.getElementById(apendiceid[i]).innerHTML = TaCerto.HTML[j].conteudo;
+					var varApendice = document.getElementById(apendiceid[i]);
+					if(!varApendice){
+						varApendice = document.createElement("div");
+						varApendice.id = apendiceid[i];
+						document.getElementsByClassName("corpo")[0].appendChild(varApendice);
+					}
+					varApendice.innerHTML = TaCerto.HTML[j].conteudo;
+				
 				}
 			console.log("\tapendice " + apendice[i] + " found: " + flagFound);
 		}

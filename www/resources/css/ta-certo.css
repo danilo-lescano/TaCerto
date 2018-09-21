@@ -1687,15 +1687,20 @@ span {
 /* gabarito */ 
 /*--------------------------------------------------------------*/
 
+#gabarito{
+	width:100vw;
+}
+
 .gabaritoBotao{
 
 	position: absolute;
-	margin: 0 auto;
-	width: 50%;
+	margin: 0 auto 0 auto;
 	height: 0;
 	bottom: 5vh;
-	right: 5vh;
+	left: 50%;
+	transform: translate(-50%); 
 	z-index: 5;
+	/*display: none;*/
 }
 
 #gabaritoScreen{
@@ -1705,6 +1710,9 @@ span {
 	bottom: 0vh;
 	overflow: hidden;
 	height: 0vh;
+	transition: height .5s ease;
+	/*display: none;*/
+
 	/* height máximo = 72vh;*/
 }
 
