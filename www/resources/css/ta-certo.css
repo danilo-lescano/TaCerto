@@ -1033,9 +1033,10 @@ span {
 	background-blend-mode: multiply;
 }
 .palavraSpan{
-	font-size: calc(20px + 1vw);
+	font-size: calc(12px + 2vw);
 	text-shadow: 1.5px 1.5px darkgrey;
 	padding: 15px 10px;
+	min-width: 120px;
 }
 .emojiSpan{
 	font-size: calc(50px + 1vw);
@@ -1050,6 +1051,43 @@ span {
 }
 .itemColunaPrincipal:nth-child(3) .exploradorSpan{
 	border: 3px solid green;
+}
+.palavraNumExplorador{
+	position: relative;
+	font-size: 10px;
+	top: -8px;
+}
+.redBGExplorador{
+	animation: redBGExplorador 1s infinite ease-in-out;
+}
+@keyframes redBGExplorador{
+	from {background-color: whitesmoke;}
+	50% {background-color: rgb(255, 130, 130);}
+	99% {background-color: whitesmoke;}
+}
+.greenBGExplorador{
+	animation: greenBGExplorador 1s infinite ease-in-out;
+}
+@keyframes greenBGExplorador{
+	from {background-color: whitesmoke;}
+	50% {background-color: rgb(118, 118, 161);}
+	99% {background-color: whitesmoke;}
+}
+.blueBGExplorador{
+	animation: blueBGExplorador 1s infinite ease-in-out;
+}
+@keyframes blueBGExplorador{
+	from {background-color: whitesmoke;}
+	50% {background-color: rgb(9, 140, 9);}
+	99% {background-color: whitesmoke;}
+}
+.greyBGExplorador{
+	animation: greyBGExplorador 1s infinite ease-in-out;
+}
+@keyframes greyBGExplorador{
+	from {background-color: whitesmoke;}
+	50% {background-color: darkgrey;}
+	99% {background-color: whitesmoke;}
 }
 /*--------------------------------------------------------------*/
 /*jogo explorador*//*fim*/
