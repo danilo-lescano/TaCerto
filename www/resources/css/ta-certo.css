@@ -1684,42 +1684,53 @@ span {
 /*--------------------------------------------------------------*/
 
 /*--------------------------------------------------------------*/
-/* gabarito */ 
+/* dica */ 
 /*--------------------------------------------------------------*/
 
-#gabarito{
+#dica{
 	width:100vw;
 }
 
-.gabaritoBotao{
+.dicaBotao{
 
 	position: absolute;
-	margin: 0 auto 0 auto;
-	height: 0;
-	bottom: 5vh;
+	height: 5vh;
+	overflow: hidden;
+	bottom: 0vh;
 	left: 50%;
-	transform: translate(-50%); 
-	z-index: 5;
+	transform: translate(-50%);
+	transition: height .5s ease; 
+	z-index: 0;
 	/*display: none;*/
 }
 
-#gabaritoScreen{
+#dicaScreen{
 	position: absolute;
 	width: 100%;
-	opacity: 0.5;
+	opacity: .8;
 	bottom: 0vh;
 	overflow: hidden;
 	height: 0vh;
+	max-height: 90vh;
+	overflow: auto;
 	transition: height .5s ease;
 	/*display: none;*/
 
 	/* height máximo = 72vh;*/
 }
 
-.img-gabarito{
+.img-dica{
 	width: 100%;
+}
+/*
+.collection-item{
+	background: #001433 !important;
+}*/
+
+.collection-item{
+	transition: all  .2s ease;
 }
 
 /*--------------------------------------------------------------*/
-/*gabarito*//*fim*/
+/*dica*//*fim*/
 /*--------------------------------------------------------------*/

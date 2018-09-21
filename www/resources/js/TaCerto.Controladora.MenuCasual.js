@@ -2,7 +2,7 @@ var TaCerto = TaCerto || {};
 TaCerto.Controladora = TaCerto.Controladora || {};
 TaCerto.Controladora.MenuCasual = {
 	load: function(){
-		TaCerto.Controladora.CarregarPagina.htmlCorpo("menuCasual",["gabarito"],["gabarito"]);
+		TaCerto.Controladora.CarregarPagina.htmlCorpo("menuCasual",["dica"],["dica"]);
 	},
 	callGame: function(tipo, el){
 		TaCerto.GenFunc.fadeInBtnClick(el,
@@ -13,7 +13,7 @@ TaCerto.Controladora.MenuCasual = {
 	homeBtn: function (el) {
 		TaCerto.GenFunc.fadeInBtnClick(el,
 		function(){
-			TaCerto.Controladora.CarregarPagina.htmlCorpo("menuInicial",["gabarito"],["gabarito"]);
+			TaCerto.Controladora.CarregarPagina.htmlCorpo("menuInicial",["dica"],["dica"]);
 		});
 	}
 };

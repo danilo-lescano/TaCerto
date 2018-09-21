@@ -20,4 +20,12 @@ TaCerto.Estrutura.Jogador = {
 		7:[false, false, false],
 		8:[false, false, false],
 	},
+
+	dica: [
+		{
+			dica: "",
+			id: 0,
+		}
+	]
+
 };

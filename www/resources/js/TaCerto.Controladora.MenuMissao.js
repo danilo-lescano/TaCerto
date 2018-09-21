@@ -4,7 +4,7 @@ TaCerto.Controladora.MenuMissao = {
 	modoTipo: '',
 	modoNivel: 0,
 	load: function(){
-		TaCerto.Controladora.CarregarPagina.htmlCorpo("menuMissao");
+		TaCerto.Controladora.CarregarPagina.htmlCorpo("menuMissao",["dica"],["dica"]);
 		document.getElementById('moedas').innerHTML = TaCerto.Estrutura.Jogador.moeda;
 
 		function calculaLvl(xp){

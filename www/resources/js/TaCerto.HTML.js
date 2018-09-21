@@ -14,5 +14,5 @@ TaCerto.HTML = [
 	{name:"hardcore", conteudo:""},
 	{name:"lacuna", conteudo:""},
 	{name:"fimDeJogo", conteudo:""},
-	{name:"gabarito", conteudo:""},
+	{name:"dica", conteudo:""},
 ];
