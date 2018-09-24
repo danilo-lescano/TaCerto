@@ -178,19 +178,45 @@ TaCerto.Controladora.Jogo.Explorador = {
 					else
 						return;
 				}
-				//fim de jogo / checkar respostas
-				var flagResp = false;
+				//check fim de jogo
 				for (let i = 0; i < 3; i++) {
-					for (let j = 3; j < 6; j++) {
-						var classResp = itensCol[i].classList.contains(MATCHBRED) ? MATCHBRED
-						:	itensCol[i].classList.contains(MATCHBLUE) ? MATCHBLUE
-						:	itensCol[i].classList.contains(MATCHGREEN) ? MATCHGREEN
+					var isClassResp = itensCol[i].classList.contains(MATCHBRED) ? true
+						:	itensCol[i].classList.contains(MATCHBLUE) ? true
+						:	itensCol[i].classList.contains(MATCHGREEN) ? true
 						:	false;
+					if (!classResp) return;
+				}
+
+				//check respostas corretas
+				var flagResp = false;
+				var contResp = 0;
+				for (let i = 0; i < 3; i++) {
+					var classRespCol1 = itensCol[i].classList.contains(MATCHBRED) ? MATCHBRED
+						:	itensCol[i].classList.contains(MATCHBLUE) ? MATCHBLUE
+						:	MATCHGREEN;
+
+					for (let j = 3; j < 6; j++) {
+						var classRespCol2 = itensCol[j].classList.contains(MATCHBRED) ? MATCHBRED
+						:	itensCol[j].classList.contains(MATCHBLUE) ? MATCHBLUE
+						:	MATCHGREEN;
+
+						if(classRespCol2 === classRespCol1 && itensCol[i].dataset.equivalente === itensCol[j].dataset.equivalente)
+							contResp++;
+						
+						//faz as respostas certas piscarem
+						if(itensCol[i].dataset.equivalente === itensCol[j].dataset.equivalente){
+							var fastBG = TaCerto.Controladora.Jogo.Explorador.getBG(true, itensCol[i]);
+							itensCol[i].classList.add(fastBG+"BGExploradorFast");
+							itensCol[j].classList.add(fastBG+"BGExploradorFast");
+						}
 					}
 				}
 
-				TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResp);
-				TaCerto.Controladora.Jogo.Explorador.proximaPergunta();
+				if (contResp === 3) flagResp = true;
+				setTimeout(function(){
+					TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResp);
+					TaCerto.Controladora.Jogo.Explorador.proximaPergunta();
+				}, 350);
 			}
 		},50);
 	},

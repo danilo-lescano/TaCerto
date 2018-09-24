@@ -1060,6 +1060,9 @@ span {
 .redBGExplorador{
 	animation: redBGExplorador 1s infinite ease-in-out;
 }
+.redBGExploradorFast{
+	animation: redBGExplorador 0.3s infinite ease-in-out;
+}
 @keyframes redBGExplorador{
 	from {background-color: whitesmoke;}
 	50% {background-color: rgb(255, 130, 130);}
@@ -1068,6 +1071,9 @@ span {
 .blueBGExplorador{
 	animation: blueBGExplorador 1s infinite ease-in-out;
 }
+.blueBGExploradorFast{
+	animation: blueBGExplorador 0.3s infinite ease-in-out;
+}
 @keyframes blueBGExplorador{
 	from {background-color: whitesmoke;}
 	50% {background-color: rgb(118, 118, 161);}
@@ -1075,6 +1081,9 @@ span {
 }
 .greenBGExplorador{
 	animation: greenBGExplorador 1s infinite ease-in-out;
+}
+.greenBGExploradorFast{
+	animation: greenBGExplorador 0.3s infinite ease-in-out;
 }
 @keyframes greenBGExplorador{
 	from {background-color: whitesmoke;}
