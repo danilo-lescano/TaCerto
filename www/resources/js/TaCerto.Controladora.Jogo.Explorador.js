@@ -87,7 +87,7 @@ TaCerto.Controladora.Jogo.Explorador = {
 		this.gameModel.tipoPalavra = desafio.palavra;
 		
 		/*(4)*/
-		alimentarHTML(itens, !desafio.palavra);
+		alimentarHTML(itens, !desafio.palavra); //palavra n tem coluna principal entao passa um parametro !true
 	},
 	btnPressionado: function(el){//verificar que tipo de botao foi pressionado(1) / 
 		TaCerto.GenFunc.translate5050(el,
@@ -134,6 +134,12 @@ TaCerto.Controladora.Jogo.Explorador = {
 				return;
 			}
 
+			var MATCHBRED = 0, MATCHBLUE = 1, MATCHGREEN = 2;
+			var isAlredyMatch = 	el.parentElement.classList.contains("redBorderExplorador") ? MATCHBRED
+								:	el.parentElement.classList.contains("blueBorderExplorador") ? MATCHBLUE
+								:	el.parentElement.classList.contains("blueBorderExplorador") ? MATCHGREEN
+								:	false;
+
 			el.dataset.clicked = "true";
 			el.classList.add(bgColor+"BGExplorador");
 
@@ -153,11 +159,10 @@ TaCerto.Controladora.Jogo.Explorador = {
 				var newBgColor = TaCerto.Controladora.Jogo.Explorador.getBG(!isColunaPrincipal, isMatchClick);
 				isMatchClick.dataset.clicked = "";
 				isMatchClick.classList.remove(newBgColor+"BGExplorador");
+
 				el.classList.add((isColunaPrincipal ? bgColor : newBgColor) + "BorderExplorador");
 				isMatchClick.classList.add((isColunaPrincipal ? bgColor : newBgColor) + "BorderExplorador");
 
-				console.log(bgColor);
-				console.log(newBgColor);
 				return;
 			}
 			/*console.log(
@@ -210,7 +215,7 @@ TaCerto.Controladora.Jogo.Explorador = {
 			var inicio = isColunaPrincipal ? 3 : 0;
 			var fim = inicio + 3;
 			for (let i = inicio; i < fim; i++){
-				if(itensCol[i].dataset.equivalente === el.dataset.equivalente && itensCol[i].dataset.clicked)
+				if(itensCol[i].dataset.clicked) //PODE SER UTIL DEPOIS: itensCol[i].dataset.equivalente === el.dataset.equivalente && 
 					return itensCol[i];
 			}
 		}
