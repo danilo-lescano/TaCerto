@@ -134,16 +134,22 @@ TaCerto.Controladora.Jogo.Explorador = {
 				return;
 			}
 
-			var MATCHBRED = 0, MATCHBLUE = 1, MATCHGREEN = 2;
-			var isAlredyMatch = 	el.parentElement.classList.contains("redBorderExplorador") ? MATCHBRED
-								:	el.parentElement.classList.contains("blueBorderExplorador") ? MATCHBLUE
-								:	el.parentElement.classList.contains("blueBorderExplorador") ? MATCHGREEN
+			var MATCHBRED = "redBorderExplorador", MATCHBLUE = "blueBorderExplorador", MATCHGREEN = "blueBorderExplorador";
+			var isAlredyMatch = 	el.classList.contains(MATCHBRED) ? MATCHBRED
+								:	el.classList.contains(MATCHBLUE) ? MATCHBLUE
+								:	el.classList.contains(MATCHGREEN) ? MATCHGREEN
 								:	false;
+			if(isAlredyMatch){//toggledown matchs
+				var itensMatched = document.querySelectorAll("."+isAlredyMatch);
+				for (let i = 0; i < itensMatched.length; i++) {
+					itensMatched[i].classList.remove(isAlredyMatch);
+				}
+			}
 
 			el.dataset.clicked = "true";
 			el.classList.add(bgColor+"BGExplorador");
 
-			var isSecondClick = TaCerto.Controladora.Jogo.Explorador.getSecondClick(isTipoPalavra, isColunaPrincipal, el);
+			var isSecondClick = TaCerto.Controladora.Jogo.Explorador.getSecondClick(isTipoPalavra, isColunaPrincipal, el);//segundo click na mesma coluna
 			if(isSecondClick){//se clicar em um e tiver outro clicado (só da mesma coluna e !tipoPalavra)
 				isSecondClick.dataset.clicked = "";
 				var newBgColor = TaCerto.Controladora.Jogo.Explorador.getBG(isColunaPrincipal, isSecondClick);
@@ -163,17 +169,29 @@ TaCerto.Controladora.Jogo.Explorador = {
 				el.classList.add((isColunaPrincipal ? bgColor : newBgColor) + "BorderExplorador");
 				isMatchClick.classList.add((isColunaPrincipal ? bgColor : newBgColor) + "BorderExplorador");
 
-				return;
+				var itensCol = document.querySelectorAll(".itemColunaExplorador span");
+				for (let i = 0; i < itensCol.length; i++) {
+					if(	itensCol[i].classList.contains(MATCHBRED) ||
+						itensCol[i].classList.contains(MATCHBLUE) ||
+						itensCol[i].classList.contains(MATCHGREEN))
+						continue;
+					else
+						return;
+				}
+				//fim de jogo / checkar respostas
+				var flagResp = false;
+				for (let i = 0; i < 3; i++) {
+					for (let j = 3; j < 6; j++) {
+						var classResp = itensCol[i].classList.contains(MATCHBRED) ? MATCHBRED
+						:	itensCol[i].classList.contains(MATCHBLUE) ? MATCHBLUE
+						:	itensCol[i].classList.contains(MATCHGREEN) ? MATCHGREEN
+						:	false;
+					}
+				}
+
+				TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResp);
+				TaCerto.Controladora.Jogo.Explorador.proximaPergunta();
 			}
-			/*console.log(
-				"isTipoPalavra: " + isTipoPalavra + "\n" +
-				"isColunaPrincipal: " + isColunaPrincipal + "\n" +
-				"isSecondClick: " + isSecondClick + "\n" +
-				"isDoubleClicked: " + isDoubleClicked + "\n" +
-				"bgColor: " + bgColor + "\n" +
-				"isAllClicked: " + isAllClicked + "\n" +
-				""
-			);*/
 		},50);
 	},
 	getBG: function(isColunaPrincipal, el){
