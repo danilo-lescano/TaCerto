@@ -289,7 +289,9 @@ TaCerto.Controladora.Jogo.Explorador = {
 	},
 
 	pular: function(){
-
+		this.DESAFIO[this.DESAFIO.length] = this.shuffleDesafio()[0];
+		this.DESAFIO[this.DESAFIO.length] = "primeira interação tem um pop().";
+		this.proximaPergunta();
 	},
 	eliminarErrado: function(){
 
