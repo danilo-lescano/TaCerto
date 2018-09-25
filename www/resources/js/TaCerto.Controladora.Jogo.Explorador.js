@@ -293,7 +293,41 @@ TaCerto.Controladora.Jogo.Explorador = {
 		this.proximaPergunta();
 	},
 	eliminarErrado: function(){
-		cartaAmarelaExplroador
+		var isTipoPalavra = TaCerto.Controladora.Jogo.Explorador.gameModel.tipoPalavra;
+		function addBG(el, index){
+			setTimeout(function(){
+				if(isTipoPalavra){
+					for (let i = 0; i < 6; i++){
+						if(!isNaN(el[i].dataset.equivalente)){
+							el[i].classList.add("cartaAmarelaExplroador");
+							setTimeout(function(){
+								try {el[i].classList.remove("cartaAmarelaExplroador");}
+								catch(err){/*donothing*/}
+							},1000);
+						}
+					}
+				}
+				else{
+					for (let i = 3; i < 6; i++){
+						if(el[i].dataset.equivalente === el[index].dataset.equivalente){
+							el[i].classList.add("cartaAmarelaExplroador");
+							el[index].classList.add("cartaAmarelaExplroador");
+							setTimeout(function(){
+								try {
+									el[i].classList.remove("cartaAmarelaExplroador");
+									el[index].classList.remove("cartaAmarelaExplroador");
+								}
+								catch(err){/*donothing*/}
+							},1000);
+							break;
+						}
+					}
+					if(el[index+1] && index < 3)
+						addBG(el, index+1);
+				}
+			},!index ? 0:1000);
+		}
+		addBG(document.querySelectorAll(".itemColunaExplorador span"), 0);
 	},
 	shuffleDesafio: function(){
 		var x = JSON.parse(JSON.stringify(TaCerto.Estrutura.DesafioDeFase.explorador));

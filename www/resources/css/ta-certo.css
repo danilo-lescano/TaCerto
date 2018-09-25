@@ -1112,7 +1112,7 @@ span {
 }
 /*flag*/
 .cartaAmarelaExplroador{
-	animation: cartaAmarelaExplroador 0.7s infinite ease-in-out;
+	animation: cartaAmarelaExplroador 0.7s 1 ease-in-out;
 }
 @keyframes cartaAmarelaExplroador{
 	from, 99% {background-color: whitesmoke;}
