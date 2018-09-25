@@ -68,7 +68,6 @@ TaCerto.Controladora.CarregarPagina = {
 	apendiceLoad: function(pagina, apendice, apendiceid){
 		for (var i = 0; i < apendice.length; i++) {
 			apendice[i] = (apendice[i]).trim();
-			console.log(apendice[i]);
 			if(!apendice[i])
 				apendice[i] = (apendice[i]).trim();
 

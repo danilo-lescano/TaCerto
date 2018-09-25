@@ -69,6 +69,9 @@ TaCerto.Controladora.Jogo.Explorador = {
 			span.innerHTML = (desafio.coluna1.length - 1);
 
 			desafio.coluna1.shuffle();
+			desafio.coluna1.forEach(element => {
+				console.log(element.conteudo);
+			});
 			document.getElementById("palavraExplorador").innerHTML = desafio.coluna1 /*parcialmente (4)*/[desafio.coluna1.length-1].conteudo;
 			document.getElementById("palavraExplorador").appendChild(span);
 			
@@ -115,12 +118,9 @@ TaCerto.Controladora.Jogo.Explorador = {
 					var contAcertos = 0;
 					var contTotalGabarito = 0;
 					
-					for(let i = 0; i < itensCol.length; i++){
-						console.log(itensCol[i].dataset.clicked);
-						console.log(itensCol[i].dataset.equivalente);
+					for(let i = 0; i < itensCol.length; i++)
 						if(itensCol[i].dataset.clicked && itensCol[i].dataset.equivalente == "0")
 							contAcertos++;
-					}
 
 					for(let i = 0; i < resposta.length; i++)
 						if(resposta[i].equivalente)
@@ -134,7 +134,7 @@ TaCerto.Controladora.Jogo.Explorador = {
 				return;
 			}
 
-			var MATCHBRED = "redBorderExplorador", MATCHBLUE = "blueBorderExplorador", MATCHGREEN = "blueBorderExplorador";
+			var MATCHBRED = "redBorderExplorador", MATCHBLUE = "blueBorderExplorador", MATCHGREEN = "greenBorderExplorador";
 			var isAlredyMatch = 	el.classList.contains(MATCHBRED) ? MATCHBRED
 								:	el.classList.contains(MATCHBLUE) ? MATCHBLUE
 								:	el.classList.contains(MATCHGREEN) ? MATCHGREEN
@@ -173,8 +173,9 @@ TaCerto.Controladora.Jogo.Explorador = {
 				for (let i = 0; i < itensCol.length; i++) {
 					if(	itensCol[i].classList.contains(MATCHBRED) ||
 						itensCol[i].classList.contains(MATCHBLUE) ||
-						itensCol[i].classList.contains(MATCHGREEN))
+						itensCol[i].classList.contains(MATCHGREEN)){
 						continue;
+					}
 					else
 						return;
 				}
@@ -184,7 +185,7 @@ TaCerto.Controladora.Jogo.Explorador = {
 						:	itensCol[i].classList.contains(MATCHBLUE) ? true
 						:	itensCol[i].classList.contains(MATCHGREEN) ? true
 						:	false;
-					if (!classResp) return;
+					if (!isClassResp) return;
 				}
 
 				//check respostas corretas
@@ -216,7 +217,7 @@ TaCerto.Controladora.Jogo.Explorador = {
 				setTimeout(function(){
 					TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResp);
 					TaCerto.Controladora.Jogo.Explorador.proximaPergunta();
-				}, 350);
+				}, 700);
 			}
 		},50);
 	},
@@ -225,18 +226,10 @@ TaCerto.Controladora.Jogo.Explorador = {
 		if(isColunaPrincipal){
 			var itensCol = document.querySelectorAll(".itemColunaExplorador span");
 			var colors= ["red", "blue", "green"];
-			console.log("--------------");
 			for (let i = 0; i < 3; i++) {
 				let index = i;
-				console.log("é igual " + (itensCol[i] === el));
-				console.log(colors[i]);
-				if(itensCol[i] === el){
-					console.log("porra vai tomar no cu");
-				console.log(colors[i]);
-				console.log(colors[index]);
-				return ret = colors[index];
-
-				}
+				if(itensCol[i] === el)
+					return ret = colors[index];
 			}
 		}
 		return ret;
