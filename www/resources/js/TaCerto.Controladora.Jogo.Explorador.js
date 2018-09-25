@@ -177,25 +177,20 @@ TaCerto.Controladora.Jogo.Explorador = {
 				var lineWrapper = document.getElementById("lineWrapper");//div com wrapper de svg
 				var posEl = el.getBoundingClientRect();
 				var posMatch = isMatchClick.getBoundingClientRect();
-				console.log(posEl);
-				console.log(posMatch);
 				var line = document.createElement("div");
 				line.classList.add("lineRedExplorer", colorBorderMatch);
 				line.style.top = ((posEl.top + posEl.height/2 + posMatch.top + posMatch.height/2)/2) + "px";
 				line.style.left = Math.min(posEl.left + posEl.width/2, posMatch.left + posMatch.width/2) + "px";
-				var x = (posEl.left + (posEl.width/2)); var y = (posMatch.left + (posMatch.width/2));
-				line.style.width = (x>y? (x-y) : (y-x)) + "px";
 				
-				if(x>y){
-					x = (posEl.top + (posEl.height/2));
-					y = (posMatch.top + (posMatch.height/2));
-				}
-				else{
-					x = (posMatch.top + (posMatch.height/2));
-					y = (posEl.top + (posEl.height/2));
-				}
-				var deg = (x - y > -6 && x - y < 6) ? "0deg" : x>y? "45deg)" : "-45deg)";
-				line.style.transform = "translateY(-50%) rotateZ(" + deg;
+				var x1 = (posEl.left + (posEl.width/2)); var x2 = (posMatch.left + (posMatch.width/2));
+				var y1 = (posEl.top + (posEl.height/2)); var y2 = (posMatch.top + (posMatch.height/2));
+
+				line.style.width = (x1>x2? (x1-x2) : (x2-x1)) + "px";
+
+				var coeficienteAngular = Math.atan((y1-y2) / (x1-x2));
+				console.log(coeficienteAngular);
+				var rad = coeficienteAngular + "rad)";
+				line.style.transform = "translateY(-50%) rotateZ(" + rad;
 				
 
 				lineWrapper.appendChild(line);
