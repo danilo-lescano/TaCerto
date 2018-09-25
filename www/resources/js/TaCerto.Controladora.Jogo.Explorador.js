@@ -69,6 +69,7 @@ TaCerto.Controladora.Jogo.Explorador = {
 			span.innerHTML = (desafio.coluna1.length - 1);
 
 			desafio.coluna1.shuffle();
+			console.log("--");
 			desafio.coluna1.forEach(element => {
 				console.log(element.conteudo);
 			});
@@ -112,7 +113,8 @@ TaCerto.Controladora.Jogo.Explorador = {
 				el.dataset.clicked = "true";
 				if(isAllClicked){
 					var resposta = TaCerto.Controladora.Jogo.Explorador.DESAFIO;
-					resposta = resposta[resposta.length - 1];
+					resposta = resposta[resposta.length - 1].coluna1;
+					console.log(resposta);
 					var itensCol = document.querySelectorAll(".itemColunaExplorador span");
 					var flagResp = false;
 					var contAcertos = 0;
@@ -123,10 +125,13 @@ TaCerto.Controladora.Jogo.Explorador = {
 							contAcertos++;
 
 					for(let i = 0; i < resposta.length; i++)
-						if(resposta[i].equivalente)
+						if(!isNaN(resposta[i].equivalente))
 							contTotalGabarito++;
 
-					flagResp = contAcertos === contTotalGabarito;
+					console.log(contAcertos);
+					console.log(contTotalGabarito);
+
+					flagResp = contAcertos === contTotalGabarito - 1;
 
 					TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResp);
 					TaCerto.Controladora.Jogo.Explorador.proximaPergunta();

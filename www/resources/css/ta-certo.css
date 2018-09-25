@@ -1093,6 +1093,9 @@ span {
 .greyBGExplorador{
 	animation: greyBGExplorador 1s infinite ease-in-out;
 }
+.greyBGExplorador{
+	animation: greyBGExplorador 0.3s infinite ease-in-out;
+}
 @keyframes greyBGExplorador{
 	from {background-color: whitesmoke;}
 	50% {background-color: darkgrey;}
