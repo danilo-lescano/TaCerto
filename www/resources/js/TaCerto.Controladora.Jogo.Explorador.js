@@ -188,7 +188,6 @@ TaCerto.Controladora.Jogo.Explorador = {
 				line.style.width = (x1>x2? (x1-x2) : (x2-x1)) + "px";
 
 				var coeficienteAngular = Math.atan((y1-y2) / (x1-x2));
-				console.log(coeficienteAngular);
 				var rad = coeficienteAngular + "rad)";
 				line.style.transform = "translateY(-50%) rotateZ(" + rad;
 				
@@ -234,7 +233,7 @@ TaCerto.Controladora.Jogo.Explorador = {
 				setTimeout(function(){
 					TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResp);
 					TaCerto.Controladora.Jogo.Explorador.proximaPergunta();
-				}, 700);
+				}, 1500);
 			}
 		},50);
 	},
@@ -294,7 +293,7 @@ TaCerto.Controladora.Jogo.Explorador = {
 		this.proximaPergunta();
 	},
 	eliminarErrado: function(){
-
+		cartaAmarelaExplroador
 	},
 	shuffleDesafio: function(){
 		var x = JSON.parse(JSON.stringify(TaCerto.Estrutura.DesafioDeFase.explorador));

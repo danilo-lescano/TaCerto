@@ -245,5 +245,23 @@
 	
 	TaCerto.Controladora.PreLoad.start();
 
+
+	var checkSize = function(){
+		var xxxx = document.querySelectorAll("*");
+		var arrSize = [];
+		console.log(xxxx.length);
+		for(var i = 0; i < xxxx.length; i++){
+			var aux = xxxx[i].getBoundingClientRect();
+			arrSize[i] = aux.width + aux.left;
+			if(arrSize[i] > 360){
+				console.log(xxxx[i]);
+			}
+		}
+		arrSize.sort();
+		for(var i = 0; i < xxxx.length; i++){
+			console.log(arrSize[i]);
+		}
+	};
+
 </script>
 </html> 
