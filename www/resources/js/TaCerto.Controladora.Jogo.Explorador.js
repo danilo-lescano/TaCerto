@@ -27,6 +27,9 @@ TaCerto.Controladora.Jogo.Explorador = {
 			var col2 = document.getElementById("colunaWrapper2");
 			col1.innerHTML = col2.innerHTML = "";
 
+			var lineWrapper = document.getElementById("lineWrapper");
+			lineWrapper.innerHTML = "";
+
 			for (let i = 0; i < itens.length; i++) {
 				var div = document.createElement("div");
 				div.classList.add("itemColunaExplorador");
@@ -114,7 +117,6 @@ TaCerto.Controladora.Jogo.Explorador = {
 				if(isAllClicked){
 					var resposta = TaCerto.Controladora.Jogo.Explorador.DESAFIO;
 					resposta = resposta[resposta.length - 1].coluna1;
-					console.log(resposta);
 					var itensCol = document.querySelectorAll(".itemColunaExplorador span");
 					var flagResp = false;
 					var contAcertos = 0;
@@ -127,9 +129,6 @@ TaCerto.Controladora.Jogo.Explorador = {
 					for(let i = 0; i < resposta.length; i++)
 						if(!isNaN(resposta[i].equivalente))
 							contTotalGabarito++;
-
-					console.log(contAcertos);
-					console.log(contTotalGabarito);
 
 					flagResp = contAcertos === contTotalGabarito - 1;
 
@@ -171,20 +170,38 @@ TaCerto.Controladora.Jogo.Explorador = {
 				isMatchClick.dataset.clicked = "";
 				isMatchClick.classList.remove(newBgColor+"BGExplorador");
 
-				el.classList.add((isColunaPrincipal ? bgColor : newBgColor) + "BorderExplorador");
-				isMatchClick.classList.add((isColunaPrincipal ? bgColor : newBgColor) + "BorderExplorador");
+				var colorBorderMatch = (isColunaPrincipal ? bgColor : newBgColor) + "BorderExplorador";
+				el.classList.add(colorBorderMatch);
+				isMatchClick.classList.add(colorBorderMatch);
 
-				var itensCol = document.querySelectorAll(".itemColunaExplorador span");
-				for (let i = 0; i < itensCol.length; i++) {
-					if(	itensCol[i].classList.contains(MATCHBRED) ||
-						itensCol[i].classList.contains(MATCHBLUE) ||
-						itensCol[i].classList.contains(MATCHGREEN)){
-						continue;
-					}
-					else
-						return;
+				var lineWrapper = document.getElementById("lineWrapper");//div com wrapper de svg
+				var posEl = el.getBoundingClientRect();
+				var posMatch = isMatchClick.getBoundingClientRect();
+				console.log(posEl);
+				console.log(posMatch);
+				var line = document.createElement("div");
+				line.classList.add("lineRedExplorer", colorBorderMatch);
+				line.style.top = ((posEl.top + posEl.height/2 + posMatch.top + posMatch.height/2)/2) + "px";
+				line.style.left = Math.min(posEl.left + posEl.width/2, posMatch.left + posMatch.width/2) + "px";
+				var x = (posEl.left + (posEl.width/2)); var y = (posMatch.left + (posMatch.width/2));
+				line.style.width = (x>y? (x-y) : (y-x)) + "px";
+				
+				if(x>y){
+					x = (posEl.top + (posEl.height/2));
+					y = (posMatch.top + (posMatch.height/2));
 				}
+				else{
+					x = (posMatch.top + (posMatch.height/2));
+					y = (posEl.top + (posEl.height/2));
+				}
+				var deg = (x - y > -6 && x - y < 6) ? "0deg" : x>y? "45deg)" : "-45deg)";
+				line.style.transform = "translateY(-50%) rotateZ(" + deg;
+				
+
+				lineWrapper.appendChild(line);
+
 				//check fim de jogo
+				var itensCol = document.querySelectorAll(".itemColunaExplorador span");
 				for (let i = 0; i < 3; i++) {
 					var isClassResp = itensCol[i].classList.contains(MATCHBRED) ? true
 						:	itensCol[i].classList.contains(MATCHBLUE) ? true

@@ -1111,6 +1111,18 @@ span {
 .greenBorderExplorador{
 	border: 3px solid green;
 }
+
+#lineWrapper{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:100vw;
+	height:100vh;
+}
+.lineRedExplorer{
+	position: absolute;
+	height:0;
+}
 /*--------------------------------------------------------------*/
 /*jogo explorador*//*fim*/
 /*--------------------------------------------------------------*/
