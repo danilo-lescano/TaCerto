@@ -47,7 +47,7 @@ TaCerto.Controladora.Dica = {
 		// Add as dicas
 		for(var i = 0, l = TaCerto.Estrutura.Jogador.dicas.length; i < l; i++){
 			console.log("oia");
-			tabelaDicas.innerHTML += '<li class="collection-item"><div>'+TaCerto.Estrutura.Jogador.dicas[i].dica+'<a onclick="TaCerto.Controladora.Dica.apagarDica(this)" class="secondary-content"><i class="material-icons">clear</i></a></div></li>';
+			tabelaDicas.innerHTML += '<li class="collection-item"><div>'+TaCerto.Estrutura.Jogador.dicas[i].dica+'<a id="'+TaCerto.Estrutura.Jogador.dicas[i].id+'" onclick="TaCerto.Controladora.Dica.apagarDica(this)" class="secondary-content"><i class="material-icons">clear</i></a></div></li>';
 		}
 		
     },
@@ -55,12 +55,22 @@ TaCerto.Controladora.Dica = {
 
 		var pai = elemento.parentNode.parentNode;
 
+		var list = TaCerto.Estrutura.Jogador.dicas;
+		// Procura e apaga a dica do array
+		for(var i = list.length; i--;){
+			console.log(list[i].id + "  " + elemento.id);
+			if(list[i].id === elemento.id){
+				list.splice(i, 1);
+				TaCerto.Estrutura.Jogador.numDicas--;
+				console.log("fui apagado");
+			}
+		}
+
 		//elemento.parentNode.removeChild(elemento);
 		elemento.onclick = undefined;
 		pai.classList.add("animated","fadeOut");
 
 		setTimeout( function(){
-			console.log(pai.parentNode.children.length);
 			if(pai.parentNode.children.length == 3){
 				var teladicaMsg = document.getElementById('telaDicaMsg');
 				teladicaMsg.innerHTML += '<h5>Você é muito bom! <br>Não precisa de dicas.</h5>';
@@ -80,7 +90,7 @@ TaCerto.Controladora.Dica = {
 				console.log(tabelaDicas.children.length);
 
 				var teladicaMsg = document.getElementById('telaDicaMsg');
-				teladicaMsg.innerHTML += '<h5>Você é muito bom! <br>Não precisa de dicas.</h5>';
+				teladicaMsg.innerHTML = '<h5>Você é muito bom! <br>Não precisa de dicas.</h5>';
 				teladicaMsg.classList.add("animated", "fadeIn");
 			}
 		}
@@ -89,9 +99,19 @@ TaCerto.Controladora.Dica = {
 	colocaDica: function (idDica, _dica){
 		console.log(TaCerto.Estrutura.Jogador.numDicas + "----" + idDica + " = " + _dica);
 	
-		TaCerto.Estrutura.Jogador.dicas.push({id: idDica, dica: _dica});
+		var list = TaCerto.Estrutura.Jogador.dicas;
+		var isThere = false;
+		// Procura e apaga a dica do array
+		for(var i = 0, l = list; i < l && !isThere; i++){
+			if(list[i].id === idDica){
+				console.log("Vc já tá aqui, irmão");
+			}
+		}
 
-		console.log(TaCerto.Estrutura.Jogador.dicas[TaCerto.Estrutura.Jogador.numDicas], TaCerto.Estrutura.Jogador.dicas.length);
-		//TaCerto.Estrutura.Jogador.numDicas++;
+		if(!isThere){
+			TaCerto.Estrutura.Jogador.dicas.push({id: idDica, dica: _dica});
+			TaCerto.Estrutura.Jogador.numDicas++;
+		}
+			
 	}	
 };
