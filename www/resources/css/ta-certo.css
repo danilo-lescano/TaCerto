@@ -1055,16 +1055,32 @@ span {
 .itemColunaPrincipal:nth-child(3) .exploradorSpan{
 	border: 3px solid green;
 }
-.palavraNumExplorador{
+.palavraExplorador{
 	position: relative;
+    height: 21px;
+    max-height: 21px;
+}
+.palavraNumExplorador{
+	position: absolute;
+	display: inline-block;
 	font-size: 10px;
 	top: -8px;
 }
+.palavraNumExploradorAnimation{
+	animation: palavraNumExploradorAnimation .35s 1 ease-in;
+}
+@keyframes palavraNumExploradorAnimation{
+	from{font-size: 10px; transform: rotateZ(45deg)}
+	25%{font-size: 20px; transform: rotateZ(-45deg)}
+	75%{font-size: 20px; transform: rotateZ(45deg)}
+	99%{font-size: 10px; transform: rotateZ(0deg)}
+}
+
 .redBGExplorador{
 	animation: redBGExplorador 1s infinite ease-in-out;
 }
 .redBGExploradorFast{
-	animation: redBGExplorador 0.3s infinite ease-in-out;
+	animation: redBGExplorador 0.7s 4 ease-in-out;
 }
 @keyframes redBGExplorador{
 	from, 99% {background-color: whitesmoke;}
@@ -1074,7 +1090,7 @@ span {
 	animation: blueBGExplorador 1s infinite ease-in-out;
 }
 .blueBGExploradorFast{
-	animation: blueBGExplorador 0.3s infinite ease-in-out;
+	animation: blueBGExplorador 0.7s 4 ease-in-out;
 }
 @keyframes blueBGExplorador{
 	from, 99% {background-color: whitesmoke;}
@@ -1084,7 +1100,7 @@ span {
 	animation: greenBGExplorador 1s infinite ease-in-out;
 }
 .greenBGExploradorFast{
-	animation: greenBGExplorador 0.3s infinite ease-in-out;
+	animation: greenBGExplorador 0.7s 4 ease-in-out;
 }
 @keyframes greenBGExplorador{
 	from, 99% {background-color: whitesmoke;}
@@ -1093,7 +1109,7 @@ span {
 .greyBGExplorador{
 	animation: greyBGExplorador 1s infinite ease-in-out;
 }
-.greyBGExplorador{
+.greyBGExploradorFast{
 	animation: greyBGExplorador 0.3s infinite ease-in-out;
 }
 @keyframes greyBGExplorador{
@@ -1110,7 +1126,12 @@ span {
 .greenBorderExplorador{
 	border: 3px solid green;
 }
-/*flag*/
+.fimJogoAcertouExplorador{
+	animation: greenBGExplorador 0.7s 4 ease-in-out;
+}
+.fimJogoErrouExplorador{
+	animation: redBGExplorador 0.7s 4 ease-in-out;
+}
 .cartaAmarelaExplroador{
 	animation: cartaAmarelaExplroador 0.7s 1 ease-in-out;
 }

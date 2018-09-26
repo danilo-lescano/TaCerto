@@ -66,7 +66,7 @@ TaCerto.Controladora.Jogo.Explorador = {
 		var itens;
 		document.getElementById("palavraExplorador").innerHTML = "";
 		if(desafio.palavra){/*(3) nesse if*/
-			var span = document.createElement("span");
+			var span = document.createElement("div");
 			span.id="palavraNumExplorador";
 			span.classList.add("palavraNumExplorador");
 			span.innerHTML = (desafio.coluna1.length - 1);
@@ -78,7 +78,7 @@ TaCerto.Controladora.Jogo.Explorador = {
 			});
 			document.getElementById("palavraExplorador").innerHTML = desafio.coluna1 /*parcialmente (4)*/[desafio.coluna1.length-1].conteudo;
 			document.getElementById("palavraExplorador").appendChild(span);
-			
+
 			desafio.coluna1.pop();
 
 			itens = desafio.coluna1.concat(desafio.coluna2);
@@ -106,6 +106,11 @@ TaCerto.Controladora.Jogo.Explorador = {
 			if(isDoubleClicked){//se já foi clicado então desclicar
 				el.dataset.clicked = "";
 				el.classList.remove(bgColor+"BGExplorador");
+				var spanClicked = document.getElementById("palavraExplorador").getElementsByTagName("div")[0];
+				if(spanClicked){
+					spanClicked.innerHTML = (parseInt(spanClicked.innerHTML) + 1);
+					TaCerto.Controladora.Jogo.Explorador.animationHanddlerPalavraNum.new();
+				}
 				return;
 			}
 
@@ -114,7 +119,14 @@ TaCerto.Controladora.Jogo.Explorador = {
 			if(isTipoPalavra){
 				el.classList.add(bgColor+"BGExplorador");
 				el.dataset.clicked = "true";
+
+				var spanClicked = document.getElementById("palavraExplorador").getElementsByTagName("div")[0];
+				spanClicked.innerHTML = (parseInt(spanClicked.innerHTML) - 1);
+				TaCerto.Controladora.Jogo.Explorador.animationHanddlerPalavraNum.new();
+
 				if(isAllClicked){
+					TaCerto.Controladora.Jogo.Explorador.desativarOnclick();
+
 					var resposta = TaCerto.Controladora.Jogo.Explorador.DESAFIO;
 					resposta = resposta[resposta.length - 1].coluna1;
 					var itensCol = document.querySelectorAll(".itemColunaExplorador span");
@@ -122,18 +134,30 @@ TaCerto.Controladora.Jogo.Explorador = {
 					var contAcertos = 0;
 					var contTotalGabarito = 0;
 					
-					for(let i = 0; i < itensCol.length; i++)
-						if(itensCol[i].dataset.clicked && itensCol[i].dataset.equivalente == "0")
+					for(let i = 0; i < itensCol.length; i++){
+						var flagAcertou = false;
+						itensCol[i].classList.remove(bgColor+"BGExplorador");
+						if(itensCol[i].dataset.clicked && itensCol[i].dataset.equivalente == "0"){
+							flagAcertou = true;
 							contAcertos++;
+						}
+						if(flagAcertou){
+							itensCol[i].classList.add("fimJogoAcertouExplorador");
+						}
+						else if(itensCol[i].dataset.clicked){
+							itensCol[i].classList.add("fimJogoErrouExplorador");
+						}
+					}
 
 					for(let i = 0; i < resposta.length; i++)
 						if(!isNaN(resposta[i].equivalente))
 							contTotalGabarito++;
 
 					flagResp = contAcertos === contTotalGabarito - 1;
-
-					TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResp);
-					TaCerto.Controladora.Jogo.Explorador.proximaPergunta();
+					setTimeout(function(){
+						TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResp);
+						TaCerto.Controladora.Jogo.Explorador.proximaPergunta();
+					},3000);
 				}
 				return;
 			}
@@ -204,6 +228,8 @@ TaCerto.Controladora.Jogo.Explorador = {
 					if (!isClassResp) return;
 				}
 
+				TaCerto.Controladora.Jogo.Explorador.desativarOnclick();
+
 				//check respostas corretas
 				var flagResp = false;
 				var contResp = 0;
@@ -233,9 +259,38 @@ TaCerto.Controladora.Jogo.Explorador = {
 				setTimeout(function(){
 					TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResp);
 					TaCerto.Controladora.Jogo.Explorador.proximaPergunta();
-				}, 1500);
+				}, 3000);
 			}
 		},50);
+	},
+	animationHanddlerPalavraNum: {
+		animacaoFlag: false,
+		timeoutAnimacao: undefined,
+		new: function(){
+			var spanClicked = document.getElementById("palavraExplorador").getElementsByTagName("div")[0];
+			if(this.animacaoFlag){
+				clearTimeout(this.timeoutAnimacao);
+				spanClicked.classList.remove("palavraNumExploradorAnimation");
+			}
+			this.animacaoFlag = true;
+			setTimeout(function(){
+				spanClicked.classList.add("palavraNumExploradorAnimation");
+			},10);
+			this.timeoutAnimacao = setTimeout(function(){
+				try{
+					spanClicked.classList.remove("palavraNumExploradorAnimation");
+				}
+				catch(err){/*do nothin*/}
+				clearTimeout(this.timeoutAnimacao);
+				this.timeoutAnimacao = undefined;
+				this.animacaoFlag = false;
+			},1010);
+		}
+	},
+	desativarOnclick: function(){
+		var elArr = document.querySelectorAll(".itemColunaExplorador span");
+		for (let i = 0; i < elArr.length; i++)
+			elArr[i].onclick = undefined;
 	},
 	getBG: function(isColunaPrincipal, el){
 		var ret = "grey";
@@ -276,12 +331,12 @@ TaCerto.Controladora.Jogo.Explorador = {
 	},
 	getAllClicked: function(isTipoPalavra, isDoubleClicked){
 		if(isTipoPalavra && !isDoubleClicked){
-			var itensCol = document.querySelectorAll(".itemColunaExplorador span");
-			var contItensClicked = 1;
-			for (let i = 0; i < itensCol.length; i++)
-				if(itensCol[i].dataset.clicked)
-					contItensClicked++;
-			if(contItensClicked == document.getElementById("palavraNumExplorador").innerHTML)
+			//var itensCol = document.querySelectorAll(".itemColunaExplorador span");
+			//var contItensClicked = 1;
+			//for (let i = 0; i < itensCol.length; i++)
+			//	if(itensCol[i].dataset.clicked)
+			//		contItensClicked++;
+			if(1 == document.getElementById("palavraNumExplorador").innerHTML)
 				return true;
 		}
 		return false;
