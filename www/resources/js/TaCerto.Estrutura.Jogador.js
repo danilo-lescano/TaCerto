@@ -24,10 +24,6 @@ TaCerto.Estrutura.Jogador = {
 	},
 
 	dicas: [
-		/*{
-			id: 0,
-			dica: " ",
-		}*/
 	]
 
 };
