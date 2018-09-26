@@ -100,169 +100,174 @@ TaCerto.Controladora.Jogo.Explorador = {
 	btnPressionado: function(el){//verificar que tipo de botao foi pressionado(1) / 
 		TaCerto.GenFunc.translate5050(el,
 		function(){
-			var isColunaPrincipal = el.parentElement.classList.contains("itemColunaPrincipal");
-			var bgColor = TaCerto.Controladora.Jogo.Explorador.getBG(isColunaPrincipal, el);
+			TaCerto.Controladora.Jogo.Explorador.btnCallback(el);
+		},50);
+	},
+	btnCallback: function(el){
+		var isColunaPrincipal = el.parentElement.classList.contains("itemColunaPrincipal");
+		var bgColor = this.getBG(isColunaPrincipal, el);
 
-			var isDoubleClicked = el.dataset.clicked ? true : false;
-			if(isDoubleClicked){//se já foi clicado então desclicar
-				el.dataset.clicked = "";
-				el.classList.remove(bgColor+"BGExplorador");
-				var spanClicked = document.getElementById("palavraExplorador").getElementsByTagName("div")[0];
-				if(spanClicked){
-					spanClicked.innerHTML = (parseInt(spanClicked.innerHTML) + 1);
-					TaCerto.Controladora.Jogo.Explorador.animationHanddlerPalavraNum.new();
-				}
-				return;
+		var isDoubleClicked = el.dataset.clicked ? true : false;
+		if(isDoubleClicked){//se já foi clicado então desclicar
+			el.dataset.clicked = "";
+			el.classList.remove(bgColor+"BGExplorador");
+			var spanClicked = document.getElementById("palavraExplorador").getElementsByTagName("div")[0];
+			if(spanClicked){
+				spanClicked.innerHTML = (parseInt(spanClicked.innerHTML) + 1);
+				this.animationHanddlerPalavraNum.new();
 			}
+			return;
+		}
 
-			var isTipoPalavra = TaCerto.Controladora.Jogo.Explorador.gameModel.tipoPalavra;
-			var isAllClicked = TaCerto.Controladora.Jogo.Explorador.getAllClicked(isTipoPalavra, isDoubleClicked);
-			if(isTipoPalavra){
-				el.classList.add(bgColor+"BGExplorador");
-				el.dataset.clicked = "true";
-
-				var spanClicked = document.getElementById("palavraExplorador").getElementsByTagName("div")[0];
-				spanClicked.innerHTML = (parseInt(spanClicked.innerHTML) - 1);
-				TaCerto.Controladora.Jogo.Explorador.animationHanddlerPalavraNum.new();
-
-				if(isAllClicked){
-					TaCerto.Controladora.Jogo.Explorador.desativarOnclick();
-
-					var resposta = TaCerto.Controladora.Jogo.Explorador.DESAFIO;
-					resposta = resposta[resposta.length - 1].coluna1;
-					var itensCol = document.querySelectorAll(".itemColunaExplorador span");
-					var flagResp = false;
-					var contAcertos = 0;
-					var contTotalGabarito = 0;
-					
-					for(let i = 0; i < itensCol.length; i++){
-						var flagAcertou = false;
-						itensCol[i].classList.remove(bgColor+"BGExplorador");
-						if(itensCol[i].dataset.clicked && itensCol[i].dataset.equivalente == "0"){
-							flagAcertou = true;
-							contAcertos++;
-						}
-						if(flagAcertou){
-							itensCol[i].classList.add("fimJogoAcertouExplorador");
-						}
-						else if(itensCol[i].dataset.clicked){
-							itensCol[i].classList.add("fimJogoErrouExplorador");
-						}
-					}
-
-					for(let i = 0; i < resposta.length; i++)
-						if(!isNaN(resposta[i].equivalente))
-							contTotalGabarito++;
-
-					flagResp = contAcertos === contTotalGabarito - 1;
-					setTimeout(function(){
-						TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResp);
-						TaCerto.Controladora.Jogo.Explorador.proximaPergunta();
-					},3000);
-				}
-				return;
-			}
-
-			var MATCHBRED = "redBorderExplorador", MATCHBLUE = "blueBorderExplorador", MATCHGREEN = "greenBorderExplorador";
-			var isAlredyMatch = 	el.classList.contains(MATCHBRED) ? MATCHBRED
-								:	el.classList.contains(MATCHBLUE) ? MATCHBLUE
-								:	el.classList.contains(MATCHGREEN) ? MATCHGREEN
-								:	false;
-			if(isAlredyMatch){//toggledown matchs
-				var itensMatched = document.querySelectorAll("."+isAlredyMatch);
-				for (let i = 0; i < itensMatched.length; i++) {
-					itensMatched[i].classList.remove(isAlredyMatch);
-				}
-			}
-
-			el.dataset.clicked = "true";
+		var isTipoPalavra = this.gameModel.tipoPalavra;
+		var isAllClicked = this.getAllClicked(isTipoPalavra, isDoubleClicked);
+		if(isTipoPalavra){
 			el.classList.add(bgColor+"BGExplorador");
+			el.dataset.clicked = "true";
 
-			var isSecondClick = TaCerto.Controladora.Jogo.Explorador.getSecondClick(isTipoPalavra, isColunaPrincipal, el);//segundo click na mesma coluna
-			if(isSecondClick){//se clicar em um e tiver outro clicado (só da mesma coluna e !tipoPalavra)
-				isSecondClick.dataset.clicked = "";
-				var newBgColor = TaCerto.Controladora.Jogo.Explorador.getBG(isColunaPrincipal, isSecondClick);
-				isSecondClick.classList.remove(newBgColor+"BGExplorador");
-				return;
-			}
+			var spanClicked = document.getElementById("palavraExplorador").getElementsByTagName("div")[0];
+			spanClicked.innerHTML = (parseInt(spanClicked.innerHTML) - 1);
+			this.animationHanddlerPalavraNum.new();
 
-			var isMatchClick = TaCerto.Controladora.Jogo.Explorador.getMatchClick(isTipoPalavra, isColunaPrincipal, el);
-			if(isMatchClick){
-				el.dataset.clicked = "";
-				el.classList.remove(bgColor+"BGExplorador");
+			if(isAllClicked){
+				this.desativarOnclick();
 
-				var newBgColor = TaCerto.Controladora.Jogo.Explorador.getBG(!isColunaPrincipal, isMatchClick);
-				isMatchClick.dataset.clicked = "";
-				isMatchClick.classList.remove(newBgColor+"BGExplorador");
-
-				var colorBorderMatch = (isColunaPrincipal ? bgColor : newBgColor) + "BorderExplorador";
-				el.classList.add(colorBorderMatch);
-				isMatchClick.classList.add(colorBorderMatch);
-
-				var lineWrapper = document.getElementById("lineWrapper");//div com wrapper de svg
-				var posEl = el.getBoundingClientRect();
-				var posMatch = isMatchClick.getBoundingClientRect();
-				var line = document.createElement("div");
-				line.classList.add("lineRedExplorer", colorBorderMatch);
-				line.style.top = ((posEl.top + posEl.height/2 + posMatch.top + posMatch.height/2)/2) + "px";
-				line.style.left = Math.min(posEl.left + posEl.width/2, posMatch.left + posMatch.width/2) + "px";
-				
-				var x1 = (posEl.left + (posEl.width/2)); var x2 = (posMatch.left + (posMatch.width/2));
-				var y1 = (posEl.top + (posEl.height/2)); var y2 = (posMatch.top + (posMatch.height/2));
-
-				line.style.width = (x1>x2? (x1-x2) : (x2-x1)) + "px";
-
-				var coeficienteAngular = Math.atan((y1-y2) / (x1-x2));
-				var rad = coeficienteAngular + "rad)";
-				line.style.transform = "translateY(-50%) rotateZ(" + rad;
-				
-
-				lineWrapper.appendChild(line);
-
-				//check fim de jogo
+				var resposta = this.DESAFIO;
+				resposta = resposta[resposta.length - 1].coluna1;
 				var itensCol = document.querySelectorAll(".itemColunaExplorador span");
-				for (let i = 0; i < 3; i++) {
-					var isClassResp = itensCol[i].classList.contains(MATCHBRED) ? true
-						:	itensCol[i].classList.contains(MATCHBLUE) ? true
-						:	itensCol[i].classList.contains(MATCHGREEN) ? true
-						:	false;
-					if (!isClassResp) return;
-				}
-
-				TaCerto.Controladora.Jogo.Explorador.desativarOnclick();
-
-				//check respostas corretas
 				var flagResp = false;
-				var contResp = 0;
-				for (let i = 0; i < 3; i++) {
-					var classRespCol1 = itensCol[i].classList.contains(MATCHBRED) ? MATCHBRED
-						:	itensCol[i].classList.contains(MATCHBLUE) ? MATCHBLUE
-						:	MATCHGREEN;
-
-					for (let j = 3; j < 6; j++) {
-						var classRespCol2 = itensCol[j].classList.contains(MATCHBRED) ? MATCHBRED
-						:	itensCol[j].classList.contains(MATCHBLUE) ? MATCHBLUE
-						:	MATCHGREEN;
-
-						if(classRespCol2 === classRespCol1 && itensCol[i].dataset.equivalente === itensCol[j].dataset.equivalente)
-							contResp++;
-						
-						//faz as respostas certas piscarem
-						if(itensCol[i].dataset.equivalente === itensCol[j].dataset.equivalente){
-							var fastBG = TaCerto.Controladora.Jogo.Explorador.getBG(true, itensCol[i]);
-							itensCol[i].classList.add(fastBG+"BGExploradorFast");
-							itensCol[j].classList.add(fastBG+"BGExploradorFast");
-						}
+				var contAcertos = 0;
+				var contTotalGabarito = 0;
+				
+				for(let i = 0; i < itensCol.length; i++){
+					var flagAcertou = false;
+					itensCol[i].classList.remove(bgColor+"BGExplorador");
+					if(itensCol[i].dataset.clicked && itensCol[i].dataset.equivalente == "0"){
+						flagAcertou = true;
+						contAcertos++;
+					}
+					if(flagAcertou){
+						itensCol[i].classList.add("fimJogoAcertouExplorador");
+					}
+					else if(itensCol[i].dataset.clicked){
+						itensCol[i].classList.add("fimJogoErrouExplorador");
 					}
 				}
 
-				if (contResp === 3) flagResp = true;
+				for(let i = 0; i < resposta.length; i++)
+					if(!isNaN(resposta[i].equivalente))
+						contTotalGabarito++;
+
+				flagResp = contAcertos === contTotalGabarito - 1;
 				setTimeout(function(){
 					TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResp);
 					TaCerto.Controladora.Jogo.Explorador.proximaPergunta();
-				}, 3000);
+				},3000);
 			}
-		},50);
+			return;
+		}
+
+		var MATCHBRED = "redBorderExplorador", MATCHBLUE = "blueBorderExplorador", MATCHGREEN = "greenBorderExplorador";
+		var isAlredyMatch = 	el.classList.contains(MATCHBRED) ? MATCHBRED
+							:	el.classList.contains(MATCHBLUE) ? MATCHBLUE
+							:	el.classList.contains(MATCHGREEN) ? MATCHGREEN
+							:	false;
+		if(isAlredyMatch){//toggledown matchs
+			var itensMatched = document.querySelectorAll("."+isAlredyMatch);
+			for (let i = 0; i < itensMatched.length; i++) {
+				itensMatched[i].classList.remove(isAlredyMatch);
+			}
+		}
+
+		el.dataset.clicked = "true";
+		el.classList.add(bgColor+"BGExplorador");
+
+		var isSecondClick = this.getSecondClick(isTipoPalavra, isColunaPrincipal, el);//segundo click na mesma coluna
+		if(isSecondClick){//se clicar em um e tiver outro clicado (só da mesma coluna e !tipoPalavra)
+			isSecondClick.dataset.clicked = "";
+			var newBgColor = this.getBG(isColunaPrincipal, isSecondClick);
+			isSecondClick.classList.remove(newBgColor+"BGExplorador");
+			return;
+		}
+
+		var isMatchClick = this.getMatchClick(isTipoPalavra, isColunaPrincipal, el);
+		if(isMatchClick){
+			el.dataset.clicked = "";
+			el.classList.remove(bgColor+"BGExplorador");
+
+			var newBgColor = this.getBG(!isColunaPrincipal, isMatchClick);
+			isMatchClick.dataset.clicked = "";
+			isMatchClick.classList.remove(newBgColor+"BGExplorador");
+
+			var colorBorderMatch = (isColunaPrincipal ? bgColor : newBgColor) + "BorderExplorador";
+			el.classList.add(colorBorderMatch);
+			isMatchClick.classList.add(colorBorderMatch);
+
+			var lineWrapper = document.getElementById("lineWrapper");//div com wrapper de svg
+			var posEl = el.getBoundingClientRect();
+			var posMatch = isMatchClick.getBoundingClientRect();
+			var line = document.createElement("div");
+			line.classList.add("lineRedExplorer", colorBorderMatch);
+			line.style.top = ((posEl.top + posEl.height/2 + posMatch.top + posMatch.height/2)/2) + "px";
+			line.style.left = Math.min(posEl.left + posEl.width/2, posMatch.left + posMatch.width/2) + "px";
+			
+			var x1 = (posEl.left + (posEl.width/2)); var x2 = (posMatch.left + (posMatch.width/2));
+			var y1 = (posEl.top + (posEl.height/2)); var y2 = (posMatch.top + (posMatch.height/2));
+
+			line.style.width = (x1>x2? (x1-x2) : (x2-x1)) + "px";
+
+			var coeficienteAngular = Math.atan((y1-y2) / (x1-x2));
+			var rad = coeficienteAngular + "rad)";
+			line.style.transform = "translateY(-50%) rotateZ(" + rad;
+			
+
+			lineWrapper.appendChild(line);
+
+			//check fim de jogo
+			var itensCol = document.querySelectorAll(".itemColunaExplorador span");
+			for (let i = 0; i < 3; i++) {
+				var isClassResp = itensCol[i].classList.contains(MATCHBRED) ? true
+					:	itensCol[i].classList.contains(MATCHBLUE) ? true
+					:	itensCol[i].classList.contains(MATCHGREEN) ? true
+					:	false;
+				if (!isClassResp) return;
+			}
+
+			this.desativarOnclick();
+
+			//check respostas corretas
+			var flagResp = false;
+			var contResp = 0;
+			for (let i = 0; i < 3; i++) {
+				var classRespCol1 = itensCol[i].classList.contains(MATCHBRED) ? MATCHBRED
+					:	itensCol[i].classList.contains(MATCHBLUE) ? MATCHBLUE
+					:	MATCHGREEN;
+
+				for (let j = 3; j < 6; j++) {
+					var classRespCol2 = itensCol[j].classList.contains(MATCHBRED) ? MATCHBRED
+					:	itensCol[j].classList.contains(MATCHBLUE) ? MATCHBLUE
+					:	MATCHGREEN;
+
+					if(classRespCol2 === classRespCol1 && itensCol[i].dataset.equivalente === itensCol[j].dataset.equivalente){
+						contResp++;
+						//fazer as respostas certas piscarem
+						itensCol[i].classList.add("greenBGExploradorFast");
+						itensCol[j].classList.add("greenBGExploradorFast");
+					}
+					else{
+						//fazer as respostas erradas piscarem
+						itensCol[i].classList.add("redBGExploradorFast");
+						itensCol[j].classList.add("redBGExploradorFast");
+					}
+				}
+			}
+
+			if (contResp === 3) flagResp = true;
+			setTimeout(function(){
+				TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResp);
+				TaCerto.Controladora.Jogo.Explorador.proximaPergunta();
+			}, 3000);
+		}
 	},
 	animationHanddlerPalavraNum: {
 		animacaoFlag: false,
