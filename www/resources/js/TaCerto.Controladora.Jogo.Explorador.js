@@ -32,7 +32,8 @@ TaCerto.Controladora.Jogo.Explorador = {
 
 			for (let i = 0; i < itens.length; i++) {
 				var div = document.createElement("div");
-				div.classList.add("itemColunaExplorador");
+				var zoomIn = i < 3 ? "zoomInLeft" : "zoomInRight";
+				div.classList.add("itemColunaExplorador", "animated", zoomIn, "fadeIn");
 
 				var span = document.createElement("span");
 				var emojiPalavra = itens[i].emoji ? "emojiSpan" : "palavraSpan";

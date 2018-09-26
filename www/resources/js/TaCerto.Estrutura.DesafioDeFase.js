@@ -812,7 +812,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{equivalente: 2,	emoji: true,	conteudo:"🍊"}
 			],
 			coluna2: [
-				{equivalenteid: 0,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: 0,	emoji: false,	conteudo:"Magrela"},
 				{equivalente: 1,	emoji: false,	conteudo:"Taruira"},
 				{equivalente: 2,	emoji: false,	conteudo:"Tangerina"}
 			],
