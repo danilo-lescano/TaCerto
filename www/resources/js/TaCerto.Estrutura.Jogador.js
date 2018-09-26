@@ -6,6 +6,8 @@ TaCerto.Estrutura.Jogador = {
 	cartaAmarela: 5,
 	cartaAzul: 5,
 
+	numDicas: 0,
+
 	moeda: 10,
 	xp: 0,
 
@@ -21,11 +23,11 @@ TaCerto.Estrutura.Jogador = {
 		8:[false, false, false],
 	},
 
-	dica: [
-		{
-			dica: "",
+	dicas: [
+		/*{
 			id: 0,
-		}
+			dica: " ",
+		}*/
 	]
 
 };

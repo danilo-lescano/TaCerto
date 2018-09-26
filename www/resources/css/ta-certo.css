@@ -1707,6 +1707,7 @@ span {
 #dicaScreen{
 	position: absolute;
 	width: 100%;
+	background: #000;
 	opacity: .8;
 	bottom: 0vh;
 	overflow: hidden;
@@ -1717,6 +1718,23 @@ span {
 	/*display: none;*/
 
 	/* height máximo = 72vh;*/
+}
+
+#telaDica{
+	margin: 0;
+}
+
+#telaDicaHeader{
+	background: #000;
+}
+
+#telaDicaMsg{
+	color: #fff;
+}
+
+#telaDicaHeader h4{
+	color: #fff;
+	opacity: 100%;
 }
 
 .img-dica{
