@@ -32,6 +32,11 @@ TaCerto.Controladora.Jogo.Normal = {
 		
 		if (TaCerto.Controladora.Jogo.Normal.DESAFIO.length){
 			flagResp = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].flag === resp;
+			
+			// Checa se errou e chama função para adicionar na lista de dicas
+			if(!flagResp)
+				TaCerto.Controladora.Dica.colocaDica(TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].id, TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].dica);
+			
 			TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResp);
 			TaCerto.Controladora.Jogo.Normal.efeitoResposta(flagResp);
 			

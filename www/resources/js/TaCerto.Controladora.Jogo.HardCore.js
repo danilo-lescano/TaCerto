@@ -56,6 +56,10 @@ TaCerto.Controladora.Jogo.HardCore = {
 		if (TaCerto.Controladora.Jogo.HardCore.DESAFIO.length){
 			flagResp = TaCerto.Controladora.Jogo.HardCore.DESAFIO[TaCerto.Controladora.Jogo.HardCore.DESAFIO.length - 1].flag === resp;
 			
+			// Checa se errou e chama função para adicionar na lista de dicas
+			if(!flagResp)
+				TaCerto.Controladora.Dica.colocaDica(TaCerto.Controladora.Jogo.HardCore.DESAFIO[TaCerto.Controladora.Jogo.HardCore.DESAFIO.length - 1].id, TaCerto.Controladora.Jogo.HardCore.DESAFIO[TaCerto.Controladora.Jogo.HardCore.DESAFIO.length - 1].dica);
+
 			TaCerto.Controladora.Jogo.HardCore.velocidadeParede(flagResp);
 			
 			TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResp);
