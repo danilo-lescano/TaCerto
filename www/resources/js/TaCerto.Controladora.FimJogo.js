@@ -12,7 +12,8 @@ TaCerto.Controladora.FimJogo = {
 	},
 	btnHome: function(el){
 		TaCerto.GenFunc.pressClick(el,function(){
-			TaCerto.Controladora.CarregarPagina.htmlCorpo('menuInicial');
+			//TaCerto.Controladora.CarregarPagina.htmlCorpo('menuInicial');
+			TaCerto.Controladora.MenuInicial.load();
 			TaCerto.Controladora.FimJogo.zerarVars();
 		});
 	},
@@ -34,7 +35,6 @@ TaCerto.Controladora.FimJogo = {
 			TaCerto.Controladora.FimJogo.zerarVars();
 		});
 	},
-
 
 	displayMission: function(){
 		var missoesConquistadas;
@@ -62,8 +62,6 @@ TaCerto.Controladora.FimJogo = {
 			flagMissaoAcertos += TaCerto.Estrutura.Jogador.missoes[missNum][1] ? 1 : 0;
 			flagMissaoAcertos += TaCerto.Estrutura.Jogador.missoes[missNum][2] ? 1 : 0;
 		}
-
-
 
 		setTimeout(function(){
 			TaCerto.Controladora.CarregarPagina.htmlCorpo('fimDeJogo');

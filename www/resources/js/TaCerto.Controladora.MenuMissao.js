@@ -133,7 +133,8 @@ TaCerto.Controladora.MenuMissao = {
 	homebtn: function(el){
 		TaCerto.GenFunc.fadeInBtnClick(el,
 		function(){
-			TaCerto.Controladora.CarregarPagina.htmlCorpo('menuInicial');
+			//TaCerto.Controladora.CarregarPagina.htmlCorpo('menuInicial');
+			TaCerto.Controladora.MenuInicial.load();
 		});
 	},
 	lojabtn: function(el){
