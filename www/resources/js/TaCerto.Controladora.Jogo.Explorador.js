@@ -22,35 +22,49 @@ TaCerto.Controladora.Jogo.Explorador = {
 	},
 	proximaPergunta: function(){//joga fora o último elemento(1) / chama fim de jogo se n tiver mais elementos(2) / seleciona modo(3) / alimenta página com o desafiodefase(4) / atualizar variavel global tipoPalavra(5)
 		/*(4)*/
-		function alimentarHTML(itens, addClass){
+		function alimentarHTML(itens, isPalavraGame){
+			var palavraWrapper = document.getElementById("palavraExWrapper");
+			var lineWrapper = document.getElementById("lineWrapper");
 			var col1 = document.getElementById("colunaWrapper1");
 			var col2 = document.getElementById("colunaWrapper2");
-			col1.innerHTML = col2.innerHTML = "";
-
-			var lineWrapper = document.getElementById("lineWrapper");
-			lineWrapper.innerHTML = "";
+			palavraWrapper.innerHTML = lineWrapper.innerHTML = col1.innerHTML = col2.innerHTML = "";
 
 			for (let i = 0; i < itens.length; i++) {
-				var div = document.createElement("div");
-				var zoomIn = i < 3 ? "zoomInLeft" : "zoomInRight";
-				div.classList.add("itemColunaExplorador", "animated", zoomIn, "fadeIn");
+				let div = document.createElement("div");
 
-				var span = document.createElement("span");
-				var emojiPalavra = itens[i].emoji ? "emojiSpan" : "palavraSpan";
+				let span = document.createElement("span");
+				let emojiPalavra = itens[i].emoji ? "emojiSpan" : "palavraSpan";
 				span.classList.add("exploradorSpan", emojiPalavra);
 				span.innerHTML = itens[i].conteudo;
 				span.dataset.equivalente = itens[i].equivalente;
 				span.onclick = function (){
 					TaCerto.Controladora.Jogo.Explorador.btnPressionado(this);
 				};
-				if(col1.children.length < 3){
-					if(addClass)
-						div.classList.add("itemColunaPrincipal");
-					col1.appendChild(div);
+
+				let zoomIn;
+				let timeEffect = 0;
+				if(!isPalavraGame){
+					timeEffect = Math.floor(Math.random() * 700);
+					console.log(timeEffect);
+					zoomIn = ["zoomInDown", "zoomInLeft", "zoomInRight", "zoomInUp"];
+					zoomIn.shuffle();
+					div.classList.add("palavraEx", "animated", zoomIn[0]);
+					palavraWrapper.appendChild(div);
+					span.style.position = "relative";
 				}
-				else
-					col2.appendChild(div);
-				div.appendChild(span);
+				else{
+					zoomIn = i < 3 ? "zoomInLeft" : "zoomInRight";
+					div.classList.add("itemColunaExplorador", "animated", zoomIn, "fadeIn");
+					if(col1.children.length < 3){
+						div.classList.add("itemColunaPrincipal");
+						col1.appendChild(div);
+					}
+					else
+						col2.appendChild(div);
+				}
+				setTimeout(function(){
+					div.appendChild(span);
+				}, timeEffect);
 			}
 		}
 
@@ -86,6 +100,8 @@ TaCerto.Controladora.Jogo.Explorador = {
 			itens.shuffle();
 		}
 		else{
+			document.getElementById("palavraExplorador").innerHTML = "Ligue as colunas!";
+
 			desafio.coluna1.shuffle();
 			desafio.coluna2.shuffle();
 
@@ -110,7 +126,7 @@ TaCerto.Controladora.Jogo.Explorador = {
 		var isDoubleClicked = el.dataset.clicked ? true : false;
 		if(isDoubleClicked){//se já foi clicado então desclicar
 			el.dataset.clicked = "";
-			el.classList.remove(bgColor+"BGExplorador");
+			el.classList.remove("exploradorSpanSelected");
 			var spanClicked = document.getElementById("palavraExplorador").getElementsByTagName("div")[0];
 			if(spanClicked){
 				spanClicked.innerHTML = (parseInt(spanClicked.innerHTML) + 1);
@@ -122,7 +138,7 @@ TaCerto.Controladora.Jogo.Explorador = {
 		var isTipoPalavra = this.gameModel.tipoPalavra;
 		var isAllClicked = this.getAllClicked(isTipoPalavra, isDoubleClicked);
 		if(isTipoPalavra){
-			el.classList.add(bgColor+"BGExplorador");
+			el.classList.add("exploradorSpanSelected");
 			el.dataset.clicked = "true";
 
 			var spanClicked = document.getElementById("palavraExplorador").getElementsByTagName("div")[0];
@@ -134,23 +150,23 @@ TaCerto.Controladora.Jogo.Explorador = {
 
 				var resposta = this.DESAFIO;
 				resposta = resposta[resposta.length - 1].coluna1;
-				var itensCol = document.querySelectorAll(".itemColunaExplorador span");
+				var itensCol = document.querySelectorAll(".palavraEx span");
 				var flagResp = false;
 				var contAcertos = 0;
 				var contTotalGabarito = 0;
 				
 				for(let i = 0; i < itensCol.length; i++){
 					var flagAcertou = false;
-					itensCol[i].classList.remove(bgColor+"BGExplorador");
+					itensCol[i].classList.remove("exploradorSpanSelected");
 					if(itensCol[i].dataset.clicked && itensCol[i].dataset.equivalente == "0"){
 						flagAcertou = true;
 						contAcertos++;
 					}
 					if(flagAcertou){
-						itensCol[i].classList.add("fimJogoAcertouExplorador");
+						itensCol[i].classList.add("rightExploradorSpan");
 					}
 					else if(itensCol[i].dataset.clicked){
-						itensCol[i].classList.add("fimJogoErrouExplorador");
+						itensCol[i].classList.add("wrongExploradorSpan");
 					}
 				}
 
@@ -180,24 +196,24 @@ TaCerto.Controladora.Jogo.Explorador = {
 		}
 
 		el.dataset.clicked = "true";
-		el.classList.add(bgColor+"BGExplorador");
+		el.classList.add("exploradorSpanSelected");
 
 		var isSecondClick = this.getSecondClick(isTipoPalavra, isColunaPrincipal, el);//segundo click na mesma coluna
 		if(isSecondClick){//se clicar em um e tiver outro clicado (só da mesma coluna e !tipoPalavra)
 			isSecondClick.dataset.clicked = "";
 			var newBgColor = this.getBG(isColunaPrincipal, isSecondClick);
-			isSecondClick.classList.remove(newBgColor+"BGExplorador");
+			isSecondClick.classList.remove("exploradorSpanSelected");
 			return;
 		}
 
 		var isMatchClick = this.getMatchClick(isTipoPalavra, isColunaPrincipal, el);
 		if(isMatchClick){
 			el.dataset.clicked = "";
-			el.classList.remove(bgColor+"BGExplorador");
+			el.classList.remove("exploradorSpanSelected");
 
 			var newBgColor = this.getBG(!isColunaPrincipal, isMatchClick);
 			isMatchClick.dataset.clicked = "";
-			isMatchClick.classList.remove(newBgColor+"BGExplorador");
+			isMatchClick.classList.remove("exploradorSpanSelected");
 
 			var colorBorderMatch = (isColunaPrincipal ? bgColor : newBgColor) + "BorderExplorador";
 			el.classList.add(colorBorderMatch);
@@ -247,18 +263,22 @@ TaCerto.Controladora.Jogo.Explorador = {
 					var classRespCol2 = itensCol[j].classList.contains(MATCHBRED) ? MATCHBRED
 					:	itensCol[j].classList.contains(MATCHBLUE) ? MATCHBLUE
 					:	MATCHGREEN;
-
-					if(classRespCol2 === classRespCol1 && itensCol[i].dataset.equivalente === itensCol[j].dataset.equivalente){
-						contResp++;
-						//fazer as respostas certas piscarem
-						itensCol[i].classList.add("greenBGExploradorFast");
-						itensCol[j].classList.add("greenBGExploradorFast");
+					if(itensCol[i].dataset.equivalente === itensCol[j].dataset.equivalente){
+						console.log(classRespCol1);
+						console.log(classRespCol2);
 					}
-					else{
-						//fazer as respostas erradas piscarem
-						itensCol[i].classList.add("redBGExploradorFast");
-						itensCol[j].classList.add("redBGExploradorFast");
-					}
+					if(classRespCol2 === classRespCol1)
+						if(itensCol[i].dataset.equivalente === itensCol[j].dataset.equivalente){
+							contResp++;
+							//fazer as respostas certas piscarem
+							itensCol[i].classList.add("rightExploradorSpan");
+							itensCol[j].classList.add("rightExploradorSpan");
+						}
+						else{
+							//fazer as respostas erradas piscarem
+							itensCol[i].classList.add("wrongExploradorSpan");
+							itensCol[j].classList.add("wrongExploradorSpan");
+						}
 				}
 			}
 
@@ -295,6 +315,8 @@ TaCerto.Controladora.Jogo.Explorador = {
 	},
 	desativarOnclick: function(){
 		var elArr = document.querySelectorAll(".itemColunaExplorador span");
+		if(!elArr.length)
+			elArr = document.querySelectorAll(".palavraEx span");
 		for (let i = 0; i < elArr.length; i++)
 			elArr[i].onclick = undefined;
 	},

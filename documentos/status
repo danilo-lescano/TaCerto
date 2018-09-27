@@ -1,4 +1,5 @@
-###########DANILO
+###########_WEEK_0-
+###DANILO
 [20/09/2018]: commit para arrumar a ordem das branchs (MASTER)
 [20/09/2018]: arrumando fase explorador WIP (danilo)
 [21/09/2018]: fase explorador tabela verdade de possibilidades dos clicks de botões (danilo)
@@ -10,13 +11,9 @@
 [25/09/2018]: fase explorador carta pular + tempId adicionado nos desafios de fase(wip) - trabalho remoto (danilo)
 [25/09/2018]: fase explorador carta mostrar erradas - trabalho remoto (danilo)
 [25/09/2018]: fase explorador concluida (polimento e feedback necessario) - trabalho remoto (danilo)
-
 [26/09/2018]: começando fase aurelio (danilo_aurelio)
 
-
-
-
-##########FERNANDO
+###FERNANDO
 [20/09/2018]: commit teste para testar (FERNANDO)
 [20/09/2018]: commit para colocar o significado das palavras nos modos normal e hardcore (FERNANDO)
 [20/09/2018]: alguns this adicionados
@@ -25,3 +22,9 @@
 [26/09/2018]: Bugs, Janela de dicas, Dicas sendo armazenadas e recuperadas. 
 [26/09/2018]: Fazer a tela de dicas ser acessível nas páginas desejadas 90% e animação do botao de dicas
 [27/09/2018]: TaCerto.Controladora.CarregarPagina.htmlCorpo trocados por .load(). Dicas aparecendo nas páginas certas.
+
+
+###########_WEEK_1
+###DANILO
+[27/09/2018]: Atualizando fase do Aurelio com novo layout.
+###FERNANDO
