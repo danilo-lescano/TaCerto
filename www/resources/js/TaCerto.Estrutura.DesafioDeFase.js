@@ -1342,5 +1342,143 @@ TaCerto.Estrutura.DesafioDeFase = {
 			],
 			tempId: 0, nivel: 0
 		}
+	],
+	aurelio: [
+		{
+			internetes: "ta calor dms",
+			formaNormativa: [
+				"Esta calor demais"
+			],
+			nivel: 0
+		},
+		{
+			internetes: "hj eh meu aniversario",
+			formaNormativa: [
+				"Hoje é meu aniversário"
+			],
+			nivel: 0
+		},
+		{
+			internetes: "jah cheguei aki",
+			formaNormativa: [
+				"Já cheguei aqui"
+			],
+			nivel: 0
+		},
+		{
+			internetes: "kd v6?",
+			formaNormativa: [
+				"Cade vocês?"
+			],
+			nivel: 0
+		},
+		{
+			internetes: "olar td bm?",
+			formaNormativa: [
+				"Olá, tudo bom?",
+				"Olá, tudo bem?"
+			],
+			nivel: 0
+		},
+		{
+			internetes: "qnd vc vm pra k?",
+			formaNormativa: [
+				"Quando você vem pra cá?",
+				"Quando você vem para cá?",
+			],
+			nivel: 0
+		},
+		{
+			internetes: "me add no fb ai",
+			formaNormativa: [
+				"Me adiciona no facebook ai"
+			],
+			nivel: 0
+		},
+		{
+			internetes: "eai td blz",
+			formaNormativa: [
+				"E aí tudo beleza?"
+			],
+			nivel: 0
+		},
+		{
+			internetes: "pq usar pq",
+			formaNormativa: [
+				"Por que usar porquê?"
+			],
+			nivel: 0
+		},
+		{
+			internetes: "qlqr coisa só pedir +",
+			formaNormativa: [
+				"Qualquer coisa é só pedir mais"
+			],
+			nivel: 0
+		},
+		{
+			internetes: "vou no parkinho fds",
+			formaNormativa: [
+				"Vou ao parquinho no fim de semana",
+				"Eu vou ao parquinho no fim de semana"
+			],
+			nivel: 0
+		},
+		{
+			internetes: "sdds das aulas brinks",
+			formaNormativa: [
+				"Saudades das aulas. Brincadeira"
+			],
+			nivel: 0
+		},
+		{
+			internetes: "eh vdd esse bilete",
+			formaNormativa: [
+				"É verdade esse bilhete"
+			],
+			nivel: 0
+		},
+		{
+			internetes: "to indo nessa flw",
+			formaNormativa: [
+				"Estou indo nessa. Falou"
+			],
+			nivel: 0
+		},
+		{
+			internetes: "vc eh fmz msm",
+			formaNormativa: [
+				"Você é firmeza mesmo"
+			],
+			nivel: 0
+		},
+		{
+			internetes: "vc pode vir aqui pfv",
+			formaNormativa: [
+				"Você pode vir aqui por favor?"
+			],
+			nivel: 0
+		},
+		{
+			internetes: "vlw pelo presente",
+			formaNormativa: [
+				"Valeu pelo presente"
+			],
+			nivel: 0
+		},
+		{
+			internetes: "ql o num do seu cel?",
+			formaNormativa: [
+				"Qual o numéro do seu celular?"
+			],
+			nivel: 0
+		},
+		{
+			internetes: "vlw pelo presente",
+			formaNormativa: [
+				"Valeu pelo presente"
+			],
+			nivel: 0
+		},
 	]
 };
