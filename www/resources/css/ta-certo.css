@@ -36,8 +36,10 @@ body {
 	width: 100vw;
 }
 .h20{
+	position: relative;
 	min-height: 20vh;
 	margin-bottom: 1vh;
+	z-index: 1;
 }
 .jogoPlacarWrapper{
 	position: relative;
@@ -660,6 +662,7 @@ span {
 }
 #jogoPause img{
 	width: 100%;
+	z-index: 10;
 }
 #despauseModal .modalWrapper span{
 	color: #294b95;
@@ -1052,54 +1055,66 @@ span {
 .itemColunaPrincipal:nth-child(3) .exploradorSpan{
 	border: 3px solid green;
 }
-.palavraNumExplorador{
+.palavraExplorador{
 	position: relative;
+    height: 21px;
+    max-height: 21px;
+}
+.palavraNumExplorador{
+	position: absolute;
+	display: inline-block;
 	font-size: 10px;
 	top: -8px;
 }
+.palavraNumExploradorAnimation{
+	animation: palavraNumExploradorAnimation .35s 1 ease-in;
+}
+@keyframes palavraNumExploradorAnimation{
+	from{font-size: 10px; transform: rotateZ(45deg)}
+	25%{font-size: 20px; transform: rotateZ(-45deg)}
+	75%{font-size: 20px; transform: rotateZ(45deg)}
+	99%{font-size: 10px; transform: rotateZ(0deg)}
+}
+
 .redBGExplorador{
 	animation: redBGExplorador 1s infinite ease-in-out;
 }
 .redBGExploradorFast{
-	animation: redBGExplorador 0.3s infinite ease-in-out;
+	animation: redBGExplorador 0.7s 4 ease-in-out;
 }
 @keyframes redBGExplorador{
-	from {background-color: whitesmoke;}
+	from, 99% {background-color: whitesmoke;}
 	50% {background-color: rgb(255, 130, 130);}
-	99% {background-color: whitesmoke;}
 }
 .blueBGExplorador{
 	animation: blueBGExplorador 1s infinite ease-in-out;
 }
 .blueBGExploradorFast{
-	animation: blueBGExplorador 0.3s infinite ease-in-out;
+	animation: blueBGExplorador 0.7s 4 ease-in-out;
 }
 @keyframes blueBGExplorador{
-	from {background-color: whitesmoke;}
+	from, 99% {background-color: whitesmoke;}
 	50% {background-color: rgb(118, 118, 161);}
-	99% {background-color: whitesmoke;}
 }
 .greenBGExplorador{
 	animation: greenBGExplorador 1s infinite ease-in-out;
 }
 .greenBGExploradorFast{
-	animation: greenBGExplorador 0.3s infinite ease-in-out;
+	animation: greenBGExplorador 0.7s 4 ease-in-out;
 }
 @keyframes greenBGExplorador{
-	from {background-color: whitesmoke;}
+	from, 99% {background-color: whitesmoke;}
 	50% {background-color: rgb(9, 140, 9);}
-	99% {background-color: whitesmoke;}
 }
 .greyBGExplorador{
 	animation: greyBGExplorador 1s infinite ease-in-out;
 }
-.greyBGExplorador{
+.greyBGExploradorFast{
 	animation: greyBGExplorador 0.3s infinite ease-in-out;
 }
 @keyframes greyBGExplorador{
-	from {background-color: whitesmoke;}
+	from, 99% {background-color: whitesmoke;}
 	50% {background-color: darkgrey;}
-	99% {background-color: whitesmoke;}
 }
 
 .redBorderExplorador{
@@ -1110,6 +1125,19 @@ span {
 }
 .greenBorderExplorador{
 	border: 3px solid green;
+}
+.fimJogoAcertouExplorador{
+	animation: greenBGExplorador 0.7s 4 ease-in-out;
+}
+.fimJogoErrouExplorador{
+	animation: redBGExplorador 0.7s 4 ease-in-out;
+}
+.cartaAmarelaExplroador{
+	animation: cartaAmarelaExplroador 0.7s 1 ease-in-out;
+}
+@keyframes cartaAmarelaExplroador{
+	from, 99% {background-color: whitesmoke;}
+	50% {background-color: darkgrey;}
 }
 
 #lineWrapper{
