@@ -115,7 +115,8 @@ TaCerto.Controladora.PreLoad = {
 			setTimeout(function(){
 				TaCerto.Controladora.CarregarPagina.htmlCorpo("gif");
 				setTimeout(function(){
-					TaCerto.Controladora.CarregarPagina.htmlCorpo("menuInicial",["dica"],["dica"]); //ORIGINAL:login || menuInicial
+					//TaCerto.Controladora.CarregarPagina.htmlCorpo("menuInicial",["dica"],["dica"]); //ORIGINAL:login || menuInicial
+					TaCerto.Controladora.MenuInicial.load();
 				},JSParaTeste.loading); //ORIGINAL:3000
 			},JSParaTeste.loadGif); //ORIGINAL:2000
 		}

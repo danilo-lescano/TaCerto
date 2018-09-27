@@ -22,3 +22,6 @@
 [20/09/2018]: alguns this adicionados
 [20/09/2018]: Colocando o botao do gabarito
 [21/09/2018]: Correções, Materialize e Tela de Dicas subindo e descendo
+[26/09/2018]: Bugs, Janela de dicas, Dicas sendo armazenadas e recuperadas. 
+[26/09/2018]: Fazer a tela de dicas ser acessível nas páginas desejadas 90% e animação do botao de dicas
+[27/09/2018]: TaCerto.Controladora.CarregarPagina.htmlCorpo trocados por .load(). Dicas aparecendo nas páginas certas.

@@ -13,7 +13,8 @@ TaCerto.Controladora.MenuCasual = {
 	homeBtn: function (el) {
 		TaCerto.GenFunc.fadeInBtnClick(el,
 		function(){
-			TaCerto.Controladora.CarregarPagina.htmlCorpo("menuInicial",["dica"],["dica"]);
+			//TaCerto.Controladora.CarregarPagina.htmlCorpo("menuInicial",["dica"],["dica"]);
+			TaCerto.Controladora.MenuInicial.load();
 		});
 	}
 };

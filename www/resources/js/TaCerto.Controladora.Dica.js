@@ -56,10 +56,15 @@ TaCerto.Controladora.Dica = {
 		var pai = elemento.parentNode.parentNode;
 
 		var list = TaCerto.Estrutura.Jogador.dicas;
+
+		var elementClickedId = elemento.id;
+
+		elementClickedId = parseInt(elementClickedId);
+		
 		// Procura e apaga a dica do array
 		for(var i = list.length; i--;){
-			console.log(list[i].id + "  " + elemento.id);
-			if(list[i].id === elemento.id){
+			console.log(list[i].id + "  " + elementClickedId);
+			if(list[i].id === elementClickedId){
 				list.splice(i, 1);
 				TaCerto.Estrutura.Jogador.numDicas--;
 				console.log("fui apagado");
@@ -103,7 +108,8 @@ TaCerto.Controladora.Dica = {
 		var isThere = false;
 		// Procura e apaga a dica do array
 		for(var i = 0, l = list; i < l && !isThere; i++){
-			if(list[i].id === idDica){
+			//String.prototype.equals
+			if(list[i].id === parseInt(idDica)){
 				console.log("Vc já tá aqui, irmão");
 			}
 		}

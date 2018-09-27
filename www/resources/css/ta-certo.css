@@ -1791,7 +1791,7 @@ span {
 	width:100vw;
 }
 
-.dicaBotao{
+#dicaBotao{
 
 	position: absolute;
 	height: 5vh;
@@ -1802,6 +1802,19 @@ span {
 	transition: height .5s ease; 
 	z-index: 0;
 	/*display: none;*/
+}
+
+.animaBotaoDica{
+	animation: animaBotaoDica .7s 1 ease-in;
+}
+
+@keyframes animaBotaoDica{
+	from{
+		transform: translateY(50px);
+	}
+	to{
+		transform: translateY(0px);
+	}
 }
 
 #dicaScreen{

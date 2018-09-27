@@ -122,7 +122,7 @@ TaCerto.Controladora.Jogo.Geral = {
 	/*-----INICIO*/
 	/*PAUSE MENU CLICKS*/
 	home: function(){
-		TaCerto.Controladora.CarregarPagina.htmlCorpo('menuInicial');
+		TaCerto.Controladora.MenuInicial.load();
 		TaCerto.Controladora.Jogo.Geral.zerarVars();
 	},
 	reiniciar: function(){

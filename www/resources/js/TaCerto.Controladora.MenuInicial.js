@@ -12,5 +12,8 @@ TaCerto.Controladora.MenuInicial = {
 		function(){
 			TaCerto.Controladora.MenuCasual.load();
 		},200);
-	}
+	},
+	load: function(){
+		TaCerto.Controladora.CarregarPagina.htmlCorpo("menuInicial",["dica"],["dica"]);
+	},
 };
