@@ -7,12 +7,11 @@ TaCerto.Controladora.FimJogo = {
 
 	},
 	zerarVars: function(){
-		TaCerto.Controladora.FimJogo.tipoDeJogo = undefined;
-		TaCerto.Controladora.FimJogo.missao = undefined;
+		this.tipoDeJogo = undefined;
+		this.missao = undefined;
 	},
 	btnHome: function(el){
 		TaCerto.GenFunc.pressClick(el,function(){
-			//TaCerto.Controladora.CarregarPagina.htmlCorpo('menuInicial');
 			TaCerto.Controladora.MenuInicial.load();
 			TaCerto.Controladora.FimJogo.zerarVars();
 		});
@@ -39,15 +38,15 @@ TaCerto.Controladora.FimJogo = {
 	displayMission: function(){
 		var missoesConquistadas;
 
-		if (TaCerto.Controladora.FimJogo.missao !== undefined) {
-			var missaoNum = TaCerto.Controladora.FimJogo.missao;
+		if (this.missao !== undefined) {
+			var missaoNum = this.missao;
 			var missoesConquistadas = TaCerto.Estrutura.Jogador.missoes[missaoNum];
 
 		}
 	},
 	start: function(){
-		TaCerto.Controladora.FimJogo.model.tipoDeJogo = TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo;
-		TaCerto.Controladora.FimJogo.model.missao = TaCerto.Controladora.Jogo.Missao.parametros.missao;
+		this.model.tipoDeJogo = TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo;
+		this.model.missao = TaCerto.Controladora.Jogo.Missao.parametros.missao;
 		var flagMissaoAcertos = -1;
 		var auxAcerto = TaCerto.Controladora.Jogo.Geral.gameModel.acerto;
 		var auxErro = TaCerto.Controladora.Jogo.Geral.gameModel.erro;
@@ -64,7 +63,7 @@ TaCerto.Controladora.FimJogo = {
 		}
 
 		setTimeout(function(){
-			TaCerto.Controladora.CarregarPagina.htmlCorpo('fimDeJogo');
+			TaCerto.Controladora.CarregarPagina.htmlCorpo('fimDeJogo',["dica"],["dica"]);
 
 			document.getElementById("showAcerto").innerHTML = document.getElementById("showAcertoE").innerHTML = "Acertos:\t" + auxAcerto;
 			document.getElementById("showErro").innerHTML = document.getElementById("showErroE").innerHTML = "Erros:\t" + auxErro;

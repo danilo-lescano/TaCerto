@@ -59,9 +59,9 @@ TaCerto.Controladora.Loja = {
         });
     },
     buyCard: function(el){
-        TaCerto.Controladora.Loja.closeMiniModal(el);
+        this.closeMiniModal(el);
         if (TaCerto.Estrutura.Jogador.moeda - 1 >= 0){
-            var cardId = TaCerto.Controladora.Loja.miniModalCard.split("Loja")[0];
+            var cardId = this.miniModalCard.split("Loja")[0];
             TaCerto.Estrutura.Jogador.moeda -= TaCerto.Estrutura.Carta.preco;
             TaCerto.Estrutura.Jogador[cardId] += 1;
             document.getElementById("moedasLoja").innerHTML = TaCerto.Estrutura.Jogador.moeda;
@@ -71,7 +71,7 @@ TaCerto.Controladora.Loja = {
         }
     },
 	display: function(isModal){
-        TaCerto.Controladora.Loja.modal = isModal;
+        this.modal = isModal;
         document.getElementById('loja').style.display = "block";
 		//blur game blend
 		var blurThis = document.getElementsByClassName('corpo')[0].getElementsByTagName("*");

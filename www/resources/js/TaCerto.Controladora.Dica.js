@@ -15,25 +15,20 @@ TaCerto.Controladora.Dica = {
 		this.gameModel.openned = !this.gameModel.openned;
 		
 		if(this.gameModel.openned){
-            console.log("levanta a tela");
             setTimeout(function(){
 				telaDica.style.height = 90 + "vh";
 				dicaBotao.style.height = 97 + "vh";
 			}, 10);  
 
-        }else{
-			console.log("desce a tela");
-			
+        }else{			
 			setTimeout(function(){
 				telaDica.style.height = 0 + "vh";
 				dicaBotao.style.height = 5 + "vh";
-			}, 10);
-			
+			}, 10);	
         }
 		
 	},
 	carregaDicas: function () {
-		console.log("carregar frases erradas aqui");
 		this.gameModel.carregado = true;
 		var tabelaDicas = document.getElementById('telaDica');
 
@@ -46,7 +41,6 @@ TaCerto.Controladora.Dica = {
 
 		// Add as dicas
 		for(var i = 0, l = TaCerto.Estrutura.Jogador.dicas.length; i < l; i++){
-			console.log("oia");
 			tabelaDicas.innerHTML += '<li class="collection-item"><div>'+TaCerto.Estrutura.Jogador.dicas[i].dica+'<a id="'+TaCerto.Estrutura.Jogador.dicas[i].id+'" onclick="TaCerto.Controladora.Dica.apagarDica(this)" class="secondary-content"><i class="material-icons">clear</i></a></div></li>';
 		}
 		
@@ -63,11 +57,9 @@ TaCerto.Controladora.Dica = {
 		
 		// Procura e apaga a dica do array
 		for(var i = list.length; i--;){
-			console.log(list[i].id + "  " + elementClickedId);
 			if(list[i].id === elementClickedId){
 				list.splice(i, 1);
 				TaCerto.Estrutura.Jogador.numDicas--;
-				console.log("fui apagado");
 			}
 		}
 
@@ -76,12 +68,16 @@ TaCerto.Controladora.Dica = {
 		pai.classList.add("animated","fadeOut");
 
 		setTimeout( function(){
-			if(pai.parentNode.children.length == 3){
-				var teladicaMsg = document.getElementById('telaDicaMsg');
-				teladicaMsg.innerHTML += '<h5>Você é muito bom! <br>Não precisa de dicas.</h5>';
-				teladicaMsg.classList.add("animated", "fadeIn");
-			}
-			pai.parentNode.removeChild(pai);
+			try{
+				if(pai.parentNode.children.length == 3){
+					var teladicaMsg = document.getElementById('telaDicaMsg');
+					teladicaMsg.innerHTML += '<h5>Você é muito bom! <br>Não precisa de dicas.</h5>';
+					teladicaMsg.classList.add("animated", "fadeIn");
+				}
+				pai.parentNode.removeChild(pai);
+			}catch(err){
+				console.log("Erro checando se não tem dicas.");
+			}	
 		}, 1000);
 
 	},
@@ -92,8 +88,6 @@ TaCerto.Controladora.Dica = {
 		}else{
 			var tabelaDicas = document.getElementById('telaDica'); 
 			if(tabelaDicas.children.length == 2){
-				console.log(tabelaDicas.children.length);
-
 				var teladicaMsg = document.getElementById('telaDicaMsg');
 				teladicaMsg.innerHTML = '<h5>Você é muito bom! <br>Não precisa de dicas.</h5>';
 				teladicaMsg.classList.add("animated", "fadeIn");
@@ -117,7 +111,6 @@ TaCerto.Controladora.Dica = {
 		if(!isThere){
 			TaCerto.Estrutura.Jogador.dicas.push({id: idDica, dica: _dica});
 			TaCerto.Estrutura.Jogador.numDicas++;
-		}
-			
+		}			
 	}	
 };

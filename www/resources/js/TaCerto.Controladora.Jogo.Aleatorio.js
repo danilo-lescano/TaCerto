@@ -19,12 +19,12 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 	},
 	loadDesafio: function () {
 		TaCerto.Controladora.Jogo.Geral.gameModel.desafioNum = 15;//ORIGINAL: 15
-		TaCerto.Controladora.Jogo.Aleatorio.next();
+		this.next();
 	},
 	next: function(){
-		var modos = TaCerto.Controladora.Jogo.Aleatorio.tipoDeJogo;
-		var oldIdex = TaCerto.Controladora.Jogo.Aleatorio.indexTipoDeJogo;
-		var index = TaCerto.Controladora.Jogo.Aleatorio.indexTipoDeJogo = Math.floor(Math.random() * modos.length);
+		var modos = this.tipoDeJogo;
+		var oldIdex = this.indexTipoDeJogo;
+		var index = this.indexTipoDeJogo = Math.floor(Math.random() * modos.length);
 
 		setTimeout(function(){
 			TaCerto.Controladora.Jogo[modos[index]].called();
@@ -47,9 +47,9 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 		}, modos[oldIdex] === "Lacuna" ? 1000 : 0);
 	},
 	pular: function(){
-		var modos = TaCerto.Controladora.Jogo.Aleatorio.tipoDeJogo;
-		var oldIdex = TaCerto.Controladora.Jogo.Aleatorio.indexTipoDeJogo;
-		var index = TaCerto.Controladora.Jogo.Aleatorio.indexTipoDeJogo = Math.floor(Math.random() * modos.length);
+		var modos = this.tipoDeJogo;
+		var oldIdex = this.indexTipoDeJogo;
+		var index = this.indexTipoDeJogo = Math.floor(Math.random() * modos.length);
 
 		TaCerto.Controladora.Jogo[modos[index]].called();
 		TaCerto.Controladora.Jogo[modos[index]].loadDesafio();
@@ -58,7 +58,7 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 		document.getElementById('economia').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.moeda;
 		document.getElementById('erros').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.erro;
 		TaCerto.Controladora.Jogo.Geral.plusBarra(true);
-		TaCerto.Controladora.Jogo.Aleatorio.ajustesDaFase();
+		this.ajustesDaFase();
 		
 		TaCerto.Controladora.Jogo[modos[index]].pular();
 
@@ -74,8 +74,8 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 		}, 1000);
 	},
 	eliminarErrado: function(){
-		var modos = TaCerto.Controladora.Jogo.Aleatorio.tipoDeJogo;
-		var index = TaCerto.Controladora.Jogo.Aleatorio.indexTipoDeJogo;
+		var modos = this.tipoDeJogo;
+		var index = this.indexTipoDeJogo;
 		TaCerto.Controladora.Jogo[modos[index]].eliminarErrado();
 	},
 	ajustesDaFase: function(){
@@ -112,10 +112,10 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 		}, 10);
 	},
 	zerarVars: function(){
-		var modos = TaCerto.Controladora.Jogo.Aleatorio.tipoDeJogo;
-		var index = TaCerto.Controladora.Jogo.Aleatorio.indexTipoDeJogo = Math.floor(Math.random() * modos.length);
-		TaCerto.Controladora.Jogo.Aleatorio.indexTipoDeJogo = 0;
-		TaCerto.Controladora.Jogo.Aleatorio.respostasTotais = 0;
+		var modos = this.tipoDeJogo;
+		var index = this.indexTipoDeJogo = Math.floor(Math.random() * modos.length);
+		this.indexTipoDeJogo = 0;
+		this.respostasTotais = 0;
 		for (var i = 0; i < modos.length; i++){
 			TaCerto.Controladora.Jogo[modos[i]].DESAFIO = [];
 		}

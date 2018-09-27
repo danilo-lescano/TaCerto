@@ -97,6 +97,7 @@ TaCerto.IMAGEM = [
 	{path:'resources/media/image/modo_normal.png'},
 	{path:'resources/media/image/modo_random.png'},
 	{path:'resources/media/image/olocomeu.jpg'},
+	{path:'resources/media/image/parede.png'},
 	{path:'resources/media/image/pause.png'},
 	{path:'resources/media/image/placar_acertos.png'},
 	{path:'resources/media/image/placar_economico.png'},
@@ -108,7 +109,7 @@ TaCerto.IMAGEM = [
 	{path:'resources/media/image/x2COMBO.png'},
 	{path:'resources/media/image/x3COMBO.png'},
 	{path:'resources/media/image/ERR00000000000000000.png'},
-
+	
 
 
 

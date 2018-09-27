@@ -26,6 +26,7 @@ TaCerto.Controladora.Jogo.HardCore = {
 					if(TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual > 72)
 						TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual = 72;
 					alturaDaParede.style.height = TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual + "vh";
+					console.log("altura atual = " + TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual);
 				}
 			}, 1000);
 	},
@@ -35,8 +36,8 @@ TaCerto.Controladora.Jogo.HardCore = {
 
 		for (var i = 0; i < desafioNum; i++)
 			this.DESAFIO[i] = shuffledDesafio[i];
-		document.getElementById('palavra').innerHTML = TaCerto.Controladora.Jogo.HardCore.DESAFIO[TaCerto.Controladora.Jogo.HardCore.DESAFIO.length - 1].palavra;
-		document.getElementById('significado').innerHTML = TaCerto.Controladora.Jogo.HardCore.DESAFIO[TaCerto.Controladora.Jogo.HardCore.DESAFIO.length - 1].significado;
+		document.getElementById('palavra').innerHTML = this.DESAFIO[this.DESAFIO.length - 1].palavra;
+		document.getElementById('significado').innerHTML = this.DESAFIO[this.DESAFIO.length - 1].significado;
 	},
 	efeitoResposta: function(flag){
 		document.getElementsByClassName("JogoBg7")[0].style.backgroundImage = flag ? 'url("resources/media/image/fundo-certo.png")' : 'url("resources/media/image/fundo-errado.png")';
@@ -53,31 +54,37 @@ TaCerto.Controladora.Jogo.HardCore = {
 		botao.classList.add("animated"); botao.classList.add("bounceIn"); 
 		setTimeout(function () {botao.classList.remove("animated", "bounceIn");}, 500);
 		
-		if (TaCerto.Controladora.Jogo.HardCore.DESAFIO.length){
-			flagResp = TaCerto.Controladora.Jogo.HardCore.DESAFIO[TaCerto.Controladora.Jogo.HardCore.DESAFIO.length - 1].flag === resp;
+		if (this.DESAFIO.length){
+			flagResp = this.DESAFIO[this.DESAFIO.length - 1].flag === resp;
 			
 			// Checa se errou e chama função para adicionar na lista de dicas
 			if(!flagResp)
-				TaCerto.Controladora.Dica.colocaDica(TaCerto.Controladora.Jogo.HardCore.DESAFIO[TaCerto.Controladora.Jogo.HardCore.DESAFIO.length - 1].id, TaCerto.Controladora.Jogo.HardCore.DESAFIO[TaCerto.Controladora.Jogo.HardCore.DESAFIO.length - 1].dica);
+				TaCerto.Controladora.Dica.colocaDica(this.DESAFIO[this.DESAFIO.length - 1].id, this.DESAFIO[this.DESAFIO.length - 1].dica);
 
-			TaCerto.Controladora.Jogo.HardCore.velocidadeParede(flagResp);
+			this.velocidadeParede(flagResp);
 			
 			TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResp);
-			TaCerto.Controladora.Jogo.HardCore.efeitoResposta(flagResp);
+			this.efeitoResposta(flagResp);
 			
-			TaCerto.Controladora.Jogo.HardCore.DESAFIO.pop();
+			this.DESAFIO.pop();
 		}
 
 		if(TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo === "HardCore"){
-			if(TaCerto.Controladora.Jogo.HardCore.DESAFIO.length){
-				document.getElementById('palavra').innerHTML = TaCerto.Controladora.Jogo.HardCore.DESAFIO[TaCerto.Controladora.Jogo.HardCore.DESAFIO.length - 1].palavra;
-				document.getElementById('significado').innerHTML = TaCerto.Controladora.Jogo.HardCore.DESAFIO[TaCerto.Controladora.Jogo.HardCore.DESAFIO.length - 1].significado;
+			if(this.DESAFIO.length){
+				document.getElementById('palavra').innerHTML = this.DESAFIO[this.DESAFIO.length - 1].palavra;
+				document.getElementById('significado').innerHTML = this.DESAFIO[this.DESAFIO.length - 1].significado;
 			}else
 				TaCerto.Controladora.Jogo.Geral.fimDeJogo();
 		}
 	},
 	velocidadeParede: function(flag){
 		if(flag){
+			if(this.gameModel.alturaAtual === 72){
+				this.gameModel.alturaAtual = 65;
+				document.getElementById("parede").style.height = this.gameModel.alturaAtual  + "vh";
+			}
+			
+
 			if(this.gameModel.speed > 0.15)
 				this.gameModel.speed  -= 0.1;
 		}else{
@@ -88,12 +95,12 @@ TaCerto.Controladora.Jogo.HardCore = {
 	pular: function(){
 		var flag = document.getElementById('palavra').classList.length;
 		document.getElementById('palavra').classList.remove("animated", "bounce");
-		var shuffledDesafio = TaCerto.Controladora.Jogo.HardCore.shuffleDesafio();
+		var shuffledDesafio = this.shuffleDesafio();
 
-		TaCerto.Controladora.Jogo.HardCore.DESAFIO[TaCerto.Controladora.Jogo.HardCore.DESAFIO.length - 1] = shuffledDesafio[0];
+		this.DESAFIO[this.DESAFIO.length - 1] = shuffledDesafio[0];
 		document.getElementById('palavra').classList.add("animated", "bounce");
-		document.getElementById('palavra').innerHTML = TaCerto.Controladora.Jogo.HardCore.DESAFIO[TaCerto.Controladora.Jogo.HardCore.DESAFIO.length - 1].palavra;
-		document.getElementById('significado').innerHTML = TaCerto.Controladora.Jogo.HardCore.DESAFIO[TaCerto.Controladora.Jogo.HardCore.DESAFIO.length - 1].significado; 
+		document.getElementById('palavra').innerHTML = this.DESAFIO[this.DESAFIO.length - 1].palavra;
+		document.getElementById('significado').innerHTML = this.DESAFIO[this.DESAFIO.length - 1].significado; 
 		setTimeout(function(){
 			if (!flag && document.getElementById('palavra'))
 				document.getElementById('palavra').classList.remove("animated", "bounce");
@@ -101,7 +108,7 @@ TaCerto.Controladora.Jogo.HardCore = {
 	},
 	eliminarErrado: function(){
 		var botao;
-		var desafio = TaCerto.Controladora.Jogo.HardCore.DESAFIO;
+		var desafio = this.DESAFIO;
 		if (desafio[desafio.length - 1].flag)
 			botao = document.getElementById('botao2');
 		else
@@ -123,8 +130,8 @@ TaCerto.Controladora.Jogo.HardCore = {
 		return x;
 	},
 	zerarVars: function(){
-		TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual = 0;
-		TaCerto.Controladora.Jogo.HardCore.gameModel.speed = 1;
+		this.gameModel.alturaAtual = 0;
+		this.gameModel.speed = 1;
 	} 
 	
 };

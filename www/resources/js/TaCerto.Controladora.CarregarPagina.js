@@ -3,7 +3,7 @@ TaCerto.Controladora = TaCerto.Controladora || {};
 TaCerto.Controladora.CarregarPagina = {
 	htmlCorpo: function(pagina, apendice, apendiceid){
 		if (pagina) {
-			TaCerto.Controladora.CarregarPagina.LoadBG(apendice && apendice[0] === "lacuna" ? apendice[0] : pagina);
+			this.LoadBG(apendice && apendice[0] === "lacuna" ? apendice[0] : pagina);
 			var flagFound = false;
 			for (var i = 0; i < TaCerto.HTML.length; i++)
 				if (pagina === TaCerto.HTML[i].name){
@@ -13,9 +13,9 @@ TaCerto.Controladora.CarregarPagina = {
 			console.log("htmlCorpo " + pagina + " found: " + flagFound);
 		}
 		if (apendice !== undefined) {
-			TaCerto.Controladora.CarregarPagina.apendiceLoad(pagina, apendice, apendiceid);
+			this.apendiceLoad(pagina, apendice, apendiceid);
 		}
-		TaCerto.Controladora.CarregarPagina.checkCardAvailable();
+		this.checkCardAvailable();
 	},
 	LoadBG: function (pagina) {
 		var resetLayers = function(theLayer) {

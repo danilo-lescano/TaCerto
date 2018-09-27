@@ -48,6 +48,6 @@ TaCerto.Controladora.Jogo.Aurelio = {
 		return x;
 	},
 	zerarVars: function(){
-		TaCerto.Controladora.Jogo.Aurelio.DESAFIO = [];
+		this.DESAFIO = [];
 	}
 };

@@ -1755,15 +1755,16 @@ span {
 #parede{
 	position: absolute;
 	width: 100%;
-	opacity: 0.5;
-	bottom: 7vh;
+	bottom: 6.5vh;
 	overflow: hidden;
 	height: 0vh;
-	/* height máximo = 72vh;*/
+	transition: all 1s cubic-bezier(0.590, -0.600, 0.500, 1.625);
+	/* height máximo = 72vh;*/ 
 }
 
 .img-parede{
 	width: 100%;
+	height: 72vh;
 }
 
 /*--------------------------------------------------------------*/
@@ -1777,6 +1778,7 @@ span {
 #significado{
 
 	color: #284B95;
+	display: none;
 }
 
 /*--------------------------------------------------------------*/

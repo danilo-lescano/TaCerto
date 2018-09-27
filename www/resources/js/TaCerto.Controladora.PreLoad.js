@@ -106,12 +106,12 @@ TaCerto.Controladora.PreLoad = {
 		//CARREGAR JOGADOR
 	},
 	checkIfLoaded: function(){
-		var loaded = TaCerto.Controladora.PreLoad.leftSOUND + TaCerto.Controladora.PreLoad.leftIMAGEM + TaCerto.Controladora.PreLoad.leftHTML;
+		var loaded = this.leftSOUND + this.leftIMAGEM + this.leftHTML;
 		JSParaTeste.loadGif = JSParaTeste.loadGif || 2000;
 		JSParaTeste.loading = JSParaTeste.loading || 3000;
 		if (loaded <= 0) {
-			TaCerto.Controladora.PreLoad.tempoDeLoading = new Date().getTime() - TaCerto.Controladora.PreLoad.tempoDeLoading;
-			console.log("---------------\npaginas + imagens carregadas em: " + TaCerto.Controladora.PreLoad.tempoDeLoading + "ms\n---------------");
+			this.tempoDeLoading = new Date().getTime() - this.tempoDeLoading;
+			console.log("---------------\npaginas + imagens carregadas em: " + this.tempoDeLoading + "ms\n---------------");
 			setTimeout(function(){
 				TaCerto.Controladora.CarregarPagina.htmlCorpo("gif");
 				setTimeout(function(){
@@ -123,11 +123,11 @@ TaCerto.Controladora.PreLoad = {
 	},
 	start: function(){
 		/*carregar uma pagina de loading aqui?*/
-		TaCerto.Controladora.PreLoad.preloadHTML();
-		TaCerto.Controladora.PreLoad.preloadSOUND();
-		TaCerto.Controladora.PreLoad.preloadIMAGEM();
-		TaCerto.Controladora.PreLoad.preloadESTRUTURA();
-		TaCerto.Controladora.PreLoad.preloadJOGADOR(1);
+		this.preloadHTML();
+		this.preloadSOUND();
+		this.preloadIMAGEM();
+		this.preloadESTRUTURA();
+		this.preloadJOGADOR(1);
 	},
 	loadImage: function(span){
 		for (var i = 0; i < TaCerto.IMAGEM.length; i++) {

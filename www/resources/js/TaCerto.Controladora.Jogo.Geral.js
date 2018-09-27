@@ -30,40 +30,40 @@ TaCerto.Controladora.Jogo.Geral = {
 
 		this.gameModel.tempo = 0;
 
-		TaCerto.Controladora.Jogo.Geral.gameModel.intervalo = setInterval(function (){
+		this.gameModel.intervalo = setInterval(function (){
 			if (!TaCerto.Controladora.Jogo.Geral.gameModel.paused && !TaCerto.Controladora.Jogo.Geral.gameModel.frozen)
 				document.getElementById('tempo').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.tempo++;
 		}, 1000);
 	},
 	loadDesafio: function(){
-		TaCerto.Controladora.Jogo[TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo].loadDesafio();
+		TaCerto.Controladora.Jogo[this.gameModel.tipoDeJogo].loadDesafio();
 	},
 	zerarVars: function(){
-		if(TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo !== ''){
-			TaCerto.Controladora.Jogo[TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo].zerarVars();
+		if(this.gameModel.tipoDeJogo !== ''){
+			TaCerto.Controladora.Jogo[this.gameModel.tipoDeJogo].zerarVars();
 		}
 		
-		TaCerto.Controladora.Jogo.Geral.gameModel.acerto = 0;
-		TaCerto.Controladora.Jogo.Geral.gameModel.erro = 0;
-		TaCerto.Controladora.Jogo.Geral.gameModel.moeda = 0;
-		TaCerto.Controladora.Jogo.Geral.gameModel.tempo = 0;
-		TaCerto.Controladora.Jogo.Geral.gameModel.acertosConsecutivos = 0;
-		TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo = '';
-		TaCerto.Controladora.Jogo.Geral.gameModel.desafioNum = 0;
-		TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus = 1;
+		this.gameModel.acerto = 0;
+		this.gameModel.erro = 0;
+		this.gameModel.moeda = 0;
+		this.gameModel.tempo = 0;
+		this.gameModel.acertosConsecutivos = 0;
+		this.gameModel.tipoDeJogo = '';
+		this.gameModel.desafioNum = 0;
+		this.gameModel.comboBonus = 1;
 
-		TaCerto.Controladora.Jogo.Geral.gameModel.flagCardMenu = false;
-		TaCerto.Controladora.Jogo.Geral.gameModel.frozen = false;
-		TaCerto.Controladora.Jogo.Geral.gameModel.frozenTimer = 0;
+		this.gameModel.flagCardMenu = false;
+		this.gameModel.frozen = false;
+		this.gameModel.frozenTimer = 0;
 
-		TaCerto.Controladora.Jogo.Geral.gameModel.paused = false;
-		clearInterval(TaCerto.Controladora.Jogo.Geral.gameModel.intervalo);
-		TaCerto.Controladora.Jogo.Geral.gameModel.intervalo = false;
+		this.gameModel.paused = false;
+		clearInterval(this.gameModel.intervalo);
+		this.gameModel.intervalo = false;
 
-		TaCerto.Controladora.Jogo.Geral.gameModel.cartaUsada.cartaVermelha = 0;
-		TaCerto.Controladora.Jogo.Geral.gameModel.cartaUsada.cartaAzul = 0;
-		TaCerto.Controladora.Jogo.Geral.gameModel.cartaUsada.cartaAmarela = 0;
-		TaCerto.Controladora.Jogo.Geral.gameModel.cartaUsada.cartaVerde = 0;
+		this.gameModel.cartaUsada.cartaVermelha = 0;
+		this.gameModel.cartaUsada.cartaAzul = 0;
+		this.gameModel.cartaUsada.cartaAmarela = 0;
+		this.gameModel.cartaUsada.cartaVerde = 0;
 	},
 	pauseModalClick: function(el, botao){
 		function logica() {
@@ -105,7 +105,7 @@ TaCerto.Controladora.Jogo.Geral = {
 		});
 	},
 	pauseJogo: function (flag) {
-		TaCerto.Controladora.Jogo.Geral.gameModel.paused = flag;
+		this.gameModel.paused = flag;
 		//find and display block the modal
 		var modal = document.getElementById("pauseModal");
 		modal.style.display = flag ? "block" : "none";
@@ -123,23 +123,23 @@ TaCerto.Controladora.Jogo.Geral = {
 	/*PAUSE MENU CLICKS*/
 	home: function(){
 		TaCerto.Controladora.MenuInicial.load();
-		TaCerto.Controladora.Jogo.Geral.zerarVars();
+		this.zerarVars();
 	},
 	reiniciar: function(){
 		TaCerto.Controladora.Jogo.Load(TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo, TaCerto.Controladora.Jogo.Missao.parametros.missao);
-		TaCerto.Controladora.Jogo.Geral.zerarVars();
+		this.zerarVars();
 	},
 	loja: function(){
 		TaCerto.Controladora.Loja.display(true);
-		TaCerto.Controladora.Jogo.Geral.pauseJogo(true);
+		this.pauseJogo(true);
 	},
 	missao: function(){
 		TaCerto.Controladora.MenuMissao.load();
-		TaCerto.Controladora.Jogo.Geral.zerarVars();
+		this.zerarVars();
 	},
 	casual: function(){
 		TaCerto.Controladora.MenuCasual.load();
-		TaCerto.Controladora.Jogo.Geral.zerarVars();
+		this.zerarVars();
 	},	
 	/*PAUSE MENU CLICKS*/
 	/*-----FIM*/
@@ -147,8 +147,8 @@ TaCerto.Controladora.Jogo.Geral = {
 	/*-----INICIO*/
 	/*CARD MENU CLICKS*/
 	toggleBarraCarta: function(){
-		document.getElementsByClassName("barraCartaBG")[0].style.left = TaCerto.Controladora.Jogo.Geral.gameModel.flagCardMenu ? "-58%" : "0px";
-		TaCerto.Controladora.Jogo.Geral.gameModel.flagCardMenu = !TaCerto.Controladora.Jogo.Geral.gameModel.flagCardMenu;
+		document.getElementsByClassName("barraCartaBG")[0].style.left = this.gameModel.flagCardMenu ? "-58%" : "0px";
+		this.gameModel.flagCardMenu = !this.gameModel.flagCardMenu;
 	},
 	/*CARD MENU CLICKS*/
 	/*-----FIM*/
@@ -157,21 +157,21 @@ TaCerto.Controladora.Jogo.Geral = {
 		var barra = document.getElementsByClassName("barraProgressoBack")[0];
 		comboFlag = comboFlag ? true : false;
 
-		if (TaCerto.Controladora.Jogo.Geral.gameModel.acerto <= 1){
-			widthVal = TaCerto.Controladora.Jogo.Geral.gameModel.acerto ? 10 : 0;
+		if (this.gameModel.acerto <= 1){
+			widthVal = this.gameModel.acerto ? 10 : 0;
 		}
 		else{
-			var aux = (TaCerto.Controladora.Jogo.Geral.gameModel.acerto/TaCerto.Controladora.Jogo.Geral.gameModel.desafioNum)*100;
+			var aux = (this.gameModel.acerto/this.gameModel.desafioNum)*100;
 			widthVal = aux > 10 ? aux : 10;
 		}
 
 		barra.style.width = widthVal + "%";
 		barra.classList.remove("combo1", "combo2", "combo3");
 
-		var comboMult = TaCerto.Controladora.Jogo.Geral.gameModel.acertosConsecutivos;
+		var comboMult = this.gameModel.acertosConsecutivos;
 		if(comboMult < 3){
 			barra.classList.add("combo1");
-			TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus = 1;
+			this.gameModel.comboBonus = 1;
 		}
 		else if(comboMult < 5){
 			barra.classList.add("combo2");
@@ -180,16 +180,16 @@ TaCerto.Controladora.Jogo.Geral = {
 			barra.classList.add("combo3");
 		}
 		if(comboMult === 3 && !comboFlag){
-			TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus = 2;
-			TaCerto.Controladora.Jogo.Geral.showCombo("combo" + TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus + "x");
-			var comboMP3 = TaCerto.SOUND.find("combo" + TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus);
+			this.gameModel.comboBonus = 2;
+			this.showCombo("combo" + this.gameModel.comboBonus + "x");
+			var comboMP3 = TaCerto.SOUND.find("combo" + this.gameModel.comboBonus);
 				comboMP3.stop();
 				comboMP3.play();
 		}
 		else if(comboMult === 5 && !comboFlag){
-			TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus = 3;
-			TaCerto.Controladora.Jogo.Geral.showCombo("combo" + TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus + "x");
-			var comboMP3 = TaCerto.SOUND.find("combo" + TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus);
+			this.gameModel.comboBonus = 3;
+			this.showCombo("combo" + this.gameModel.comboBonus + "x");
+			var comboMP3 = TaCerto.SOUND.find("combo" + this.gameModel.comboBonus);
 				comboMP3.stop();
 				comboMP3.play();
 		}
@@ -198,38 +198,42 @@ TaCerto.Controladora.Jogo.Geral = {
 	atualizarResposta: function(resp){
 		function plusPopup(color, spanId, timeout){
 			setTimeout(function () {
-				var span = document.createElement("span");
-				span.innerHTML = timeout ? "+" + TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus : "+1";
-				span.classList.add("animated", "fadeOutUp", "popupNum", color);
-				document.getElementById(spanId).appendChild(span);
-				setTimeout(function () {
-					var k = document.querySelectorAll("#" + spanId + " > span");
-					if(k.length>0)
-						document.getElementById(spanId).removeChild(k[0]);
-				}, 300);
+				try{
+					var span = document.createElement("span");
+					span.innerHTML = timeout ? "+" + TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus : "+1";
+					span.classList.add("animated", "fadeOutUp", "popupNum", color);
+					document.getElementById(spanId).appendChild(span);
+					setTimeout(function () {
+						var k = document.querySelectorAll("#" + spanId + " > span");
+						if(k.length>0)
+							document.getElementById(spanId).removeChild(k[0]);
+					}, 300);
+				}catch(erro){
+					console.log("erro");
+				}
 			}, timeout);
 		}
 
 		if (resp){
-			++TaCerto.Controladora.Jogo.Geral.gameModel.acertosConsecutivos;
-			document.getElementById('acertos').innerHTML = ++TaCerto.Controladora.Jogo.Geral.gameModel.acerto;
+			++this.gameModel.acertosConsecutivos;
+			document.getElementById('acertos').innerHTML = ++this.gameModel.acerto;
 			plusPopup("colorGreen", "acertosSpan", 10);
 
 
-			document.getElementById('economia').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.moeda += TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus;
+			document.getElementById('economia').innerHTML = this.gameModel.moeda += this.gameModel.comboBonus;
 			plusPopup("colorYellow", "economiaSpan", 100);
 		}
 		else{
-			document.getElementById('erros').innerHTML = ++TaCerto.Controladora.Jogo.Geral.gameModel.erro;
+			document.getElementById('erros').innerHTML = ++this.gameModel.erro;
 			plusPopup("colorRed", "errosSpan", 10);
-			TaCerto.Controladora.Jogo.Geral.gameModel.acertosConsecutivos = 0;
+			this.gameModel.acertosConsecutivos = 0;
 		}
-		TaCerto.Controladora.Jogo.Geral.plusBarra();
+		this.plusBarra();
 
 		if(!isNaN(TaCerto.Controladora.Jogo.Missao.parametros.missao))
 			TaCerto.Controladora.Jogo.Missao.checkObjetivo();
 
-		if(TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo === "Aleatorio")
+		if(this.gameModel.tipoDeJogo === "Aleatorio")
 			TaCerto.Controladora.Jogo.Aleatorio.next();
 	},
 	clickCarta: function(card){
@@ -352,14 +356,14 @@ TaCerto.Controladora.Jogo.Geral = {
 		}, Math.ceil(tempo/animacoes));
 	},
 	fimDeJogo: function(){
-		TaCerto.Estrutura.Jogador.moeda += TaCerto.Controladora.Jogo.Geral.gameModel.moeda;
+		TaCerto.Estrutura.Jogador.moeda += this.gameModel.moeda;
 		TaCerto.Controladora.FimJogo.start();
-		TaCerto.Controladora.Jogo.Geral.zerarVars();
+		this.zerarVars();
 	},
 	start: function(tipo){
-		TaCerto.Controladora.Jogo.Geral.zerarVars();
-		TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo = tipo;
-		TaCerto.Controladora.Jogo.Geral.loadDesafio();
-		TaCerto.Controladora.Jogo.Geral.gameClockInterval();
+		this.zerarVars();
+		this.gameModel.tipoDeJogo = tipo;
+		this.loadDesafio();
+		this.gameClockInterval();
 	}
 };
