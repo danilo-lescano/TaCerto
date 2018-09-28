@@ -776,31 +776,27 @@ TaCerto.Estrutura.DesafioDeFase = {
 		},
 		{
 			palavra: true,
-			coluna1: [
+			palavraExWrapper:[
 				{equivalente: 0,	emoji: false,	conteudo:"Charlar"},
 				{equivalente: 0,	emoji: false,	conteudo:"Conversar"},
-				{equivalente: 0,	emoji: false,	conteudo:"Prosear"}
-			],
-			coluna2: [
-				{		emoji: false,	conteudo:"Magrela"},
-				{		emoji: false,	conteudo:"Briba"},
-				{		emoji: false,	conteudo:"Tangerina"},
-				{		emoji: false,	conteudo:"Groselha"}
+				{equivalente: 0,	emoji: false,	conteudo:"Prosear"},
+				{equivalente:null,	emoji: false,	conteudo:"Magrela"},
+				{equivalente:null,	emoji: false,	conteudo:"Briba"},
+				{equivalente:null,	emoji: false,	conteudo:"Tangerina"},
+				{equivalente:null,	emoji: false,	conteudo:"Groselha"}
 			],
 			tempId: 0, nivel: 0
 		},
 		{
 			palavra: true,
-			coluna1: [
+			palavraExWrapper:[
 				{equivalente: 0,	emoji: false,	conteudo:"Promessa"},
 				{equivalente: 0,	emoji: false,	conteudo:"Compromisso"},
 				{equivalente: 0,	emoji: false,	conteudo:"Pacto"},
 				{equivalente: 0,	emoji: false,	conteudo:"Trato"},
-				{equivalente: 0,	emoji: false,	conteudo:"Acordo"}
-			],
-			coluna2: [
-				{		emoji: false,	conteudo:"Juro"},
-				{		emoji: false,	conteudo:"Disciplina"}
+				{equivalente: 0,	emoji: false,	conteudo:"Acordo"},
+				{equivalente:null,	emoji: false,	conteudo:"Juro"},
+				{equivalente:null,	emoji: false,	conteudo:"Disciplina"}
 			],
 			tempId: 0, nivel: 0
 		},
@@ -848,31 +844,27 @@ TaCerto.Estrutura.DesafioDeFase = {
 		},
 		{
 			palavra: true,
-			coluna1: [
+			palavraExWrapper:[
 				{equivalente: 0,	emoji: false,	conteudo:"Charlar"},
 				{equivalente: 0,	emoji: false,	conteudo:"Conversar"},
-				{equivalente: 0,	emoji: false,	conteudo:"Prosear"}
-			],
-			coluna2: [
-				{		emoji: false,	conteudo:"Magrela"},
-				{		emoji: false,	conteudo:"Taruira"},
-				{		emoji: false,	conteudo:"Tangerina"},
-				{		emoji: false,	conteudo:"Groselha"}
+				{equivalente: 0,	emoji: false,	conteudo:"Prosear"},
+				{equivalente:null,	emoji: false,	conteudo:"Magrela"},
+				{equivalente:null,	emoji: false,	conteudo:"Taruira"},
+				{equivalente:null,	emoji: false,	conteudo:"Tangerina"},
+				{equivalente:null,	emoji: false,	conteudo:"Groselha"}
 			],
 			tempId: 0, nivel: 0
 		},
 		{
 			palavra: true,
-			coluna1: [
+			palavraExWrapper:[
 				{equivalente: 0,	emoji: false,	conteudo:"Promessa"},
 				{equivalente: 0,	emoji: false,	conteudo:"Compromisso"},
 				{equivalente: 0,	emoji: false,	conteudo:"Pacto"},
 				{equivalente: 0,	emoji: false,	conteudo:"Trato"},
-				{equivalente: 0,	emoji: false,	conteudo:"Acordo"}
-			],
-			coluna2: [
-				{		emoji: false,	conteudo:"Juro"},
-				{		emoji: false,	conteudo:"Disciplina"}
+				{equivalente: 0,	emoji: false,	conteudo:"Acordo"},
+				{equivalente:null,	emoji: false,	conteudo:"Juro"},
+				{equivalente:null,	emoji: false,	conteudo:"Disciplina"}
 			],
 			tempId: 0, nivel: 0
 		},
@@ -920,31 +912,27 @@ TaCerto.Estrutura.DesafioDeFase = {
 		},
 		{
 			palavra: true,
-			coluna1: [
+			palavraExWrapper:[
 				{equivalente: 0,	emoji: false,	conteudo:"Charlar"},
 				{equivalente: 0,	emoji: false,	conteudo:"Conversar"},
-				{equivalente: 0,	emoji: false,	conteudo:"Prosear"}
-			],
-			coluna2: [
-				{		emoji: false,	conteudo:"Magrela"},
-				{		emoji: false,	conteudo:"Taruira"},
-				{		emoji: false,	conteudo:"Tangerina"},
-				{		emoji: false,	conteudo:"Groselha"}
+				{equivalente: 0,	emoji: false,	conteudo:"Prosear"},
+				{equivalente:null,	emoji: false,	conteudo:"Magrela"},
+				{equivalente:null,	emoji: false,	conteudo:"Taruira"},
+				{equivalente:null,	emoji: false,	conteudo:"Tangerina"},
+				{equivalente:null,	emoji: false,	conteudo:"Groselha"}
 			],
 			tempId: 0, nivel: 0
 		},
 		{
 			palavra: true,
-			coluna1: [
+			palavraExWrapper:[
 				{equivalente: 0,	emoji: false,	conteudo:"Promessa"},
 				{equivalente: 0,	emoji: false,	conteudo:"Compromisso"},
 				{equivalente: 0,	emoji: false,	conteudo:"Pacto"},
 				{equivalente: 0,	emoji: false,	conteudo:"Trato"},
-				{equivalente: 0,	emoji: false,	conteudo:"Acordo"}
-			],
-			coluna2: [
-				{		emoji: false,	conteudo:"Juro"},
-				{		emoji: false,	conteudo:"Disciplina"}
+				{equivalente: 0,	emoji: false,	conteudo:"Acordo"},
+				{equivalente:null,	emoji: false,	conteudo:"Juro"},
+				{equivalente:null,	emoji: false,	conteudo:"Disciplina"}
 			],
 			tempId: 0, nivel: 0
 		}
