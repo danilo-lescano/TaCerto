@@ -1867,3 +1867,57 @@ span {
 /*--------------------------------------------------------------*/
 /*dica*//*fim*/
 /*--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------*/
+/*conquista - Tela do menu de conquistas */ 
+/*--------------------------------------------------------------*/
+#conquistaScreen{
+	position: relative;
+	width: 100vw;
+}
+
+#telaConquista{
+	position: relative;
+	width: 100%;
+}
+
+#telaConquista li{
+	height: 15%;	
+}
+
+.imgConquista{
+	position: absolute;
+	left: 5%;
+	top: 18%;
+
+	width: 15%;
+}
+
+.textMidConquista{
+	position: absolute;
+	top: 10.5%;
+	left: 37%;
+}
+
+.moneyConquista{
+	position: absolute;
+	right: 9%;
+	top: 33%;
+}
+
+.moneyConquista img{
+	position: absolute;
+	width: 6vw;
+}
+
+
+
+.moneyConquista span{
+	position: absolute;
+	right: 3%;
+	font-size: 1em;
+}
+
+/*--------------------------------------------------------------*/
+/*significado*//*fim*/
+/*--------------------------------------------------------------*/

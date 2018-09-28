@@ -67,12 +67,15 @@ TaCerto.Controladora.Dica = {
 		elemento.onclick = undefined;
 		pai.classList.add("animated","fadeOut");
 
+		console.log(pai.parentNode.children.length);
 		setTimeout( function(){
 			try{
 				if(pai.parentNode.children.length == 3){
 					var teladicaMsg = document.getElementById('telaDicaMsg');
 					teladicaMsg.innerHTML += '<h5>Você é muito bom! <br>Não precisa de dicas.</h5>';
 					teladicaMsg.classList.add("animated", "fadeIn");
+				}else{
+					console.log("eita");
 				}
 				pai.parentNode.removeChild(pai);
 			}catch(err){
@@ -87,7 +90,7 @@ TaCerto.Controladora.Dica = {
 			this.carregaDicas();
 		}else{
 			var tabelaDicas = document.getElementById('telaDica'); 
-			if(tabelaDicas.children.length == 2){
+			if(tabelaDicas.children.length == 1){
 				var teladicaMsg = document.getElementById('telaDicaMsg');
 				teladicaMsg.innerHTML = '<h5>Você é muito bom! <br>Não precisa de dicas.</h5>';
 				teladicaMsg.classList.add("animated", "fadeIn");

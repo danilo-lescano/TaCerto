@@ -15,4 +15,6 @@ TaCerto.HTML = [
 	{name:"lacuna", conteudo:""},
 	{name:"fimDeJogo", conteudo:""},
 	{name:"dica", conteudo:""},
+	{name:"menuConquistas", conteudo:""},
+	
 ];
