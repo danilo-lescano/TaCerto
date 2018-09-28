@@ -13,6 +13,12 @@ TaCerto.Controladora.MenuInicial = {
 			TaCerto.Controladora.MenuCasual.load();
 		},200);
 	},
+	menuConquistas: function(){
+		TaCerto.GenFunc.fadeInBtnClick(document.getElementsByClassName("menuIicial_btn3")[0]),
+		function(){
+			TaCerto.Controladora.MenuConquistas.load();
+		}, 200;
+	},
 	load: function(){
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("menuInicial",["dica"],["dica"]);
 	},
