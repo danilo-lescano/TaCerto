@@ -4,8 +4,10 @@ TaCerto.Controladora.Jogo = TaCerto.Controladora.Jogo || {};
 TaCerto.Controladora.Jogo.Explorador = {
 	DESAFIO: [],
 	gameModel:{
-		isEvenClick: false,
-		tipoPalavra: false
+		tipoPalavra: false,
+
+		totalClickedTipoPalavra: 0,
+		totalEquivalenteTipoPalavra: 0,
 	},
 	html:{
 		getCleanHtml: function(){
@@ -32,7 +34,7 @@ TaCerto.Controladora.Jogo.Explorador = {
 
 		for (var i = 0; i < desafioNum; i++)
 			this.DESAFIO[i] = shuffledDesafio[i];
-		
+
 		this.DESAFIO[this.DESAFIO.length] = "primeira interação tem um pop().";
 		this.proximaPergunta();
 	},
@@ -48,98 +50,91 @@ TaCerto.Controladora.Jogo.Explorador = {
 		this.html.getCleanHtml();
 
 		var desafio = JSON.parse(JSON.stringify(this.DESAFIO[this.DESAFIO.length -1]));
-		this.gameModel.tipoPalavra;
+		console.log(desafio);
+		this.gameModel.tipoPalavra = desafio.palavra;
 		
 		if(this.gameModel.tipoPalavra)
 			this.montarFasePalavra(desafio);
 		else
 			this.montarFaseColuna(desafio);
-
-		function alimentarHTML(itens, isPalavraGame){
-			for (let i = 0; i < itens.length; i++) {
-				let div = document.createElement("div");
-
-				let span = document.createElement("span");
-				let emojiPalavra = itens[i].emoji ? "emojiSpan" : "palavraSpan";
-				span.classList.add("exploradorSpan", emojiPalavra);
-				span.innerHTML = itens[i].conteudo;
-				span.dataset.equivalente = itens[i].equivalente;
-				if(isPalavraGame)
-					span.onclick = function (){
-						var el = this;
-						TaCerto.GenFunc.translate5050(el,
-						function(){
-							TaCerto.Controladora.Jogo.Explorador.palavraBtnClick(el);
-						},50);
-					};
-				else
-					span.onclick = function (){
-						var el = this;
-						TaCerto.GenFunc.translate5050(el,
-						function(){
-							TaCerto.Controladora.Jogo.Explorador.colunaBtnClick(el);
-						},50);
-					};
-
-				let zoomIn;
-				let timeEffect = 0;
-				if(!isPalavraGame){
-					timeEffect = Math.floor(Math.random() * 700);
-					console.log(timeEffect);
-					zoomIn = ["zoomInDown", "zoomInLeft", "zoomInRight", "zoomInUp"];
-					zoomIn.shuffle();
-					div.classList.add("palavraEx", "animated", zoomIn[0]);
-					palavraWrapper.appendChild(div);
-					span.style.position = "relative";
-				}
-				else{
-					zoomIn = i < 3 ? "zoomInLeft" : "zoomInRight";
-					div.classList.add("itemColunaExplorador", "animated", zoomIn, "fadeIn");
-					if(col1.children.length < 3){
-						div.classList.add("itemColunaPrincipal");
-						col1.appendChild(div);
-					}
-					else
-						col2.appendChild(div);
-				}
-				setTimeout(function(){
-					div.appendChild(span);
-				}, timeEffect);
-			}
-		}
-
-		var itens;
-		if(desafio.palavra){/*(3) nesse if*/
-			var span = document.createElement("div");
-			span.id="palavraNumExplorador";
-			span.classList.add("palavraNumExplorador");
-			span.innerHTML = (desafio.coluna1.length - 1);
-
-			desafio.coluna1.shuffle();
-			console.log("--");
-			desafio.coluna1.forEach(element => {
-				console.log(element.conteudo);
-			});
-			document.getElementById("palavraExplorador").innerHTML = desafio.coluna1 /*parcialmente (4)*/[desafio.coluna1.length-1].conteudo;
-			document.getElementById("palavraExplorador").appendChild(span);
-
-			desafio.coluna1.pop();
-
-			itens = desafio.coluna1.concat(desafio.coluna2);
-			itens.shuffle();
-		}
 	},
 	montarFasePalavra: function(desafio){
+		/*INICIO CREATE boxTotalRemain DIV*/
+		var boxTotalRemain = document.createElement("div");
+		boxTotalRemain.classList.add("boxTotalRemain");
+		var boxTotalRemainNumber = document.createElement("span");
+		boxTotalRemainNumber.id="boxTotalRemainNumber";
+		boxTotalRemainNumber.classList.add("boxTotalRemainNumber");
+		boxTotalRemainNumber.innerHTML = "0";
 
+		this.gameModel.totalEquivalenteTipoPalavra = 0;
+		for(var i=0; i < desafio.palavraExWrapper.length; i++)
+			if(desafio.palavraExWrapper[i].equivalente)
+				this.gameModel.totalEquivalenteTipoPalavra++;
+
+		boxTotalRemain.appendChild(boxTotalRemainNumber);
+		boxTotalRemain.innerHTML += "/" + this.gameModel.totalEquivalenteTipoPalavra;
+		/*FIM CREATE boxTotalRemain DIV*/
+
+		/*INICIO LOGING RESPOSTAS*/
+		console.log("--");
+		desafio.palavraExWrapper.forEach(element => {
+			if(element.equivalente)
+				console.log(element.conteudo);
+		});
+		/*FIM LOGING RESPOSTAS*/
+
+		desafio.palavraExWrapper.shuffle();
+		var palavraTituloIndex;
+		for (let i = 0; i < desafio.palavraExWrapper.length; i++)
+			if(desafio.palavraExWrapper[i].equivalente){
+				palavraTituloIndex = i;
+				break;
+			}
+		this.html.palavraExplorador.innerHTML = desafio.palavraExWrapper[palavraTituloIndex].conteudo;
+		this.html.palavraExplorador.appendChild(boxTotalRemain);
+
+		desafio.palavraExWrapper.remove(palavraTituloIndex);
+		/*UFA - daqui pra cima ele alimenta o palavra titulo e ainda coloca boxTotalRemain*/
+
+		for (let i = 0; i < desafio.palavraExplorador; i++) {
+			let div = document.createElement("div");
+
+			let span = document.createElement("span");
+			let emojiPalavra = desafio.palavraExplorador[i].emoji ? "emojiSpan" : "palavraSpan";
+			span.classList.add("exploradorSpan", emojiPalavra);
+			span.innerHTML = desafio.palavraExplorador[i].conteudo;
+			span.dataset.equivalente = desafio.palavraExplorador[i].equivalente;
+			span.onclick = function (){
+				var el = this;
+				TaCerto.GenFunc.translate5050(el,
+				function(){
+					TaCerto.Controladora.Jogo.Explorador.palavraBtnClick(el);
+				},50);
+			};
+
+			var zoomIn = ["zoomInDown", "zoomInLeft", "zoomInRight", "zoomInUp"];
+			let timeEffect = Math.floor(Math.random() * 700);
+
+			zoomIn.shuffle();
+			div.classList.add("palavraEx", "animated", zoomIn[Math.floor(Math.random() * 4)]);
+			this.html.palavraExWrapper.appendChild(div);
+			span.style.position = "relative";
+			setTimeout(function(){
+				div.appendChild(span);
+				console.log(div);
+			}, timeEffect);
+		}
 	},
 	montarFaseColuna: function(desafio){
 		this.html.palavraExplorador.innerHTML = "Ligue as colunas!";
 
-		desafio.coluna1.shuffle();	desafio.coluna2.shuffle();
+		desafio.coluna1.shuffle();
+		desafio.coluna2.shuffle();
 
-		 var itens = desafio.coluna1.concat(desafio.coluna2);
+		var itens = desafio.coluna1.concat(desafio.coluna2);
 
-		 for (let i = 0; i < (desafio.coluna1.length + desafio.coluna2.length); i++) {
+		for (let i = 0; i < itens.length; i++) {
 			let div = document.createElement("div");
 			let span = document.createElement("span");
 			let emojiPalavra = itens[i].emoji ? "emojiSpan" : "palavraSpan";
@@ -156,21 +151,20 @@ TaCerto.Controladora.Jogo.Explorador = {
 
 			let zoomIn = i < 3 ? "zoomInLeft" : "zoomInRight";
 			div.classList.add("itemColunaExplorador", "animated", zoomIn, "fadeIn");
-			if(col1.children.length < 3){
+			if(this.html.colunaWrapper1.children.length < 3){
 				div.classList.add("itemColunaPrincipal");
-				col1.appendChild(div);
+				this.html.colunaWrapper1.appendChild(div);
 			}
 			else
-				col2.appendChild(div);
-			setTimeout(function(){
-				div.appendChild(span);
-			}, 0);
+				this.html.colunaWrapper2.appendChild(div);
+			div.appendChild(span);
 		}
 	},
 	palavraBtnClick: function(el){
-
+		this.proximaPergunta();
 	},
 	colunaBtnClick: function(el){
+		this.proximaPergunta();
 
 	},
 	btnCallback: function(el){
