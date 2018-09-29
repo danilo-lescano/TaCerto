@@ -3,7 +3,7 @@ TaCerto.Controladora = TaCerto.Controladora || {};
 TaCerto.Controladora.CarregarPagina = {
 	htmlCorpo: function(pagina, apendice, apendiceid){
 		if (pagina) {
-			this.LoadBG(apendice && apendice[0] === "lacuna" ? apendice[0] : pagina);
+			this.LoadBG(apendice && (apendice[0] === "lacuna" || apendice[0] === "explorador") ? apendice[0] : pagina);
 			var flagFound = false;
 			for (var i = 0; i < TaCerto.HTML.length; i++)
 				if (pagina === TaCerto.HTML[i].name){
@@ -40,7 +40,7 @@ TaCerto.Controladora.CarregarPagina = {
 			document.getElementsByClassName("JogoBg6")[0].style.display = "block";
 			document.getElementsByClassName("JogoBg7")[0].style.display = "block";
 		}
-		else if(pagina === "lacuna" ){
+		else if(pagina === "lacuna"){
 			resetLayers("gameBlend");
 			document.getElementsByClassName("JogoBg1")[0].style.display = "block";
 			document.getElementsByClassName("JogoBg2")[0].style.display = "block";
@@ -49,6 +49,17 @@ TaCerto.Controladora.CarregarPagina = {
 			document.getElementsByClassName("JogoBg4-3x2")[0].style.display = "block";
 			document.getElementsByClassName("JogoBg5-3x1")[0].style.display = "block";
 			document.getElementsByClassName("JogoBg6-3x1")[0].style.display = "block";
+			document.getElementsByClassName("JogoBg7")[0].style.display = "block";
+		}
+		else if(pagina === "explorador"){
+			resetLayers("gameBlend");
+			document.getElementsByClassName("JogoBg1")[0].style.display = "block";
+			document.getElementsByClassName("JogoBg2")[0].style.display = "block";
+			document.getElementsByClassName("JogoBg3")[0].style.display = "block";
+			document.getElementsByClassName("JogoBg4-4x1")[0].style.display = "block";
+			document.getElementsByClassName("JogoBg4-4x2")[0].style.display = "block";
+			document.getElementsByClassName("JogoBg5-4x1")[0].style.display = "block";
+			document.getElementsByClassName("JogoBg6-4x1")[0].style.display = "block";
 			document.getElementsByClassName("JogoBg7")[0].style.display = "block";
 		}
 		else if(pagina === "loading") resetLayers("loading");

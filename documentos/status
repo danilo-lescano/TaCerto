@@ -21,13 +21,13 @@
 [21/09/2018]: Correções, Materialize e Tela de Dicas subindo e descendo
 [26/09/2018]: Bugs, Janela de dicas, Dicas sendo armazenadas e recuperadas. 
 [26/09/2018]: Fazer a tela de dicas ser acessível nas páginas desejadas 90% e animação do botao de dicas
+###########_FIM_WEEK_0-
 
 
 ###########_WEEK_1
-
-
 ###DANILO
-
+[27/09/2018]: Atualizando fase do Aurelio com novo layout.
+[28/09/2018]: dia anterior++. adicionei uma funçao no array pra remover um valor especifico no meio do vetor Array.remove(index)
 
 ###FERNANDO
 [27/09/2018]: TaCerto.Controladora.CarregarPagina.htmlCorpo trocados por .load(). Dicas aparecendo nas páginas certas.
@@ -35,3 +35,4 @@
 [27/09/2018]: Parede do hardcore, transição da parede, mudanças da hardcore e correções.
 [28/09/2018]: Umas coisas relacionadas a Menu de conquista
 [28/09/2018]: Tela de conquistas. 
+###########_FIM_WEEK_1

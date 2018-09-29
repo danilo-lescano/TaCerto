@@ -40,10 +40,14 @@
 		<div class="layer JogoBg4-2x2"></div>
 		<div class="layer JogoBg4-3x1"></div>
 		<div class="layer JogoBg4-3x2"></div>
+		<div class="layer JogoBg4-4x1"></div>
+		<div class="layer JogoBg4-4x2"></div>
 		<div class="layer JogoBg5"></div>
 		<div class="layer JogoBg5-3x1"></div>
+		<div class="layer JogoBg5-4x1"></div>
 		<div class="layer JogoBg6"></div>
 		<div class="layer JogoBg6-3x1"></div>
+		<div class="layer JogoBg6-4x1"></div>
 		<div class="layer JogoBg7"></div>
 
 	</div>
@@ -180,6 +184,11 @@
 		}
 		return this;
 	};
+	Array.prototype.remove = function(index) {
+		if(!isNaN(+index))
+			this.splice(+index, 1);
+		return this;
+	};
 	Array.prototype.pickFase = function(arr) {
 		var length = this.length, temp = [];
 		if ( length == 0 || arr === undefined || arr == 0) return this;
@@ -195,11 +204,8 @@
 	};
 
 	String.prototype.equals = function(str){
-		
-		if(this.toString() === str){
+		if(this.toString() === str)
 			return true;
-		}
-
 		return false;
 	}
 

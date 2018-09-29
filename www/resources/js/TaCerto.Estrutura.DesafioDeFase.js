@@ -735,216 +735,204 @@ TaCerto.Estrutura.DesafioDeFase = {
 		{
 			palavra: false,
 			coluna1: [
-				{equivalente: 0,	emoji: true,	conteudo:"🚲"},
-				{equivalente: 1,	emoji: true,	conteudo:"🦎"},
-				{equivalente: 2,	emoji: true,	conteudo:"🍊"}
+				{equivalente: 0,		emoji: true,	conteudo:"🚲"},
+				{equivalente: 1,		emoji: true,	conteudo:"🦎"},
+				{equivalente: 2,		emoji: true,	conteudo:"🍊"}
 			],
 			coluna2: [
-				{equivalente: 0,	emoji: false,	conteudo:"Magrela"},
-				{equivalente: 1,	emoji: false,	conteudo:"Taruira"},
-				{equivalente: 2,	emoji: false,	conteudo:"Tangerina"}
+				{equivalente: 0,		emoji: false,	conteudo:"Magrela"},
+				{equivalente: 1,		emoji: false,	conteudo:"Taruira"},
+				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
 			],
 			tempId: 0, nivel: 0
 		},
 		{
 			palavra: false,
 			coluna1: [
-				{equivalente: 0,	emoji: true,	conteudo:"🥖"},
-				{equivalente: 1,	emoji: true,	conteudo:"🐢"},
-				{equivalente: 2,	emoji: true,	conteudo:"👦"}
+				{equivalente: 0,		emoji: true,	conteudo:"🥖"},
+				{equivalente: 1,		emoji: true,	conteudo:"🐢"},
+				{equivalente: 2,		emoji: true,	conteudo:"👦"}
 			],
 			coluna2: [
-				{equivalente: 0,	emoji: false,	conteudo:"Filão"},
-				{equivalente: 1,	emoji: false,	conteudo:"Tracajá"},
-				{equivalente: 2,	emoji: false,	conteudo:"Piá"}
+				{equivalente: 0,		emoji: false,	conteudo:"Filão"},
+				{equivalente: 1,		emoji: false,	conteudo:"Tracajá"},
+				{equivalente: 2,		emoji: false,	conteudo:"Piá"}
 			],
 			tempId: 0, nivel: 0
 		},
 		{
 			palavra: false,
 			coluna1: [
-				{equivalente: 0,	emoji: false,	conteudo:"Naco"},
-				{equivalente: 1,	emoji: false,	conteudo:"Pandorga"},
-				{equivalente: 2,	emoji: false,	conteudo:"Califom"}
+				{equivalente: 0,		emoji: false,	conteudo:"Naco"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pandorga"},
+				{equivalente: 2,		emoji: false,	conteudo:"Califom"}
 			],
 			coluna2: [
-				{equivalente: 0,	emoji: false,	conteudo:"Pedaço"},
-				{equivalente: 1,	emoji: false,	conteudo:"Pipa"},
-				{equivalente: 2,	emoji: false,	conteudo:"Sutiã"}
+				{equivalente: 0,		emoji: false,	conteudo:"Pedaço"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pipa"},
+				{equivalente: 2,		emoji: false,	conteudo:"Sutiã"}
 			],
 			tempId: 0, nivel: 0
 		},
 		{
 			palavra: true,
-			coluna1: [
-				{equivalente: 0,	emoji: false,	conteudo:"Charlar"},
-				{equivalente: 0,	emoji: false,	conteudo:"Conversar"},
-				{equivalente: 0,	emoji: false,	conteudo:"Prosear"}
-			],
-			coluna2: [
-				{		emoji: false,	conteudo:"Magrela"},
-				{		emoji: false,	conteudo:"Briba"},
-				{		emoji: false,	conteudo:"Tangerina"},
-				{		emoji: false,	conteudo:"Groselha"}
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Charlar"},
+				{equivalente: true,		emoji: false,	conteudo:"Conversar"},
+				{equivalente: true,		emoji: false,	conteudo:"Prosear"},
+				{equivalente: false,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: false,	emoji: false,	conteudo:"Briba"},
+				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
+				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
 			],
 			tempId: 0, nivel: 0
 		},
 		{
 			palavra: true,
-			coluna1: [
-				{equivalente: 0,	emoji: false,	conteudo:"Promessa"},
-				{equivalente: 0,	emoji: false,	conteudo:"Compromisso"},
-				{equivalente: 0,	emoji: false,	conteudo:"Pacto"},
-				{equivalente: 0,	emoji: false,	conteudo:"Trato"},
-				{equivalente: 0,	emoji: false,	conteudo:"Acordo"}
-			],
-			coluna2: [
-				{		emoji: false,	conteudo:"Juro"},
-				{		emoji: false,	conteudo:"Disciplina"}
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Promessa"},
+				{equivalente: true,		emoji: false,	conteudo:"Compromisso"},
+				{equivalente: true,		emoji: false,	conteudo:"Pacto"},
+				{equivalente: true,		emoji: false,	conteudo:"Trato"},
+				{equivalente: true,		emoji: false,	conteudo:"Acordo"},
+				{equivalente: false,	emoji: false,	conteudo:"Juro"},
+				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
 			],
 			tempId: 0, nivel: 0
 		},
 		{
 			palavra: false,
 			coluna1: [
-				{equivalente: 0,	emoji: true,	conteudo:"🚲"},
-				{equivalente: 1,	emoji: true,	conteudo:"🦎"},
-				{equivalente: 2,	emoji: true,	conteudo:"🍊"}
+				{equivalente: 0,		emoji: true,	conteudo:"🚲"},
+				{equivalente: 1,		emoji: true,	conteudo:"🦎"},
+				{equivalente: 2,		emoji: true,	conteudo:"🍊"}
 			],
 			coluna2: [
-				{equivalente: 0,	emoji: false,	conteudo:"Magrela"},
-				{equivalente: 1,	emoji: false,	conteudo:"Taruira"},
-				{equivalente: 2,	emoji: false,	conteudo:"Tangerina"}
+				{equivalente: 0,		emoji: false,	conteudo:"Magrela"},
+				{equivalente: 1,		emoji: false,	conteudo:"Taruira"},
+				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
 			],
 			tempId: 0, nivel: 0
 		},
 		{
 			palavra: false,
 			coluna1: [
-				{equivalente: 0,	emoji: true,	conteudo:"🥖"},
-				{equivalente: 1,	emoji: true,	conteudo:"🐢"},
-				{equivalente: 2,	emoji: true,	conteudo:"👦"}
+				{equivalente: 0,		emoji: true,	conteudo:"🥖"},
+				{equivalente: 1,		emoji: true,	conteudo:"🐢"},
+				{equivalente: 2,		emoji: true,	conteudo:"👦"}
 			],
 			coluna2: [
-				{equivalente: 0,	emoji: false,	conteudo:"Filão"},
-				{equivalente: 1,	emoji: false,	conteudo:"Tracajá"},
-				{equivalente: 2,	emoji: false,	conteudo:"Piá"}
+				{equivalente: 0,		emoji: false,	conteudo:"Filão"},
+				{equivalente: 1,		emoji: false,	conteudo:"Tracajá"},
+				{equivalente: 2,		emoji: false,	conteudo:"Piá"}
 			],
 			tempId: 0, nivel: 0
 		},
 		{
 			palavra: false,
 			coluna1: [
-				{equivalente: 0,	emoji: false,	conteudo:"Naco"},
-				{equivalente: 1,	emoji: false,	conteudo:"Pandorga"},
-				{equivalente: 2,	emoji: false,	conteudo:"Califom"}
+				{equivalente: 0,		emoji: false,	conteudo:"Naco"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pandorga"},
+				{equivalente: 2,		emoji: false,	conteudo:"Califom"}
 			],
 			coluna2: [
-				{equivalente: 0,	emoji: false,	conteudo:"Pedaço"},
-				{equivalente: 1,	emoji: false,	conteudo:"Pipa"},
-				{equivalente: 2,	emoji: false,	conteudo:"Sutiã"}
+				{equivalente: 0,		emoji: false,	conteudo:"Pedaço"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pipa"},
+				{equivalente: 2,		emoji: false,	conteudo:"Sutiã"}
 			],
 			tempId: 0, nivel: 0
 		},
 		{
 			palavra: true,
-			coluna1: [
-				{equivalente: 0,	emoji: false,	conteudo:"Charlar"},
-				{equivalente: 0,	emoji: false,	conteudo:"Conversar"},
-				{equivalente: 0,	emoji: false,	conteudo:"Prosear"}
-			],
-			coluna2: [
-				{		emoji: false,	conteudo:"Magrela"},
-				{		emoji: false,	conteudo:"Taruira"},
-				{		emoji: false,	conteudo:"Tangerina"},
-				{		emoji: false,	conteudo:"Groselha"}
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Charlar"},
+				{equivalente: true,		emoji: false,	conteudo:"Conversar"},
+				{equivalente: true,		emoji: false,	conteudo:"Prosear"},
+				{equivalente: false,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: false,	emoji: false,	conteudo:"Taruira"},
+				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
+				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
 			],
 			tempId: 0, nivel: 0
 		},
 		{
 			palavra: true,
-			coluna1: [
-				{equivalente: 0,	emoji: false,	conteudo:"Promessa"},
-				{equivalente: 0,	emoji: false,	conteudo:"Compromisso"},
-				{equivalente: 0,	emoji: false,	conteudo:"Pacto"},
-				{equivalente: 0,	emoji: false,	conteudo:"Trato"},
-				{equivalente: 0,	emoji: false,	conteudo:"Acordo"}
-			],
-			coluna2: [
-				{		emoji: false,	conteudo:"Juro"},
-				{		emoji: false,	conteudo:"Disciplina"}
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Promessa"},
+				{equivalente: true,		emoji: false,	conteudo:"Compromisso"},
+				{equivalente: true,		emoji: false,	conteudo:"Pacto"},
+				{equivalente: true,		emoji: false,	conteudo:"Trato"},
+				{equivalente: true,		emoji: false,	conteudo:"Acordo"},
+				{equivalente: false,	emoji: false,	conteudo:"Juro"},
+				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
 			],
 			tempId: 0, nivel: 0
 		},
 		{
 			palavra: false,
 			coluna1: [
-				{equivalente: 0,	emoji: true,	conteudo:"🚲"},
-				{equivalente: 1,	emoji: true,	conteudo:"🦎"},
-				{equivalente: 2,	emoji: true,	conteudo:"🍊"}
+				{equivalente: 0,		emoji: true,	conteudo:"🚲"},
+				{equivalente: 1,		emoji: true,	conteudo:"🦎"},
+				{equivalente: 2,		emoji: true,	conteudo:"🍊"}
 			],
 			coluna2: [
-				{equivalente: 0,	emoji: false,	conteudo:"Magrela"},
-				{equivalente: 1,	emoji: false,	conteudo:"Taruira"},
-				{equivalente: 2,	emoji: false,	conteudo:"Tangerina"}
+				{equivalente: 0,		emoji: false,	conteudo:"Magrela"},
+				{equivalente: 1,		emoji: false,	conteudo:"Taruira"},
+				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
 			],
 			tempId: 0, nivel: 0
 		},
 		{
 			palavra: false,
 			coluna1: [
-				{equivalente: 0,	emoji: true,	conteudo:"🥖"},
-				{equivalente: 1,	emoji: true,	conteudo:"🐢"},
-				{equivalente: 2,	emoji: true,	conteudo:"👦"}
+				{equivalente: 0,		emoji: true,	conteudo:"🥖"},
+				{equivalente: 1,		emoji: true,	conteudo:"🐢"},
+				{equivalente: 2,		emoji: true,	conteudo:"👦"}
 			],
 			coluna2: [
-				{equivalente: 0,	emoji: false,	conteudo:"Filão"},
-				{equivalente: 1,	emoji: false,	conteudo:"Tracajá"},
-				{equivalente: 2,	emoji: false,	conteudo:"Piá"}
+				{equivalente: 0,		emoji: false,	conteudo:"Filão"},
+				{equivalente: 1,		emoji: false,	conteudo:"Tracajá"},
+				{equivalente: 2,		emoji: false,	conteudo:"Piá"}
 			],
 			tempId: 0, nivel: 0
 		},
 		{
 			palavra: false,
 			coluna1: [
-				{equivalente: 0,	emoji: false,	conteudo:"Naco"},
-				{equivalente: 1,	emoji: false,	conteudo:"Pandorga"},
-				{equivalente: 2,	emoji: false,	conteudo:"Califom"}
+				{equivalente: 0,		emoji: false,	conteudo:"Naco"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pandorga"},
+				{equivalente: 2,		emoji: false,	conteudo:"Califom"}
 			],
 			coluna2: [
-				{equivalente: 0,	emoji: false,	conteudo:"Pedaço"},
-				{equivalente: 1,	emoji: false,	conteudo:"Pipa"},
-				{equivalente: 2,	emoji: false,	conteudo:"Sutiã"}
+				{equivalente: 0,		emoji: false,	conteudo:"Pedaço"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pipa"},
+				{equivalente: 2,		emoji: false,	conteudo:"Sutiã"}
 			],
 			tempId: 0, nivel: 0
 		},
 		{
 			palavra: true,
-			coluna1: [
-				{equivalente: 0,	emoji: false,	conteudo:"Charlar"},
-				{equivalente: 0,	emoji: false,	conteudo:"Conversar"},
-				{equivalente: 0,	emoji: false,	conteudo:"Prosear"}
-			],
-			coluna2: [
-				{		emoji: false,	conteudo:"Magrela"},
-				{		emoji: false,	conteudo:"Taruira"},
-				{		emoji: false,	conteudo:"Tangerina"},
-				{		emoji: false,	conteudo:"Groselha"}
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Charlar"},
+				{equivalente: true,		emoji: false,	conteudo:"Conversar"},
+				{equivalente: true,		emoji: false,	conteudo:"Prosear"},
+				{equivalente: false,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: false,	emoji: false,	conteudo:"Taruira"},
+				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
+				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
 			],
 			tempId: 0, nivel: 0
 		},
 		{
 			palavra: true,
-			coluna1: [
-				{equivalente: 0,	emoji: false,	conteudo:"Promessa"},
-				{equivalente: 0,	emoji: false,	conteudo:"Compromisso"},
-				{equivalente: 0,	emoji: false,	conteudo:"Pacto"},
-				{equivalente: 0,	emoji: false,	conteudo:"Trato"},
-				{equivalente: 0,	emoji: false,	conteudo:"Acordo"}
-			],
-			coluna2: [
-				{		emoji: false,	conteudo:"Juro"},
-				{		emoji: false,	conteudo:"Disciplina"}
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Promessa"},
+				{equivalente: true,		emoji: false,	conteudo:"Compromisso"},
+				{equivalente: true,		emoji: false,	conteudo:"Pacto"},
+				{equivalente: true,		emoji: false,	conteudo:"Trato"},
+				{equivalente: true,		emoji: false,	conteudo:"Acordo"},
+				{equivalente: false,	emoji: false,	conteudo:"Juro"},
+				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
 			],
 			tempId: 0, nivel: 0
 		}

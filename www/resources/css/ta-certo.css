@@ -93,8 +93,9 @@ body {
 .JogoBg4-1x1, .JogoBg4-1x2,
 .JogoBg4-2x1, .JogoBg4-2x2,
 .JogoBg4-3x1, .JogoBg4-3x2,
-.JogoBg5, .JogoBg5-3x1,
-.JogoBg6, .JogoBg6-3x1,
+.JogoBg4-4x1, .JogoBg4-4x2,
+.JogoBg5, .JogoBg5-3x1, .JogoBg5-4x1,
+.JogoBg6, .JogoBg6-3x1, .JogoBg6-4x1,
 .JogoBg7{
 	top: 0px;
 	width: 100%;
@@ -106,11 +107,11 @@ body {
 	right: 0;
 	margin: 0 auto;
 }
-.JogoBg1, .JogoBg2, .JogoBg6, .JogoBg6-3x1, .JogoBg7{
+.JogoBg1, .JogoBg2, .JogoBg6, .JogoBg6-3x1, .JogoBg6-4x1, .JogoBg7{
 	background: url("../media/image/fundo.png") 0% 0% repeat;
 	background-size: 320px;
 }
-.JogoBg3, .JogoBg4-1x1, .JogoBg4-2x1, .JogoBg4-3x1, .JogoBg5, .JogoBg5-3x1{
+.JogoBg3, .JogoBg4-1x1, .JogoBg4-2x1, .JogoBg4-3x1, .JogoBg4-4x1, .JogoBg5, .JogoBg5-3x1, .JogoBg5-4x1{
 	background: url("../media/image/fundo_branco.png");
 	background-size: 320px;
 }
@@ -128,13 +129,13 @@ body {
 	height: 21.5%;
 	filter: brightness(.6);
 }
-.JogoBg4-1x2, .JogoBg4-2x2, .JogoBg4-3x2{
+.JogoBg4-1x2, .JogoBg4-2x2, .JogoBg4-3x2, .JogoBg4-4x2{
 	background: radial-gradient(white, white, #e1c3a5, #906633);
 	opacity: 0.3;
 	z-index: 5;
 	height: 93%;
 }
-.JogoBg4-1x1, .JogoBg4-2x1, .JogoBg4-3x1{
+.JogoBg4-1x1, .JogoBg4-2x1, .JogoBg4-3x1, .JogoBg4-4x1{
 	z-index: 4;
 	height: 93%;
 }
@@ -144,7 +145,10 @@ body {
 	.JogoBg4-3x1, .JogoBg4-3x2{
 		height: 75%;
 	}
-.JogoBg5, .JogoBg5-3x1{
+	.JogoBg4-4x1, .JogoBg4-4x2{
+		height: 53%;
+	}
+.JogoBg5, .JogoBg5-3x1, .JogoBg5-4x1{
 	z-index: 3;
 	height: 93.5%;
 	filter: brightness(.6);
@@ -152,13 +156,19 @@ body {
 	.JogoBg5-3x1{
 		height: 75.5%;
 	}
-.JogoBg6, .JogoBg6-3x1{
+	.JogoBg5-4x1{
+		height: 53.5%;
+	}
+.JogoBg6, .JogoBg6-3x1, .JogoBg6-4x1{
 	z-index: 2;
 	height: 94.5%;
 	filter: brightness(.8);
 }
 	.JogoBg6-3x1{
 		height: 76.5%;
+	}
+	.JogoBg6-4x1{
+		height: 54.5%;
 	}
 .JogoBg7{
 	z-index: 1;
@@ -1007,9 +1017,16 @@ span {
 /****************************************************************/
 /*jogo explorador*//*inicio*/
 /****************************************************************/
-.mesaDeDesafiosExplorador{
-	width: 100%;
-	text-align: auto;
+/*flag*/
+.mesaDeDesafiosExploradorWrapper{
+	position: absolute;
+	bottom: 0;
+	height: 50vh;
+	width: 100vw;
+}
+#mesaDeDesafiosExplorador{
+	position: relative;
+    transform: translateY();
 }
 .colunaWrapper{
 	display: inline-block;
@@ -1018,47 +1035,73 @@ span {
 .itemColunaExplorador{
 	position: relative;
 	width: 100%;
-	height: calc(50px + 3vh);
+	height: calc(45px + 3vh);
 }
 .exploradorSpan{
 	position: absolute;
-	margin: 0 auto;
-	top: 50%;
-	left: 50%;
-	line-height: 1;
-	transform: translate(-50%, -50%);
-	border-radius: 5px;
-	border: 3px double darkgrey;
-	box-shadow: 2px 2px rgb(117, 114, 93);
-	background-size: cover;
-	background-color: whitesmoke;
-	background-image: url("../media/image/box_janela.png");
-	background-blend-mode: multiply;
+    padding: 5px 10px;
+    top: 50%;
+    left: 50%;
+    line-height: 1;
+    transform: translate(-50%, -50%);
+    color: white;
+    display: inline-block;
+    background-color: darkgray;
+    border-radius: 3px;
+    font-family: 'panton', 'Pacifico', cursive;
+    box-shadow: 3px 3px rgb(109, 109, 109);
+}
+.itemColunaPrincipal .exploradorSpan{
+	border: 3px solid rgb(75, 75, 156);
+    /*box-shadow: 3px 3px #1e386f;*/
 }
 .palavraSpan{
 	font-size: calc(12px + 2vw);
-	text-shadow: 1.5px 1.5px darkgrey;
-	padding: 15px 10px;
+	/*text-shadow: 1.5px 1.5px darkgrey;*/
+	padding: 5px 10px;
 	min-width: 120px;
 }
 .emojiSpan{
-	font-size: calc(50px + 1vw);
-	text-shadow: 2.5px 2.5px darkgrey;
+	font-size: calc(35px + 2vw);
+	/*text-shadow: 2.5px 2.5px darkgrey;*/
 	padding: 0 5px;
 }
-.itemColunaPrincipal:nth-child(1) .exploradorSpan{
-	border: 3px solid red;
+.exploradorSpanSelected{
+	background-color: #3055a7;
+    /*box-shadow: 3px 3px #1e386f;*/
 }
-.itemColunaPrincipal:nth-child(2) .exploradorSpan{
+.rightExploradorSpan{
+	background-color: green;
+	/*box-shadow: 3px 3px rgb(1, 104, 1);*/
+}
+.wrongExploradorSpan{
+	background-color: red;
+    /*box-shadow: 3px 3px rgb(163, 2, 2);*/
+}
+.redBorderExplorador,
+.blueBorderExplorador,
+.greenBorderExplorador{
 	border: 3px solid rgb(75, 75, 156);
 }
-.itemColunaPrincipal:nth-child(3) .exploradorSpan{
-	border: 3px solid green;
+.palavraExWrapper{
+	width: 100%;
+}
+.palavraEx{
+	position: relative;
+	display: inline-block;
+	margin: 5px;
+}
+.palavraEx span{
+	min-width: auto;
 }
 .palavraExplorador{
 	position: relative;
     height: 21px;
-    max-height: 21px;
+	max-height: 21px;
+	transform: translateY(-100%);
+}
+.quadroDeColunasRestantes{
+
 }
 .palavraNumExplorador{
 	position: absolute;
@@ -1075,7 +1118,15 @@ span {
 	75%{font-size: 20px; transform: rotateZ(45deg)}
 	99%{font-size: 10px; transform: rotateZ(0deg)}
 }
-
+/*.itemColunaPrincipal:nth-child(1) .exploradorSpan{
+	border: 3px solid red;
+}
+.itemColunaPrincipal:nth-child(2) .exploradorSpan{
+	border: 3px solid rgb(75, 75, 156);
+}
+.itemColunaPrincipal:nth-child(3) .exploradorSpan{
+	border: 3px solid green;
+}
 .redBGExplorador{
 	animation: redBGExplorador 1s infinite ease-in-out;
 }
@@ -1131,7 +1182,7 @@ span {
 }
 .fimJogoErrouExplorador{
 	animation: redBGExplorador 0.7s 4 ease-in-out;
-}
+}*/
 .cartaAmarelaExplroador{
 	animation: cartaAmarelaExplroador 0.7s 1 ease-in-out;
 }
@@ -1141,7 +1192,7 @@ span {
 }
 
 #lineWrapper{
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width:100vw;
@@ -1151,6 +1202,7 @@ span {
 	position: absolute;
 	height:0;
 }
+/*flag*/
 /*--------------------------------------------------------------*/
 /*jogo explorador*//*fim*/
 /*--------------------------------------------------------------*/
