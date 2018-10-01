@@ -1848,14 +1848,18 @@ span {
 #dicaBotao{
 
 	position: absolute;
-	height: 5vh;
 	overflow: hidden;
+	height: 6vh;
 	bottom: 0vh;
 	left: 50%;
 	transform: translate(-50%);
 	transition: height .5s ease; 
 	z-index: 0;
 	/*display: none;*/
+}
+
+#dicaBotao img{
+	width: 50vw;
 }
 
 .animaBotaoDica{
@@ -1925,6 +1929,9 @@ span {
 /*--------------------------------------------------------------*/
 #conquistaScreen{
 	position: relative;
+	overflow: auto;
+	max-height: 87vh;
+	min-height: 87vh;
 	width: 100vw;
 }
 
@@ -1968,6 +1975,7 @@ span {
 	position: absolute;
 	right: 3%;
 	font-size: 1em;
+	margin-right: .25em;
 }
 
 /*--------------------------------------------------------------*/

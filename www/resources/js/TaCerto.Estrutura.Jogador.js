@@ -6,9 +6,10 @@ TaCerto.Estrutura.Jogador = {
 	cartaAmarela: 5,
 	cartaAzul: 5,
 
+	totalAcertos: 0,
+	totalEstrelas: 0,
 	numDicas: 0,
-
-	moeda: 10,
+	moeda: 0,
 	xp: 0,
 
 	missoes: {
@@ -22,6 +23,18 @@ TaCerto.Estrutura.Jogador = {
 		7:[false, false, false],
 		8:[false, false, false],
 	},
+	conquistas:[
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+	],
 
 	dicas: [
 	]

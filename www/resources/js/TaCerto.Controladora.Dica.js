@@ -23,7 +23,7 @@ TaCerto.Controladora.Dica = {
         }else{			
 			setTimeout(function(){
 				telaDica.style.height = 0 + "vh";
-				dicaBotao.style.height = 5 + "vh";
+				dicaBotao.style.height = 6 + "vh";
 			}, 10);	
         }
 		
@@ -37,7 +37,7 @@ TaCerto.Controladora.Dica = {
 			tabelaDicas.removeChild(tabelaDicas.firstChild);
 
 		//Add o header e o li de mensagem
-		tabelaDicas.innerHTML += '<li id="telaDicaHeader" class="collection-header"><h4>Dicas</h4></li><li id="telaDicaMsg"></li>';
+		tabelaDicas.innerHTML += '<li id="telaDicaMsg"></li>';
 
 		// Add as dicas
 		for(var i = 0, l = TaCerto.Estrutura.Jogador.dicas.length; i < l; i++){

@@ -215,6 +215,10 @@ TaCerto.Controladora.Jogo.Geral = {
 		}
 
 		if (resp){
+
+			// Incrementa acerto total do jogador
+			++TaCerto.Estrutura.Jogador.totalAcertos;
+
 			++this.gameModel.acertosConsecutivos;
 			document.getElementById('acertos').innerHTML = ++this.gameModel.acerto;
 			plusPopup("colorGreen", "acertosSpan", 10);
@@ -222,6 +226,8 @@ TaCerto.Controladora.Jogo.Geral = {
 
 			document.getElementById('economia').innerHTML = this.gameModel.moeda += this.gameModel.comboBonus;
 			plusPopup("colorYellow", "economiaSpan", 100);
+			
+			TaCerto.Estrutura.Jogador.moeda += this.gameModel.comboBonus;
 		}
 		else{
 			document.getElementById('erros').innerHTML = ++this.gameModel.erro;
@@ -229,6 +235,8 @@ TaCerto.Controladora.Jogo.Geral = {
 			this.gameModel.acertosConsecutivos = 0;
 		}
 		this.plusBarra();
+
+		TaCerto.Controladora.MenuConquistas.checkAchievements();
 
 		if(!isNaN(TaCerto.Controladora.Jogo.Missao.parametros.missao))
 			TaCerto.Controladora.Jogo.Missao.checkObjetivo();
@@ -356,7 +364,8 @@ TaCerto.Controladora.Jogo.Geral = {
 		}, Math.ceil(tempo/animacoes));
 	},
 	fimDeJogo: function(){
-		TaCerto.Estrutura.Jogador.moeda += this.gameModel.moeda;
+		//TaCerto.Estrutura.Jogador.moeda += this.gameModel.moeda;
+		TaCerto.Controladora.MenuConquistas.checkAchievements();
 		TaCerto.Controladora.FimJogo.start();
 		this.zerarVars();
 	},
