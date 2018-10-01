@@ -146,7 +146,7 @@ body {
 		height: 75%;
 	}
 	.JogoBg4-4x1, .JogoBg4-4x2{
-		height: 53%;
+		height: 56%;
 	}
 .JogoBg5, .JogoBg5-3x1, .JogoBg5-4x1{
 	z-index: 3;
@@ -157,7 +157,7 @@ body {
 		height: 75.5%;
 	}
 	.JogoBg5-4x1{
-		height: 53.5%;
+		height: 56.5%;
 	}
 .JogoBg6, .JogoBg6-3x1, .JogoBg6-4x1{
 	z-index: 2;
@@ -168,7 +168,7 @@ body {
 		height: 76.5%;
 	}
 	.JogoBg6-4x1{
-		height: 54.5%;
+		height: 57.5%;
 	}
 .JogoBg7{
 	z-index: 1;
@@ -1021,7 +1021,7 @@ span {
 .mesaDeDesafiosExploradorWrapper{
 	position: absolute;
 	bottom: 0;
-	height: 50vh;
+	height: 47vh;
 	width: 100vw;
 }
 #mesaDeDesafiosExplorador{
@@ -1096,6 +1096,7 @@ span {
 }
 .palavraExplorador{
 	position: relative;
+	font-size: calc(12px + 2vw);
     height: 21px;
 	max-height: 21px;
 	transform: translateY(-100%);

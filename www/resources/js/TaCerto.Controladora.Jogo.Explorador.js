@@ -39,6 +39,7 @@ TaCerto.Controladora.Jogo.Explorador = {
 		this.proximaPergunta();
 	},
 	proximaPergunta: function(){
+		//deleta ultima pergunta respondida e chama fim de jogo se não tiver mais nenhum
 		this.DESAFIO.pop();
 		if(this.DESAFIO.length === 0){
 			this.zerarVars();
@@ -49,17 +50,17 @@ TaCerto.Controladora.Jogo.Explorador = {
 		//clean html
 		this.html.getCleanHtml();
 
+		//atualizar tipo de jogo
 		var desafio = JSON.parse(JSON.stringify(this.DESAFIO[this.DESAFIO.length -1]));
-		console.log(desafio);
 		this.gameModel.tipoPalavra = desafio.palavra;
-		
+
 		if(this.gameModel.tipoPalavra)
 			this.montarFasePalavra(desafio);
 		else
 			this.montarFaseColuna(desafio);
 	},
 	montarFasePalavra: function(desafio){
-		/*INICIO CREATE boxTotalRemain DIV*/
+		/*creando boxTotalRemain div*/
 		var boxTotalRemain = document.createElement("div");
 		boxTotalRemain.classList.add("boxTotalRemain");
 		var boxTotalRemainNumber = document.createElement("span");
@@ -74,7 +75,6 @@ TaCerto.Controladora.Jogo.Explorador = {
 
 		boxTotalRemain.appendChild(boxTotalRemainNumber);
 		boxTotalRemain.innerHTML += "/" + this.gameModel.totalEquivalenteTipoPalavra;
-		/*FIM CREATE boxTotalRemain DIV*/
 
 		/*INICIO LOGING RESPOSTAS*/
 		console.log("--");
@@ -97,14 +97,14 @@ TaCerto.Controladora.Jogo.Explorador = {
 		desafio.palavraExWrapper.remove(palavraTituloIndex);
 		/*UFA - daqui pra cima ele alimenta o palavra titulo e ainda coloca boxTotalRemain*/
 
-		for (let i = 0; i < desafio.palavraExplorador; i++) {
+		for (let i = 0; i < desafio.palavraExWrapper.length; i++) {
 			let div = document.createElement("div");
 
 			let span = document.createElement("span");
-			let emojiPalavra = desafio.palavraExplorador[i].emoji ? "emojiSpan" : "palavraSpan";
+			let emojiPalavra = desafio.palavraExWrapper[i].emoji ? "emojiSpan" : "palavraSpan";
 			span.classList.add("exploradorSpan", emojiPalavra);
-			span.innerHTML = desafio.palavraExplorador[i].conteudo;
-			span.dataset.equivalente = desafio.palavraExplorador[i].equivalente;
+			span.innerHTML = desafio.palavraExWrapper[i].conteudo;
+			span.dataset.equivalente = desafio.palavraExWrapper[i].equivalente;
 			span.onclick = function (){
 				var el = this;
 				TaCerto.GenFunc.translate5050(el,
@@ -114,15 +114,14 @@ TaCerto.Controladora.Jogo.Explorador = {
 			};
 
 			var zoomIn = ["zoomInDown", "zoomInLeft", "zoomInRight", "zoomInUp"];
-			let timeEffect = Math.floor(Math.random() * 700);
+			let timeEffect = i*100;
 
 			zoomIn.shuffle();
-			div.classList.add("palavraEx", "animated", zoomIn[Math.floor(Math.random() * 4)]);
+			div.classList.add("palavraEx", "animated", zoomIn[Math.floor(Math.random() * 4)], "fadeIn");
 			this.html.palavraExWrapper.appendChild(div);
 			span.style.position = "relative";
 			setTimeout(function(){
 				div.appendChild(span);
-				console.log(div);
 			}, timeEffect);
 		}
 	},
