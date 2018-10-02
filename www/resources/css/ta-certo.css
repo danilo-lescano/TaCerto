@@ -1253,7 +1253,7 @@ span {
 }
 .explPItemWrapper{
 	position: relative;
-	margin: 4px 5px;
+	margin: 4px 3px;
     display: inline-block;
 }
 .explPItem{
@@ -1269,6 +1269,63 @@ span {
 }
 
 
+.explCWordWrapper{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.explCCol1, .explCCol2{
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	margin: 0 !important;
+	display: inline-block;
+}
+.explCCol1{
+	left: 0;
+}
+.explCCol2{
+	right: 0;
+}
+.explCCol1ItemWrapper, .explCCol2ItemWrapper{
+	position: relative;
+	height: 33%;
+}
+.explCCol1Item, .explCCol2Item{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(0, 0, 0, 0.753);
+
+    padding: 5px 10px;
+    line-height: 1;
+	color: rgb(123, 123, 123);
+    display: inline-block;
+    background-color: #c1c1c1;
+    border-radius: 3px;
+    font-family: 'panton', 'Pacifico', cursive;
+    box-shadow: 3px 3px rgb(148, 148, 148);
+}
+
+
+
+.explBlueItem{
+	color: whitesmoke;
+    background-color: #3055a7;
+    box-shadow: 3px 3px #2f2f71;
+}
+.explRedItem{
+	color: whitesmoke;
+    background-color: red;
+    box-shadow: 3px 3px darkred;
+}
+.explGreenItem{
+	color: whitesmoke;
+    background-color: green;
+    box-shadow: 3px 3px darkgreen;
+}
 .explEmojiItem{
 	font-size: calc(35px + 2vw);
 }
