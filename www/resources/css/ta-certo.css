@@ -1017,7 +1017,6 @@ span {
 /****************************************************************/
 /*jogo explorador*//*inicio*/
 /****************************************************************/
-/*flag*/
 .mesaDeDesafiosExploradorWrapper{
 	position: absolute;
 	bottom: 0;
@@ -1204,6 +1203,33 @@ span {
 	height:0;
 }
 /*flag*/
+.mesaExpl{}
+
+
+.explCabecalho{}
+
+
+.explPWrapper{}
+	.explPCountWordWrapper{}
+		.explPCountContent{}
+			.explPCountContentDinamico{}
+	.explPWordWrapper{}
+		.explPItemWrapper{}
+			.explPItem{}
+
+.explCWrapper{}
+	.explCWordWrapper{}
+		.explCCol1{}
+			.explCCol1ItemWrapper{}
+				.explCCol1Item{}
+		.explCCol2{}
+			.explCCol2ItemWrapper{}
+				.explCCol2Item{}
+
+.explEmojiItem{}
+.explPalavraItem{}
+.lineWrapper{}
+.lineExpl{}
 /*--------------------------------------------------------------*/
 /*jogo explorador*//*fim*/
 /*--------------------------------------------------------------*/

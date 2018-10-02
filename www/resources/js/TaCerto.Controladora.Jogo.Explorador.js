@@ -54,10 +54,10 @@ TaCerto.Controladora.Jogo.Explorador = {
 		var desafio = JSON.parse(JSON.stringify(this.DESAFIO[this.DESAFIO.length -1]));
 		this.gameModel.tipoPalavra = desafio.palavra;
 
-		if(this.gameModel.tipoPalavra)
-			this.montarFasePalavra(desafio);
-		else
-			this.montarFaseColuna(desafio);
+		if(this.gameModel.tipoPalavra);
+			//this.montarFasePalavra(desafio);
+		else;
+			//this.montarFaseColuna(desafio);
 	},
 	montarFasePalavra: function(desafio){
 		/*creando boxTotalRemain div*/
