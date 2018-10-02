@@ -1202,17 +1202,88 @@ span {
 	position: absolute;
 	height:0;
 }
+
+
+
+
 /*flag*/
+.mesaExpl{
+	position: absolute;
+	bottom: 0;
+	height: 53vh;
+	width: 100vw;
+}
+.explCabecalho{
+	position: relative;
+	height: 9vh;
+	font-size: calc(12px + 2vw);
+}
+.explPWrapper, .explCWrapper{
+	width: 100%;
+	height: 44vh;
+	position: relative;
+}
+.explPCountWordWrapper{
+	width: 100%;
+	position: relative;
+	height: calc(18px + 2vw);
+}
+.explPCountContent{
+	left: 50%;
+	position: absolute;
+	font-size: calc(9px + 2vw);
+	transform: translate(-50%, calc(-50% + calc(1.5vh / 2)));
+	padding: 2px 5px 2px 5px;
+    border-radius: 5px;
+	color: whitesmoke;
+    background-color: #425eea;
+    box-shadow: 0 2px #2d51d2;
+}
+.explPCountContentShadow{
+	display: inline-block;
+	padding: 0 2px;
+    border-radius: 5px;
+	background-color: #1c39a9;
+}
+.explPWordWrapper{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+}
+.explPItemWrapper{
+	position: relative;
+	margin: 4px 5px;
+    display: inline-block;
+}
+.explPItem{
+	position: relative;
+    padding: 5px 10px;
+    line-height: 1;
+	color: rgb(123, 123, 123);
+    display: inline-block;
+    background-color: #c1c1c1;
+    border-radius: 3px;
+    font-family: 'panton', 'Pacifico', cursive;
+    box-shadow: 3px 3px rgb(148, 148, 148);
+}
+
+
+.explEmojiItem{
+	font-size: calc(35px + 2vw);
+}
+.explPalavraItem{
+	font-size: calc(12px + 2vw);
+}
+/*
 .mesaExpl{}
 
-
 .explCabecalho{}
-
 
 .explPWrapper{}
 	.explPCountWordWrapper{}
 		.explPCountContent{}
-			.explPCountContentDinamico{}
+			.explPCountContentShadow{}
 	.explPWordWrapper{}
 		.explPItemWrapper{}
 			.explPItem{}
@@ -1229,7 +1300,7 @@ span {
 .explEmojiItem{}
 .explPalavraItem{}
 .lineWrapper{}
-.lineExpl{}
+.lineExpl{}*/
 /*--------------------------------------------------------------*/
 /*jogo explorador*//*fim*/
 /*--------------------------------------------------------------*/
