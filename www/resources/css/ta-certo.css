@@ -1268,7 +1268,7 @@ span {
     box-shadow: 3px 3px rgb(148, 148, 148);
 }
 
-
+/*1px 1px #00000085*/
 .explCWordWrapper{
 	position: relative;
 	width: 100%;
@@ -1344,12 +1344,15 @@ span {
 .lineExpl{
 	position: absolute;
 	border: 3px solid rgb(75, 75, 156);
+	background-color: rgb(75, 75, 156);
 }
 .explRedBorder{
 	border: 3px solid rgb(156, 75, 75);
+	background-color: rgb(156, 75, 75);
 }
 .explGreenBorder{
 	border: 3px solid rgb(75, 156, 75);
+	background-color: rgb(75, 156, 75);
 }
 /*
 .mesaExpl{}
