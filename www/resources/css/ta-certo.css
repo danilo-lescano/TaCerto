@@ -1332,6 +1332,25 @@ span {
 .explPalavraItem{
 	font-size: calc(12px + 2vw);
 }
+
+
+.lineWrapper{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width:100vw;
+	height:100vh;
+}
+.lineExpl{
+	position: absolute;
+	border: 3px solid rgb(75, 75, 156);
+}
+.explRedBorder{
+	border: 3px solid rgb(156, 75, 75);
+}
+.explGreenBorder{
+	border: 3px solid rgb(75, 156, 75);
+}
 /*
 .mesaExpl{}
 
