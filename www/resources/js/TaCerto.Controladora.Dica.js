@@ -17,7 +17,7 @@ TaCerto.Controladora.Dica = {
 		if(this.gameModel.openned){
             setTimeout(function(){
 				telaDica.style.height = 90 + "vh";
-				dicaBotao.style.height = 97 + "vh";
+				dicaBotao.style.height = 96 + "vh";
 			}, 10);  
 
         }else{			
@@ -70,12 +70,13 @@ TaCerto.Controladora.Dica = {
 		console.log(pai.parentNode.children.length);
 		setTimeout( function(){
 			try{
-				if(pai.parentNode.children.length == 3){
+				if(pai.parentNode.children.length == 2){
+					// Não tem nenhum dica
 					var teladicaMsg = document.getElementById('telaDicaMsg');
 					teladicaMsg.innerHTML += '<h5>Você é muito bom! <br>Não precisa de dicas.</h5>';
 					teladicaMsg.classList.add("animated", "fadeIn");
 				}else{
-					console.log("eita");
+					// Tem alguma dica
 				}
 				pai.parentNode.removeChild(pai);
 			}catch(err){

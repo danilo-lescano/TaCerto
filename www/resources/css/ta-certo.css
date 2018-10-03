@@ -557,6 +557,7 @@ span {
 	text-align: center;
 	margin: -10% 0 4% 0;
 }
+
 .modalObjetivo{
 	display: inline-block;
 	width: 100%;
@@ -1059,6 +1060,20 @@ span {
 	font-size: calc(12px + 2vw);
 	/*text-shadow: 1.5px 1.5px darkgrey;*/
 	padding: 5px 10px;
+	min-width: 120px;
+}
+
+.palavraSpan2{
+	font-size: calc(12px + 7vw);
+	font-family: 'Roboto', sans-serif !important;
+	/*text-shadow: 1.5px 1.5px darkgrey;*/
+	padding: 5px 10px;
+	min-width: 120px;
+}
+
+.palavraSpan3{
+	font-size: calc(7px + 1vw);
+	font-family: 'Roboto', sans-serif !important;
 	min-width: 120px;
 }
 .emojiSpan{
@@ -1927,17 +1942,36 @@ span {
 /*--------------------------------------------------------------*/
 /*conquista - Tela do menu de conquistas */ 
 /*--------------------------------------------------------------*/
+
+.menuConquista_homeBar{
+	text-align: left;
+}
+.menuConquista_homeBar img{
+	margin: 1.5vw 0 0 1.5vw;
+	width: 9vh;
+	height: 9vh;
+}
+.menuConquista_titulo{
+	color: #294B95;
+	text-align: center;
+	margin-top: -5.5vh;
+	height: 5.5vh;
+}
+
 #conquistaScreen{
 	position: relative;
 	overflow: auto;
-	max-height: 87vh;
-	min-height: 87vh;
+	margin-bottom: 5vh;
+	height: 82vh;
 	width: 100vw;
+	margin-bottom: 0px;
 }
 
 #telaConquista{
 	position: relative;
 	width: 100%;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 #telaConquista li{
@@ -1947,15 +1981,15 @@ span {
 .imgConquista{
 	position: absolute;
 	left: 5%;
-	top: 18%;
+	top: 27%;
 
 	width: 15%;
 }
 
 .textMidConquista{
 	position: absolute;
-	top: 10.5%;
-	left: 37%;
+	top: -3.5%;
+	left: 25%;
 }
 
 .moneyConquista{
