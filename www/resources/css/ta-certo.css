@@ -724,7 +724,7 @@ span {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100%;
-    padding: 2% 4% 2% 14%;
+    padding: 2.5% 3% 2% 14%;
 }
 #acertos {
 	background-image: url("../media/image/placar_acertos.png");
@@ -736,14 +736,15 @@ span {
 	background-image: url("../media/image/placar_economico.png");
 }
 #erros, #acertos, #economia {
-	font-size: 6vw;
+	font-size: 5vw;
     margin: 5% 1%;
     font-family: "Roboto";
 }
 #tempo{
-	color: #294B95;
+	color: #fff;
 	font-size: 27px;
 	font-family:'Roboto';
+	background-image: url("../media/image/relogio.png");
 }
 .cartaWrapper{
 	position: absolute;
@@ -873,14 +874,14 @@ span {
 }
 .barraProgressoWrapper{
 	position: relative;
-	width: 78%;
+	width: 90%;
 	height: 3.5vh;
 	border-radius: 25px;
 	background-color: white;
 	background-repeat: no-repeat;
-	margin-left: 11%;
+	margin-left: 5%;
 	transform: translateY(3vh);
-}	
+} 
 .barraProgressoBack{
 	position: absolute;
 	width: 100%; /*comecar com 10% no minimo pra n sair das bordas*/ 
@@ -894,7 +895,7 @@ span {
 	width: 100%;
 	height: 5.5vh;
 	background-size: 100% 100%;
-	background-image: url("../media/image/barra_moedas.png"); /* barra_xp.png se for na tela de missoes */
+	background-image: url("../media/image/barraMoney.png"); /* barra_xp.png se for na tela de missoes */
 }
 .combo1{
 	background: linear-gradient(to right, #edbd38 , #f5de48);
@@ -1198,6 +1199,23 @@ span {
 .fimJogoErrouExplorador{
 	animation: redBGExplorador 0.7s 4 ease-in-out;
 }*/
+
+#JogoTipo{
+	height: 78.5vh !important;
+}
+
+.JogoPalavraDiv{
+	position: relative;
+	height: 67%;
+}
+
+#palavra{
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
 .cartaAmarelaExplroador{
 	animation: cartaAmarelaExplroador 0.7s 1 ease-in-out;
 }
@@ -2012,6 +2030,11 @@ span {
 	margin-right: .25em;
 }
 
+#toast-container{
+	top: 12vh;
+	bottom: auto !important;
+}
+
 /*--------------------------------------------------------------*/
-/*significado*//*fim*/
+/*conquista*//*fim*/
 /*--------------------------------------------------------------*/

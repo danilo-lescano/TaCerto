@@ -6,6 +6,7 @@ TaCerto.Controladora.Jogo.Geral = {
 		acerto: 0,
 		erro: 0,
 		moeda: 0,
+		maxMoney: 0,
 		tempo: 0,
 		acertosConsecutivos: 0,
 		tipoDeJogo: '',
@@ -31,21 +32,38 @@ TaCerto.Controladora.Jogo.Geral = {
 		this.gameModel.tempo = 0;
 
 		this.gameModel.intervalo = setInterval(function (){
-			if (!TaCerto.Controladora.Jogo.Geral.gameModel.paused && !TaCerto.Controladora.Jogo.Geral.gameModel.frozen)
-				document.getElementById('tempo').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.tempo++;
+
+			if (!TaCerto.Controladora.Jogo.Geral.gameModel.paused && !TaCerto.Controladora.Jogo.Geral.gameModel.frozen){
+
+				var minutes = Math.floor(TaCerto.Controladora.Jogo.Geral.gameModel.tempo / 60);
+				var seconds = TaCerto.Controladora.Jogo.Geral.gameModel.tempo - (minutes * 60);
+
+				var tempoText = "";
+				tempoText += "" + (minutes < 10 ? "0" : "") + minutes;
+				tempoText += ":" + (seconds < 10 ? "0" : "") + seconds;
+				document.getElementById('tempo').innerHTML = tempoText;
+				TaCerto.Controladora.Jogo.Geral.gameModel.tempo++;
+			}
+				
 		}, 1000);
 	},
 	loadDesafio: function(){
+
 		TaCerto.Controladora.Jogo[this.gameModel.tipoDeJogo].loadDesafio();
+
+		this.gameModel.maxMoney =  3 + 4 + ((this.gameModel.desafioNum-5)*3);
 	},
 	zerarVars: function(){
 		if(this.gameModel.tipoDeJogo !== ''){
 			TaCerto.Controladora.Jogo[this.gameModel.tipoDeJogo].zerarVars();
 		}
+
+		console.log("moneyyyyyyyyyyyyyyyyy =" + this.gameModel.moeda);
 		
 		this.gameModel.acerto = 0;
 		this.gameModel.erro = 0;
 		this.gameModel.moeda = 0;
+		this.gameModel.maxMoney = 0;
 		this.gameModel.tempo = 0;
 		this.gameModel.acertosConsecutivos = 0;
 		this.gameModel.tipoDeJogo = '';
@@ -110,9 +128,6 @@ TaCerto.Controladora.Jogo.Geral = {
 		var modal = document.getElementById("pauseModal");
 		modal.style.display = flag ? "block" : "none";
 		//pause clock animation
-		var secondClock = document.getElementsByClassName('second')[0];
-		secondClock.style.WebkitAnimationPlayState = flag ? "paused" : "running";
-		secondClock.style.animationPlayState = flag ? "paused" : "running";
 		//blur game blend
 		var blurThis = [document.getElementsByClassName('gameBlend')[0], document.getElementsByClassName('jogo_wrapper')[0]];
 		for (var i = 0; i < blurThis.length; i++) {
@@ -195,6 +210,49 @@ TaCerto.Controladora.Jogo.Geral = {
 		}
 
 	},
+	plusBarraMoney: function (comboFlag){
+		var widthVal;
+		var barra = document.getElementsByClassName("barraProgressoBack")[0];
+
+		console.log(this.gameModel.moeda + "   " + this.gameModel.maxMoney);
+		if (this.gameModel.moeda <= 1){
+			widthVal = 0;
+		}
+		else{
+			var aux = (this.gameModel.moeda/this.gameModel.maxMoney)*100;
+			widthVal = aux > 10 ? aux : 10;
+		}
+
+		barra.style.width = widthVal + "%";
+		barra.classList.remove("combo1", "combo2", "combo3");
+
+		var comboMult = this.gameModel.acertosConsecutivos;
+		if(comboMult < 3){
+			barra.classList.add("combo1");
+			this.gameModel.comboBonus = 1;
+		}
+		else if(comboMult < 5){
+			barra.classList.add("combo2");
+		}
+		else{
+			barra.classList.add("combo3");
+		}
+		if(comboMult === 3 && !comboFlag){
+			this.gameModel.comboBonus = 2;
+			this.showCombo("combo" + this.gameModel.comboBonus + "x");
+			var comboMP3 = TaCerto.SOUND.find("combo" + this.gameModel.comboBonus);
+				comboMP3.stop();
+				comboMP3.play();
+		}
+		else if(comboMult === 5 && !comboFlag){
+			this.gameModel.comboBonus = 3;
+			this.showCombo("combo" + this.gameModel.comboBonus + "x");
+			var comboMP3 = TaCerto.SOUND.find("combo" + this.gameModel.comboBonus);
+				comboMP3.stop();
+				comboMP3.play();
+		}
+
+	},
 	atualizarResposta: function(resp){
 		function plusPopup(color, spanId, timeout){
 			setTimeout(function () {
@@ -220,12 +278,13 @@ TaCerto.Controladora.Jogo.Geral = {
 			++TaCerto.Estrutura.Jogador.totalAcertos;
 
 			++this.gameModel.acertosConsecutivos;
-			document.getElementById('acertos').innerHTML = ++this.gameModel.acerto;
+			document.getElementById( 'acertos').innerHTML = ++this.gameModel.acerto;
 			plusPopup("colorGreen", "acertosSpan", 10);
 
-
-			document.getElementById('economia').innerHTML = this.gameModel.moeda += this.gameModel.comboBonus;
-			plusPopup("colorYellow", "economiaSpan", 100);
+			console.log("aqui que dá money");
+			//document.getElementById('economia').innerHTML = 
+			this.gameModel.moeda += this.gameModel.comboBonus;
+			//plusPopup("colorYellow", "economiaSpan", 100);
 			
 			TaCerto.Estrutura.Jogador.moeda += this.gameModel.comboBonus;
 		}
@@ -234,7 +293,7 @@ TaCerto.Controladora.Jogo.Geral = {
 			plusPopup("colorRed", "errosSpan", 10);
 			this.gameModel.acertosConsecutivos = 0;
 		}
-		this.plusBarra();
+		this.plusBarraMoney();
 
 		TaCerto.Controladora.MenuConquistas.checkAchievements();
 
@@ -253,7 +312,6 @@ TaCerto.Controladora.Jogo.Geral = {
 			cartaAzul: function(){
 				TaCerto.Controladora.Jogo.Geral.gameModel.cartaUsada.cartaAzul++;
 				TaCerto.Controladora.Jogo.Geral.showCombo("clockIce");
-				var secondClock = document.getElementsByClassName('second')[0];
 				var intervalo;
 				var freezeMP3 = TaCerto.SOUND.find("freeze");
 				freezeMP3.stop();
@@ -268,14 +326,10 @@ TaCerto.Controladora.Jogo.Geral = {
 						else{
 							if (!TaCerto.Controladora.Jogo.Geral.gameModel.paused){
 								TaCerto.Controladora.Jogo.Geral.gameModel.frozenTimer += 100;
-								secondClock.style.WebkitAnimationPlayState = "paused";
-								secondClock.style.animationPlayState = "paused";
 							}
 							if (TaCerto.Controladora.Jogo.Geral.gameModel.frozenTimer === 3000) {
 								TaCerto.Controladora.Jogo.Geral.gameModel.frozen = false;
 								clearInterval(intervalo);
-								secondClock.style.WebkitAnimationPlayState = "running";
-								secondClock.style.animationPlayState = "running";
 								TaCerto.Controladora.Jogo.Geral.gameModel.frozenTimer -= 3000;
 							}
 						}

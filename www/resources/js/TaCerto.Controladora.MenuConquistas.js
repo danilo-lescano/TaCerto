@@ -47,10 +47,6 @@ TaCerto.Controladora.MenuConquistas = {
 		var moneyTotal = TaCerto.Estrutura.Jogador.moeda;
 		var conquistas = TaCerto.Estrutura.Jogador.conquistas;
 
-		console.log("fui chamado");
-		console.log("acerto total = " + acertoTotal);
-		console.log("estrelas totais = " + estrelasTotal);
-		console.log("money total = " + moneyTotal);
 		if(!conquistas[0]){ // Checa a conquista 0
 			if(estrelasTotal >= 1){
 				this.showAchievementPanel(0);				
