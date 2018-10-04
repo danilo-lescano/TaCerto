@@ -6,6 +6,15 @@ body {
 	background-image: url("../media/image/fundo_branco.png");
 	background-size: 320px;
 }
+*{
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
 /****************************************************************/
 /*classes gerais*//*inicio*/
 /****************************************************************/
@@ -1268,7 +1277,7 @@ span {
     box-shadow: 3px 3px rgb(148, 148, 148);
 }
 
-/*1px 1px #00000085*/
+/*text-shadow: 1px 1px #00000085*/
 .explCWordWrapper{
 	position: relative;
 	width: 100%;
