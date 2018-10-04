@@ -11,20 +11,22 @@ TaCerto.Controladora.Jogo.Explorador = {
 	},
 	html:{
 		getCleanHtml: function(){
-			this.palavraExWrapper = document.getElementById("palavraExWrapper");
-			this.lineWrapper = document.getElementById("lineWrapper");
-			this.palavraExplorador = document.getElementById("palavraExplorador");
-			this.colunaWrapper1 = document.getElementById("colunaWrapper1");
-			this.colunaWrapper2 = document.getElementById("colunaWrapper2");
+			this.explCabecalho = document.getElementById("explCabecalho");
+			this.explPCountContentDinamico = document.getElementById("explPCountContentDinamico");
+			this.explPCountContentDinamicoBase = document.getElementById("explPCountContentDinamicoBase");
+			this.explPWordWrapper = document.getElementById("explPWordWrapper");			
+			this.explCCol1 = document.getElementById("explCCol1");
+			this.explCCol2 = document.getElementById("explCCol2");
+			this.explPWrapper = document.getElementById("explPWrapper");
+			this.explCWrapper = document.getElementById("explCWrapper");
 
-			if(this.palavraExWrapper && this.lineWrapper && this.palavraExplorador && this.colunaWrapper1 && this.colunaWrapper2){
-				this.palavraExWrapper.innerHTML = this.lineWrapper.innerHTML = this.palavraExplorador.innerHTML = this.colunaWrapper1.innerHTML = this.colunaWrapper2.innerHTML = "";
+			if(this.explCabecalho && this.explPCountContentDinamico && this.explPCountContentDinamicoBase && this.explPWordWrapper && this.explCCol1 && this.explCCol2 && this.explPWrapper && this.explCWrapper){
+				this.explCabecalho.innerHTML = this.explPCountContentDinamico.innerHTML = this.explPCountContentDinamicoBase.innerHTML = this.explPWordWrapper.innerHTML = this.explCCol1.innerHTML = this.explCCol2.innerHTML = this.explPWrapper.innerHTML = this.explCWrapper.innerHTML = "";
 				return true;
 			}
 			return false;
 		}
 	},
-
 	called: function () {
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("jogo", ["explorador"], ["JogoTipo"]);
 	},
@@ -37,9 +39,6 @@ TaCerto.Controladora.Jogo.Explorador = {
 
 		this.DESAFIO[this.DESAFIO.length] = "primeira interação tem um pop().";
 		this.proximaPergunta();
-	},
-	teste: function(el){
-		el.classList.add("explBlueItem");
 	},
 	proximaPergunta: function(){
 		//deleta ultima pergunta respondida e chama fim de jogo se não tiver mais nenhum
