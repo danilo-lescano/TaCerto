@@ -21,7 +21,7 @@ TaCerto.Controladora.Jogo.Explorador = {
 			this.explCWrapper = document.getElementById("explCWrapper");
 
 			if(this.explCabecalho && this.explPCountContentDinamico && this.explPCountContentDinamicoBase && this.explPWordWrapper && this.explCCol1 && this.explCCol2 && this.explPWrapper && this.explCWrapper){
-				this.explCabecalho.innerHTML = this.explPCountContentDinamico.innerHTML = this.explPCountContentDinamicoBase.innerHTML = this.explPWordWrapper.innerHTML = this.explCCol1.innerHTML = this.explCCol2.innerHTML = this.explPWrapper.innerHTML = this.explCWrapper.innerHTML = "";
+				this.explCabecalho.innerHTML = this.explPCountContentDinamico.innerHTML = this.explPCountContentDinamicoBase.innerHTML = this.explPWordWrapper.innerHTML = this.explCCol1.innerHTML = this.explCCol2.innerHTML = "";
 				return true;
 			}
 			return false;
@@ -56,12 +56,27 @@ TaCerto.Controladora.Jogo.Explorador = {
 		var desafio = JSON.parse(JSON.stringify(this.DESAFIO[this.DESAFIO.length -1]));
 		this.gameModel.tipoPalavra = desafio.palavra;
 
-		if(this.gameModel.tipoPalavra);
-			//this.montarFasePalavra(desafio);
-		else;
-			//this.montarFaseColuna(desafio);
+		if(this.gameModel.tipoPalavra)
+			this.montarFasePalavra(desafio);
+		else
+			this.montarFaseColuna(desafio);
 	},
 	montarFasePalavra: function(desafio){
+		this.explPWrapper.display = "block";
+		this.explCWrapper.display = "none";
+
+
+
+
+
+
+
+
+
+
+
+
+
 		/*creando boxTotalRemain div*/
 		var boxTotalRemain = document.createElement("div");
 		boxTotalRemain.classList.add("boxTotalRemain");
