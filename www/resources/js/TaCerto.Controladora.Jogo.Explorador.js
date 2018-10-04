@@ -38,6 +38,9 @@ TaCerto.Controladora.Jogo.Explorador = {
 		this.DESAFIO[this.DESAFIO.length] = "primeira interação tem um pop().";
 		this.proximaPergunta();
 	},
+	teste: function(el){
+		el.classList.add("explBlueItem");
+	},
 	proximaPergunta: function(){
 		//deleta ultima pergunta respondida e chama fim de jogo se não tiver mais nenhum
 		this.DESAFIO.pop();

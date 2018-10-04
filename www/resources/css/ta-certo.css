@@ -191,6 +191,10 @@ span {
 	margin-top:7px;
 	margin-left: 4px;
 }
+#JogoTipo{
+	position: relative;
+	height: 79%;
+}
 /*--------------------------------------------------------------*/
 /*classes gerais*//*fim*/
 /*--------------------------------------------------------------*/
@@ -1218,9 +1222,10 @@ span {
 /*flag*/
 .mesaExpl{
 	position: absolute;
-	bottom: 0;
+	top: 50%;
 	height: 53vh;
 	width: 100vw;
+	transform: translateY(-50%);
 }
 .explCabecalho{
 	position: relative;
@@ -1317,31 +1322,29 @@ span {
     font-family: 'panton', 'Pacifico', cursive;
     box-shadow: 3px 3px rgb(148, 148, 148);
 }
+.explCCol1Item{
+    box-shadow: 0 0 rgb(148, 148, 148);
+    border-radius: 7px;
+    background-color: whitesmoke;
+}
+.explCCol1ItemWrapper:nth-child(1)>.explCCol1Item{
+	border: 4px solid rgb(15, 77, 173);
+}
+.explCCol1ItemWrapper:nth-child(2)>.explCCol1Item{
+	border: 4px solid rgb(16, 126, 201);
+}
+.explCCol1ItemWrapper:nth-child(3)>.explCCol1Item{
+	border: 4px solid rgb(0, 180, 255);
+}
 
 
 
-.explBlueItem{
-	color: whitesmoke;
-    background-color: #3055a7;
-    box-shadow: 3px 3px #2f2f71;
-}
-.explRedItem{
-	color: whitesmoke;
-    background-color: red;
-    box-shadow: 3px 3px darkred;
-}
-.explGreenItem{
-	color: whitesmoke;
-    background-color: green;
-    box-shadow: 3px 3px darkgreen;
-}
 .explEmojiItem{
 	font-size: calc(35px + 2vw);
 }
 .explPalavraItem{
 	font-size: calc(12px + 2vw);
 }
-
 
 .lineWrapper{
 	position: fixed;
@@ -1350,45 +1353,68 @@ span {
 	width:100vw;
 	height:100vh;
 }
-.lineExpl{
+.lineExpl1{
 	position: absolute;
-	border: 3px solid rgb(75, 75, 156);
-	background-color: rgb(75, 75, 156);
+	border: 3px solid rgb(15, 77, 173);
+	background-color: rgb(15, 77, 173);
 }
-.explRedBorder{
-	border: 3px solid rgb(156, 75, 75);
-	background-color: rgb(156, 75, 75);
+.lineExpl2{
+	position: absolute;
+	border: 3px solid rgb(16, 126, 201);
+	background-color: rgb(16, 126, 201);
 }
-.explGreenBorder{
-	border: 3px solid rgb(75, 156, 75);
-	background-color: rgb(75, 156, 75);
+.lineExpl3{
+	position: absolute;
+	border: 3px solid rgb(0, 180, 255);
+	background-color: rgb(0, 180, 255);
 }
-/*
-.mesaExpl{}
 
-.explCabecalho{}
+/*explClicked*/
+.explCCol1ItemWrapper:nth-child(1)>.explCCol1Item.explClicked{
+	border: 7px solid rgb(15, 77, 173);
+}
+.explCCol1ItemWrapper:nth-child(2)>.explCCol1Item.explClicked{
+	border: 7px solid rgb(16, 126, 201);
+}
+.explCCol1ItemWrapper:nth-child(3)>.explCCol1Item.explClicked{
+	border: 7px solid rgb(0, 180, 255);
+}
+.explCCol2Item.explClicked, .explPItem.explClicked{
+	color: whitesmoke;
+    background-color: #3055a7;
+    box-shadow: 3px 3px #2f2f71;
+}
+/*explWrongAnswer*/
+.explCCol2Item.explWrongAnswer, .explPItem.explWrongAnswer{
+	color: whitesmoke;
+    background-color: red;
+    box-shadow: 3px 3px darkred;
+}
+.explCCol1ItemWrapper>.explCCol1Item.explWrongAnswer{
+	border: 3px solid red;
+}
+.lineExpl1.explWrongAnswer, .lineExpl2.explWrongAnswer, .lineExpl3.explWrongAnswer{
+	border: 3px solid red;
+    background-color: red;
+}
+/*explRightAnswer*/
+.explCCol2Item.explRightAnswer, .explPItem.explRightAnswer{
+	color: whitesmoke;
+    background-color: green;
+    box-shadow: 3px 3px darkgreen;
+}
+.explCCol1ItemWrapper>.explCCol1Item.explWrongAnswer{
+	border: 3px solid green;
+}
+.lineExpl1.explWrongAnswer, .lineExpl2.explWrongAnswer, .lineExpl3.explWrongAnswer{
+	border: 3px solid green;
+    background-color: green;
+}
 
-.explPWrapper{}
-	.explPCountWordWrapper{}
-		.explPCountContent{}
-			.explPCountContentShadow{}
-	.explPWordWrapper{}
-		.explPItemWrapper{}
-			.explPItem{}
 
-.explCWrapper{}
-	.explCWordWrapper{}
-		.explCCol1{}
-			.explCCol1ItemWrapper{}
-				.explCCol1Item{}
-		.explCCol2{}
-			.explCCol2ItemWrapper{}
-				.explCCol2Item{}
-
-.explEmojiItem{}
-.explPalavraItem{}
-.lineWrapper{}
-.lineExpl{}*/
+.JogoClockDivWrapper{
+	display: none;
+}
 /*--------------------------------------------------------------*/
 /*jogo explorador*//*fim*/
 /*--------------------------------------------------------------*/
