@@ -14,7 +14,7 @@ TaCerto.Controladora.Jogo.Explorador = {
 			this.explCabecalho = document.getElementById("explCabecalho");
 			this.explPCountContentDinamico = document.getElementById("explPCountContentDinamico");
 			this.explPCountContentDinamicoBase = document.getElementById("explPCountContentDinamicoBase");
-			this.explPWordWrapper = document.getElementById("explPWordWrapper");			
+			this.explPWordWrapper = document.getElementById("explPWordWrapper");
 			this.explCCol1 = document.getElementById("explCCol1");
 			this.explCCol2 = document.getElementById("explCCol2");
 			this.explPWrapper = document.getElementById("explPWrapper");
@@ -62,122 +62,48 @@ TaCerto.Controladora.Jogo.Explorador = {
 			this.montarFaseColuna(desafio);
 	},
 	montarFasePalavra: function(desafio){
-		this.explPWrapper.display = "block";
-		this.explCWrapper.display = "none";
-
-
-
-
-
-
-
-
-
-
-
-
-
-		/*creando boxTotalRemain div*/
-		var boxTotalRemain = document.createElement("div");
-		boxTotalRemain.classList.add("boxTotalRemain");
-		var boxTotalRemainNumber = document.createElement("span");
-		boxTotalRemainNumber.id="boxTotalRemainNumber";
-		boxTotalRemainNumber.classList.add("boxTotalRemainNumber");
-		boxTotalRemainNumber.innerHTML = "0";
-
-		this.gameModel.totalEquivalenteTipoPalavra = 0;
-		for(var i=0; i < desafio.palavraExWrapper.length; i++)
-			if(desafio.palavraExWrapper[i].equivalente)
-				this.gameModel.totalEquivalenteTipoPalavra++;
-
-		boxTotalRemain.appendChild(boxTotalRemainNumber);
-		boxTotalRemain.innerHTML += "/" + this.gameModel.totalEquivalenteTipoPalavra;
-
-		/*INICIO LOGING RESPOSTAS*/
-		console.log("--");
-		desafio.palavraExWrapper.forEach(element => {
-			if(element.equivalente)
-				console.log(element.conteudo);
-		});
-		/*FIM LOGING RESPOSTAS*/
-
+		this.html.explPWrapper.style.display = "block";
+		this.html.explCWrapper.style.display = "none";
+		
 		desafio.palavraExWrapper.shuffle();
-		var palavraTituloIndex;
-		for (let i = 0; i < desafio.palavraExWrapper.length; i++)
+		for (let i = 0; i < desafio.palavraExWrapper.length; i++) {
 			if(desafio.palavraExWrapper[i].equivalente){
-				palavraTituloIndex = i;
+				this.html.explCabecalho.innerHTML = desafio.palavraExWrapper[i].conteudo;
+				desafio.palavraExWrapper.remove(i);
 				break;
 			}
-		this.html.palavraExplorador.innerHTML = desafio.palavraExWrapper[palavraTituloIndex].conteudo;
-		this.html.palavraExplorador.appendChild(boxTotalRemain);
+		}
 
-		desafio.palavraExWrapper.remove(palavraTituloIndex);
-		/*UFA - daqui pra cima ele alimenta o palavra titulo e ainda coloca boxTotalRemain*/
-
+		this.html.explPCountContentDinamico.innerHTML = this.html.explPCountContentDinamicoBase.innerHTML = 0;
 		for (let i = 0; i < desafio.palavraExWrapper.length; i++) {
-			let div = document.createElement("div");
+			if(desafio.palavraExWrapper[i].equivalente){
+				this.html.explPCountContentDinamicoBase.innerHTML = parseInt(this.html.explPCountContentDinamicoBase.innerHTML) + 1;
+			}
 
-			let span = document.createElement("span");
-			let emojiPalavra = desafio.palavraExWrapper[i].emoji ? "emojiSpan" : "palavraSpan";
-			span.classList.add("exploradorSpan", emojiPalavra);
-			span.innerHTML = desafio.palavraExWrapper[i].conteudo;
-			span.dataset.equivalente = desafio.palavraExWrapper[i].equivalente;
-			span.onclick = function (){
-				var el = this;
-				TaCerto.GenFunc.translate5050(el,
+			let explPItemWrapper = document.createElement("div");
+			explPItemWrapper.classList.add("explPItemWrapper");
+
+			let explPItem = document.createElement("div");
+			let emojiOuPalavra = desafio.palavraExWrapper[i].emoji ? "explEmojiItem" : "explPalavraItem";
+			explPItem.classList.add("explPItem", emojiOuPalavra); 
+			explPItem.innerHTML = desafio.palavraExWrapper[i].conteudo;
+			explPItem.onclick = function(){
+				TaCerto.GenFunc.fadeInBtnClick(this,
 				function(){
-					TaCerto.Controladora.Jogo.Explorador.palavraBtnClick(el);
-				},50);
+					TaCerto.Controladora.Jogo.Explorador.palavraBtnClick(this);
+				});
 			};
 
-			var zoomIn = ["zoomInDown", "zoomInLeft", "zoomInRight", "zoomInUp"];
-			let timeEffect = i*100;
+			explPItemWrapper.appendChild(explPItem);
 
-			zoomIn.shuffle();
-			div.classList.add("palavraEx", "animated", zoomIn[Math.floor(Math.random() * 4)], "fadeIn");
-			this.html.palavraExWrapper.appendChild(div);
-			span.style.position = "relative";
-			setTimeout(function(){
-				div.appendChild(span);
-			}, timeEffect);
+			this.html.explPWordWrapper.appendChild(explPItemWrapper);
 		}
 	},
 	montarFaseColuna: function(desafio){
-		this.html.palavraExplorador.innerHTML = "Ligue as colunas!";
-
-		desafio.coluna1.shuffle();
-		desafio.coluna2.shuffle();
-
-		var itens = desafio.coluna1.concat(desafio.coluna2);
-
-		for (let i = 0; i < itens.length; i++) {
-			let div = document.createElement("div");
-			let span = document.createElement("span");
-			let emojiPalavra = itens[i].emoji ? "emojiSpan" : "palavraSpan";
-			span.classList.add("exploradorSpan", emojiPalavra);
-			span.innerHTML = itens[i].conteudo;
-			span.dataset.equivalente = itens[i].equivalente;
-			span.onclick = function (){
-				var el = this;
-				TaCerto.GenFunc.translate5050(el,
-				function(){
-					TaCerto.Controladora.Jogo.Explorador.colunaBtnClick(el);
-				},50);
-			};
-
-			let zoomIn = i < 3 ? "zoomInLeft" : "zoomInRight";
-			div.classList.add("itemColunaExplorador", "animated", zoomIn, "fadeIn");
-			if(this.html.colunaWrapper1.children.length < 3){
-				div.classList.add("itemColunaPrincipal");
-				this.html.colunaWrapper1.appendChild(div);
-			}
-			else
-				this.html.colunaWrapper2.appendChild(div);
-			div.appendChild(span);
-		}
+		this.proximaPergunta();
 	},
 	palavraBtnClick: function(el){
-		this.proximaPergunta();
+		console.log("hehe");
 	},
 	colunaBtnClick: function(el){
 		this.proximaPergunta();
