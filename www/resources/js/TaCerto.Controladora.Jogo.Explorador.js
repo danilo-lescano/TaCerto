@@ -62,6 +62,7 @@ TaCerto.Controladora.Jogo.Explorador = {
 			this.montarFaseColuna(desafio);
 	},
 	montarFasePalavra: function(desafio){
+
 		this.html.explPWrapper.style.display = "block";
 		this.html.explCWrapper.style.display = "none";
 		
@@ -80,7 +81,8 @@ TaCerto.Controladora.Jogo.Explorador = {
 				this.gameModel.totalItensCorretosPalavra++;
 
 			let explPItemWrapper = document.createElement("div");
-			explPItemWrapper.classList.add("explPItemWrapper");
+			var zoomIn = ["zoomInDown", "zoomInLeft", "zoomInRight", "zoomInUp"];
+			explPItemWrapper.classList.add("explPItemWrapper", "animated", zoomIn[Math.floor(Math.random()*zoomIn.length)], "fadeIn");
 
 			let explPItem = document.createElement("div");
 			let emojiOuPalavra = desafio.palavraExWrapper[i].emoji ? "explEmojiItem" : "explPalavraItem";
@@ -98,14 +100,29 @@ TaCerto.Controladora.Jogo.Explorador = {
 
 			explPItemWrapper.appendChild(explPItem);
 
-			this.html.explPWordWrapper.appendChild(explPItemWrapper);
+			setTimeout(() => {
+				this.html.explPWordWrapper.appendChild(explPItemWrapper);
+			}, 100*i);
 		}
 
 		this.html.explPCountContentDinamico.innerHTML = this.gameModel.totalItensSelecionadosPalavra = 0;
 		this.html.explPCountContentDinamicoBase.innerHTML = this.gameModel.totalItensCorretosPalavra;
 	},
 	montarFaseColuna: function(desafio){
-		this.proximaPergunta();
+		//apagar 2linhas
+this.proximaPergunta(); return;
+		function povoaColuna(colIndex, itens){
+			var col = colIndex? this.html.coluna1 : this.html.coluna2;
+			for (let i = 0; i < itens.length; i++) {
+
+			}
+		}
+
+		this.html.explPWrapper.style.display = "none";
+		this.html.explCWrapper.style.display = "block";
+		
+		desafio.coluna1.shuffle();	desafio.coluna2.shuffle();
+		povoaColuna(true, desafio.coluna1); povoaColuna(false, desafio.coluna2)
 	},
 	palavraBtnClick: function(el){
 		//se for doubleclick da unclick e sai
@@ -147,298 +164,12 @@ TaCerto.Controladora.Jogo.Explorador = {
 		this.proximaPergunta();
 
 	},
-	btnCallback: function(el){
-		var isColunaPrincipal = el.parentElement.classList.contains("itemColunaPrincipal");
-		var bgColor = this.getBG(isColunaPrincipal, el);
-
-		var isDoubleClicked = el.dataset.clicked ? true : false;
-		if(isDoubleClicked){//se já foi clicado então desclicar
-			el.dataset.clicked = "";
-			el.classList.remove("exploradorSpanSelected");
-			var spanClicked = document.getElementById("palavraExplorador").getElementsByTagName("div")[0];
-			if(spanClicked){
-				spanClicked.innerHTML = (parseInt(spanClicked.innerHTML) + 1);
-				this.animationHanddlerPalavraNum.new();
-			}
-			return;
-		}
-
-		var isTipoPalavra = this.gameModel.tipoPalavra;
-		var isAllClicked = this.getAllClicked(isTipoPalavra, isDoubleClicked);
-		if(isTipoPalavra){
-			el.classList.add("exploradorSpanSelected");
-			el.dataset.clicked = "true";
-
-			var spanClicked = document.getElementById("palavraExplorador").getElementsByTagName("div")[0];
-			spanClicked.innerHTML = (parseInt(spanClicked.innerHTML) - 1);
-			this.animationHanddlerPalavraNum.new();
-
-			if(isAllClicked){
-				this.desativarOnclick();
-
-				var resposta = this.DESAFIO;
-				resposta = resposta[resposta.length - 1].coluna1;
-				var itensCol = document.querySelectorAll(".palavraEx span");
-				var flagResp = false;
-				var contAcertos = 0;
-				var contTotalGabarito = 0;
-				
-				for(let i = 0; i < itensCol.length; i++){
-					var flagAcertou = false;
-					itensCol[i].classList.remove("exploradorSpanSelected");
-					if(itensCol[i].dataset.clicked && itensCol[i].dataset.equivalente == "0"){
-						flagAcertou = true;
-						contAcertos++;
-					}
-					if(flagAcertou){
-						itensCol[i].classList.add("rightExploradorSpan");
-					}
-					else if(itensCol[i].dataset.clicked){
-						itensCol[i].classList.add("wrongExploradorSpan");
-					}
-				}
-
-				for(let i = 0; i < resposta.length; i++)
-					if(!isNaN(resposta[i].equivalente))
-						contTotalGabarito++;
-
-				flagResp = contAcertos === contTotalGabarito - 1;
-				setTimeout(function(){
-					TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResp);
-					TaCerto.Controladora.Jogo.Explorador.proximaPergunta();
-				},3000);
-			}
-			return;
-		}
-
-		var MATCHBRED = "redBorderExplorador", MATCHBLUE = "blueBorderExplorador", MATCHGREEN = "greenBorderExplorador";
-		var isAlredyMatch = 	el.classList.contains(MATCHBRED) ? MATCHBRED
-							:	el.classList.contains(MATCHBLUE) ? MATCHBLUE
-							:	el.classList.contains(MATCHGREEN) ? MATCHGREEN
-							:	false;
-		if(isAlredyMatch){//toggledown matchs
-			var itensMatched = document.querySelectorAll("."+isAlredyMatch);
-			for (let i = 0; i < itensMatched.length; i++) {
-				itensMatched[i].classList.remove(isAlredyMatch);
-			}
-		}
-
-		el.dataset.clicked = "true";
-		el.classList.add("exploradorSpanSelected");
-
-		var isSecondClick = this.getSecondClick(isTipoPalavra, isColunaPrincipal, el);//segundo click na mesma coluna
-		if(isSecondClick){//se clicar em um e tiver outro clicado (só da mesma coluna e !tipoPalavra)
-			isSecondClick.dataset.clicked = "";
-			var newBgColor = this.getBG(isColunaPrincipal, isSecondClick);
-			isSecondClick.classList.remove("exploradorSpanSelected");
-			return;
-		}
-
-		var isMatchClick = this.getMatchClick(isTipoPalavra, isColunaPrincipal, el);
-		if(isMatchClick){
-			el.dataset.clicked = "";
-			el.classList.remove("exploradorSpanSelected");
-
-			var newBgColor = this.getBG(!isColunaPrincipal, isMatchClick);
-			isMatchClick.dataset.clicked = "";
-			isMatchClick.classList.remove("exploradorSpanSelected");
-
-			var colorBorderMatch = (isColunaPrincipal ? bgColor : newBgColor) + "BorderExplorador";
-			el.classList.add(colorBorderMatch);
-			isMatchClick.classList.add(colorBorderMatch);
-
-			var lineWrapper = document.getElementById("lineWrapper");//div com wrapper de svg
-			var posEl = el.getBoundingClientRect();
-			var posMatch = isMatchClick.getBoundingClientRect();
-			var line = document.createElement("div");
-			line.classList.add("lineRedExplorer", colorBorderMatch);
-			line.style.top = ((posEl.top + posEl.height/2 + posMatch.top + posMatch.height/2)/2) + "px";
-			line.style.left = Math.min(posEl.left + posEl.width/2, posMatch.left + posMatch.width/2) + "px";
-			
-			var x1 = (posEl.left + (posEl.width/2)); var x2 = (posMatch.left + (posMatch.width/2));
-			var y1 = (posEl.top + (posEl.height/2)); var y2 = (posMatch.top + (posMatch.height/2));
-
-			line.style.width = (x1>x2? (x1-x2) : (x2-x1)) + "px";
-
-			var coeficienteAngular = Math.atan((y1-y2) / (x1-x2));
-			var rad = coeficienteAngular + "rad)";
-			line.style.transform = "translateY(-50%) rotateZ(" + rad;
-			
-
-			lineWrapper.appendChild(line);
-
-			//check fim de jogo
-			var itensCol = document.querySelectorAll(".itemColunaExplorador span");
-			for (let i = 0; i < 3; i++) {
-				var isClassResp = itensCol[i].classList.contains(MATCHBRED) ? true
-					:	itensCol[i].classList.contains(MATCHBLUE) ? true
-					:	itensCol[i].classList.contains(MATCHGREEN) ? true
-					:	false;
-				if (!isClassResp) return;
-			}
-
-			this.desativarOnclick();
-
-			//check respostas corretas
-			var flagResp = false;
-			var contResp = 0;
-			for (let i = 0; i < 3; i++) {
-				var classRespCol1 = itensCol[i].classList.contains(MATCHBRED) ? MATCHBRED
-					:	itensCol[i].classList.contains(MATCHBLUE) ? MATCHBLUE
-					:	MATCHGREEN;
-
-				for (let j = 3; j < 6; j++) {
-					var classRespCol2 = itensCol[j].classList.contains(MATCHBRED) ? MATCHBRED
-					:	itensCol[j].classList.contains(MATCHBLUE) ? MATCHBLUE
-					:	MATCHGREEN;
-					if(itensCol[i].dataset.equivalente === itensCol[j].dataset.equivalente){
-						console.log(classRespCol1);
-						console.log(classRespCol2);
-					}
-					if(classRespCol2 === classRespCol1)
-						if(itensCol[i].dataset.equivalente === itensCol[j].dataset.equivalente){
-							contResp++;
-							//fazer as respostas certas piscarem
-							itensCol[i].classList.add("rightExploradorSpan");
-							itensCol[j].classList.add("rightExploradorSpan");
-						}
-						else{
-							//fazer as respostas erradas piscarem
-							itensCol[i].classList.add("wrongExploradorSpan");
-							itensCol[j].classList.add("wrongExploradorSpan");
-						}
-				}
-			}
-
-			if (contResp === 3) flagResp = true;
-			setTimeout(function(){
-				TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResp);
-				TaCerto.Controladora.Jogo.Explorador.proximaPergunta();
-			}, 3000);
-		}
-	},
-	animationHanddlerPalavraNum: {
-		animacaoFlag: false,
-		timeoutAnimacao: undefined,
-		new: function(){
-			var spanClicked = document.getElementById("palavraExplorador").getElementsByTagName("div")[0];
-			if(this.animacaoFlag){
-				clearTimeout(this.timeoutAnimacao);
-				spanClicked.classList.remove("palavraNumExploradorAnimation");
-			}
-			this.animacaoFlag = true;
-			setTimeout(function(){
-				spanClicked.classList.add("palavraNumExploradorAnimation");
-			},10);
-			this.timeoutAnimacao = setTimeout(function(){
-				try{
-					spanClicked.classList.remove("palavraNumExploradorAnimation");
-				}
-				catch(err){/*do nothin*/}
-				clearTimeout(this.timeoutAnimacao);
-				this.timeoutAnimacao = undefined;
-				this.animacaoFlag = false;
-			},1010);
-		}
-	},
-	desativarOnclick: function(){
-		var elArr = document.querySelectorAll(".itemColunaExplorador span");
-		if(!elArr.length)
-			elArr = document.querySelectorAll(".palavraEx span");
-		for (let i = 0; i < elArr.length; i++)
-			elArr[i].onclick = undefined;
-	},
-	getBG: function(isColunaPrincipal, el){
-		var ret = "grey";
-		if(isColunaPrincipal){
-			var itensCol = document.querySelectorAll(".itemColunaExplorador span");
-			var colors= ["red", "blue", "green"];
-			for (let i = 0; i < 3; i++) {
-				let index = i;
-				if(itensCol[i] === el)
-					return ret = colors[index];
-			}
-		}
-		return ret;
-	},
-	getSecondClick: function(isTipoPalavra, isColunaPrincipal, el){//retorna o equivalente se for um click na msm coluna se não retorna falso
-		if(!isTipoPalavra){
-			var itensCol = document.querySelectorAll(".itemColunaExplorador span");
-			var inicio = isColunaPrincipal ? 0 : 3;
-			var fim = inicio + 3;
-			for (let i = inicio; i < fim; i++){
-				if(itensCol[i] !== el && itensCol[i].dataset.clicked)
-					return itensCol[i];
-			}
-		}
-		return false;
-	},
-	getMatchClick: function(isTipoPalavra, isColunaPrincipal, el){//verifica se possui matchClick
-		if(!isTipoPalavra){
-			var itensCol = document.querySelectorAll(".itemColunaExplorador span");
-			var inicio = isColunaPrincipal ? 3 : 0;
-			var fim = inicio + 3;
-			for (let i = inicio; i < fim; i++){
-				if(itensCol[i].dataset.clicked) //PODE SER UTIL DEPOIS: itensCol[i].dataset.equivalente === el.dataset.equivalente && 
-					return itensCol[i];
-			}
-		}
-		return false;
-	},
-	getAllClicked: function(isTipoPalavra, isDoubleClicked){
-		if(isTipoPalavra && !isDoubleClicked){
-			//var itensCol = document.querySelectorAll(".itemColunaExplorador span");
-			//var contItensClicked = 1;
-			//for (let i = 0; i < itensCol.length; i++)
-			//	if(itensCol[i].dataset.clicked)
-			//		contItensClicked++;
-			if(1 == document.getElementById("palavraNumExplorador").innerHTML)
-				return true;
-		}
-		return false;
-	},
-
 	pular: function(){
 		this.DESAFIO[this.DESAFIO.length] = this.shuffleDesafio()[0];
 		this.DESAFIO[this.DESAFIO.length] = "primeira interação tem um pop().";
 		this.proximaPergunta();
 	},
 	eliminarErrado: function(){
-		var isTipoPalavra = TaCerto.Controladora.Jogo.Explorador.gameModel.tipoPalavra;
-		function addBG(el, index){
-			setTimeout(function(){
-				if(isTipoPalavra){
-					for (let i = 0; i < 6; i++){
-						if(!isNaN(el[i].dataset.equivalente)){
-							el[i].classList.add("cartaAmarelaExplroador");
-							setTimeout(function(){
-								try {el[i].classList.remove("cartaAmarelaExplroador");}
-								catch(err){/*donothing*/}
-							},1000);
-						}
-					}
-				}
-				else{
-					for (let i = 3; i < 6; i++){
-						if(el[i].dataset.equivalente === el[index].dataset.equivalente){
-							el[i].classList.add("cartaAmarelaExplroador");
-							el[index].classList.add("cartaAmarelaExplroador");
-							setTimeout(function(){
-								try {
-									el[i].classList.remove("cartaAmarelaExplroador");
-									el[index].classList.remove("cartaAmarelaExplroador");
-								}
-								catch(err){/*donothing*/}
-							},1000);
-							break;
-						}
-					}
-					if(el[index+1] && index < 3)
-						addBG(el, index+1);
-				}
-			},!index ? 0:1000);
-		}
-		addBG(document.querySelectorAll(".itemColunaExplorador span"), 0);
 	},
 	shuffleDesafio: function(){
 		var x = JSON.parse(JSON.stringify(TaCerto.Estrutura.DesafioDeFase.explorador));
