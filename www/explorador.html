@@ -1,3 +1,88 @@
+<div class="mesaExpl">
+	<!--caixa de linhas que ligam as colunas-->
+	<div id="lineWrapper" class="lineWrapper">
+		<div class="lineExpl" style="
+			width: 200px;
+			top: 449px;
+			left: 92px;
+			transform: rotateZ(30deg);"></div>
+	</div>
+
+	<!--onde fica a palavra do jogo explorador tipo palavra-->
+	<!--OU onde fica um texto avisando que o jogo é do tipo ligar colunas-->
+	<div id="explCabecalho" class="explCabecalho">
+		<!--TIPO PALAVRA: Charlar-->
+		<!--TIPO COLUNA:-->Ligue as colunas
+	</div>
+
+	<!--explPWrapper-->
+	<div id="explPWrapper" class="explPWrapper" style="display: none">
+		<!--explPCountWordWrapper-->
+		<div class="explPCountWordWrapper">
+			<div class="explPCountContent">
+				<div id="explPCountContentDinamico" class="explPCountContentShadow">0</div>
+				/
+				<div id="explPCountContentDinamicoBase" class="explPCountContentShadow">2</div>
+			</div>
+		</div>
+		<!--explPWordWrapper-->
+		<div id="explPWordWrapper" class="explPWordWrapper">
+			<div class="explPItemWrapper">
+				<div class="explPItem explPalavraItem explBlueItem">Conversar</div>
+			</div>
+			<div class="explPItemWrapper">
+				<div class="explPItem explPalavraItem explRedItem">Prosear</div>
+			</div>
+			<div class="explPItemWrapper">
+				<div class="explPItem explPalavraItem explGreenItem">Magrela</div>
+			</div>
+			<div class="explPItemWrapper">
+				<div class="explPItem explPalavraItem">Briba</div>
+			</div>
+			<div class="explPItemWrapper">
+				<div class="explPItem explPalavraItem">Tangerina</div>
+			</div>
+			<div class="explPItemWrapper">
+				<div class="explPItem explPalavraItem">Groselha</div>
+			</div>
+			<div class="explPItemWrapper">
+				<div class="explPItem explPalavraItem">Camarão</div>
+			</div>
+		</div>
+	</div>
+
+	<!--explCWrapper-->
+	<div id="explCWrapper" class="explCWrapper">
+		<!--explCWordWrapper-->
+		<div class="explCWordWrapper">
+			<!--explCCol1-->
+			<div id="explCCol1" class="explCCol1">
+				<div class="explCCol1ItemWrapper">
+					<div class="explCCol1Item explEmojiItem">🚲</div>
+				</div>
+				<div class="explCCol1ItemWrapper">
+					<div class="explCCol1Item explEmojiItem">🦎</div>
+				</div>
+				<div class="explCCol1ItemWrapper">
+					<div class="explCCol1Item explEmojiItem">🍊</div>
+				</div>
+			</div>
+			<!--explCCol2-->
+			<div id="explCCol2" class="explCCol2">
+				<div class="explCCol2ItemWrapper">
+					<div class="explCCol2Item explPalavraItem">Magrela</div>
+				</div>
+				<div class="explCCol2ItemWrapper">
+					<div class="explCCol2Item explPalavraItem">Taruíra</div>
+				</div>
+				<div class="explCCol2ItemWrapper">
+					<div class="explCCol2Item explPalavraItem">Tangerina</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--
 <div class="mesaDeDesafiosExploradorWrapper">
 	<div id="mesaDeDesafiosExplorador">
 
@@ -5,17 +90,60 @@
 
 		<div class="palavraExplorador" id="palavraExplorador"></div>
 
-		<div class="colunaWrapper" id="colunaWrapper1">
-			<div class="itemColunaExplorador itemColunaPrincipal"><span class="exploradorSpan emojiSpan">🚲</span></div>
-			<div class="itemColunaExplorador itemColunaPrincipal"><span class="exploradorSpan emojiSpan">🦎</span></div>
-			<div class="itemColunaExplorador itemColunaPrincipal"><span class="exploradorSpan emojiSpan">🍊</span></div>
-		</div>
-		<div class="colunaWrapper" id="colunaWrapper2">
-			<div class="itemColunaExplorador"><span class="exploradorSpan palavraSpan">Magrela</span></div>
-			<div class="itemColunaExplorador"><span class="exploradorSpan palavraSpan">Taruira</span></div>
-			<div class="itemColunaExplorador"><span class="exploradorSpan palavraSpan">Tangerina</span></div>
+		<div class="colunaWrapper">
+			<div id="colunaWrapper1">
+				<div class="itemColunaExplorador itemColunaPrincipal">
+					<span class="exploradorSpan emojiSpan">🚲</span>
+				</div>
+				<div class="itemColunaExplorador itemColunaPrincipal">
+					<span class="exploradorSpan emojiSpan">🦎</span>
+				</div>
+				<div class="itemColunaExplorador itemColunaPrincipal">
+					<span class="exploradorSpan emojiSpan">🍊</span>
+				</div>
+			</div>
+			<div id="colunaWrapper2">
+				<div class="itemColunaExplorador">
+					<span class="exploradorSpan palavraSpan">Magrela</span>
+				</div>
+				<div class="itemColunaExplorador">
+					<span class="exploradorSpan palavraSpan">Taruira</span>
+				</div>
+				<div class="itemColunaExplorador">
+					<span class="exploradorSpan palavraSpan">Tangerina</span>
+				</div>
+			</div>
 		</div>
 
-		<div class="palavraExWrapper" id="palavraExWrapper"></div>
+		<div class="palavraExWrapper" id="palavraExWrapper">
+			<div class="palavraEx animated zoomInUp fadeIn">
+				<span class="exploradorSpan palavraSpan" data-equivalente="false" style="position: relative;">Taruira</span>
+			</div>
+			<div class="palavraEx animated zoomInUp fadeIn">
+				<span class="exploradorSpan palavraSpan" data-equivalente="false" style="position: relative;">Taruira</span>
+			</div>
+			<div class="palavraEx animated zoomInUp fadeIn">
+				<span class="exploradorSpan palavraSpan" data-equivalente="false" style="position: relative;">Taruira</span>
+			</div>
+			<div class="palavraEx animated zoomInUp fadeIn">
+				<span class="exploradorSpan palavraSpan" data-equivalente="false" style="position: relative;">Taruira</span>
+			</div>
+			<div class="palavraEx animated zoomInUp fadeIn">
+				<span class="exploradorSpan palavraSpan" data-equivalente="false" style="position: relative;">Taruira</span>
+			</div>
+			<div class="palavraEx animated zoomInUp fadeIn">
+				<span class="exploradorSpan palavraSpan" data-equivalente="false" style="position: relative;">Taruira</span>
+			</div>
+			<div class="palavraEx animated zoomInUp fadeIn">
+				<span class="exploradorSpan palavraSpan" data-equivalente="false" style="position: relative;">Taruira</span>
+			</div>
+			<div class="palavraEx animated zoomInUp fadeIn">
+				<span class="exploradorSpan palavraSpan" data-equivalente="false" style="position: relative;">Taruira</span>
+			</div>
+			<div class="palavraEx animated zoomInUp fadeIn">
+				<span class="exploradorSpan palavraSpan" data-equivalente="false" style="position: relative;">Taruira</span>
+			</div>
+		</div>
 	</div>
 </div>
+-->
