@@ -62,7 +62,9 @@ TaCerto.Controladora.Jogo.Explorador = {
 			this.montarFaseColuna(desafio);
 	},
 	montarFasePalavra: function(desafio){
-
+//apagar 3 linhas
+TaCerto.Controladora.Jogo.Geral.atualizarResposta(true);
+this.proximaPergunta(); return;
 		this.html.explPWrapper.style.display = "block";
 		this.html.explCWrapper.style.display = "none";
 		
@@ -109,21 +111,20 @@ TaCerto.Controladora.Jogo.Explorador = {
 		this.html.explPCountContentDinamicoBase.innerHTML = this.gameModel.totalItensCorretosPalavra;
 	},
 	montarFaseColuna: function(desafio){
-//apagar 2linhas
-TaCerto.Controladora.Jogo.Geral.atualizarResposta(true);
-this.proximaPergunta(); return;
-		function povoaColuna(colIndex, itens){
-			var col = colIndex? this.html.coluna1 : this.html.coluna2;
-			for (let i = 0; i < itens.length; i++) {
-
-			}
-		}
-
 		this.html.explPWrapper.style.display = "none";
 		this.html.explCWrapper.style.display = "block";
 		
-		desafio.coluna1.shuffle();	desafio.coluna2.shuffle();
-		povoaColuna(true, desafio.coluna1); povoaColuna(false, desafio.coluna2)
+		desafio.coluna1.shuffle();
+		for (let i = 0; i < desafio.coluna1.length; i++) {
+			let explCCol1ItemWrapper = document.createElement("div");
+			explCCol1ItemWrapper.classList.add("explCCol1ItemWrapper");
+
+			let explCCol1Item = document.createElement("div");
+			explCCol1Item.classList.add("explCCol1Item");
+		}
+
+		desafio.coluna2.shuffle();
+		
 	},
 	palavraBtnClick: function(el){
 		//se for doubleclick da unclick e sai
