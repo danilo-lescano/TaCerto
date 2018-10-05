@@ -42,7 +42,7 @@ TaCerto.Controladora.Jogo.Geral = {
 		if(this.gameModel.tipoDeJogo !== ''){
 			TaCerto.Controladora.Jogo[this.gameModel.tipoDeJogo].zerarVars();
 		}
-		
+
 		this.gameModel.acerto = 0;
 		this.gameModel.erro = 0;
 		this.gameModel.moeda = 0;

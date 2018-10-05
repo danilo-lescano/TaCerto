@@ -6,8 +6,8 @@ TaCerto.Controladora.Jogo.Explorador = {
 	gameModel:{
 		tipoPalavra: false,
 
-		totalClickedTipoPalavra: 0,
-		totalEquivalenteTipoPalavra: 0,
+		totalItensCorretosPalavra: 0,
+		totalItensSelecionadosPalavra: 0,
 	},
 	html:{
 		getCleanHtml: function(){
@@ -74,11 +74,10 @@ TaCerto.Controladora.Jogo.Explorador = {
 			}
 		}
 
-		this.html.explPCountContentDinamico.innerHTML = this.html.explPCountContentDinamicoBase.innerHTML = 0;
+		this.gameModel.totalItensCorretosPalavra = 0;
 		for (let i = 0; i < desafio.palavraExWrapper.length; i++) {
-			if(desafio.palavraExWrapper[i].equivalente){
-				this.html.explPCountContentDinamicoBase.innerHTML = parseInt(this.html.explPCountContentDinamicoBase.innerHTML) + 1;
-			}
+			if(desafio.palavraExWrapper[i].equivalente)
+				this.gameModel.totalItensCorretosPalavra++;
 
 			let explPItemWrapper = document.createElement("div");
 			explPItemWrapper.classList.add("explPItemWrapper");
@@ -86,11 +85,14 @@ TaCerto.Controladora.Jogo.Explorador = {
 			let explPItem = document.createElement("div");
 			let emojiOuPalavra = desafio.palavraExWrapper[i].emoji ? "explEmojiItem" : "explPalavraItem";
 			explPItem.classList.add("explPItem", emojiOuPalavra); 
+			explPItem.id = i+"explItem";
+			explPItem.dataset.pesoResposta = desafio.palavraExWrapper[i].equivalente ? "c" : "e";
 			explPItem.innerHTML = desafio.palavraExWrapper[i].conteudo;
 			explPItem.onclick = function(){
+				var el = this;
 				TaCerto.GenFunc.fadeInBtnClick(this,
 				function(){
-					TaCerto.Controladora.Jogo.Explorador.palavraBtnClick(this);
+					TaCerto.Controladora.Jogo.Explorador.palavraBtnClick(el);
 				});
 			};
 
@@ -98,12 +100,48 @@ TaCerto.Controladora.Jogo.Explorador = {
 
 			this.html.explPWordWrapper.appendChild(explPItemWrapper);
 		}
+
+		this.html.explPCountContentDinamico.innerHTML = this.gameModel.totalItensSelecionadosPalavra = 0;
+		this.html.explPCountContentDinamicoBase.innerHTML = this.gameModel.totalItensCorretosPalavra;
 	},
 	montarFaseColuna: function(desafio){
 		this.proximaPergunta();
 	},
 	palavraBtnClick: function(el){
-		console.log("hehe");
+		//se for doubleclick da unclick e sai
+		var isDoubleClicked = el.classList.contains("explClicked");
+		if(isDoubleClicked){
+			this.html.explPCountContentDinamico.innerHTML = --this.gameModel.totalItensSelecionadosPalavra;
+			el.classList.remove("explClicked");
+			return;
+		}
+
+		//atualiza os clicks
+		this.html.explPCountContentDinamico.innerHTML = ++this.gameModel.totalItensSelecionadosPalavra;
+		el.classList.add("explClicked");
+
+		//fim de jogo. conta respostas certas; atualiza resposta; chama proxima pergunta; remove onclick
+		if(this.gameModel.totalItensSelecionadosPalavra === this.gameModel.totalItensCorretosPalavra){
+			var flagResposta; var contRespostasCorretas = 0;
+			var explPItem = document.getElementsByClassName("explPItem");
+			for (let i = 0; i < explPItem.length; i++) {
+				explPItem[i].onclick = undefined;
+				if(explPItem[i].classList.contains("explClicked")){
+					explPItem[i].classList.remove("explClicked");
+					if(explPItem[i].dataset.pesoResposta === "e")
+						explPItem[i].classList.add("explWrongAnswer");
+					else if(explPItem[i].dataset.pesoResposta === "c"){
+						explPItem[i].classList.add("explRightAnswer");
+						contRespostasCorretas++;
+					}
+				}
+			}
+			flagResposta = contRespostasCorretas === this.gameModel.totalItensCorretosPalavra;
+			TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResposta);
+			setTimeout(function(){
+				TaCerto.Controladora.Jogo.Explorador.proximaPergunta();
+			},1000);
+		}
 	},
 	colunaBtnClick: function(el){
 		this.proximaPergunta();
