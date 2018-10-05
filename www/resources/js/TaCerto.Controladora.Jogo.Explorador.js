@@ -109,7 +109,8 @@ TaCerto.Controladora.Jogo.Explorador = {
 		this.html.explPCountContentDinamicoBase.innerHTML = this.gameModel.totalItensCorretosPalavra;
 	},
 	montarFaseColuna: function(desafio){
-		//apagar 2linhas
+//apagar 2linhas
+TaCerto.Controladora.Jogo.Geral.atualizarResposta(true);
 this.proximaPergunta(); return;
 		function povoaColuna(colIndex, itens){
 			var col = colIndex? this.html.coluna1 : this.html.coluna2;
