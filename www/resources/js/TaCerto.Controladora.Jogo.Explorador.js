@@ -19,9 +19,10 @@ TaCerto.Controladora.Jogo.Explorador = {
 			this.explCCol2 = document.getElementById("explCCol2");
 			this.explPWrapper = document.getElementById("explPWrapper");
 			this.explCWrapper = document.getElementById("explCWrapper");
+			this.lineWrapper = document.getElementById("lineWrapper");
 
-			if(this.explCabecalho && this.explPCountContentDinamico && this.explPCountContentDinamicoBase && this.explPWordWrapper && this.explCCol1 && this.explCCol2 && this.explPWrapper && this.explCWrapper){
-				this.explCabecalho.innerHTML = this.explPCountContentDinamico.innerHTML = this.explPCountContentDinamicoBase.innerHTML = this.explPWordWrapper.innerHTML = this.explCCol1.innerHTML = this.explCCol2.innerHTML = "";
+			if(this.explCabecalho && this.explPCountContentDinamico && this.explPCountContentDinamicoBase && this.explPWordWrapper && this.explCCol1 && this.explCCol2 && this.explPWrapper && this.explCWrapper && this.lineWrapper){
+				this.explCabecalho.innerHTML = this.explPCountContentDinamico.innerHTML = this.explPCountContentDinamicoBase.innerHTML = this.explPWordWrapper.innerHTML = this.explCCol1.innerHTML = this.explCCol2.innerHTML = this.lineWrapper.innerHTML = "";
 				return true;
 			}
 			return false;
@@ -90,7 +91,7 @@ this.proximaPergunta(); return;
 			let emojiOuPalavra = desafio.palavraExWrapper[i].emoji ? "explEmojiItem" : "explPalavraItem";
 			explPItem.classList.add("explPItem", emojiOuPalavra); 
 			explPItem.id = i+"explItem";
-			explPItem.dataset.pesoResposta = desafio.palavraExWrapper[i].equivalente ? "c" : "e";
+			explPItem.dataset.equivalente = desafio.palavraExWrapper[i].equivalente ? "c" : "e";
 			explPItem.innerHTML = desafio.palavraExWrapper[i].conteudo;
 			explPItem.onclick = function(){
 				var el = this;
@@ -114,17 +115,41 @@ this.proximaPergunta(); return;
 		this.html.explPWrapper.style.display = "none";
 		this.html.explCWrapper.style.display = "block";
 		
-		desafio.coluna1.shuffle();
-		for (let i = 0; i < desafio.coluna1.length; i++) {
-			let explCCol1ItemWrapper = document.createElement("div");
-			explCCol1ItemWrapper.classList.add("explCCol1ItemWrapper");
+		function povoarColunas(isCol1, itens){
+			for (let i = 0; i < itens.length; i++) {
+				let aclassAux;
+				let explCColItemWrapper = document.createElement("div");
+				aclassAux = isCol1 ? "explCCol1ItemWrapper" : "explCCol2ItemWrapper";
+				var zoomIn = ["zoomInDown", "zoomInLeft", "zoomInRight", "zoomInUp"];
+				explCColItemWrapper.classList.add(aclassAux, "animated", zoomIn[Math.floor(Math.random()*zoomIn.length)], "fadeIn");
 
-			let explCCol1Item = document.createElement("div");
-			explCCol1Item.classList.add("explCCol1Item");
+				let explCColItem = document.createElement("div");
+				aclassAux = [];
+				aclassAux[0] = isCol1 ? "explCCol1Item" : "explCCol2Item";;
+				aclassAux[1] = itens[i].emoji ? "explEmojiItem" : "explPalavraItem";
+				explCColItem.classList.add(aclassAux[0], aclassAux[1]);
+				explCColItem.dataset.equivalente = itens[i].equivalente;
+				explCColItem.dataset.match = "n";
+				explCColItem.id = i + (isCol1 ? "itemColPrincipal" : "itemColSecundaria");
+				explCColItem.innerHTML = itens[i].conteudo;
+				explCColItem.onclick = function(){
+					var el = this;
+					TaCerto.GenFunc.translate5050(this,
+					function(){
+						TaCerto.Controladora.Jogo.Explorador.colunaBtnClick(el);
+					});
+				};
+				explCColItemWrapper.appendChild(explCColItem);
+
+				setTimeout(() => {
+					let col = isCol1 ? TaCerto.Controladora.Jogo.Explorador.html.explCCol1 : TaCerto.Controladora.Jogo.Explorador.html.explCCol2;
+					col.appendChild(explCColItemWrapper);
+				}, 100*i);
+			}
 		}
 
-		desafio.coluna2.shuffle();
-		
+		desafio.coluna1.shuffle(); povoarColunas(true, desafio.coluna1);
+		desafio.coluna2.shuffle(); povoarColunas(false, desafio.coluna2);
 	},
 	palavraBtnClick: function(el){
 		//se for doubleclick da unclick e sai
@@ -147,9 +172,9 @@ this.proximaPergunta(); return;
 				explPItem[i].onclick = undefined;
 				if(explPItem[i].classList.contains("explClicked")){
 					explPItem[i].classList.remove("explClicked");
-					if(explPItem[i].dataset.pesoResposta === "e")
+					if(explPItem[i].dataset.equivalente === "e")
 						explPItem[i].classList.add("explWrongAnswer");
-					else if(explPItem[i].dataset.pesoResposta === "c"){
+					else if(explPItem[i].dataset.equivalente === "c"){
 						explPItem[i].classList.add("explRightAnswer");
 						contRespostasCorretas++;
 					}
@@ -163,8 +188,83 @@ this.proximaPergunta(); return;
 		}
 	},
 	colunaBtnClick: function(el){
-		this.proximaPergunta();
+		//se for doubleclick da unclick e sai
+		var isDoubleClicked = el.classList.contains("explClicked");
+		if(isDoubleClicked){
+			this.html.explPCountContentDinamico.innerHTML = --this.gameModel.totalItensSelecionadosPalavra;
+			el.classList.remove("explClicked");
+			return;
+		}
 
+		//pegar a coluna do itens e carregar eles
+		var isColPrincipal = el.classList.contains("explCCol1Item");
+		var queryItensColClicked = isColPrincipal ? ".explCCol1ItemWrapper>.explCCol1Item" : ".explCCol2ItemWrapper>.explCCol2Item";
+		var queryItensColOpposite = !isColPrincipal ? ".explCCol1ItemWrapper>.explCCol1Item" : ".explCCol2ItemWrapper>.explCCol2Item";
+		var itensColClicked = document.querySelectorAll(queryItensColClicked);
+		var itensColOpposite = document.querySelectorAll(queryItensColOpposite);
+
+		//resolver problema se outro item da msm coluna ja foi clicado
+		(()=>{
+			for (let i = 0; i < itensColClicked.length; i++)
+				if(itensColClicked[i].classList.contains("explClicked")){
+					itensColClicked[i].classList.remove("explClicked");
+					return;
+				}
+		})();
+
+		//atualiza os clicks
+		el.classList.add("explClicked");
+
+		//resolver problema se item tem match
+		(()=>{
+			var oldMatch = document.getElementById(el.dataset.match);
+			if(!oldMatch) return; //item n possui match
+
+			var indexMatchClass = isColPrincipal ? el.id.substring(0,1) : oldMatch.id.substring(0,1);
+			var line = document.getElementById("colMatchLine"+indexMatchClass);
+			line.parentElement.removeChild(line);
+
+			el.dataset.match = oldMatch.dataset.match = "n"; //remove match
+			el.classList.remove("colMatch1", "colMatch2", "colMatch3");
+			oldMatch.classList.remove("colMatch1", "colMatch2", "colMatch3");
+		})();
+
+		//resolver match. retona falso se n tiver match ou o item que deu match
+		var isMatch = (()=>{
+			for (let i = 0; i < itensColOpposite.length; i++)
+				if(itensColOpposite[i].classList.contains("explClicked"))
+					return itensColOpposite[i];
+			return false;
+		})();
+		if(!isMatch) return; //se n tiver match ja retorna pq n tem mais nada pra fazer
+
+		//adicionando match
+		el.dataset.match = isMatch.id;
+		isMatch.dataset.match = el.id;
+		
+		var indexMatchClass = isColPrincipal ? el.id.substring(0,1) : isMatch.id.substring(0,1);
+		indexMatchClass = "colMatchLine"+indexMatchClass;
+		var line = document.createElement("div");
+		line.id = indexMatchClass;
+		line.classList.add(indexMatchClass);
+		var posEl = el.getBoundingClientRect();
+		var posMatch = isMatch.getBoundingClientRect();
+		var posLineWrapper = this.html.lineWrapper.getBoundingClientRect();
+		line.style.top = ((posEl.top + posEl.height/2 + posMatch.top + posMatch.height/2)/2) - (posLineWrapper.top) + "px";
+		line.style.left = Math.min(posEl.left + posEl.width/2, posMatch.left + posMatch.width/2) + "px";
+		
+		var x1 = (posEl.left + (posEl.width/2)); var x2 = (posMatch.left + (posMatch.width/2));
+		var y1 = (posEl.top + (posEl.height/2)); var y2 = (posMatch.top + (posMatch.height/2));
+
+		line.style.width = (x1>x2? (x1-x2) : (x2-x1)) + "px";
+
+		var coeficienteAngular = Math.atan((y1-y2) / (x1-x2));
+		var rad = coeficienteAngular + "rad)";
+		line.style.transform = "translateY(-50%) rotateZ(" + rad;
+
+		this.html.lineWrapper.appendChild(line);
+
+		//explCColItem.dataset.match = "n";
 	},
 	pular: function(){
 		this.DESAFIO[this.DESAFIO.length] = this.shuffleDesafio()[0];

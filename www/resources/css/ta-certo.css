@@ -1155,8 +1155,34 @@ span {
     /*box-shadow: 3px 3px rgb(163, 2, 2);*/
     box-shadow: 3px 3px rgb(148, 148, 148);
 }
+.colMatch0{
+	background-color: rgb(15, 77, 173);
+	box-shadow: 3px 3px rgb(148, 148, 148);
+}
+.colMatch1{
+	background-color: rgb(16, 126, 201);
+    box-shadow: 3px 3px rgb(148, 148, 148);
+}
+.colMatch2{
+	background-color: rgb(0, 180, 255);
+    box-shadow: 3px 3px rgb(148, 148, 148);
+}
+.colMatchLine0{
+	position: absolute;
+	background-color: rgb(15, 77, 173);
+	border: 4px solid rgb(15, 77, 173);
+}
+.colMatchLine1{
+	position: absolute;
+	background-color: rgb(16, 126, 201);
+	border: 4px solid rgb(16, 126, 201);
+}
+.colMatchLine2{
+	position: absolute;
+	background-color: rgb(0, 180, 255);
+	border: 4px solid rgb(0, 180, 255);
+}
 
-/*text-shadow: 1px 1px #00000085*/
 .explCWordWrapper{
 	position: relative;
 	width: 100%;
@@ -1226,21 +1252,6 @@ span {
 	left: 0;
 	width:100vw;
 	height:100vh;
-}
-.lineExpl1{
-	position: absolute;
-	border: 3px solid rgb(15, 77, 173);
-	background-color: rgb(15, 77, 173);
-}
-.lineExpl2{
-	position: absolute;
-	border: 3px solid rgb(16, 126, 201);
-	background-color: rgb(16, 126, 201);
-}
-.lineExpl3{
-	position: absolute;
-	border: 3px solid rgb(0, 180, 255);
-	background-color: rgb(0, 180, 255);
 }
 
 /*explClicked*/
