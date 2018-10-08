@@ -29,29 +29,29 @@ TaCerto.Controladora.Jogo.Missao = {
 	},
 
 	zerarVars: function(){
-		TaCerto.Controladora.Jogo.Missao.parametros.acerto = 0;
-		TaCerto.Controladora.Jogo.Missao.parametros.acertoConsecutivo = 0;
-		TaCerto.Controladora.Jogo.Missao.parametros.maxAcertoConsecutivo = 0;
-		TaCerto.Controladora.Jogo.Missao.parametros.erro = 0;
-		TaCerto.Controladora.Jogo.Missao.parametros.erroConsecutivo = 0;
-		TaCerto.Controladora.Jogo.Missao.parametros.maxErroConsecutivo = 0;
+		this.parametros.acerto = 0;
+		this.parametros.acertoConsecutivo = 0;
+		this.maxAcertoConsecutivo = 0;
+		this.erro = 0;
+		this.erroConsecutivo = 0;
+		this.maxErroConsecutivo = 0;
 
-		TaCerto.Controladora.Jogo.Missao.parametros.moeda = 0;
+		this.parametros.moeda = 0;
 
-		TaCerto.Controladora.Jogo.Missao.parametros.tempoDoAcerto = [];
-		TaCerto.Controladora.Jogo.Missao.parametros.tempoDoErro = [];
+		this.parametros.tempoDoAcerto = [];
+		this.parametros.tempoDoErro = [];
 
-		TaCerto.Controladora.Jogo.Missao.parametros.cartaUsada.cartaAzul = 0;
-		TaCerto.Controladora.Jogo.Missao.parametros.cartaUsada.cartaVermelha = 0;
-		TaCerto.Controladora.Jogo.Missao.parametros.cartaUsada.cartaAmarela = 0;
-		TaCerto.Controladora.Jogo.Missao.parametros.cartaUsada.cartaVerde = 0;
+		this.parametros.cartaUsada.cartaAzul = 0;
+		this.parametros.cartaUsada.cartaVermelha = 0;
+		this.parametros.cartaUsada.cartaAmarela = 0;
+		this.parametros.cartaUsada.cartaVerde = 0;
 
-		TaCerto.Controladora.Jogo.Missao.parametros.fimDeJogo = false;
+		this.parametros.fimDeJogo = false;
 
-		TaCerto.Controladora.Jogo.Missao.parametros.missao = undefined;
-		TaCerto.Controladora.Jogo.Missao.parametros.flagObjetivo[0] = false;
-		TaCerto.Controladora.Jogo.Missao.parametros.flagObjetivo[1] = false;
-		TaCerto.Controladora.Jogo.Missao.parametros.flagObjetivo[2] = false;
+		this.parametros.missao = undefined;
+		this.parametros.flagObjetivo[0] = false;
+		this.parametros.flagObjetivo[1] = false;
+		this.parametros.flagObjetivo[2] = false;
 	},
 
 	objetivo: {
@@ -155,24 +155,27 @@ TaCerto.Controladora.Jogo.Missao = {
 			}
 
 			TaCerto.Controladora.Jogo.Missao.parametros.cartaUsada = TaCerto.Controladora.Jogo.Geral.gameModel.cartaUsada;
-		} if(!TaCerto.Controladora.Jogo.Missao.parametros.fimDeJogo) atualizarVars();
+		} 
+		
+		if(!this.parametros.fimDeJogo) 
+			atualizarVars();
 
-		var fase = isNaN(TaCerto.Controladora.Jogo.Missao.parametros.missao) ? [] : TaCerto.Estrutura.Fase[TaCerto.Controladora.Jogo.Missao.parametros.missao].funcObjetivos;
+		var fase = isNaN(this.parametros.missao) ? [] : TaCerto.Estrutura.Fase[this.parametros.missao].funcObjetivos;
 		for (var i = 0; i < fase.length; i++){
-			if(!TaCerto.Controladora.Jogo.Missao.parametros.flagObjetivo[i]){
-				var flag = TaCerto.Controladora.Jogo.Missao.objetivo[fase[i]](i);
-				if (!TaCerto.Estrutura.Jogador.missoes[TaCerto.Controladora.Jogo.Missao.parametros.missao][i] && flag){
-					TaCerto.Controladora.Jogo.Missao.parametros.flagObjetivo[i] = true;
+			if(!this.parametros.flagObjetivo[i]){
+				var flag = this.objetivo[fase[i]](i);
+				if (!TaCerto.Estrutura.Jogador.missoes[this.parametros.missao][i] && flag){
+					this.parametros.flagObjetivo[i] = true;
 					TaCerto.Estrutura.Jogador.xp += 100;
-					TaCerto.Estrutura.Jogador.missoes[TaCerto.Controladora.Jogo.Missao.parametros.missao][i] = TaCerto.Estrutura.Jogador.missoes[TaCerto.Controladora.Jogo.Missao.parametros.missao][i] ? true : flag;
+					TaCerto.Estrutura.Jogador.missoes[this.parametros.missao][i] = TaCerto.Estrutura.Jogador.missoes[this.parametros.missao][i] ? true : flag;
 				}
 			}
 		}
-		if(TaCerto.Controladora.Jogo.Missao.parametros.fimDeJogo) TaCerto.Controladora.Jogo.Missao.zerarVars();
+		if(this.parametros.fimDeJogo) this.zerarVars();
 	},
 	start: function(nivelMissao){
 		TaCerto.Controladora.Jogo.Geral.zerarVars();
 
-		TaCerto.Controladora.Jogo.Missao.parametros.missao = nivelMissao;
+		this.parametros.missao = nivelMissao;
 	},
 };

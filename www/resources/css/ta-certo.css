@@ -948,6 +948,16 @@ span {
 	background-size: 100% 100%;
 	background-image: url("../media/image/barraMoney.png"); /* barra_xp.png se for na tela de missoes */
 }
+
+#moneyIcon{
+	position: absolute;
+	top: -30%;
+	left: -2%;
+	padding: 5.5%;
+	background-size: auto 100%;
+	background-image: url("../media/image/missoes_atalho.png");
+}
+
 .combo1{
 	background: linear-gradient(to right, #edbd38 , #f5de48);
 	-webkit-animation: Gradient 0.5s ease infinite;
@@ -2101,6 +2111,73 @@ span {
 #toast-container{
 	top: 12vh;
 	bottom: auto !important;
+}
+
+.h10{
+	position: absolute;
+	height: 10vh;
+	width: 100%;
+	margin-bottom: 1vh;
+	z-index: 1;
+}
+
+.achievementWrapper{
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	transform: translate(-50%);
+	border-radius: 0px 0px 9px 9px;
+	height: 0%;
+	width: 60%;
+	max-height: 10vh;
+	background-color: #294B92;
+	overflow: hidden;
+}
+
+.animaAchievementWrapper{
+	animation: animaAchievementWrapper 0.7s 1 ease-in;
+}
+
+@keyframes animaAchievementWrapper{
+	from{
+		height: 0%;
+	}
+	to{
+		height: 100%;
+	}
+}
+
+.animaAchievementWrapper2{
+	animation: animaAchievementWrapper2 0.7s 1 ease-out;
+}
+
+@keyframes animaAchievementWrapper2{
+	from{
+		height: 100%;
+	}
+	to{
+		height: 0%;
+	}
+}
+
+.imgConquistaPanel{
+	position: absolute;
+	left: 5%;
+	top: 27%;
+
+	width: 15%;
+}
+
+.textMidConquistaPanel{
+	position: absolute;
+	top: -6.5%;
+	left: 50%;
+	transform: translate(-40%);
+}
+
+.textMidConquistaPanel h4{
+	font-size: 1.13rem !important;
+	color: white;
 }
 
 /*--------------------------------------------------------------*/

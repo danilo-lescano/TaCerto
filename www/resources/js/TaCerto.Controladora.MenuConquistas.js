@@ -1,6 +1,9 @@
 var TaCerto = TaCerto || {};
 TaCerto.Controladora = TaCerto.Controladora || {};
 TaCerto.Controladora.MenuConquistas = {
+	model:{
+		timeOutSnackBar: undefined
+	},
 	load: function(){
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("menuConquistas",["dica"],["dica"]);
 		this.loadAchievements();
@@ -43,9 +46,17 @@ TaCerto.Controladora.MenuConquistas = {
 	},
 	checkAchievements: function(){
 		var acertoTotal = TaCerto.Estrutura.Jogador.totalAcertos;
-		var estrelasTotal = TaCerto.Estrutura.Jogador.totalEstrelas;
+		var estrelasTotal = 0;
 		var moneyTotal = TaCerto.Estrutura.Jogador.moeda;
 		var conquistas = TaCerto.Estrutura.Jogador.conquistas;
+
+		console.log(TaCerto.Estrutura.Jogador.missoes[0][0] + " " + TaCerto.Estrutura.Jogador.missoes[0][1] + " " + TaCerto.Estrutura.Jogador.missoes[0][2]);
+
+		for(var i = 0; i < 9; ++i){
+			if(TaCerto.Estrutura.Jogador.missoes[i][0] && TaCerto.Estrutura.Jogador.missoes[i][1] && TaCerto.Estrutura.Jogador.missoes[i][2])
+				++estrelasTotal;
+		}
+		console.log("numero de estrelas " + estrelasTotal);
 
 		if(!conquistas[0]){ // Checa a conquista 0
 			if(estrelasTotal >= 1){
@@ -147,6 +158,42 @@ TaCerto.Controladora.MenuConquistas = {
 		}
 	},
 	showAchievementPanel: function(id){
+		
+		var achievs = TaCerto.Estrutura.Conquistas.conquistas;
+
+		if(this.model.timeOutSnackBar === undefined){
+			;
+		}else{
+			clearTimeout(this.model.timeOutSnackBar);
+		}
+
 		console.log("Mostrar o painel da conquista " + id);
+		console.log("`d`");
+		var achievementPanel = document.getElementById("achievementPanel");
+		var currentAchiev = achievs[id];
+		achievementPanel.innerHTML = ' ';
+		achievementPanel.innerHTML = '<img class="imgConquistaPanel" src="resources/media/image/'+currentAchiev[3]+'.jpg" alt=""><div class="textMidConquistaPanel"><h4 class="titlePanel">'+currentAchiev[0]+'</h4></div>';
+		
+		achievementPanel.classList.add("animaAchievementWrapper");
+		achievementPanel.style.height = "100%"; 
+
+		
+		this.model.timeOutSnackBar = setTimeout(function(){
+			achievementPanel.classList.remove("animaAchievementWrapper");
+			
+			setTimeout(function(){
+				achievementPanel.classList.add("animaAchievementWrapper2");
+				achievementPanel.style.height = "0%";
+
+				setTimeout(function(){
+					achievementPanel.classList.remove("animaAchievementWrapper2");
+				
+					TaCerto.Controladora.MenuConquistas.model.timeOutSnackBar = undefined;
+					achievementPanel.innerHTML = ' ';
+				}, 700);
+			}, 10);
+		}, 5000);
+
+		
 	}
 };
