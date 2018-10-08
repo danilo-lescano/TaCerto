@@ -63,9 +63,6 @@ TaCerto.Controladora.Jogo.Explorador = {
 			this.montarFaseColuna(desafio);
 	},
 	montarFasePalavra: function(desafio){
-//apagar 3 linhas
-TaCerto.Controladora.Jogo.Geral.atualizarResposta(true);
-this.proximaPergunta(); return;
 		this.html.explPWrapper.style.display = "block";
 		this.html.explCWrapper.style.display = "none";
 		
@@ -144,6 +141,7 @@ this.proximaPergunta(); return;
 				setTimeout(() => {
 					let col = isCol1 ? TaCerto.Controladora.Jogo.Explorador.html.explCCol1 : TaCerto.Controladora.Jogo.Explorador.html.explCCol2;
 					col.appendChild(explCColItemWrapper);
+					if(explCColItem.clientWidth )
 				}, 100*i);
 			}
 		}
@@ -221,12 +219,14 @@ this.proximaPergunta(); return;
 			if(!oldMatch) return; //item n possui match
 
 			var indexMatchClass = isColPrincipal ? el.id.substring(0,1) : oldMatch.id.substring(0,1);
+			console.log(isColPrincipal);
+			console.log(indexMatchClass);
 			var line = document.getElementById("colMatchLine"+indexMatchClass);
 			line.parentElement.removeChild(line);
 
 			el.dataset.match = oldMatch.dataset.match = "n"; //remove match
-			el.classList.remove("colMatch1", "colMatch2", "colMatch3");
-			oldMatch.classList.remove("colMatch1", "colMatch2", "colMatch3");
+			el.classList.remove("colMatch0", "colMatch1", "colMatch2");
+			oldMatch.classList.remove("colMatch0", "colMatch1", "colMatch2");
 		})();
 
 		//resolver match. retona falso se n tiver match ou o item que deu match
@@ -238,33 +238,50 @@ this.proximaPergunta(); return;
 		})();
 		if(!isMatch) return; //se n tiver match ja retorna pq n tem mais nada pra fazer
 
-		//adicionando match
-		el.dataset.match = isMatch.id;
-		isMatch.dataset.match = el.id;
-		
-		var indexMatchClass = isColPrincipal ? el.id.substring(0,1) : isMatch.id.substring(0,1);
-		indexMatchClass = "colMatchLine"+indexMatchClass;
+		//separando elementos da coluna 1 e 2 que deram match
+		var elCol1 = isColPrincipal ? el : isMatch;
+		var elCol2 = !isColPrincipal ? el : isMatch;
+		//setando match atributo
+		elCol1.dataset.match = elCol2.id;
+		elCol2.dataset.match = elCol1.id;
+		//removendo clicked class
+		elCol1.classList.remove("explClicked");
+		elCol2.classList.remove("explClicked");
+		//index coluna 1
+		var indexMatchClass = elCol1.id.substring(0,1);
+		//criando linha que liga os dois divs
 		var line = document.createElement("div");
-		line.id = indexMatchClass;
-		line.classList.add(indexMatchClass);
-		var posEl = el.getBoundingClientRect();
-		var posMatch = isMatch.getBoundingClientRect();
-		var posLineWrapper = this.html.lineWrapper.getBoundingClientRect();
-		line.style.top = ((posEl.top + posEl.height/2 + posMatch.top + posMatch.height/2)/2) - (posLineWrapper.top) + "px";
-		line.style.left = Math.min(posEl.left + posEl.width/2, posMatch.left + posMatch.width/2) + "px";
+		line.id = "colMatchLine"+indexMatchClass;
+		line.classList.add("colMatchLine"+indexMatchClass);
+		//calculando posicoes, width e height da linha
+		var posElCol1 = elCol1.getBoundingClientRect();
+		var posElCol2 = elCol2.getBoundingClientRect();
+		var topLineWrapper = this.html.lineWrapper.getBoundingClientRect().top;
+		line.style.top = ((posElCol1.top + posElCol1.height/2 + posElCol2.top + posElCol2.height/2)/2) - (topLineWrapper) + "px";
 		
-		var x1 = (posEl.left + (posEl.width/2)); var x2 = (posMatch.left + (posMatch.width/2));
-		var y1 = (posEl.top + (posEl.height/2)); var y2 = (posMatch.top + (posMatch.height/2));
+		var x1 = (posElCol1.left + (posElCol1.width/2)); var x2 = (posElCol2.left + (posElCol2.width/2));
+		var y1 = (posElCol1.top + (posElCol1.height/2)); var y2 = (posElCol2.top + (posElCol2.height/2));
 
-		line.style.width = (x1>x2? (x1-x2) : (x2-x1)) + "px";
-
+		//calculando tamanho da linha e posicao left
+		(()=>{
+			//tamanho
+			var altura = x1>x2? x1-x2 : x2-x1;
+			var largura = y1>y2? y1-y2 : y2-y1;
+			var size = (altura**2 + largura**2)**0.5;
+			line.style.width = size + "px";
+			//left
+			var middle = (posElCol2.right - posElCol1.left)/2 + posElCol1.left;
+			var leftPoint = middle - size/2;
+			//(posElCol1.left + posElCol1.width/2) + "px";
+			line.style.left = leftPoint + "px";
+		})();
 		var coeficienteAngular = Math.atan((y1-y2) / (x1-x2));
 		var rad = coeficienteAngular + "rad)";
 		line.style.transform = "translateY(-50%) rotateZ(" + rad;
 
 		this.html.lineWrapper.appendChild(line);
 
-		//explCColItem.dataset.match = "n";
+		elCol2.classList.add("colMatch"+indexMatchClass);
 	},
 	pular: function(){
 		this.DESAFIO[this.DESAFIO.length] = this.shuffleDesafio()[0];
