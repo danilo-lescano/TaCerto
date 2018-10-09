@@ -16,6 +16,20 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 
 	called: function () {
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("jogo");
+		var aleatorio = [];
+		for (let i = 0; i < this.tipoDeJogo.length; i++) {
+			let wrapper = document.createElement("div");
+			wrapper.classList.add("aleWrapper");
+			wrapper.id = this.tipoDeJogo[i]+"AleWrapper";
+			wrapper.innerHTML = ((htmlName)=>{
+				for (let j = 0; j < TaCerto.HTML.length; j++) {
+					if(TaCerto.HTML[j].name !== htmlName.toLowerCase()) continue;
+					return TaCerto.HTML[j].conteudo;
+				}
+			})(this.tipoDeJogo[i]);
+			document.getElementById("JogoTipo").appendChild(wrapper);
+			TaCerto.Controladora.Jogo[this.tipoDeJogo[i]].loadDesafio();
+		}
 	},
 	loadDesafio: function () {
 		TaCerto.Controladora.Jogo.Geral.gameModel.desafioNum = 15;//ORIGINAL: 15
@@ -27,11 +41,8 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 		var index = this.indexTipoDeJogo = Math.floor(Math.random() * modos.length);
 
 		setTimeout(function(){
-			TaCerto.Controladora.Jogo[modos[index]].called();
-			TaCerto.Controladora.Jogo[modos[index]].loadDesafio();
 
 			document.getElementById('acertos').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.acerto;
-			document.getElementById('economia').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.moeda;
 			document.getElementById('erros').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.erro;
 			TaCerto.Controladora.Jogo.Geral.plusBarra(modos[oldIdex] === "Lacuna" ? true : false);
 			TaCerto.Controladora.Jogo.Aleatorio.ajustesDaFase();
@@ -55,13 +66,11 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 		TaCerto.Controladora.Jogo[modos[index]].loadDesafio();
 
 		document.getElementById('acertos').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.acerto;
-		document.getElementById('economia').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.moeda;
 		document.getElementById('erros').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.erro;
 		TaCerto.Controladora.Jogo.Geral.plusBarra(true);
 		this.ajustesDaFase();
 		
 		TaCerto.Controladora.Jogo[modos[index]].pular();
-
 
 		//mimica do efeito de flip para resolver o problema de trocar de tela no modo aleatorio
 		document.getElementById('cartaVermelha').innerHTML += '<div class="imgCard bgcartaVermelha"' + 'onclick="TaCerto.Controladora.Jogo.Geral.clickCarta(' + "'cartaVermelha'" + ');"></div>';
@@ -97,8 +106,6 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 		if(!TaCerto.Controladora.Jogo.Aleatorio.clockFlashFlag){
 			var sec = TaCerto.Controladora.Jogo.Geral.gameModel.tempo;
 			document.getElementById("tempo").innerHTML = sec;
-			document.getElementsByClassName("JogoClockDivWrapper")[0].classList.remove("flash");
-			document.getElementsByClassName("second")[0].style.transform = "rotate(" + (sec%60)*6 + "deg)";
 		}
 		TaCerto.Controladora.Jogo.Aleatorio.clockFlashFlag = false;
 		

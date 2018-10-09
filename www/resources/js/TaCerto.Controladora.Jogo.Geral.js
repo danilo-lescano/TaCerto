@@ -58,8 +58,6 @@ TaCerto.Controladora.Jogo.Geral = {
 			TaCerto.Controladora.Jogo[this.gameModel.tipoDeJogo].zerarVars();
 		}
 
-		console.log("moneyyyyyyyyyyyyyyyyy =" + this.gameModel.moeda);
-		
 		this.gameModel.acerto = 0;
 		this.gameModel.erro = 0;
 		this.gameModel.moeda = 0;
@@ -214,10 +212,8 @@ TaCerto.Controladora.Jogo.Geral = {
 		var widthVal;
 		var barra = document.getElementsByClassName("barraProgressoBack")[0];
 
-		console.log(this.gameModel.moeda + "   " + this.gameModel.maxMoney);
-		if (this.gameModel.moeda <= 1){
+		if (this.gameModel.moeda <= 1)
 			widthVal = 0;
-		}
 		else{
 			var aux = (this.gameModel.moeda/this.gameModel.maxMoney)*100;
 			widthVal = aux > 10 ? aux : 10;

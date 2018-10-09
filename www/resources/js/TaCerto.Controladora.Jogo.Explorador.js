@@ -355,9 +355,9 @@ TaCerto.Controladora.Jogo.Explorador = {
 		else{
 			var itensColuna1 = document.querySelectorAll(".explCCol1ItemWrapper>.explCCol1Item");
 			var itensColuna2 = document.querySelectorAll(".explCCol2ItemWrapper>.explCCol2Item");
-			for (let i = 0; i < itensColuna1.length; i++) {
-				for (let j = 0; j < itensColuna2.length; j++) {
-					if(itensColuna1[i].dataset.equivalente === itensColuna2[j].dataset.equivalente){
+			for (let i = 0; i < itensColuna1.length; i++)
+				for (let j = 0; j < itensColuna2.length; j++)
+					if(itensColuna1[i].dataset.equivalente === itensColuna2[j].dataset.equivalente)
 						setTimeout(function(){
 							try {
 								itensColuna1[i].classList.add("explGreenCardEff");
@@ -370,9 +370,6 @@ TaCerto.Controladora.Jogo.Explorador = {
 								} catch (error) {}
 							},700);
 						},1000*i);
-					}
-				}
-			}
 		}
 	},
 	shuffleDesafio: function(){

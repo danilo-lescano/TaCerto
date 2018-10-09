@@ -21,7 +21,7 @@ TaCerto.Controladora.Jogo.Lacuna = {
 		var frase = '', resposta = '';
 		for (var i = 0; i < desafio.fraseXlacuna.length; i++)
 			frase += desafio.fraseXlacuna[i].frase ? desafio.fraseXlacuna[i].conteudo : "<div class='padThis'><div id='lacuna" + i + "' class='emptyLacuna droppableLacuna'></div></div>";
-		document.getElementById('palavra').innerHTML = frase;
+		document.getElementById('lacConteudoWrapper').innerHTML = frase;
 
 		for (var i = 0; i < desafio.resposta.length; i++)
 			resposta +='<div class="padThis"><div class="draggableLacuna lacunaAlternativa">' + desafio.resposta[i].conteudo + '</div></div>';
@@ -182,23 +182,23 @@ TaCerto.Controladora.Jogo.Lacuna = {
 		});
 	},
 	pular: function(){
-		var flag = document.getElementById('palavra').classList.length;
-		document.getElementById('palavra').classList.remove("animated", "bounceInDown");
+		var flag = document.getElementById('lacConteudoWrapper').classList.length;
+		document.getElementById('lacConteudoWrapper').classList.remove("animated", "bounceInDown");
 		document.getElementById('lacunaResp').classList.remove("animated", "bounceInRight");
 		var shuffledDesafio = TaCerto.Controladora.Jogo.Lacuna.shuffleDesafio();
 
 		setTimeout(function(){
 			TaCerto.Controladora.Jogo.Lacuna.DESAFIO.pop();
 			TaCerto.Controladora.Jogo.Lacuna.DESAFIO[TaCerto.Controladora.Jogo.Lacuna.DESAFIO.length] = shuffledDesafio[0];
-			document.getElementById('palavra').classList.add("animated", "bounceInDown");
+			document.getElementById('lacConteudoWrapper').classList.add("animated", "bounceInDown");
 			document.getElementById('lacunaResp').classList.add("animated", "bounceInRight");
 			TaCerto.Controladora.Jogo.Lacuna.proximoDesafio();
 			TaCerto.Controladora.Jogo.Lacuna.initDraggableEvent();
 		}, 10);
 		
 		setTimeout(function(){
-			if (flag > 1 && document.getElementById('palavra')){
-				document.getElementById('palavra').classList.remove("animated", "bounceInDown");
+			if (flag > 1 && document.getElementById('lacConteudoWrapper')){
+				document.getElementById('lacConteudoWrapper').classList.remove("animated", "bounceInDown");
 				document.getElementById('lacunaResp').classList.remove("animated", "bounceInRight");
 			}
 		}, 1000);
