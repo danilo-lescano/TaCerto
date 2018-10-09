@@ -141,7 +141,21 @@ TaCerto.Controladora.Jogo.Explorador = {
 				setTimeout(() => {
 					let col = isCol1 ? TaCerto.Controladora.Jogo.Explorador.html.explCCol1 : TaCerto.Controladora.Jogo.Explorador.html.explCCol2;
 					col.appendChild(explCColItemWrapper);
-					if(explCColItem.clientWidth )
+
+					//fonte de tamanho dinamico
+					if(itens[i].emoji == true) return;
+
+					var maxSize = window.innerWidth * 0.3;
+					var fontSize = 2;
+					var height = explCColItem.offsetHeight;
+					while(explCColItem.clientWidth > maxSize){
+						fontSize -= 0.05;
+						explCColItem.style.fontSize = "calc(12px + " + fontSize + "vw)";
+
+						explCColItem.style.paddingTop = explCColItem.style.paddingBottom = "0px";
+						explCColItem.style.paddingTop = explCColItem.style.paddingBottom = (height - explCColItem.offsetHeight)/2 + "px";
+					}
+					explCColItem.style.height = height;
 				}, 100*i);
 			}
 		}
@@ -282,6 +296,36 @@ TaCerto.Controladora.Jogo.Explorador = {
 		this.html.lineWrapper.appendChild(line);
 
 		elCol2.classList.add("colMatch"+indexMatchClass);
+
+		//checkar se é fim de jogo e parar se n for
+		var itensColuna1 = document.querySelectorAll(".explCCol1ItemWrapper>.explCCol1Item");
+		for (let i = 0; i < itensColuna1.length; i++) {
+			if(itensColuna1[i].dataset.match !== "n")
+				continue;
+			return;
+		}
+
+		//fim desafio aqui - mostrar respostas e chamar proxima pergunta
+		var flagResposta = true;
+
+		for (let i = 0; i < itensColuna1.length; i++) {
+			if(itensColuna1[i].dataset.equivalente == document.getElementById(itensColuna1[i].dataset.match).dataset.equivalente){
+				itensColuna1[i].classList.add("explRightAnswer");
+				document.getElementById(itensColuna1[i].dataset.match).classList.add("explRightAnswer");
+				document.getElementById("colMatchLine"+i).classList.add("explRightAnswer");
+			}
+			else{
+				itensColuna1[i].classList.add("explWrongAnswer");
+				document.getElementById(itensColuna1[i].dataset.match).classList.add("explWrongAnswer");
+				document.getElementById("colMatchLine"+i).classList.add("explWrongAnswer");
+				flagResposta = false;
+			}
+		}
+
+		TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResposta);
+		setTimeout(function(){
+			TaCerto.Controladora.Jogo.Explorador.proximaPergunta();
+		},1000);
 	},
 	pular: function(){
 		this.DESAFIO[this.DESAFIO.length] = this.shuffleDesafio()[0];

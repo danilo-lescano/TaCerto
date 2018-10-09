@@ -741,7 +741,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 			],
 			coluna2: [
 				{equivalente: 0,		emoji: false,	conteudo:"Magrela"},
-				{equivalente: 1,		emoji: false,	conteudo:"Taruira"},
+				{equivalente: 1,		emoji: false,	conteudo:"Taruíra"},
 				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
 			],
 			tempId: 0, nivel: 0
@@ -809,7 +809,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 			],
 			coluna2: [
 				{equivalente: 0,		emoji: false,	conteudo:"Magrela"},
-				{equivalente: 1,		emoji: false,	conteudo:"Taruira"},
+				{equivalente: 1,		emoji: false,	conteudo:"Taruíra"},
 				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
 			],
 			tempId: 0, nivel: 0
@@ -849,7 +849,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{equivalente: true,		emoji: false,	conteudo:"Conversar"},
 				{equivalente: true,		emoji: false,	conteudo:"Prosear"},
 				{equivalente: false,	emoji: false,	conteudo:"Magrela"},
-				{equivalente: false,	emoji: false,	conteudo:"Taruira"},
+				{equivalente: false,	emoji: false,	conteudo:"Taruíra"},
 				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
 				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
 			],
@@ -877,7 +877,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 			],
 			coluna2: [
 				{equivalente: 0,		emoji: false,	conteudo:"Magrela"},
-				{equivalente: 1,		emoji: false,	conteudo:"Taruira"},
+				{equivalente: 1,		emoji: false,	conteudo:"Taruíra"},
 				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
 			],
 			tempId: 0, nivel: 0
@@ -917,7 +917,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{equivalente: true,		emoji: false,	conteudo:"Conversar"},
 				{equivalente: true,		emoji: false,	conteudo:"Prosear"},
 				{equivalente: false,	emoji: false,	conteudo:"Magrela"},
-				{equivalente: false,	emoji: false,	conteudo:"Taruira"},
+				{equivalente: false,	emoji: false,	conteudo:"Taruíra"},
 				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
 				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
 			],

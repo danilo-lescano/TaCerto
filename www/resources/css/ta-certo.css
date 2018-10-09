@@ -1201,7 +1201,7 @@ span {
     background-color: whitesmoke;
 }
 .explPalavraItem.explCCol1Item, .explPalavraItem.explCCol2Item{
-	width: 30vw;
+	min-width: 30vw;
 	overflow: hidden;
 }
 .explCCol1ItemWrapper:nth-child(1)>.explCCol1Item{
@@ -1284,7 +1284,7 @@ span {
 .explCCol1ItemWrapper>.explCCol1Item.explWrongAnswer{
 	border: 3px solid red;
 }
-.lineExpl1.explWrongAnswer, .lineExpl2.explWrongAnswer, .lineExpl3.explWrongAnswer{
+.colMatchLine0.explWrongAnswer, .colMatchLine1.explWrongAnswer, .colMatchLine2.explWrongAnswer{
 	border: 3px solid red;
     background-color: red;
 }
@@ -1294,32 +1294,12 @@ span {
     background-color: green;
     box-shadow: 3px 3px darkgreen;
 }
-.explCCol1ItemWrapper>.explCCol1Item.explWrongAnswer{
+.explCCol1ItemWrapper>.explCCol1Item.explRightAnswer{
 	border: 3px solid green;
 }
-.fimJogoAcertouExplorador{
-	animation: greenBGExplorador 0.7s 4 ease-in-out;
-}
-.fimJogoErrouExplorador{
-	animation: redBGExplorador 0.7s 4 ease-in-out;
-}
-
-.cartaAmarelaExplroador{
-	animation: cartaAmarelaExplroador 0.7s 1 ease-in-out;
-}
-@keyframes cartaAmarelaExplroador{
-	from, 99% {background-color: whitesmoke;}
-	50% {background-color: darkgrey;}
-}
-
-.lineExpl1.explWrongAnswer, .lineExpl2.explWrongAnswer, .lineExpl3.explWrongAnswer{
+.colMatchLine0.explRightAnswer, .colMatchLine1.explRightAnswer, .colMatchLine2.explRightAnswer{
 	border: 3px solid green;
     background-color: green;
-}
-
-
-.JogoClockDivWrapper{
-	display: none;
 }
 /*--------------------------------------------------------------*/
 /*jogo explorador*//*fim*/
