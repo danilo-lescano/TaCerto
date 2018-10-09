@@ -1132,30 +1132,6 @@ span {
     font-family: 'panton', 'Pacifico', cursive;
     box-shadow: 3px 3px rgb(109, 109, 109);
 }
-.itemColunaPrincipal .exploradorSpan{
-	border: 3px solid rgb(75, 75, 156);
-    /*box-shadow: 3px 3px #1e386f;*/
-}
-
-.emojiSpan{
-	font-size: calc(35px + 2vw);
-	/*text-shadow: 2.5px 2.5px darkgrey;*/
-	padding: 0 5px;
-}
-.exploradorSpanSelected{
-	background-color: #3055a7;
-    /*box-shadow: 3px 3px #1e386f;*/
-}
-.rightExploradorSpan{
-	background-color: green;
-	/*box-shadow: 3px 3px rgb(1, 104, 1);*/
-}
-.wrongExploradorSpan{
-	background-color: red;
-    /*box-shadow: 3px 3px rgb(163, 2, 2);*/
-    box-shadow: 3px 3px rgb(148, 148, 148);
-}
-
 .explCWordWrapper{
 	position: relative;
 	width: 100%;
@@ -1213,7 +1189,6 @@ span {
 .explCCol1ItemWrapper:nth-child(3)>.explCCol1Item{
 	border: 4px solid rgb(0, 180, 255);
 }
-
 .colMatch0{
 	color: whitesmoke;
 	background-color: rgb(15, 77, 173);
@@ -1244,14 +1219,12 @@ span {
 	background-color: rgb(0, 180, 255);
 	border: 4px solid rgb(0, 180, 255);
 }
-
 .explEmojiItem{
 	font-size: calc(35px + 2vw);
 }
 .explPalavraItem{
 	font-size: calc(12px + 2vw);
 }
-
 .lineWrapper{
 	position: fixed;
 	top: 0;
@@ -1259,8 +1232,6 @@ span {
 	width:100vw;
 	height:100vh;
 }
-
-/*explClicked*/
 .explCCol1ItemWrapper:nth-child(1)>.explCCol1Item.explClicked{
 	border: 7px solid rgb(15, 77, 173);
 }
@@ -1300,6 +1271,15 @@ span {
 .colMatchLine0.explRightAnswer, .colMatchLine1.explRightAnswer, .colMatchLine2.explRightAnswer{
 	border: 3px solid green;
     background-color: green;
+}
+
+.explGreenCardEff{
+	color: whitesmoke;
+	animation: explGreenCardEff .7s linear infinite;
+}
+@keyframes explGreenCardEff{
+	from{background-color: whitesmoke;}
+	to{background-color: rgb(45, 112, 45);}
 }
 /*--------------------------------------------------------------*/
 /*jogo explorador*//*fim*/

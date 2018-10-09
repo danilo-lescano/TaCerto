@@ -6,7 +6,7 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 	tipoDeJogo: [
 		"Normal",
 		"Lacuna",
-		//"Explorador",
+		"Explorador",
 		//"Aurelio",
 	],
 	indexTipoDeJogo: 0,

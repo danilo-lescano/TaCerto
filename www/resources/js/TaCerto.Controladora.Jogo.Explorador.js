@@ -325,7 +325,7 @@ TaCerto.Controladora.Jogo.Explorador = {
 		TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResposta);
 		setTimeout(function(){
 			TaCerto.Controladora.Jogo.Explorador.proximaPergunta();
-		},1000);
+		},900);
 	},
 	pular: function(){
 		this.DESAFIO[this.DESAFIO.length] = this.shuffleDesafio()[0];
@@ -333,6 +333,47 @@ TaCerto.Controladora.Jogo.Explorador = {
 		this.proximaPergunta();
 	},
 	eliminarErrado: function(){
+		if(this.gameModel.tipoPalavra){
+			var itens = document.querySelectorAll(".explPItem");
+			var randNumArr = [];
+			for (let i = 0; i < itens.length; randNumArr[i] = i++);
+			randNumArr.shuffle();
+			var contAux = 2;
+			for (let i = 0; i < itens.length && contAux > 0; i++) {
+				let index = randNumArr[i];
+				if(itens[index].dataset.equivalente == "e"){
+					itens[index].classList.add("animated", "fadeOut");
+					contAux--;
+					setTimeout(function(){
+						try {
+							itens[index].parentElement.parentElement.removeChild(itens[index].parentElement);
+						} catch (error) {}
+					},700);
+				}
+			}
+		}
+		else{
+			var itensColuna1 = document.querySelectorAll(".explCCol1ItemWrapper>.explCCol1Item");
+			var itensColuna2 = document.querySelectorAll(".explCCol2ItemWrapper>.explCCol2Item");
+			for (let i = 0; i < itensColuna1.length; i++) {
+				for (let j = 0; j < itensColuna2.length; j++) {
+					if(itensColuna1[i].dataset.equivalente === itensColuna2[j].dataset.equivalente){
+						setTimeout(function(){
+							try {
+								itensColuna1[i].classList.add("explGreenCardEff");
+								itensColuna2[j].classList.add("explGreenCardEff");
+							} catch (error) {}
+							setTimeout(function(){
+								try {
+									itensColuna1[i].classList.remove("explGreenCardEff");
+									itensColuna2[j].classList.remove("explGreenCardEff");
+								} catch (error) {}
+							},700);
+						},1000*i);
+					}
+				}
+			}
+		}
 	},
 	shuffleDesafio: function(){
 		var x = JSON.parse(JSON.stringify(TaCerto.Estrutura.DesafioDeFase.explorador));
