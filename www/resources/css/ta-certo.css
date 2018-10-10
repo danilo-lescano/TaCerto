@@ -508,6 +508,14 @@ span {
 	margin: 2.5vw 2.5vw 0 2.5vw;
 	float: right;
 }
+
+.rightDiv #moedas{
+	color: white;
+	position: absolute;
+	top: 1.8%;
+	right: 13%;
+}
+
 .leftDiv {
 	float: left;
 }
@@ -2039,6 +2047,10 @@ span {
 /*conquista - Tela do menu de conquistas */ 
 /*--------------------------------------------------------------*/
 
+.menuConquista_wrapper{
+	height: 30vh;
+}
+
 .menuConquista_homeBar{
 	text-align: left;
 }
@@ -2047,6 +2059,57 @@ span {
 	width: 9vh;
 	height: 9vh;
 }
+
+.menuConquista_xpBar{
+	width: 100%;
+	height: 17vh;
+}
+
+.menuConquista_xpBar .wrapper_xpBar{
+	bottom: 5%;
+}
+
+.wrapper_nivel_text{
+	color: yellow;
+	font-family: 'Roboto', sans-serif;
+
+	position: relative;
+	width: 64%;
+	height: 5vh;
+}	
+
+.wrapper_nivel_text span{
+
+	font-size: 2rem;
+	background: -webkit-linear-gradient(#ffee58, #fbc02d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#nivelImage{
+	position: absolute;
+	right: 1%;
+	top: -1%;
+}
+
+#nivelImage img{
+	position: absolute;
+	width: 6vw;
+}
+
+.wrapper_conquista_text{
+	font-family: 'Roboto', sans-serif;
+
+	position: relative;
+	width: 100%;
+	height: 8.5vh;
+	top: 30%;
+}
+
+.wrapper_conquista_text span{
+	color: white;
+}
+
 .menuConquista_titulo{
 	color: #294B95;
 	text-align: center;
@@ -2055,10 +2118,10 @@ span {
 }
 
 #conquistaScreen{
-	position: relative;
+	position: absolute;
 	overflow: auto;
 	margin-bottom: 5vh;
-	height: 82vh;
+	height: 70vh;
 	width: 100vw;
 	margin-bottom: 0px;
 }
@@ -2070,8 +2133,18 @@ span {
 	margin-bottom: 0px;
 }
 
-#telaConquista li{
+.telaConquistaLiVinte{
 	height: 15%;	
+	background: #3f51b5 !important;
+}
+
+.telaConquistaLiZero{
+	height: 15%;	
+	background: #536dfe !important;
+}
+
+.conquistaNaoConquistada{
+	opacity: 0.6;
 }
 
 .imgConquista{
@@ -2084,28 +2157,30 @@ span {
 
 .textMidConquista{
 	position: absolute;
-	top: -3.5%;
-	left: 25%;
+	color: #fff;
+	top: 0%;
+	left: 22%;
 }
 
-.moneyConquista{
-	position: absolute;
-	right: 9%;
-	top: 33%;
+.textMidConquista h4{
+	margin-bottom: 0.13rem;
 }
 
-.moneyConquista img{
+.trofeuConquista{
 	position: absolute;
-	width: 6vw;
+	right: 12%;
+	top: 30%;
 }
 
-
-
-.moneyConquista span{
+.trofeuConquista img{
 	position: absolute;
-	right: 3%;
-	font-size: 1em;
-	margin-right: .25em;
+	width: 10vw;
+}
+
+.h7{
+	font-size: 0.8rem !important;
+	line-height: 90%;
+	margin: .5rem 0 .36rem 0;
 }
 
 #toast-container{

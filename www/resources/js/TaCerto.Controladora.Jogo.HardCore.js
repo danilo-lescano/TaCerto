@@ -26,7 +26,6 @@ TaCerto.Controladora.Jogo.HardCore = {
 					if(TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual > 72)
 						TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual = 72;
 					alturaDaParede.style.height = TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual + "vh";
-					console.log("altura atual = " + TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual);
 				}
 			}, 1000);
 	},
