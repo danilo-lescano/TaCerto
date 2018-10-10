@@ -2135,12 +2135,14 @@ span {
 
 .telaConquistaLiVinte{
 	height: 15%;	
-	background: #3f51b5 !important;
+	background: #263466 !important;
+	opacity: .7;
 }
 
 .telaConquistaLiZero{
 	height: 15%;	
-	background: #536dfe !important;
+	background: #445EB8 !important;
+	opacity: .7;
 }
 
 .conquistaNaoConquistada{
