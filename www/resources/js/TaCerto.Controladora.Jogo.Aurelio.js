@@ -19,8 +19,6 @@ TaCerto.Controladora.Jogo.Aurelio = {
 		this.DESAFIO.pop();
 		if(this.DESAFIO.length){
 			this.btnResposta();
-			console.log(3);
-
 			return;
 		}
 
@@ -28,8 +26,8 @@ TaCerto.Controladora.Jogo.Aurelio = {
 		TaCerto.Controladora.Jogo.Geral.fimDeJogo();
 	},
 	btnResposta: function(){
-		this.proximoDesafio();
-		TaCerto.Controladora.Jogo.Geral.atualizarResposta(true);
+		//this.proximoDesafio();
+		//TaCerto.Controladora.Jogo.Geral.atualizarResposta(true);
 	},
 	eliminarErrado: function(){
 		//carta amarela

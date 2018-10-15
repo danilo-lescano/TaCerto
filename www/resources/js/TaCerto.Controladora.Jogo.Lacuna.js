@@ -57,16 +57,14 @@ TaCerto.Controladora.Jogo.Lacuna = {
 			TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResp);
 			
 			setTimeout(function(){
-				if(TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo === "Lacuna"){
-					TaCerto.Controladora.Jogo.Lacuna.DESAFIO.pop();
-					if(TaCerto.Controladora.Jogo.Lacuna.DESAFIO.length){
-						TaCerto.Controladora.Jogo.Lacuna.proximoDesafio();
-						TaCerto.Controladora.Jogo.Lacuna.initDraggableEvent();
-						TaCerto.Controladora.Jogo.Lacuna.dealWithDroppable();
-					}
-					else
-						TaCerto.Controladora.Jogo.Geral.fimDeJogo();
+				TaCerto.Controladora.Jogo.Lacuna.DESAFIO.pop();
+				if(TaCerto.Controladora.Jogo.Lacuna.DESAFIO.length){
+					TaCerto.Controladora.Jogo.Lacuna.proximoDesafio();
+					TaCerto.Controladora.Jogo.Lacuna.initDraggableEvent();
+					TaCerto.Controladora.Jogo.Lacuna.dealWithDroppable();
 				}
+				else
+					TaCerto.Controladora.Jogo.Geral.fimDeJogo();
 			},1000);
 		}
 	},

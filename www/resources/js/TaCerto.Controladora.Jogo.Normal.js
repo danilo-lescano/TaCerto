@@ -18,7 +18,7 @@ TaCerto.Controladora.Jogo.Normal = {
 	efeitoResposta: function(flag){
 		document.getElementsByClassName("JogoBg7")[0].style.backgroundImage = flag ? 'url("resources/media/image/fundo-certo.png")' : 'url("resources/media/image/fundo-errado.png")';
 		document.getElementsByClassName("JogoBg6")[0].style.backgroundImage = flag ? 'url("resources/media/image/fundo-certo.png")' : 'url("resources/media/image/fundo-errado.png")';
-		window.setTimeout(function () {
+		setTimeout(function () {
 			document.getElementsByClassName("JogoBg7")[0].style.backgroundImage = 'url("resources/media/image/fundo.png")';
 			document.getElementsByClassName("JogoBg6")[0].style.backgroundImage = 'url("resources/media/image/fundo.png")';
 		}, 500);
@@ -43,13 +43,14 @@ TaCerto.Controladora.Jogo.Normal = {
 			TaCerto.Controladora.Jogo.Normal.DESAFIO.pop();
 		}
 				
-		if(TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo === "Normal"){
-			if(TaCerto.Controladora.Jogo.Normal.DESAFIO.length){
+		if(TaCerto.Controladora.Jogo.Normal.DESAFIO.length){
+			setTimeout(function(){
 				document.getElementById('palavra').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].palavra;
 				document.getElementById('significado').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].significado;
-			}
-			else
-				TaCerto.Controladora.Jogo.Geral.fimDeJogo();
+			}, TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo === "Aleatorio" ? 500 : 0);
+		}
+		else{
+			TaCerto.Controladora.Jogo.Geral.fimDeJogo();
 		}
 	},
 	pular: function(){

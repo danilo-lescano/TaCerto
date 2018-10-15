@@ -155,7 +155,7 @@ TaCerto.Controladora.Jogo.Explorador = {
 						explCColItem.style.paddingTop = explCColItem.style.paddingBottom = "0px";
 						explCColItem.style.paddingTop = explCColItem.style.paddingBottom = (height - explCColItem.offsetHeight)/2 + "px";
 					}
-					explCColItem.style.height = height;
+					//explCColItem.style.height = height;
 				}, 100*i);
 			}
 		}
@@ -233,8 +233,6 @@ TaCerto.Controladora.Jogo.Explorador = {
 			if(!oldMatch) return; //item n possui match
 
 			var indexMatchClass = isColPrincipal ? el.id.substring(0,1) : oldMatch.id.substring(0,1);
-			console.log(isColPrincipal);
-			console.log(indexMatchClass);
 			var line = document.getElementById("colMatchLine"+indexMatchClass);
 			line.parentElement.removeChild(line);
 

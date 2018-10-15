@@ -9,7 +9,7 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 		"Explorador",
 		//"Aurelio",
 	],
-	indexTipoDeJogo: 0,
+	indexTipoDeJogo: -1,
 	respostasTotais: 0,
 	
 	clockFlashFlag: true, //ligar/delisgar efeito de flash do relogio
@@ -21,6 +21,7 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 			let wrapper = document.createElement("div");
 			wrapper.classList.add("aleWrapper");
 			wrapper.id = this.tipoDeJogo[i]+"AleWrapper";
+			wrapper.style.transform = "rotateX(90deg)";
 			wrapper.innerHTML = ((htmlName)=>{
 				for (let j = 0; j < TaCerto.HTML.length; j++) {
 					if(TaCerto.HTML[j].name !== htmlName.toLowerCase()) continue;
@@ -36,26 +37,44 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 		this.next();
 	},
 	next: function(){
-		var modos = this.tipoDeJogo;
-		var oldIdex = this.indexTipoDeJogo;
-		var index = this.indexTipoDeJogo = Math.floor(Math.random() * modos.length);
-
-		setTimeout(function(){
-
-			document.getElementById('acertos').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.acerto;
-			document.getElementById('erros').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.erro;
-			TaCerto.Controladora.Jogo.Geral.plusBarra(modos[oldIdex] === "Lacuna" ? true : false);
-			TaCerto.Controladora.Jogo.Aleatorio.ajustesDaFase();
-
-			if(++TaCerto.Controladora.Jogo.Aleatorio.respostasTotais > 15){
+		this.respostasTotais++;
+		if(this.respostasTotais > TaCerto.Controladora.Jogo.Geral.gameModel.desafioNum){
+			setTimeout(function(){
 				TaCerto.Controladora.Jogo.Aleatorio.zerarVars();
 				TaCerto.Controladora.Jogo.Geral.fimDeJogo();
+			},1010);
+			return;
+		}
+
+		var oldIndex = this.indexTipoDeJogo;
+		var newIndex = this.indexTipoDeJogo = Math.floor(Math.random() * this.tipoDeJogo.length);
+
+		var oldIdFase = this.tipoDeJogo[oldIndex]+"AleWrapper";
+		var newIdFase = this.tipoDeJogo[newIndex]+"AleWrapper";
+
+		var waitingTime = (()=>{
+			if(oldIndex === 0){//Normal
+				return 450;
 			}
-
-			if(modos[index] !== "Normal")
-				document.getElementsByClassName("JogoBg7")[0].style.backgroundImage = document.getElementsByClassName("JogoBg6")[0].style.backgroundImage = 'url("resources/media/image/fundo.png")';
-
-		}, modos[oldIdex] === "Lacuna" ? 1000 : 0);
+			else if(oldIndex === 1){//Lacuna
+				return 950;
+			}
+			else if(oldIndex === 2){//Explorador
+				return 850;
+			}
+			else if(oldIndex === 3){//Aurelio
+				return 500;
+			}
+			else{
+				return 0;
+			}
+		})();
+		setTimeout(function(){
+			var oldF = document.getElementById(oldIdFase);
+			if(oldF) oldF.style.transform = "rotateX(90deg)";
+			var newF = document.getElementById(newIdFase);
+			if(newF) newF.style.transform = "rotateX(0deg)";
+		}, waitingTime);
 	},
 	pular: function(){
 		var modos = this.tipoDeJogo;
@@ -83,48 +102,15 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 		}, 1000);
 	},
 	eliminarErrado: function(){
-		var modos = this.tipoDeJogo;
-		var index = this.indexTipoDeJogo;
-		TaCerto.Controladora.Jogo[modos[index]].eliminarErrado();
-	},
-	ajustesDaFase: function(){
-		var cartaUsada = TaCerto.Controladora.Jogo.Geral.gameModel.cartaUsada;
-		var cardDiv = ["cartaVermelha", "cartaAzul", "cartaAmarela", "cartaVerde"];
-		if (document.getElementById("flagCardExists")){
-			for (var i = 0; i < cardDiv.length; i++) {
-				document.getElementById(cardDiv[i]).innerHTML = "";
-				for (var j = 0; j < TaCerto.Estrutura.Jogador[cardDiv[i]] && j+cartaUsada[cardDiv[i]] < 2; j++) {
-
-					let img = new Image();
-					let src = "resources/media/image/" + cardDiv[i] + ".png";
-					img.src = src;
-					document.getElementById(cardDiv[i]).innerHTML += '<div class="imgCard bg' + cardDiv[i] + '"' + 'onclick="TaCerto.Controladora.Jogo.Geral.clickCarta(' + "'" + cardDiv[i] + "'" + ');"></div>';
-				}
-			}
-		}
-
-		if(!TaCerto.Controladora.Jogo.Aleatorio.clockFlashFlag){
-			var sec = TaCerto.Controladora.Jogo.Geral.gameModel.tempo;
-			document.getElementById("tempo").innerHTML = sec;
-		}
-		TaCerto.Controladora.Jogo.Aleatorio.clockFlashFlag = false;
-		
-		var barra = document.getElementsByClassName("barraCartaBG")[0];
-		barra.style.transition = "left 0s";
-		barra.style.WebkitTransition = "left 0s";
-		barra.style.left = TaCerto.Controladora.Jogo.Geral.gameModel.flagCardMenu ? "0px" : "-58%";
-		setTimeout(function(){
-			if(document.getElementsByClassName("barraCartaBG")[0])
-				barra.style.transition = barra.style.WebkitTransition = "left 1s";
-		}, 10);
+		var modoTipo = this.tipoDeJogo[this.indexTipoDeJogo];
+		TaCerto.Controladora.Jogo[modoTipo].eliminarErrado();
 	},
 	zerarVars: function(){
-		var modos = this.tipoDeJogo;
-		var index = this.indexTipoDeJogo = Math.floor(Math.random() * modos.length);
-		this.indexTipoDeJogo = 0;
+		this.indexTipoDeJogo = -1;
 		this.respostasTotais = 0;
-		for (var i = 0; i < modos.length; i++){
-			TaCerto.Controladora.Jogo[modos[i]].DESAFIO = [];
+		for (var i = 0; i < this.tipoDeJogo.length; i++){
+			var modoTipo = this.tipoDeJogo[i];
+			TaCerto.Controladora.Jogo[modoTipo].zerarVars();
 		}
 	}
 };
