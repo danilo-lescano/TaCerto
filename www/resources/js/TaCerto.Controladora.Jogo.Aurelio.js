@@ -5,35 +5,39 @@ TaCerto.Controladora.Jogo.Aurelio = {
 	DESAFIO: [],
 	called: function () {
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("jogo", ["aurelio"], ["JogoTipo"]);
-		console.log(1);
 	},
 	loadDesafio: function () {
-		var auxDesafio = this.shuffleDesafio();
-		for(var i = 0; i < 15; i++)
-			this.DESAFIO[i] = auxDesafio[i];
-		this.DESAFIO[this.DESAFIO.length] = "deletar ultima parada";
-		console.log(2);
-		this.proximoDesafio();
+		var desafioNum = TaCerto.Controladora.Jogo.Geral.gameModel.desafioNum = 15;//ORIGINAL: 15
+		var shuffledDesafio = this.shuffleDesafio();
+
+		for (var i = 0; i < desafioNum; i++)
+			this.DESAFIO[i] = shuffledDesafio[i];
+
+		this.DESAFIO[this.DESAFIO.length] = "primeira interação tem um pop().";
+		this.proximaPergunta();
 	},
-	proximoDesafio: function(){
+	proximaPergunta: function(){
+		//deleta ultima pergunta respondida e chama fim de jogo se não tiver mais nenhum
 		this.DESAFIO.pop();
-		if(this.DESAFIO.length){
-			this.btnResposta();
+		if(this.DESAFIO.length === 0){
+			this.zerarVars();
+			TaCerto.Controladora.Jogo.Geral.fimDeJogo();
 			return;
 		}
 
-		this.zerarVars();
-		TaCerto.Controladora.Jogo.Geral.fimDeJogo();
+
 	},
 	btnResposta: function(){
-		//this.proximoDesafio();
-		//TaCerto.Controladora.Jogo.Geral.atualizarResposta(true);
-	},
-	eliminarErrado: function(){
-		//carta amarela
+		TaCerto.Controladora.Jogo.Geral.atualizarResposta(true);
+		this.proximaPergunta();
 	},
 	pular: function(){
-		//carta vermelha
+		this.DESAFIO[this.DESAFIO.length] = this.shuffleDesafio()[0];
+		this.DESAFIO[this.DESAFIO.length] = "primeira interação tem um pop().";
+		this.proximaPergunta();
+	},
+	eliminarErrado: function(){
+
 	},
 	shuffleDesafio: function(){
 		var x = TaCerto.Estrutura.DesafioDeFase.aurelio;
