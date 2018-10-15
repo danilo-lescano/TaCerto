@@ -1,9 +1,82 @@
 var TaCerto = TaCerto || {};
 TaCerto.Controladora = TaCerto.Controladora || {};
 TaCerto.Controladora.MenuConquistas = {
+	model:{
+		timeOutSnackBar: undefined
+	},
 	load: function(){
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("menuConquistas",["dica"],["dica"]);
 		this.loadAchievements();
+
+		function calculaLvl(xp){
+			var levelImg = document.getElementById('nivelImage').firstElementChild;
+			var level = 1;
+			xp-=200;
+			while(xp !== 0)
+				xp -= xp > 0 ? ++level * 100 : level-- * 0 + xp;
+
+			console.log("Meu level = "+level);
+			level++;
+			if(level <= 1){
+				console.log("IMAGEM 1");
+				levelImg.src= "resources/media/image/1.png"; 
+			}else{
+				console.log("IMAGEM "+level);
+				levelImg.src='resources/media/image/'+level+'.png'; 
+			}
+				
+			return level;
+		}
+
+		function moveXPBar(nivel, maxNivel, nextLevelXp){
+			var xpTotal = document.getElementById('xpTotal');
+			var xpNextLevel =document.getElementById('xpNextLevel');
+			if (nivel < maxNivel) {
+				var xpBar = document.getElementsByClassName('back_xpBar')[0];
+				if(xpBar){
+					document.getElementById('xpNextLevel').innerHTML = nextLevelXp;
+					xpBar.classList.remove("transition00", "transition03");
+					xpBar.classList.add("transition00");
+					xpBar.style.width = "0";
+					setTimeout(function(){
+						xpBar.classList.remove("transition00", "transition03");
+						xpBar.classList.add("transition03");
+						xpBar.style.width = "100%";
+						nextLevelXp += (++nivel + 1)* 100;
+						setTimeout(function(){
+							moveXPBar(nivel, maxNivel, nextLevelXp);
+						}, 320);
+					}, 10);
+				}
+			}
+			else{
+				var xpBar = document.getElementsByClassName('back_xpBar')[0];
+				if(xpBar){
+					var deltaXp = parseInt(document.getElementById('xpNextLevel').innerHTML);
+					deltaXp = ((TaCerto.Estrutura.Jogador.xp - deltaXp)/(nextLevelXp - deltaXp))*100;
+					document.getElementById('xpNextLevel').innerHTML = nextLevelXp;
+					xpBar.classList.remove("transition00", "transition03");
+					xpBar.classList.add("transition00");
+					xpBar.style.width = "0";
+					setTimeout(function(){
+						xpBar.classList.remove("transition00", "transition03");
+						xpBar.classList.add("transition03");
+						xpBar.style.width = deltaXp === 0 ? 0 : deltaXp > 10 ? deltaXp + "%" : "10%";
+					}, 10);
+				}
+				var intervalo = setInterval(function(){
+					var next = document.getElementById('xpTotal');
+					if (next){
+						if(parseInt(next.innerHTML) < TaCerto.Estrutura.Jogador.xp)
+							next.innerHTML = (parseInt(next.innerHTML) + 100);
+						else{
+							clearInterval(intervalo);
+							next.innerHTML = TaCerto.Estrutura.Jogador.xp;
+						}
+					}
+				}, 100);
+			}
+		} moveXPBar(0, calculaLvl(TaCerto.Estrutura.Jogador.xp), 200);
 	},
 	callGame: function(tipo, el){
 		TaCerto.GenFunc.fadeInBtnClick(el,
@@ -28,24 +101,34 @@ TaCerto.Controladora.MenuConquistas = {
 			tabelaConquistas.removeChild(tabelaConquistas.firstChild);
 
 		// Add as conquistas
-		console.log(numAchiev);
 		for(var i = 0; i < numAchiev; i++){
 			let currentAchiev = achievs[i];
+			let bg = "";
+			if(i%2===0){
+				bg = "telaConquistaLiZero";
+			}else{
+				bg = "telaConquistaLiVinte";
+			}
 			
 			if(TaCerto.Estrutura.Jogador.conquistas[i]){
 				// Jogador já completou a conquista
-				tabelaConquistas.innerHTML += '<li class="collection-item avatar green"><img class="imgConquista" src="resources/media/image/'+currentAchiev[3]+'.jpg" alt=""><div class="textMidConquista"><h5 class="title">'+currentAchiev[0]+'</h5><h6>'+currentAchiev[1]+'</h6></div><div class="moneyConquista"><span>'+currentAchiev[2]+'</span><img src="resources/media/image/missoes_atalho.png" alt="ilustracao dinheiro"></div></li>';
+				tabelaConquistas.innerHTML += '<li class="collection-item avatar green '+bg+'"><img class="imgConquista" src="resources/media/image/'+currentAchiev[3]+'.jpg" alt=""><div class="textMidConquista"><h4 class="title left-align">'+currentAchiev[0]+'</h4><h6 class="left-align h7">'+currentAchiev[1]+'</h6></div><div class="trofeuConquista"><img src="resources/media/image/missoes_atalho.png" alt="ilustracao dinheiro"></div></li>';
 			}else{
-				// Jogador ainda não completo a conquista
-				tabelaConquistas.innerHTML += '<li class="collection-item avatar"><img class="imgConquista" src="resources/media/image/'+currentAchiev[3]+'.jpg" alt=""><div class="textMidConquista"><h4 class="title">'+currentAchiev[0]+'</h4><h6>'+currentAchiev[1]+'</h6></div><div class="moneyConquista"><span>'+currentAchiev[2]+'</span><img src="resources/media/image/missoes_atalho.png" alt="ilustracao dinheiro"></div></li>';
+				// Jogador ainda não completou a conquista
+				tabelaConquistas.innerHTML += '<li class="collection-item conquistaNaoConquistada avatar '+bg+'"><img class="imgConquista" src="resources/media/image/'+currentAchiev[3]+'.jpg" alt=""><div class="textMidConquista"><h4 class="title left-align">'+currentAchiev[0]+'</h4><h6 class="left-align h7">'+currentAchiev[1]+'</h6></div><div class="trofeuConquista"><img src="resources/media/image/missoes_atalho.png" alt="ilustracao dinheiro"></div></li>';
 			}
 		}
 	},
 	checkAchievements: function(){
 		var acertoTotal = TaCerto.Estrutura.Jogador.totalAcertos;
-		var estrelasTotal = TaCerto.Estrutura.Jogador.totalEstrelas;
+		var estrelasTotal = 0;
 		var moneyTotal = TaCerto.Estrutura.Jogador.moeda;
 		var conquistas = TaCerto.Estrutura.Jogador.conquistas;
+
+		for(var i = 0; i < 9; ++i){
+			if(TaCerto.Estrutura.Jogador.missoes[i][0] && TaCerto.Estrutura.Jogador.missoes[i][1] && TaCerto.Estrutura.Jogador.missoes[i][2])
+				++estrelasTotal;
+		}
 
 		if(!conquistas[0]){ // Checa a conquista 0
 			if(estrelasTotal >= 1){
@@ -147,6 +230,42 @@ TaCerto.Controladora.MenuConquistas = {
 		}
 	},
 	showAchievementPanel: function(id){
-		console.log("Mostrar o painel da conquista " + id);
+		
+		var achievs = TaCerto.Estrutura.Conquistas.conquistas;
+		var achievementPanel = document.getElementById("achievementPanel");
+
+		if(this.model.timeOutSnackBar === undefined){
+			;
+		}else{
+			clearTimeout(this.model.timeOutSnackBar);
+			achievementPanel.style.height = '0%';
+			achievementPanel.classList.remove("animaAchievementWrapper2");
+			achievementPanel.classList.remove("animaAchievementWrapper");
+		}
+
+		
+		var currentAchiev = achievs[id];
+		achievementPanel.innerHTML = ' ';
+		achievementPanel.innerHTML = '<img class="imgConquistaPanel" src="resources/media/image/'+currentAchiev[3]+'.jpg" alt=""><div class="textMidConquistaPanel"><h4 class="titlePanel">'+currentAchiev[0]+'</h4></div>';
+		
+		achievementPanel.classList.add("animaAchievementWrapper");
+		achievementPanel.style.height = "100%"; 
+
+		
+		this.model.timeOutSnackBar = setTimeout(function(){
+			achievementPanel.classList.remove("animaAchievementWrapper");
+			
+			setTimeout(function(){
+				achievementPanel.classList.add("animaAchievementWrapper2");
+				achievementPanel.style.height = "0%";
+
+				setTimeout(function(){
+					achievementPanel.classList.remove("animaAchievementWrapper2");
+				
+					TaCerto.Controladora.MenuConquistas.model.timeOutSnackBar = undefined;
+					achievementPanel.innerHTML = ' ';
+				}, 700);
+			}, 10);
+		}, 5000);		
 	}
 };

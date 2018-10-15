@@ -277,7 +277,6 @@ TaCerto.Controladora.Jogo.Geral = {
 			document.getElementById( 'acertos').innerHTML = ++this.gameModel.acerto;
 			plusPopup("colorGreen", "acertosSpan", 10);
 
-			console.log("aqui que dá money");
 			//document.getElementById('economia').innerHTML = 
 			this.gameModel.moeda += this.gameModel.comboBonus;
 			//plusPopup("colorYellow", "economiaSpan", 100);
@@ -291,13 +290,15 @@ TaCerto.Controladora.Jogo.Geral = {
 		}
 		this.plusBarraMoney();
 
-		TaCerto.Controladora.MenuConquistas.checkAchievements();
 
 		if(!isNaN(TaCerto.Controladora.Jogo.Missao.parametros.missao))
 			TaCerto.Controladora.Jogo.Missao.checkObjetivo();
 
 		if(this.gameModel.tipoDeJogo === "Aleatorio")
-			TaCerto.Controladora.Jogo.Aleatorio.next();
+			TaCerto.Controladora.Jogo.Aleatorio.next();		
+			
+		TaCerto.Controladora.MenuConquistas.checkAchievements();
+
 	},
 	clickCarta: function(card){
 		callCarta = {
@@ -414,9 +415,9 @@ TaCerto.Controladora.Jogo.Geral = {
 		}, Math.ceil(tempo/animacoes));
 	},
 	fimDeJogo: function(){
-		//TaCerto.Estrutura.Jogador.moeda += this.gameModel.moeda;
-		TaCerto.Controladora.MenuConquistas.checkAchievements();
+		//TaCerto.Estrutura.Jogador.moeda += this.gameModel.moeda;		
 		TaCerto.Controladora.FimJogo.start();
+		TaCerto.Controladora.MenuConquistas.checkAchievements();
 		this.zerarVars();
 	},
 	start: function(tipo){
