@@ -1907,7 +1907,7 @@ span {
 #parede{
 	position: absolute;
 	width: 100%;
-	bottom: 6.5vh;
+	bottom: 6vh;
 	overflow: hidden;
 	height: 0vh;
 	transition: all 1s cubic-bezier(0.590, -0.600, 0.500, 1.625);
@@ -1916,7 +1916,7 @@ span {
 
 .img-parede{
 	width: 100%;
-	height: 72vh;
+	height: 72.5vh;
 }
 
 /*--------------------------------------------------------------*/
@@ -2011,6 +2011,10 @@ span {
 .img-dica{
 	width: 100%;
 }
+
+.clearIcon{
+	color: rgba(0, 0, 0, 0.54);
+}
 /*
 .collection-item{
 	background: #001433 !important;
@@ -2068,14 +2072,15 @@ span {
 }
 
 #nivelImage{
-	position: absolute;
-	right: 1%;
-	top: -1%;
+	bottom: 13%;
+    position: absolute;
+    right: 1%;
 }
 
 #nivelImage img{
 	position: absolute;
-	width: 6vw;
+    width: 6vw;
+    transform: translateY(-100%);
 }
 
 .wrapper_conquista_text{
@@ -2116,18 +2121,16 @@ span {
 
 .telaConquistaLiVinte{
 	height: 15%;	
-	background: #263466 !important;
-	opacity: .7;
+	background: #263466de !important
 }
 
 .telaConquistaLiZero{
 	height: 15%;	
-	background: #445EB8 !important;
-	opacity: .7;
+	background: #445eb8a6 !important;
 }
 
 .conquistaNaoConquistada{
-	opacity: 0.6;
+	filter: grayscale(0.9);
 }
 
 .imgConquista{
@@ -2151,7 +2154,7 @@ span {
 
 .trofeuConquista{
 	position: absolute;
-	right: 12%;
+	right: 15%;
 	top: 30%;
 }
 
@@ -2228,14 +2231,22 @@ span {
 
 .textMidConquistaPanel{
 	position: absolute;
-	top: -6.5%;
-	left: 50%;
+	/*top: -10%;*/
+	left: 47%;
 	transform: translate(-40%);
 }
 
 .textMidConquistaPanel h4{
 	font-size: 1.13rem !important;
 	color: white;
+}
+
+.imgConquistaPanel2{
+	position: absolute;
+	right: 5%;
+	top: 27%;
+
+	width: 15%;
 }
 
 /*--------------------------------------------------------------*/

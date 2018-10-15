@@ -18,13 +18,13 @@ TaCerto.Controladora.Jogo.HardCore = {
 				
 				if(!document.getElementById("parede")){
 					clearInterval(intervaloParede);
-				}else if(TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual >= 72){
+				}else if(TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual >= 72.5){
 					clearInterval(intervaloParede);
 					TaCerto.Controladora.Jogo.Geral.fimDeJogo();
 				}else if (!TaCerto.Controladora.Jogo.Geral.gameModel.paused && !TaCerto.Controladora.Jogo.Geral.gameModel.frozen){
 					TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual += TaCerto.Controladora.Jogo.HardCore.gameModel.speed;
-					if(TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual > 72)
-						TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual = 72;
+					if(TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual > 72.5)
+						TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual = 72.5;
 					alturaDaParede.style.height = TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual + "vh";
 				}
 			}, 1000);
@@ -78,7 +78,7 @@ TaCerto.Controladora.Jogo.HardCore = {
 	},
 	velocidadeParede: function(flag){
 		if(flag){
-			if(this.gameModel.alturaAtual === 72){
+			if(this.gameModel.alturaAtual === 72.5){
 				this.gameModel.alturaAtual = 65;
 				document.getElementById("parede").style.height = this.gameModel.alturaAtual  + "vh";
 			}
