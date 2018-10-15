@@ -53,53 +53,53 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 		var newIdFase = this.tipoDeJogo[newIndex]+"AleWrapper";
 
 		var waitingTime = (()=>{
-			if(oldIndex === 0){//Normal
-				return 450;
-			}
-			else if(oldIndex === 1){//Lacuna
-				return 950;
-			}
-			else if(oldIndex === 2){//Explorador
-				return 850;
-			}
-			else if(oldIndex === 3){//Aurelio
-				return 500;
-			}
-			else{
-				return 0;
-			}
+			if(oldIndex === 0) return 450;//Normal
+			else if(oldIndex === 1) return 950;//Lacuna
+			else if(oldIndex === 2) return 850;//Explorador
+			else if(oldIndex === 3) return 500;//Aurelio
+			else return 0;
 		})();
+
+		//resolve multi clicks on normal chalenge
+		var normalBtnsResolveMultiClick = (()=>{
+			var btns = document.querySelectorAll("#botoes > img");
+			btns[0].onclick = undefined;
+			btns[1].onclick = undefined;
+			setTimeout(function(){
+				btns[0].onclick = function(){
+					TaCerto.Controladora.Jogo.Normal.btnResposta(true)
+				};
+				btns[1].onclick = function(){
+					TaCerto.Controladora.Jogo.Normal.btnResposta(false)
+				};
+			}, waitingTime);
+		})();
+
 		setTimeout(function(){
 			var oldF = document.getElementById(oldIdFase);
 			if(oldF) oldF.style.transform = "rotateX(90deg)";
 			var newF = document.getElementById(newIdFase);
-			if(newF) newF.style.transform = "rotateX(0deg)";
+			if(newF){
+				newF.style.display = "none";
+				newF.style.transform = "rotateX(0deg)";
+				setTimeout(function(){
+					newF.style.display = "block";
+				},10);
+			} 
 		}, waitingTime);
 	},
 	pular: function(){
-		var modos = this.tipoDeJogo;
-		var oldIdex = this.indexTipoDeJogo;
-		var index = this.indexTipoDeJogo = Math.floor(Math.random() * modos.length);
+		var oldIdFase = this.tipoDeJogo[this.indexTipoDeJogo]+"AleWrapper";
+		var oldF = document.getElementById(oldIdFase);
+		if(oldF) oldF.style.transform = "rotateX(90deg)";
 
-		TaCerto.Controladora.Jogo[modos[index]].called();
-		TaCerto.Controladora.Jogo[modos[index]].loadDesafio();
+		var modo = this.tipoDeJogo[this.indexTipoDeJogo];
 
-		document.getElementById('acertos').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.acerto;
-		document.getElementById('erros').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.erro;
-		TaCerto.Controladora.Jogo.Geral.plusBarra(true);
-		this.ajustesDaFase();
-		
-		TaCerto.Controladora.Jogo[modos[index]].pular();
+		this.respostasTotais--;
+		this.indexTipoDeJogo = -1;
+		this.next();
 
-		//mimica do efeito de flip para resolver o problema de trocar de tela no modo aleatorio
-		document.getElementById('cartaVermelha').innerHTML += '<div class="imgCard bgcartaVermelha"' + 'onclick="TaCerto.Controladora.Jogo.Geral.clickCarta(' + "'cartaVermelha'" + ');"></div>';
-		var cartaClicada = document.getElementById('cartaVermelha').childNodes;
-		var numCartas = document.getElementById('cartaVermelha').childNodes.length;
-		cartaClicada[numCartas-1].classList.add("animated", "bounceUpOut", "flipCardcartaVermelha");
-		setTimeout(function(){
-			if (numCartas === document.getElementById('cartaVermelha').childNodes.length)
-				document.getElementById('cartaVermelha').removeChild(document.getElementById('cartaVermelha').childNodes[document.getElementById('cartaVermelha').childNodes.length - 1]);
-		}, 1000);
+		TaCerto.Controladora.Jogo[modo].pular();
 	},
 	eliminarErrado: function(){
 		var modoTipo = this.tipoDeJogo[this.indexTipoDeJogo];
