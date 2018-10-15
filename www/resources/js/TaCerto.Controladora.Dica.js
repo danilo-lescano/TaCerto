@@ -41,7 +41,7 @@ TaCerto.Controladora.Dica = {
 
 		// Add as dicas
 		for(var i = 0, l = TaCerto.Estrutura.Jogador.dicas.length; i < l; i++){
-			tabelaDicas.innerHTML += '<li class="collection-item"><div>'+TaCerto.Estrutura.Jogador.dicas[i].dica+'<a id="'+TaCerto.Estrutura.Jogador.dicas[i].id+'" onclick="TaCerto.Controladora.Dica.apagarDica(this)" class="secondary-content"><i class="material-icons">clear</i></a></div></li>';
+			tabelaDicas.innerHTML += '<li class="collection-item"><div>'+TaCerto.Estrutura.Jogador.dicas[i].dica+'<a id="'+TaCerto.Estrutura.Jogador.dicas[i].id+'" onclick="TaCerto.Controladora.Dica.apagarDica(this)" class="secondary-content"><img class="clearIcon" src="resources/media/image/clear.png" alt="clear icon"></a></div></li>';
 		}
 		
     },

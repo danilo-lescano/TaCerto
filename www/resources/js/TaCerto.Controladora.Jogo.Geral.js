@@ -304,10 +304,12 @@ TaCerto.Controladora.Jogo.Geral = {
 		callCarta = {
 			cartaVermelha: function(){
 				TaCerto.Controladora.Jogo.Geral.gameModel.cartaUsada.cartaVermelha++;
+				TaCerto.Estrutura.Jogador.cartaVermelhaUsadas++;
 				TaCerto.Controladora.Jogo[TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo].pular();
 			},
 			cartaAzul: function(){
 				TaCerto.Controladora.Jogo.Geral.gameModel.cartaUsada.cartaAzul++;
+				TaCerto.Estrutura.Jogador.cartaAzulUsadas++;
 				TaCerto.Controladora.Jogo.Geral.showCombo("clockIce");
 				var intervalo;
 				var freezeMP3 = TaCerto.SOUND.find("freeze");
@@ -340,10 +342,12 @@ TaCerto.Controladora.Jogo.Geral = {
 				vassouraMP3.play();
 				TaCerto.Controladora.Jogo.Geral.showCombo("vassoura");
 				TaCerto.Controladora.Jogo.Geral.gameModel.cartaUsada.cartaVerde++;
+				TaCerto.Estrutura.Jogador.cartaVerdeUsadas++;
 				TaCerto.Controladora.Jogo[TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo].eliminarErrado();
 			},
 			cartaAmarela: function(){
 				TaCerto.Controladora.Jogo.Geral.gameModel.cartaUsada.cartaAmarela++;
+				TaCerto.Estrutura.Jogador.cartaAmarelaUsadas++;
 				TaCerto.Controladora.Jogo.Geral.showCombo("block");
 				if(TaCerto.Controladora.Jogo.Geral.gameModel.erro){
 					var flag = document.getElementById('erros').classList.length;
@@ -356,6 +360,7 @@ TaCerto.Controladora.Jogo.Geral = {
 					},1000);
 				}
 			},
+
 		};
 
 		var cartaClicada = document.getElementById(card).childNodes;
@@ -373,6 +378,9 @@ TaCerto.Controladora.Jogo.Geral = {
 
 				cartaClicada[i].classList.add("animated", "bounceUpOut", "flipCard"+card);
 				callCarta[card]();
+
+				TaCerto.Controladora.MenuConquistas.checkAchievements(); // Checa achievements
+
 				TaCerto.Estrutura.Jogador[card]--;
 				flag = false;
 			}

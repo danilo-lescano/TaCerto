@@ -2,7 +2,8 @@ var TaCerto = TaCerto || {};
 TaCerto.Controladora = TaCerto.Controladora || {};
 TaCerto.Controladora.MenuConquistas = {
 	model:{
-		timeOutSnackBar: undefined
+		timeOutSnackBar: undefined,
+		idGlobal: 0
 	},
 	load: function(){
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("menuConquistas",["dica"],["dica"]);
@@ -104,6 +105,8 @@ TaCerto.Controladora.MenuConquistas = {
 		for(var i = 0; i < numAchiev; i++){
 			let currentAchiev = achievs[i];
 			let bg = "";
+			let x = false;
+			
 			if(i%2===0){
 				bg = "telaConquistaLiZero";
 			}else{
@@ -112,10 +115,22 @@ TaCerto.Controladora.MenuConquistas = {
 			
 			if(TaCerto.Estrutura.Jogador.conquistas[i]){
 				// Jogador já completou a conquista
-				tabelaConquistas.innerHTML += '<li class="collection-item avatar green '+bg+'"><img class="imgConquista" src="resources/media/image/'+currentAchiev[3]+'.jpg" alt=""><div class="textMidConquista"><h4 class="title left-align">'+currentAchiev[0]+'</h4><h6 class="left-align h7">'+currentAchiev[1]+'</h6></div><div class="trofeuConquista"><img src="resources/media/image/missoes_atalho.png" alt="ilustracao dinheiro"></div></li>';
+				tabelaConquistas.innerHTML += '<li class="collection-item avatar green '+bg+'"><img class="imgConquista" src="resources/media/image/'+currentAchiev[3]+'.jpg" alt=""><div class="textMidConquista"><h4 class="title left-align">'+currentAchiev[0]+'</h4><h6 class="left-align h7">'+currentAchiev[1]+'</h6></div><div class="trofeuConquista"><img src="resources/media/image/'+currentAchiev[4]+'.png" alt="ilustracao trofeu"></div></li>';
 			}else{
 				// Jogador ainda não completou a conquista
-				tabelaConquistas.innerHTML += '<li class="collection-item conquistaNaoConquistada avatar '+bg+'"><img class="imgConquista" src="resources/media/image/'+currentAchiev[3]+'.jpg" alt=""><div class="textMidConquista"><h4 class="title left-align">'+currentAchiev[0]+'</h4><h6 class="left-align h7">'+currentAchiev[1]+'</h6></div><div class="trofeuConquista"><img src="resources/media/image/missoes_atalho.png" alt="ilustracao dinheiro"></div></li>';
+				tabelaConquistas.innerHTML += '<li class="collection-item avatar '+bg+'"><img class="imgConquista" src="resources/media/image/'+currentAchiev[3]+'.jpg" alt=""><div class="textMidConquista"><h4 class="title left-align">'+currentAchiev[0]+'</h4><h6 class="left-align h7">'+currentAchiev[1]+'</h6></div><div class="trofeuConquista"><img src="resources/media/image/'+currentAchiev[4]+'.png" alt="ilustracao trofeu"></div></li>';
+				x = true;
+			}
+			
+		}
+		
+		var imgConquista = document.getElementsByClassName('imgConquista');
+		var imgTrofeu = document.getElementsByClassName('trofeuConquista');
+
+		for(var i = 0; i < numAchiev; i++){
+			if(!TaCerto.Estrutura.Jogador.conquistas[i]){
+				imgConquista[i].classList.add('conquistaNaoConquistada');
+				imgTrofeu[i].classList.add('conquistaNaoConquistada');
 			}
 		}
 	},
@@ -124,6 +139,7 @@ TaCerto.Controladora.MenuConquistas = {
 		var estrelasTotal = 0;
 		var moneyTotal = TaCerto.Estrutura.Jogador.moeda;
 		var conquistas = TaCerto.Estrutura.Jogador.conquistas;
+		let totalDeCartasUsadas = TaCerto.Estrutura.Jogador.cartaVermelhaUsadas + TaCerto.Estrutura.Jogador.cartaAzulUsadas + TaCerto.Estrutura.Jogador.cartaAmarelaUsadas + TaCerto.Estrutura.Jogador.cartaVerdeUsadas;
 
 		for(var i = 0; i < 9; ++i){
 			if(TaCerto.Estrutura.Jogador.missoes[i][0] && TaCerto.Estrutura.Jogador.missoes[i][1] && TaCerto.Estrutura.Jogador.missoes[i][2])
@@ -136,7 +152,7 @@ TaCerto.Controladora.MenuConquistas = {
 				// Atualiza conquista obtida
 				conquistas[0] = true;
 				// Entrega prêmio
-				TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[0][2];
+				//TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[0][2];
 			}
 		} 
 		
@@ -146,7 +162,7 @@ TaCerto.Controladora.MenuConquistas = {
 				// Atualiza conquista obtida
 				conquistas[1] = true;
 				// Entrega prêmio
-				TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[1][2];
+				//TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[1][2];
 			}
 		}
 		
@@ -156,7 +172,7 @@ TaCerto.Controladora.MenuConquistas = {
 				// Atualiza conquista obtida
 				conquistas[2] = true;
 				// Entrega prêmio
-				TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[2][2];
+				//TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[2][2];
 			}
 		}
 		
@@ -166,7 +182,7 @@ TaCerto.Controladora.MenuConquistas = {
 				// Atualiza conquista obtida
 				conquistas[3] = true;
 				// Entrega prêmio
-				TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[3][2];
+				//TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[3][2];
 			}
 		}
 		
@@ -176,7 +192,7 @@ TaCerto.Controladora.MenuConquistas = {
 				// Atualiza conquista obtida
 				conquistas[4] = true;
 				// Entrega prêmio
-				TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[4][2];
+				//TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[4][2];
 			}
 		}
 		
@@ -186,7 +202,7 @@ TaCerto.Controladora.MenuConquistas = {
 				// Atualiza conquista obtida
 				conquistas[5] = true;
 				// Entrega prêmio
-				TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[5][2];
+				//TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[5][2];
 			}
 		}
 		
@@ -196,7 +212,7 @@ TaCerto.Controladora.MenuConquistas = {
 				// Atualiza conquista obtida
 				conquistas[6] = true;
 				// Entrega prêmio
-				TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[6][2];
+				//TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[6][2];
 			}
 		}
 		
@@ -206,7 +222,7 @@ TaCerto.Controladora.MenuConquistas = {
 				// Atualiza conquista obtida
 				conquistas[7] = true;
 				// Entrega prêmio
-				TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[7][2];
+				//TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[7][2];
 			}
 		}
 		if(!conquistas[8]){ // Checa a conquista 8
@@ -215,7 +231,7 @@ TaCerto.Controladora.MenuConquistas = {
 				// Atualiza conquista obtida
 				conquistas[8] = true;
 				// Entrega prêmio
-				TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[8][2];
+				//TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[8][2];
 			}
 		}
 		
@@ -225,7 +241,37 @@ TaCerto.Controladora.MenuConquistas = {
 				// Atualiza conquista obtida
 				conquistas[9] = true;
 				// Entrega prêmio
-				TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[9][2];
+				//TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[9][2];
+			}
+		}
+
+		if(!conquistas[10]){ // Checa a conquista 10
+			if(totalDeCartasUsadas > 0){
+				this.showAchievementPanel(10);				
+				// Atualiza conquista obtida
+				conquistas[10] = true;
+				// Entrega prêmio
+				//TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[9][2];
+			}
+		}
+
+		if(!conquistas[11]){ // Checa a conquista 11
+			if(totalDeCartasUsadas >= 10){
+				this.showAchievementPanel(11);				
+				// Atualiza conquista obtida
+				conquistas[11] = true;
+				// Entrega prêmio
+				//TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[9][2];
+			}
+		}
+
+		if(!conquistas[12]){ // Checa a conquista 12
+			if(totalDeCartasUsadas >= 100){
+				this.showAchievementPanel(12);				
+				// Atualiza conquista obtida
+				conquistas[12] = true;
+				// Entrega prêmio
+				//TaCerto.Estrutura.Jogador.moeda += TaCerto.Estrutura.Conquistas.conquistas[9][2];
 			}
 		}
 	},
@@ -233,39 +279,67 @@ TaCerto.Controladora.MenuConquistas = {
 		
 		var achievs = TaCerto.Estrutura.Conquistas.conquistas;
 		var achievementPanel = document.getElementById("achievementPanel");
-
-		if(this.model.timeOutSnackBar === undefined){
+		const idRandom = Math.random();
+		this.model.idGlobal = idRandom;
+ 
+		if(this.model.idGlobal === 0){
 			;
 		}else{
-			clearTimeout(this.model.timeOutSnackBar);
-			achievementPanel.style.height = '0%';
-			achievementPanel.classList.remove("animaAchievementWrapper2");
-			achievementPanel.classList.remove("animaAchievementWrapper");
+			
+				console.log("oia");
+				achievementPanel.innerHTML = ' ';
+				achievementPanel.style.height = '0%';
+				achievementPanel.classList.remove("animaAchievementWrapper2");
+				achievementPanel.classList.remove("animaAchievementWrapper");
+		
+			
 		}
 
-		
-		var currentAchiev = achievs[id];
-		achievementPanel.innerHTML = ' ';
-		achievementPanel.innerHTML = '<img class="imgConquistaPanel" src="resources/media/image/'+currentAchiev[3]+'.jpg" alt=""><div class="textMidConquistaPanel"><h4 class="titlePanel">'+currentAchiev[0]+'</h4></div>';
-		
-		achievementPanel.classList.add("animaAchievementWrapper");
-		achievementPanel.style.height = "100%"; 
+		setTimeout(function(){
+			console.log(idRandom);
 
-		
-		this.model.timeOutSnackBar = setTimeout(function(){
-			achievementPanel.classList.remove("animaAchievementWrapper");
+			console.log(TaCerto.Controladora.MenuConquistas.model.idGlobal);
+
+			if(idRandom !== TaCerto.Controladora.MenuConquistas.model.idGlobal)
+				return;
+
+			var currentAchiev = achievs[id];
+			achievementPanel.innerHTML = ' ';
+			achievementPanel.innerHTML = '<img class="imgConquistaPanel" src="resources/media/image/'+currentAchiev[3]+'.jpg" alt=""><div class="textMidConquistaPanel"><h4 class="titlePanel">'+currentAchiev[0]+'</h4></div><img class="imgConquistaPanel2" src="resources/media/image/'+currentAchiev[4]+'.png" alt="">';
+			
+			achievementPanel.classList.add("animaAchievementWrapper");
+			achievementPanel.style.height = "100%"; 
+
 			
 			setTimeout(function(){
-				achievementPanel.classList.add("animaAchievementWrapper2");
-				achievementPanel.style.height = "0%";
 
-				setTimeout(function(){
-					achievementPanel.classList.remove("animaAchievementWrapper2");
+				if(idRandom !== TaCerto.Controladora.MenuConquistas.model.idGlobal)
+					return;
+
+				achievementPanel.classList.remove("animaAchievementWrapper");
 				
-					TaCerto.Controladora.MenuConquistas.model.timeOutSnackBar = undefined;
-					achievementPanel.innerHTML = ' ';
-				}, 700);
-			}, 10);
-		}, 5000);		
+				setTimeout(function(){
+					if(idRandom !== TaCerto.Controladora.MenuConquistas.model.idGlobal)
+						return;
+
+					achievementPanel.classList.add("animaAchievementWrapper2");
+					achievementPanel.style.height = "0%";
+
+					setTimeout(function(){
+						if(idRandom !== TaCerto.Controladora.MenuConquistas.model.idGlobal)
+							return;
+
+						achievementPanel.classList.remove("animaAchievementWrapper2");
+					
+						TaCerto.Controladora.MenuConquistas.model.timeOutSnackBar = undefined;
+						achievementPanel.innerHTML = ' ';
+						
+						TaCerto.Controladora.MenuConquistas.model.idGlobal = 0;
+					}, 700);
+				}, 10);
+			}, 5000);
+		},10);
+		
+				
 	}
 };

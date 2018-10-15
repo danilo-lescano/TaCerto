@@ -2,9 +2,13 @@ var TaCerto = TaCerto || {};
 TaCerto.Estrutura = TaCerto.Estrutura || {};
 TaCerto.Estrutura.Jogador = {
 	cartaVermelha: 5,
+	cartaVermelhaUsadas: 0,
 	cartaVerde: 5,
+	cartaVerdeUsadas: 0,
 	cartaAmarela: 5,
+	cartaAmarelaUsadas: 0,
 	cartaAzul: 5,
+	cartaAzulUsadas: 0,
 
 	totalAcertos: 0,
 	totalEstrelas: 0,
