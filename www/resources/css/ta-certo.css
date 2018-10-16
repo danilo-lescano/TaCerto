@@ -193,7 +193,7 @@ body {
 		height: 75%;
 	}
 	.JogoBg4-4x1, .JogoBg4-4x2{
-		height: 56%;
+		height: 63.5%;
 	}
 .JogoBg5, .JogoBg5-3x1, .JogoBg5-4x1{
 	z-index: 3;
@@ -204,7 +204,7 @@ body {
 		height: 75.5%;
 	}
 	.JogoBg5-4x1{
-		height: 56.5%;
+		height: 64%;
 	}
 .JogoBg6, .JogoBg6-3x1, .JogoBg6-4x1{
 	z-index: 2;
@@ -215,7 +215,7 @@ body {
 		height: 76.5%;
 	}
 	.JogoBg6-4x1{
-		height: 57.5%;
+		height: 65%;
 	}
 .JogoBg7{
 	z-index: 1;
@@ -2248,7 +2248,6 @@ span {
 
 	width: 15%;
 }
-
 /*--------------------------------------------------------------*/
 /*conquista*//*fim*/
 /*--------------------------------------------------------------*/
@@ -2295,11 +2294,57 @@ span {
 /*aurelio*//*inicio*/
 /****************************************************************/
 /*flag*/
-.aleWrapper{
+.mesaAur{
+	position: absolute;
+	bottom: 0;
+	height: 70vh;
+	width: 100vw;
+}
+.aurTopWrap, .aurBotWrap{
+	position: relative;
+	height: 50%;
+	width: 100vw;
+	overflow: hidden;
+}
+
+.aurTopBGWrap{
 	position: absolute;
 	width: 100%;
-	height: inherit;
+	height: 100%;
 }
+.aurTopBGImg{
+	width: 90%;
+	height: 95%;
+}
+
+.aurPhraseWrap{
+	position: relative;
+	height: 15%;
+	background-color: rgba(0, 0, 0, 0.432);
+}
+
+.aurTopWordWrap{
+	position: relative;
+	background-color: rgba(185, 14, 14, 0.432);
+}
+
+/*
+background-color: rgba(0, 0, 0, 0.432);
+*/
+.aurTopWrap{}/**/
+	.aurTopBGWrap{}/**/
+		.aurTopBGImg{}/**/
+	.aurPhraseWrap{}/**/
+	.aurTopWordWrap{}/**/
+		.aurTWordWrap{}
+			.aurWBG{}
+			.aurWord{}
+.aurBotWrap{}/**/
+	.aurbotWordWrap{}
+		.aurBWordWrap{}
+			.aurWBG{}
+			.aurWord{}
+
 /*--------------------------------------------------------------*/
 /*aurelio*//*fim*/
 /*--------------------------------------------------------------*/
