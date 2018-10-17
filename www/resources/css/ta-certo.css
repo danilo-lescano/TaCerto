@@ -2320,14 +2320,61 @@ span {
 .aurPhraseWrap{
 	position: relative;
 	height: 15%;
+	width: 90%;
+	margin: 0 auto;
 	background-color: rgba(0, 0, 0, 0.432);
 }
 
-.aurTopWordWrap{
+.aurTopContentWrap{
 	position: relative;
-	background-color: rgba(185, 14, 14, 0.432);
+	height: 60.5%;
+	width: 90%;
+	margin: 0 auto;
+}
+.aurTWordWrap{
+	position: absolute;
+	height: 50%;
+	width: 30%;
+	overflow: hidden;
+}
+.aurTWordWrap:nth-child(1),.aurTWordWrap:nth-child(4){left: calc(5% + calc(0 * 30%));}
+.aurTWordWrap:nth-child(2),.aurTWordWrap:nth-child(5){left: calc(5% + calc(1 * 30%));}
+.aurTWordWrap:nth-child(3),.aurTWordWrap:nth-child(6){left: calc(5% + calc(2 * 30%));}
+.aurTWordWrap:nth-child(n + 4){top: 50%;}
+.aurTWordWrap:nth-child(odd){
+	background-color: rgba(185, 14, 14, 0.616);
+}
+.aurTWordWrap:nth-child(even){
+	background-color: rgba(45, 14, 185, 0.507);
+}
+.aurWBG{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 90%;
+	height: 90%;
+    border-radius: 5px;
+    background-color: #425eea;
+    box-shadow: 0 2px #2d51d2;
+}
+.aurWord{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: whitesmoke;
 }
 
+
+
+.aurCoinWrap{
+	position: relative;
+	height: 20%;
+	width: 90%;
+	margin: 0 auto;
+	background-color: rgba(185, 168, 14, 0.432);
+}
 /*
 background-color: rgba(0, 0, 0, 0.432);
 */
@@ -2336,9 +2383,10 @@ background-color: rgba(0, 0, 0, 0.432);
 		.aurTopBGImg{}/**/
 	.aurPhraseWrap{}/**/
 	.aurTopWordWrap{}/**/
-		.aurTWordWrap{}
+		.aurTWordWrap{}/**/
 			.aurWBG{}
 			.aurWord{}
+	.aurCoinWrap{}/**/
 .aurBotWrap{}/**/
 	.aurbotWordWrap{}
 		.aurBWordWrap{}

@@ -22,10 +22,8 @@ TaCerto.Controladora.Jogo.Aurelio = {
 		if(this.DESAFIO.length === 0){
 			this.zerarVars();
 			TaCerto.Controladora.Jogo.Geral.fimDeJogo();
-			return;
+			return; document.getElementById
 		}
-
-
 	},
 	btnResposta: function(){
 		TaCerto.Controladora.Jogo.Geral.atualizarResposta(true);
