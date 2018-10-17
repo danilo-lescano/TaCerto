@@ -243,13 +243,14 @@ span {
 
 #botaoInformacao{
 	position: absolute;
-	left: 2%;
-	top: 8%;
+	right: -13%;
+	top: 10%;
 }
 
 #botaoInformacao img{
-	width: 50%;
+	width: 17%;
 	height: auto;
+	filter: grayscale(1);
 }
 
 /*--------------------------------------------------------------*/
