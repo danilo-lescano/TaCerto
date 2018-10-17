@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div {
+position: relative;
+left: 0;
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: left 2s;
+}
+
+</style>
+</head>
+<body onload="myFunction()">
+
+<h1>The transition Property</h1>
+
+<p>Hover over the div element below, to see the transition effect:</p>
+<div id="1"></div>
+<br>
+<div id="2"></div>
+
+<button onclick="x()">oioioioioioioioio</button>
+
+</body>
+</html>
+<>
+	var a1 = document.getElementById("1");
+	var a2 = document.getElementById("2");
+function myFunction(){
+    a1.style.left = "300px";
+    a2.style.left = "300px";
+
+}
+    function x(){
+    requestAnimationFrame(()=>{
+   		a1.style.transition = "left 0s";
+    	a2.style.transition = "left 0s";
+    
+   		a1.style.left = "0px";
+    	a2.style.left = "0px";
+        requestAnimationFrame(()=>{
+          a1.style.transition = "left 2s";
+          a2.style.transition = "left 2s";
+        	myFunction();
+        });
+    });
+    	
+    }
+</>

@@ -161,7 +161,10 @@ TaCerto.Controladora.Jogo.Geral = {
 	/*CARD MENU CLICKS*/
 	toggleBarraCarta: function(){
 		document.getElementsByClassName("barraCartaBG")[0].style.left = this.gameModel.flagCardMenu ? "-58%" : "0px";
+
 		this.gameModel.flagCardMenu = !this.gameModel.flagCardMenu;
+
+		TaCerto.Controladora.MenuConquistas.checkIfICanCheckAchievements(false); // Checa achievements
 	},
 	/*CARD MENU CLICKS*/
 	/*-----FIM*/
@@ -297,7 +300,7 @@ TaCerto.Controladora.Jogo.Geral = {
 		if(this.gameModel.tipoDeJogo === "Aleatorio")
 			TaCerto.Controladora.Jogo.Aleatorio.next();		
 			
-		TaCerto.Controladora.MenuConquistas.checkAchievements();
+		TaCerto.Controladora.MenuConquistas.checkIfICanCheckAchievements(false);
 
 	},
 	clickCarta: function(card){
@@ -379,8 +382,6 @@ TaCerto.Controladora.Jogo.Geral = {
 				cartaClicada[i].classList.add("animated", "bounceUpOut", "flipCard"+card);
 				callCarta[card]();
 
-				TaCerto.Controladora.MenuConquistas.checkAchievements(); // Checa achievements
-
 				TaCerto.Estrutura.Jogador[card]--;
 				flag = false;
 			}
@@ -425,7 +426,7 @@ TaCerto.Controladora.Jogo.Geral = {
 	fimDeJogo: function(){
 		//TaCerto.Estrutura.Jogador.moeda += this.gameModel.moeda;		
 		TaCerto.Controladora.FimJogo.start();
-		TaCerto.Controladora.MenuConquistas.checkAchievements();
+		TaCerto.Controladora.MenuConquistas.checkIfICanCheckAchievements(true);
 		this.zerarVars();
 	},
 	start: function(tipo){

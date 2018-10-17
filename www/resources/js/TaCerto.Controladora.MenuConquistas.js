@@ -134,7 +134,14 @@ TaCerto.Controladora.MenuConquistas = {
 			}
 		}
 	},
+	checkIfICanCheckAchievements: function(flag){
+
+		if(!TaCerto.Controladora.Jogo.Geral.gameModel.flagCardMenu || flag){
+			this.checkAchievements();
+		}
+	},
 	checkAchievements: function(){
+
 		var acertoTotal = TaCerto.Estrutura.Jogador.totalAcertos;
 		var estrelasTotal = 0;
 		var moneyTotal = TaCerto.Estrutura.Jogador.moeda;
@@ -281,20 +288,42 @@ TaCerto.Controladora.MenuConquistas = {
 		var achievementPanel = document.getElementById("achievementPanel");
 		const idRandom = Math.random();
 		this.model.idGlobal = idRandom;
- 
+
+		
 		if(this.model.idGlobal === 0){
 			;
 		}else{
-			
 				console.log("oia");
 				achievementPanel.innerHTML = ' ';
 				achievementPanel.style.height = '0%';
 				achievementPanel.classList.remove("animaAchievementWrapper2");
-				achievementPanel.classList.remove("animaAchievementWrapper");
-		
-			
+				achievementPanel.classList.remove("animaAchievementWrapper");	
 		}
 
+		var currentAchiev = achievs[id];
+
+		requestAnimationFrame(()=>{
+			
+			achievementPanel.innerHTML = ' ';
+			achievementPanel.innerHTML = '<img class="imgConquistaPanel" src="resources/media/image/'+currentAchiev[3]+'.jpg" alt=""><div class="textMidConquistaPanel"><h4 class="titlePanel">'+currentAchiev[0]+'</h4></div><img class="imgConquistaPanel2" src="resources/media/image/'+currentAchiev[4]+'.png" alt="">';
+			
+			achievementPanel.classList.add("animaAchievementWrapper");
+			achievementPanel.style.transition =  "height 0s cubic-bezier(0.520, -0.600, 0.940, 1.650)"; 
+			achievementPanel.style.height = "0%"; 
+				
+			requestAnimationFrame(()=>{
+
+				achievementPanel.style.transition =  "height 2s cubic-bezier(0.520, -0.600, 0.940, 1.650)"; 
+				achievementPanel.style.height = "100%"; 
+
+				setTimeout(()=>{
+					if(idRandom === this.model.idGlobal)
+						achievementPanel.style.height = "0%"; 
+				}, 4000);
+
+			});
+		});
+		/*
 		setTimeout(function(){
 			console.log(idRandom);
 
@@ -338,7 +367,7 @@ TaCerto.Controladora.MenuConquistas = {
 					}, 700);
 				}, 10);
 			}, 5000);
-		},10);
+		},10);*/
 		
 				
 	}

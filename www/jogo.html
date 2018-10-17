@@ -29,7 +29,8 @@
 			<div class="spanWrapper" id="acertosSpan">
 				<div class="jogoPlacar" id="acertos"> 0 </div>
 			</div>
-			
+			<div id="clockIce" data-timing="3000" data-tada="false" data-animacoesTotal="21" data-framesX="4" data-framesY="6"></div>
+
 			<div class="spanWrapper" id="economiaSpan">
 				<!--<div class="jogoPlacar" id="economia"> 0 </div>-->
 				<div class="jogoPlacar" id="tempo"> 00:00 </div>		
@@ -50,6 +51,9 @@
 	</div>
 	<div class="h10">
 		<div id="achievementPanel" onclick="TaCerto.Controladora.MenuConquistas.SaiDaqui(this);" class="achievementWrapper">
+		</div>
+		<div id="botaoInformacao" onlick="TaCerto.Controladora.Jogo.Geral.ShowMeMeuErro();">
+				<img src="resources/media/image/botaoInformacao.png" alt="botão mostra a questão que errou">
 		</div>
 	</div>
 

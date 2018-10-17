@@ -1,0 +1,40 @@
+<style>
+
+.efeitoEspecial{
+    top: 50%;
+	left: 50%;
+	width: 25%;
+    display: block;
+    position: absolute;
+	transform: translate(-50%, -50%);
+}
+.giragira{
+	width: 100%;
+	transform-style: preserve-3d;
+	animation: efeitoEspecial 1s infinite linear;
+}
+@keyframes efeitoEspecial{
+	from{transform: rotateY(0deg);}
+	to{transform: rotateY(359deg);}
+}
+.efeitoEspecialImg{
+	width: 100%;
+	position: absolute;
+	transform: translateZ(0.1px);
+}
+.efeitoEspecialImg:nth-child(2){
+	transform: translateZ(-0.1px);
+}
+</style>
+
+
+<html>
+
+<!--CARTA GIRANDO-->
+<div class="efeitoEspecial">
+    <div class="giragira">
+        <img class="efeitoEspecialImg" src="resources/media/image/cartaVermelhaBack.png">
+        <img class="efeitoEspecialImg" src="resources/media/image/cartaVermelha.png">
+    </div>
+</div>
+</html>

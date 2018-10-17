@@ -35,7 +35,7 @@ body {
 }
 
 .palavraSpan3{
-	font-size: calc(7px + 1vw);
+	font-size: calc(8px + 1vw);
 	font-family: 'Roboto', sans-serif !important;
 	min-width: 120px;
 }
@@ -235,6 +235,25 @@ span {
 }
 /*--------------------------------------------------------------*/
 /*classes gerais*//*fim*/
+/*--------------------------------------------------------------*/
+
+/****************************************************************/
+/*Informação*//*inicio*/
+/****************************************************************/
+
+#botaoInformacao{
+	position: absolute;
+	left: 2%;
+	top: 8%;
+}
+
+#botaoInformacao img{
+	width: 50%;
+	height: auto;
+}
+
+/*--------------------------------------------------------------*/
+/*Informação*//*fim*/
 /*--------------------------------------------------------------*/
 
 
@@ -612,7 +631,7 @@ span {
 .modalMissaoObjetivo p{
 	font-family: 'panton',  'Pacifico', cursive;
 	color: #1a9cfd;
-	font-size: 12px;
+	font-size: 2rem;
 	text-align: center;
 	margin: -10% 0 4% 0;
 }
@@ -627,7 +646,7 @@ span {
 	margin: 0 0 4% 0;
 	font-family: 'panton',  'Pacifico', cursive;
 	color: #294B95;
-	font-size: 12px;
+	font-size: 1rem;
 	text-align: left;
 }
 .modalObjetivo img{
@@ -725,8 +744,8 @@ span {
 	margin-right: 5px;
 }
 #jogoPause{
-	margin-top: 1%;
-	margin-bottom: 1%;
+	margin-top: 4%;
+	margin-right: 3%;
 	float: right;
 	width: 13%;
 }
@@ -783,7 +802,7 @@ span {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100%;
-    padding: 2.5% 3% 2% 14%;
+    padding: 2.5% 4% 2% 14%;
 }
 #acertos {
 	background-image: url("../media/image/placar_acertos.png");
@@ -791,18 +810,21 @@ span {
 #erros {
 	background-image: url("../media/image/placar_erros.png");
 }
-#economia{
-	background-image: url("../media/image/placar_economico.png");
-}
-#erros, #acertos, #economia {
+#erros, #acertos{
 	font-size: 5vw;
     margin: 5% 1%;
-    font-family: "Roboto";
+	font-family: 'panton',  'Pacifico', cursive;
+	width: 22%;
+	padding-left: 12%;
+    display: inline-block;
 }
 #tempo{
+	width: 28%;
+	display: inline-block;
+	padding-left: 11.2%;
 	color: #fff;
-	font-size: 27px;
-	font-family:'Roboto';
+	font-size: 145%;
+	font-family: 'panton',  'Pacifico', cursive;
 	background-image: url("../media/image/relogio.png");
 }
 .cartaWrapper{
@@ -1860,31 +1882,6 @@ span {
     top: 50%;
     transform: translate(325%, -340%);
 }
-.efeitoEspecial{
-    top: 50%;
-	left: 50%;
-	width: 25%;
-    display: block;
-    position: absolute;
-	transform: translate(-50%, -50%);
-}
-.giragira{
-	width: 100%;
-	transform-style: preserve-3d;
-	animation: efeitoEspecial 1s infinite linear;
-}
-@keyframes efeitoEspecial{
-	from{transform: rotateY(0deg);}
-	to{transform: rotateY(359deg);}
-}
-.efeitoEspecialImg{
-	width: 100%;
-	position: absolute;
-	transform: translateZ(0.1px);
-}
-.efeitoEspecialImg:nth-child(2){
-	transform: translateZ(-0.1px);
-}
 @media only screen and (max-width: 319px) {
 	.lojaImgWrapper, .cartaBtnWrapper{
 		width: 70%;
@@ -2196,7 +2193,8 @@ span {
 }
 
 .animaAchievementWrapper{
-	animation: animaAchievementWrapper 0.7s 1 ease-in;
+	/*animation: animaAchievementWrapper 0.7s 1 ease-in;*/
+	transition: height 2s;
 }
 
 @keyframes animaAchievementWrapper{
