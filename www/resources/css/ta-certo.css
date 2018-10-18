@@ -238,23 +238,56 @@ span {
 /*--------------------------------------------------------------*/
 
 /****************************************************************/
-/*Informação*//*inicio*/
+/*Informação e Significado*//*inicio*/
 /****************************************************************/
 
-#botaoInformacao{
+.centerPanel{
 	position: absolute;
-	right: -13%;
-	top: 10%;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
-#botaoInformacao img{
-	width: 17%;
-	height: auto;
+.centerPanel h4{
+	color: #294B95;
+	font-family: 'panton',  'Pacifico', cursive;
+}
+
+.centerPanel h6{
+	color: white;
+	font-family: 'panton',  'Pacifico', cursive;
+}
+
+.disableButton{
 	filter: grayscale(1);
 }
 
+#botaoInformacao{
+	position: absolute;
+	width: 8%;
+	right: 13%;
+	top: 14%;
+}
+
+#botaoInformacao img{
+	width: 100%;
+	height: auto;
+}
+
+#botaoSignificado{
+	position: absolute;
+	width: 8%;
+	right: 4%;
+	top: 14%;
+}
+
+#botaoSignificado img{
+	width: 100%;
+	height: auto;
+}
+
 /*--------------------------------------------------------------*/
-/*Informação*//*fim*/
+/*Informação e Significado*//*fim*/
 /*--------------------------------------------------------------*/
 
 
@@ -824,7 +857,7 @@ span {
 	display: inline-block;
 	padding-left: 11.2%;
 	color: #fff;
-	font-size: 145%;
+	font-size: 5vw;
 	font-family: 'panton',  'Pacifico', cursive;
 	background-image: url("../media/image/relogio.png");
 }
@@ -833,9 +866,9 @@ span {
 	left: 0px;
 	margin-top: 1px;
 	min-height: 4vh;
-	width: 100%;
+	width: 70%;
 	max-width: 414px;
-	z-index: 5;
+	z-index: 7;
 }
 .bucketCards{
 	width: 85%;
@@ -845,7 +878,7 @@ span {
 }
 .barraCartaBG{
 	position: relative;
-	width: 65%;
+	width: 68%;
 	left: -58%;/*//*/
 	background-image: url("../media/image/barra_cartas.png");
 	background-size: 100% 75%;
@@ -867,7 +900,7 @@ span {
 	position: relative;
 }
 .imgCard{
-	width: 9vw;
+	width: 8vw;
 	max-width: 41.26px;
 	padding-bottom: 134.89010989%;
 	z-index: 20;
@@ -1059,13 +1092,14 @@ span {
 }
 .comboWrapper{
 	position: absolute;
-	top: 23%;
+	top: 28%;
 	width: 100%;
 	padding-bottom: 30%;
 	max-width: 414px;
 	left: 50%;
 	transform: translateX(-50%);
 	overflow: hidden;
+	z-index: 7;
 }
 #combo2x{
 	position: absolute;
@@ -1960,7 +1994,7 @@ span {
 	width: 50vw;
 }
 
-.animaBotaoDica{
+.animafDica{
 	animation: animaBotaoDica .7s 1 ease-in;
 }
 
@@ -2177,7 +2211,7 @@ span {
 	height: 10vh;
 	width: 100%;
 	margin-bottom: 1vh;
-	z-index: 1;
+	z-index: 6;
 }
 
 .achievementWrapper{
@@ -2191,6 +2225,7 @@ span {
 	max-height: 10vh;
 	background-color: #294B92;
 	overflow: hidden;
+	z-index: 10;
 }
 
 .animaAchievementWrapper{
