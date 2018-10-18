@@ -958,7 +958,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 			nivel: 0
 		},
 		{
-			fraseParaCorrecao: "hj eh meu aniversario",
+			fraseParaCorrecao: "hj eh meu niver",
 			conteudoResposta: [
 				{index: 0, palavra: "hoje"},
 				{index: 1, palavra: "é"},
@@ -1167,12 +1167,12 @@ TaCerto.Estrutura.DesafioDeFase = {
 			nivel: 0
 		},
 		{
-			fraseParaCorrecao: "frasaquiquevaiaparecernotopo",
+			fraseParaCorrecao: "eh vdd esse bilete",
 			conteudoResposta: [
-				{index: 0, palavra: "palavra"},
-				{index: 1, palavra: "palavra"},
-				{index: 2, palavra: "palavra"},
-				{index: 3, palavra: "palavra"},
+				{index: 0, palavra: "É"},
+				{index: 1, palavra: "verdade"},
+				{index: 2, palavra: "esse"},
+				{index: 3, palavra: "bilhete"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
@@ -1186,19 +1186,12 @@ TaCerto.Estrutura.DesafioDeFase = {
 			nivel: 0
 		},
 		{
-			internetes: "eh vdd esse bilete",
-			formaNormativa: [
-				"É verdade esse bilhete"
-			],
-			nivel: 0
-		},
-		{
-			fraseParaCorrecao: "frasaquiquevaiaparecernotopo",
+			fraseParaCorrecao: "to indo nessa flw",
 			conteudoResposta: [
-				{index: 0, palavra: "palavra"},
-				{index: 1, palavra: "palavra"},
-				{index: 2, palavra: "palavra"},
-				{index: 3, palavra: "palavra"},
+				{index: 0, palavra: "Estou"},
+				{index: 1, palavra: "indo"},
+				{index: 2, palavra: "nessa"},
+				{index: 3, palavra: "Falou"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
@@ -1212,19 +1205,12 @@ TaCerto.Estrutura.DesafioDeFase = {
 			nivel: 0
 		},
 		{
-			internetes: "to indo nessa flw",
-			formaNormativa: [
-				"Estou indo nessa. Falou"
-			],
-			nivel: 0
-		},
-		{
-			fraseParaCorrecao: "frasaquiquevaiaparecernotopo",
+			fraseParaCorrecao: "vc eh fmz msm",
 			conteudoResposta: [
-				{index: 0, palavra: "palavra"},
-				{index: 1, palavra: "palavra"},
-				{index: 2, palavra: "palavra"},
-				{index: 3, palavra: "palavra"},
+				{index: 0, palavra: "Você"},
+				{index: 1, palavra: "é"},
+				{index: 2, palavra: "firmeza"},
+				{index: 3, palavra: "mesmo"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
@@ -1238,19 +1224,31 @@ TaCerto.Estrutura.DesafioDeFase = {
 			nivel: 0
 		},
 		{
-			internetes: "vc eh fmz msm",
-			formaNormativa: [
-				"Você é firmeza mesmo"
+			fraseParaCorrecao: "vc pode vir aqui pfv",
+			conteudoResposta: [
+				{index: 0, palavra: "Você"},
+				{index: 1, palavra: "pode"},
+				{index: 2, palavra: "vir"},
+				{index: 3, palavra: "aqui"},
+				{index: 4, palavra: "por"},
+				{index: 5, palavra: "favor"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
 			],
+			auxResp: {
+				interrocacao: true,
+				virgula: -1
+			},
 			nivel: 0
 		},
 		{
-			fraseParaCorrecao: "frasaquiquevaiaparecernotopo",
+			fraseParaCorrecao: "vlw pelo presente",
 			conteudoResposta: [
-				{index: 0, palavra: "palavra"},
-				{index: 1, palavra: "palavra"},
-				{index: 2, palavra: "palavra"},
-				{index: 3, palavra: "palavra"},
+				{index: 0, palavra: "Valeu"},
+				{index: 1, palavra: "pelo"},
+				{index: 2, palavra: "presente"},
+				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
@@ -1264,96 +1262,30 @@ TaCerto.Estrutura.DesafioDeFase = {
 			nivel: 0
 		},
 		{
-			internetes: "vc pode vir aqui pfv",
-			formaNormativa: [
-				"Você pode vir aqui por favor?"
-			],
-			nivel: 0
-		},
-		{
-			fraseParaCorrecao: "frasaquiquevaiaparecernotopo",
+			fraseParaCorrecao: "ql o num do seu cel?",
 			conteudoResposta: [
-				{index: 0, palavra: "palavra"},
-				{index: 1, palavra: "palavra"},
-				{index: 2, palavra: "palavra"},
-				{index: 3, palavra: "palavra"},
-				{index: -1, palavra: "palavra"},
-				{index: -1, palavra: "palavra"},
+				{index: 0, palavra: "Qual"},
+				{index: 1, palavra: "o"},
+				{index: 2, palavra: "numéro"},
+				{index: 3, palavra: "do"},
+				{index: 4, palavra: "seu"},
+				{index: 5, palavra: "celular"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 			],
 			auxResp: {
-				interrocacao: false,
+				interrocacao: true,
 				virgula: -1
 			},
 			nivel: 0
 		},
 		{
-			internetes: "vlw pelo presente",
-			formaNormativa: [
-				"Valeu pelo presente"
-			],
-			nivel: 0
-		},
-		{
-			fraseParaCorrecao: "frasaquiquevaiaparecernotopo",
+			fraseParaCorrecao: "vlw pelo presente",
 			conteudoResposta: [
-				{index: 0, palavra: "palavra"},
-				{index: 1, palavra: "palavra"},
-				{index: 2, palavra: "palavra"},
-				{index: 3, palavra: "palavra"},
-				{index: -1, palavra: "palavra"},
-				{index: -1, palavra: "palavra"},
-				{index: -1, palavra: "palavra"},
-				{index: -1, palavra: "palavra"},
-				{index: -1, palavra: "palavra"},
-			],
-			auxResp: {
-				interrocacao: false,
-				virgula: -1
-			},
-			nivel: 0
-		},
-		{
-			internetes: "ql o num do seu cel?",
-			formaNormativa: [
-				"Qual o numéro do seu celular?"
-			],
-			nivel: 0
-		},
-		{
-			fraseParaCorrecao: "frasaquiquevaiaparecernotopo",
-			conteudoResposta: [
-				{index: 0, palavra: "palavra"},
-				{index: 1, palavra: "palavra"},
-				{index: 2, palavra: "palavra"},
-				{index: 3, palavra: "palavra"},
-				{index: -1, palavra: "palavra"},
-				{index: -1, palavra: "palavra"},
-				{index: -1, palavra: "palavra"},
-				{index: -1, palavra: "palavra"},
-				{index: -1, palavra: "palavra"},
-			],
-			auxResp: {
-				interrocacao: false,
-				virgula: -1
-			},
-			nivel: 0
-		},
-		{
-			internetes: "vlw pelo presente",
-			formaNormativa: [
-				"Valeu pelo presente"
-			],
-			nivel: 0
-		},
-		{
-			fraseParaCorrecao: "frasaquiquevaiaparecernotopo",
-			conteudoResposta: [
-				{index: 0, palavra: "palavra"},
-				{index: 1, palavra: "palavra"},
-				{index: 2, palavra: "palavra"},
+				{index: 0, palavra: "Valeu"},
+				{index: 1, palavra: "pelo"},
+				{index: 2, palavra: "presente"},
 				{index: 3, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},

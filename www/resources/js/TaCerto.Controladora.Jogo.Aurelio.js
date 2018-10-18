@@ -25,7 +25,16 @@ TaCerto.Controladora.Jogo.Aurelio = {
 			return; document.getElementById
 		}
 	},
-	btnResposta: function(){
+	__rearrengeFontSize: function(aurWord, maxWidth){
+		let size = aurWord.getBoundingClientRect();
+		let fontSize = 2;
+		while(size.width >= maxWidth){
+			fontSize -= 0.1;
+			aurWord.style.fontSize = "calc(12px + " + fontSize + "vw)";
+			size = aurWord.getBoundingClientRect();
+		}
+	},
+	btnResposta: function(el){
 		//TaCerto.Controladora.Jogo.Geral.atualizarResposta(true);
 		//this.proximaPergunta();
 	},

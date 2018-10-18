@@ -2327,19 +2327,48 @@ span {
 .aurTopContentWrap{
 	position: relative;
 	height: 60.5%;
-	width: 90%;
+	width: 88%;
 	margin: 0 auto;
+	text-align: left;
 }
-.aurTWordWrap{
+.aurTWordItem{
+	display: inline-block;
+}
+.aurTWrintingBar{
+	display: inline;
+	width: 0.5vw;
+	color: #103180;
+	animation: aurTWrintingBar .5s cubic-bezier(1,-1, 0, 2)  infinite;
+}
+@keyframes aurTWrintingBar{
+	from{color: #103180;}
+	to{color: #10328000;;}
+}
+
+.aurTWordWrap{/*deprecate*/
 	position: absolute;
 	height: 50%;
 	width: 30%;
 	overflow: hidden;
 }
-.aurTWordWrap:nth-child(3n + 1){left: calc(5% + calc(0 * 30%));}
-.aurTWordWrap:nth-child(3n + 2){left: calc(5% + calc(1 * 30%));}
-.aurTWordWrap:nth-child(3n + 3){left: calc(5% + calc(2 * 30%));}
-.aurTWordWrap:nth-child(n + 4){top: 50%;}
+.aurTWordWrap:nth-child(3n + 1){left: calc(5% + calc(0 * 30%));}/*deprecate*/
+.aurTWordWrap:nth-child(3n + 2){left: calc(5% + calc(1 * 30%));}/*deprecate*/
+.aurTWordWrap:nth-child(3n + 3){left: calc(5% + calc(2 * 30%));}/*deprecate*/
+.aurTWordWrap:nth-child(n + 4){top: 50%;}/*deprecate*/
+.aurTopTrachSize{/*deprecate*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 90%;
+	height: 80%;
+}
+.aurTopTrachSize:nth-child(odd){/*deprecate*/
+	background-color: rgba(185, 14, 14, 0.616);
+}
+.aurTopTrachSize:nth-child(even){/*deprecate*/
+	background-color: rgba(45, 14, 185, 0.507);
+}
 
 .aurBotWordWrap{
 	height: 95%;
@@ -2356,14 +2385,8 @@ span {
 .aurBWordWrap:nth-child(n + 4){top: calc(1 * 25%);}
 .aurBWordWrap:nth-child(n + 7){top: calc(2 * 25%);}
 .aurBWordWrap:nth-child(n + 10){top: calc(3 * 25%);}
-.aurBWoASDASrdWrap:nth-child(odd){
-	background-color: rgba(185, 14, 14, 0.616);
-}
-.aurBWordASDWrap:nth-child(even){
-	background-color: rgba(45, 14, 185, 0.507);
-}
 
-.aurWBG{
+/*.aurWBG{
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -2381,8 +2404,18 @@ span {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: whitesmoke;
+}*/
+.aurWord{
+	padding: 5px 10px 5px 10px;
+	color: white;
+	display: inline-block;
+	margin: 3px 0 3px 0;
+	background-color: #3055a7;
+	border-radius: 3px;
+	font-size: calc(12px + 2vw);
+	font-family: 'panton',  'Pacifico', cursive;
+	box-shadow: 1px 1px #1e386f;
 }
-
 
 
 .aurCoinWrap{
@@ -2391,24 +2424,6 @@ span {
 	width: 90%;
 	margin: 0 auto;
 }
-/*
-background-color: rgba(0, 0, 0, 0.432);
-*/
-.aurTopWrap{}/**/
-	.aurTopBGWrap{}/**/
-		.aurTopBGImg{}/**/
-	.aurPhraseWrap{}/**/
-	.aurTopWordWrap{}/**/
-		.aurTWordWrap{}/**/
-			.aurWBG{}
-			.aurWord{}
-	.aurCoinWrap{}/**/
-.aurBotWrap{}/**/
-	.aurbotWordWrap{}
-		.aurBWordWrap{}
-			.aurWBG{}
-			.aurWord{}
-
 /*--------------------------------------------------------------*/
 /*aurelio*//*fim*/
 /*--------------------------------------------------------------*/
