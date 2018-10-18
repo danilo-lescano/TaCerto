@@ -26,8 +26,8 @@ TaCerto.Controladora.Jogo.Aurelio = {
 		}
 	},
 	btnResposta: function(){
-		TaCerto.Controladora.Jogo.Geral.atualizarResposta(true);
-		this.proximaPergunta();
+		//TaCerto.Controladora.Jogo.Geral.atualizarResposta(true);
+		//this.proximaPergunta();
 	},
 	pular: function(){
 		this.DESAFIO[this.DESAFIO.length] = this.shuffleDesafio()[0];

@@ -939,90 +939,250 @@ TaCerto.Estrutura.DesafioDeFase = {
 	],
 	aurelio: [
 		{
-			internetes: "ta calor dms",
-			formaNormativa: [
-				"Esta calor demais"
+			fraseParaCorrecao: "ta calor dms",
+			conteudoResposta: [
+				{index: 0, palavra: "esta"},
+				{index: 1, palavra: "calor"},
+				{index: 2, palavra: "demais"},
+				{index: -1, palavra: "este"},
+				{index: -1, palavra: "de"},
+				{index: -1, palavra: "quente"},
+				{index: -1, palavra: "mais"},
+				{index: -1, palavra: "dimais"},
+				{index: -1, palavra: "muito"},
 			],
+			auxResp: {
+				interrocacao: false,
+				virgula: -1 //index da virgula aqui se tiver
+			},
 			nivel: 0
 		},
 		{
-			internetes: "hj eh meu aniversario",
-			formaNormativa: [
-				"Hoje é meu aniversário"
+			fraseParaCorrecao: "hj eh meu aniversario",
+			conteudoResposta: [
+				{index: 0, palavra: "hoje"},
+				{index: 1, palavra: "é"},
+				{index: 2, palavra: "meu"},
+				{index: 3, palavra: "aniversário"},
+				{index: -1, palavra: "amanhã"},
+				{index: -1, palavra: "hôje"},
+				{index: -1, palavra: "anivérsario"},
+				{index: -1, palavra: "minha"},
+				{index: -1, palavra: "eh"},
 			],
+			auxResp: {
+				interrocacao: false,
+				virgula: -1
+			},
 			nivel: 0
 		},
 		{
-			internetes: "jah cheguei aki",
-			formaNormativa: [
-				"Já cheguei aqui"
+			fraseParaCorrecao: "jah cheguei aki",
+			conteudoResposta: [
+				{index: 0, palavra: "já"},
+				{index: 1, palavra: "cheguei"},
+				{index: 2, palavra: "aqui"},
+				{index: -3, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
 			],
+			auxResp: {
+				interrocacao: false,
+				virgula: -1
+			},
 			nivel: 0
 		},
 		{
-			internetes: "kd v6?",
-			formaNormativa: [
-				"Cade vocês?"
+			fraseParaCorrecao: "kd v6?",
+			conteudoResposta: [
+				{index: 0, palavra: "Cade"},
+				{index: 1, palavra: "vocês"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
 			],
+			auxResp: {
+				interrocacao: true,
+				virgula: -1
+			},
 			nivel: 0
 		},
 		{
-			internetes: "olar td bm?",
-			formaNormativa: [
-				"Olá, tudo bom?",
-				"Olá, tudo bem?"
+			fraseParaCorrecao: "olar td bm?",
+			conteudoResposta: [
+				{index: 0, palavra: "Olá"},
+				{index: 2, palavra: "tudo"},
+				{index: 3, palavra: "bom"},
+				{index: 3, palavra: "bem"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
 			],
+			auxResp: {
+				interrocacao: false,
+				virgula: 1
+			},
 			nivel: 0
 		},
 		{
-			internetes: "qnd vc vm pra k?",
-			formaNormativa: [
-				"Quando você vem pra cá?",
-				"Quando você vem para cá?",
+			fraseParaCorrecao: "qnd vc vm pra k?",
+			conteudoResposta: [
+				{index: 0, palavra: "Quando"},
+				{index: 1, palavra: "você"},
+				{index: 2, palavra: "vem"},
+				{index: 3, palavra: "pra"},
+				{index: 3, palavra: "para"},
+				{index: 4, palavra: "cá"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
 			],
+			auxResp: {
+				interrocacao: true,
+				virgula: -1
+			},
 			nivel: 0
 		},
 		{
-			internetes: "me add no fb ai",
-			formaNormativa: [
-				"Me adiciona no facebook ai"
+			fraseParaCorrecao: "me add no fb ai",
+			conteudoResposta: [
+				{index: 0, palavra: "Me"},
+				{index: 1, palavra: "adiciona"},
+				{index: 2, palavra: "no"},
+				{index: 3, palavra: "facebook"},
+				{index: 4, palavra: "ai"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
 			],
+			auxResp: {
+				interrocacao: false,
+				virgula: -1
+			},
 			nivel: 0
 		},
 		{
-			internetes: "eai td blz",
-			formaNormativa: [
-				"E aí tudo beleza?"
+			fraseParaCorrecao: "eai td blz",
+			conteudoResposta: [
+				{index: 0, palavra: "E"},
+				{index: 1, palavra: "aí"},
+				{index: 2, palavra: "tudo"},
+				{index: 3, palavra: "beleza"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
 			],
+			auxResp: {
+				interrocacao: true,
+				virgula: -1
+			},
 			nivel: 0
 		},
 		{
-			internetes: "pq usar pq",
-			formaNormativa: [
-				"Por que usar porquê?"
+			fraseParaCorrecao: "pq usar pq",
+			conteudoResposta: [
+				{index: 0, palavra: "Por"},
+				{index: 1, palavra: "que"},
+				{index: 2, palavra: "usar"},
+				{index: 3, palavra: "porquê"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
 			],
+			auxResp: {
+				interrocacao: true,
+				virgula: -1
+			},
 			nivel: 0
 		},
 		{
-			internetes: "qlqr coisa só pedir +",
-			formaNormativa: [
-				"Qualquer coisa é só pedir mais"
+			fraseParaCorrecao: "qlqr coisa só pedir +",
+			conteudoResposta: [
+				{index: 0, palavra: "Qualquer"},
+				{index: 1, palavra: "coisa"},
+				{index: 2, palavra: "é"},
+				{index: 3, palavra: "só"},
+				{index: 4, palavra: "pedir"},
+				{index: 5, palavra: "mais"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
 			],
+			auxResp: {
+				interrocacao: false,
+				virgula: -1
+			},
 			nivel: 0
 		},
 		{
-			internetes: "vou no parkinho fds",
-			formaNormativa: [
-				"Vou ao parquinho no fim de semana",
-				"Eu vou ao parquinho no fim de semana"
+			fraseParaCorrecao: "vou no parkinho fds",
+			conteudoResposta: [
+				{index: 0, palavra: "Vou"},
+				{index: 1, palavra: "ao"},
+				{index: 2, palavra: "parquinho"},
+				{index: 3, palavra: "no"},
+				{index: 4, palavra: "fim"},
+				{index: 5, palavra: "de"},
+				{index: 6, palavra: "semana"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
 			],
+			auxResp: {
+				interrocacao: false,
+				virgula: -1
+			},
 			nivel: 0
 		},
 		{
-			internetes: "sdds das aulas brinks",
-			formaNormativa: [
-				"Saudades das aulas. Brincadeira"
+			fraseParaCorrecao: "sdds das aulas brinks",
+			conteudoResposta: [
+				{index: 0, palavra: "Saudades"},
+				{index: 1, palavra: "das"},
+				{index: 2, palavra: "aulas"},
+				{index: 3, palavra: "."},
+				{index: 4, palavra: "Brincadeira"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
 			],
+			auxResp: {
+				interrocacao: false,
+				virgula: -1
+			},
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "frasaquiquevaiaparecernotopo",
+			conteudoResposta: [
+				{index: 0, palavra: "palavra"},
+				{index: 1, palavra: "palavra"},
+				{index: 2, palavra: "palavra"},
+				{index: 3, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			auxResp: {
+				interrocacao: false,
+				virgula: -1
+			},
 			nivel: 0
 		},
 		{
@@ -1033,10 +1193,48 @@ TaCerto.Estrutura.DesafioDeFase = {
 			nivel: 0
 		},
 		{
+			fraseParaCorrecao: "frasaquiquevaiaparecernotopo",
+			conteudoResposta: [
+				{index: 0, palavra: "palavra"},
+				{index: 1, palavra: "palavra"},
+				{index: 2, palavra: "palavra"},
+				{index: 3, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			auxResp: {
+				interrocacao: false,
+				virgula: -1
+			},
+			nivel: 0
+		},
+		{
 			internetes: "to indo nessa flw",
 			formaNormativa: [
 				"Estou indo nessa. Falou"
 			],
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "frasaquiquevaiaparecernotopo",
+			conteudoResposta: [
+				{index: 0, palavra: "palavra"},
+				{index: 1, palavra: "palavra"},
+				{index: 2, palavra: "palavra"},
+				{index: 3, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			auxResp: {
+				interrocacao: false,
+				virgula: -1
+			},
 			nivel: 0
 		},
 		{
@@ -1047,6 +1245,25 @@ TaCerto.Estrutura.DesafioDeFase = {
 			nivel: 0
 		},
 		{
+			fraseParaCorrecao: "frasaquiquevaiaparecernotopo",
+			conteudoResposta: [
+				{index: 0, palavra: "palavra"},
+				{index: 1, palavra: "palavra"},
+				{index: 2, palavra: "palavra"},
+				{index: 3, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			auxResp: {
+				interrocacao: false,
+				virgula: -1
+			},
+			nivel: 0
+		},
+		{
 			internetes: "vc pode vir aqui pfv",
 			formaNormativa: [
 				"Você pode vir aqui por favor?"
@@ -1054,10 +1271,48 @@ TaCerto.Estrutura.DesafioDeFase = {
 			nivel: 0
 		},
 		{
+			fraseParaCorrecao: "frasaquiquevaiaparecernotopo",
+			conteudoResposta: [
+				{index: 0, palavra: "palavra"},
+				{index: 1, palavra: "palavra"},
+				{index: 2, palavra: "palavra"},
+				{index: 3, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			auxResp: {
+				interrocacao: false,
+				virgula: -1
+			},
+			nivel: 0
+		},
+		{
 			internetes: "vlw pelo presente",
 			formaNormativa: [
 				"Valeu pelo presente"
 			],
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "frasaquiquevaiaparecernotopo",
+			conteudoResposta: [
+				{index: 0, palavra: "palavra"},
+				{index: 1, palavra: "palavra"},
+				{index: 2, palavra: "palavra"},
+				{index: 3, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			auxResp: {
+				interrocacao: false,
+				virgula: -1
+			},
 			nivel: 0
 		},
 		{
@@ -1068,10 +1323,48 @@ TaCerto.Estrutura.DesafioDeFase = {
 			nivel: 0
 		},
 		{
+			fraseParaCorrecao: "frasaquiquevaiaparecernotopo",
+			conteudoResposta: [
+				{index: 0, palavra: "palavra"},
+				{index: 1, palavra: "palavra"},
+				{index: 2, palavra: "palavra"},
+				{index: 3, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			auxResp: {
+				interrocacao: false,
+				virgula: -1
+			},
+			nivel: 0
+		},
+		{
 			internetes: "vlw pelo presente",
 			formaNormativa: [
 				"Valeu pelo presente"
 			],
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "frasaquiquevaiaparecernotopo",
+			conteudoResposta: [
+				{index: 0, palavra: "palavra"},
+				{index: 1, palavra: "palavra"},
+				{index: 2, palavra: "palavra"},
+				{index: 3, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			auxResp: {
+				interrocacao: false,
+				virgula: -1
+			},
 			nivel: 0
 		},
 	]
