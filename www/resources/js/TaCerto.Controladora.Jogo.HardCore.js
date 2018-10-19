@@ -35,6 +35,9 @@ TaCerto.Controladora.Jogo.HardCore = {
 
 		for (var i = 0; i < desafioNum; i++)
 			this.DESAFIO[i] = shuffledDesafio[i];
+
+		document.getElementById('moneyDaQuestao').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus;
+		document.getElementById('nivelDaQuestao').innerHTML = "Nível " +this.DESAFIO[this.DESAFIO.length - 1].nivel;
 		document.getElementById('palavra').innerHTML = this.DESAFIO[this.DESAFIO.length - 1].palavra;
 		document.getElementById('significado').innerHTML = this.DESAFIO[this.DESAFIO.length - 1].significado;
 	},
@@ -70,6 +73,8 @@ TaCerto.Controladora.Jogo.HardCore = {
 
 		if(TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo === "HardCore"){
 			if(this.DESAFIO.length){
+				document.getElementById('moneyDaQuestao').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus;
+				document.getElementById('nivelDaQuestao').innerHTML = "Nível " +this.DESAFIO[this.DESAFIO.length - 1].nivel;
 				document.getElementById('palavra').innerHTML = this.DESAFIO[this.DESAFIO.length - 1].palavra;
 				document.getElementById('significado').innerHTML = this.DESAFIO[this.DESAFIO.length - 1].significado;
 			}else

@@ -106,13 +106,15 @@ http.createServer(function (req, res) {
 			~pathnameURL.indexOf('.png') ||
 			~pathnameURL.indexOf('.jpg') ||
 			~pathnameURL.indexOf('.otf') ||
+			~pathnameURL.indexOf('.svg') ||
 			~pathnameURL.indexOf('.mp3'))) {
 		fs.readFile(pastaDeHTMLs + pathnameURL, function(err, data) {
 			var contType = pathnameURL.indexOf('.js') >= 0 ? "text/javascript" :
 						  (pathnameURL.indexOf('.css') >= 0 ? "text/css" :
 						  (pathnameURL.indexOf('.html') >= 0 ? "text/html" :
+						  (pathnameURL.indexOf('.svg') >= 0 ? "image/svg+xml" :
 						  (pathnameURL.indexOf('.otf') >= 0 ? "fonte" :
-						  (pathnameURL.indexOf('.mp3') >= 0 ? "audio" : "img"))));
+						  (pathnameURL.indexOf('.mp3') >= 0 ? "audio" : "img")))));
 			res.writeHead(200, {'Content-Type': contType});
 			res.write(data);
 			res.end();

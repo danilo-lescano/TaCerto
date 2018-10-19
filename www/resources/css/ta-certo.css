@@ -51,7 +51,8 @@ body {
 
 #palavra{
 	position: absolute;
-	top: 40%;
+	width: 90%;
+	top: 34%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
@@ -249,13 +250,17 @@ span {
 }
 
 .centerPanel h4{
-	color: #294B95;
+	color: rgb(41,75,149);
 	font-family: 'panton',  'Pacifico', cursive;
 }
 
 .centerPanel h6{
-	color: white;
+	color: rgb(255,255,255);
 	font-family: 'panton',  'Pacifico', cursive;
+}
+
+.centerPanel img{
+	margin-top: 8%;
 }
 
 .disableButton{
@@ -312,7 +317,7 @@ span {
 }
 .loading span {
 	display: inline-block;
-	background: white;
+	background: rgb(255,255,255);
 	height: .5em;
 	width: .5em;
 	padding: 0;
@@ -399,7 +404,7 @@ span {
 	font-size: 30px;
 	text-align: center;
 	margin: 20% 8% 0 8%;
-	color: white;
+	color: rgb(255,255,255);
 	font-family: 'panton', 'Pacifico', cursive;
 }
 .bigText{
@@ -451,7 +456,7 @@ span {
 }
 .gif_fundoBranco {
 	position: fixed;
-	background-color: #fdfdfd;
+	background-color: rgb(253,253,253);
 	left: 0px;
 	z-index: 95;
 	width: 100%;
@@ -517,7 +522,7 @@ span {
 	height: 9vh;
 }
 .menuCasual_titulo{
-	color: #294B95;
+	color: rgb(41,75,149);
 	text-align: center;
 	margin-top: -5.5vh;
 	height: 5.5vh;
@@ -555,7 +560,7 @@ span {
 	height: 5vh;
 }
 .rightDiv {
-	color: #294B95;
+	color: rgb(41,75,149);
 	font-size: 18px;
 	font-family: 'Roboto', sans-serif;
 	margin: 2.5vw 2.5vw 0 2.5vw;
@@ -563,7 +568,7 @@ span {
 }
 
 .rightDiv #moedas{
-	color: white;
+	color: rgb(255,255,255);
 	position: absolute;
 	top: 1.8%;
 	right: 13%;
@@ -577,7 +582,7 @@ span {
 	height: 11vh;
 }
 .wrapper_xpBar{
-	color: #294B95;
+	color: rgb(41,75,149);
 	font-family: 'Roboto', sans-serif;
 	font-size: 22px;
 
@@ -585,7 +590,7 @@ span {
 	width: 78%;
 	height: 3.5vh;
 	border-radius: 25px;
-	background-color: white;
+	background-color: rgb(255,255,255);
 	background-repeat: no-repeat;
 	margin-left: 11%;
 	transform: translateY(3vh);
@@ -664,7 +669,7 @@ span {
 }
 .modalMissaoObjetivo p{
 	font-family: 'panton',  'Pacifico', cursive;
-	color: #1a9cfd;
+	color: rgb(26,156,253);
 	font-size: 2rem;
 	text-align: center;
 	margin: -10% 0 4% 0;
@@ -679,7 +684,7 @@ span {
 .modalObjetivo p{
 	margin: 0 0 4% 0;
 	font-family: 'panton',  'Pacifico', cursive;
-	color: #294B95;
+	color: rgb(41,75,149);
 	font-size: 1rem;
 	text-align: left;
 }
@@ -752,7 +757,7 @@ span {
     right: 0;
 	margin: 0 auto;
 	font-family: 'panton';
-	color: #294B95;
+	color: rgb(41,75,149);
 }
 #pauseModal .modalWrapper {
  	background-color: transparent;
@@ -788,7 +793,7 @@ span {
 	z-index: 10;
 }
 #despauseModal .modalWrapper span{
-	color: #294b95;
+	color: rgb(41,75,149);
 	font-size: 100px;
 	text-shadow: 2px 2px black;
 }
@@ -831,7 +836,7 @@ span {
 	font-family: 'Roboto', sans-serif;
 }
 .jogoPlacar {
-	color:white;
+	color:rgb(255,255,255);
 	display: inline-block;
     background-repeat: no-repeat;
     background-position: center center;
@@ -856,7 +861,7 @@ span {
 	width: 28%;
 	display: inline-block;
 	padding-left: 11.2%;
-	color: #fff;
+	color: rgb(255,255,255);
 	font-size: 5vw;
 	font-family: 'panton',  'Pacifico', cursive;
 	background-image: url("../media/image/relogio.png");
@@ -992,7 +997,7 @@ span {
 	width: 90%;
 	height: 3.5vh;
 	border-radius: 25px;
-	background-color: white;
+	background-color: rgb(255,255,255);
 	background-repeat: no-repeat;
 	margin-left: 5%;
 	transform: translateY(3vh);
@@ -2151,14 +2156,14 @@ span {
 	margin-bottom: 0px;
 }
 
-.telaConquistaLiVinte{
+#telaConquista > .telaConquistaLiVinte{
 	height: 15%;	
-	background: #263466de !important
+	background:rgba(38,52,102,0.8) !important;
 }
 
-.telaConquistaLiZero{
+#telaConquista > .telaConquistaLiZero{
 	height: 15%;	
-	background: #445eb8a6 !important;
+	background:rgba(68,94,184, 1) !important;
 }
 
 .conquistaNaoConquistada{
@@ -2176,12 +2181,19 @@ span {
 .textMidConquista{
 	position: absolute;
 	color: #fff;
-	top: 0%;
+	top: 9%;
 	left: 22%;
 }
 
 .textMidConquista h4{
+	font-size: 100%;
 	margin-bottom: 0.13rem;
+	font-family: 'panton',  'Pacifico', cursive;
+}
+
+.textMidConquista h6{
+
+	font-family: 'panton-light';
 }
 
 .trofeuConquista{
@@ -2288,12 +2300,93 @@ span {
 /*--------------------------------------------------------------*/
 
 
+/****************************************************************/
+/* NORMAL & HARDCORE *//*inicio*/
+/****************************************************************/
 
+#cardBG{
+	position: relative;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 90%;
+	height: 70%;
+	background-image: url("../media/image/card_normal.svg");
+}
 
+#bottomStuff{
+	position: absolute;
+	width: 100%;
+	height: 20%;
+	bottom: 0;
+}
 
+.leftDivJogo{
+	float: left;
+	width: 50%;
+	height: 100%;
+}
 
+.leftDivJogo img{
+	width: 7%;
+	position: absolute;
+	left: 3%;
+	top: 50%;
+	transform: translate(0%, -50%);
+}
 
+.leftDivJogo span{
+	position: absolute;
+	left: 10%;
+	top: 40%;
+	transform: translate(0%, -50%);
+	color: rgb(81, 106, 216);
+}
 
+.rightDivJogo{
+	float: right;
+	width: 50%;
+	height: 100%;
+}
+
+.rightDivJogo span{
+	position: absolute;
+	right: 5%;
+	top: 40%;
+	transform: translate(0%, -50%);
+	color: rgb(81, 106, 216);
+}
+
+.imgCardsJogo{
+	position: absolute;
+	height: 100%;
+}
+
+#imgCarta1{
+	width: 98%;
+	
+	left: 1%;
+	top: -2%;
+	z-index: -1;
+}
+
+#imgCarta2{
+	width: 96%;
+	left: 2%;
+	top: -3%;
+	z-index: -2;
+}
+
+#imgCarta3{
+	width: 94%;
+	left: 3%;
+	top: -4%;
+	z-index: -3;
+}
+
+/*--------------------------------------------------------------*/
+/* NORMAL & HARDCORE *//*fim*/
+/*--------------------------------------------------------------*/
 
 
 
