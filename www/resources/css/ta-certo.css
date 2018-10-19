@@ -2333,11 +2333,13 @@ span {
 }
 .aurTWordItem{
 	display: inline-block;
+	font-size: calc(12px + 2vw);
 }
 .aurTWrintingBar{
 	display: inline;
 	width: 0.5vw;
 	color: #103180;
+	font-size: calc(12px + 2vw);
 	animation: aurTWrintingBar .5s cubic-bezier(1,-1, 0, 2)  infinite;
 }
 @keyframes aurTWrintingBar{
@@ -2371,13 +2373,21 @@ span {
 }
 
 .aurBotWordWrap{
-	height: 95%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: 93%;
+    overflow: auto;
 }
 .aurBWordWrap{
 	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 	height: 25%;
 	width: 30%;
-	overflow: hidden;
 }
 .aurBWordWrap:nth-child(3n + 1){left: calc(5% + calc(0 * 30%));}
 .aurBWordWrap:nth-child(3n + 2){left: calc(5% + calc(1 * 30%));}
@@ -2406,10 +2416,10 @@ span {
 	color: whitesmoke;
 }*/
 .aurWord{
-	padding: 5px 10px 5px 10px;
+	padding: 0px 7px;
 	color: white;
 	display: inline-block;
-	margin: 3px 0 3px 0;
+	margin: 3px 2px;
 	background-color: #3055a7;
 	border-radius: 3px;
 	font-size: calc(12px + 2vw);
