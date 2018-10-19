@@ -15,6 +15,7 @@ TaCerto.Controladora.Jogo.Geral = {
 
 		paused: false,
 		intervalo: false,
+		errou: false,
 
 		flagCardMenu: false,
 		frozen: false,
@@ -161,10 +162,69 @@ TaCerto.Controladora.Jogo.Geral = {
 	/*CARD MENU CLICKS*/
 	toggleBarraCarta: function(){
 		document.getElementsByClassName("barraCartaBG")[0].style.left = this.gameModel.flagCardMenu ? "-58%" : "0px";
+
 		this.gameModel.flagCardMenu = !this.gameModel.flagCardMenu;
+
+		TaCerto.Controladora.MenuConquistas.checkIfICanCheckAchievements(false); // Checa achievements
 	},
 	/*CARD MENU CLICKS*/
 	/*-----FIM*/
+
+	/*-----INICIO*/
+	/*Mostrar informações de erro e significado CLICKS*/
+	showMeMeuErro: function(el, flag){
+
+		if(!this.gameModel.errou)
+			return;
+
+		TaCerto.GenFunc.fadeInBtnClick(el,
+		function(){
+			TaCerto.Controladora.Jogo.Geral.showLastErrorPanel(flag);
+		});
+	},
+	showLastErrorPanel: function(flag){
+		this.gameModel.paused = flag;
+		//find and display block the modal
+		var modal = document.getElementById("errorModal");
+
+		document.querySelector("#errorModal>.modalWrapper>.centerPanel>h6").innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].significado;
+
+		modal.style.display = flag ? "block" : "none";
+		//pause clock animation
+		//blur game blend
+		var blurThis = [document.getElementsByClassName('gameBlend')[0], document.getElementsByClassName('jogo_wrapper')[0]];
+		for (var i = 0; i < blurThis.length; i++) {
+			blurThis[i].style.filter = flag ? "blur(5px)" : "none";
+		}
+	},
+
+	showMeOSignificado: function(el, flag){
+
+		TaCerto.GenFunc.fadeInBtnClick(el,
+		function(){
+			TaCerto.Controladora.Jogo.Geral.showSignificadoPanel(flag);
+		});
+	},
+	showSignificadoPanel: function(flag){
+		this.gameModel.paused = flag;
+		//find and display block the modal
+		var modal = document.getElementById("significadoModal");
+
+		//var child = modal.children[0].children[0].children[1];
+		document.querySelector("#significadoModal>.modalWrapper>.centerPanel>h6").innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].dica;
+		//child.innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].dica;
+
+		modal.style.display = flag ? "block" : "none";
+		//pause clock animation
+		//blur game blend
+		var blurThis = [document.getElementsByClassName('gameBlend')[0], document.getElementsByClassName('jogo_wrapper')[0]];
+		for (var i = 0; i < blurThis.length; i++) {
+			blurThis[i].style.filter = flag ? "blur(5px)" : "none";
+		}
+	},
+	/* Mostrar informações de erro e significado CLICKS*/
+	/*-----FIM*/
+
 	plusBarra: function (comboFlag){
 		var widthVal;
 		var barra = document.getElementsByClassName("barraProgressoBack")[0];
@@ -269,7 +329,7 @@ TaCerto.Controladora.Jogo.Geral = {
 		}
 
 		if (resp){
-
+			this.gameModel.errou = false;
 			// Incrementa acerto total do jogador
 			++TaCerto.Estrutura.Jogador.totalAcertos;
 
@@ -282,8 +342,12 @@ TaCerto.Controladora.Jogo.Geral = {
 			//plusPopup("colorYellow", "economiaSpan", 100);
 			
 			TaCerto.Estrutura.Jogador.moeda += this.gameModel.comboBonus;
+
+			document.getElementById('botaoInformacao').classList.add('disableButton');
 		}
 		else{
+			this.gameModel.errou = true;
+			document.getElementById('botaoInformacao').classList.remove('disableButton');
 			document.getElementById('erros').innerHTML = ++this.gameModel.erro;
 			plusPopup("colorRed", "errosSpan", 10);
 			this.gameModel.acertosConsecutivos = 0;
@@ -297,7 +361,7 @@ TaCerto.Controladora.Jogo.Geral = {
 		if(this.gameModel.tipoDeJogo === "Aleatorio")
 			TaCerto.Controladora.Jogo.Aleatorio.next();		
 			
-		TaCerto.Controladora.MenuConquistas.checkAchievements();
+		TaCerto.Controladora.MenuConquistas.checkIfICanCheckAchievements(false);
 
 	},
 	clickCarta: function(card){
@@ -379,8 +443,6 @@ TaCerto.Controladora.Jogo.Geral = {
 				cartaClicada[i].classList.add("animated", "bounceUpOut", "flipCard"+card);
 				callCarta[card]();
 
-				TaCerto.Controladora.MenuConquistas.checkAchievements(); // Checa achievements
-
 				TaCerto.Estrutura.Jogador[card]--;
 				flag = false;
 			}
@@ -425,7 +487,7 @@ TaCerto.Controladora.Jogo.Geral = {
 	fimDeJogo: function(){
 		//TaCerto.Estrutura.Jogador.moeda += this.gameModel.moeda;		
 		TaCerto.Controladora.FimJogo.start();
-		TaCerto.Controladora.MenuConquistas.checkAchievements();
+		TaCerto.Controladora.MenuConquistas.checkIfICanCheckAchievements(true);
 		this.zerarVars();
 	},
 	start: function(tipo){

@@ -35,7 +35,7 @@ body {
 }
 
 .palavraSpan3{
-	font-size: calc(7px + 1vw);
+	font-size: calc(8px + 1vw);
 	font-family: 'Roboto', sans-serif !important;
 	min-width: 120px;
 }
@@ -51,7 +51,8 @@ body {
 
 #palavra{
 	position: absolute;
-	top: 40%;
+	width: 90%;
+	top: 34%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
@@ -237,6 +238,63 @@ span {
 /*classes gerais*//*fim*/
 /*--------------------------------------------------------------*/
 
+/****************************************************************/
+/*Informação e Significado*//*inicio*/
+/****************************************************************/
+
+.centerPanel{
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.centerPanel h4{
+	color: rgb(41,75,149);
+	font-family: 'panton',  'Pacifico', cursive;
+}
+
+.centerPanel h6{
+	color: rgb(255,255,255);
+	font-family: 'panton',  'Pacifico', cursive;
+}
+
+.centerPanel img{
+	margin-top: 8%;
+}
+
+.disableButton{
+	filter: grayscale(1);
+}
+
+#botaoInformacao{
+	position: absolute;
+	width: 8%;
+	right: 13%;
+	top: 14%;
+}
+
+#botaoInformacao img{
+	width: 100%;
+	height: auto;
+}
+
+#botaoSignificado{
+	position: absolute;
+	width: 8%;
+	right: 4%;
+	top: 14%;
+}
+
+#botaoSignificado img{
+	width: 100%;
+	height: auto;
+}
+
+/*--------------------------------------------------------------*/
+/*Informação e Significado*//*fim*/
+/*--------------------------------------------------------------*/
+
 
 /****************************************************************/
 /*loading*//*inicio*/
@@ -259,7 +317,7 @@ span {
 }
 .loading span {
 	display: inline-block;
-	background: white;
+	background: rgb(255,255,255);
 	height: .5em;
 	width: .5em;
 	padding: 0;
@@ -346,7 +404,7 @@ span {
 	font-size: 30px;
 	text-align: center;
 	margin: 20% 8% 0 8%;
-	color: white;
+	color: rgb(255,255,255);
 	font-family: 'panton', 'Pacifico', cursive;
 }
 .bigText{
@@ -398,7 +456,7 @@ span {
 }
 .gif_fundoBranco {
 	position: fixed;
-	background-color: #fdfdfd;
+	background-color: rgb(253,253,253);
 	left: 0px;
 	z-index: 95;
 	width: 100%;
@@ -464,7 +522,7 @@ span {
 	height: 9vh;
 }
 .menuCasual_titulo{
-	color: #294B95;
+	color: rgb(41,75,149);
 	text-align: center;
 	margin-top: -5.5vh;
 	height: 5.5vh;
@@ -502,7 +560,7 @@ span {
 	height: 5vh;
 }
 .rightDiv {
-	color: #294B95;
+	color: rgb(41,75,149);
 	font-size: 18px;
 	font-family: 'Roboto', sans-serif;
 	margin: 2.5vw 2.5vw 0 2.5vw;
@@ -510,7 +568,7 @@ span {
 }
 
 .rightDiv #moedas{
-	color: white;
+	color: rgb(255,255,255);
 	position: absolute;
 	top: 1.8%;
 	right: 13%;
@@ -524,7 +582,7 @@ span {
 	height: 11vh;
 }
 .wrapper_xpBar{
-	color: #294B95;
+	color: rgb(41,75,149);
 	font-family: 'Roboto', sans-serif;
 	font-size: 22px;
 
@@ -532,7 +590,7 @@ span {
 	width: 78%;
 	height: 3.5vh;
 	border-radius: 25px;
-	background-color: white;
+	background-color: rgb(255,255,255);
 	background-repeat: no-repeat;
 	margin-left: 11%;
 	transform: translateY(3vh);
@@ -611,8 +669,8 @@ span {
 }
 .modalMissaoObjetivo p{
 	font-family: 'panton',  'Pacifico', cursive;
-	color: #1a9cfd;
-	font-size: 12px;
+	color: rgb(26,156,253);
+	font-size: 2rem;
 	text-align: center;
 	margin: -10% 0 4% 0;
 }
@@ -626,8 +684,8 @@ span {
 .modalObjetivo p{
 	margin: 0 0 4% 0;
 	font-family: 'panton',  'Pacifico', cursive;
-	color: #294B95;
-	font-size: 12px;
+	color: rgb(41,75,149);
+	font-size: 1rem;
 	text-align: left;
 }
 .modalObjetivo img{
@@ -699,7 +757,7 @@ span {
     right: 0;
 	margin: 0 auto;
 	font-family: 'panton';
-	color: #294B95;
+	color: rgb(41,75,149);
 }
 #pauseModal .modalWrapper {
  	background-color: transparent;
@@ -725,8 +783,8 @@ span {
 	margin-right: 5px;
 }
 #jogoPause{
-	margin-top: 1%;
-	margin-bottom: 1%;
+	margin-top: 4%;
+	margin-right: 3%;
 	float: right;
 	width: 13%;
 }
@@ -735,7 +793,7 @@ span {
 	z-index: 10;
 }
 #despauseModal .modalWrapper span{
-	color: #294b95;
+	color: rgb(41,75,149);
 	font-size: 100px;
 	text-shadow: 2px 2px black;
 }
@@ -778,12 +836,12 @@ span {
 	font-family: 'Roboto', sans-serif;
 }
 .jogoPlacar {
-	color:white;
+	color:rgb(255,255,255);
 	display: inline-block;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100%;
-    padding: 2.5% 3% 2% 14%;
+    padding: 2.5% 4% 2% 14%;
 }
 #acertos {
 	background-image: url("../media/image/placar_acertos.png");
@@ -791,18 +849,21 @@ span {
 #erros {
 	background-image: url("../media/image/placar_erros.png");
 }
-#economia{
-	background-image: url("../media/image/placar_economico.png");
-}
-#erros, #acertos, #economia {
+#erros, #acertos{
 	font-size: 5vw;
     margin: 5% 1%;
-    font-family: "Roboto";
+	font-family: 'panton',  'Pacifico', cursive;
+	width: 22%;
+	padding-left: 12%;
+    display: inline-block;
 }
 #tempo{
-	color: #fff;
-	font-size: 27px;
-	font-family:'Roboto';
+	width: 28%;
+	display: inline-block;
+	padding-left: 11.2%;
+	color: rgb(255,255,255);
+	font-size: 5vw;
+	font-family: 'panton',  'Pacifico', cursive;
 	background-image: url("../media/image/relogio.png");
 }
 .cartaWrapper{
@@ -810,9 +871,9 @@ span {
 	left: 0px;
 	margin-top: 1px;
 	min-height: 4vh;
-	width: 100%;
+	width: 70%;
 	max-width: 414px;
-	z-index: 5;
+	z-index: 7;
 }
 .bucketCards{
 	width: 85%;
@@ -822,7 +883,7 @@ span {
 }
 .barraCartaBG{
 	position: relative;
-	width: 65%;
+	width: 68%;
 	left: -58%;/*//*/
 	background-image: url("../media/image/barra_cartas.png");
 	background-size: 100% 75%;
@@ -844,7 +905,7 @@ span {
 	position: relative;
 }
 .imgCard{
-	width: 9vw;
+	width: 8vw;
 	max-width: 41.26px;
 	padding-bottom: 134.89010989%;
 	z-index: 20;
@@ -936,7 +997,7 @@ span {
 	width: 90%;
 	height: 3.5vh;
 	border-radius: 25px;
-	background-color: white;
+	background-color: rgb(255,255,255);
 	background-repeat: no-repeat;
 	margin-left: 5%;
 	transform: translateY(3vh);
@@ -1036,13 +1097,14 @@ span {
 }
 .comboWrapper{
 	position: absolute;
-	top: 23%;
+	top: 28%;
 	width: 100%;
 	padding-bottom: 30%;
 	max-width: 414px;
 	left: 50%;
 	transform: translateX(-50%);
 	overflow: hidden;
+	z-index: 7;
 }
 #combo2x{
 	position: absolute;
@@ -1860,31 +1922,6 @@ span {
     top: 50%;
     transform: translate(325%, -340%);
 }
-.efeitoEspecial{
-    top: 50%;
-	left: 50%;
-	width: 25%;
-    display: block;
-    position: absolute;
-	transform: translate(-50%, -50%);
-}
-.giragira{
-	width: 100%;
-	transform-style: preserve-3d;
-	animation: efeitoEspecial 1s infinite linear;
-}
-@keyframes efeitoEspecial{
-	from{transform: rotateY(0deg);}
-	to{transform: rotateY(359deg);}
-}
-.efeitoEspecialImg{
-	width: 100%;
-	position: absolute;
-	transform: translateZ(0.1px);
-}
-.efeitoEspecialImg:nth-child(2){
-	transform: translateZ(-0.1px);
-}
 @media only screen and (max-width: 319px) {
 	.lojaImgWrapper, .cartaBtnWrapper{
 		width: 70%;
@@ -1962,7 +1999,7 @@ span {
 	width: 50vw;
 }
 
-.animaBotaoDica{
+.animafDica{
 	animation: animaBotaoDica .7s 1 ease-in;
 }
 
@@ -2119,14 +2156,14 @@ span {
 	margin-bottom: 0px;
 }
 
-.telaConquistaLiVinte{
+#telaConquista > .telaConquistaLiVinte{
 	height: 15%;	
-	background: #263466de !important
+	background:rgba(38,52,102,0.8) !important;
 }
 
-.telaConquistaLiZero{
+#telaConquista > .telaConquistaLiZero{
 	height: 15%;	
-	background: #445eb8a6 !important;
+	background:rgba(68,94,184, 1) !important;
 }
 
 .conquistaNaoConquistada{
@@ -2144,12 +2181,19 @@ span {
 .textMidConquista{
 	position: absolute;
 	color: #fff;
-	top: 0%;
+	top: 9%;
 	left: 22%;
 }
 
 .textMidConquista h4{
+	font-size: 100%;
 	margin-bottom: 0.13rem;
+	font-family: 'panton',  'Pacifico', cursive;
+}
+
+.textMidConquista h6{
+
+	font-family: 'panton-light';
 }
 
 .trofeuConquista{
@@ -2179,7 +2223,7 @@ span {
 	height: 10vh;
 	width: 100%;
 	margin-bottom: 1vh;
-	z-index: 1;
+	z-index: 6;
 }
 
 .achievementWrapper{
@@ -2193,10 +2237,12 @@ span {
 	max-height: 10vh;
 	background-color: #294B92;
 	overflow: hidden;
+	z-index: 10;
 }
 
 .animaAchievementWrapper{
-	animation: animaAchievementWrapper 0.7s 1 ease-in;
+	/*animation: animaAchievementWrapper 0.7s 1 ease-in;*/
+	transition: height 2s;
 }
 
 @keyframes animaAchievementWrapper{
@@ -2253,12 +2299,93 @@ span {
 /*--------------------------------------------------------------*/
 
 
+/****************************************************************/
+/* NORMAL & HARDCORE *//*inicio*/
+/****************************************************************/
 
+#cardBG{
+	position: relative;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 90%;
+	height: 70%;
+	background-image: url("../media/image/card_normal.svg");
+}
 
+#bottomStuff{
+	position: absolute;
+	width: 100%;
+	height: 20%;
+	bottom: 0;
+}
 
+.leftDivJogo{
+	float: left;
+	width: 50%;
+	height: 100%;
+}
 
+.leftDivJogo img{
+	width: 7%;
+	position: absolute;
+	left: 3%;
+	top: 50%;
+	transform: translate(0%, -50%);
+}
 
+.leftDivJogo span{
+	position: absolute;
+	left: 10%;
+	top: 40%;
+	transform: translate(0%, -50%);
+	color: rgb(81, 106, 216);
+}
 
+.rightDivJogo{
+	float: right;
+	width: 50%;
+	height: 100%;
+}
+
+.rightDivJogo span{
+	position: absolute;
+	right: 5%;
+	top: 40%;
+	transform: translate(0%, -50%);
+	color: rgb(81, 106, 216);
+}
+
+.imgCardsJogo{
+	position: absolute;
+	height: 100%;
+}
+
+#imgCarta1{
+	width: 98%;
+	
+	left: 1%;
+	top: -2%;
+	z-index: -1;
+}
+
+#imgCarta2{
+	width: 96%;
+	left: 2%;
+	top: -3%;
+	z-index: -2;
+}
+
+#imgCarta3{
+	width: 94%;
+	left: 3%;
+	top: -4%;
+	z-index: -3;
+}
+
+/*--------------------------------------------------------------*/
+/* NORMAL & HARDCORE *//*fim*/
+/*--------------------------------------------------------------*/
 
 
 

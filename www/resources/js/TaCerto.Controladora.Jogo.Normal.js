@@ -12,6 +12,9 @@ TaCerto.Controladora.Jogo.Normal = {
 
 		for (var i = 0; i < desafioNum; i++)
 			TaCerto.Controladora.Jogo.Normal.DESAFIO[i] = shuffledDesafio[i];
+
+		document.getElementById('moneyDaQuestao').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus;
+		document.getElementById('nivelDaQuestao').innerHTML = "Nível " +TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].nivel;
 		document.getElementById('palavra').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].palavra;
 		document.getElementById('significado').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].significado;
 	},
@@ -45,6 +48,8 @@ TaCerto.Controladora.Jogo.Normal = {
 				
 		if(TaCerto.Controladora.Jogo.Normal.DESAFIO.length){
 			setTimeout(function(){
+				document.getElementById('moneyDaQuestao').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus;
+				document.getElementById('nivelDaQuestao').innerHTML = "Nível " +TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].nivel;
 				document.getElementById('palavra').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].palavra;
 				document.getElementById('significado').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].significado;
 			}, TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo === "Aleatorio" ? 500 : 0);
