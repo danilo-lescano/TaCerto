@@ -3,6 +3,7 @@ TaCerto.Controladora = TaCerto.Controladora || {};
 TaCerto.Controladora.Jogo = TaCerto.Controladora.Jogo || {};
 TaCerto.Controladora.Jogo.Normal = {
 	DESAFIO: [],
+	containerPalavra: 0,
 	called: function () {
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("jogo", ["normal"], ["JogoTipo"]);
 	},
@@ -13,6 +14,7 @@ TaCerto.Controladora.Jogo.Normal = {
 		for (var i = 0; i < desafioNum; i++)
 			TaCerto.Controladora.Jogo.Normal.DESAFIO[i] = shuffledDesafio[i];
 
+		this.containerPalavra = document.getElementsByClassName('JogoPalavraDiv')[0];
 		document.getElementById('moneyDaQuestao').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus;
 		document.getElementById('nivelDaQuestao').innerHTML = "Nível " +TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].nivel;
 		document.getElementById('palavra').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].palavra;
@@ -28,6 +30,9 @@ TaCerto.Controladora.Jogo.Normal = {
 	},
 	btnResposta: function(resp){
 		var botao, flagResp;
+		
+		this.animaCard();
+		
 		if (resp) botao = document.getElementById('botao2');
 		else botao = document.getElementById('botao1');
 		botao.classList.add("animated"); botao.classList.add("bounceIn"); 
@@ -50,9 +55,17 @@ TaCerto.Controladora.Jogo.Normal = {
 			setTimeout(function(){
 				document.getElementById('moneyDaQuestao').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus;
 				document.getElementById('nivelDaQuestao').innerHTML = "Nível " +TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].nivel;
-				document.getElementById('palavra').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].palavra;
-				document.getElementById('significado').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].significado;
+				document.querySelector('#cardBG>#palavra').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].palavra;
+				document.querySelector('#cardBG>#significado').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].significado;
 			}, TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo === "Aleatorio" ? 500 : 0);
+
+			if(TaCerto.Controladora.Jogo.Normal.DESAFIO.length === 3){
+				TaCerto.Controladora.Jogo.Normal.containerPalavra.removeChild(document.getElementById('imgCarta3'));
+			}else if(TaCerto.Controladora.Jogo.Normal.DESAFIO.length === 2){
+				TaCerto.Controladora.Jogo.Normal.containerPalavra.removeChild(document.getElementById('imgCarta2'));
+			}else if(TaCerto.Controladora.Jogo.Normal.DESAFIO.length === 1){
+				TaCerto.Controladora.Jogo.Normal.containerPalavra.removeChild(document.getElementById('imgCarta1'));
+			}
 		}
 		else{
 			TaCerto.Controladora.Jogo.Geral.fimDeJogo();
@@ -60,18 +73,18 @@ TaCerto.Controladora.Jogo.Normal = {
 	},
 	pular: function(){
 		var flag = document.getElementById('palavra').classList.length;
-		document.getElementById('palavra').classList.remove("animated", "bounce");
+		//document.getElementById('palavra').classList.remove("animated", "bounce");
 		var shuffledDesafio = TaCerto.Controladora.Jogo.Normal.shuffleDesafio();
-
+		this.animaCard();
 		TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1] = shuffledDesafio[0];
-		document.getElementById('palavra').classList.add("animated", "bounce");
-		document.getElementById('palavra').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].palavra;
-		document.getElementById('significado').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].significado;
+		//document.getElementById('palavra').classList.add("animated", "bounce");
+		document.querySelector('#cardBG>#palavra').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].palavra;
+		document.querySelector('#cardBG>#significado').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].significado;
 
-		setTimeout(function(){
-			if (!flag && document.getElementById('palavra'))
-				document.getElementById('palavra').classList.remove("animated", "bounce");
-		}, 1000);
+		//setTimeout(function(){
+		//	if (!flag && document.getElementById('palavra'))
+		//		document.getElementById('palavra').classList.remove("animated", "bounce");
+		//}, 1000);
 	},
 	eliminarErrado: function(){
 		var botao;
@@ -98,5 +111,19 @@ TaCerto.Controladora.Jogo.Normal = {
 	},
 	zerarVars: function(){
 		TaCerto.Controladora.Jogo.Normal.DESAFIO = [];
+	},
+	animaCard: function(){
+		
+		var filho = document.getElementById('cardBG');
+		var oClone = filho.cloneNode(true);
+		filho.id = "";
+		filho.classList.add("rollOut");
+
+		if(!(TaCerto.Controladora.Jogo.Normal.DESAFIO.length-1 === 0))
+			this.containerPalavra.insertBefore(oClone,this.containerPalavra.firstChild);
+
+		setTimeout(()=>{
+			this.containerPalavra.removeChild(filho);
+		},250)
 	}
 };

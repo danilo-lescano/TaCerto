@@ -2303,8 +2303,8 @@ span {
 /* NORMAL & HARDCORE *//*inicio*/
 /****************************************************************/
 
-#cardBG{
-	position: relative;
+.cardBG{
+	position: absolute;
 	top: 55%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -2358,28 +2358,26 @@ span {
 
 .imgCardsJogo{
 	position: absolute;
-	height: 100%;
+	width: 90%;
+	height: 70%;
+	transform: translate(-50%, -50%);
 }
 
 #imgCarta1{
-	width: 98%;
-	
-	left: 1%;
-	top: -2%;
+	top: 56%;
+	left: 49%;
 	z-index: -1;
 }
 
 #imgCarta2{
-	width: 96%;
-	left: 2%;
-	top: -3%;
+	top: 57%;
+	left: 48%;
 	z-index: -2;
 }
 
 #imgCarta3{
-	width: 94%;
-	left: 3%;
-	top: -4%;
+	top: 58%;
+	left: 47%;
 	z-index: -3;
 }
 
