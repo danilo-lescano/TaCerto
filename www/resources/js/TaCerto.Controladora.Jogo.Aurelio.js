@@ -22,7 +22,7 @@ TaCerto.Controladora.Jogo.Aurelio = {
 		if(this.DESAFIO.length === 0){
 			this.zerarVars();
 			TaCerto.Controladora.Jogo.Geral.fimDeJogo();
-			return; document.getElementById
+			return;
 		}
 
 
@@ -34,17 +34,28 @@ TaCerto.Controladora.Jogo.Aurelio = {
 
 
 
+		var desafio = this.DESAFIO[this.DESAFIO.length - 1];
+		console.log(desafio);
+		console.log(desafio.conteudoResposta);
+		var deleteOldAurTWordItem = (()=>{
+			var aurTWordItem = document.getElementsByClassName("aurTWordItem");
+			for (let i = 0; i < aurTWordItem.length; i++)
+				aurTWordItem[i].parentNode.removeChild(aurTWordItem[i]);
+		})();
 
-
-
-
-
-
-		var aux = document.getElementsByClassName("aurWord");
 		var aurWords = [];
 		var aurWordsNovaOrdem = [];
-		for (let i = 0; i < aux.length; i++)
-			aurWords[i] = aux[i];
+		var aurBotWordWrap = document.getElementById("aurBotWordWrap");
+		aurBotWordWrap.innerHTML = "";
+		for (let i = 0; i < desafio.conteudoResposta.length; i++) {
+			let aurWord = document.createElement("div");
+			aurWord.innerHTML = desafio.conteudoResposta[i].palavra;
+			aurWord.dataset.index = desafio.conteudoResposta[i].index;
+			aurWord.classList.add("aurWord");
+			aurBotWordWrap.appendChild(aurWord);
+			aurWords[i] = aurWord;
+		}
+
 		var minWidth = document.getElementById("aurBotWordWrap").getBoundingClientRect().width/15;
 
 		for (let i = 0; i < aurWords.length; i++) {
@@ -52,7 +63,8 @@ TaCerto.Controladora.Jogo.Aurelio = {
 			aurWords[i].style.width = minWidth * Math.ceil(widthSize/minWidth) + "px";
 			aurWords[i].calcWidth = Math.ceil(widthSize/minWidth);
 		}
-		aurWords.sort().reverse();
+		aurWords.sort().reverse().sort().reverse();
+
 		//aurWords.shuffle();
 		while(aurWords.length > 0){
 			let linha = [];
@@ -71,20 +83,23 @@ TaCerto.Controladora.Jogo.Aurelio = {
 			}
 			aurWordsNovaOrdem[aurWordsNovaOrdem.length] = linha;
 		}
-		console.log("size " + aurWordsNovaOrdem.length);
-		for (let i = 0; i < aurWordsNovaOrdem.length; i++) {
-			console.log(aurWordsNovaOrdem[i].calcWidth());
-			console.log(aurWordsNovaOrdem[i]);
-		}
-		
+
+		document.getElementById("aurPhraseWrap").innerHTML = desafio.fraseParaCorrecao;
 		var aurBotWordWrap = document.getElementById("aurBotWordWrap");
 		aurBotWordWrap.innerHTML = "";
+		var vish = 0;
 		for (let i = 0; i < aurWordsNovaOrdem.length; i++) {
 			for (let j = 0; j < aurWordsNovaOrdem[i].length; j++) {
 				aurBotWordWrap.appendChild(aurWordsNovaOrdem[i][j]);
+				vish++;
 			}
 		}
-		
+
+		console.log("linhas " + aurWordsNovaOrdem.length);
+		console.log("vish " + vish);
+		for (let i = 0; i < aurWordsNovaOrdem.length; i++) {
+			console.log(aurWordsNovaOrdem[i].calcWidth());
+		}
 	},
 	__rearrengeFontSize: function(aurWord, maxWidth){
 		let widthSize = aurWord.getBoundingClientRect().width;
