@@ -52,6 +52,9 @@ TaCerto.Controladora.Jogo.Aurelio = {
 			aurWord.innerHTML = desafio.conteudoResposta[i].palavra;
 			aurWord.dataset.index = desafio.conteudoResposta[i].index;
 			aurWord.classList.add("aurWord");
+			aurWord.onclick = function(){
+				TaCerto.GenFunc.fadeInBtnClick(this, ()=>TaCerto.Controladora.Jogo.Aurelio.aurWordClick(this));
+			};
 			aurBotWordWrap.appendChild(aurWord);
 			aurWords[i] = aurWord;
 		}
@@ -63,9 +66,8 @@ TaCerto.Controladora.Jogo.Aurelio = {
 			aurWords[i].style.width = minWidth * Math.ceil(widthSize/minWidth) + "px";
 			aurWords[i].calcWidth = Math.ceil(widthSize/minWidth);
 		}
-		aurWords.sort().reverse().sort().reverse();
-
-		//aurWords.shuffle();
+		//aurWords.sort().reverse().sort().reverse();
+		aurWords.shuffle();
 		while(aurWords.length > 0){
 			let linha = [];
 			linha.calcWidth = function(){
@@ -110,7 +112,22 @@ TaCerto.Controladora.Jogo.Aurelio = {
 			widthSize = aurWord.getBoundingClientRect().width;
 		}
 	},
-	btnResposta: function(el){
+	aurWordClick: function(el){
+		var wordItem = document.createElement("div");
+		wordItem.classList.add("aurTWordItem");
+		var wordCardWrapper = document.getElementById("aurTopContentWrap");
+		var verticalBar = document.getElementById("aurTWrintingBar");
+		wordCardWrapper.insertBefore(wordItem, verticalBar)
+
+		var resolveWordItemAnimation = function(index){
+			requestAnimationFrame(()=>{
+				wordItem.innerHTML += el.innerHTML[index++];
+				if(index < el.innerHTML.length)
+					resolveWordItemAnimation(index);
+			});
+		};
+		resolveWordItemAnimation(0);
+
 		//TaCerto.Controladora.Jogo.Geral.atualizarResposta(true);
 		//this.proximaPergunta();
 	},
