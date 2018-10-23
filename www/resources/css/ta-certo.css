@@ -2447,6 +2447,7 @@ span {
 .aurPhraseWrap{
 	position: relative;
 	height: 15%;
+	font: calc(12px + 2vw);
 	width: 90%;
 	margin: 0 auto;
 }
@@ -2556,11 +2557,48 @@ span {
 }
 
 
-.aurCoinWrap{
+.aurCoinBtnWrap{
 	position: relative;
 	height: 20%;
 	width: 90%;
 	margin: 0 auto;
+}
+.aurBtnWrapper{
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	right: 2%;
+}
+.aurBtnImgWrapper{
+	position: absolute;
+	display: inline-block;
+	height: 100%;
+}
+.aurBtnImgWrapper:nth-child(odd){/*deprecate*/
+	width: 63%;
+	left: 0;
+}
+.aurBtnImgWrapper:nth-child(even){/*deprecate*/
+	width: 37%;
+	right: 0;
+}
+.aurSendBtnImg, .aurEraseBtnImg{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+.aurSendBtnImg{
+	width: 90%;
+	transform: translate(-50%, -50%);
+}
+.aurEraseBtnImg{
+	width: 90%;
+	transform: rotate(180deg) translate(50%, 50%);
+}
+.spanAurPont{
+	position: relative;
+	display: inline-block;
+	color: red;
 }
 /*--------------------------------------------------------------*/
 /*aurelio*//*fim*/

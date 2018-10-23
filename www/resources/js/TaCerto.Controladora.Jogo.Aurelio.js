@@ -24,19 +24,24 @@ TaCerto.Controladora.Jogo.Aurelio = {
 			TaCerto.Controladora.Jogo.Geral.fimDeJogo();
 			return;
 		}
-
-
-
-
-
-
-
-
-
+		function createAurWord(word){
+			let wordDiv = document.createElement("div");
+			wordDiv.innerHTML = word.palavra;
+			if(!isNaN(word.index))
+				wordDiv.dataset.index = word.index;
+			if(word.apendice)
+				wordDiv.dataset.apendice = word.apendice;
+			wordDiv.classList.add("aurWord");
+			return wordDiv;
+		}
+		function serAurWordSize(wordDiv){
+			var minWidth = document.getElementById("aurBotWordWrap").getBoundingClientRect().width/15;
+			var widthSize = wordDiv.getBoundingClientRect().width;
+			wordDiv.style.width = minWidth * Math.ceil(widthSize/minWidth) + "px";
+			wordDiv.calcWidth = Math.ceil(widthSize/minWidth);
+		}
 
 		var desafio = this.DESAFIO[this.DESAFIO.length - 1];
-		console.log(desafio);
-		console.log(desafio.conteudoResposta);
 		var deleteOldAurTWordItem = (()=>{
 			var aurTWordItem = document.getElementsByClassName("aurTWordItem");
 			for (let i = 0; i < aurTWordItem.length; i++)
@@ -47,27 +52,38 @@ TaCerto.Controladora.Jogo.Aurelio = {
 		var aurWordsNovaOrdem = [];
 		var aurBotWordWrap = document.getElementById("aurBotWordWrap");
 		aurBotWordWrap.innerHTML = "";
+		var aurTopContentWrap = document.getElementById("aurTopContentWrap");
+		aurTopContentWrap.innerHTML = "";
+
 		for (let i = 0; i < desafio.conteudoResposta.length; i++) {
-			let aurWord = document.createElement("div");
-			aurWord.innerHTML = desafio.conteudoResposta[i].palavra;
-			aurWord.dataset.index = desafio.conteudoResposta[i].index;
-			aurWord.classList.add("aurWord");
+			let aurWord = createAurWord(desafio.conteudoResposta[i]);
+			aurWord.id = i + "aurWordBot";
 			aurWord.onclick = function(){
-				TaCerto.GenFunc.fadeInBtnClick(this, ()=>TaCerto.Controladora.Jogo.Aurelio.aurWordClick(this));
+				TaCerto.GenFunc.fadeInBtnClick(this, ()=>{});
+				TaCerto.Controladora.Jogo.Aurelio.aurWordClick(this);
 			};
 			aurBotWordWrap.appendChild(aurWord);
+			serAurWordSize(aurWord);
+
 			aurWords[i] = aurWord;
 		}
-
-		var minWidth = document.getElementById("aurBotWordWrap").getBoundingClientRect().width/15;
-
-		for (let i = 0; i < aurWords.length; i++) {
-			let widthSize = aurWords[i].getBoundingClientRect().width;
-			aurWords[i].style.width = minWidth * Math.ceil(widthSize/minWidth) + "px";
-			aurWords[i].calcWidth = Math.ceil(widthSize/minWidth);
-		}
+		var pontuacao = (()=>{
+			var array = [];
+			var pontos = [{palavra: "?"}, {palavra: "."}, {palavra: ","}];
+			for (let i = 0; i < pontos.length; i++) {
+				array[i] = createAurWord(pontos[i]);
+				array[i].onclick = function(){
+					TaCerto.GenFunc.fadeInBtnClick(this, ()=>{});
+					TaCerto.Controladora.Jogo.Aurelio.aurPunctClick(this);
+				};
+				aurBotWordWrap.appendChild(array[i]);
+				serAurWordSize(array[i]);
+			}
+			return array;
+		})();
 		//aurWords.sort().reverse().sort().reverse();
 		aurWords.shuffle();
+		aurWords = pontuacao.concat(aurWords);
 		while(aurWords.length > 0){
 			let linha = [];
 			linha.calcWidth = function(){
@@ -97,11 +113,10 @@ TaCerto.Controladora.Jogo.Aurelio = {
 			}
 		}
 
-		console.log("linhas " + aurWordsNovaOrdem.length);
-		console.log("vish " + vish);
-		for (let i = 0; i < aurWordsNovaOrdem.length; i++) {
-			console.log(aurWordsNovaOrdem[i].calcWidth());
-		}
+		//console.log("linhas " + aurWordsNovaOrdem.length);
+		//console.log("vish " + vish);
+		//for (let i = 0; i < aurWordsNovaOrdem.length; i++)
+		//	console.log(aurWordsNovaOrdem[i].calcWidth());
 	},
 	__rearrengeFontSize: function(aurWord, maxWidth){
 		let widthSize = aurWord.getBoundingClientRect().width;
@@ -115,21 +130,102 @@ TaCerto.Controladora.Jogo.Aurelio = {
 	aurWordClick: function(el){
 		var wordItem = document.createElement("div");
 		wordItem.classList.add("aurTWordItem");
-		var wordCardWrapper = document.getElementById("aurTopContentWrap");
+		wordItem.dataset.idBot = el.id;
+		wordItem.dataset.index = el.dataset.index;
+		wordItem.dataset.apendice = el.dataset.apendice;
 		var verticalBar = document.getElementById("aurTWrintingBar");
-		wordCardWrapper.insertBefore(wordItem, verticalBar)
+		var wordCardWrapper = document.getElementById("aurTopContentWrap");
+		wordCardWrapper.insertBefore(wordItem, verticalBar);
 
-		var resolveWordItemAnimation = function(index){
-			requestAnimationFrame(()=>{
-				wordItem.innerHTML += el.innerHTML[index++];
-				if(index < el.innerHTML.length)
-					resolveWordItemAnimation(index);
-			});
-		};
-		resolveWordItemAnimation(0);
+		el.onclick = undefined;
+		el.style.filter = "grayscale(100%)";
 
-		//TaCerto.Controladora.Jogo.Geral.atualizarResposta(true);
-		//this.proximaPergunta();
+		var resolveWordItemAnimation = (async ()=>{
+			for (let i = 0; i < el.innerHTML.length; i++) {
+				wordItem.innerHTML += el.innerHTML[i];
+				await promiseRequestAnimationFrame();
+			}
+		})();
+
+	},
+	aurPunctClick: function(el){
+		var topWords = document.getElementsByClassName("aurTWordItem");
+		if(!topWords.length) return;
+		var lastTopWord = topWords[topWords.length - 1];
+		if(lastTopWord.dataset.addApendice !== undefined && lastTopWord.dataset.addApendice !== "f")
+			lastTopWord.innerHTML = lastTopWord.innerHTML.substring(0, lastTopWord.innerHTML.length-1);
+		lastTopWord.innerHTML += el.innerHTML;
+		lastTopWord.dataset.addApendice = el.innerHTML;
+	},
+	aurSendClick: function(el){
+		//TaCerto.GenFunc.fadeInBtnClick(el, ()=>{});
+
+		var flagResposta = true;
+		var topWords = document.getElementsByClassName("aurTWordItem");
+		if(this.DESAFIO[this.DESAFIO.length-1].totalSize !== topWords.length)
+			flagResposta = false;
+		for (let i = 0; i < topWords.length; i++) {
+			if(parseInt(topWords[i].dataset.index) !== i){
+				flagResposta = false;
+				topWords[i].style.color = "red";
+			}
+			else if(topWords[i].dataset.addApendice !== topWords[i].dataset.apendice && (topWords[i].dataset.addApendice !== "f" || topWords[i].dataset.apendice !== undefined)){
+				flagResposta = false;
+				var spanAurPont = document.createElement("div");
+				spanAurPont.classList.add("spanAurPont");
+				spanAurPont.innerHTML = topWords[i].dataset.apendice ? topWords[i].dataset.apendice : "";
+				topWords[i].appendChild(spanAurPont);
+				if(topWords[i].dataset.addApendice !== undefined && topWords[i].dataset.addApendice !== "f"){
+					topWords[i].innerHTML = topWords[i].innerHTML.substring(0, topWords[i].innerHTML.length-1);
+					spanAurPont.innerHTML = topWords[i].dataset.addApendice;
+				}
+				topWords[i].style.color = "green";
+			}
+			else{
+				topWords[i].style.color = "green";
+			}
+		}
+
+		TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResposta);
+		setTimeout(()=>{
+			this.proximaPergunta();
+		},900000);
+	},
+	aurEraseClick: function(el){
+		//TaCerto.GenFunc.fadeInBtnClick(el, ()=>{});
+
+		var topWords = document.getElementsByClassName("aurTWordItem");
+		if(!topWords.length) return;
+		var lastTopWord = topWords[topWords.length - 1];
+
+		var hasPunctuation = (()=>{
+			var flag = false;
+			if(lastTopWord.dataset.addApendice !== undefined && lastTopWord.dataset.addApendice !== "f"){
+				flag = true;
+				lastTopWord.dataset.addApendice = "f";
+				lastTopWord.innerHTML = lastTopWord.innerHTML.substring(0, lastTopWord.innerHTML.length-1);
+			}
+			return flag;
+		})();
+		if(hasPunctuation) return;
+
+		var resolveRestoreBotClick = (()=>{
+			var botWord = document.getElementById(lastTopWord.dataset.idBot);
+			botWord.style.filter = "grayscale(0%)";
+			botWord.onclick = function(){
+				TaCerto.GenFunc.fadeInBtnClick(this, ()=>{});
+				TaCerto.Controladora.Jogo.Aurelio.aurWordClick(this);
+			};
+		})();
+
+		var resolveWordItemAnimation = (async ()=>{
+			var textHtml = lastTopWord.innerHTML;
+			for (let i = textHtml.length - 1; i >= 0; i--) {
+				lastTopWord.innerHTML = textHtml.substring(0, i);
+				await promiseRequestAnimationFrame();
+			}
+			lastTopWord.parentElement.removeChild(lastTopWord);
+		})();
 	},
 	pular: function(){
 		this.DESAFIO[this.DESAFIO.length] = this.shuffleDesafio()[0];

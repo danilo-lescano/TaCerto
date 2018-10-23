@@ -943,7 +943,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 			conteudoResposta: [
 				{index: 0, palavra: "esta"},
 				{index: 1, palavra: "calor"},
-				{index: 2, palavra: "demais"},
+				{index: 2, palavra: "demais", apendice: "."},
 				{index: -1, palavra: "este"},
 				{index: -1, palavra: "de"},
 				{index: -1, palavra: "quente"},
@@ -951,10 +951,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{index: -1, palavra: "dimais"},
 				{index: -1, palavra: "muito"},
 			],
-			auxResp: {
-				interrocacao: false,
-				virgula: -1 //index da virgula aqui se tiver
-			},
+			totalSize: 3,
 			nivel: 0
 		},
 		{
@@ -963,17 +960,14 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{index: 0, palavra: "hoje"},
 				{index: 1, palavra: "é"},
 				{index: 2, palavra: "meu"},
-				{index: 3, palavra: "aniversário"},
+				{index: 3, palavra: "aniversário", apendice: "."},
 				{index: -1, palavra: "amanhã"},
 				{index: -1, palavra: "hôje"},
 				{index: -1, palavra: "anivérsario"},
 				{index: -1, palavra: "minha"},
 				{index: -1, palavra: "eh"},
 			],
-			auxResp: {
-				interrocacao: false,
-				virgula: -1
-			},
+			totalSize: 4,
 			nivel: 0
 		},
 		{
@@ -981,7 +975,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 			conteudoResposta: [
 				{index: 0, palavra: "já"},
 				{index: 1, palavra: "cheguei"},
-				{index: 2, palavra: "aqui"},
+				{index: 2, palavra: "aqui", apendice: "."},
 				{index: -3, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
@@ -989,17 +983,14 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 			],
-			auxResp: {
-				interrocacao: false,
-				virgula: -1
-			},
+			totalSize: 3,
 			nivel: 0
 		},
 		{
 			fraseParaCorrecao: "kd v6?",
 			conteudoResposta: [
 				{index: 0, palavra: "Cade"},
-				{index: 1, palavra: "vocês"},
+				{index: 1, palavra: "vocês", apendice: "?"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
@@ -1008,29 +999,23 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 			],
-			auxResp: {
-				interrocacao: true,
-				virgula: -1
-			},
+			totalSize: 2,
 			nivel: 0
 		},
 		{
 			fraseParaCorrecao: "olar td bm?",
 			conteudoResposta: [
-				{index: 0, palavra: "Olá"},
-				{index: 2, palavra: "tudo"},
-				{index: 3, palavra: "bom"},
-				{index: 3, palavra: "bem"},
+				{index: 0, palavra: "Olá", apendice: ","},
+				{index: 1, palavra: "tudo"},
+				{index: 2, palavra: "bom", apendice: "?"},
+				{index: 2, palavra: "bem", apendice: "?"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 			],
-			auxResp: {
-				interrocacao: false,
-				virgula: 1
-			},
+			totalSize: 3,
 			nivel: 0
 		},
 		{
@@ -1041,15 +1026,12 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{index: 2, palavra: "vem"},
 				{index: 3, palavra: "pra"},
 				{index: 3, palavra: "para"},
-				{index: 4, palavra: "cá"},
+				{index: 4, palavra: "cá", apendice: "?"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 			],
-			auxResp: {
-				interrocacao: true,
-				virgula: -1
-			},
+			totalSize: 5,
 			nivel: 0
 		},
 		{
@@ -1059,16 +1041,13 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{index: 1, palavra: "adiciona"},
 				{index: 2, palavra: "no"},
 				{index: 3, palavra: "facebook"},
-				{index: 4, palavra: "ai"},
+				{index: 4, palavra: "ai", apendice: "."},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 			],
-			auxResp: {
-				interrocacao: false,
-				virgula: -1
-			},
+			totalSize: 5,
 			nivel: 0
 		},
 		{
@@ -1077,17 +1056,14 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{index: 0, palavra: "E"},
 				{index: 1, palavra: "aí"},
 				{index: 2, palavra: "tudo"},
-				{index: 3, palavra: "beleza"},
+				{index: 3, palavra: "beleza", apendice: "?"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 			],
-			auxResp: {
-				interrocacao: true,
-				virgula: -1
-			},
+			totalSize: 4,
 			nivel: 0
 		},
 		{
@@ -1096,17 +1072,14 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{index: 0, palavra: "Por"},
 				{index: 1, palavra: "que"},
 				{index: 2, palavra: "usar"},
-				{index: 3, palavra: "porquê"},
+				{index: 3, palavra: "porquê", apendice: "?"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 			],
-			auxResp: {
-				interrocacao: true,
-				virgula: -1
-			},
+			totalSize: 4,
 			nivel: 0
 		},
 		{
@@ -1117,15 +1090,12 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{index: 2, palavra: "é"},
 				{index: 3, palavra: "só"},
 				{index: 4, palavra: "pedir"},
-				{index: 5, palavra: "mais"},
+				{index: 5, palavra: "mais", apendice: "."},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 			],
-			auxResp: {
-				interrocacao: false,
-				virgula: -1
-			},
+			totalSize: 6,
 			nivel: 0
 		},
 		{
@@ -1137,14 +1107,11 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{index: 3, palavra: "no"},
 				{index: 4, palavra: "fim"},
 				{index: 5, palavra: "de"},
-				{index: 6, palavra: "semana"},
+				{index: 6, palavra: "semana", apendice: "."},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 			],
-			auxResp: {
-				interrocacao: false,
-				virgula: -1
-			},
+			totalSize: 7,
 			nivel: 0
 		},
 		{
@@ -1154,16 +1121,13 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{index: 1, palavra: "das"},
 				{index: 2, palavra: "aulas"},
 				{index: 3, palavra: "."},
-				{index: 4, palavra: "Brincadeira"},
+				{index: 4, palavra: "Brincadeira", apendice: "."},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 			],
-			auxResp: {
-				interrocacao: false,
-				virgula: -1
-			},
+			totalSize: 5,
 			nivel: 0
 		},
 		{
@@ -1172,17 +1136,14 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{index: 0, palavra: "É"},
 				{index: 1, palavra: "verdade"},
 				{index: 2, palavra: "esse"},
-				{index: 3, palavra: "bilhete"},
+				{index: 3, palavra: "bilhete", apendice: "."},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 			],
-			auxResp: {
-				interrocacao: false,
-				virgula: -1
-			},
+			totalSize: 4,
 			nivel: 0
 		},
 		{
@@ -1191,17 +1152,14 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{index: 0, palavra: "Estou"},
 				{index: 1, palavra: "indo"},
 				{index: 2, palavra: "nessa"},
-				{index: 3, palavra: "Falou"},
+				{index: 3, palavra: "Falou", apendice: "."},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 			],
-			auxResp: {
-				interrocacao: false,
-				virgula: -1
-			},
+			totalSize: 4,
 			nivel: 0
 		},
 		{
@@ -1210,17 +1168,14 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{index: 0, palavra: "Você"},
 				{index: 1, palavra: "é"},
 				{index: 2, palavra: "firmeza"},
-				{index: 3, palavra: "mesmo"},
+				{index: 3, palavra: "mesmo", apendice: "."},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 			],
-			auxResp: {
-				interrocacao: false,
-				virgula: -1
-			},
+			totalSize: 4,
 			nivel: 0
 		},
 		{
@@ -1231,15 +1186,12 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{index: 2, palavra: "vir"},
 				{index: 3, palavra: "aqui"},
 				{index: 4, palavra: "por"},
-				{index: 5, palavra: "favor"},
+				{index: 5, palavra: "favor", apendice: "?"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 			],
-			auxResp: {
-				interrocacao: true,
-				virgula: -1
-			},
+			totalSize: 6,
 			nivel: 0
 		},
 		{
@@ -1247,7 +1199,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 			conteudoResposta: [
 				{index: 0, palavra: "Valeu"},
 				{index: 1, palavra: "pelo"},
-				{index: 2, palavra: "presente"},
+				{index: 2, palavra: "presente", apendice: "."},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
@@ -1255,10 +1207,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 			],
-			auxResp: {
-				interrocacao: false,
-				virgula: -1
-			},
+			totalSize: 3,
 			nivel: 0
 		},
 		{
@@ -1269,15 +1218,12 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{index: 2, palavra: "numéro"},
 				{index: 3, palavra: "do"},
 				{index: 4, palavra: "seu"},
-				{index: 5, palavra: "celular"},
+				{index: 5, palavra: "celular", apendice: "?"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 			],
-			auxResp: {
-				interrocacao: true,
-				virgula: -1
-			},
+			totalSize: 6,
 			nivel: 0
 		},
 		{
@@ -1286,17 +1232,14 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{index: 0, palavra: "Valeu"},
 				{index: 1, palavra: "pelo"},
 				{index: 2, palavra: "presente"},
-				{index: 3, palavra: "palavra"},
+				{index: 3, palavra: "palavra", apendice: "."},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 			],
-			auxResp: {
-				interrocacao: false,
-				virgula: -1
-			},
+			totalSize: 4,
 			nivel: 0
 		},
 	]
