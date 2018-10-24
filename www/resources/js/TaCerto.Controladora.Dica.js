@@ -9,22 +9,21 @@ TaCerto.Controladora.Dica = {
 		
 		this.checaVazio();
 
-		var telaDica = document.getElementById("dicaScreen");
-		var dicaBotao = document.getElementById("dicaBotao");
+		
+		var telaDica = document.getElementById("dica");
 		
 		this.gameModel.openned = !this.gameModel.openned;
 		
 		if(this.gameModel.openned){
-            setTimeout(function(){
-				telaDica.style.height = 90 + "vh";
-				dicaBotao.style.height = 96 + "vh";
-			}, 10);  
+            requestAnimationFrame(()=> {
+				telaDica.style.height = "calc(11vw + 90vh)";
+			});  
 
         }else{			
-			setTimeout(function(){
-				telaDica.style.height = 0 + "vh";
-				dicaBotao.style.height = 6 + "vh";
-			}, 10);	
+			requestAnimationFrame(()=> {
+				telaDica.style.height = "11vw";
+
+			});  
         }
 		
 	},

@@ -12,7 +12,7 @@ TaCerto.Controladora.Jogo.HardCore = {
 		this.zerarVars();
 
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("jogo", ["hardcore"], ["JogoTipo"]);
-		//document.getElementsByClassName("second")[0].style.animation = "timeRev 60s infinite linear";
+		
 		var alturaDaParede = document.getElementById("parede");
 		var intervaloParede = setInterval(
 			function(){
@@ -110,10 +110,6 @@ TaCerto.Controladora.Jogo.HardCore = {
 		document.querySelector('#cardBG>#palavra').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].palavra;
 		document.querySelector('#cardBG>#significado').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].significado;
 
-		//setTimeout(function(){
-		//	if (!flag && document.getElementById('palavra'))
-		//		document.getElementById('palavra').classList.remove("animated", "bounce");
-		//}, 1000);
 	},
 	eliminarErrado: function(){
 		var botao;
@@ -156,5 +152,4 @@ TaCerto.Controladora.Jogo.HardCore = {
 			this.containerPalavra.removeChild(filho);
 		},250) 
 	}
-	
 };

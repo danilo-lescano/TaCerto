@@ -556,8 +556,8 @@ span {
 }
 .rightDiv img{
 	vertical-align: text-bottom;
-	width: 5vh;
-	height: 5vh;
+	width: 5vh !important;
+	height: 5vh !important;
 }
 .rightDiv {
 	color: rgb(41,75,149);
@@ -570,8 +570,8 @@ span {
 .rightDiv #moedas{
 	color: rgb(255,255,255);
 	position: absolute;
-	top: 1.8%;
-	right: 13%;
+	top: .5vh;
+	right: 11vw;
 }
 
 .leftDiv {
@@ -592,8 +592,9 @@ span {
 	border-radius: 25px;
 	background-color: rgb(255,255,255);
 	background-repeat: no-repeat;
-	margin-left: 11%;
-	transform: translateY(3vh);
+	left: 50%;
+	transform: translate(-50%, 3vh);
+
 }	
 .back_xpBar{
 	position: absolute; 
@@ -1979,24 +1980,26 @@ span {
 /*--------------------------------------------------------------*/
 
 #dica{
+	position: fixed;
+	overflow: hidden;
 	width:100vw;
+	height: calc(11vw);
+	transition: height .5s ease; 
+	bottom: 0;
+
 }
 
 #dicaBotao{
 
 	position: absolute;
-	overflow: hidden;
-	height: 6vh;
-	bottom: 0vh;
+	width: 50%;
 	left: 50%;
 	transform: translate(-50%);
-	transition: height .5s ease; 
-	z-index: 0;
-	/*display: none;*/
 }
 
 #dicaBotao img{
-	width: 50vw;
+	width: 100%;
+	display: block;
 }
 
 .animafDica{
@@ -2014,18 +2017,13 @@ span {
 
 #dicaScreen{
 	position: absolute;
+	top: 11vw;
 	width: 100%;
 	background: #000;
 	opacity: .8;
-	bottom: 0vh;
 	overflow: hidden;
-	height: 0vh;
-	max-height: 90vh;
+	height: 90vh;
 	overflow: auto;
-	transition: height .5s ease;
-	/*display: none;*/
-
-	/* height máximo = 72vh;*/
 }
 
 #telaDica{
@@ -2070,11 +2068,14 @@ span {
 /*--------------------------------------------------------------*/
 
 .menuConquista_wrapper{
+	position: fixed;
+	width: 100vw;
 	height: 30vh;
 }
 
 .menuConquista_homeBar{
-	text-align: left;
+	width: 100%;
+	height: 10vh;
 }
 .menuConquista_homeBar img{
 	margin: 1.5vw 0 0 1.5vw;
@@ -2084,7 +2085,7 @@ span {
 
 .menuConquista_xpBar{
 	width: 100%;
-	height: 17vh;
+	height: 20vh;
 }
 
 .menuConquista_xpBar .wrapper_xpBar{
@@ -2097,15 +2098,14 @@ span {
 
 	position: relative;
 	width: 64%;
-	height: 5vh;
 }	
 
 .wrapper_nivel_text span{
 
-	font-size: 2rem;
+	font-size: calc(7px + 1rem);
 	background: -webkit-linear-gradient(#ffee58, #fbc02d);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
 }
 
 #nivelImage{
@@ -2125,12 +2125,16 @@ span {
 
 	position: relative;
 	width: 100%;
-	height: 8.5vh;
-	top: 30%;
+	height: 10vh;
+	top: 38%;
+	transform: translateY(-50%);
+	bottom: 0;
+	font-size: calc(7px + .7rem);
 }
 
 .wrapper_conquista_text span{
 	color: white;
+	top: 50%;
 }
 
 .menuConquista_titulo{
@@ -2141,12 +2145,11 @@ span {
 }
 
 #conquistaScreen{
-	position: absolute;
+	position: fixed;
 	overflow: auto;
-	margin-bottom: 5vh;
 	height: 70vh;
 	width: 100vw;
-	margin-bottom: 0px;
+	bottom: 0;
 }
 
 #telaConquista{
