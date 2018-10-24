@@ -7,7 +7,7 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 		"Normal",
 		"Lacuna",
 		"Explorador",
-		//"Aurelio",
+		"Aurelio",
 	],
 	indexTipoDeJogo: -1,
 	respostasTotais: 0,
@@ -56,7 +56,7 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 			if(oldIndex === 0) return 450;//Normal
 			else if(oldIndex === 1) return 950;//Lacuna
 			else if(oldIndex === 2) return 850;//Explorador
-			else if(oldIndex === 3) return 500;//Aurelio
+			else if(oldIndex === 3) return 850;//Aurelio
 			else return 0;
 		})();
 
@@ -75,16 +75,15 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 			}, waitingTime);
 		})();
 
-		setTimeout(function(){
+		setTimeout(async ()=>{
 			var oldF = document.getElementById(oldIdFase);
 			if(oldF) oldF.style.transform = "rotateX(90deg)";
 			var newF = document.getElementById(newIdFase);
 			if(newF){
 				newF.style.display = "none";
 				newF.style.transform = "rotateX(0deg)";
-				setTimeout(function(){
-					newF.style.display = "block";
-				},10);
+				await promiseRequestAnimationFrame();
+				newF.style.display = "block";
 			} 
 		}, waitingTime);
 	},

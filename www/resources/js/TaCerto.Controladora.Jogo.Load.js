@@ -40,5 +40,8 @@ TaCerto.Controladora.Jogo.Load = function(tipo, nivelMissao){
 	var tictac = TaCerto.SOUND.find("clock");
 
 	TaCerto.Controladora.CarregarPagina.htmlCorpo("loading");
+	if(TaCerto.Controladora.Jogo[tipo].loadingMessage)
+		document.getElementById("countdownText").innerHTML = TaCerto.Controladora.Jogo[tipo].loadingMessage;
+
 	tictac.oncanplaythrough = startCountDown(false, 0);
 };
