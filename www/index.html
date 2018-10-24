@@ -201,8 +201,9 @@
 		return false;
 	}
 
-const promiseRequestAnimationFrame = () =>
-	new Promise((resolve) => window.requestAnimationFrame(resolve));
+	const promiseRequestAnimationFrame = () =>{
+		return new Promise((resolve) => window.requestAnimationFrame(resolve));
+	}
 
 	function Timer(callback, delay){
 		function Timer(callback, delay) {

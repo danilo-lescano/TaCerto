@@ -29,7 +29,7 @@ TaCerto.Controladora.Jogo.Aurelio = {
 			wordDiv.innerHTML = word.palavra;
 			if(!isNaN(word.index))
 				wordDiv.dataset.index = word.index;
-			if(word.apendice)
+			if(word.apendice !== undefined)
 				wordDiv.dataset.apendice = word.apendice;
 			wordDiv.classList.add("aurWord");
 			return wordDiv;
@@ -146,7 +146,6 @@ TaCerto.Controladora.Jogo.Aurelio = {
 				await promiseRequestAnimationFrame();
 			}
 		})();
-
 	},
 	aurPunctClick: function(el){
 		var topWords = document.getElementsByClassName("aurTWordItem");
@@ -165,21 +164,33 @@ TaCerto.Controladora.Jogo.Aurelio = {
 		if(this.DESAFIO[this.DESAFIO.length-1].totalSize !== topWords.length)
 			flagResposta = false;
 		for (let i = 0; i < topWords.length; i++) {
+			var addApendice = topWords[i].dataset.addApendice;
+			if(!addApendice || addApendice === undefined || addApendice === "undefined")
+				addApendice = "f";
+			var apendice = topWords[i].dataset.apendice;
+			if(!apendice || apendice === undefined || apendice === "undefined")
+				apendice = "f";
+
 			if(parseInt(topWords[i].dataset.index) !== i){
 				flagResposta = false;
 				topWords[i].style.color = "red";
 			}
-			else if(topWords[i].dataset.addApendice !== topWords[i].dataset.apendice && (topWords[i].dataset.addApendice !== "f" || topWords[i].dataset.apendice !== undefined)){
+			else if(addApendice !== apendice){
 				flagResposta = false;
+
 				var spanAurPont = document.createElement("div");
 				spanAurPont.classList.add("spanAurPont");
-				spanAurPont.innerHTML = topWords[i].dataset.apendice ? topWords[i].dataset.apendice : "";
-				topWords[i].appendChild(spanAurPont);
-				if(topWords[i].dataset.addApendice !== undefined && topWords[i].dataset.addApendice !== "f"){
-					topWords[i].innerHTML = topWords[i].innerHTML.substring(0, topWords[i].innerHTML.length-1);
-					spanAurPont.innerHTML = topWords[i].dataset.addApendice;
+
+				if(addApendice !== "f"){
+					var html = topWords[i].innerHTML;
+					topWords[i].innerHTML = html.substring(0, html.length-1);
+					spanAurPont.innerHTML = addApendice;
+				}
+				else{
+					spanAurPont.innerHTML = apendice;
 				}
 				topWords[i].style.color = "green";
+				topWords[i].appendChild(spanAurPont);
 			}
 			else{
 				topWords[i].style.color = "green";
@@ -189,7 +200,7 @@ TaCerto.Controladora.Jogo.Aurelio = {
 		TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResposta);
 		setTimeout(()=>{
 			this.proximaPergunta();
-		},900000);
+		},900);
 	},
 	aurEraseClick: function(el){
 		//TaCerto.GenFunc.fadeInBtnClick(el, ()=>{});
@@ -233,7 +244,27 @@ TaCerto.Controladora.Jogo.Aurelio = {
 		this.proximaPergunta();
 	},
 	eliminarErrado: function(){
-
+		var cont = 0;
+		var elementos = (()=>{
+			var aux = document.getElementsByClassName("aurWord");
+			var arr = []
+			for (let i = 0; i < aux.length; i++)
+				arr[i] = aux[i];
+			return arr;
+		})();
+		elementos.shuffle();
+		for (let i = 0; i < elementos.length && cont < 2; i++) {
+			console.log(elementos[i].dataset.index);
+			if(parseInt(elementos[i].dataset.index) === -1){
+				cont++;
+				elementos[i].classList.add("animated", "fadeOut");
+				setTimeout(()=>{
+					try {
+						elementos[i].parentElement.removeChild(elementos[i]);
+					} catch (error) {}
+				}, 500);
+			}
+		}
 	},
 	shuffleDesafio: function(){
 		var x = TaCerto.Estrutura.DesafioDeFase.aurelio;

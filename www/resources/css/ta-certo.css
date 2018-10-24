@@ -2447,7 +2447,7 @@ span {
 .aurPhraseWrap{
 	position: relative;
 	height: 15%;
-	font: calc(12px + 2vw);
+	font-size: calc(12px + 2vw);
 	width: 90%;
 	margin: 0 auto;
 }
@@ -2588,10 +2588,12 @@ span {
 	left: 50%;
 }
 .aurSendBtnImg{
+	max-height: 85%;
 	width: 90%;
 	transform: translate(-50%, -50%);
 }
 .aurEraseBtnImg{
+	max-height: 85%;
 	width: 90%;
 	transform: rotate(180deg) translate(50%, 50%);
 }

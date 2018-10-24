@@ -1119,15 +1119,14 @@ TaCerto.Estrutura.DesafioDeFase = {
 			conteudoResposta: [
 				{index: 0, palavra: "Saudades"},
 				{index: 1, palavra: "das"},
-				{index: 2, palavra: "aulas"},
-				{index: 3, palavra: "."},
-				{index: 4, palavra: "Brincadeira", apendice: "."},
+				{index: 2, palavra: "aulas", apendice: "."},
+				{index: 3, palavra: "Brincadeira", apendice: "."},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 				{index: -1, palavra: "palavra"},
 			],
-			totalSize: 5,
+			totalSize: 4,
 			nivel: 0
 		},
 		{
