@@ -250,6 +250,9 @@ TaCerto.Controladora.Jogo.Lacuna = {
 		x.pickFase(arr);
 		return x;
 	},
+	loadingMessage: function(){
+		return "Arraste as palavras corretas para as lacunas.";
+	},
 	zerarVars: function(){
 		TaCerto.Controladora.Jogo.Lacuna.DESAFIO = [];
 	}

@@ -133,6 +133,9 @@ TaCerto.Controladora.Jogo.HardCore = {
 		x.pickFase(arr);
 		return x;
 	},
+	loadingMessage: function(){
+		return "Acerte as palavras muito rápido!";
+	},
 	zerarVars: function(){
 		this.gameModel.alturaAtual = 0;
 		this.gameModel.speed = 1;

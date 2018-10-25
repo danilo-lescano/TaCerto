@@ -19,6 +19,9 @@ TaCerto.Controladora.Jogo.Load = function(tipo, nivelMissao){
 	function startCountDown(flag, iteracao){ //usando promisse caso alguem tenha duvidas de como essa parte funciona
 		if (flag) {
 			TaCerto.Controladora.CarregarPagina.htmlCorpo("countDown");
+			var message = TaCerto.Controladora.Jogo[tipo].loadingMessage();
+			if(message)
+				document.getElementById("countdownText").innerHTML = message;
 			var contador = setInterval(function(){
 				if (count === 0){
 					tictac.stop();
@@ -40,8 +43,6 @@ TaCerto.Controladora.Jogo.Load = function(tipo, nivelMissao){
 	var tictac = TaCerto.SOUND.find("clock");
 
 	TaCerto.Controladora.CarregarPagina.htmlCorpo("loading");
-	if(TaCerto.Controladora.Jogo[tipo].loadingMessage)
-		document.getElementById("countdownText").innerHTML = TaCerto.Controladora.Jogo[tipo].loadingMessage;
 
 	tictac.oncanplaythrough = startCountDown(false, 0);
 };

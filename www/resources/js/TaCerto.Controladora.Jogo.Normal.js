@@ -96,6 +96,9 @@ TaCerto.Controladora.Jogo.Normal = {
 		x.pickFase(arr);
 		return x;
 	},
+	loadingMessage: function(){
+		return "Tente acertar o máximo de palavras possíveis.";
+	},
 	zerarVars: function(){
 		TaCerto.Controladora.Jogo.Normal.DESAFIO = [];
 	}

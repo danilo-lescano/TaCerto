@@ -276,6 +276,9 @@ TaCerto.Controladora.Jogo.Aurelio = {
 		x.pickFase(arr);
 		return x;
 	},
+	loadingMessage: function(){
+		return "Rescreva as frases na forma normativa.";
+	},
 	zerarVars: function(){
 		this.DESAFIO = [];
 	}

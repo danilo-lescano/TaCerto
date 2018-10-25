@@ -104,6 +104,9 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 		var modoTipo = this.tipoDeJogo[this.indexTipoDeJogo];
 		TaCerto.Controladora.Jogo[modoTipo].eliminarErrado();
 	},
+	loadingMessage: function(){
+		return "Todos os modos aleatoriamente!";
+	},
 	zerarVars: function(){
 		this.indexTipoDeJogo = -1;
 		this.respostasTotais = 0;

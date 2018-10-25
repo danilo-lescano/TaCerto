@@ -380,6 +380,9 @@ TaCerto.Controladora.Jogo.Explorador = {
 		x.pickFase(arr);
 		return x;
 	},
+	loadingMessage: function(){
+		return "Ligue as lacunas ou escolha as palavras equivalentes.";
+	},
 	zerarVars: function(){
 		this.DESAFIO = [];
 	}
