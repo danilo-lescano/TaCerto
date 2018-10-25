@@ -28,7 +28,7 @@ TaCerto.Controladora.Loja = {
             var blurThis = document.getElementById('loja').getElementsByTagName("*");
             blurThis[blurThis.length] = document.getElementsByClassName('gameBlend')[0];
             for (var i = 0; i < blurThis.length; i++) {
-                blurThis[i].style.filter = "blur(5px)";
+                //blurThis[i].style.filter = "blur(5px)";
             }
 
             var unBlurThis = [];
@@ -38,7 +38,7 @@ TaCerto.Controladora.Loja = {
             unBlurThis[unBlurThis.length] = document.getElementById(el.id+"-modal");
             unBlurThis[unBlurThis.length] = document.getElementById(el.id+"-modal").getElementsByClassName("modalComprarCartaImg")[0];
             for (var i = 0; i < unBlurThis.length; i++) {
-                unBlurThis[i].style.filter = "none";
+                //unBlurThis[i].style.filter = "none";
             }
             document.getElementsByClassName("cartaLojaModalBtn1")[0].style.display = "block";
             document.getElementsByClassName("cartaLojaModalBtn2")[0].style.display = "block";
