@@ -99,7 +99,7 @@ TaCerto.Controladora.Dica = {
 		
 	},
 	colocaDica: function (idDica, _dica){
-		console.log(TaCerto.Estrutura.Jogador.numDicas + "----" + idDica + " = " + _dica);
+		//console.log(TaCerto.Estrutura.Jogador.numDicas + "----" + idDica + " = " + _dica);
 	
 		var list = TaCerto.Estrutura.Jogador.dicas;
 		var isThere = false;

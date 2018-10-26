@@ -669,9 +669,12 @@ span {
 }
 .missaoImgWrapper img{
 	width: 25%;
-	margin-top: 10%;
+	margin-bottom: 10%;
 	margin-left: 2.5%;
 	margin-right: 2.5%;
+}
+.missaoImgWrapper img:nth-child(-n + 3){
+	margin-top: 10%;
 }
 .missaoModalBG{
 	position: relative;

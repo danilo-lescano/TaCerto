@@ -26,8 +26,6 @@ TaCerto.Controladora.Loja = {
         TaCerto.GenFunc.fadeInBtnClick(el.parentElement,()=>{
             TaCerto.Controladora.Loja.miniModalCard = el.id;
 
-            console.log(TaCerto.Estrutura.Jogador.moeda);
-            console.log(this.cardPrice);
             if(TaCerto.Estrutura.Jogador.moeda - this.cardPrice < 0)
                 document.getElementsByClassName("cartaLojaModalBtn1")[0].style.filter = "grayscale(100%)";
             document.getElementsByClassName("cartaLojaModalBtn1")[0].style.display = "block";

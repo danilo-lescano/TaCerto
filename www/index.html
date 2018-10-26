@@ -202,9 +202,13 @@
 		return false;
 	}
 
-	const promiseRequestAnimationFrame = () =>{
-		return new Promise((resolve) => window.requestAnimationFrame(resolve));
+	const promiseRequestAnimationFrame = ()=>{
+		return new Promise((resolve) => requestAnimationFrame(resolve));
 	}
+	const delay = (time)=>{
+		return new Promise(resolve => setTimeout(resolve, time));
+	};
+
 
 	function Timer(callback, delay){
 		function Timer(callback, delay) {

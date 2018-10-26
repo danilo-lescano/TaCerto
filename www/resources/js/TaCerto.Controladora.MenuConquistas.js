@@ -6,76 +6,62 @@ TaCerto.Controladora.MenuConquistas = {
 		idGlobal: 0
 	},
 	load: function(){
+		TaCerto.Estrutura.Jogador.xp = 4500;
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("menuConquistas",["dica"],["dica"]);
 		this.loadAchievements();
         document.getElementById("moedas").innerHTML = TaCerto.Estrutura.Jogador.moeda;
 
 		function calculaLvl(xp){
-			var levelImg = document.getElementById('nivelImage').firstElementChild;
 			var level = 1;
 			xp-=200;
 			while(xp !== 0)
 				xp -= xp > 0 ? ++level * 100 : level-- * 0 + xp;
-
-			level++;
-			if(level <= 1){
-				levelImg.src= "resources/media/image/1.png"; 
-			}else{
-				levelImg.src='resources/media/image/'+level+'.png'; 
-			}
-				
 			return level;
 		}
+		var resolveAnimationXpBar = (async ()=>{
+			var level = calculaLvl(TaCerto.Estrutura.Jogador.xp);
+			
+			var levelImg = document.getElementById('nivelImage').firstElementChild;
+			levelImg.src = level+1 <= 1 ? "resources/media/image/1.png" : "resources/media/image/"+(level+1)+".png";
 
-		function moveXPBar(nivel, maxNivel, nextLevelXp){
+			var xpBar = document.getElementsByClassName('back_xpBar')[0];
+			var nextXp = document.getElementById('xpNextLevel');
+			var nextLevelXp = 200;
+			
+			for (let i = 0; i < level; i++) {
+				nextLevelXp += (i + 2)* 100;
+
+				nextXp.innerHTML = nextLevelXp;
+				xpBar.style.transition = "width 0s";
+				xpBar.style.width = "0";
+				//primeiro ele desenha e depois conta as mudanças que eu fiz em cima por isso ele precisa ser chamado duas vezes
+				await promiseRequestAnimationFrame();
+				await promiseRequestAnimationFrame();
+
+				xpBar.style.transition = "width 0.3s";
+				xpBar.style.width = "100%";
+				await delay(300);
+			}
+			xpBar.style.transition = "width 0s";
+			xpBar.style.width = "0";
+			await promiseRequestAnimationFrame();
+			await promiseRequestAnimationFrame();
+
+			var deltaXp = nextLevelXp - (level + 1)* 100;
+			deltaXp = ((TaCerto.Estrutura.Jogador.xp - deltaXp)/(nextLevelXp - deltaXp))*100;
+			xpBar.style.width = deltaXp === 0 ? 0 : deltaXp > 10 ? deltaXp + "%" : "10%";
+		})();
+		var resolveAnimationXpNumero = (async ()=>{
 			var xpTotal = document.getElementById('xpTotal');
-			var xpNextLevel =document.getElementById('xpNextLevel');
-			if (nivel < maxNivel) {
-				var xpBar = document.getElementsByClassName('back_xpBar')[0];
-				if(xpBar){
-					document.getElementById('xpNextLevel').innerHTML = nextLevelXp;
-					xpBar.classList.remove("transition00", "transition03");
-					xpBar.classList.add("transition00");
-					xpBar.style.width = "0";
-					setTimeout(function(){
-						xpBar.classList.remove("transition00", "transition03");
-						xpBar.classList.add("transition03");
-						xpBar.style.width = "100%";
-						nextLevelXp += (++nivel + 1)* 100;
-						setTimeout(function(){
-							moveXPBar(nivel, maxNivel, nextLevelXp);
-						}, 320);
-					}, 10);
-				}
+			var xp = 0;
+			while(TaCerto.Estrutura.Jogador.xp >= xp){
+				xpTotal.innerHTML = xp;
+				xp += 100;
+				await promiseRequestAnimationFrame();
+				await promiseRequestAnimationFrame();
+				await delay(100);
 			}
-			else{
-				var xpBar = document.getElementsByClassName('back_xpBar')[0];
-				if(xpBar){
-					var deltaXp = parseInt(document.getElementById('xpNextLevel').innerHTML);
-					deltaXp = ((TaCerto.Estrutura.Jogador.xp - deltaXp)/(nextLevelXp - deltaXp))*100;
-					document.getElementById('xpNextLevel').innerHTML = nextLevelXp;
-					xpBar.classList.remove("transition00", "transition03");
-					xpBar.classList.add("transition00");
-					xpBar.style.width = "0";
-					setTimeout(function(){
-						xpBar.classList.remove("transition00", "transition03");
-						xpBar.classList.add("transition03");
-						xpBar.style.width = deltaXp === 0 ? 0 : deltaXp > 10 ? deltaXp + "%" : "10%";
-					}, 10);
-				}
-				var intervalo = setInterval(function(){
-					var next = document.getElementById('xpTotal');
-					if (next){
-						if(parseInt(next.innerHTML) < TaCerto.Estrutura.Jogador.xp)
-							next.innerHTML = (parseInt(next.innerHTML) + 100);
-						else{
-							clearInterval(intervalo);
-							next.innerHTML = TaCerto.Estrutura.Jogador.xp;
-						}
-					}
-				}, 100);
-			}
-		} moveXPBar(0, calculaLvl(TaCerto.Estrutura.Jogador.xp), 200);
+		})();
 	},
 	callGame: function(tipo, el){
 		TaCerto.GenFunc.fadeInBtnClick(el,
