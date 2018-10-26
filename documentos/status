@@ -86,18 +86,11 @@
 [15/10/2018]: Tela de Conquistas, Toast de conquista e consquistas corrigidos/adicionados
 [17/10/2018]: Animação do painel de achievement, botão de informação e algumas correções
 [18/10/2018]: Botões de Significado e erro. Posições corrigidas e outros stuffs
-[19/10/2018]: Fontes, Cores Hexa > RGBA, Imagens colocadas para carregar e Card no Normal e Hardcore (WIP)
-############################################_FIM_WEEK_4
-
-
-############################################_WEEK_5
-###DANILO
-
-
-###FERNANDO
+[19/10/2018],
 
 [22/10/2018]: Animação dos cards, correções nos botões de significado e dica em todos os modos
 [24/10/2018]: Limpeza de código. Testes. Correção de posições de vários elementos em várias telas.
 [25/10/2018]: Posições dos negócio da tela de conquistas
+[26/10/2018]: Posição de elementos, wrapper_xpBar loko, fontes, trocando coisas "wtf" do código e arrumando umas coisas.
 
 ############################################_FIM_WEEK_5

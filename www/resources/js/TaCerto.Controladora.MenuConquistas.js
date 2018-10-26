@@ -8,6 +8,7 @@ TaCerto.Controladora.MenuConquistas = {
 	load: function(){
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("menuConquistas",["dica"],["dica"]);
 		this.loadAchievements();
+        document.getElementById("moedas").innerHTML = TaCerto.Estrutura.Jogador.moeda;
 
 		function calculaLvl(xp){
 			var levelImg = document.getElementById('nivelImage').firstElementChild;
@@ -102,22 +103,14 @@ TaCerto.Controladora.MenuConquistas = {
 		for(var i = 0; i < numAchiev; i++){
 			let currentAchiev = achievs[i];
 			let bg = "";
-			let x = false;
 			
 			if(i%2===0){
 				bg = "telaConquistaLiZero";
 			}else{
 				bg = "telaConquistaLiVinte";
 			}
-			
-			if(TaCerto.Estrutura.Jogador.conquistas[i]){
-				// Jogador já completou a conquista
-				tabelaConquistas.innerHTML += '<li class="collection-item avatar green '+bg+'"><img class="imgConquista" src="resources/media/image/'+currentAchiev[3]+'.jpg" alt=""><div class="textMidConquista"><h4 class="title left-align">'+currentAchiev[0]+'</h4><h6 class="left-align h7">'+currentAchiev[1]+'</h6></div><div class="trofeuConquista"><img src="resources/media/image/'+currentAchiev[4]+'.png" alt="ilustracao trofeu"></div></li>';
-			}else{
-				// Jogador ainda não completou a conquista
-				tabelaConquistas.innerHTML += '<li class="collection-item avatar '+bg+'"><img class="imgConquista" src="resources/media/image/'+currentAchiev[3]+'.jpg" alt=""><div class="textMidConquista"><h4 class="title left-align">'+currentAchiev[0]+'</h4><h6 class="left-align h7">'+currentAchiev[1]+'</h6></div><div class="trofeuConquista"><img src="resources/media/image/'+currentAchiev[4]+'.png" alt="ilustracao trofeu"></div></li>';
-				x = true;
-			}
+
+			tabelaConquistas.innerHTML += '<li class="collection-item avatar '+bg+'"><img class="imgConquista" src="resources/media/image/'+currentAchiev[3]+'.jpg" alt=""><div class="textMidConquista"><h4 class="title left-align">'+currentAchiev[0]+'</h4><h6 class="left-align h7">'+currentAchiev[1]+'</h6></div><div class="trofeuConquista"><img src="resources/media/image/'+currentAchiev[4]+'.png" alt="ilustracao trofeu"></div></li>';
 			
 		}
 		
@@ -312,10 +305,10 @@ TaCerto.Controladora.MenuConquistas = {
 				achievementPanel.style.transition =  "height 2s cubic-bezier(0.520, -0.600, 0.940, 1.650)"; 
 				achievementPanel.style.height = "100%"; 
 
-				setTimeout(()=>{
+				/*setTimeout(()=>{
 					if(idRandom === this.model.idGlobal)
 						achievementPanel.style.height = "0%"; 
-				}, 4000);
+				}, 4000);*/
 
 			});
 		});			
