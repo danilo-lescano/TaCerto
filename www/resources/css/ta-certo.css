@@ -1863,10 +1863,10 @@ span {
 }
 .lojaPrecoCartaMiniModal{
 	position: absolute;
-    right: 34%;
+    right: 32%;
     bottom: 12%;
     color: whitesmoke;
-    font-size: calc(12px + 2vw);
+    font-size: calc(7px + 2vw);
 }
 .cartaBtnWrapper{
 	position: absolute;
@@ -1924,7 +1924,7 @@ span {
     transform: translate(-57.325%, -50%);
 }
 .modalBtnComprarCartaImg{
-	
+	width: 100%;
 }
 .cartaLojaModalBtn1{
     width: 25%;

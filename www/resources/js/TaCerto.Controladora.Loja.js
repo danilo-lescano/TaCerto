@@ -3,6 +3,7 @@ TaCerto.Controladora = TaCerto.Controladora || {};
 TaCerto.Controladora.Loja = {
     modal: undefined,
     miniModalCard: undefined,
+    cardPrice: 25,
     voltarBtn: function(el){
         TaCerto.GenFunc.fadeInBtnClick(el,
         function(){
@@ -22,24 +23,13 @@ TaCerto.Controladora.Loja = {
         });
     },
     openCardModal: function(el){
-        TaCerto.GenFunc.fadeInBtnClick(el.parentElement,function(){
+        TaCerto.GenFunc.fadeInBtnClick(el.parentElement,()=>{
             TaCerto.Controladora.Loja.miniModalCard = el.id;
 
-            var blurThis = document.getElementById('loja').getElementsByTagName("*");
-            blurThis[blurThis.length] = document.getElementsByClassName('gameBlend')[0];
-            for (var i = 0; i < blurThis.length; i++) {
-                //blurThis[i].style.filter = "blur(5px)";
-            }
-
-            var unBlurThis = [];
-            unBlurThis[unBlurThis.length] = document.getElementsByClassName("cartaLojaModalBtn1")[0];
-            unBlurThis[unBlurThis.length] = document.getElementsByClassName("cartaLojaModalBtn1")[0].getElementsByTagName("*")[0];
-            unBlurThis[unBlurThis.length] = document.getElementsByClassName("cartaLojaModalBtn2")[0];
-            unBlurThis[unBlurThis.length] = document.getElementById(el.id+"-modal");
-            unBlurThis[unBlurThis.length] = document.getElementById(el.id+"-modal").getElementsByClassName("modalComprarCartaImg")[0];
-            for (var i = 0; i < unBlurThis.length; i++) {
-                //unBlurThis[i].style.filter = "none";
-            }
+            console.log(TaCerto.Estrutura.Jogador.moeda);
+            console.log(this.cardPrice);
+            if(TaCerto.Estrutura.Jogador.moeda - this.cardPrice < 0)
+                document.getElementsByClassName("cartaLojaModalBtn1")[0].style.filter = "grayscale(100%)";
             document.getElementsByClassName("cartaLojaModalBtn1")[0].style.display = "block";
             document.getElementsByClassName("cartaLojaModalBtn2")[0].style.display = "block";
             document.getElementById(el.id+"-modal").style.display = "block";
@@ -59,15 +49,13 @@ TaCerto.Controladora.Loja = {
         });
     },
     buyCard: function(el){
-        this.closeMiniModal(el);
-        if (TaCerto.Estrutura.Jogador.moeda - 1 >= 0){
+        if (TaCerto.Estrutura.Jogador.moeda - this.cardPrice >= 0){
+            this.closeMiniModal(el);
             var cardId = this.miniModalCard.split("Loja")[0];
-            TaCerto.Estrutura.Jogador.moeda -= TaCerto.Estrutura.Carta.preco;
+            TaCerto.Estrutura.Jogador.moeda -= this.cardPrice;
             TaCerto.Estrutura.Jogador[cardId] += 1;
             document.getElementById("moedasLoja").innerHTML = TaCerto.Estrutura.Jogador.moeda;
             document.getElementById("moedas").innerHTML = TaCerto.Estrutura.Jogador.moeda;
-
-            
         }
     },
 	display: function(isModal){
