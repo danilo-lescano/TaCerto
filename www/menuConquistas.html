@@ -4,24 +4,23 @@
 </div>-->
 
 <div class="menuConquista_wrapper">
-	<div class="menuMissao_homeBar">
+	<div class="menuConquista_homeBar">
 		<div class="leftDiv">
-			<img src="resources/media/image/home.png" alt="botao home" onclick="TaCerto.Controladora.MenuMissao.homebtn(this)">
-			<img src="resources/media/image/carrinho.png" alt="botao loja" onclick="TaCerto.Controladora.MenuMissao.lojabtn(this)">
+			<img id="botaoHome" src="resources/media/image/home.png" alt="botao home" onclick="TaCerto.Controladora.MenuMissao.homebtn(this)">
+			<img id="botaoLoja" src="resources/media/image/carrinho.png" alt="botao loja" onclick="TaCerto.Controladora.MenuMissao.lojabtn(this)">
         </div>
         
 
 		<div class="rightDiv">
-			<span id="moedas">100</span>
+			<div id="moedas">100</div>
 			<img src="resources/media/image/missoes_atalho.png" alt="ilustracao dinheiro">
 		</div>
     </div>
 
 	<div class="menuConquista_xpBar">
         <div class="wrapper_nivel_text">
-                <span>
-                        NÍVEL
-                    </span>    
+            <div class="nivelText">NIVEL</div>    
+             
             <div id="nivelImage">
                     <img src="resources/media/image/missoes_atalho.png" alt="ilustracao dinheiro">
             </div>
@@ -43,11 +42,8 @@
         </div>
 
         <div class="wrapper_conquista_text">
-                <span>
-                    CONQUISTAS
-                </span>
+            <div class="centerText">CONQUISTAS</div>  
         </div>
-        
     </div>
 </div>
 

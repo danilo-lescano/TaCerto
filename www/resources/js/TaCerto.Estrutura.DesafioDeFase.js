@@ -405,7 +405,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "inteligente do que você."},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -417,7 +417,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "eu gosto de você."},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -429,7 +429,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "eu sou legal."},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -441,7 +441,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "na prova."},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -452,7 +452,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: true, conteudo: "Cachorro"},
 				{frase: false},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -463,7 +463,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: true, conteudo: "Você é a única "},
 				{frase: false},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -475,7 +475,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "educada."},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -486,7 +486,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: true, conteudo: "Aquele gato tem cara de"},
 				{frase: false},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -499,7 +499,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "do cinema deve começar às 15h."},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -512,7 +512,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "de trocas fica no final do corredor."},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -525,7 +525,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "da herança."},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -537,7 +537,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "5 anos que não o vejo."},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -548,7 +548,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "muitos acidentes"},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -561,7 +561,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "leite."},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -572,7 +572,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "você vai?"},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -583,7 +583,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "você mora?"},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -596,7 +596,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "muito tempo."},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -609,7 +609,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "duas horas."},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -622,7 +622,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "aqui sempre"},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -635,7 +635,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "rinite"},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -647,7 +647,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "disse isso."},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -658,7 +658,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "de falar, poderia calar a boca."},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -670,7 +670,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "disso, vá ao médico."},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -682,7 +682,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "de Chihiro é um filme estranho."},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -694,7 +694,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "uma água."},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -706,7 +706,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: false},
 				{frase: true, conteudo: "sempre."},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -717,7 +717,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: true, conteudo: "O guri gritou"},
 				{frase: false},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 		{
 			resposta: [
@@ -728,7 +728,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{frase: true, conteudo: "Eu tenho dinheiro"},
 				{frase: false},
 			],
-			tempId: 0, nivel: 0,
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
 	],
 	explorador: [
@@ -744,7 +744,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{equivalente: 1,		emoji: false,	conteudo:"Taruíra"},
 				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
 			],
-			tempId: 0, nivel: 0
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
 		},
 		{
 			palavra: false,
@@ -758,7 +758,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{equivalente: 1,		emoji: false,	conteudo:"Tracajá"},
 				{equivalente: 2,		emoji: false,	conteudo:"Piá"}
 			],
-			tempId: 0, nivel: 0
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
 		},
 		{
 			palavra: false,
@@ -772,7 +772,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{equivalente: 1,		emoji: false,	conteudo:"Pipa"},
 				{equivalente: 2,		emoji: false,	conteudo:"Sutiã"}
 			],
-			tempId: 0, nivel: 0
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
 		},
 		{
 			palavra: true,
@@ -785,7 +785,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
 				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
 			],
-			tempId: 0, nivel: 0
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
 		},
 		{
 			palavra: true,
@@ -798,7 +798,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{equivalente: false,	emoji: false,	conteudo:"Juro"},
 				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
 			],
-			tempId: 0, nivel: 0
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
 		},
 		{
 			palavra: false,
@@ -812,7 +812,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{equivalente: 1,		emoji: false,	conteudo:"Taruíra"},
 				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
 			],
-			tempId: 0, nivel: 0
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
 		},
 		{
 			palavra: false,
@@ -826,7 +826,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{equivalente: 1,		emoji: false,	conteudo:"Tracajá"},
 				{equivalente: 2,		emoji: false,	conteudo:"Piá"}
 			],
-			tempId: 0, nivel: 0
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
 		},
 		{
 			palavra: false,
@@ -840,7 +840,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{equivalente: 1,		emoji: false,	conteudo:"Pipa"},
 				{equivalente: 2,		emoji: false,	conteudo:"Sutiã"}
 			],
-			tempId: 0, nivel: 0
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
 		},
 		{
 			palavra: true,
@@ -853,7 +853,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
 				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
 			],
-			tempId: 0, nivel: 0
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
 		},
 		{
 			palavra: true,
@@ -866,7 +866,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{equivalente: false,	emoji: false,	conteudo:"Juro"},
 				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
 			],
-			tempId: 0, nivel: 0
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
 		},
 		{
 			palavra: false,
@@ -880,7 +880,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{equivalente: 1,		emoji: false,	conteudo:"Taruíra"},
 				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
 			],
-			tempId: 0, nivel: 0
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
 		},
 		{
 			palavra: false,
@@ -894,7 +894,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{equivalente: 1,		emoji: false,	conteudo:"Tracajá"},
 				{equivalente: 2,		emoji: false,	conteudo:"Piá"}
 			],
-			tempId: 0, nivel: 0
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
 		},
 		{
 			palavra: false,
@@ -908,7 +908,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{equivalente: 1,		emoji: false,	conteudo:"Pipa"},
 				{equivalente: 2,		emoji: false,	conteudo:"Sutiã"}
 			],
-			tempId: 0, nivel: 0
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
 		},
 		{
 			palavra: true,
@@ -921,7 +921,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
 				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
 			],
-			tempId: 0, nivel: 0
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
 		},
 		{
 			palavra: true,
@@ -934,7 +934,7 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{equivalente: false,	emoji: false,	conteudo:"Juro"},
 				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
 			],
-			tempId: 0, nivel: 0
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
 		}
 	],
 	aurelio: [

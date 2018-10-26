@@ -76,6 +76,7 @@ TaCerto.Controladora.Jogo.Geral = {
 		this.gameModel.paused = false;
 		clearInterval(this.gameModel.intervalo);
 		this.gameModel.intervalo = false;
+		this.gameModel.errou = false;
 
 		this.gameModel.cartaUsada.cartaVermelha = 0;
 		this.gameModel.cartaUsada.cartaAzul = 0;
@@ -187,7 +188,7 @@ TaCerto.Controladora.Jogo.Geral = {
 		//find and display block the modal
 		var modal = document.getElementById("errorModal");
 
-		document.querySelector("#errorModal>.modalWrapper>.centerPanel>h6").innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].significado;
+		document.querySelector("#errorModal>.modalWrapper>.centerPanel>h6").innerHTML = TaCerto.Controladora.Jogo[this.gameModel.tipoDeJogo].DESAFIO[TaCerto.Controladora.Jogo[this.gameModel.tipoDeJogo].DESAFIO.length - 1].significado;
 
 		modal.style.display = flag ? "block" : "none";
 		//pause clock animation
@@ -211,7 +212,7 @@ TaCerto.Controladora.Jogo.Geral = {
 		var modal = document.getElementById("significadoModal");
 
 		//var child = modal.children[0].children[0].children[1];
-		document.querySelector("#significadoModal>.modalWrapper>.centerPanel>h6").innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].dica;
+		document.querySelector("#significadoModal>.modalWrapper>.centerPanel>h6").innerHTML = TaCerto.Controladora.Jogo[this.gameModel.tipoDeJogo].DESAFIO[TaCerto.Controladora.Jogo[this.gameModel.tipoDeJogo].DESAFIO.length - 1].dica;
 		//child.innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].dica;
 
 		modal.style.display = flag ? "block" : "none";
@@ -343,11 +344,13 @@ TaCerto.Controladora.Jogo.Geral = {
 			
 			TaCerto.Estrutura.Jogador.moeda += this.gameModel.comboBonus;
 
-			document.getElementById('botaoInformacao').classList.add('disableButton');
+			//document.getElementById('botaoInformacao').classList.add('disableButton');
+			document.querySelector('#botaoInformacao>img').src = "resources/media/image/botaoInformacao2.png";
 		}
 		else{
 			this.gameModel.errou = true;
-			document.getElementById('botaoInformacao').classList.remove('disableButton');
+			//document.getElementById('botaoInformacao').classList.remove('disableButton');
+			document.querySelector('#botaoInformacao>img').src = "resources/media/image/botaoInformacao.png";
 			document.getElementById('erros').innerHTML = ++this.gameModel.erro;
 			plusPopup("colorRed", "errosSpan", 10);
 			this.gameModel.acertosConsecutivos = 0;
