@@ -242,7 +242,28 @@ span {
 /*Informação e Significado*//*inicio*/
 /****************************************************************/
 
+
+#significadoModal, #errorModal{
+	display: none;
+
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(20, 19, 19, 0.63) !important;
+	left: 0;
+	right: 0;
+	top: 0;
+	margin: 0 auto;
+}
+
+
 .centerPanel{
+	background-image: url("../media/image/panel.png");
+	background-size: 100%;
+	width: 100%;
+	height: 36%;
 	position: absolute;
 	top: 40%;
 	left: 50%;
@@ -250,17 +271,30 @@ span {
 }
 
 .centerPanel h4{
+	position: absolute;
+	top: 7%;
+	left: 50%;
+	transform: translate(-50%);
+	font-size: 2rem;
 	color: rgb(41,75,149);
 	font-family: 'panton',  'Pacifico', cursive;
 }
 
 .centerPanel h6{
-	color: rgb(255,255,255);
+	position: absolute;
+	top: 43%;
+	left: 50%;
+	width: 70%;
+	transform: translate(-50%, -50%);
+	color: rgb(13,13,13);
 	font-family: 'panton',  'Pacifico', cursive;
 }
 
 .centerPanel img{
-	margin-top: 8%;
+	position: absolute;
+	bottom: 10%;
+	width: 13%;
+	transform: translate(-50%) !important;
 }
 
 .disableButton{
@@ -943,16 +977,17 @@ span {
 	z-index: 7;
 }
 .bucketCards{
-	width: 85%;
+	position: absolute;
+	width: 78%;
 	margin: 0;
 	left: 0px;
 	display: inline-block;
 }
 .barraCartaBG{
 	position: relative;
-	width: 68%;
-	left: -58%;/*//*/
-	background-image: url("../media/image/barra_cartas.png");
+	width: 81%;
+	left: -63%;/*//*/
+	background-image: url("../media/image/barra_cartas.svg");
 	background-size: 100% 75%;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -967,9 +1002,10 @@ span {
 	width: 15%;
 }
 .cardSpan{
-	margin: 0 1.5% 0 1.5%;
+	margin: 0 2.5% 0 1.5%;
 	display: inline-block;
 	position: relative;
+	right: 2%;
 }
 .imgCard{
 	width: 8vw;
@@ -2106,7 +2142,7 @@ span {
 	position: absolute;
 	top: 11vw;
 	width: 100%;
-	background: #000;
+	background: rgb(0, 31, 99);
 	opacity: .8;
 	overflow: hidden;
 	height: 90vh;
