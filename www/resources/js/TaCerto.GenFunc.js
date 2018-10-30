@@ -38,4 +38,36 @@ TaCerto.GenFunc = {
             callback();
         }, !isNaN(timeout) ? timeout : 200);
     },
+    transformParse: function(el){
+        console.log(getComputedStyle(el).transform);
+        var matrixVal = getComputedStyle(el).transform.replace(/matrix\(/ig, '').replace(/matrix3D\(/ig, '').replace(/\)/ig, '').replace(/ /g,'').split(','); //matrix!
+        var matrixName = ['scaleX', 'skewY', 'skewX', 'scaleY', 'translateX', 'translateY'];
+        console.log(matrixVal);
+        console.log(matrixName);
+        var matrixEl = {};
+        //matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())
+        function element(name, value){
+            this.name = name;
+            this.value = value;
+            this.toString = ()=>{
+                return this.name + "(" + this.value + ")";
+            };
+        }
+
+        for (let i = 0; i < matrixName.length; i++) {
+            matrixEl[matrixName[i]] = new element(matrixName[i], matrixVal[i]);
+        }
+        return matrixEl;
+    },
+    filterParse: function(el){
+        //<blur()> | <brightness()> | <contrast()> | <drop-shadow()> | <grayscale()> | <hue-rotate()> | <invert()> | <opacity()> | <saturate()> | <sepia()>
+        //String.prototype.firstMatchInBetween = function(str, str2){
+        //    if(this.toString() === str)
+        //        return true;
+        //    return false;
+        //}
+        var filter = getComputedStyle(el).filter;
+        
+        var filterBlur = filter;
+    }
 };
