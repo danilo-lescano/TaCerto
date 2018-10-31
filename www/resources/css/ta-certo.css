@@ -1008,7 +1008,7 @@ span {
 	right: 2%;
 }
 .imgCard{
-	width: 8vw;
+	width: 7vw;
 	max-width: 41.26px;
 	padding-bottom: 134.89010989%;
 	z-index: 20;
@@ -1165,6 +1165,18 @@ span {
 	width: 80%;
 	margin-top: 3%;	 
 	font-size: 22px;
+	opacity:1;
+}
+
+.bounceInDown1{
+	animation: mymove 1s;
+}
+
+@keyframes mymove {
+	0% {top: -50%; opacity:0;}
+	60% {top: 42%; opacity:1;}
+	80% {top: 38%; opacity:1;}
+	100% {top: 40%; opacity:1;}
 }
 .lacunaChoiceWrapper{
 	position: absolute;
@@ -2142,7 +2154,7 @@ span {
 	position: absolute;
 	top: 11vw;
 	width: 100%;
-	background: rgb(0, 31, 99);
+	background: rgb(2, 81, 155);
 	opacity: .8;
 	overflow: hidden;
 	height: 90vh;
@@ -2180,6 +2192,11 @@ span {
 
 .collection-item{
 	transition: all  .2s ease;
+}
+
+.collection-item:hover{
+	background-color: green;
+	color: white;
 }
 
 /*--------------------------------------------------------------*/
@@ -2298,7 +2315,7 @@ span {
 }
 
 .conquistaNaoConquistada{
-	filter: grayscale(0.9);
+	filter: grayscale(0.9) !important;
 }
 
 .imgConquista{
