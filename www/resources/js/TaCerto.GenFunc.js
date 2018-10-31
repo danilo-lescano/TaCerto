@@ -38,6 +38,17 @@ TaCerto.GenFunc = {
             callback();
         }, !isNaN(timeout) ? timeout : 200);
     },
+    filterParse: function(el){
+        //<blur()> | <brightness()> | <contrast()> | <drop-shadow()> | <grayscale()> | <hue-rotate()> | <invert()> | <opacity()> | <saturate()> | <sepia()>
+        //String.prototype.firstMatchInBetween = function(str, str2){
+        //    if(this.toString() === str)
+        //        return true;
+        //    return false;
+        //}
+        var filter = getComputedStyle(el).filter;
+        
+        var filterBlur = filter;
+    },
     transformParse: function(el){
         console.log(getComputedStyle(el).transform);
         var matrixVal = getComputedStyle(el).transform.replace(/matrix\(/ig, '').replace(/matrix3D\(/ig, '').replace(/\)/ig, '').replace(/ /g,'').split(','); //matrix!
@@ -59,15 +70,4 @@ TaCerto.GenFunc = {
         }
         return matrixEl;
     },
-    filterParse: function(el){
-        //<blur()> | <brightness()> | <contrast()> | <drop-shadow()> | <grayscale()> | <hue-rotate()> | <invert()> | <opacity()> | <saturate()> | <sepia()>
-        //String.prototype.firstMatchInBetween = function(str, str2){
-        //    if(this.toString() === str)
-        //        return true;
-        //    return false;
-        //}
-        var filter = getComputedStyle(el).filter;
-        
-        var filterBlur = filter;
-    }
 };
