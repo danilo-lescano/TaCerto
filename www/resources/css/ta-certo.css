@@ -2250,7 +2250,10 @@ span {
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
+	*{
+		box-sizing: border-box;
 
+	}
 #telaConquista > .telaConquistaLiVinte{
 	height: 15vh;	
 	background:rgba(38,52,102,0.8) !important;

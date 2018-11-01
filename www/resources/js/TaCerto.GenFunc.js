@@ -38,17 +38,6 @@ TaCerto.GenFunc = {
             callback();
         }, !isNaN(timeout) ? timeout : 200);
     },
-    filterParse: function(el){
-        //<blur()> | <brightness()> | <contrast()> | <drop-shadow()> | <grayscale()> | <hue-rotate()> | <invert()> | <opacity()> | <saturate()> | <sepia()>
-        //String.prototype.firstMatchInBetween = function(str, str2){
-        //    if(this.toString() === str)
-        //        return true;
-        //    return false;
-        //}
-        var filter = getComputedStyle(el).filter;
-        
-        var filterBlur = filter;
-    },
     transformParse: function(el){
         console.log(getComputedStyle(el).transform);
         var matrixVal = getComputedStyle(el).transform.replace(/matrix\(/ig, '').replace(/matrix3D\(/ig, '').replace(/\)/ig, '').replace(/ /g,'').split(','); //matrix!
@@ -69,5 +58,35 @@ TaCerto.GenFunc = {
             matrixEl[matrixName[i]] = new element(matrixName[i], matrixVal[i]);
         }
         return matrixEl;
+    },
+    filterParse: function(el){
+        var filter = getComputedStyle(el).filter;
+        var filterTypes = ["blur", "brightness", "contrast", "drop-shadow", "grayscale", "hue-rotate", "invert", "opacity", "saturate", "sepia"];
+        var filterValues = {};
+
+        for (let j = 0; j < filterTypes.length; j++) {
+            filterValues[j] = filterTypes[j];
+            filterValues[filterTypes[j]] = "";
+            var auxFilter = filterTypes[j] + "\(";
+
+            var filterSubstring = filter.split(auxFilter)[1];
+            var inicio = filter.search(auxFilter) + auxFilter.length;
+            var fim = inicio;
+            var searchClose = 1;
+            if(filterSubstring){
+                for (let i = inicio; i < filterSubstring.length; i++) {
+                    if(searchClose === 1 && filterSubstring[i] === ")")
+                        break;
+                    else
+                        fim++;
+                    if(filterSubstring[i] === "(")
+                        searchClose++;
+                    else if(filterSubstring[i] === ")")
+                        searchClose--;
+                }
+            }
+        }
+        console.log(filterValues);
+        return filterValues;
     },
 };
