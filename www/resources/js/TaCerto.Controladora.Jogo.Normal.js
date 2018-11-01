@@ -4,6 +4,7 @@ TaCerto.Controladora.Jogo = TaCerto.Controladora.Jogo || {};
 TaCerto.Controladora.Jogo.Normal = {
 	DESAFIO: [],
 	containerPalavra: 0,
+	pulou: false,
 	called: function () {
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("jogo", ["normal"], ["JogoTipo"]);
 	},
@@ -72,6 +73,7 @@ TaCerto.Controladora.Jogo.Normal = {
 		}
 	},
 	pular: function(){
+		this.pulou = true;
 		var flag = document.getElementById('palavra').classList.length;
 		//document.getElementById('palavra').classList.remove("animated", "bounce");
 		var shuffledDesafio = TaCerto.Controladora.Jogo.Normal.shuffleDesafio();
@@ -122,9 +124,11 @@ TaCerto.Controladora.Jogo.Normal = {
 		filho.id = "";
 		filho.classList.add("rollOut");
 
-		if(!(TaCerto.Controladora.Jogo.Normal.DESAFIO.length-1 === 0))
+		if(!(this.DESAFIO.length-1 === 0) || this.pulou)
 			this.containerPalavra.insertBefore(oClone,this.containerPalavra.firstChild);
 
+		this.pulou = false;
+		
 		setTimeout(()=>{
 			this.containerPalavra.removeChild(filho);
 		},250)

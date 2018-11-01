@@ -181,14 +181,14 @@ TaCerto.Controladora.Jogo.Lacuna = {
 	},
 	pular: function(){
 		var flag = document.getElementById('lacConteudoWrapper').classList.length;
-		document.getElementById('lacConteudoWrapper').classList.remove("animated", "bounceInDown");
+		document.getElementById('lacConteudoWrapper').classList.remove(/*"animated", "bounceInDown"*/"bounceInDown1");
 		document.getElementById('lacunaResp').classList.remove("animated", "bounceInRight");
 		var shuffledDesafio = TaCerto.Controladora.Jogo.Lacuna.shuffleDesafio();
 
 		setTimeout(function(){
 			TaCerto.Controladora.Jogo.Lacuna.DESAFIO.pop();
 			TaCerto.Controladora.Jogo.Lacuna.DESAFIO[TaCerto.Controladora.Jogo.Lacuna.DESAFIO.length] = shuffledDesafio[0];
-			document.getElementById('lacConteudoWrapper').classList.add("animated", "bounceInDown");
+			document.getElementById('lacConteudoWrapper').classList.add(/*"animated", "bounceInDown"*/"bounceInDown1");
 			document.getElementById('lacunaResp').classList.add("animated", "bounceInRight");
 			TaCerto.Controladora.Jogo.Lacuna.proximoDesafio();
 			TaCerto.Controladora.Jogo.Lacuna.initDraggableEvent();
@@ -196,7 +196,7 @@ TaCerto.Controladora.Jogo.Lacuna = {
 		
 		setTimeout(function(){
 			if (flag > 1 && document.getElementById('lacConteudoWrapper')){
-				document.getElementById('lacConteudoWrapper').classList.remove("animated", "bounceInDown");
+				document.getElementById('lacConteudoWrapper').classList.remove(/*"animated", "bounceInDown"*/"bounceInDown1");
 				document.getElementById('lacunaResp').classList.remove("animated", "bounceInRight");
 			}
 		}, 1000);

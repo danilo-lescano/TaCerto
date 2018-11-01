@@ -6,7 +6,6 @@ TaCerto.Controladora.MenuConquistas = {
 		idGlobal: 0
 	},
 	load: function(){
-		TaCerto.Estrutura.Jogador.xp = 4500;
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("menuConquistas",["dica"],["dica"]);
 		this.loadAchievements();
         document.getElementById("moedas").innerHTML = TaCerto.Estrutura.Jogador.moeda;
@@ -291,10 +290,10 @@ TaCerto.Controladora.MenuConquistas = {
 				achievementPanel.style.transition =  "height 2s cubic-bezier(0.520, -0.600, 0.940, 1.650)"; 
 				achievementPanel.style.height = "100%"; 
 
-				/*setTimeout(()=>{
+				setTimeout(()=>{
 					if(idRandom === this.model.idGlobal)
 						achievementPanel.style.height = "0%"; 
-				}, 4000);*/
+				}, 4000);
 
 			});
 		});			

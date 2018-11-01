@@ -162,7 +162,7 @@ TaCerto.Controladora.Jogo.Geral = {
 	/*-----INICIO*/
 	/*CARD MENU CLICKS*/
 	toggleBarraCarta: function(){
-		document.getElementsByClassName("barraCartaBG")[0].style.left = this.gameModel.flagCardMenu ? "-58%" : "0px";
+		document.getElementsByClassName("barraCartaBG")[0].style.left = this.gameModel.flagCardMenu ? "-63%" : "0px";
 
 		this.gameModel.flagCardMenu = !this.gameModel.flagCardMenu;
 
@@ -188,6 +188,30 @@ TaCerto.Controladora.Jogo.Geral = {
 		//find and display block the modal
 		var modal = document.getElementById("errorModal");
 
+		requestAnimationFrame(() => {
+			modal.classList.remove("animated", "fadeIn");
+			modal.classList.remove("animated", "fadeOut");
+		});		
+
+		requestAnimationFrame(() => {
+			if(!flag){
+				
+				modal.classList.add("animated", "fadeOut");
+				setTimeout(() => {
+					console.log("fecha");
+				}, 1000);
+
+			}else{
+				
+
+				modal.classList.add("animated", "fadeIn");
+
+				setTimeout(() => {
+					console.log("abre");
+				}, 10);
+			}
+		});
+		
 		document.querySelector("#errorModal>.modalWrapper>.centerPanel>h6").innerHTML = TaCerto.Controladora.Jogo[this.gameModel.tipoDeJogo].DESAFIO[TaCerto.Controladora.Jogo[this.gameModel.tipoDeJogo].DESAFIO.length - 1].significado;
 
 		modal.style.display = flag ? "block" : "none";
@@ -210,6 +234,30 @@ TaCerto.Controladora.Jogo.Geral = {
 		this.gameModel.paused = flag;
 		//find and display block the modal
 		var modal = document.getElementById("significadoModal");
+		
+		requestAnimationFrame(() => {
+			modal.classList.remove("animated", "fadeIn");
+			modal.classList.remove("animated", "fadeOut");
+		});		
+
+		requestAnimationFrame(() => {
+			if(!flag){
+				
+				modal.classList.add("animated", "fadeOut");
+				setTimeout(() => {
+					console.log("fecha");
+				}, 1000);
+
+			}else{
+				
+
+				modal.classList.add("animated", "fadeIn");
+
+				setTimeout(() => {
+					console.log("abre");
+				}, 10);
+			}
+		});
 
 		//var child = modal.children[0].children[0].children[1];
 		document.querySelector("#significadoModal>.modalWrapper>.centerPanel>h6").innerHTML = TaCerto.Controladora.Jogo[this.gameModel.tipoDeJogo].DESAFIO[TaCerto.Controladora.Jogo[this.gameModel.tipoDeJogo].DESAFIO.length - 1].dica;
