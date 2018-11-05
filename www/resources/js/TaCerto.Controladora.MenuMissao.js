@@ -9,19 +9,22 @@ TaCerto.Controladora.MenuMissao = {
 
 		function calculaLvl(xp){
 			var level = 1;
-			xp-=200;
-			while(xp !== 0)
-				xp -= xp > 0 ? ++level * 100 : level-- * 0 + xp;
+			while(xp > 0){
+				xp -= level > 1 ? level * 100 : 200;
+				if(xp >= 0)
+					level++;
+			}
 			return level;
 		}
 		var resolveAnimationXpBar = (async ()=>{
-			var level = calculaLvl(TaCerto.Estrutura.Jogador.xp);
+			var nextLevel = calculaLvl(TaCerto.Estrutura.Jogador.xp) + 1;
 			var xpBar = document.getElementsByClassName('back_xpBar')[0];
 			var nextXp = document.getElementById('xpNextLevel');
-			var nextLevelXp = 200;
+			var nextLevelXp;
 			
-			for (let i = 0; i < level; i++) {
-				nextLevelXp += (i + 2)* 100;
+			for (let i = 1; i < nextLevel - 1; i++) {
+				if(nextLevelXp === undefined) nextLevelXp = 100;
+				nextLevelXp += i * 100;
 
 				nextXp.innerHTML = nextLevelXp;
 				xpBar.style.transition = "width 0s";
@@ -38,8 +41,9 @@ TaCerto.Controladora.MenuMissao = {
 			xpBar.style.width = "0";
 			await promiseRequestAnimationFrame();
 			await promiseRequestAnimationFrame();
+			xpBar.style.transition = "width 0.3s";
 
-			var deltaXp = nextLevelXp - (level + 1)* 100;
+			var deltaXp = nextLevelXp - (nextLevel * 100);
 			deltaXp = ((TaCerto.Estrutura.Jogador.xp - deltaXp)/(nextLevelXp - deltaXp))*100;
 			xpBar.style.width = deltaXp === 0 ? 0 : deltaXp > 10 ? deltaXp + "%" : "10%";
 		})();
