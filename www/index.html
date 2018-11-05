@@ -271,5 +271,23 @@
 		}
 	};
 
+	async function sizeCheck(){
+		var docWidth = document.documentElement.offsetWidth;
+		var xxxx = document.querySelectorAll("*");
+		var arrSize = [];
+		for(var i = 0; i < xxxx.length; i++){
+			if (xxxx[i].offsetWidth > docWidth) {
+				console.log("border fix");
+				document.getElementsByTagName("html")[0].style.boxSizing = "initial";
+				await promiseRequestAnimationFrame();
+				await promiseRequestAnimationFrame();
+				document.getElementsByTagName("html")[0].style.boxSizing = "border-box";
+				await promiseRequestAnimationFrame();
+				await promiseRequestAnimationFrame();
+			}
+		}
+		await promiseRequestAnimationFrame();
+		sizeCheck();
+	}sizeCheck();
 </script>
-</html> 
+</html>
