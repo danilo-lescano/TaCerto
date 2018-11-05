@@ -59,7 +59,7 @@ TaCerto.GenFunc = {
         }
         return matrixEl;
     },
-    filterParse: function(el){
+    __filterParse: function(el){
         var filter = getComputedStyle(el).filter;
         var filterTypes = ["blur", "brightness", "contrast", "drop-shadow", "grayscale", "hue-rotate", "invert", "opacity", "saturate", "sepia"];
         var filterValues = {};
@@ -67,26 +67,30 @@ TaCerto.GenFunc = {
         for (let j = 0; j < filterTypes.length; j++) {
             filterValues[j] = filterTypes[j];
             filterValues[filterTypes[j]] = "";
-            var auxFilter = filterTypes[j] + "\(";
+            var auxFilter = filterTypes[j] + "(";
+            var auxFilterReg = filterTypes[j] + "\\(";
 
             var filterSubstring = filter.split(auxFilter)[1];
-            var inicio = filter.search(auxFilter) + auxFilter.length;
+            var inicio = filter.search(auxFilterReg) + auxFilter.length;
+            //console.log("o: "+filter.search(auxFilterReg) + " t: " + auxFilter.length + " i: " + inicio);
+            //if(filter.search(auxFilterReg) > -1)
+            //    console.log(filterSubstring);
             var fim = inicio;
             var searchClose = 1;
-            if(filterSubstring){
-                for (let i = inicio; i < filterSubstring.length; i++) {
-                    if(searchClose === 1 && filterSubstring[i] === ")")
+            if(filterSubstring !== undefined){
+                for (let i = inicio; i < filter.length; i++) {
+                    if(searchClose === 1 && filter[i] === ")")
                         break;
                     else
                         fim++;
-                    if(filterSubstring[i] === "(")
+                    if(filter[i] === "(")
                         searchClose++;
-                    else if(filterSubstring[i] === ")")
+                    else if(filter[i] === ")")
                         searchClose--;
                 }
+                filterValues[filterTypes[j]] = filter.substring(inicio, fim);
             }
         }
-        console.log(filterValues);
         return filterValues;
     },
 };
