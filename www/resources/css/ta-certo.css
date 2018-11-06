@@ -971,9 +971,8 @@ span {
 	position: absolute;
 	left: 0px;
 	margin-top: 1px;
-	min-height: 4vh;
 	width: 70%;
-	max-width: 414px;
+	height: calc(0.156475 * 70vw);
 	z-index: 7;
 }
 .bucketCards{
@@ -990,11 +989,10 @@ span {
 	width: 81%;
 	left: -63%;/*//*/
 	background-image: url("../media/image/barra_cartas.svg");
-	background-size: 100% 75%;
+	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-    height: 7vh;
-    max-height: 50px;
+    height: calc(0.156475 * 56.7vw);
 	transition: left 1s;
 }
 .invBtn{
@@ -1011,7 +1009,6 @@ span {
 }
 .imgCard{
 	width: 7vw;
-	max-width: 41.26px;
 	padding-bottom: 134.89010989%;
 	z-index: 20;
 	background-size: cover;
