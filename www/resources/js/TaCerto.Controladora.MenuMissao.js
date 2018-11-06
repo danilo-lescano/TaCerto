@@ -43,6 +43,11 @@ TaCerto.Controladora.MenuMissao = {
 			await promiseRequestAnimationFrame();
 			xpBar.style.transition = "width 0.3s";
 
+			for (let i = 1; i < nextLevel; i++) {
+				if(nextLevelXp === undefined) nextLevelXp = 100;
+					nextLevelXp += i * 100;
+			}
+			nextXp.innerHTML = nextLevelXp;
 			var deltaXp = nextLevelXp - (nextLevel * 100);
 			deltaXp = ((TaCerto.Estrutura.Jogador.xp - deltaXp)/(nextLevelXp - deltaXp))*100;
 			xpBar.style.width = deltaXp === 0 ? 0 : deltaXp > 10 ? deltaXp + "%" : "10%";
@@ -52,7 +57,13 @@ TaCerto.Controladora.MenuMissao = {
 			var xp = 0;
 			while(TaCerto.Estrutura.Jogador.xp >= xp){
 				xpTotal.innerHTML = xp;
-				xp += 100;
+				if(TaCerto.Estrutura.Jogador.xp == xp)
+					xp++;
+				else if(xp + 100 <= TaCerto.Estrutura.Jogador.xp)
+					xp += 100;
+				else
+					xp = TaCerto.Estrutura.Jogador.xp;
+
 				await promiseRequestAnimationFrame();
 				await promiseRequestAnimationFrame();
 				await delay(100);
@@ -61,18 +72,17 @@ TaCerto.Controladora.MenuMissao = {
 
 		var resolveMissionsDisplay = (()=>{
 			var level = calculaLvl(TaCerto.Estrutura.Jogador.xp);
-			for (var i = 0; i < level+3 && i < 9; i++) {
+			for (var i = 1; i < level+3 && i < 9; i++) {
 				let aux = TaCerto.Estrutura.Jogador.missoes[i];
-				if(document.getElementById('imgMissa'+(i+1))){
+				if(document.getElementById('imgMissa'+i)){
 					if (aux[0] && aux[1] && aux[2])
-						document.getElementById('imgMissa'+(i+1)).src = "resources/media/image/missao" + (i+1) + ".png";
+						document.getElementById('imgMissa'+i).src = "resources/media/image/missao" + i + ".png";
 					else
-						document.getElementById('imgMissa'+(i+1)).src = "resources/media/image/missao" + (i+1) + "SE.png";
+						document.getElementById('imgMissa'+i).src = "resources/media/image/missao" + i + "SE.png";
 				}
 			}
 		})();
 	},
-
 	clickMissao: function(mission){
 		var missao = document.getElementById('imgMissa' + (mission+1));
 		if (!missao.src.includes("resources/media/image/lock.png")){

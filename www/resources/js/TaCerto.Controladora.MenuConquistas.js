@@ -9,26 +9,29 @@ TaCerto.Controladora.MenuConquistas = {
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("menuConquistas",["dica"],["dica"]);
 		this.loadAchievements();
         document.getElementById("moedas").innerHTML = TaCerto.Estrutura.Jogador.moeda;
+		
+		var levelImg = document.getElementById('nivelImage').firstElementChild;
+		var level = calculaLvl(TaCerto.Estrutura.Jogador.xp);
+		levelImg.src = level <= 1 ? "resources/media/image/1.png" : "resources/media/image/"+level+".png";
 
 		function calculaLvl(xp){
 			var level = 1;
-			xp-=200;
-			while(xp !== 0)
-				xp -= xp > 0 ? ++level * 100 : level-- * 0 + xp;
+			while(xp > 0){
+				xp -= level > 1 ? level * 100 : 200;
+				if(xp >= 0)
+					level++;
+			}
 			return level;
 		}
 		var resolveAnimationXpBar = (async ()=>{
-			var level = calculaLvl(TaCerto.Estrutura.Jogador.xp);
-			
-			var levelImg = document.getElementById('nivelImage').firstElementChild;
-			levelImg.src = level+1 <= 1 ? "resources/media/image/1.png" : "resources/media/image/"+(level+1)+".png";
-
+			var nextLevel = calculaLvl(TaCerto.Estrutura.Jogador.xp) + 1;
 			var xpBar = document.getElementsByClassName('back_xpBar')[0];
 			var nextXp = document.getElementById('xpNextLevel');
-			var nextLevelXp = 200;
+			var nextLevelXp;
 			
-			for (let i = 0; i < level; i++) {
-				nextLevelXp += (i + 2)* 100;
+			for (let i = 1; i < nextLevel - 1; i++) {
+				if(nextLevelXp === undefined) nextLevelXp = 100;
+				nextLevelXp += i * 100;
 
 				nextXp.innerHTML = nextLevelXp;
 				xpBar.style.transition = "width 0s";
@@ -45,8 +48,14 @@ TaCerto.Controladora.MenuConquistas = {
 			xpBar.style.width = "0";
 			await promiseRequestAnimationFrame();
 			await promiseRequestAnimationFrame();
+			xpBar.style.transition = "width 0.3s";
 
-			var deltaXp = nextLevelXp - (level + 1)* 100;
+			for (let i = 1; i < nextLevel; i++) {
+				if(nextLevelXp === undefined) nextLevelXp = 100;
+					nextLevelXp += i * 100;
+			}
+			nextXp.innerHTML = nextLevelXp;
+			var deltaXp = nextLevelXp - (nextLevel * 100);
 			deltaXp = ((TaCerto.Estrutura.Jogador.xp - deltaXp)/(nextLevelXp - deltaXp))*100;
 			xpBar.style.width = deltaXp === 0 ? 0 : deltaXp > 10 ? deltaXp + "%" : "10%";
 		})();
@@ -55,7 +64,13 @@ TaCerto.Controladora.MenuConquistas = {
 			var xp = 0;
 			while(TaCerto.Estrutura.Jogador.xp >= xp){
 				xpTotal.innerHTML = xp;
-				xp += 100;
+				if(TaCerto.Estrutura.Jogador.xp == xp)
+					xp++;
+				else if(xp + 100 <= TaCerto.Estrutura.Jogador.xp)
+					xp += 100;
+				else
+					xp = TaCerto.Estrutura.Jogador.xp;
+
 				await promiseRequestAnimationFrame();
 				await promiseRequestAnimationFrame();
 				await delay(100);
