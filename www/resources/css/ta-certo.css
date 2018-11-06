@@ -683,11 +683,16 @@ span {
 }
 .relativeDiv div{
 	position: relative;
-	top: 50%;
-	transform: translateY(-50%); 
+	height: 100%;
 }
 .relativeDiv span{
-	font-size: 16px;
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 50px;
+    margin: 0;
 }
 .transition00{
 	transition: width 0s;
@@ -2535,7 +2540,11 @@ span {
 	left: 47%;
 	z-index: -3;
 }
-
+@media only screen and (max-width: 319px) {
+	#botoes img{
+		width: 21%;
+	}
+}
 /*--------------------------------------------------------------*/
 /* NORMAL & HARDCORE *//*fim*/
 /*--------------------------------------------------------------*/

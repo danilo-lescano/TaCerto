@@ -76,7 +76,6 @@ TaCerto.Controladora.Jogo.Normal = {
 	},
 	rearrengeFontSize: function(aurWord){
 		let maxWidth = window.innerWidth * 0.81;
-		console.log(maxWidth);
 		let widthSize = aurWord.getBoundingClientRect().width;
 		let fontSize = 2;
 		while(widthSize > maxWidth){
