@@ -52,6 +52,7 @@ body {
 #palavra{
 	position: absolute;
 	top: 34%;
+	font-size: calc(2vw + 12px);
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
@@ -953,12 +954,12 @@ span {
 	font-size: 5vw;
     margin: 5% 1%;
 	font-family: 'panton',  'Pacifico', cursive;
-	width: 22%;
+	width: 23%;
 	padding-left: 12%;
     display: inline-block;
 }
 #tempo{
-	width: 28%;
+	width: 30%;
 	display: inline-block;
 	padding-left: 11.2%;
 	color: rgb(255,255,255);

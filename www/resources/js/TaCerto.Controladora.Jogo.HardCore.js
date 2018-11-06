@@ -41,6 +41,7 @@ TaCerto.Controladora.Jogo.HardCore = {
 		document.getElementById('moneyDaQuestao').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus;
 		document.getElementById('nivelDaQuestao').innerHTML = "Nível " +this.DESAFIO[this.DESAFIO.length - 1].nivel;
 		document.getElementById('palavra').innerHTML = this.DESAFIO[this.DESAFIO.length - 1].palavra;
+		this.rearrengeFontSize(document.getElementById('palavra'));
 		document.getElementById('significado').innerHTML = this.DESAFIO[this.DESAFIO.length - 1].significado;
 	},
 	efeitoResposta: function(flag){
@@ -81,6 +82,7 @@ TaCerto.Controladora.Jogo.HardCore = {
 				document.getElementById('moneyDaQuestao').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus;
 				document.getElementById('nivelDaQuestao').innerHTML = "Nível " +this.DESAFIO[this.DESAFIO.length - 1].nivel;
 				document.querySelector('#cardBG>#palavra').innerHTML = this.DESAFIO[this.DESAFIO.length - 1].palavra;
+				this.rearrengeFontSize(document.querySelector('#cardBG>#palavra'));
 				document.querySelector('#cardBG>#significado').innerHTML = this.DESAFIO[this.DESAFIO.length - 1].significado;
 			}else
 				TaCerto.Controladora.Jogo.Geral.fimDeJogo();
@@ -100,6 +102,16 @@ TaCerto.Controladora.Jogo.HardCore = {
 				this.gameModel.speed  += 0.4;
 		}
 	},
+	rearrengeFontSize: function(aurWord){
+		let maxWidth = window.innerWidth * 0.81;
+		let widthSize = aurWord.getBoundingClientRect().width;
+		let fontSize = 2;
+		while(widthSize >= maxWidth){
+			fontSize -= 0.1;
+			aurWord.style.fontSize = "calc(12px + " + fontSize + "vw)";
+			widthSize = aurWord.getBoundingClientRect().width;
+		}
+	},
 	pular: function(){
 		var flag = document.getElementById('palavra').classList.length;
 		//document.getElementById('palavra').classList.remove("animated", "bounce");
@@ -108,6 +120,7 @@ TaCerto.Controladora.Jogo.HardCore = {
 		TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1] = shuffledDesafio[0];
 		//document.getElementById('palavra').classList.add("animated", "bounce");
 		document.querySelector('#cardBG>#palavra').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].palavra;
+		this.rearrengeFontSize(document.querySelector('#cardBG>#palavra'));
 		document.querySelector('#cardBG>#significado').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].significado;
 
 	},

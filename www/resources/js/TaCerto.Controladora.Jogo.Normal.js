@@ -54,10 +54,11 @@ TaCerto.Controladora.Jogo.Normal = {
 		}
 				
 		if(TaCerto.Controladora.Jogo.Normal.DESAFIO.length){
-			setTimeout(function(){
+			setTimeout(() => {
 				document.getElementById('moneyDaQuestao').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus;
 				document.getElementById('nivelDaQuestao').innerHTML = "Nível " +TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].nivel;
 				document.querySelector('#cardBG>#palavra').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].palavra;
+				this.rearrengeFontSize(document.querySelector('#cardBG>#palavra'));
 				document.querySelector('#cardBG>#significado').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].significado;
 			}, TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo === "Aleatorio" ? 500 : 0);
 
@@ -74,11 +75,12 @@ TaCerto.Controladora.Jogo.Normal = {
 		}
 	},
 	rearrengeFontSize: function(aurWord){
-		let maxWidth = window.innerWidth * 0.9;
+		let maxWidth = window.innerWidth * 0.81;
+		console.log(maxWidth);
 		let widthSize = aurWord.getBoundingClientRect().width;
 		let fontSize = 2;
-		while(widthSize >= maxWidth){
-			fontSize += 0.1;
+		while(widthSize > maxWidth){
+			fontSize -= 0.1;
 			aurWord.style.fontSize = "calc(12px + " + fontSize + "vw)";
 			widthSize = aurWord.getBoundingClientRect().width;
 		}
@@ -92,6 +94,7 @@ TaCerto.Controladora.Jogo.Normal = {
 		TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1] = shuffledDesafio[0];
 		//document.getElementById('palavra').classList.add("animated", "bounce");
 		document.querySelector('#cardBG>#palavra').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].palavra;
+		this.rearrengeFontSize(document.querySelector('#cardBG>#palavra'));		
 		document.querySelector('#cardBG>#significado').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].significado;
 
 		//setTimeout(function(){
