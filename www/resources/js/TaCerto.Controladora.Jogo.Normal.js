@@ -19,6 +19,7 @@ TaCerto.Controladora.Jogo.Normal = {
 		document.getElementById('moneyDaQuestao').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus;
 		document.getElementById('nivelDaQuestao').innerHTML = "Nível " +TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].nivel;
 		document.getElementById('palavra').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].palavra;
+		this.rearrengeFontSize(document.getElementById('palavra'));
 		document.getElementById('significado').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].significado;
 	},
 	efeitoResposta: function(flag){
@@ -72,6 +73,16 @@ TaCerto.Controladora.Jogo.Normal = {
 			TaCerto.Controladora.Jogo.Geral.fimDeJogo();
 		}
 	},
+	rearrengeFontSize: function(aurWord){
+		let maxWidth = window.innerWidth * 0.9;
+		let widthSize = aurWord.getBoundingClientRect().width;
+		let fontSize = 2;
+		while(widthSize >= maxWidth){
+			fontSize += 0.1;
+			aurWord.style.fontSize = "calc(12px + " + fontSize + "vw)";
+			widthSize = aurWord.getBoundingClientRect().width;
+		}
+	},
 	pular: function(){
 		this.pulou = true;
 		var flag = document.getElementById('palavra').classList.length;
@@ -117,7 +128,7 @@ TaCerto.Controladora.Jogo.Normal = {
 	zerarVars: function(){
 		TaCerto.Controladora.Jogo.Normal.DESAFIO = [];
 	},
-	animaCard: function(){
+	animaCard: async function(){
 		
 		var filho = document.getElementById('cardBG');
 		var oClone = filho.cloneNode(true);
@@ -128,9 +139,11 @@ TaCerto.Controladora.Jogo.Normal = {
 			this.containerPalavra.insertBefore(oClone,this.containerPalavra.firstChild);
 
 		this.pulou = false;
-		
+
+		await promiseRequestAnimationFrame();
+		await promiseRequestAnimationFrame();
 		setTimeout(()=>{
 			this.containerPalavra.removeChild(filho);
-		},250)
+		},1000);//250
 	}
 };

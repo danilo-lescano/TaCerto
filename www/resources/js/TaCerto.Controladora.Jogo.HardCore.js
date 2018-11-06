@@ -141,18 +141,22 @@ TaCerto.Controladora.Jogo.HardCore = {
 		this.gameModel.alturaAtual = 0;
 		this.gameModel.speed = 1;
 	},
-	animaCard: function(){
+	animaCard: async function(){
 		
 		var filho = document.getElementById('cardBG');
 		var oClone = filho.cloneNode(true);
 		filho.id = "";
 		filho.classList.add("rollOut");
-		
-		if(!(TaCerto.Controladora.Jogo.Normal.DESAFIO.length-1 === 0))
+
+		if(!(this.DESAFIO.length-1 === 0) || this.pulou)
 			this.containerPalavra.insertBefore(oClone,this.containerPalavra.firstChild);
 
+		this.pulou = false;
+
+		await promiseRequestAnimationFrame();
+		await promiseRequestAnimationFrame();
 		setTimeout(()=>{
 			this.containerPalavra.removeChild(filho);
-		},250) 
+		},1000);//250
 	}
 };
