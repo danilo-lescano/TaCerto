@@ -33,18 +33,23 @@ TaCerto.Controladora.Loja = {
             document.getElementById(el.id+"-modal").style.display = "block";
         });
     },
-    closeMiniModal: function(el){
-        TaCerto.GenFunc.fadeInBtnClick(el,function(){
-            elModal = TaCerto.Controladora.Loja.miniModalCard;
-            document.getElementsByClassName("cartaLojaModalBtn1")[0].style.display = "none";
-            document.getElementsByClassName("cartaLojaModalBtn2")[0].style.display = "none";
-            document.getElementById(elModal+"-modal").style.display = "none";
-            //blur game blend
-            var unBlurThis = document.getElementById('loja').getElementsByTagName("*");
-            for (var i = 0; i < unBlurThis.length; i++) {
-                unBlurThis[i].style.filter = "none";
-            }
-        });
+    closeMiniModal: async function(el){
+        if(el){
+            el.style.transform = "translate(-15%, calc(80% + 4px))";
+            await delay(200);
+        }
+
+        elModal = TaCerto.Controladora.Loja.miniModalCard;
+        document.getElementsByClassName("cartaLojaModalBtn1")[0].style.display = "none";
+        document.getElementsByClassName("cartaLojaModalBtn2")[0].style.display = "none";
+        document.getElementById(elModal+"-modal").style.display = "none";
+        //blur game blend
+        var unBlurThis = document.getElementById('loja').getElementsByTagName("*");
+        for (var i = 0; i < unBlurThis.length; i++) {
+            unBlurThis[i].style.filter = "none";
+        }
+        if(el)
+            el.style.transform = "translate(-15%, calc(80% + 0px))";
     },
     buyCard: function(el){
         if (TaCerto.Estrutura.Jogador.moeda - this.cardPrice >= 0){
@@ -53,7 +58,9 @@ TaCerto.Controladora.Loja = {
             TaCerto.Estrutura.Jogador.moeda -= this.cardPrice;
             TaCerto.Estrutura.Jogador[cardId] += 1;
             document.getElementById("moedasLoja").innerHTML = TaCerto.Estrutura.Jogador.moeda;
-            document.getElementById("moedas").innerHTML = TaCerto.Estrutura.Jogador.moeda;
+            if(document.getElementById("moedas"))
+                document.getElementById("moedas").innerHTML = TaCerto.Estrutura.Jogador.moeda;
+            this.checkCardAvailable();
         }
     },
 	display: function(isModal){
@@ -66,5 +73,21 @@ TaCerto.Controladora.Loja = {
 			blurThis[i].style.filter = "blur(5px)";
         }
         document.getElementById("moedasLoja").innerHTML = TaCerto.Estrutura.Jogador.moeda;
-    }
+    },
+    checkCardAvailable: function(){
+		var cardDiv = ["cartaVermelha", "cartaAzul", "cartaAmarela", "cartaVerde"];
+        var cartaUsada = TaCerto.Controladora.Jogo.Geral.gameModel.cartaUsada;
+		if (document.getElementById("flagCardExists")){
+			for (var i = 0; i < cardDiv.length; i++) {
+				document.getElementById(cardDiv[i]).innerHTML = "";
+				for (var j = 0; j < TaCerto.Estrutura.Jogador[cardDiv[i]] && j < 2 && j < 2 - cartaUsada[cardDiv[i]]; j++) {
+
+					let img = new Image();
+					let src = "resources/media/image/" + cardDiv[i] + ".png";
+					img.src = src;
+					document.getElementById(cardDiv[i]).innerHTML += '<div class="imgCard bg' + cardDiv[i] + '"' + 'onclick="TaCerto.Controladora.Jogo.Geral.clickCarta(' + "'" + cardDiv[i] + "'" + ');"></div>';
+				}
+			}
+		}
+	}
 };

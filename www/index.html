@@ -113,8 +113,8 @@
 			<img class="modalComprarCartaImg" src="resources/media/image/modalComprarCartaImgVerde.png">
 		</div>
 
-		<div class="cartaLojaModalBtn1">
-			<img class="modalBtnComprarCartaImg" src="resources/media/image/modalcomprarbtn.png" onclick="TaCerto.Controladora.Loja.buyCard(this)">
+		<div class="cartaLojaModalBtn1" onclick="TaCerto.Controladora.Loja.buyCard(this)">
+			<img class="modalBtnComprarCartaImg" src="resources/media/image/modalcomprarbtn.png">
 			<div class="lojaPrecoCartaMiniModal">25</div>
 		</div>
 		<div class="cartaLojaModalBtn2" onclick="TaCerto.Controladora.Loja.closeMiniModal()"></div>
@@ -270,24 +270,5 @@
 			console.log(arrSize[i]);
 		}
 	};
-
-	async function sizeCheck(){
-		var docWidth = document.documentElement.offsetWidth;
-		var xxxx = document.querySelectorAll("*");
-		var arrSize = [];
-		for(var i = 0; i < xxxx.length; i++){
-			if (xxxx[i].offsetWidth > docWidth) {
-				console.log("border fix");
-				document.getElementsByTagName("html")[0].style.boxSizing = "initial";
-				await promiseRequestAnimationFrame();
-				await promiseRequestAnimationFrame();
-				document.getElementsByTagName("html")[0].style.boxSizing = "border-box";
-				await promiseRequestAnimationFrame();
-				await promiseRequestAnimationFrame();
-			}
-		}
-		await promiseRequestAnimationFrame();
-		sizeCheck();
-	}sizeCheck();
 </script>
 </html>

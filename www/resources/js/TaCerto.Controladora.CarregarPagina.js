@@ -1,7 +1,10 @@
 var TaCerto = TaCerto || {};
 TaCerto.Controladora = TaCerto.Controladora || {};
 TaCerto.Controladora.CarregarPagina = {
+	timestamp: undefined, 
 	htmlCorpo: function(pagina, apendice, apendiceid){
+		this.timestamp = Date.now()+1500;
+		this.sizeCheck(this.timestamp);
 		if (pagina) {
 			this.LoadBG(apendice && (apendice[0] === "lacuna" || apendice[0] === "aurelio") ? apendice[0] : pagina);
 			var flagFound = false;
@@ -113,5 +116,24 @@ TaCerto.Controladora.CarregarPagina = {
 				}
 			}
 		}
+	},
+	sizeCheck: async function (timestamp){
+		if(timestamp < Date.now() || this.timestamp != timestamp) return;
+		var docWidth = document.documentElement.offsetWidth;
+		var xxxx = document.querySelectorAll("*");
+		var arrSize = [];
+		for(var i = 0; i < xxxx.length; i++){
+			if (xxxx[i].offsetWidth > docWidth) {
+				console.log("border fix");
+				document.getElementsByTagName("html")[0].style.boxSizing = "initial";
+				await promiseRequestAnimationFrame();
+				await promiseRequestAnimationFrame();
+				document.getElementsByTagName("html")[0].style.boxSizing = "border-box";
+				await promiseRequestAnimationFrame();
+				await promiseRequestAnimationFrame();
+			}
+		}
+		await promiseRequestAnimationFrame();
+		this.sizeCheck(timestamp);
 	}
 };
