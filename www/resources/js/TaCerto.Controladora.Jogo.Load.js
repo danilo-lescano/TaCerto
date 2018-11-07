@@ -2,9 +2,10 @@ var TaCerto = TaCerto || {};
 TaCerto.Controladora = TaCerto.Controladora || {};
 TaCerto.Controladora.Jogo = TaCerto.Controladora.Jogo || {};
 TaCerto.Controladora.Jogo.Load = function(tipo, nivelMissao){
+	var message = TaCerto.Controladora.Jogo[tipo].loadingMessage() || "";
 	function loadDesafio(tipo) {
 		console.log("LOADING GAME TYPE: " + tipo + "   MISSION LEVEL: " + (isNaN(nivelMissao) ? "NONE" : (nivelMissao+1)));
-		
+
 		TaCerto.Controladora.Jogo[tipo].called();
 
 		if (!isNaN(nivelMissao)) TaCerto.Controladora.Jogo.Missao.start(nivelMissao);
@@ -19,9 +20,7 @@ TaCerto.Controladora.Jogo.Load = function(tipo, nivelMissao){
 	function startCountDown(flag, iteracao){ //usando promisse caso alguem tenha duvidas de como essa parte funciona
 		if (flag) {
 			TaCerto.Controladora.CarregarPagina.htmlCorpo("countDown");
-			var message = TaCerto.Controladora.Jogo[tipo].loadingMessage();
-			if(message)
-				document.getElementById("countdownText").innerHTML = message;
+			document.getElementById("countdownText").innerHTML = message;
 			var contador = setInterval(function(){
 				if (count === 0){
 					tictac.stop();

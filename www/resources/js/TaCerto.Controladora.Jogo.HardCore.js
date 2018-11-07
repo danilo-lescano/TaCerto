@@ -155,9 +155,11 @@ TaCerto.Controladora.Jogo.HardCore = {
 		this.gameModel.speed = 1;
 	},
 	animaCard: async function(){
-		
 		var filho = document.getElementById('cardBG');
-		var oClone = filho.cloneNode(true);
+		var oClone;
+		try {
+			oClone = filho.cloneNode(true);
+		} catch (error) {return;}
 		filho.id = "";
 		filho.classList.add("rollOut");
 

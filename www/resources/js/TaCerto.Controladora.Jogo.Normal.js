@@ -55,11 +55,14 @@ TaCerto.Controladora.Jogo.Normal = {
 				
 		if(TaCerto.Controladora.Jogo.Normal.DESAFIO.length){
 			setTimeout(() => {
-				document.getElementById('moneyDaQuestao').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus;
-				document.getElementById('nivelDaQuestao').innerHTML = "Nível " +TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].nivel;
-				document.querySelector('#cardBG>#palavra').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].palavra;
-				this.rearrengeFontSize(document.querySelector('#cardBG>#palavra'));
-				document.querySelector('#cardBG>#significado').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].significado;
+				try {
+					document.getElementById('moneyDaQuestao').innerHTML = TaCerto.Controladora.Jogo.Geral.gameModel.comboBonus;
+					document.getElementById('nivelDaQuestao').innerHTML = "Nível " +TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].nivel;
+					document.querySelector('#cardBG>#palavra').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].palavra;
+					this.rearrengeFontSize(document.querySelector('#cardBG>#palavra'));
+					document.querySelector('#cardBG>#significado').innerHTML = TaCerto.Controladora.Jogo.Normal.DESAFIO[TaCerto.Controladora.Jogo.Normal.DESAFIO.length - 1].significado;	
+				} catch (error) {}
+
 			}, TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo === "Aleatorio" ? 500 : 0);
 
 			if(TaCerto.Controladora.Jogo.Normal.DESAFIO.length === 3){
@@ -131,9 +134,11 @@ TaCerto.Controladora.Jogo.Normal = {
 		TaCerto.Controladora.Jogo.Normal.DESAFIO = [];
 	},
 	animaCard: async function(){
-		
 		var filho = document.getElementById('cardBG');
-		var oClone = filho.cloneNode(true);
+		var oClone;
+		try {
+			oClone = filho.cloneNode(true);
+		} catch (error) {return;}
 		filho.id = "";
 		filho.classList.add("rollOut");
 
