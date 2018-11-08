@@ -67,10 +67,10 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 			btns[1].onclick = undefined;
 			setTimeout(function(){
 				btns[0].onclick = function(){
-					TaCerto.Controladora.Jogo.Normal.btnResposta(true)
+					TaCerto.Controladora.Jogo.Normal.btnResposta(true);
 				};
 				btns[1].onclick = function(){
-					TaCerto.Controladora.Jogo.Normal.btnResposta(false)
+					TaCerto.Controladora.Jogo.Normal.btnResposta(false);
 				};
 			}, waitingTime);
 		})();
@@ -82,6 +82,7 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 			if(newF){
 				newF.style.display = "none";
 				newF.style.transform = "rotateX(0deg)";
+				TaCerto.Controladora.CarregarPagina.LoadBG(this.tipoDeJogo[newIndex].toLowerCase());
 				await promiseRequestAnimationFrame();
 				newF.style.display = "block";
 			} 

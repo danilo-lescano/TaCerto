@@ -18,6 +18,8 @@ TaCerto.Controladora.Jogo.Aurelio = {
 	},
 	proximaPergunta: function(){
 		//deleta ultima pergunta respondida e chama fim de jogo se não tiver mais nenhum
+		var minWidth = document.getElementById("aurBotWordWrap").getBoundingClientRect().width/15;
+
 		this.DESAFIO.pop();
 		if(this.DESAFIO.length === 0){
 			this.zerarVars();
@@ -35,7 +37,6 @@ TaCerto.Controladora.Jogo.Aurelio = {
 			return wordDiv;
 		}
 		function serAurWordSize(wordDiv){
-			var minWidth = document.getElementById("aurBotWordWrap").getBoundingClientRect().width/15;
 			var widthSize = wordDiv.getBoundingClientRect().width;
 			wordDiv.style.width = minWidth * Math.ceil(widthSize/minWidth) + "px";
 			wordDiv.calcWidth = Math.ceil(widthSize/minWidth);
@@ -99,24 +100,33 @@ TaCerto.Controladora.Jogo.Aurelio = {
 					if(linha.calcWidth() === 14) break;
 				}
 			}
+			if(minWidth < linha.length*4)
+			for (let i = 0; i < linha.length; i++) {
+				linha[i].style.marginLeft = linha[i].style.marginRight = minWidth / (linha.length * 2) + "px";
+			}
 			aurWordsNovaOrdem[aurWordsNovaOrdem.length] = linha;
 		}
 
 		document.getElementById("aurPhraseWrap").innerHTML = desafio.fraseParaCorrecao;
 		var aurBotWordWrap = document.getElementById("aurBotWordWrap");
 		aurBotWordWrap.innerHTML = "";
-		var vish = 0;
+		var onumerodepalavras = 0;
 		for (let i = 0; i < aurWordsNovaOrdem.length; i++) {
 			for (let j = 0; j < aurWordsNovaOrdem[i].length; j++) {
 				aurBotWordWrap.appendChild(aurWordsNovaOrdem[i][j]);
-				vish++;
+				onumerodepalavras++;
 			}
 		}
 
-		//console.log("linhas " + aurWordsNovaOrdem.length);
-		//console.log("vish " + vish);
-		//for (let i = 0; i < aurWordsNovaOrdem.length; i++)
-		//	console.log(aurWordsNovaOrdem[i].calcWidth());
+		var x = [];
+		for (let i = 1; i < 15; i++)
+			x[i-1] = minWidth*i;
+		//console.log(x);
+		console.log(minWidth);
+		console.log("linhas " + aurWordsNovaOrdem.length);
+		console.log("onumerodepalavras " + onumerodepalavras);
+		for (let i = 0; i < aurWordsNovaOrdem.length; i++)
+			console.log(aurWordsNovaOrdem[i].calcWidth());
 	},
 	__rearrengeFontSize: function(aurWord, maxWidth){
 		let widthSize = aurWord.getBoundingClientRect().width;
