@@ -82,7 +82,10 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 			if(newF){
 				newF.style.display = "none";
 				newF.style.transform = "rotateX(0deg)";
-				TaCerto.Controladora.CarregarPagina.LoadBG(this.tipoDeJogo[newIndex].toLowerCase());
+				var apendice = this.tipoDeJogo[newIndex].toLowerCase();
+				console.log(apendice)
+				apendice = apendice && (apendice === "lacuna" || apendice === "aurelio") ? apendice : "jogo";
+				TaCerto.Controladora.CarregarPagina.LoadBG(apendice);
 				await promiseRequestAnimationFrame();
 				newF.style.display = "block";
 			} 
