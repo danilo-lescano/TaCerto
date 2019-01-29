@@ -117,7 +117,6 @@ TaCerto.IMAGEM = [
 	{path:'resources/media/image/voltar_ao_jogo.png'},
 	{path:'resources/media/image/x2COMBO.png'},
 	{path:'resources/media/image/x3COMBO.png'},
-	{path:'resources/media/image/ERR00000000000000000.png'},
 	
 
 

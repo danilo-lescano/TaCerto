@@ -2,7 +2,14 @@ var TaCerto = TaCerto || {};
 TaCerto.Estrutura = TaCerto.Estrutura || {};
 TaCerto.Estrutura.DesafioDeFase = {
 	normal: [
-		{id: 1, palavra: "Advogado",		flag: true,		nivel: 0,	significado: "descricao", dica: "eu sou uma dica 1"},
+		{
+			id: 1,
+			palavra: "Advogado",
+			flag: true,
+			nivel: 0,
+			significado: "descricao",
+			dica: "eu sou uma dica 1"
+		},
 		{id: 2, palavra: "Adevogado",		flag: false,	nivel: 0,	significado: "descricao", dica: "eu sou uma dica 2"},
 		{id: 3, palavra: "Ambíguo",			flag: true,		nivel: 0,	significado: "descricao", dica: "eu sou uma dica 3"},
 		{id: 4, palavra: "Ambiguo",			flag: false,	nivel: 0,	significado: "descricao", dica: "eu sou uma dica 4"},
@@ -727,6 +734,24 @@ TaCerto.Estrutura.DesafioDeFase = {
 			fraseXlacuna: [
 				{frase: true, conteudo: "Eu tenho dinheiro"},
 				{frase: false},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "4", position: 1},
+				{conteudo: "10", position: 3},
+				{conteudo: "100", position: 5},
+				{conteudo: "17", position: -1},
+				{conteudo: "54", position: -1},
+			],
+			fraseXlacuna: [
+				/*0*/{frase: true, conteudo: "2+2 = "},
+				/*1*/{frase: false},
+				/*2*/{frase: true, conteudo: "2*5 = "},
+				/*3*/{frase: false},
+				/*4*/{frase: true, conteudo: "10*10 = "},
+				/*5*/{frase: false},
 			],
 			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
