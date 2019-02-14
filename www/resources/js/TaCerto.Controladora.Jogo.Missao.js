@@ -54,16 +54,17 @@ TaCerto.Controladora.Jogo.Missao = {
 		this.parametros.flagObjetivo[2] = false;
 	},
 
-	objetivo: {
-		acertoConsecutivo: function(objetivo){
-			var param = TaCerto.Estrutura.Fase[TaCerto.Controladora.Jogo.Missao.parametros.missao].param[objetivo];
-			if(TaCerto.Controladora.Jogo.Missao.parametros.maxAcertoConsecutivo >= param.maxAcertoConsecutivo)
+	objetivo: function(nome, objetivo){
+
+		var acertoConsecutivo = (objetivo) => {
+			var param = TaCerto.Estrutura.Fase[this.parametros.missao].param[objetivo];
+			if(this.parametros.maxAcertoConsecutivo >= param.maxAcertoConsecutivo)
 				return true;
 			return false
-		},
-		acertoXtempo: function(objetivo){
-			var param = TaCerto.Estrutura.Fase[TaCerto.Controladora.Jogo.Missao.parametros.missao].param[objetivo];
-			var tempoDoAcerto = TaCerto.Controladora.Jogo.Missao.parametros.tempoDoAcerto;
+		}; if(nome === "acertoConsecutivo") return acertoConsecutivo(objetivo);
+		var acertoXtempo = (objetivo) => {
+			var param = TaCerto.Estrutura.Fase[this.parametros.missao].param[objetivo];
+			var tempoDoAcerto = this.parametros.tempoDoAcerto;
 			for (var i = 0; i < tempoDoAcerto.length; i++) {
 				var acerto = 1;
 				for (var j = i+1; j < tempoDoAcerto.length; j++)
@@ -72,89 +73,89 @@ TaCerto.Controladora.Jogo.Missao = {
 							return true;
 			}
 			return false;
-		},
-		acertoTotal: function(objetivo){
-			var param = TaCerto.Estrutura.Fase[TaCerto.Controladora.Jogo.Missao.parametros.missao].param[objetivo];	
-			if (TaCerto.Controladora.Jogo.Missao.parametros.acerto >= param.acertoTotal)
+		}; if(nome === "acertoXtempo") return acertoXtempo(objetivo);
+		var acertoTotal = (objetivo) => {
+			var param = TaCerto.Estrutura.Fase[this.parametros.missao].param[objetivo];	
+			if (this.parametros.acerto >= param.acertoTotal)
 				return true;
 			return false;
-		},
-		erroConsecutivo: function(objetivo){
-			var param = TaCerto.Estrutura.Fase[TaCerto.Controladora.Jogo.Missao.parametros.missao].param[objetivo];
-			if (TaCerto.Controladora.Jogo.Missao.parametros.fimDeJogo && TaCerto.Controladora.Jogo.Missao.parametros.maxErroConsecutivo <= param.maxErroConsecutivo)
+		}; if(nome === "acertoTotal") return acertoTotal(objetivo);
+		var erroConsecutivo = (objetivo) => {
+			var param = TaCerto.Estrutura.Fase[this.parametros.missao].param[objetivo];
+			if (this.parametros.fimDeJogo && this.parametros.maxErroConsecutivo <= param.maxErroConsecutivo)
 				return true;
 			return false;
-		},
-		usarMinimoCarta: function(objetivo){
-			var param = TaCerto.Estrutura.Fase[TaCerto.Controladora.Jogo.Missao.parametros.missao].param[objetivo];
+		}; if(nome === "erroConsecutivo") return erroConsecutivo(objetivo);
+		var usarMinimoCarta = (objetivo) => {
+			var param = TaCerto.Estrutura.Fase[this.parametros.missao].param[objetivo];
 			console.log(param);
-			console.log(TaCerto.Controladora.Jogo.Missao.parametros.cartaUsada);
+			console.log(this.parametros.cartaUsada);
 
-			if (TaCerto.Controladora.Jogo.Missao.parametros.cartaUsada.cartaAzul >= param.cartaUsada.azul &&
-				TaCerto.Controladora.Jogo.Missao.parametros.cartaUsada.cartaVerde >= param.cartaUsada.verde &&
-				TaCerto.Controladora.Jogo.Missao.parametros.cartaUsada.cartaAmarela >= param.cartaUsada.amarelo &&
-				TaCerto.Controladora.Jogo.Missao.parametros.cartaUsada.cartaVermelha >= param.cartaUsada.vermelho)
+			if (this.parametros.cartaUsada.cartaAzul >= param.cartaUsada.azul &&
+				this.parametros.cartaUsada.cartaVerde >= param.cartaUsada.verde &&
+				this.parametros.cartaUsada.cartaAmarela >= param.cartaUsada.amarelo &&
+				this.parametros.cartaUsada.cartaVermelha >= param.cartaUsada.vermelho)
 				return true;
 
 			return false;
-		},
-		usarExatamenteCarta: function(objetivo){
-			var param = TaCerto.Estrutura.Fase[TaCerto.Controladora.Jogo.Missao.parametros.missao].param[objetivo];
-			if (TaCerto.Controladora.Jogo.Missao.parametros.fimDeJogo &&
-				TaCerto.Controladora.Jogo.Missao.parametros.cartaUsada.cartaAzul === param.cartaUsada.azul &&
-				TaCerto.Controladora.Jogo.Missao.parametros.cartaUsada.cartaVerde === param.cartaUsada.verde &&
-				TaCerto.Controladora.Jogo.Missao.parametros.cartaUsada.cartaAmarela === param.cartaUsada.amarelo &&
-				TaCerto.Controladora.Jogo.Missao.parametros.cartaUsada.cartaVermelha === param.cartaUsada.vermelho)
+		}; if(nome === "usarMinimoCarta") return usarMinimoCarta(objetivo);
+		var usarExatamenteCarta = (objetivo) => {
+			var param = TaCerto.Estrutura.Fase[this.parametros.missao].param[objetivo];
+			if (this.parametros.fimDeJogo &&
+				this.parametros.cartaUsada.cartaAzul === param.cartaUsada.azul &&
+				this.parametros.cartaUsada.cartaVerde === param.cartaUsada.verde &&
+				this.parametros.cartaUsada.cartaAmarela === param.cartaUsada.amarelo &&
+				this.parametros.cartaUsada.cartaVermelha === param.cartaUsada.vermelho)
 				return true;
 			return false;
-		},
-		acertoXerro: function(objetivo){
-			var param = TaCerto.Estrutura.Fase[TaCerto.Controladora.Jogo.Missao.parametros.missao].param[objetivo];
-			if (TaCerto.Controladora.Jogo.Missao.parametros.acerto >= param.acerto &&
-				TaCerto.Controladora.Jogo.Missao.parametros.erro <= param.erro &&
-				TaCerto.Controladora.Jogo.Missao.parametros.fimDeJogo)
+		}; if(nome === "usarExatamenteCarta") return usarExatamenteCarta(objetivo);
+		var acertoXerro = (objetivo) => {
+			var param = TaCerto.Estrutura.Fase[this.parametros.missao].param[objetivo];
+			if (this.parametros.acerto >= param.acerto &&
+				this.parametros.erro <= param.erro &&
+				this.parametros.fimDeJogo)
 				return true;
 			return false;
-		},
-		moedasMinimas: function(objetivo){
-			var param = TaCerto.Estrutura.Fase[TaCerto.Controladora.Jogo.Missao.parametros.missao].param[objetivo];
-			if (TaCerto.Controladora.Jogo.Missao.parametros.moeda >= param.moeda)
+		}; if(nome === "acertoXerro") return acertoXerro(objetivo);
+		var moedasMinimas = (objetivo) => {
+			var param = TaCerto.Estrutura.Fase[this.parametros.missao].param[objetivo];
+			if (this.parametros.moeda >= param.moeda)
 				return true;
 			return false;
-		},
-		tempoMaximo: function(objetivo){
-			var param = TaCerto.Estrutura.Fase[TaCerto.Controladora.Jogo.Missao.parametros.missao].param[objetivo];
-			if(TaCerto.Controladora.Jogo.Missao.parametros.fimDeJogo && TaCerto.Controladora.Jogo.Geral.gameModel.tempo <= param.tempoMaximo)
+		}; if(nome === "moedasMinimas") return moedasMinimas(objetivo);
+		var tempoMaximo = (objetivo) => {
+			var param = TaCerto.Estrutura.Fase[this.parametros.missao].param[objetivo];
+			if(this.parametros.fimDeJogo && TaCerto.Controladora.Jogo.Geral.gameModel.tempo <= param.tempoMaximo)
 				return true;
 			return false;
-		},
-		terminarFase: function(objetivo){
-			if (TaCerto.Controladora.Jogo.Missao.parametros.fimDeJogo)
+		}; if(nome === "tempoMaximo") return tempoMaximo(objetivo);
+		var terminarFase = (objetivo) => {
+			if (this.parametros.fimDeJogo)
 				return true;
 			return false;
-		},
+		}; if(nome === "terminarFase") return terminarFase(objetivo);
 	},
 	
 	checkObjetivo: function(){
-		function atualizarVars(){
-			if(TaCerto.Controladora.Jogo.Missao.parametros.acerto < TaCerto.Controladora.Jogo.Geral.gameModel.acerto){
-				TaCerto.Controladora.Jogo.Missao.parametros.acerto++;
-				if(++TaCerto.Controladora.Jogo.Missao.parametros.acertoConsecutivo > TaCerto.Controladora.Jogo.Missao.parametros.maxAcertoConsecutivo) TaCerto.Controladora.Jogo.Missao.parametros.maxAcertoConsecutivo++;
-				TaCerto.Controladora.Jogo.Missao.parametros.tempoDoAcerto[TaCerto.Controladora.Jogo.Missao.parametros.tempoDoAcerto.length] = Date.now();
+		var atualizarVars = () => {
+			if(this.parametros.acerto < TaCerto.Controladora.Jogo.Geral.gameModel.acerto){
+				this.parametros.acerto++;
+				if(++this.parametros.acertoConsecutivo > this.parametros.maxAcertoConsecutivo) this.parametros.maxAcertoConsecutivo++;
+				this.parametros.tempoDoAcerto[this.parametros.tempoDoAcerto.length] = Date.now();
 
-				TaCerto.Controladora.Jogo.Missao.parametros.moeda = TaCerto.Controladora.Jogo.Geral.gameModel.moeda;
+				this.parametros.moeda = TaCerto.Controladora.Jogo.Geral.gameModel.moeda;
 
-				TaCerto.Controladora.Jogo.Missao.parametros.erroConsecutivo = 0;
+				this.parametros.erroConsecutivo = 0;
 			}
 			else{
-				TaCerto.Controladora.Jogo.Missao.parametros.erro++;
-				if(++TaCerto.Controladora.Jogo.Missao.parametros.erroConsecutivo > TaCerto.Controladora.Jogo.Missao.parametros.maxErroConsecutivo) TaCerto.Controladora.Jogo.Missao.parametros.maxErroConsecutivo++;
-				TaCerto.Controladora.Jogo.Missao.parametros.tempoDoErro[TaCerto.Controladora.Jogo.Missao.parametros.tempoDoErro.length] = Date.now();
+				this.parametros.erro++;
+				if(++this.parametros.erroConsecutivo > this.parametros.maxErroConsecutivo) this.parametros.maxErroConsecutivo++;
+				this.parametros.tempoDoErro[this.parametros.tempoDoErro.length] = Date.now();
 
-				TaCerto.Controladora.Jogo.Missao.parametros.acertoConsecutivo = 0;
+				this.parametros.acertoConsecutivo = 0;
 			}
 
-			TaCerto.Controladora.Jogo.Missao.parametros.cartaUsada = TaCerto.Controladora.Jogo.Geral.gameModel.cartaUsada;
+			this.parametros.cartaUsada = TaCerto.Controladora.Jogo.Geral.gameModel.cartaUsada;
 		} 
 		
 		if(!this.parametros.fimDeJogo) 
@@ -163,7 +164,7 @@ TaCerto.Controladora.Jogo.Missao = {
 		var fase = isNaN(this.parametros.missao) ? [] : TaCerto.Estrutura.Fase[this.parametros.missao].funcObjetivos;
 		for (var i = 0; i < fase.length; i++){
 			if(!this.parametros.flagObjetivo[i]){
-				var flag = this.objetivo[fase[i]](i);
+				var flag = this.objetivo(fase[i], i);
 				if (!TaCerto.Estrutura.Jogador.missoes[this.parametros.missao][i] && flag){
 					this.parametros.flagObjetivo[i] = true;
 					TaCerto.Estrutura.Jogador.xp += 100;
