@@ -3,12 +3,15 @@ TaCerto.Controladora = TaCerto.Controladora || {};
 TaCerto.Controladora.Jogo = TaCerto.Controladora.Jogo || {};
 TaCerto.Controladora.Jogo.Lacuna = {
 	DESAFIO: [],
+	missaoChave: null,
 	called: function () {
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("jogo", ["lacuna"], ["JogoTipo"]);
 	},
-	loadDesafio: function () {
-		var desafioNum = TaCerto.Controladora.Jogo.Geral.gameModel.desafioNum = 15;//ORIGINAL: 15
-		var shuffledDesafio = TaCerto.Controladora.Jogo.Lacuna.shuffleDesafio();
+	
+	loadDesafio: function(missaoId, tamanho) {
+		var desafioNum = tamanho;
+		this.missaoChave = missaoId && isNaN(missaoId) ? missaoId : null;
+		var shuffledDesafio = this.shuffleDesafio(this.missaoChave);
 
 		for (var i = 0; i < desafioNum; i++)
 			TaCerto.Controladora.Jogo.Lacuna.DESAFIO[i] = shuffledDesafio[i];
@@ -183,7 +186,7 @@ TaCerto.Controladora.Jogo.Lacuna = {
 		var flag = document.getElementById('lacConteudoWrapper').classList.length;
 		document.getElementById('lacConteudoWrapper').classList.remove(/*"animated", "bounceInDown"*/"bounceInDown1");
 		document.getElementById('lacunaResp').classList.remove("animated", "bounceInRight");
-		var shuffledDesafio = TaCerto.Controladora.Jogo.Lacuna.shuffleDesafio();
+		var shuffledDesafio = TaCerto.Controladora.Jogo.Lacuna.shuffleDesafio(this.missaoChave);
 
 		setTimeout(function(){
 			TaCerto.Controladora.Jogo.Lacuna.DESAFIO.pop();
@@ -240,12 +243,15 @@ TaCerto.Controladora.Jogo.Lacuna = {
 		//TaCerto.Controladora.Jogo.Lacuna.proximoDesafio();
 		//TaCerto.Controladora.Jogo.Lacuna.initDraggableEvent();
 	},
-	shuffleDesafio: function(){
+	shuffleDesafio: function(missaoChave){
 		var x = TaCerto.Estrutura.DesafioDeFase.lacuna;
 		var arr = [];
 		var auxNvl = TaCerto.Controladora.Jogo.Missao.parametros.missao ? TaCerto.Controladora.Jogo.Missao.parametros.missao : 0;
-		for (var i = auxNvl; i < TaCerto.Controladora.Jogo.Geral.calculaLvl(TaCerto.Estrutura.Jogador.xp); i++)
-			arr[i] = i;
+		if(missaoChave)
+			arr[0] = missaoChave;
+		else
+			for (var i = auxNvl; i < TaCerto.Controladora.Jogo.Geral.calculaLvl(TaCerto.Estrutura.Jogador.xp); i++)
+				arr[i] = i;
 		x.shuffle();
 		x.pickFase(arr);
 		return x;

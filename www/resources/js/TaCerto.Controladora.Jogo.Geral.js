@@ -51,8 +51,7 @@ TaCerto.Controladora.Jogo.Geral = {
 		}, 1000);
 	},
 	loadDesafio: function(){
-
-		TaCerto.Controladora.Jogo[this.gameModel.tipoDeJogo].loadDesafio();
+		TaCerto.Controladora.Jogo[this.gameModel.tipoDeJogo].loadDesafio(this.gameModel.missaoId, this.gameModel.tamanho);
 
 		this.gameModel.maxMoney =  3 + 4 + ((this.gameModel.desafioNum-5)*3);
 	},

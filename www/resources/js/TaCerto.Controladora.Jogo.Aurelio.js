@@ -3,12 +3,14 @@ TaCerto.Controladora = TaCerto.Controladora || {};
 TaCerto.Controladora.Jogo = TaCerto.Controladora.Jogo || {};
 TaCerto.Controladora.Jogo.Aurelio = {
 	DESAFIO: [],
+	missaoChave: null,
 	called: function () {
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("jogo", ["aurelio"], ["JogoTipo"]);
 	},
-	loadDesafio: function () {
-		var desafioNum = TaCerto.Controladora.Jogo.Geral.gameModel.desafioNum = 15;//ORIGINAL: 15
-		var shuffledDesafio = this.shuffleDesafio();
+	loadDesafio: function(missaoId, tamanho) {
+		var desafioNum = tamanho;
+		this.missaoChave = missaoId && isNaN(missaoId) ? missaoId : null;
+		var shuffledDesafio = this.shuffleDesafio(this.missaoChave);
 
 		for (var i = 0; i < desafioNum; i++)
 			this.DESAFIO[i] = shuffledDesafio[i];
@@ -249,7 +251,7 @@ TaCerto.Controladora.Jogo.Aurelio = {
 		})();
 	},
 	pular: function(){
-		this.DESAFIO[this.DESAFIO.length] = this.shuffleDesafio()[0];
+		this.DESAFIO[this.DESAFIO.length] = this.shuffleDesafio(this.missaoChave)[0];
 		this.DESAFIO[this.DESAFIO.length] = "primeira interação tem um pop().";
 		this.proximaPergunta();
 	},
@@ -276,12 +278,15 @@ TaCerto.Controladora.Jogo.Aurelio = {
 			}
 		}
 	},
-	shuffleDesafio: function(){
+	shuffleDesafio: function(missaoChave){
 		var x = TaCerto.Estrutura.DesafioDeFase.aurelio;
 		var arr = [];
 		var auxNvl = TaCerto.Controladora.Jogo.Missao.parametros.missao ? TaCerto.Controladora.Jogo.Missao.parametros.missao : 0;
-		for (var i = auxNvl; i < TaCerto.Controladora.Jogo.Geral.calculaLvl(TaCerto.Estrutura.Jogador.xp); i++)
-			arr[i] = i;
+		if(missaoChave)
+			arr[0] = missaoChave;
+		else
+			for (var i = auxNvl; i < TaCerto.Controladora.Jogo.Geral.calculaLvl(TaCerto.Estrutura.Jogador.xp); i++)
+				arr[i] = i;
 		x.shuffle();
 		x.pickFase(arr);
 		return x;

@@ -5,12 +5,14 @@ TaCerto.Controladora.Jogo.Normal = {
 	DESAFIO: [],
 	containerPalavra: 0,
 	pulou: false,
+	missaoChave: null,
 	called: function () {
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("jogo", ["normal"], ["JogoTipo"]);
 	},
-	loadDesafio: function (numeroDeDesafios, faseId) {
-		var desafioNum = TaCerto.Controladora.Jogo.Geral.gameModel.desafioNum = numeroDeDesafios ? numeroDeDesafios : 15;//ORIGINAL: 15
-		var shuffledDesafio = this.shuffleDesafio(faseId);
+	loadDesafio: function (missaoId, tamanho) {
+		var desafioNum = tamanho;
+		this.missaoChave = missaoId && isNaN(missaoId) ? missaoId : null;
+		var shuffledDesafio = this.shuffleDesafio(this.missaoChave);
 
 		for (var i = 0; i < desafioNum; i++)
 			this.DESAFIO[i] = shuffledDesafio[i];
@@ -91,7 +93,7 @@ TaCerto.Controladora.Jogo.Normal = {
 		this.pulou = true;
 		var flag = document.getElementById('palavra').classList.length;
 		//document.getElementById('palavra').classList.remove("animated", "bounce");
-		var shuffledDesafio = this.shuffleDesafio();
+		var shuffledDesafio = this.shuffleDesafio(this.missaoChave);
 		this.animaCard();
 		this.DESAFIO[this.DESAFIO.length - 1] = shuffledDesafio[0];
 		//document.getElementById('palavra').classList.add("animated", "bounce");
@@ -117,12 +119,12 @@ TaCerto.Controladora.Jogo.Normal = {
 				botao.classList.remove("animated", "bounceIn");
 		}, 500);
 	},
-	shuffleDesafio: function(faseId){
+	shuffleDesafio: function(missaoChave){
 		var x = TaCerto.Estrutura.DesafioDeFase.normal;
 		var arr = [];
 		var auxNvl = TaCerto.Controladora.Jogo.Missao.parametros.missao ? TaCerto.Controladora.Jogo.Missao.parametros.missao : 0;
-		if(faseId)
-			arr = [faseId];
+		if(missaoChave)
+			arr[0] = missaoChave;
 		else
 			for (var i = auxNvl; i < TaCerto.Controladora.Jogo.Geral.calculaLvl(TaCerto.Estrutura.Jogador.xp); i++)
 				arr[i] = i;
