@@ -244,16 +244,9 @@ TaCerto.Controladora.Jogo.Lacuna = {
 		//TaCerto.Controladora.Jogo.Lacuna.initDraggableEvent();
 	},
 	shuffleDesafio: function(missaoChave){
-		var x = TaCerto.Estrutura.DesafioDeFase.lacuna;
-		var arr = [];
-		var auxNvl = TaCerto.Controladora.Jogo.Missao.parametros.missao ? TaCerto.Controladora.Jogo.Missao.parametros.missao : 0;
-		if(missaoChave)
-			arr[0] = missaoChave;
-		else
-			for (var i = auxNvl; i < TaCerto.Controladora.Jogo.Geral.calculaLvl(TaCerto.Estrutura.Jogador.xp); i++)
-				arr[i] = i;
-		x.shuffle();
-		x.pickFase(arr);
+		var x = TaCerto.Estrutura.DesafioDeFase.lacuna.slice().shuffle();
+		if(missaoChave || !isNaN(missaoChave))
+			x.pickFase([missaoChave]);
 		return x;
 	},
 	loadingMessage: function(){

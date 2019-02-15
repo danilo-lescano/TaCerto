@@ -36,7 +36,6 @@ TaCerto.Controladora.FimJogo = {
 			tamanho = this.model.tamanho;
 
 			this.zerarVars();
-			console.log(tipo + " " + missaoId + " " + tamanho);
 			TaCerto.Controladora.Jogo.Load(tipo, missaoId, tamanho);
 		});
 	},
@@ -51,7 +50,7 @@ TaCerto.Controladora.FimJogo = {
 	},
 	start: function(){
 		this.model.tipo = TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo;
-		this.model.missao = TaCerto.Controladora.Jogo.Geral.gameModel.missaoId;
+		this.model.missaoId = TaCerto.Controladora.Jogo.Geral.gameModel.missaoId;
 		this.model.tamanho = TaCerto.Controladora.Jogo.Geral.gameModel.tamanho;
 		var flagMissaoAcertos = -1;
 		var auxAcerto = TaCerto.Controladora.Jogo.Geral.gameModel.acerto;
@@ -90,8 +89,8 @@ TaCerto.Controladora.FimJogo = {
 			if(flagMissaoAcertos >= 0){
 				var el = document.getElementsByClassName("fimPontoE")[1];
 				var html;
-				var mis = TaCerto.Estrutura.Fase[TaCerto.Controladora.FimJogo.model.missao];
-				var misJogadorFlag = TaCerto.Estrutura.Jogador.missoes[TaCerto.Controladora.FimJogo.model.missao];
+				var mis = TaCerto.Estrutura.Fase[TaCerto.Controladora.FimJogo.model.missaoId];
+				var misJogadorFlag = TaCerto.Estrutura.Jogador.missoes[TaCerto.Controladora.FimJogo.model.missaoId];
 
 				html =
 				"<div class='tpFimJogo'>" + mis.tipo + "</div>" +

@@ -138,13 +138,7 @@ TaCerto.Controladora.Jogo.HardCore = {
 		}, 500);
 	},
 	shuffleDesafio: function(){
-		var x = TaCerto.Estrutura.DesafioDeFase.normal;
-		var arr = [];
-		var auxNvl = TaCerto.Controladora.Jogo.Missao.parametros.missao ? TaCerto.Controladora.Jogo.Missao.parametros.missao : 0;
-		for (var i = auxNvl; i < TaCerto.Controladora.Jogo.Geral.calculaLvl(TaCerto.Estrutura.Jogador.xp); i++)
-			arr[i] = i;
-		x.shuffle();
-		x.pickFase(arr);
+		var x = TaCerto.Estrutura.DesafioDeFase.normal.slice().shuffle();
 		return x;
 	},
 	loadingMessage: function(){

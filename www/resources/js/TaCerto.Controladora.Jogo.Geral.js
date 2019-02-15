@@ -301,12 +301,10 @@ TaCerto.Controladora.Jogo.Geral = {
 			barra.classList.add("combo1");
 			this.gameModel.comboBonus = 1;
 		}
-		else if(comboMult < 5){
+		else if(comboMult < 5)
 			barra.classList.add("combo2");
-		}
-		else{
+		else
 			barra.classList.add("combo3");
-		}
 		if(comboMult === 3 && !comboFlag){
 			this.gameModel.comboBonus = 2;
 			this.showCombo("combo" + this.gameModel.comboBonus + "x");
@@ -342,12 +340,10 @@ TaCerto.Controladora.Jogo.Geral = {
 			barra.classList.add("combo1");
 			this.gameModel.comboBonus = 1;
 		}
-		else if(comboMult < 5){
+		else if(comboMult < 5)
 			barra.classList.add("combo2");
-		}
-		else{
+		else
 			barra.classList.add("combo3");
-		}
 		if(comboMult === 3 && !comboFlag){
 			this.gameModel.comboBonus = 2;
 			this.showCombo("combo" + this.gameModel.comboBonus + "x");
@@ -439,22 +435,20 @@ TaCerto.Controladora.Jogo.Geral = {
 
 				if (TaCerto.Controladora.Jogo.Geral.gameModel.frozen)
 					TaCerto.Controladora.Jogo.Geral.gameModel.frozenTimer -= 3000;
-				else{
+				else
 					intervalo = setInterval(function(){
 						if (!TaCerto.Controladora.Jogo.Geral.gameModel.frozen)
 							clearInterval(intervalo);
 						else{
-							if (!TaCerto.Controladora.Jogo.Geral.gameModel.paused){
+							if (!TaCerto.Controladora.Jogo.Geral.gameModel.paused)
 								TaCerto.Controladora.Jogo.Geral.gameModel.frozenTimer += 100;
-							}
 							if (TaCerto.Controladora.Jogo.Geral.gameModel.frozenTimer === 3000) {
 								TaCerto.Controladora.Jogo.Geral.gameModel.frozen = false;
 								clearInterval(intervalo);
 								TaCerto.Controladora.Jogo.Geral.gameModel.frozenTimer -= 3000;
 							}
 						}
-					},100);					
-				}
+					},100);
 				TaCerto.Controladora.Jogo.Geral.gameModel.frozen = true;
 			},
 			cartaVerde: function(){

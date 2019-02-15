@@ -9,7 +9,7 @@ TaCerto.Controladora.Jogo.Aurelio = {
 	},
 	loadDesafio: function(missaoId, tamanho) {
 		var desafioNum = tamanho;
-		this.missaoChave = missaoId && isNaN(missaoId) ? missaoId : null;
+		this.missaoChave = missaoId ? missaoId : null;
 		var shuffledDesafio = this.shuffleDesafio(this.missaoChave);
 
 		for (var i = 0; i < desafioNum; i++)
@@ -279,16 +279,9 @@ TaCerto.Controladora.Jogo.Aurelio = {
 		}
 	},
 	shuffleDesafio: function(missaoChave){
-		var x = TaCerto.Estrutura.DesafioDeFase.aurelio;
-		var arr = [];
-		var auxNvl = TaCerto.Controladora.Jogo.Missao.parametros.missao ? TaCerto.Controladora.Jogo.Missao.parametros.missao : 0;
-		if(missaoChave)
-			arr[0] = missaoChave;
-		else
-			for (var i = auxNvl; i < TaCerto.Controladora.Jogo.Geral.calculaLvl(TaCerto.Estrutura.Jogador.xp); i++)
-				arr[i] = i;
-		x.shuffle();
-		x.pickFase(arr);
+		var x = TaCerto.Estrutura.DesafioDeFase.aurelio.slice().shuffle();
+		if(missaoChave || !isNaN(missaoChave))
+			x.pickFase([missaoChave]);
 		return x;
 	},
 	loadingMessage: function(){
