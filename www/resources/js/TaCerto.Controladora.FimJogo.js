@@ -2,11 +2,13 @@ var TaCerto = TaCerto || {};
 TaCerto.Controladora = TaCerto.Controladora || {};
 TaCerto.Controladora.FimJogo = {
 	model:{
-		missao: undefined,
+		tipo: undefined,
+		missaoId: undefined,
 		tamanho: undefined,
 	},
 	zerarVars: function(){
-		this.model.missao = undefined;
+		this.model.tipo = undefined;
+		this.model.missaoId = undefined;
 		this.model.tamanho = undefined;
 	},
 	btnHome: function(el){
@@ -28,9 +30,14 @@ TaCerto.Controladora.FimJogo = {
 		});
 	},
 	btnReiniciar: function(el){
-		TaCerto.GenFunc.pressClick(el,function(){
-			TaCerto.Controladora.FimJogo.zerarVars();
-			TaCerto.Controladora.Jogo.Geral.reiniciar();
+		TaCerto.GenFunc.pressClick(el,() => {
+			tipo = this.model.tipo;
+			missaoId = this.model.missaoId;
+			tamanho = this.model.tamanho;
+
+			this.zerarVars();
+			console.log(tipo + " " + missaoId + " " + tamanho);
+			TaCerto.Controladora.Jogo.Load(tipo, missaoId, tamanho);
 		});
 	},
 
@@ -40,12 +47,12 @@ TaCerto.Controladora.FimJogo = {
 		if (this.missao !== undefined) {
 			var missaoNum = this.missao;
 			var missoesConquistadas = TaCerto.Estrutura.Jogador.missoes[missaoNum];
-
 		}
 	},
 	start: function(){
-		this.model.missao = TaCerto.Controladora.Jogo.Missao.parametros.missao;
-		this.model.tamanho = TaCerto.Controladora.Jogo.Missao.parametros.tamanho;
+		this.model.tipo = TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo;
+		this.model.missao = TaCerto.Controladora.Jogo.Geral.gameModel.missaoId;
+		this.model.tamanho = TaCerto.Controladora.Jogo.Geral.gameModel.tamanho;
 		var flagMissaoAcertos = -1;
 		var auxAcerto = TaCerto.Controladora.Jogo.Geral.gameModel.acerto;
 		var auxErro = TaCerto.Controladora.Jogo.Geral.gameModel.erro;
