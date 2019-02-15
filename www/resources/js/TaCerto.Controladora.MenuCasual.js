@@ -4,10 +4,10 @@ TaCerto.Controladora.MenuCasual = {
 	load: function(){
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("menuCasual",["dica"],["dica"]);
 	},
-	callGame: function(tipo, el){
+	callGame: function(tipo, missaoId, tamanho, el){
 		TaCerto.GenFunc.fadeInBtnClick(el,
 		function(){
-			TaCerto.Controladora.Jogo.Load(tipo);
+			TaCerto.Controladora.Jogo.Load(tipo, missaoId, tamanho);
 		});
 	},
 	homeBtn: function (el) {

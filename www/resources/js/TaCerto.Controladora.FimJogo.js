@@ -2,13 +2,12 @@ var TaCerto = TaCerto || {};
 TaCerto.Controladora = TaCerto.Controladora || {};
 TaCerto.Controladora.FimJogo = {
 	model:{
-		tipoDeJogo: undefined,
 		missao: undefined,
-
+		tamanho: undefined,
 	},
 	zerarVars: function(){
-		this.tipoDeJogo = undefined;
-		this.missao = undefined;
+		this.model.missao = undefined;
+		this.model.tamanho = undefined;
 	},
 	btnHome: function(el){
 		TaCerto.GenFunc.pressClick(el,function(){
@@ -30,8 +29,8 @@ TaCerto.Controladora.FimJogo = {
 	},
 	btnReiniciar: function(el){
 		TaCerto.GenFunc.pressClick(el,function(){
-			TaCerto.Controladora.Jogo.Load(TaCerto.Controladora.FimJogo.model.tipoDeJogo, TaCerto.Controladora.FimJogo.model.missao);
 			TaCerto.Controladora.FimJogo.zerarVars();
+			TaCerto.Controladora.Jogo.Geral.reiniciar();
 		});
 	},
 
@@ -45,8 +44,8 @@ TaCerto.Controladora.FimJogo = {
 		}
 	},
 	start: function(){
-		this.model.tipoDeJogo = TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo;
 		this.model.missao = TaCerto.Controladora.Jogo.Missao.parametros.missao;
+		this.model.tamanho = TaCerto.Controladora.Jogo.Missao.parametros.tamanho;
 		var flagMissaoAcertos = -1;
 		var auxAcerto = TaCerto.Controladora.Jogo.Geral.gameModel.acerto;
 		var auxErro = TaCerto.Controladora.Jogo.Geral.gameModel.erro;
@@ -90,23 +89,23 @@ TaCerto.Controladora.FimJogo = {
 				html =
 				"<div class='tpFimJogo'>" + mis.tipo + "</div>" +
 				'<div class="piramideWrapper">'+
-				'<div class="piramideWrapper2">'+
-				'<div class="piramide">'+
-						'<div class="facePiramide facePiramide-frente">'+
-						'<img src="resources/media/image/' + (misJogadorFlag[0] ? '' : 'un') + 'checkedbox.png">'+
-						'<div class="piramideText">' + mis.descricaoObjetivos[0] + '</div>' +
-						'</div>'+
-						'<div class="facePiramide facePiramide-topo">'+
-						'<img src="resources/media/image/' + (misJogadorFlag[1] ? '' : 'un') + 'checkedbox.png">'+
-						'<div class="piramideText">' + mis.descricaoObjetivos[1] + '</div>' +
-						'</div>'+
-						'<div class="facePiramide facePiramide-baixo">'+
-						'<img src="resources/media/image/' + (misJogadorFlag[2] ? '' : 'un') + 'checkedbox.png">'+
-						'<div class="piramideText">' + mis.descricaoObjetivos[2] + '</div>' +
+					'<div class="piramideWrapper2">'+
+						'<div class="piramide">'+
+							'<div class="facePiramide facePiramide-frente">'+
+								'<img src="resources/media/image/' + (misJogadorFlag[0] ? '' : 'un') + 'checkedbox.png">'+
+								'<div class="piramideText">' + mis.descricaoObjetivos[0] + '</div>' +
+							'</div>'+
+							'<div class="facePiramide facePiramide-topo">'+
+								'<img src="resources/media/image/' + (misJogadorFlag[1] ? '' : 'un') + 'checkedbox.png">'+
+								'<div class="piramideText">' + mis.descricaoObjetivos[1] + '</div>' +
+							'</div>'+
+							'<div class="facePiramide facePiramide-baixo">'+
+								'<img src="resources/media/image/' + (misJogadorFlag[2] ? '' : 'un') + 'checkedbox.png">'+
+								'<div class="piramideText">' + mis.descricaoObjetivos[2] + '</div>' +
+							'</div>'+
 						'</div>'+
 					'</div>'+
-				'</div>'+
-				'<div class="coverPiramide"></div>'+
+					'<div class="coverPiramide"></div>'+
 				'</div>';
 
 				el.innerHTML = html;
@@ -116,27 +115,3 @@ TaCerto.Controladora.FimJogo = {
 
 	}
 };
-/*
-				"<div class='missaoFJWrapper'>"+
-					"<div class='missaoPiramide'>"+
-						"<div class='missCard'>"+
-							"<div class='missCardImg'>"+
-								"<img src='resources/media/image/" + (misJogadorFlag[0] ? "" : "un")+ "checkedbox.png'>"+
-							"</div>"+
-							"<div class='missCardtxt'>" + mis.descricaoObjetivos[0] + "</div>"+
-						"</div>"+
-						"<div class='missCard'>"+
-							"<div class='missCardImg'>"+
-								"<img src='resources/media/image/" + (misJogadorFlag[1] ? "" : "un")+ "checkedbox.png'>"+
-							"</div>"+
-							"<div class='missCardtxt'>" + mis.descricaoObjetivos[1] + "</div>"+
-						"</div>"+
-						"<div class='missCard'>"+
-							"<div class='missCardImg'>"+
-								"<img src='resources/media/image/" + (misJogadorFlag[2] ? "" : "un")+ "checkedbox.png'>"+
-							"</div>"+
-							"<div class='missCardtxt'>" + mis.descricaoObjetivos[2] + "</div>"+
-						"</div>"+
-					"</div>"+
-				"</div>";
-*/

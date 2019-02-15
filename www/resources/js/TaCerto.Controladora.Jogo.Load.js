@@ -1,17 +1,19 @@
 var TaCerto = TaCerto || {};
 TaCerto.Controladora = TaCerto.Controladora || {};
 TaCerto.Controladora.Jogo = TaCerto.Controladora.Jogo || {};
-TaCerto.Controladora.Jogo.Load = function(tipo, nivelMissao){
+TaCerto.Controladora.Jogo.Load = function(tipo, missaoId, tamanho){
+	
 	var message = TaCerto.Controladora.Jogo[tipo].loadingMessage() || "";
 	function loadDesafio(tipo) {
-		console.log("LOADING GAME TYPE: " + tipo + "   MISSION LEVEL: " + (isNaN(nivelMissao) ? "NONE" : (nivelMissao+1)));
+		console.log("LOADING GAME TYPE: " + tipo + "   MISSION LEVEL: " + 
+		(missaoId ? (!isNaN(missaoId) ? missaoId+1 : missaoId) : "NONE"));
 
 		TaCerto.Controladora.Jogo[tipo].called();
 
-		if (!isNaN(nivelMissao)) TaCerto.Controladora.Jogo.Missao.start(nivelMissao);
-		TaCerto.Controladora.Jogo.Geral.start(tipo);
+		if(!isNaN(missaoId)) TaCerto.Controladora.Jogo.Missao.start(missaoId);
+		TaCerto.Controladora.Jogo.Geral.start(tipo, missaoId, tamanho);
 
-		if (!isNaN(nivelMissao)){
+		if (!isNaN(missaoId)){
 			document.getElementById("modalBtnMissao").style.display = "initial";
 			document.getElementById("modalBtnCasual").style.display = "none";
 		}

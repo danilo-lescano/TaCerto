@@ -3,6 +3,7 @@ TaCerto.Controladora = TaCerto.Controladora || {};
 TaCerto.Controladora.MenuMissao = {
 	modoTipo: '',
 	modoNivel: 0,
+	tamanho: 0,
 	load: function(){
 		TaCerto.Controladora.CarregarPagina.htmlCorpo("menuMissao",["dica"],["dica"]);
 		document.getElementById('moedas').innerHTML = TaCerto.Estrutura.Jogador.moeda;
@@ -95,6 +96,7 @@ TaCerto.Controladora.MenuMissao = {
 				document.getElementById('objetivoP3').innerHTML = TaCerto.Estrutura.Fase[mission].descricaoObjetivos[2];
 				TaCerto.Controladora.MenuMissao.modoTipo = document.getElementById('modoTipo').innerHTML = TaCerto.Estrutura.Fase[mission].tipo;
 				TaCerto.Controladora.MenuMissao.modoNivel = mission;
+				TaCerto.Controladora.MenuMissao.tamanho = ((mission % 3) + 1) * 30;
 
 				var aux = TaCerto.Estrutura.Jogador.missoes[mission];
 				if (aux[0]) document.getElementById('modalImgMissao1').src = "resources/media/image/checkedbox.png";
@@ -116,7 +118,7 @@ TaCerto.Controladora.MenuMissao = {
 			if(botao)
 				TaCerto.Controladora.MenuMissao.modalOpenClose(false);
 			if(botao === "play"){
-				TaCerto.Controladora.Jogo.Load(TaCerto.Controladora.MenuMissao.modoTipo, TaCerto.Controladora.MenuMissao.modoNivel);
+				TaCerto.Controladora.Jogo.Load(TaCerto.Controladora.MenuMissao.modoTipo, TaCerto.Controladora.MenuMissao.modoNivel, TaCerto.Controladora.MenuMissao.tamanho);
 			}
 		});
 

@@ -10,6 +10,8 @@ TaCerto.Controladora.Jogo.Geral = {
 		tempo: 0,
 		acertosConsecutivos: 0,
 		tipoDeJogo: '',
+		missaoId: null,
+		tamanho: 0,
 		desafioNum: 0,
 		comboBonus: 1,
 
@@ -66,6 +68,8 @@ TaCerto.Controladora.Jogo.Geral = {
 		this.gameModel.tempo = 0;
 		this.gameModel.acertosConsecutivos = 0;
 		this.gameModel.tipoDeJogo = '';
+		this.gameModel.missaoId = null;
+		this.gameModel.tamanho = 0;
 		this.gameModel.desafioNum = 0;
 		this.gameModel.comboBonus = 1;
 
@@ -141,8 +145,11 @@ TaCerto.Controladora.Jogo.Geral = {
 		this.zerarVars();
 	},
 	reiniciar: function(){
-		TaCerto.Controladora.Jogo.Load(TaCerto.Controladora.Jogo.Geral.gameModel.tipoDeJogo, TaCerto.Controladora.Jogo.Missao.parametros.missao);
+		var tipoDeJogo = this.gameModel.tipoDeJogo;
+		var missaoId = this.gameModel.missaoId;
+		var tamanho = this.gameModel.tamanho;
 		this.zerarVars();
+		TaCerto.Controladora.Jogo.Load(tipoDeJogo, missaoId, tamanho);
 	},
 	loja: function(){
 		TaCerto.Controladora.Loja.display(true);
@@ -541,9 +548,11 @@ TaCerto.Controladora.Jogo.Geral = {
 		TaCerto.Controladora.MenuConquistas.checkIfICanCheckAchievements(true);
 		this.zerarVars();
 	},
-	start: function(tipo){
+	start: function(tipo, missaoId, tamanho){
 		this.zerarVars();
 		this.gameModel.tipoDeJogo = tipo;
+		this.gameModel.missaoId = missaoId;
+		this.gameModel.tamanho = tamanho;
 		this.loadDesafio();
 		this.gameClockInterval();
 	}

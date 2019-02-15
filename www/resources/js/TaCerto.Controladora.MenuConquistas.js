@@ -77,12 +77,6 @@ TaCerto.Controladora.MenuConquistas = {
 			}
 		})();
 	},
-	callGame: function(tipo, el){
-		TaCerto.GenFunc.fadeInBtnClick(el,
-		function(){
-			TaCerto.Controladora.Jogo.Load(tipo);
-		});
-	},
 	homeBtn: function (el) {
 		TaCerto.GenFunc.fadeInBtnClick(el,
 		function(){
