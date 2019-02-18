@@ -19,9 +19,8 @@ TaCerto.Estrutura.Conquistas = {
 	},
 	lengthConquista: function() {
 		var totalLength;
-		for(totalLength = 0; this.conquistas[totalLength]; totalLength++)
-			;
-		
+		for(totalLength = 0; this.conquistas[totalLength]; totalLength++);
+
 		return totalLength;
 	}
 };

@@ -97,12 +97,11 @@ TaCerto.Controladora.PreLoad = {
 		}
 	},
 	preloadESTRUTURA: function(){
-		//CARREGAR CARTA
 		//CARREGAR DESAFIODEFASE
 		//CARREGAR FASE
 		//CARREGAR OBJETIVO
 	},
-	preloadJOGADOR: function(idSession){
+	preloadJOGADOR: function(){
 		//CARREGAR JOGADOR
 	},
 	checkIfLoaded: function(){
@@ -127,14 +126,6 @@ TaCerto.Controladora.PreLoad = {
 		this.preloadSOUND();
 		this.preloadIMAGEM();
 		this.preloadESTRUTURA();
-		this.preloadJOGADOR(1);
-	},
-	loadImage: function(span){
-		for (var i = 0; i < TaCerto.IMAGEM.length; i++) {
-			if(TaCerto.IMAGEM[i].id === span.id){
-				span.appendChild(TaCerto.IMAGEM[i].img);
-				i = TaCerto.IMAGEM.length;
-			}
-		}
+		this.preloadJOGADOR();
 	}
 };
