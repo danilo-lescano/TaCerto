@@ -43,22 +43,15 @@
 		position: absolute;
 		bottom: 0;
 		">
-			<div style="
-			width: 100%;
-			text-align: left;
-			">
-			<div style="
-				position: relative;
-				width: 10%;
-				padding-bottom: 10%;
-				"></div>
+			<div style="width: 100%;">
+				<div style="position: relative; width: 10%; padding-bottom: 10%;"></div>
 				<div style="
 				position: absolute;
 				background-color: black;
 				width: 10%;
 				padding-bottom: 10%;
 				top: 0px;
-				left: 2px;
+				left: 5px;
 				"
 				onclick="
 					document.getElementById('conquistaScreen').style.display = 'block';
@@ -70,7 +63,7 @@
 				width: 10%;
 				padding-bottom: 10%;
 				top: 0px;
-				left: 2px;
+				left: 10px;
 				transform: translate(100%);
 				"
 				onclick="
@@ -83,22 +76,58 @@
 </div>
 
 <div id="conquistaScreen" class="conquistaScreenContainer">
-    <ul id="telaConquista" class="collection">
-        <li class="collection-item avatar">
-            <img class="imgConquista" src="resources/media/image/olocomeu.jpg" alt="">
-            <div class="textMidConquista">
-                <h5 class="title">Nome da Conquista</h5>
-                <h6>Descrição da conquista</h6>
-            </div>
-            
-            <div class="moneyConquista">
-			    <span>100</span>
-			    <img src="resources/media/image/missoes_atalho.png" alt="ilustracao dinheiro">
-            </div>
-        </li> 
-    </ul>
+	<div style="
+			width: 100%;
+			position: absolute;
+		">
+		<ul id="telaConquista" class="collection" style="width: 90%; left: 50%; transform: translate(-50%);">
+			<li class="collection-item avatar">
+				<img class="imgConquista" src="resources/media/image/olocomeu.jpg" alt="">
+				<div class="textMidConquista">
+					<h5 class="title">Nome da Conquista</h5>
+					<h6>Descrição da conquista</h6>
+				</div>
+				
+				<div class="moneyConquista">
+					<span>100</span>
+					<img src="resources/media/image/missoes_atalho.png" alt="ilustracao dinheiro">
+				</div>
+			</li> 
+		</ul>
+		<div class="marineBlue"
+			style="
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				z-index: -1;
+				display: block;
+		">
+		</div>
+		<div style="height: calc(11vw);"></div>
+	</div>
+    
 </div>
-<div id="tarefas" class="conquistaScreenContainer" style="background-color: red; display: none;">
-	
-	
+
+<div id="tarefas" class="conquistaScreenContainer" style="display: none;">
+	<div class="whiteBG"
+		style="
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			z-index: -1;
+		">
+	</div>
+	<div class="brownGradient"
+		style="
+			width: 100%;
+			height: 100%;
+			display: block;
+			position: absolute;
+			z-index: -1;
+		">
+	</div>
+	<div class="missaoImgWrapper" style="height: 100%;">
+		<img id="imgMissa7" onclick="var el = this; el.classList.add('animated', 'flash'); setTimeout(()=>{el.classList.remove('animated', 'flash');}, 1000);" src="resources/media/image/missao1SE.png">
+	</div>
 </div>
