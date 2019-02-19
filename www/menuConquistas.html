@@ -9,8 +9,6 @@
 			<img id="botaoHome" src="resources/media/image/home.png" alt="botao home" onclick="TaCerto.Controladora.MenuMissao.homebtn(this)">
 			<img id="botaoLoja" src="resources/media/image/carrinho.png" alt="botao loja" onclick="TaCerto.Controladora.MenuMissao.lojabtn(this)">
         </div>
-        
-
 		<div class="rightDiv">
 			<div id="moedas">100</div>
 			<img src="resources/media/image/missoes_atalho.png" alt="ilustracao dinheiro">
@@ -20,7 +18,6 @@
 	<div class="menuConquista_xpBar">
         <div class="wrapper_nivel_text">
             <div class="nivelText">NIVEL</div>    
-             
             <div id="nivelImage">
                     <img src="resources/media/image/missoes_atalho.png" alt="ilustracao dinheiro">
             </div>
@@ -41,13 +38,51 @@
 			</div>
         </div>
 
-        <div class="wrapper_conquista_text">
-            <div class="centerText">CONQUISTAS</div>  
-        </div>
+		<div style="
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		">
+			<div style="
+			width: 100%;
+			text-align: left;
+			">
+			<div style="
+				position: relative;
+				width: 10%;
+				padding-bottom: 10%;
+				"></div>
+				<div style="
+				position: absolute;
+				background-color: black;
+				width: 10%;
+				padding-bottom: 10%;
+				top: 0px;
+				left: 2px;
+				"
+				onclick="
+					document.getElementById('conquistaScreen').style.display = 'block';
+					document.getElementById('tarefas').style.display = 'none';
+				"></div>
+				<div style="
+				position: absolute;
+				background-color: blue;
+				width: 10%;
+				padding-bottom: 10%;
+				top: 0px;
+				left: 2px;
+				transform: translate(100%);
+				"
+				onclick="
+					document.getElementById('conquistaScreen').style.display = 'none';
+					document.getElementById('tarefas').style.display = 'block';
+				"></div>
+			</div>
+		</div>
     </div>
 </div>
 
-<div id="conquistaScreen">
+<div id="conquistaScreen" class="conquistaScreenContainer">
     <ul id="telaConquista" class="collection">
         <li class="collection-item avatar">
             <img class="imgConquista" src="resources/media/image/olocomeu.jpg" alt="">
@@ -62,4 +97,8 @@
             </div>
         </li> 
     </ul>
+</div>
+<div id="tarefas" class="conquistaScreenContainer" style="background-color: red; display: none;">
+	
+	
 </div>

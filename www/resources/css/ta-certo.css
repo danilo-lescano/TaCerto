@@ -2293,7 +2293,7 @@ span {
 	height: 5.5vh;
 }
 
-#conquistaScreen{
+.conquistaScreenContainer{
 	position: fixed;
 	overflow: auto;
 	height: 70vh;
