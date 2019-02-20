@@ -45,11 +45,13 @@
 				onclick="
 					document.getElementById('conquistaScreen').style.display = 'block';
 					document.getElementById('tarefas').style.display = 'none';
+					document.getElementById('tarefasPlusBtn').style.display = 'none';
 				"></div>
 				<div class="btnTab2"
 				onclick="
 					document.getElementById('conquistaScreen').style.display = 'none';
 					document.getElementById('tarefas').style.display = 'block';
+					document.getElementById('tarefasPlusBtn').style.display = 'block';
 				"></div>
 			</div>
 		</div>
@@ -84,5 +86,53 @@
 	<div class="brownGradient tarefasBG" style="display: block;"></div>
 	<div class="missaoImgWrapper" style="height: 100%;">
 		<img id="imgMissa7" onclick="var el = this; el.classList.add('animated', 'flash'); setTimeout(()=>{el.classList.remove('animated', 'flash');}, 1000);" src="resources/media/image/missao1SE.png">
+		<img id="imgMissa7" onclick="var el = this; el.classList.add('animated', 'flash'); setTimeout(()=>{el.classList.remove('animated', 'flash');}, 1000);" src="resources/media/image/missao1SE.png">
+		<img id="imgMissa7" onclick="var el = this; el.classList.add('animated', 'flash'); setTimeout(()=>{el.classList.remove('animated', 'flash');}, 1000);" src="resources/media/image/missao1SE.png">
+		<img id="imgMissa7" onclick="var el = this; el.classList.add('animated', 'flash'); setTimeout(()=>{el.classList.remove('animated', 'flash');}, 1000);" src="resources/media/image/missao1SE.png">
+		<img id="imgMissa7" onclick="var el = this; el.classList.add('animated', 'flash'); setTimeout(()=>{el.classList.remove('animated', 'flash');}, 1000);" src="resources/media/image/missao1SE.png">
+		<img id="imgMissa7" onclick="var el = this; el.classList.add('animated', 'flash'); setTimeout(()=>{el.classList.remove('animated', 'flash');}, 1000);" src="resources/media/image/missao1SE.png">
+		<img id="imgMissa7" onclick="var el = this; el.classList.add('animated', 'flash'); setTimeout(()=>{el.classList.remove('animated', 'flash');}, 1000);" src="resources/media/image/missao1SE.png">
+		<img id="imgMissa7" onclick="var el = this; el.classList.add('animated', 'flash'); setTimeout(()=>{el.classList.remove('animated', 'flash');}, 1000);" src="resources/media/image/missao1SE.png">
+		<img id="imgMissa7" onclick="var el = this; el.classList.add('animated', 'flash'); setTimeout(()=>{el.classList.remove('animated', 'flash');}, 1000);" src="resources/media/image/missao1SE.png">
+		<img id="imgMissa7" onclick="var el = this; el.classList.add('animated', 'flash'); setTimeout(()=>{el.classList.remove('animated', 'flash');}, 1000);" src="resources/media/image/missao1SE.png">
+		<img id="imgMissa7" onclick="var el = this; el.classList.add('animated', 'flash'); setTimeout(()=>{el.classList.remove('animated', 'flash');}, 1000);" src="resources/media/image/missao1SE.png">
+		<img id="imgMissa7" onclick="var el = this; el.classList.add('animated', 'flash'); setTimeout(()=>{el.classList.remove('animated', 'flash');}, 1000);" src="resources/media/image/missao1SE.png">
+		<img id="imgMissa7" onclick="var el = this; el.classList.add('animated', 'flash'); setTimeout(()=>{el.classList.remove('animated', 'flash');}, 1000);" src="resources/media/image/missao1SE.png">
+		<img id="imgMissa7" onclick="var el = this; el.classList.add('animated', 'flash'); setTimeout(()=>{el.classList.remove('animated', 'flash');}, 1000);" src="resources/media/image/missao1SE.png">
+		<img id="imgMissa7" onclick="var el = this; el.classList.add('animated', 'flash'); setTimeout(()=>{el.classList.remove('animated', 'flash');}, 1000);" src="resources/media/image/missao1SE.png">
 	</div>
+	
+</div>
+<div id="tarefasPlusBtn"
+	style="
+		position: fixed;
+		right: 0px;
+		bottom: 0px;
+		border-radius: 100%;
+		width: 75px;
+		height: 75px;
+		background-color: #e0dad2;
+		transform: translate(25%,25%);
+		border: double #3060c1 5px;
+		z-index: 2;
+		display: none;
+	"
+	onclick="
+		var el = this;
+		el.style.transform= 'translate(calc(25% + 2px),calc(25% + 2px))';
+		setTimeout(()=>{
+			el.style.transform= 'translate(25%, 25%)';
+		}, 200);
+	"
+>
+	<span style="
+		position: absolute;
+		top: 35%;
+		left: 35%;
+		margin: 0px;
+		line-height: 11.5px;
+		font-size: 30px;
+	">
+		+
+	</span>
 </div>

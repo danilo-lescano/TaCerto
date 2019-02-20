@@ -17,12 +17,15 @@ TaCerto.Controladora.Dica = {
 		if(this.gameModel.openned){
             requestAnimationFrame(()=> {
 				telaDica.style.height = "calc(11vw + 90vh)";
+				telaDica.style.zIndex = 3;
 			});  
 
         }else{			
 			requestAnimationFrame(()=> {
 				telaDica.style.height = "11vw";
-
+				setTimeout(()=>{
+					telaDica.style.zIndex = 1;
+				}, 1000);
 			});  
         }
 		
