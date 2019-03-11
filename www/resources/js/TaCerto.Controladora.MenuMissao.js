@@ -133,7 +133,10 @@ TaCerto.Controladora.MenuMissao = {
 		//blur game blend
 		var blurThis = [document.getElementsByClassName('gameBlend')[0], document.getElementsByClassName('menuMissao_wrapper')[0]];
 		for (var i = 0; i < blurThis.length; i++) {
-			blurThis[i].style.filter = flag ? "blur(5px)" : "none";
+			if(flag)
+				blurThis[i].style.filter = "blur(5px)";
+			else
+				blurThis[i].style.removeProperty("filter");
 		}
 	},
 	homebtn: function(el){

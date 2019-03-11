@@ -12,7 +12,7 @@ TaCerto.Controladora.Loja = {
             var blurThis = document.getElementsByClassName('corpo')[0].getElementsByTagName("*");
             blurThis[blurThis.length] = document.getElementsByClassName('gameBlend')[0];
             for (var i = 0; i < blurThis.length; i++) {
-                blurThis[i].style.filter = "none";
+                blurThis[i].style.removeProperty("filter");
             }
             if(TaCerto.Controladora.Loja.modal){
                 var blurThis = [document.getElementsByClassName('gameBlend')[0], document.getElementsByClassName('jogo_wrapper')[0]];
@@ -46,7 +46,7 @@ TaCerto.Controladora.Loja = {
         //blur game blend
         var unBlurThis = document.getElementById('loja').getElementsByTagName("*");
         for (var i = 0; i < unBlurThis.length; i++) {
-            unBlurThis[i].style.filter = "none";
+            unBlurThis[i].style.removeProperty("filter");
         }
         if(el)
             el.style.transform = "translate(-15%, calc(80% + 0px))";

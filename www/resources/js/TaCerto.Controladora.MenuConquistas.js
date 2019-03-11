@@ -104,7 +104,7 @@ TaCerto.Controladora.MenuConquistas = {
 				bg = "telaConquistaLiVinte";
 			}
 
-			tabelaConquistas.innerHTML += '<li class="collection-item avatar '+bg+'"><img class="imgConquista" src="resources/media/image/'+currentAchiev[3]+'.jpg" alt=""><div class="textMidConquista"><h4 class="title left-align">'+currentAchiev[0]+'</h4><h6 class="left-align h7">'+currentAchiev[1]+'</h6></div><div class="trofeuConquista"><img src="resources/media/image/'+currentAchiev[4]+'.png" alt="ilustracao trofeu"></div></li>';
+			tabelaConquistas.innerHTML += '<li class="collection-item avatar '+bg+'"><img class="imgConquista" src="resources/media/image/'+currentAchiev[3]+'.jpg" alt=""><div class="textMidConquista"><h4 class="title left-align">'+currentAchiev[0]+'</h4><h6 class="left-align h7">'+currentAchiev[1]+'</h6></div><div class="trofeuConquista">' + '<img src="resources/media/image/trofeu-shadow.png" alt="ilustracao trofeu" style="position:  absolute;left:  0;width: 105%;">' + '<img src="resources/media/image/'+currentAchiev[4]+'.png" alt="ilustracao trofeu"></div></li>';
 			
 		}
 		
@@ -288,11 +288,11 @@ TaCerto.Controladora.MenuConquistas = {
 		requestAnimationFrame(()=>{
 			
 			achievementPanel.innerHTML = ' ';
-			achievementPanel.innerHTML = '<img class="imgConquistaPanel" src="resources/media/image/'+currentAchiev[3]+'.jpg" alt=""><div class="textMidConquistaPanel"><h4 class="titlePanel">'+currentAchiev[0]+'</h4></div><img class="imgConquistaPanel2" src="resources/media/image/'+currentAchiev[4]+'.png" alt="">';
+			achievementPanel.innerHTML = '<img class="imgConquistaPanel" src="resources/media/image/'+currentAchiev[3]+'.jpg" alt=""><div class="textMidConquistaPanel"><h4 class="titlePanel">'+currentAchiev[0]+'</h4></div>' + '<img src="resources/media/image/trofeu-shadow.png" alt="ilustracao trofeu" style="position:  absolute;left:  0;width: 105%;">' + '<img class="imgConquistaPanel2" src="resources/media/image/'+currentAchiev[4]+'.png" alt="">';
 			
 			achievementPanel.classList.add("animaAchievementWrapper");
 			achievementPanel.style.transition =  "height 0s cubic-bezier(0.520, -0.600, 0.940, 1.650)"; 
-			achievementPanel.style.height = "0%"; 
+			achievementPanel.style.height = "0%";
 				
 			requestAnimationFrame(()=>{
 

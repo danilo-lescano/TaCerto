@@ -43,19 +43,24 @@
 				<div class="placeholderBox"></div>
 				<div class="btnTab1"
 				onclick="
-				requestAnimationFrame(()=>{
-					document.getElementById('conquistaScreen').style.display = 'block';
-					document.getElementById('conquistaScreen').style.opacity = 0;
-					document.getElementById('tarefas').style.display = 'none';
-					document.getElementById('tarefasPlusBtn').style.display = 'none';
 					requestAnimationFrame(()=>{
-						document.getElementById('conquistaScreen').style.opacity = 1;
+						document.getElementById('conquistaScreen').style.display = 'block';
+						document.getElementById('conquistaScreen').style.opacity = 0;
+						document.getElementById('tarefas').style.display = 'none';
+						document.getElementById('tarefasPlusBtn').style.display = 'none';
+						requestAnimationFrame(()=>{
+							document.getElementById('conquistaScreen').style.opacity = 1;
+						});
 					});
-				});
-					
+					document.querySelectorAll('.btnTab1 > .btnTabFilho')[0].classList.add('animated', 'rubberBand');
+					setTimeout(()=>{
+						document.querySelectorAll('.btnTab1 > .btnTabFilho')[0].classList.remove('animated', 'rubberBand');
+					},500);
 				">
 					<div class="marineBlue" style="width: 100%; height: 100%; position: absolute;"></div>
-					<img src="resources/media/image/trofeu-ouro.png" style="width: 50%; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);">
+					<div class="btnTabFilho" style="width: 100%; height: 100%; position: absolute;">
+						<img src="resources/media/image/trofeu-ouro.png" style="width: 50%; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);">
+					</div>
 				</div>
 				<div class="btnTab2"
 				onclick="
@@ -70,11 +75,17 @@
 							document.getElementById('tarefasPlusBtn').style.opacity = 1;
 						});
 					});
+					document.querySelectorAll('.btnTab2 > .btnTabFilho')[0].classList.add('animated', 'rubberBand');
+					setTimeout(()=>{
+						document.querySelectorAll('.btnTab2 > .btnTabFilho')[0].classList.remove('animated', 'rubberBand');
+					},500);
 				">
 					<div class="whiteBG" style="width: 100%; height: 100%; position: absolute;"></div>
 					<div class="brownGradient" style="width: 100%; height: 100%; position: absolute; display: block;"></div>
 					<div class="missaoImgWrapper" style="width: 100%; height: 100%; position: absolute;"></div>
-					<img src="resources/media/image/livro.png" style="width: 50%; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);">
+					<div class="btnTabFilho" style="width: 100%; height: 100%; position: absolute;">
+						<img src="resources/media/image/livro.png" style="width: 50%; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);">
+					</div>
 				</div>
 		</div>
     </div>
