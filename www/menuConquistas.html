@@ -43,17 +43,39 @@
 				<div class="placeholderBox"></div>
 				<div class="btnTab1"
 				onclick="
+				requestAnimationFrame(()=>{
 					document.getElementById('conquistaScreen').style.display = 'block';
+					document.getElementById('conquistaScreen').style.opacity = 0;
 					document.getElementById('tarefas').style.display = 'none';
 					document.getElementById('tarefasPlusBtn').style.display = 'none';
-				"></div>
+					requestAnimationFrame(()=>{
+						document.getElementById('conquistaScreen').style.opacity = 1;
+					});
+				});
+					
+				">
+					<div class="marineBlue" style="width: 100%; height: 100%; position: absolute;"></div>
+					<img src="resources/media/image/trofeu-ouro.png" style="width: 50%; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);">
+				</div>
 				<div class="btnTab2"
 				onclick="
-					document.getElementById('conquistaScreen').style.display = 'none';
-					document.getElementById('tarefas').style.display = 'block';
-					document.getElementById('tarefasPlusBtn').style.display = 'block';
-				"></div>
-			</div>
+					requestAnimationFrame(()=>{
+						document.getElementById('conquistaScreen').style.display = 'none';
+						document.getElementById('tarefas').style.display = 'block';
+						document.getElementById('tarefasPlusBtn').style.display = 'block';
+						document.getElementById('tarefas').style.opacity = 0;
+						document.getElementById('tarefasPlusBtn').style.opacity = 0;
+						requestAnimationFrame(()=>{
+							document.getElementById('tarefas').style.opacity = 1;
+							document.getElementById('tarefasPlusBtn').style.opacity = 1;
+						});
+					});
+				">
+					<div class="whiteBG" style="width: 100%; height: 100%; position: absolute;"></div>
+					<div class="brownGradient" style="width: 100%; height: 100%; position: absolute; display: block;"></div>
+					<div class="missaoImgWrapper" style="width: 100%; height: 100%; position: absolute;"></div>
+					<img src="resources/media/image/livro.png" style="width: 50%; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);">
+				</div>
 		</div>
     </div>
 </div>
@@ -81,7 +103,7 @@
     
 </div>
 
-<div id="tarefas" class="conquistaScreenContainer" style="display: none;">
+<div id="tarefas" class="conquistaScreenContainer" style="display: none; opacity: 0;">
 	<div class="whiteBG tarefasBG"></div>
 	<div class="brownGradient tarefasBG" style="display: block;"></div>
 	<div class="missaoImgWrapper" style="height: 100%;">
@@ -101,7 +123,6 @@
 		<img id="imgMissa7" onclick="var el = this; el.classList.add('animated', 'flash'); setTimeout(()=>{el.classList.remove('animated', 'flash');}, 1000);" src="resources/media/image/missao1SE.png">
 		<img id="imgMissa7" onclick="var el = this; el.classList.add('animated', 'flash'); setTimeout(()=>{el.classList.remove('animated', 'flash');}, 1000);" src="resources/media/image/missao1SE.png">
 	</div>
-	
 </div>
 <div id="tarefasPlusBtn"
 	style="
@@ -112,14 +133,15 @@
 		width: 75px;
 		height: 75px;
 		background-color: #e0dad2;
-		transform: translate(25%,25%);
+		transform: translate(25%, 25%);
 		border: double #3060c1 5px;
 		z-index: 2;
 		display: none;
+		transition: opacity .23s linear;
 	"
 	onclick="
 		var el = this;
-		el.style.transform= 'translate(calc(25% + 2px),calc(25% + 2px))';
+		el.style.transform= 'translate(calc(25% + 2px), calc(25% + 2px))';
 		setTimeout(()=>{
 			el.style.transform= 'translate(25%, 25%)';
 		}, 200);
