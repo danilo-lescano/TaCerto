@@ -17,9 +17,9 @@ TaCerto.Controladora.Jogo.HardCore = {
 		var intervaloParede = setInterval(
 			function(){
 				
-				if(!document.getElementById("parede")){
+				if(!document.getElementById("parede"))
 					clearInterval(intervaloParede);
-				}else if(TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual >= 72.5){
+				else if(TaCerto.Controladora.Jogo.HardCore.gameModel.alturaAtual >= 72.5){
 					clearInterval(intervaloParede);
 					TaCerto.Controladora.Jogo.Geral.fimDeJogo();
 				}else if (!TaCerto.Controladora.Jogo.Geral.gameModel.paused && !TaCerto.Controladora.Jogo.Geral.gameModel.frozen){

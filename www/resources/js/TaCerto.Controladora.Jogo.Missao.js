@@ -158,10 +158,10 @@ TaCerto.Controladora.Jogo.Missao = {
 			this.parametros.cartaUsada = TaCerto.Controladora.Jogo.Geral.gameModel.cartaUsada;
 		} 
 		
-		if(!this.parametros.fimDeJogo) 
+		if(!this.parametros.fimDeJogo)
 			atualizarVars();
 
-		var fase = isNaN(this.parametros.missao) ? [] : TaCerto.Estrutura.Fase[this.parametros.missao].funcObjetivos;
+		var fase = this.parametros.missao !== null && !isNaN(this.parametros.missao) ? TaCerto.Estrutura.Fase[this.parametros.missao].funcObjetivos : [];
 		for (var i = 0; i < fase.length; i++){
 			if(!this.parametros.flagObjetivo[i]){
 				var flag = this.objetivo(fase[i], i);

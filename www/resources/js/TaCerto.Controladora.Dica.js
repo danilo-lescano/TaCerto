@@ -8,27 +8,23 @@ TaCerto.Controladora.Dica = {
     open: function () {
 		
 		this.checaVazio();
-
 		
 		var telaDica = document.getElementById("dica");
 		
 		this.gameModel.openned = !this.gameModel.openned;
 		
-		if(this.gameModel.openned){
+		if(this.gameModel.openned)
             requestAnimationFrame(()=> {
 				telaDica.style.height = "calc(11vw + 90vh)";
 				telaDica.style.zIndex = 3;
 			});  
-
-        }else{			
+        else
 			requestAnimationFrame(()=> {
 				telaDica.style.height = "11vw";
 				setTimeout(()=>{
 					telaDica.style.zIndex = 1;
 				}, 1000);
 			});  
-        }
-		
 	},
 	carregaDicas: function () {
 		this.gameModel.carregado = true;
@@ -89,9 +85,9 @@ TaCerto.Controladora.Dica = {
 	},
 	checaVazio: function () {
 		
-		if(TaCerto.Estrutura.Jogador.dicas.length > 0){
+		if(TaCerto.Estrutura.Jogador.dicas.length > 0)
 			this.carregaDicas();
-		}else{
+		else{
 			var tabelaDicas = document.getElementById('telaDica'); 
 			if(tabelaDicas.children.length == 1){
 				var teladicaMsg = document.getElementById('telaDicaMsg');
@@ -109,9 +105,8 @@ TaCerto.Controladora.Dica = {
 		// Procura e apaga a dica do array
 		for(var i = 0, l = list; i < l && !isThere; i++){
 			//String.prototype.equals
-			if(list[i].id === parseInt(idDica)){
+			if(list[i].id === parseInt(idDica))
 				console.log("Vc já tá aqui, irmão");
-			}
 		}
 
 		if(!isThere){

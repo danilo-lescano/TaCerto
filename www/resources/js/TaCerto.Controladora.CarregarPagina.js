@@ -15,9 +15,8 @@ TaCerto.Controladora.CarregarPagina = {
 				}
 			console.log("htmlCorpo " + pagina + " found: " + flagFound);
 		}
-		if (apendice !== undefined) {
+		if (apendice !== undefined)
 			this.apendiceLoad(pagina, apendice, apendiceid);
-		}
 		this.checkCardAvailable();
 	},
 	LoadBG: function (pagina) {

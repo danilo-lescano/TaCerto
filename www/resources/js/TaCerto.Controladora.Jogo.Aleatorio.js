@@ -39,8 +39,8 @@ TaCerto.Controladora.Jogo.Aleatorio = {
 	next: function(){
 		this.respostasTotais++;
 		if(this.respostasTotais > TaCerto.Controladora.Jogo.Geral.gameModel.desafioNum){
-			setTimeout(function(){
-				TaCerto.Controladora.Jogo.Aleatorio.zerarVars();
+			setTimeout(()=>{
+				this.zerarVars();
 				TaCerto.Controladora.Jogo.Geral.fimDeJogo();
 			},1010);
 			return;

@@ -141,7 +141,7 @@ TaCerto.Controladora.Jogo.Explorador = {
 				explCColItemWrapper.appendChild(explCColItem);
 
 				setTimeout(() => {
-					let col = isCol1 ? TaCerto.Controladora.Jogo.Explorador.html.explCCol1 : TaCerto.Controladora.Jogo.Explorador.html.explCCol2;
+					let col = isCol1 ? this.html.explCCol1 : this.html.explCCol2;
 					col.appendChild(explCColItemWrapper);
 
 					//fonte de tamanho dinamico
@@ -196,8 +196,8 @@ TaCerto.Controladora.Jogo.Explorador = {
 			}
 			flagResposta = contRespostasCorretas === this.gameModel.totalItensCorretosPalavra;
 			TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResposta);
-			setTimeout(function(){
-				TaCerto.Controladora.Jogo.Explorador.proximaPergunta();
+			setTimeout(()=>{
+				this.proximaPergunta();
 			},1000);
 		}
 	},
@@ -323,8 +323,8 @@ TaCerto.Controladora.Jogo.Explorador = {
 		}
 
 		TaCerto.Controladora.Jogo.Geral.atualizarResposta(flagResposta);
-		setTimeout(function(){
-			TaCerto.Controladora.Jogo.Explorador.proximaPergunta();
+		setTimeout(()=>{
+			this.proximaPergunta();
 		},900);
 	},
 	pular: function(){

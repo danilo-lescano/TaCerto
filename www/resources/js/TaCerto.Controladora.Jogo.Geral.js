@@ -34,18 +34,18 @@ TaCerto.Controladora.Jogo.Geral = {
 
 		this.gameModel.tempo = 0;
 
-		this.gameModel.intervalo = setInterval(function (){
+		this.gameModel.intervalo = setInterval(()=>{
 
-			if (!TaCerto.Controladora.Jogo.Geral.gameModel.paused && !TaCerto.Controladora.Jogo.Geral.gameModel.frozen){
+			if (!this.gameModel.paused && !this.gameModel.frozen){
 
-				var minutes = Math.floor(TaCerto.Controladora.Jogo.Geral.gameModel.tempo / 60);
-				var seconds = TaCerto.Controladora.Jogo.Geral.gameModel.tempo - (minutes * 60);
+				var minutes = Math.floor(this.gameModel.tempo / 60);
+				var seconds = this.gameModel.tempo - (minutes * 60);
 
 				var tempoText = "";
 				tempoText += "" + (minutes < 10 ? "0" : "") + minutes;
 				tempoText += ":" + (seconds < 10 ? "0" : "") + seconds;
 				document.getElementById('tempo').innerHTML = tempoText;
-				TaCerto.Controladora.Jogo.Geral.gameModel.tempo++;
+				this.gameModel.tempo++;
 			}
 				
 		}, 1000);
@@ -121,8 +121,8 @@ TaCerto.Controladora.Jogo.Geral = {
 	},
 	pauseBtn: function(el){
 		TaCerto.GenFunc.fadeInBtnClick(el,
-		function(){
-			TaCerto.Controladora.Jogo.Geral.pauseJogo(true);
+		()=>{
+			this.pauseJogo(true);
 		});
 	},
 	pauseJogo: function (flag) {
@@ -185,8 +185,8 @@ TaCerto.Controladora.Jogo.Geral = {
 			return;
 
 		TaCerto.GenFunc.fadeInBtnClick(el,
-		function(){
-			TaCerto.Controladora.Jogo.Geral.showLastErrorPanel(flag);
+		()=>{
+			this.showLastErrorPanel(flag);
 		});
 	},
 	showLastErrorPanel: function(flag){
@@ -232,8 +232,8 @@ TaCerto.Controladora.Jogo.Geral = {
 	showMeOSignificado: function(el, flag){
 
 		TaCerto.GenFunc.fadeInBtnClick(el,
-		function(){
-			TaCerto.Controladora.Jogo.Geral.showSignificadoPanel(flag);
+		()=>{
+			this.showSignificadoPanel(flag);
 		});
 	},
 	showSignificadoPanel: function(flag){

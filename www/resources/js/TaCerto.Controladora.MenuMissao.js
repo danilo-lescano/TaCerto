@@ -117,9 +117,8 @@ TaCerto.Controladora.MenuMissao = {
 		function(){
 			if(botao)
 				TaCerto.Controladora.MenuMissao.modalOpenClose(false);
-			if(botao === "play"){
+			if(botao === "play")
 				TaCerto.Controladora.Jogo.Load(TaCerto.Controladora.MenuMissao.modoTipo, TaCerto.Controladora.MenuMissao.modoNivel, TaCerto.Controladora.MenuMissao.tamanho);
-			}
 		});
 
 		var e = window.event;

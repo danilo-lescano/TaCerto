@@ -12,21 +12,21 @@ TaCerto.Controladora.FimJogo = {
 		this.model.tamanho = undefined;
 	},
 	btnHome: function(el){
-		TaCerto.GenFunc.pressClick(el,function(){
+		TaCerto.GenFunc.pressClick(el, ()=>{
 			TaCerto.Controladora.MenuInicial.load();
-			TaCerto.Controladora.FimJogo.zerarVars();
+			this.zerarVars();
 		});
 	},
 	btnCasual: function(el){
-		TaCerto.GenFunc.pressClick(el,function(){
+		TaCerto.GenFunc.pressClick(el, ()=>{
 			TaCerto.Controladora.MenuCasual.load();
-			TaCerto.Controladora.FimJogo.zerarVars();
+			this.zerarVars();
 		});
 	},
 	btnMissao: function(el){
-		TaCerto.GenFunc.pressClick(el,function(){
+		TaCerto.GenFunc.pressClick(el, ()=>{
 			TaCerto.Controladora.MenuMissao.load();
-			TaCerto.Controladora.FimJogo.zerarVars();
+			this.zerarVars();
 		});
 	},
 	btnReiniciar: function(el){
@@ -67,7 +67,7 @@ TaCerto.Controladora.FimJogo = {
 			flagMissaoAcertos += TaCerto.Estrutura.Jogador.missoes[missNum][2] ? 1 : 0;
 		}
 
-		setTimeout(function(){
+		setTimeout(() => {
 			TaCerto.Controladora.CarregarPagina.htmlCorpo('fimDeJogo',["dica"],["dica"]);
 
 			document.getElementById("showAcerto").innerHTML = document.getElementById("showAcertoE").innerHTML = "Acertos:\t" + auxAcerto;
@@ -89,8 +89,8 @@ TaCerto.Controladora.FimJogo = {
 			if(flagMissaoAcertos >= 0){
 				var el = document.getElementsByClassName("fimPontoE")[1];
 				var html;
-				var mis = TaCerto.Estrutura.Fase[TaCerto.Controladora.FimJogo.model.missaoId];
-				var misJogadorFlag = TaCerto.Estrutura.Jogador.missoes[TaCerto.Controladora.FimJogo.model.missaoId];
+				var mis = TaCerto.Estrutura.Fase[this.model.missaoId];
+				var misJogadorFlag = TaCerto.Estrutura.Jogador.missoes[this.model.missaoId];
 
 				html =
 				"<div class='tpFimJogo'>" + mis.tipo + "</div>" +
