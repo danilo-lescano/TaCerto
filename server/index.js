@@ -3,28 +3,31 @@ const url = require('url');
 
 let { usuarios } = require('./usuarios.js');
 
-const BaseAction = require('./BaseAction.js');
-const Logar = require('./Logar.js');
+const Action = require('./actions.js');
 
 const server = http.createServer((req, res)=>{
     let URL_Parse = url.parse(req.url, true);
     let { host, pathname, query } = URL_Parse;
 
-    let Action;
+    let action;
 
-    if(pathname.toLowerCase() === '/logar')
-        Action = new Logar({req, res});
+    let actionString = toCamelCase(pathname.substring(1));
+    console.log(actionString);
+    if(Action[actionString])
+        action = new Action[actionString]({req, res});
     else
-        Action = new BaseAction({req, res});
+        action = new Action.BaseAction({req, res});
 
-    Action.response();
+    action.response();
 });
 
-function x(data, res){
-    let keys = typeof data === 'object' ? Object.keys(data) : [];
-    let values = typeof data === 'object' ? Object.values(data) : [];
-    for(let i = 0; i < keys.length; i++)
-        res.write('\n' + keys[i] + " " + values[i]);
-}
+function toCamelCase(str){
+    var actions = Object.keys(Action);
 
+    for (let i = 0; i < actions.length; i++) {
+        if(str.toLowerCase() === actions[i].toLowerCase())
+            return actions[i];
+    }
+    return str;
+}
 server.listen(5000);
