@@ -5,6 +5,7 @@ class Logar extends BaseAction {
     }
 
     response(){
+        console.log('i am logar');
         this.res.write('uma mensagem de teste!\n');
         this.res.end();
     }
