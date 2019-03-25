@@ -12,7 +12,6 @@ class BaseAction {
     }
 
     response(){
-        console.log('i am base action');
         this.res.end();
     }
 }

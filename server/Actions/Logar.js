@@ -7,12 +7,18 @@ class Logar extends BaseAction {
     }
 
     response(){
-        if(this.query.name !== undefined && this.query.password !== undefined){
-            console.log(this.query.name + " " + this.query.password);
-            this.res.write(this.query.name + " " + this.query.password);
+        if(DB.GetUserByNamePass(this.query.login, this.query.password) !== null){
+            this.res.writeHead(200, {'Content-Type': 'application/json'});
+            this.res.write(JSON.stringify({ login: this.query.login, password: this.query.password }));
+        }
+        else if(this.query.login !== undefined && this.query.password !== undefined){
+            console.log(this.query.login + " " + this.query.password);
+            this.res.writeHead(200, {'Content-Type': 'application/json'});
+            this.res.write(JSON.stringify({ msg : "wrong pass or login" }));
         }
         else{
-            this.res.write("wrong");
+            this.res.writeHead(400, {'Content-Type': 'application/json'});
+            this.res.write(JSON.stringify({ msg : "wrong" }));
         }
         this.res.end();
     }
