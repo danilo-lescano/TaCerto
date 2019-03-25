@@ -1,8 +1,8 @@
 const http = require('http');
 const urlParse = require('url');
-const Action = require('./actions.js');
+const Action = require('./Actions/Actions.js');
 
-let { usuarios } = require('./usuarios.js');
+let DB = require('./DB/DB.js');
 
 
 const server = http.createServer((req, res)=>{

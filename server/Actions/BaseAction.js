@@ -1,4 +1,5 @@
 const urlParse = require('url');
+
 class BaseAction {
     constructor(obj){
         this.req = obj.req;
