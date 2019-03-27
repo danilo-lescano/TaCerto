@@ -1,7 +1,8 @@
 var TaCerto = TaCerto || {};
 TaCerto.Controladora = TaCerto.Controladora || {};
 TaCerto.Controladora.CarregarPagina = {
-	timestamp: undefined, 
+	timestamp: undefined,
+	animacaoFimDeFase: false, //variavel utilizada para tratar diferente animações de transição
 	htmlCorpo: function(pagina, apendice, apendiceid){
 		this.timestamp = Date.now()+1500;
 		this.sizeCheck(this.timestamp);
@@ -22,11 +23,29 @@ TaCerto.Controladora.CarregarPagina = {
 	LoadBG: function (pagina) {
 		var resetLayers = function(theLayer) {
 			var layers = document.getElementsByClassName("layer");
+			mainTrasition(this.animacaoFimDeFase);
 			for (var i = 0; i < layers.length; i++)
 				layers[i].style.display = "none";
 			document.getElementsByClassName(theLayer)[0].style.display = "block";
 		};
-		if(pagina === "menuInicial" || pagina === "login") resetLayers("softBlue");
+		var mainTrasition = function(animacaoFimDeFase){
+			var classAnim = animacaoFimDeFase ? "transitionPage2" : "transitionPage3";
+			var delayTime = animacaoFimDeFase ? 600 : 300;
+			requestAnimationFrame(()=>{
+				var el = document.getElementById("transitionPage");
+				el.classList.remove(classAnim);
+				requestAnimationFrame(()=>{
+					el.classList.add(classAnim);
+					setTimeout(()=>{
+						el.classList.remove(classAnim);
+					}, delayTime);
+				});
+			});
+		};
+		if(pagina === "menuInicial"){
+			resetLayers("softBlue");
+		}
+		else if(pagina ==="menuConquistas" || pagina === "login") resetLayers("softBlue");
 		else if(pagina === "menuCasual" || pagina === "loja"){
 			resetLayers("brownGradient");
 			document.getElementsByClassName("whiteBG")[0].style.display = "block";

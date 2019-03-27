@@ -267,26 +267,21 @@ TaCerto.Controladora.MenuConquistas = {
 		}
 	},
 	showAchievementPanel: function(id){
-		
 		var achievs = TaCerto.Estrutura.Conquistas.conquistas;
 		var achievementPanel = document.getElementById("achievementPanel");
 		const idRandom = Math.random();
 		this.model.idGlobal = idRandom;
 
-		
-		if(this.model.idGlobal === 0){
-			;
-		}else{
-				achievementPanel.innerHTML = ' ';
-				achievementPanel.style.height = '0%';
-				achievementPanel.classList.remove("animaAchievementWrapper2");
-				achievementPanel.classList.remove("animaAchievementWrapper");	
+		if(this.model.idGlobal !== 0){
+			achievementPanel.innerHTML = ' ';
+			achievementPanel.style.height = '0%';
+			achievementPanel.classList.remove("animaAchievementWrapper2");
+			achievementPanel.classList.remove("animaAchievementWrapper");	
 		}
 
 		var currentAchiev = achievs[id];
 
 		requestAnimationFrame(()=>{
-			
 			achievementPanel.innerHTML = ' ';
 			achievementPanel.innerHTML = '<img class="imgConquistaPanel" src="resources/media/image/'+currentAchiev[3]+'.jpg" alt=""><div class="textMidConquistaPanel"><h4 class="titlePanel">'+currentAchiev[0]+'</h4></div>' + '<img src="resources/media/image/trofeu-shadow.png" alt="ilustracao trofeu" style="position:  absolute;left:  0;width: 105%;">' + '<img class="imgConquistaPanel2" src="resources/media/image/'+currentAchiev[4]+'.png" alt="">';
 			
@@ -295,7 +290,6 @@ TaCerto.Controladora.MenuConquistas = {
 			achievementPanel.style.height = "0%";
 				
 			requestAnimationFrame(()=>{
-
 				achievementPanel.style.transition =  "height 2s cubic-bezier(0.520, -0.600, 0.940, 1.650)"; 
 				achievementPanel.style.height = "100%"; 
 
@@ -303,7 +297,6 @@ TaCerto.Controladora.MenuConquistas = {
 					if(idRandom === this.model.idGlobal)
 						achievementPanel.style.height = "0%"; 
 				}, 4000);
-
 			});
 		});			
 	}
