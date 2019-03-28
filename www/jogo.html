@@ -2,11 +2,11 @@
 <div id="pauseModal" class="modalBlur" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick()">
 	<!-- conteudo do modal-->
 	<div class="modalWrapper">
-		<img class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick(this, 'home')" src="resources/media/image/home.png" alt="Botão ir para página inicial">
-		<img class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick(this, 'reiniciar')" src="resources/media/image/reiniciar.png" alt="Botão reiniciar o jogo">
+		<img class="modalBtn transition2Key" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick(this, 'home')" src="resources/media/image/home.png" alt="Botão ir para página inicial">
+		<img class="modalBtn transition2Key" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick(this, 'reiniciar')" src="resources/media/image/reiniciar.png" alt="Botão reiniciar o jogo">
 		<img class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick(this, 'loja')" src="resources/media/image/carrinho.png" alt="Botão abrir loja">
-		<img id="modalBtnMissao" style="display: none;" class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick(this, 'missao')" src="resources/media/image/menumissaobtn.png" alt="Botão ir para página missões">
-		<img id="modalBtnCasual" class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick(this, 'casual')" src="resources/media/image/menucasual.png" alt="Botão ir para página menu casual">
+		<img id="modalBtnMissao" style="display: none;" class="modalBtn transition2Key" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick(this, 'missao')" src="resources/media/image/menumissaobtn.png" alt="Botão ir para página missões">
+		<img id="modalBtnCasual" class="modalBtn transition2Key" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick(this, 'casual')" src="resources/media/image/menucasual.png" alt="Botão ir para página menu casual">
 		<img class="modalBtn" onclick="TaCerto.Controladora.Jogo.Geral.pauseModalClick(this)" src="resources/media/image/voltar_ao_jogo.png" alt="Botão voltar ao jogo">
 	</div>
 </div>
@@ -38,7 +38,7 @@
 	</div>
 
 <!-- MODAL start -->
-<div id="despauseModal" class="modalBlur">
+<div id="despauseModal" class="modalBlur" style="display: none;">
 	<div class="modalWrapper">
 		<span id="despauseCountdown"></span>
 	</div>

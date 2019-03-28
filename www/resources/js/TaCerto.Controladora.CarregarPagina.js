@@ -21,26 +21,11 @@ TaCerto.Controladora.CarregarPagina = {
 		this.checkCardAvailable();
 	},
 	LoadBG: function (pagina) {
-		var resetLayers = function(theLayer) {
+		var resetLayers = (theLayer)=>{
 			var layers = document.getElementsByClassName("layer");
-			mainTrasition(this.animacaoFimDeFase);
 			for (var i = 0; i < layers.length; i++)
 				layers[i].style.display = "none";
 			document.getElementsByClassName(theLayer)[0].style.display = "block";
-		};
-		var mainTrasition = function(animacaoFimDeFase){
-			var classAnim = animacaoFimDeFase ? "transitionPage2" : "transitionPage3";
-			var delayTime = animacaoFimDeFase ? 600 : 300;
-			requestAnimationFrame(()=>{
-				var el = document.getElementById("transitionPage");
-				el.classList.remove(classAnim);
-				requestAnimationFrame(()=>{
-					el.classList.add(classAnim);
-					setTimeout(()=>{
-						el.classList.remove(classAnim);
-					}, delayTime);
-				});
-			});
 		};
 		if(pagina === "menuInicial"){
 			resetLayers("softBlue");
@@ -155,3 +140,31 @@ TaCerto.Controladora.CarregarPagina = {
 		this.sizeCheck(timestamp);
 	}
 };
+
+
+//event listeners
+
+document.addEventListener('click', function(e){
+	console.log('hey');
+	let elClick = e.target;
+    if(elClick.classList.contains('transition2Key')){
+		console.log('hoy');
+		requestAnimationFrame(()=>{
+			var el = document.getElementById("transitionPage");
+			el.classList.add("transitionPage2");
+			setTimeout(()=>{
+				el.classList.remove("transitionPage2");
+			}, 600);
+		});
+	}
+    else if(elClick.classList.contains('transition3Key')){
+		console.log('hoy');
+		requestAnimationFrame(()=>{
+			var el = document.getElementById("transitionPage");
+			el.classList.add("transitionPage3");
+			setTimeout(()=>{
+				el.classList.remove("transitionPage3");
+			}, 300);
+		});
+	}
+ });

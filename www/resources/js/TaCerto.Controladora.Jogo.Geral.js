@@ -112,12 +112,8 @@ TaCerto.Controladora.Jogo.Geral = {
 		}
 		if(el)
 			TaCerto.GenFunc.fadeInBtnClick(el,logica);
-		else
+		else if(document.getElementById("despauseModal").style.display === "none")
 			logica();
-
-		var e = window.event;
-		e.cancelBubble = true;
-		if (e.stopPropagation) e.stopPropagation();
 	},
 	pauseBtn: function(el){
 		TaCerto.GenFunc.fadeInBtnClick(el,
