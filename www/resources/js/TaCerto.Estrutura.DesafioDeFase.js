@@ -755,6 +755,1065 @@ TaCerto.Estrutura.DesafioDeFase = {
 			],
 			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
 		},
+		{
+			resposta: [
+				{conteudo: "mais", position: 1},
+				{conteudo: "mas", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Eu sou"},
+				{frase: false},
+				{frase: true, conteudo: "inteligente do que você."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "mais", position: -1},
+				{conteudo: "mas", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Você não vale nada,"},
+				{frase: false},
+				{frase: true, conteudo: "eu gosto de você."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "mas", position: 1},
+				{conteudo: "mais", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Você não pediu,"},
+				{frase: false},
+				{frase: true, conteudo: "eu sou legal."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "mau", position: -1},
+				{conteudo: "mal", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Você foi"},
+				{frase: false},
+				{frase: true, conteudo: "na prova."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "mau!", position: 1},
+				{conteudo: "mal!", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Cachorro"},
+				{frase: false},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "exceção", position: 1},
+				{conteudo: "excessão", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Você é a única "},
+				{frase: false},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "mau", position: -1},
+				{conteudo: "mal", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Você é"},
+				{frase: false},
+				{frase: true, conteudo: "educada."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "mau.", position: 1},
+				{conteudo: "mal.", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Aquele gato tem cara de"},
+				{frase: false},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "seção", position: -1},
+				{conteudo: "sessão", position: 1},
+				{conteudo: "cessão", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "A"},
+				{frase: false},
+				{frase: true, conteudo: "do cinema deve começar às 15h."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "seção", position: 1},
+				{conteudo: "sessão", position: -1},
+				{conteudo: "cessão", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "A"},
+				{frase: false},
+				{frase: true, conteudo: "de trocas fica no final do corredor."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "seção", position: -1},
+				{conteudo: "sessão", position: -1},
+				{conteudo: "cessão", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "O juiz determinou a"},
+				{frase: false},
+				{frase: true, conteudo: "da herança."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Fazem", position: -1},
+				{conteudo: "Faz", position: 0},
+				{conteudo: "Há", position: 0},
+			],
+			fraseXlacuna: [
+				{frase: false},
+				{frase: true, conteudo: "5 anos que não o vejo."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Houveram", position: -1},
+				{conteudo: "Houve", position: 0},
+			],
+			fraseXlacuna: [
+				{frase: false},
+				{frase: true, conteudo: "muitos acidentes"},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "à", position: -1},
+				{conteudo: "a", position: 1},
+				{conteudo: "do que", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Eu prefiro café"},
+				{frase: false},
+				{frase: true, conteudo: "leite."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Aonde", position: 0},
+				{conteudo: "Onde", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: false},
+				{frase: true, conteudo: "você vai?"},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Aonde", position: -1},
+				{conteudo: "Onde", position: 0},
+			],
+			fraseXlacuna: [
+				{frase: false},
+				{frase: true, conteudo: "você mora?"},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "há", position: 1},
+				{conteudo: "a", position: -1},
+				{conteudo: "à", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Eu moro aqui"},
+				{frase: false},
+				{frase: true, conteudo: "muito tempo."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "há", position: 1},
+				{conteudo: "a", position: -1},
+				{conteudo: "à", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Jacinta chegou"},
+				{frase: false},
+				{frase: true, conteudo: "duas horas."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Vem", position: -1},
+				{conteudo: "Vêm", position: 1},
+				{conteudo: "Vêem", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Rafael e Lucas"},
+				{frase: false},
+				{frase: true, conteudo: "aqui sempre"},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Tem", position: -1},
+				{conteudo: "Têm", position: 1},
+				{conteudo: "Têns", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Joana"},
+				{frase: false},
+				{frase: true, conteudo: "rinite"},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Mesma", position: 1},
+				{conteudo: "Mesmo", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Isabella"},
+				{frase: false},
+				{frase: true, conteudo: "disse isso."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Em vez", position: -1},
+				{conteudo: "Ao invés", position: 0},
+			],
+			fraseXlacuna: [
+				{frase: false},
+				{frase: true, conteudo: "de falar, poderia calar a boca."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Em vez", position: 0},
+				{conteudo: "Ao invés", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Não trabalhe hoje, se está doente."},
+				{frase: false},
+				{frase: true, conteudo: "disso, vá ao médico."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "viagem", position: 1},
+				{conteudo: "viajem", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "A"},
+				{frase: false},
+				{frase: true, conteudo: "de Chihiro é um filme estranho."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "traz", position: 1},
+				{conteudo: "trás", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Me"},
+				{frase: false},
+				{frase: true, conteudo: "uma água."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "traz", position: -1},
+				{conteudo: "trás", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Crianças no banco de"},
+				{frase: false},
+				{frase: true, conteudo: "sempre."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "demais", position: 1},
+				{conteudo: "de mais", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "O guri gritou"},
+				{frase: false},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "demais", position: -1},
+				{conteudo: "de mais", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Eu tenho dinheiro"},
+				{frase: false},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "4", position: 1},
+				{conteudo: "10", position: 3},
+				{conteudo: "100", position: 5},
+				{conteudo: "17", position: -1},
+				{conteudo: "54", position: -1},
+			],
+			fraseXlacuna: [
+				/*0*/{frase: true, conteudo: "2+2 = "},
+				/*1*/{frase: false},
+				/*2*/{frase: true, conteudo: "2*5 = "},
+				/*3*/{frase: false},
+				/*4*/{frase: true, conteudo: "10*10 = "},
+				/*5*/{frase: false},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "mais", position: 1},
+				{conteudo: "mas", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Eu sou"},
+				{frase: false},
+				{frase: true, conteudo: "inteligente do que você."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "mais", position: -1},
+				{conteudo: "mas", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Você não vale nada,"},
+				{frase: false},
+				{frase: true, conteudo: "eu gosto de você."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "mas", position: 1},
+				{conteudo: "mais", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Você não pediu,"},
+				{frase: false},
+				{frase: true, conteudo: "eu sou legal."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "mau", position: -1},
+				{conteudo: "mal", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Você foi"},
+				{frase: false},
+				{frase: true, conteudo: "na prova."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "mau!", position: 1},
+				{conteudo: "mal!", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Cachorro"},
+				{frase: false},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "exceção", position: 1},
+				{conteudo: "excessão", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Você é a única "},
+				{frase: false},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "mau", position: -1},
+				{conteudo: "mal", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Você é"},
+				{frase: false},
+				{frase: true, conteudo: "educada."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "mau.", position: 1},
+				{conteudo: "mal.", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Aquele gato tem cara de"},
+				{frase: false},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "seção", position: -1},
+				{conteudo: "sessão", position: 1},
+				{conteudo: "cessão", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "A"},
+				{frase: false},
+				{frase: true, conteudo: "do cinema deve começar às 15h."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "seção", position: 1},
+				{conteudo: "sessão", position: -1},
+				{conteudo: "cessão", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "A"},
+				{frase: false},
+				{frase: true, conteudo: "de trocas fica no final do corredor."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "seção", position: -1},
+				{conteudo: "sessão", position: -1},
+				{conteudo: "cessão", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "O juiz determinou a"},
+				{frase: false},
+				{frase: true, conteudo: "da herança."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Fazem", position: -1},
+				{conteudo: "Faz", position: 0},
+				{conteudo: "Há", position: 0},
+			],
+			fraseXlacuna: [
+				{frase: false},
+				{frase: true, conteudo: "5 anos que não o vejo."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Houveram", position: -1},
+				{conteudo: "Houve", position: 0},
+			],
+			fraseXlacuna: [
+				{frase: false},
+				{frase: true, conteudo: "muitos acidentes"},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "à", position: -1},
+				{conteudo: "a", position: 1},
+				{conteudo: "do que", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Eu prefiro café"},
+				{frase: false},
+				{frase: true, conteudo: "leite."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Aonde", position: 0},
+				{conteudo: "Onde", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: false},
+				{frase: true, conteudo: "você vai?"},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Aonde", position: -1},
+				{conteudo: "Onde", position: 0},
+			],
+			fraseXlacuna: [
+				{frase: false},
+				{frase: true, conteudo: "você mora?"},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "há", position: 1},
+				{conteudo: "a", position: -1},
+				{conteudo: "à", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Eu moro aqui"},
+				{frase: false},
+				{frase: true, conteudo: "muito tempo."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "há", position: 1},
+				{conteudo: "a", position: -1},
+				{conteudo: "à", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Jacinta chegou"},
+				{frase: false},
+				{frase: true, conteudo: "duas horas."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Vem", position: -1},
+				{conteudo: "Vêm", position: 1},
+				{conteudo: "Vêem", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Rafael e Lucas"},
+				{frase: false},
+				{frase: true, conteudo: "aqui sempre"},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Tem", position: -1},
+				{conteudo: "Têm", position: 1},
+				{conteudo: "Têns", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Joana"},
+				{frase: false},
+				{frase: true, conteudo: "rinite"},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Mesma", position: 1},
+				{conteudo: "Mesmo", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Isabella"},
+				{frase: false},
+				{frase: true, conteudo: "disse isso."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Em vez", position: -1},
+				{conteudo: "Ao invés", position: 0},
+			],
+			fraseXlacuna: [
+				{frase: false},
+				{frase: true, conteudo: "de falar, poderia calar a boca."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Em vez", position: 0},
+				{conteudo: "Ao invés", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Não trabalhe hoje, se está doente."},
+				{frase: false},
+				{frase: true, conteudo: "disso, vá ao médico."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "viagem", position: 1},
+				{conteudo: "viajem", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "A"},
+				{frase: false},
+				{frase: true, conteudo: "de Chihiro é um filme estranho."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "traz", position: 1},
+				{conteudo: "trás", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Me"},
+				{frase: false},
+				{frase: true, conteudo: "uma água."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "traz", position: -1},
+				{conteudo: "trás", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Crianças no banco de"},
+				{frase: false},
+				{frase: true, conteudo: "sempre."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "demais", position: 1},
+				{conteudo: "de mais", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "O guri gritou"},
+				{frase: false},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "demais", position: -1},
+				{conteudo: "de mais", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Eu tenho dinheiro"},
+				{frase: false},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "4", position: 1},
+				{conteudo: "10", position: 3},
+				{conteudo: "100", position: 5},
+				{conteudo: "17", position: -1},
+				{conteudo: "54", position: -1},
+			],
+			fraseXlacuna: [
+				/*0*/{frase: true, conteudo: "2+2 = "},
+				/*1*/{frase: false},
+				/*2*/{frase: true, conteudo: "2*5 = "},
+				/*3*/{frase: false},
+				/*4*/{frase: true, conteudo: "10*10 = "},
+				/*5*/{frase: false},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "mais", position: 1},
+				{conteudo: "mas", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Eu sou"},
+				{frase: false},
+				{frase: true, conteudo: "inteligente do que você."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "mais", position: -1},
+				{conteudo: "mas", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Você não vale nada,"},
+				{frase: false},
+				{frase: true, conteudo: "eu gosto de você."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "mas", position: 1},
+				{conteudo: "mais", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Você não pediu,"},
+				{frase: false},
+				{frase: true, conteudo: "eu sou legal."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "mau", position: -1},
+				{conteudo: "mal", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Você foi"},
+				{frase: false},
+				{frase: true, conteudo: "na prova."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "mau!", position: 1},
+				{conteudo: "mal!", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Cachorro"},
+				{frase: false},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "exceção", position: 1},
+				{conteudo: "excessão", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Você é a única "},
+				{frase: false},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "mau", position: -1},
+				{conteudo: "mal", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Você é"},
+				{frase: false},
+				{frase: true, conteudo: "educada."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "mau.", position: 1},
+				{conteudo: "mal.", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Aquele gato tem cara de"},
+				{frase: false},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "seção", position: -1},
+				{conteudo: "sessão", position: 1},
+				{conteudo: "cessão", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "A"},
+				{frase: false},
+				{frase: true, conteudo: "do cinema deve começar às 15h."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "seção", position: 1},
+				{conteudo: "sessão", position: -1},
+				{conteudo: "cessão", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "A"},
+				{frase: false},
+				{frase: true, conteudo: "de trocas fica no final do corredor."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "seção", position: -1},
+				{conteudo: "sessão", position: -1},
+				{conteudo: "cessão", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "O juiz determinou a"},
+				{frase: false},
+				{frase: true, conteudo: "da herança."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Fazem", position: -1},
+				{conteudo: "Faz", position: 0},
+				{conteudo: "Há", position: 0},
+			],
+			fraseXlacuna: [
+				{frase: false},
+				{frase: true, conteudo: "5 anos que não o vejo."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Houveram", position: -1},
+				{conteudo: "Houve", position: 0},
+			],
+			fraseXlacuna: [
+				{frase: false},
+				{frase: true, conteudo: "muitos acidentes"},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "à", position: -1},
+				{conteudo: "a", position: 1},
+				{conteudo: "do que", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Eu prefiro café"},
+				{frase: false},
+				{frase: true, conteudo: "leite."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Aonde", position: 0},
+				{conteudo: "Onde", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: false},
+				{frase: true, conteudo: "você vai?"},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Aonde", position: -1},
+				{conteudo: "Onde", position: 0},
+			],
+			fraseXlacuna: [
+				{frase: false},
+				{frase: true, conteudo: "você mora?"},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "há", position: 1},
+				{conteudo: "a", position: -1},
+				{conteudo: "à", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Eu moro aqui"},
+				{frase: false},
+				{frase: true, conteudo: "muito tempo."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "há", position: 1},
+				{conteudo: "a", position: -1},
+				{conteudo: "à", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Jacinta chegou"},
+				{frase: false},
+				{frase: true, conteudo: "duas horas."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Vem", position: -1},
+				{conteudo: "Vêm", position: 1},
+				{conteudo: "Vêem", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Rafael e Lucas"},
+				{frase: false},
+				{frase: true, conteudo: "aqui sempre"},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Tem", position: -1},
+				{conteudo: "Têm", position: 1},
+				{conteudo: "Têns", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Joana"},
+				{frase: false},
+				{frase: true, conteudo: "rinite"},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Mesma", position: 1},
+				{conteudo: "Mesmo", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Isabella"},
+				{frase: false},
+				{frase: true, conteudo: "disse isso."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Em vez", position: -1},
+				{conteudo: "Ao invés", position: 0},
+			],
+			fraseXlacuna: [
+				{frase: false},
+				{frase: true, conteudo: "de falar, poderia calar a boca."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "Em vez", position: 0},
+				{conteudo: "Ao invés", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Não trabalhe hoje, se está doente."},
+				{frase: false},
+				{frase: true, conteudo: "disso, vá ao médico."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "viagem", position: 1},
+				{conteudo: "viajem", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "A"},
+				{frase: false},
+				{frase: true, conteudo: "de Chihiro é um filme estranho."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "traz", position: 1},
+				{conteudo: "trás", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Me"},
+				{frase: false},
+				{frase: true, conteudo: "uma água."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "traz", position: -1},
+				{conteudo: "trás", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Crianças no banco de"},
+				{frase: false},
+				{frase: true, conteudo: "sempre."},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "demais", position: 1},
+				{conteudo: "de mais", position: -1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "O guri gritou"},
+				{frase: false},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "demais", position: -1},
+				{conteudo: "de mais", position: 1},
+			],
+			fraseXlacuna: [
+				{frase: true, conteudo: "Eu tenho dinheiro"},
+				{frase: false},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
+		{
+			resposta: [
+				{conteudo: "4", position: 1},
+				{conteudo: "10", position: 3},
+				{conteudo: "100", position: 5},
+				{conteudo: "17", position: -1},
+				{conteudo: "54", position: -1},
+			],
+			fraseXlacuna: [
+				/*0*/{frase: true, conteudo: "2+2 = "},
+				/*1*/{frase: false},
+				/*2*/{frase: true, conteudo: "2*5 = "},
+				/*3*/{frase: false},
+				/*4*/{frase: true, conteudo: "10*10 = "},
+				/*5*/{frase: false},
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0,
+		},
 	],
 	explorador: [
 		{
