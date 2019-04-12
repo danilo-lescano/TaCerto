@@ -17,7 +17,6 @@ http.createServer(function (req, res) {
 	var pathnameURL = aux.pathname.toLowerCase();
 	var datahURL = aux.query;
 	console.log(fs.existsSync(pastaDeHTMLs+pathnameURL) + " request for path: " + req.url);
-
 	function errou404(){
 		res.end();
 	}
@@ -34,7 +33,6 @@ http.createServer(function (req, res) {
 			res.end();
 		});
 	}
-
 	//LOGIN
 	else if (req.method === 'POST'){
 		var body = "";
@@ -51,7 +49,6 @@ http.createServer(function (req, res) {
 						response.on('data', function (chunk) {
 							body = JSON.parse(chunk);
 						});
-
 						response.on('end', function () {
 							if (body.length) {
 								console.log(body[0].idUsuario);
@@ -60,7 +57,6 @@ http.createServer(function (req, res) {
 							}
 							else
 								res.end();
-							
 						});
 					}
 				).end();
@@ -78,7 +74,6 @@ http.createServer(function (req, res) {
 						response.on('data', function (chunk) {
 							body = JSON.parse(chunk);
 						});
-
 						response.on('end', function () {
 							if (body.length) {
 								console.log(body[0].idUsuario);
@@ -87,15 +82,13 @@ http.createServer(function (req, res) {
 							}
 							else
 								res.end();
-							
 						});
 					}
 				).end();
 			});
 		}
-		else{
+		else
 			errou404();
-		}
 	}
 	//acessos liberados
 	else if(fs.existsSync(pastaDeHTMLs+pathnameURL) && (
@@ -121,14 +114,6 @@ http.createServer(function (req, res) {
 		});
 	}
 	//teste de selec/requisicoes estranhas que n foram organizadas
-	else{
+	else
 		errou404();
-	}
-	
 }).listen(8005);
-
-
-
-
-
-

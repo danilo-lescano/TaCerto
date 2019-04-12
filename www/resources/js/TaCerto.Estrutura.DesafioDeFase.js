@@ -2019,9 +2019,1938 @@ TaCerto.Estrutura.DesafioDeFase = {
 				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
 			],
 			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
-		}
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🚲"},
+				{equivalente: 1,		emoji: true,	conteudo:"🦎"},
+				{equivalente: 2,		emoji: true,	conteudo:"🍊"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Magrela"},
+				{equivalente: 1,		emoji: false,	conteudo:"Taruíra"},
+				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🥖"},
+				{equivalente: 1,		emoji: true,	conteudo:"🐢"},
+				{equivalente: 2,		emoji: true,	conteudo:"👦"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Filão"},
+				{equivalente: 1,		emoji: false,	conteudo:"Tracajá"},
+				{equivalente: 2,		emoji: false,	conteudo:"Piá"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: false,	conteudo:"Naco"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pandorga"},
+				{equivalente: 2,		emoji: false,	conteudo:"Califom"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Pedaço"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pipa"},
+				{equivalente: 2,		emoji: false,	conteudo:"Sutiã"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Charlar"},
+				{equivalente: true,		emoji: false,	conteudo:"Conversar"},
+				{equivalente: true,		emoji: false,	conteudo:"Prosear"},
+				{equivalente: false,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: false,	emoji: false,	conteudo:"Briba"},
+				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
+				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Promessa"},
+				{equivalente: true,		emoji: false,	conteudo:"Compromisso"},
+				{equivalente: true,		emoji: false,	conteudo:"Pacto"},
+				{equivalente: true,		emoji: false,	conteudo:"Trato"},
+				{equivalente: true,		emoji: false,	conteudo:"Acordo"},
+				{equivalente: false,	emoji: false,	conteudo:"Juro"},
+				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🚲"},
+				{equivalente: 1,		emoji: true,	conteudo:"🦎"},
+				{equivalente: 2,		emoji: true,	conteudo:"🍊"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Magrela"},
+				{equivalente: 1,		emoji: false,	conteudo:"Taruíra"},
+				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🥖"},
+				{equivalente: 1,		emoji: true,	conteudo:"🐢"},
+				{equivalente: 2,		emoji: true,	conteudo:"👦"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Filão"},
+				{equivalente: 1,		emoji: false,	conteudo:"Tracajá"},
+				{equivalente: 2,		emoji: false,	conteudo:"Piá"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: false,	conteudo:"Naco"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pandorga"},
+				{equivalente: 2,		emoji: false,	conteudo:"Califom"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Pedaço"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pipa"},
+				{equivalente: 2,		emoji: false,	conteudo:"Sutiã"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Charlar"},
+				{equivalente: true,		emoji: false,	conteudo:"Conversar"},
+				{equivalente: true,		emoji: false,	conteudo:"Prosear"},
+				{equivalente: false,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: false,	emoji: false,	conteudo:"Taruíra"},
+				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
+				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Promessa"},
+				{equivalente: true,		emoji: false,	conteudo:"Compromisso"},
+				{equivalente: true,		emoji: false,	conteudo:"Pacto"},
+				{equivalente: true,		emoji: false,	conteudo:"Trato"},
+				{equivalente: true,		emoji: false,	conteudo:"Acordo"},
+				{equivalente: false,	emoji: false,	conteudo:"Juro"},
+				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🚲"},
+				{equivalente: 1,		emoji: true,	conteudo:"🦎"},
+				{equivalente: 2,		emoji: true,	conteudo:"🍊"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Magrela"},
+				{equivalente: 1,		emoji: false,	conteudo:"Taruíra"},
+				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🥖"},
+				{equivalente: 1,		emoji: true,	conteudo:"🐢"},
+				{equivalente: 2,		emoji: true,	conteudo:"👦"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Filão"},
+				{equivalente: 1,		emoji: false,	conteudo:"Tracajá"},
+				{equivalente: 2,		emoji: false,	conteudo:"Piá"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: false,	conteudo:"Naco"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pandorga"},
+				{equivalente: 2,		emoji: false,	conteudo:"Califom"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Pedaço"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pipa"},
+				{equivalente: 2,		emoji: false,	conteudo:"Sutiã"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Charlar"},
+				{equivalente: true,		emoji: false,	conteudo:"Conversar"},
+				{equivalente: true,		emoji: false,	conteudo:"Prosear"},
+				{equivalente: false,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: false,	emoji: false,	conteudo:"Taruíra"},
+				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
+				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Promessa"},
+				{equivalente: true,		emoji: false,	conteudo:"Compromisso"},
+				{equivalente: true,		emoji: false,	conteudo:"Pacto"},
+				{equivalente: true,		emoji: false,	conteudo:"Trato"},
+				{equivalente: true,		emoji: false,	conteudo:"Acordo"},
+				{equivalente: false,	emoji: false,	conteudo:"Juro"},
+				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🚲"},
+				{equivalente: 1,		emoji: true,	conteudo:"🦎"},
+				{equivalente: 2,		emoji: true,	conteudo:"🍊"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Magrela"},
+				{equivalente: 1,		emoji: false,	conteudo:"Taruíra"},
+				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🥖"},
+				{equivalente: 1,		emoji: true,	conteudo:"🐢"},
+				{equivalente: 2,		emoji: true,	conteudo:"👦"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Filão"},
+				{equivalente: 1,		emoji: false,	conteudo:"Tracajá"},
+				{equivalente: 2,		emoji: false,	conteudo:"Piá"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: false,	conteudo:"Naco"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pandorga"},
+				{equivalente: 2,		emoji: false,	conteudo:"Califom"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Pedaço"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pipa"},
+				{equivalente: 2,		emoji: false,	conteudo:"Sutiã"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Charlar"},
+				{equivalente: true,		emoji: false,	conteudo:"Conversar"},
+				{equivalente: true,		emoji: false,	conteudo:"Prosear"},
+				{equivalente: false,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: false,	emoji: false,	conteudo:"Briba"},
+				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
+				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Promessa"},
+				{equivalente: true,		emoji: false,	conteudo:"Compromisso"},
+				{equivalente: true,		emoji: false,	conteudo:"Pacto"},
+				{equivalente: true,		emoji: false,	conteudo:"Trato"},
+				{equivalente: true,		emoji: false,	conteudo:"Acordo"},
+				{equivalente: false,	emoji: false,	conteudo:"Juro"},
+				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🚲"},
+				{equivalente: 1,		emoji: true,	conteudo:"🦎"},
+				{equivalente: 2,		emoji: true,	conteudo:"🍊"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Magrela"},
+				{equivalente: 1,		emoji: false,	conteudo:"Taruíra"},
+				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🥖"},
+				{equivalente: 1,		emoji: true,	conteudo:"🐢"},
+				{equivalente: 2,		emoji: true,	conteudo:"👦"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Filão"},
+				{equivalente: 1,		emoji: false,	conteudo:"Tracajá"},
+				{equivalente: 2,		emoji: false,	conteudo:"Piá"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: false,	conteudo:"Naco"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pandorga"},
+				{equivalente: 2,		emoji: false,	conteudo:"Califom"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Pedaço"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pipa"},
+				{equivalente: 2,		emoji: false,	conteudo:"Sutiã"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Charlar"},
+				{equivalente: true,		emoji: false,	conteudo:"Conversar"},
+				{equivalente: true,		emoji: false,	conteudo:"Prosear"},
+				{equivalente: false,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: false,	emoji: false,	conteudo:"Taruíra"},
+				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
+				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Promessa"},
+				{equivalente: true,		emoji: false,	conteudo:"Compromisso"},
+				{equivalente: true,		emoji: false,	conteudo:"Pacto"},
+				{equivalente: true,		emoji: false,	conteudo:"Trato"},
+				{equivalente: true,		emoji: false,	conteudo:"Acordo"},
+				{equivalente: false,	emoji: false,	conteudo:"Juro"},
+				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🚲"},
+				{equivalente: 1,		emoji: true,	conteudo:"🦎"},
+				{equivalente: 2,		emoji: true,	conteudo:"🍊"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Magrela"},
+				{equivalente: 1,		emoji: false,	conteudo:"Taruíra"},
+				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🥖"},
+				{equivalente: 1,		emoji: true,	conteudo:"🐢"},
+				{equivalente: 2,		emoji: true,	conteudo:"👦"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Filão"},
+				{equivalente: 1,		emoji: false,	conteudo:"Tracajá"},
+				{equivalente: 2,		emoji: false,	conteudo:"Piá"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: false,	conteudo:"Naco"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pandorga"},
+				{equivalente: 2,		emoji: false,	conteudo:"Califom"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Pedaço"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pipa"},
+				{equivalente: 2,		emoji: false,	conteudo:"Sutiã"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Charlar"},
+				{equivalente: true,		emoji: false,	conteudo:"Conversar"},
+				{equivalente: true,		emoji: false,	conteudo:"Prosear"},
+				{equivalente: false,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: false,	emoji: false,	conteudo:"Taruíra"},
+				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
+				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Promessa"},
+				{equivalente: true,		emoji: false,	conteudo:"Compromisso"},
+				{equivalente: true,		emoji: false,	conteudo:"Pacto"},
+				{equivalente: true,		emoji: false,	conteudo:"Trato"},
+				{equivalente: true,		emoji: false,	conteudo:"Acordo"},
+				{equivalente: false,	emoji: false,	conteudo:"Juro"},
+				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🚲"},
+				{equivalente: 1,		emoji: true,	conteudo:"🦎"},
+				{equivalente: 2,		emoji: true,	conteudo:"🍊"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Magrela"},
+				{equivalente: 1,		emoji: false,	conteudo:"Taruíra"},
+				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🥖"},
+				{equivalente: 1,		emoji: true,	conteudo:"🐢"},
+				{equivalente: 2,		emoji: true,	conteudo:"👦"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Filão"},
+				{equivalente: 1,		emoji: false,	conteudo:"Tracajá"},
+				{equivalente: 2,		emoji: false,	conteudo:"Piá"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: false,	conteudo:"Naco"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pandorga"},
+				{equivalente: 2,		emoji: false,	conteudo:"Califom"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Pedaço"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pipa"},
+				{equivalente: 2,		emoji: false,	conteudo:"Sutiã"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Charlar"},
+				{equivalente: true,		emoji: false,	conteudo:"Conversar"},
+				{equivalente: true,		emoji: false,	conteudo:"Prosear"},
+				{equivalente: false,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: false,	emoji: false,	conteudo:"Briba"},
+				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
+				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Promessa"},
+				{equivalente: true,		emoji: false,	conteudo:"Compromisso"},
+				{equivalente: true,		emoji: false,	conteudo:"Pacto"},
+				{equivalente: true,		emoji: false,	conteudo:"Trato"},
+				{equivalente: true,		emoji: false,	conteudo:"Acordo"},
+				{equivalente: false,	emoji: false,	conteudo:"Juro"},
+				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🚲"},
+				{equivalente: 1,		emoji: true,	conteudo:"🦎"},
+				{equivalente: 2,		emoji: true,	conteudo:"🍊"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Magrela"},
+				{equivalente: 1,		emoji: false,	conteudo:"Taruíra"},
+				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🥖"},
+				{equivalente: 1,		emoji: true,	conteudo:"🐢"},
+				{equivalente: 2,		emoji: true,	conteudo:"👦"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Filão"},
+				{equivalente: 1,		emoji: false,	conteudo:"Tracajá"},
+				{equivalente: 2,		emoji: false,	conteudo:"Piá"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: false,	conteudo:"Naco"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pandorga"},
+				{equivalente: 2,		emoji: false,	conteudo:"Califom"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Pedaço"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pipa"},
+				{equivalente: 2,		emoji: false,	conteudo:"Sutiã"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Charlar"},
+				{equivalente: true,		emoji: false,	conteudo:"Conversar"},
+				{equivalente: true,		emoji: false,	conteudo:"Prosear"},
+				{equivalente: false,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: false,	emoji: false,	conteudo:"Taruíra"},
+				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
+				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Promessa"},
+				{equivalente: true,		emoji: false,	conteudo:"Compromisso"},
+				{equivalente: true,		emoji: false,	conteudo:"Pacto"},
+				{equivalente: true,		emoji: false,	conteudo:"Trato"},
+				{equivalente: true,		emoji: false,	conteudo:"Acordo"},
+				{equivalente: false,	emoji: false,	conteudo:"Juro"},
+				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🚲"},
+				{equivalente: 1,		emoji: true,	conteudo:"🦎"},
+				{equivalente: 2,		emoji: true,	conteudo:"🍊"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Magrela"},
+				{equivalente: 1,		emoji: false,	conteudo:"Taruíra"},
+				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🥖"},
+				{equivalente: 1,		emoji: true,	conteudo:"🐢"},
+				{equivalente: 2,		emoji: true,	conteudo:"👦"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Filão"},
+				{equivalente: 1,		emoji: false,	conteudo:"Tracajá"},
+				{equivalente: 2,		emoji: false,	conteudo:"Piá"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: false,	conteudo:"Naco"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pandorga"},
+				{equivalente: 2,		emoji: false,	conteudo:"Califom"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Pedaço"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pipa"},
+				{equivalente: 2,		emoji: false,	conteudo:"Sutiã"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Charlar"},
+				{equivalente: true,		emoji: false,	conteudo:"Conversar"},
+				{equivalente: true,		emoji: false,	conteudo:"Prosear"},
+				{equivalente: false,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: false,	emoji: false,	conteudo:"Taruíra"},
+				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
+				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Promessa"},
+				{equivalente: true,		emoji: false,	conteudo:"Compromisso"},
+				{equivalente: true,		emoji: false,	conteudo:"Pacto"},
+				{equivalente: true,		emoji: false,	conteudo:"Trato"},
+				{equivalente: true,		emoji: false,	conteudo:"Acordo"},
+				{equivalente: false,	emoji: false,	conteudo:"Juro"},
+				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🚲"},
+				{equivalente: 1,		emoji: true,	conteudo:"🦎"},
+				{equivalente: 2,		emoji: true,	conteudo:"🍊"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Magrela"},
+				{equivalente: 1,		emoji: false,	conteudo:"Taruíra"},
+				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🥖"},
+				{equivalente: 1,		emoji: true,	conteudo:"🐢"},
+				{equivalente: 2,		emoji: true,	conteudo:"👦"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Filão"},
+				{equivalente: 1,		emoji: false,	conteudo:"Tracajá"},
+				{equivalente: 2,		emoji: false,	conteudo:"Piá"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: false,	conteudo:"Naco"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pandorga"},
+				{equivalente: 2,		emoji: false,	conteudo:"Califom"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Pedaço"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pipa"},
+				{equivalente: 2,		emoji: false,	conteudo:"Sutiã"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Charlar"},
+				{equivalente: true,		emoji: false,	conteudo:"Conversar"},
+				{equivalente: true,		emoji: false,	conteudo:"Prosear"},
+				{equivalente: false,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: false,	emoji: false,	conteudo:"Briba"},
+				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
+				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Promessa"},
+				{equivalente: true,		emoji: false,	conteudo:"Compromisso"},
+				{equivalente: true,		emoji: false,	conteudo:"Pacto"},
+				{equivalente: true,		emoji: false,	conteudo:"Trato"},
+				{equivalente: true,		emoji: false,	conteudo:"Acordo"},
+				{equivalente: false,	emoji: false,	conteudo:"Juro"},
+				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🚲"},
+				{equivalente: 1,		emoji: true,	conteudo:"🦎"},
+				{equivalente: 2,		emoji: true,	conteudo:"🍊"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Magrela"},
+				{equivalente: 1,		emoji: false,	conteudo:"Taruíra"},
+				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🥖"},
+				{equivalente: 1,		emoji: true,	conteudo:"🐢"},
+				{equivalente: 2,		emoji: true,	conteudo:"👦"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Filão"},
+				{equivalente: 1,		emoji: false,	conteudo:"Tracajá"},
+				{equivalente: 2,		emoji: false,	conteudo:"Piá"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: false,	conteudo:"Naco"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pandorga"},
+				{equivalente: 2,		emoji: false,	conteudo:"Califom"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Pedaço"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pipa"},
+				{equivalente: 2,		emoji: false,	conteudo:"Sutiã"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Charlar"},
+				{equivalente: true,		emoji: false,	conteudo:"Conversar"},
+				{equivalente: true,		emoji: false,	conteudo:"Prosear"},
+				{equivalente: false,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: false,	emoji: false,	conteudo:"Taruíra"},
+				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
+				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Promessa"},
+				{equivalente: true,		emoji: false,	conteudo:"Compromisso"},
+				{equivalente: true,		emoji: false,	conteudo:"Pacto"},
+				{equivalente: true,		emoji: false,	conteudo:"Trato"},
+				{equivalente: true,		emoji: false,	conteudo:"Acordo"},
+				{equivalente: false,	emoji: false,	conteudo:"Juro"},
+				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🚲"},
+				{equivalente: 1,		emoji: true,	conteudo:"🦎"},
+				{equivalente: 2,		emoji: true,	conteudo:"🍊"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Magrela"},
+				{equivalente: 1,		emoji: false,	conteudo:"Taruíra"},
+				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🥖"},
+				{equivalente: 1,		emoji: true,	conteudo:"🐢"},
+				{equivalente: 2,		emoji: true,	conteudo:"👦"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Filão"},
+				{equivalente: 1,		emoji: false,	conteudo:"Tracajá"},
+				{equivalente: 2,		emoji: false,	conteudo:"Piá"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: false,	conteudo:"Naco"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pandorga"},
+				{equivalente: 2,		emoji: false,	conteudo:"Califom"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Pedaço"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pipa"},
+				{equivalente: 2,		emoji: false,	conteudo:"Sutiã"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Charlar"},
+				{equivalente: true,		emoji: false,	conteudo:"Conversar"},
+				{equivalente: true,		emoji: false,	conteudo:"Prosear"},
+				{equivalente: false,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: false,	emoji: false,	conteudo:"Taruíra"},
+				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
+				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Promessa"},
+				{equivalente: true,		emoji: false,	conteudo:"Compromisso"},
+				{equivalente: true,		emoji: false,	conteudo:"Pacto"},
+				{equivalente: true,		emoji: false,	conteudo:"Trato"},
+				{equivalente: true,		emoji: false,	conteudo:"Acordo"},
+				{equivalente: false,	emoji: false,	conteudo:"Juro"},
+				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🚲"},
+				{equivalente: 1,		emoji: true,	conteudo:"🦎"},
+				{equivalente: 2,		emoji: true,	conteudo:"🍊"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Magrela"},
+				{equivalente: 1,		emoji: false,	conteudo:"Taruíra"},
+				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🥖"},
+				{equivalente: 1,		emoji: true,	conteudo:"🐢"},
+				{equivalente: 2,		emoji: true,	conteudo:"👦"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Filão"},
+				{equivalente: 1,		emoji: false,	conteudo:"Tracajá"},
+				{equivalente: 2,		emoji: false,	conteudo:"Piá"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: false,	conteudo:"Naco"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pandorga"},
+				{equivalente: 2,		emoji: false,	conteudo:"Califom"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Pedaço"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pipa"},
+				{equivalente: 2,		emoji: false,	conteudo:"Sutiã"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Charlar"},
+				{equivalente: true,		emoji: false,	conteudo:"Conversar"},
+				{equivalente: true,		emoji: false,	conteudo:"Prosear"},
+				{equivalente: false,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: false,	emoji: false,	conteudo:"Briba"},
+				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
+				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Promessa"},
+				{equivalente: true,		emoji: false,	conteudo:"Compromisso"},
+				{equivalente: true,		emoji: false,	conteudo:"Pacto"},
+				{equivalente: true,		emoji: false,	conteudo:"Trato"},
+				{equivalente: true,		emoji: false,	conteudo:"Acordo"},
+				{equivalente: false,	emoji: false,	conteudo:"Juro"},
+				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🚲"},
+				{equivalente: 1,		emoji: true,	conteudo:"🦎"},
+				{equivalente: 2,		emoji: true,	conteudo:"🍊"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Magrela"},
+				{equivalente: 1,		emoji: false,	conteudo:"Taruíra"},
+				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🥖"},
+				{equivalente: 1,		emoji: true,	conteudo:"🐢"},
+				{equivalente: 2,		emoji: true,	conteudo:"👦"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Filão"},
+				{equivalente: 1,		emoji: false,	conteudo:"Tracajá"},
+				{equivalente: 2,		emoji: false,	conteudo:"Piá"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: false,	conteudo:"Naco"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pandorga"},
+				{equivalente: 2,		emoji: false,	conteudo:"Califom"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Pedaço"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pipa"},
+				{equivalente: 2,		emoji: false,	conteudo:"Sutiã"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Charlar"},
+				{equivalente: true,		emoji: false,	conteudo:"Conversar"},
+				{equivalente: true,		emoji: false,	conteudo:"Prosear"},
+				{equivalente: false,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: false,	emoji: false,	conteudo:"Taruíra"},
+				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
+				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Promessa"},
+				{equivalente: true,		emoji: false,	conteudo:"Compromisso"},
+				{equivalente: true,		emoji: false,	conteudo:"Pacto"},
+				{equivalente: true,		emoji: false,	conteudo:"Trato"},
+				{equivalente: true,		emoji: false,	conteudo:"Acordo"},
+				{equivalente: false,	emoji: false,	conteudo:"Juro"},
+				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🚲"},
+				{equivalente: 1,		emoji: true,	conteudo:"🦎"},
+				{equivalente: 2,		emoji: true,	conteudo:"🍊"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Magrela"},
+				{equivalente: 1,		emoji: false,	conteudo:"Taruíra"},
+				{equivalente: 2,		emoji: false,	conteudo:"Tangerina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: true,	conteudo:"🥖"},
+				{equivalente: 1,		emoji: true,	conteudo:"🐢"},
+				{equivalente: 2,		emoji: true,	conteudo:"👦"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Filão"},
+				{equivalente: 1,		emoji: false,	conteudo:"Tracajá"},
+				{equivalente: 2,		emoji: false,	conteudo:"Piá"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: false,
+			coluna1: [
+				{equivalente: 0,		emoji: false,	conteudo:"Naco"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pandorga"},
+				{equivalente: 2,		emoji: false,	conteudo:"Califom"}
+			],
+			coluna2: [
+				{equivalente: 0,		emoji: false,	conteudo:"Pedaço"},
+				{equivalente: 1,		emoji: false,	conteudo:"Pipa"},
+				{equivalente: 2,		emoji: false,	conteudo:"Sutiã"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Charlar"},
+				{equivalente: true,		emoji: false,	conteudo:"Conversar"},
+				{equivalente: true,		emoji: false,	conteudo:"Prosear"},
+				{equivalente: false,	emoji: false,	conteudo:"Magrela"},
+				{equivalente: false,	emoji: false,	conteudo:"Taruíra"},
+				{equivalente: false,	emoji: false,	conteudo:"Tangerina"},
+				{equivalente: false,	emoji: false,	conteudo:"Groselha"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
+		{
+			palavra: true,
+			palavraExWrapper:[
+				{equivalente: true,		emoji: false,	conteudo:"Promessa"},
+				{equivalente: true,		emoji: false,	conteudo:"Compromisso"},
+				{equivalente: true,		emoji: false,	conteudo:"Pacto"},
+				{equivalente: true,		emoji: false,	conteudo:"Trato"},
+				{equivalente: true,		emoji: false,	conteudo:"Acordo"},
+				{equivalente: false,	emoji: false,	conteudo:"Juro"},
+				{equivalente: false,	emoji: false,	conteudo:"Disciplina"}
+			],
+			tempId: 0, significado: "souumsignificado", dica: "souumadica", nivel: 0
+		},
 	],
 	aurelio: [
+		{
+			fraseParaCorrecao: "ta calor dms",
+			conteudoResposta: [
+				{index: 0, palavra: "esta"},
+				{index: 1, palavra: "calor"},
+				{index: 2, palavra: "demais", apendice: "."},
+				{index: -1, palavra: "este"},
+				{index: -1, palavra: "de"},
+				{index: -1, palavra: "quente"},
+				{index: -1, palavra: "mais"},
+				{index: -1, palavra: "dimais"},
+				{index: -1, palavra: "muito"},
+			],
+			totalSize: 3,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "hj eh meu niver",
+			conteudoResposta: [
+				{index: 0, palavra: "hoje"},
+				{index: 1, palavra: "é"},
+				{index: 2, palavra: "meu"},
+				{index: 3, palavra: "aniversário", apendice: "."},
+				{index: -1, palavra: "amanhã"},
+				{index: -1, palavra: "hôje"},
+				{index: -1, palavra: "anivérsario"},
+				{index: -1, palavra: "minha"},
+				{index: -1, palavra: "eh"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "jah cheguei aki",
+			conteudoResposta: [
+				{index: 0, palavra: "já"},
+				{index: 1, palavra: "cheguei"},
+				{index: 2, palavra: "aqui", apendice: "."},
+				{index: -3, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 3,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "kd v6?",
+			conteudoResposta: [
+				{index: 0, palavra: "Cade"},
+				{index: 1, palavra: "vocês", apendice: "?"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 2,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "olar td bm?",
+			conteudoResposta: [
+				{index: 0, palavra: "Olá", apendice: ","},
+				{index: 1, palavra: "tudo"},
+				{index: 2, palavra: "bom", apendice: "?"},
+				{index: 2, palavra: "bem", apendice: "?"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 3,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "qnd vc vm pra k?",
+			conteudoResposta: [
+				{index: 0, palavra: "Quando"},
+				{index: 1, palavra: "você"},
+				{index: 2, palavra: "vem"},
+				{index: 3, palavra: "pra"},
+				{index: 3, palavra: "para"},
+				{index: 4, palavra: "cá", apendice: "?"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 5,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "me add no fb ai",
+			conteudoResposta: [
+				{index: 0, palavra: "Me"},
+				{index: 1, palavra: "adiciona"},
+				{index: 2, palavra: "no"},
+				{index: 3, palavra: "facebook"},
+				{index: 4, palavra: "ai", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 5,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "eai td blz",
+			conteudoResposta: [
+				{index: 0, palavra: "E"},
+				{index: 1, palavra: "aí"},
+				{index: 2, palavra: "tudo"},
+				{index: 3, palavra: "beleza", apendice: "?"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "pq usar pq",
+			conteudoResposta: [
+				{index: 0, palavra: "Por"},
+				{index: 1, palavra: "que"},
+				{index: 2, palavra: "usar"},
+				{index: 3, palavra: "porquê", apendice: "?"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "qlqr coisa só pedir +",
+			conteudoResposta: [
+				{index: 0, palavra: "Qualquer"},
+				{index: 1, palavra: "coisa"},
+				{index: 2, palavra: "é"},
+				{index: 3, palavra: "só"},
+				{index: 4, palavra: "pedir"},
+				{index: 5, palavra: "mais", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 6,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "vou no parkinho fds",
+			conteudoResposta: [
+				{index: 0, palavra: "Vou"},
+				{index: 1, palavra: "ao"},
+				{index: 2, palavra: "parquinho"},
+				{index: 3, palavra: "no"},
+				{index: 4, palavra: "fim"},
+				{index: 5, palavra: "de"},
+				{index: 6, palavra: "semana", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 7,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "sdds das aulas brinks",
+			conteudoResposta: [
+				{index: 0, palavra: "Saudades"},
+				{index: 1, palavra: "das"},
+				{index: 2, palavra: "aulas", apendice: "."},
+				{index: 3, palavra: "Brincadeira", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "eh vdd esse bilete",
+			conteudoResposta: [
+				{index: 0, palavra: "É"},
+				{index: 1, palavra: "verdade"},
+				{index: 2, palavra: "esse"},
+				{index: 3, palavra: "bilhete", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "to indo nessa flw",
+			conteudoResposta: [
+				{index: 0, palavra: "Estou"},
+				{index: 1, palavra: "indo"},
+				{index: 2, palavra: "nessa"},
+				{index: 3, palavra: "Falou", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "vc eh fmz msm",
+			conteudoResposta: [
+				{index: 0, palavra: "Você"},
+				{index: 1, palavra: "é"},
+				{index: 2, palavra: "firmeza"},
+				{index: 3, palavra: "mesmo", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "vc pode vir aqui pfv",
+			conteudoResposta: [
+				{index: 0, palavra: "Você"},
+				{index: 1, palavra: "pode"},
+				{index: 2, palavra: "vir"},
+				{index: 3, palavra: "aqui"},
+				{index: 4, palavra: "por"},
+				{index: 5, palavra: "favor", apendice: "?"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 6,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "vlw pelo presente",
+			conteudoResposta: [
+				{index: 0, palavra: "Valeu"},
+				{index: 1, palavra: "pelo"},
+				{index: 2, palavra: "presente", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 3,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "ql o num do seu cel?",
+			conteudoResposta: [
+				{index: 0, palavra: "Qual"},
+				{index: 1, palavra: "o"},
+				{index: 2, palavra: "numéro"},
+				{index: 3, palavra: "do"},
+				{index: 4, palavra: "seu"},
+				{index: 5, palavra: "celular", apendice: "?"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 6,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "vlw pelo presente",
+			conteudoResposta: [
+				{index: 0, palavra: "Valeu"},
+				{index: 1, palavra: "pelo"},
+				{index: 2, palavra: "presente"},
+				{index: 3, palavra: "palavra", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "ta calor dms",
+			conteudoResposta: [
+				{index: 0, palavra: "esta"},
+				{index: 1, palavra: "calor"},
+				{index: 2, palavra: "demais", apendice: "."},
+				{index: -1, palavra: "este"},
+				{index: -1, palavra: "de"},
+				{index: -1, palavra: "quente"},
+				{index: -1, palavra: "mais"},
+				{index: -1, palavra: "dimais"},
+				{index: -1, palavra: "muito"},
+			],
+			totalSize: 3,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "hj eh meu niver",
+			conteudoResposta: [
+				{index: 0, palavra: "hoje"},
+				{index: 1, palavra: "é"},
+				{index: 2, palavra: "meu"},
+				{index: 3, palavra: "aniversário", apendice: "."},
+				{index: -1, palavra: "amanhã"},
+				{index: -1, palavra: "hôje"},
+				{index: -1, palavra: "anivérsario"},
+				{index: -1, palavra: "minha"},
+				{index: -1, palavra: "eh"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "jah cheguei aki",
+			conteudoResposta: [
+				{index: 0, palavra: "já"},
+				{index: 1, palavra: "cheguei"},
+				{index: 2, palavra: "aqui", apendice: "."},
+				{index: -3, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 3,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "kd v6?",
+			conteudoResposta: [
+				{index: 0, palavra: "Cade"},
+				{index: 1, palavra: "vocês", apendice: "?"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 2,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "olar td bm?",
+			conteudoResposta: [
+				{index: 0, palavra: "Olá", apendice: ","},
+				{index: 1, palavra: "tudo"},
+				{index: 2, palavra: "bom", apendice: "?"},
+				{index: 2, palavra: "bem", apendice: "?"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 3,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "qnd vc vm pra k?",
+			conteudoResposta: [
+				{index: 0, palavra: "Quando"},
+				{index: 1, palavra: "você"},
+				{index: 2, palavra: "vem"},
+				{index: 3, palavra: "pra"},
+				{index: 3, palavra: "para"},
+				{index: 4, palavra: "cá", apendice: "?"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 5,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "me add no fb ai",
+			conteudoResposta: [
+				{index: 0, palavra: "Me"},
+				{index: 1, palavra: "adiciona"},
+				{index: 2, palavra: "no"},
+				{index: 3, palavra: "facebook"},
+				{index: 4, palavra: "ai", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 5,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "eai td blz",
+			conteudoResposta: [
+				{index: 0, palavra: "E"},
+				{index: 1, palavra: "aí"},
+				{index: 2, palavra: "tudo"},
+				{index: 3, palavra: "beleza", apendice: "?"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "pq usar pq",
+			conteudoResposta: [
+				{index: 0, palavra: "Por"},
+				{index: 1, palavra: "que"},
+				{index: 2, palavra: "usar"},
+				{index: 3, palavra: "porquê", apendice: "?"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "qlqr coisa só pedir +",
+			conteudoResposta: [
+				{index: 0, palavra: "Qualquer"},
+				{index: 1, palavra: "coisa"},
+				{index: 2, palavra: "é"},
+				{index: 3, palavra: "só"},
+				{index: 4, palavra: "pedir"},
+				{index: 5, palavra: "mais", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 6,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "vou no parkinho fds",
+			conteudoResposta: [
+				{index: 0, palavra: "Vou"},
+				{index: 1, palavra: "ao"},
+				{index: 2, palavra: "parquinho"},
+				{index: 3, palavra: "no"},
+				{index: 4, palavra: "fim"},
+				{index: 5, palavra: "de"},
+				{index: 6, palavra: "semana", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 7,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "sdds das aulas brinks",
+			conteudoResposta: [
+				{index: 0, palavra: "Saudades"},
+				{index: 1, palavra: "das"},
+				{index: 2, palavra: "aulas", apendice: "."},
+				{index: 3, palavra: "Brincadeira", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "eh vdd esse bilete",
+			conteudoResposta: [
+				{index: 0, palavra: "É"},
+				{index: 1, palavra: "verdade"},
+				{index: 2, palavra: "esse"},
+				{index: 3, palavra: "bilhete", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "to indo nessa flw",
+			conteudoResposta: [
+				{index: 0, palavra: "Estou"},
+				{index: 1, palavra: "indo"},
+				{index: 2, palavra: "nessa"},
+				{index: 3, palavra: "Falou", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "vc eh fmz msm",
+			conteudoResposta: [
+				{index: 0, palavra: "Você"},
+				{index: 1, palavra: "é"},
+				{index: 2, palavra: "firmeza"},
+				{index: 3, palavra: "mesmo", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "vc pode vir aqui pfv",
+			conteudoResposta: [
+				{index: 0, palavra: "Você"},
+				{index: 1, palavra: "pode"},
+				{index: 2, palavra: "vir"},
+				{index: 3, palavra: "aqui"},
+				{index: 4, palavra: "por"},
+				{index: 5, palavra: "favor", apendice: "?"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 6,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "vlw pelo presente",
+			conteudoResposta: [
+				{index: 0, palavra: "Valeu"},
+				{index: 1, palavra: "pelo"},
+				{index: 2, palavra: "presente", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 3,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "ql o num do seu cel?",
+			conteudoResposta: [
+				{index: 0, palavra: "Qual"},
+				{index: 1, palavra: "o"},
+				{index: 2, palavra: "numéro"},
+				{index: 3, palavra: "do"},
+				{index: 4, palavra: "seu"},
+				{index: 5, palavra: "celular", apendice: "?"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 6,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "vlw pelo presente",
+			conteudoResposta: [
+				{index: 0, palavra: "Valeu"},
+				{index: 1, palavra: "pelo"},
+				{index: 2, palavra: "presente"},
+				{index: 3, palavra: "palavra", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "ta calor dms",
+			conteudoResposta: [
+				{index: 0, palavra: "esta"},
+				{index: 1, palavra: "calor"},
+				{index: 2, palavra: "demais", apendice: "."},
+				{index: -1, palavra: "este"},
+				{index: -1, palavra: "de"},
+				{index: -1, palavra: "quente"},
+				{index: -1, palavra: "mais"},
+				{index: -1, palavra: "dimais"},
+				{index: -1, palavra: "muito"},
+			],
+			totalSize: 3,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "hj eh meu niver",
+			conteudoResposta: [
+				{index: 0, palavra: "hoje"},
+				{index: 1, palavra: "é"},
+				{index: 2, palavra: "meu"},
+				{index: 3, palavra: "aniversário", apendice: "."},
+				{index: -1, palavra: "amanhã"},
+				{index: -1, palavra: "hôje"},
+				{index: -1, palavra: "anivérsario"},
+				{index: -1, palavra: "minha"},
+				{index: -1, palavra: "eh"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "jah cheguei aki",
+			conteudoResposta: [
+				{index: 0, palavra: "já"},
+				{index: 1, palavra: "cheguei"},
+				{index: 2, palavra: "aqui", apendice: "."},
+				{index: -3, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 3,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "kd v6?",
+			conteudoResposta: [
+				{index: 0, palavra: "Cade"},
+				{index: 1, palavra: "vocês", apendice: "?"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 2,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "olar td bm?",
+			conteudoResposta: [
+				{index: 0, palavra: "Olá", apendice: ","},
+				{index: 1, palavra: "tudo"},
+				{index: 2, palavra: "bom", apendice: "?"},
+				{index: 2, palavra: "bem", apendice: "?"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 3,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "qnd vc vm pra k?",
+			conteudoResposta: [
+				{index: 0, palavra: "Quando"},
+				{index: 1, palavra: "você"},
+				{index: 2, palavra: "vem"},
+				{index: 3, palavra: "pra"},
+				{index: 3, palavra: "para"},
+				{index: 4, palavra: "cá", apendice: "?"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 5,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "me add no fb ai",
+			conteudoResposta: [
+				{index: 0, palavra: "Me"},
+				{index: 1, palavra: "adiciona"},
+				{index: 2, palavra: "no"},
+				{index: 3, palavra: "facebook"},
+				{index: 4, palavra: "ai", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 5,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "eai td blz",
+			conteudoResposta: [
+				{index: 0, palavra: "E"},
+				{index: 1, palavra: "aí"},
+				{index: 2, palavra: "tudo"},
+				{index: 3, palavra: "beleza", apendice: "?"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "pq usar pq",
+			conteudoResposta: [
+				{index: 0, palavra: "Por"},
+				{index: 1, palavra: "que"},
+				{index: 2, palavra: "usar"},
+				{index: 3, palavra: "porquê", apendice: "?"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "qlqr coisa só pedir +",
+			conteudoResposta: [
+				{index: 0, palavra: "Qualquer"},
+				{index: 1, palavra: "coisa"},
+				{index: 2, palavra: "é"},
+				{index: 3, palavra: "só"},
+				{index: 4, palavra: "pedir"},
+				{index: 5, palavra: "mais", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 6,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "vou no parkinho fds",
+			conteudoResposta: [
+				{index: 0, palavra: "Vou"},
+				{index: 1, palavra: "ao"},
+				{index: 2, palavra: "parquinho"},
+				{index: 3, palavra: "no"},
+				{index: 4, palavra: "fim"},
+				{index: 5, palavra: "de"},
+				{index: 6, palavra: "semana", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 7,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "sdds das aulas brinks",
+			conteudoResposta: [
+				{index: 0, palavra: "Saudades"},
+				{index: 1, palavra: "das"},
+				{index: 2, palavra: "aulas", apendice: "."},
+				{index: 3, palavra: "Brincadeira", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "eh vdd esse bilete",
+			conteudoResposta: [
+				{index: 0, palavra: "É"},
+				{index: 1, palavra: "verdade"},
+				{index: 2, palavra: "esse"},
+				{index: 3, palavra: "bilhete", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "to indo nessa flw",
+			conteudoResposta: [
+				{index: 0, palavra: "Estou"},
+				{index: 1, palavra: "indo"},
+				{index: 2, palavra: "nessa"},
+				{index: 3, palavra: "Falou", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "vc eh fmz msm",
+			conteudoResposta: [
+				{index: 0, palavra: "Você"},
+				{index: 1, palavra: "é"},
+				{index: 2, palavra: "firmeza"},
+				{index: 3, palavra: "mesmo", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "vc pode vir aqui pfv",
+			conteudoResposta: [
+				{index: 0, palavra: "Você"},
+				{index: 1, palavra: "pode"},
+				{index: 2, palavra: "vir"},
+				{index: 3, palavra: "aqui"},
+				{index: 4, palavra: "por"},
+				{index: 5, palavra: "favor", apendice: "?"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 6,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "vlw pelo presente",
+			conteudoResposta: [
+				{index: 0, palavra: "Valeu"},
+				{index: 1, palavra: "pelo"},
+				{index: 2, palavra: "presente", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 3,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "ql o num do seu cel?",
+			conteudoResposta: [
+				{index: 0, palavra: "Qual"},
+				{index: 1, palavra: "o"},
+				{index: 2, palavra: "numéro"},
+				{index: 3, palavra: "do"},
+				{index: 4, palavra: "seu"},
+				{index: 5, palavra: "celular", apendice: "?"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 6,
+			nivel: 0
+		},
+		{
+			fraseParaCorrecao: "vlw pelo presente",
+			conteudoResposta: [
+				{index: 0, palavra: "Valeu"},
+				{index: 1, palavra: "pelo"},
+				{index: 2, palavra: "presente"},
+				{index: 3, palavra: "palavra", apendice: "."},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+				{index: -1, palavra: "palavra"},
+			],
+			totalSize: 4,
+			nivel: 0
+		},
 		{
 			fraseParaCorrecao: "ta calor dms",
 			conteudoResposta: [
