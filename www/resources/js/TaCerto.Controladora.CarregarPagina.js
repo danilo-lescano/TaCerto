@@ -143,7 +143,8 @@ TaCerto.Controladora.CarregarPagina = {
 
 
 //event listeners
-
+//efeito de click e transição
+/*
 document.addEventListener('click', function(e){
 	console.log('hey');
 	let elClick = e.target;
@@ -168,3 +169,4 @@ document.addEventListener('click', function(e){
 		});
 	}
  });
+ */
