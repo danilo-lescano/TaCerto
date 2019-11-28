@@ -1,0 +1,32 @@
+using(var db = new TaCertoFormsContext()){
+    Pessoa danilo = new Pessoa { Nome = "danilo", CPF = "03654571166", Email = "nq3i4fsx@hotmail.com", Senha = "123" };
+    Perfil admin = new Perfil { Nome = "Admin", Descricao = "total acesso" };
+    Perfil professor = new Perfil { Nome = "Professor", Descricao = "acesso professor" };
+    Perfil aluno = new Perfil { Nome = "Aluno", Descricao = "acesso aluno" };
+
+    db.Pessoas.Add(danilo);
+    db.Perfils.Add(admin);
+    db.Perfils.Add(professor);
+    db.Perfils.Add(aluno);
+
+    db.SaveChanges();
+}
+
+
+
+INSERT INTO [TaCerto].[TaCertoForms].[Perfil]
+VALUES
+('Admin', 'acesso admin'),
+('Professor', 'acesso professor'),
+('Aluno', 'acesso aluno');
+
+
+INSERT INTO [TaCerto].[TaCertoForms].[Pessoa]
+VALUES (0, 0, 'danilo', '03654571166', 'nq3i4fsx@hotmail.com', '123');
+INSERT INTO [TaCerto].[TaCertoForms].[PerfilPessoa]
+VALUES (1, 1);
+
+INSERT INTO [TaCerto].[TaCertoForms].[Pessoa]
+VALUES (0, 0, 'lucas', '999999999999', 'lucas@hotmail.com', '123');
+INSERT INTO [TaCerto].[TaCertoForms].[PerfilPessoa]
+VALUES (2, 2);
