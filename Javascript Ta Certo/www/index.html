@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<link rel="icon" type="image/png" href="resources/media/image/LOGO-ABERTURA.png">
+	<title>Ta Certo?</title>
+
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="vendors/materialize/css/materialize.min.css"  media="screen,projection"/>
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link href='resources/css/fonts.css' rel='stylesheet' type='text/css'>
+	<link href='resources/css/ta-certo.css' rel='stylesheet' type='text/css'>
+	<link href='vendors/animate/animate.min.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div id="transitionPage">
+		<div class="transitionPageInner"></div>
+		<div class="transitionPageInner"></div>
+		<div class="transitionPageInner"></div>
+		<div class="transitionPageInner"></div>
+	</div>
+	<div id="fontDB">
+		<span style="font-family: 'Pacifico'!important;"></span>
+		<span style="font-family: 'Roboto'!important;"></span>
+		<span style="font-family: 'panton'!important;"></span>
+
+	</div>
+	<div id="imageDB"></div>
+	<div id="soundDB"></div>
+	<div class="layer whiteBG"></div>
+	<div class="layer brownGradient"></div>
+	<div class="layer softBlue"></div>
+	<div class="layer marineBlue"></div>
+	<div class="layer gameBlend">
+		<div class="layer JogoBg1"></div>
+		<div class="layer JogoBg2"></div>
+		<div class="layer JogoBg3"></div>
+		<div class="layer JogoBg3"></div>
+		<div class="layer JogoBg4-1x1"></div>
+		<div class="layer JogoBg4-1x2"></div>
+		<div class="layer JogoBg4-2x1"></div>
+		<div class="layer JogoBg4-2x2"></div>
+		<div class="layer JogoBg4-3x1"></div>
+		<div class="layer JogoBg4-3x2"></div>
+		<div class="layer JogoBg4-4x1"></div>
+		<div class="layer JogoBg4-4x2"></div>
+		<div class="layer JogoBg5"></div>
+		<div class="layer JogoBg5-3x1"></div>
+		<div class="layer JogoBg5-4x1"></div>
+		<div class="layer JogoBg6"></div>
+		<div class="layer JogoBg6-3x1"></div>
+		<div class="layer JogoBg6-4x1"></div>
+		<div class="layer JogoBg7"></div>
+
+	</div>
+	<div class="layer loading">
+		<div class="verticalAlign">
+			<span class="one"></span>
+			<span class="two"></span>
+			<span class="three"></span>
+			<span class="four"></span>
+			<span class="five"></span>
+			<span class="six"></span>
+			<span class="seven"></span>
+			<span class="eight"></span>
+			<span class="nine"></span>
+		</div>
+	</div>
+	<div class="corpo"></div>
+	<div id="loja">
+		<div class="lojaHeader absolutediv">
+			<img class="btnVoltarLoja" src="resources/media/image/btn-voltar.png" alt="botao voltar" onclick="TaCerto.Controladora.Loja.voltarBtn(this)">
+			<div class="rightDiv">
+				<div id="moedasLoja">100</div>
+				<img src="resources/media/image/missoes_atalho.png" alt="ilustracao dinheiro">
+			</div>
+		</div>
+
+		<div class="lojaCartaWrapper absolutediv">
+			<div class="lojaImgWrapper">
+				<img src="resources/media/image/modal-loja.png">
+			</div>
+			<div class="cartaBtnWrapper">
+				<div class="blockLojaModal">
+					<div class="inviBtnCloseLoja" onclick="TaCerto.Controladora.Loja.voltarBtn(this)"></div>
+				</div>
+				<div class="blockLojaModal">
+					<img class="cardBtnLoja" src="resources/media/image/btn-carta-vermelha.png" onclick="TaCerto.Controladora.Loja.openCardModal(this)" id="cartaVermelhaLoja">
+					<div class="lojaPrecoCartaBigModal">25</div>
+				</div>
+				<div class="blockLojaModal">
+					<img class="cardBtnLoja" src="resources/media/image/btn-carta-azul.png" onclick="TaCerto.Controladora.Loja.openCardModal(this)" id="cartaAzulLoja">
+					<div class="lojaPrecoCartaBigModal">25</div>
+				</div>
+				<div class="blockLojaModal">
+					<img class="cardBtnLoja" src="resources/media/image/btn-carta-amarela.png" onclick="TaCerto.Controladora.Loja.openCardModal(this)" id="cartaAmarelaLoja">
+					<div class="lojaPrecoCartaBigModal">25</div>
+				</div>
+				<div class="blockLojaModal">
+					<img class="cardBtnLoja" src="resources/media/image/btn-carta-verde.png" onclick="TaCerto.Controladora.Loja.openCardModal(this)" id="cartaVerdeLoja">
+					<div class="lojaPrecoCartaBigModal">25</div>
+				</div>
+				<div class="blockLojaModal"></div>
+			</div>
+		</div>
+
+		<div id="cartaVermelhaLoja-modal" class="modalComprarCarta">
+			<img class="modalComprarCartaImg" src="resources/media/image/modalComprarCartaImgVermelha.png">
+		</div>
+		<div id="cartaAzulLoja-modal" class="modalComprarCarta">
+			<img class="modalComprarCartaImg" src="resources/media/image/modalComprarCartaImgAzul.png">
+		</div>
+		<div id="cartaAmarelaLoja-modal" class="modalComprarCarta">
+			<img class="modalComprarCartaImg" src="resources/media/image/modalComprarCartaImgAmarela.png">
+		</div>
+		<div id="cartaVerdeLoja-modal" class="modalComprarCarta">
+			<img class="modalComprarCartaImg" src="resources/media/image/modalComprarCartaImgVerde.png">
+		</div>
+
+		<div class="cartaLojaModalBtn1" onclick="TaCerto.Controladora.Loja.buyCard(this)">
+			<img class="modalBtnComprarCartaImg" src="resources/media/image/modalcomprarbtn.png">
+			<div class="lojaPrecoCartaMiniModal">25</div>
+		</div>
+		<div class="cartaLojaModalBtn2" onclick="TaCerto.Controladora.Loja.closeMiniModal()"></div>
+
+	</div>
+
+</body>
+
+<script src="vendors/touchpunch/touch-punch-pack.js"></script>
+
+<script src="resources/js/TaCerto.GenFunc.js"></script>
+
+<script src="resources/js/TaCerto.HTML.js"></script>
+<script src="resources/js/TaCerto.IMAGEM.js"></script>
+<script src="resources/js/TaCerto.SOUND.js"></script>
+
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="vendors/materialize/js/materialize.min.js"></script>
+
+<script src="resources/js/JSParaTeste.js"></script>
+<script src="resources/js/TaCerto.Controladora.Cadastro.js"></script>
+<script src="resources/js/TaCerto.Controladora.CarregarPagina.js"></script>
+<script src="resources/js/TaCerto.Controladora.FimJogo.js"></script>
+<script src="resources/js/TaCerto.Controladora.Jogo.Aleatorio.js"></script>
+<script src="resources/js/TaCerto.Controladora.Jogo.Aurelio.js"></script>
+<script src="resources/js/TaCerto.Controladora.Jogo.Explorador.js"></script>
+<script src="resources/js/TaCerto.Controladora.Jogo.Geral.js"></script>
+<script src="resources/js/TaCerto.Controladora.Jogo.HardCore.js"></script>
+<script src="resources/js/TaCerto.Controladora.Jogo.Lacuna.js"></script>
+<script src="resources/js/TaCerto.Controladora.Jogo.Load.js"></script>
+<script src="resources/js/TaCerto.Controladora.Jogo.Missao.js"></script>
+<script src="resources/js/TaCerto.Controladora.Jogo.Normal.js"></script>
+<script src="resources/js/TaCerto.Controladora.Loja.js"></script>
+<script src="resources/js/TaCerto.Controladora.Login.js"></script>
+<script src="resources/js/TaCerto.Controladora.MenuCasual.js"></script>
+<script src="resources/js/TaCerto.Controladora.MenuConquistas.js"></script>
+<script src="resources/js/TaCerto.Controladora.MenuInicial.js"></script>
+<script src="resources/js/TaCerto.Controladora.MenuMissao.js"></script>
+<script src="resources/js/TaCerto.Controladora.PreLoad.js"></script>
+<script src="resources/js/TaCerto.Estrutura.Carta.js"></script>
+<script src="resources/js/TaCerto.Estrutura.Conquistas.js"></script>
+<script src="resources/js/TaCerto.Estrutura.DesafioDeFase.js"></script>
+<script src="resources/js/TaCerto.Estrutura.Fase.js"></script>
+<script src="resources/js/TaCerto.Estrutura.Jogador.js"></script>
+<script src="resources/js/TaCerto.Controladora.Dica.js"></script>
+
+<script src="resources/js/TaCerto.Save.playerData.js"></script>
+
+<script>
+	//misturar - array de palavras
+
+	Array.prototype.shuffle = function() {
+		var i = this.length, j, temp;
+		if ( i == 0 ) return this;
+		while ( --i ) {
+			j = Math.floor( Math.random() * ( i + 1 ) );
+			temp = this[i];
+			this[i] = this[j];
+			this[j] = temp;
+		}
+		return this;
+	};
+	Array.prototype.remove = function(index) {
+		if(!isNaN(+index))
+			this.splice(+index, 1);
+		return this;
+	};
+	Array.prototype.pickFase = function(arr) {
+		var length = this.length, temp = [];
+		if ( length == 0 || arr === undefined || arr == 0) return this;
+		for (var i = length-1; i >= 0; i--){
+			for (var j = 0; j < arr.length; j++)
+				if(this[i].nivel === arr[j])
+					temp[temp.length] = this[i];
+			this.pop();
+		}
+		for (var j = 0; j < temp.length; j++)
+			this[j] = temp[j];
+		return this;
+	};
+
+	String.prototype.equals = function(str){
+		if(this.toString() === str)
+			return true;
+		return false;
+	}
+
+	const promiseRequestAnimationFrame = ()=>{
+		return new Promise((resolve) => requestAnimationFrame(resolve));
+	}
+	const delay = (time)=>{
+		return new Promise(resolve => setTimeout(resolve, time));
+	};
+
+
+	function Timer(callback, delay){
+		function Timer(callback, delay) {
+			var timerId, start, remaining = delay;
+
+			this.pause = function() {
+				window.clearTimeout(timerId);
+				remaining -= new Date() - start;
+			};
+
+			this.resume = function() {
+				start = new Date();
+				window.clearTimeout(timerId);
+				timerId = window.setTimeout(callback, remaining);
+			};
+
+			this.resume();
+		}
+		return new Timer(callback, delay);
+	}
+	var timer = Timer(function() {
+		//console.log("Done!");
+	}, 1000);
+
+	timer.pause();
+		//console.log("paused!");
+	timer.resume();
+
+	function allowDrop(ev) {
+		ev.preventDefault();
+	}
+
+	function drag(ev) {
+		ev.dataTransfer.setData("Text", ev.target.id);
+	}
+
+	function drop(ev) {
+		var data = ev.dataTransfer.getData("Text");
+		ev.target.appendChild(document.getElementById(data));
+		ev.preventDefault();
+	}
+
+	
+	TaCerto.Controladora.PreLoad.start();
+
+
+	var checkSize = function(){
+		var xxxx = document.querySelectorAll("*");
+		var arrSize = [];
+		console.log(xxxx.length);
+		for(var i = 0; i < xxxx.length; i++){
+			var aux = xxxx[i].getBoundingClientRect();
+			arrSize[i] = aux.width + aux.left + aux.right;
+			if(arrSize[i] > 375)
+				console.log(xxxx[i]);
+		}
+		arrSize.sort();
+		for(var i = 0; i < xxxx.length; i++){
+			console.log(arrSize[i]);
+		}
+	};
+</script>
+</html>
