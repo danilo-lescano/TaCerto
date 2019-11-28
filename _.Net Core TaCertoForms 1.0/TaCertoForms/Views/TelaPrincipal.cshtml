@@ -1,0 +1,60 @@
+@{
+    Layout = "~/TaCertoForms/Views/Layouts/CriarFaseLayout.cshtml";
+}
+<div id="normalAndHardcore" class="row center-align">
+<div id="helperText" class="col s12 m12 l12 xl12 card-panel blue darken-4">
+    <h4>Deseja criar qual modo de fase?</h3>
+</div>
+
+<div class="row">
+    <div class="col s12 m6 l3">
+        <div class="card">
+            <div class="card-image modos-card-images">
+                <a href="~/TaCertoForms/CriarFase?fase=normal">
+                    <img src="~/tacertoforms/images/imagem_normal.png">
+                </a>
+            </div>
+            <div class="card-action">
+                <a class="tooltipped" data-position="bottom" data-tooltip="O modo normal possui desafios onde aparecerá uma palavra na tela e o aluno deverá dizer se a palavra está certa ou errada." href="~/TaCertoForms/CriarFase?fase=normal"> Modo Normal</a>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m6 l3">
+        <div class="card">
+            <div class="card-image modos-card-images">
+                <a href="~/TaCertoForms/CriarFase?fase=lacuna">
+                    <img src="~/tacertoforms/images/imagem_lacunas.png">
+                </a>
+            </div>
+            <div class="card-action">
+                <a href="~/TaCertoForms/CriarFase?fase=lacuna"> Modo Lacuna</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col s12 m6 l3">
+        <div class="card">
+            <div class="card-image modos-card-images">
+                <a href="~/TaCertoForms/CriarFase?fase=aurelio">
+                    <img src="~/tacertoforms/images/imagem_aurelio.png">
+                </a>
+            </div>
+            <div class="card-action">
+                <a href="~/TaCertoForms/CriarFase?fase=aurelio"> Modo Aurelio</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col s12 m6 l3">
+        <div class="card">
+            <div class="card-image modos-card-images">
+                <a href="~/TaCertoForms/CriarFase?fase=explorador">
+                    <img src="~/tacertoforms/images/imagem_explorador.png">
+                </a>
+            </div>
+            <div class="card-action">
+                <a href="~/TaCertoForms/CriarFase?fase=explorador"> Modo Explorador</a>
+            </div>
+        </div>
+    </div>
+</div>
