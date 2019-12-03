@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace UnityEngine.SaveSystem{
     [Serializable]
-    public class BaseModel{
+    public class BaseModel {
         public List<string> key { get; set; }
         public List<IBaseVariable> value { get; set; }
         public BaseModel(){

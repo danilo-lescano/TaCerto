@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SaveSystem;
 
-[CreateAssetMenu(menuName = "Save System/Sample Character")]
-public class SampleBaseScriptable : BaseScriptable {
+[CreateAssetMenu(menuName = "Save System/Sample Character 2")]
+public class SampleBaseScriptable2 : BaseScriptable {
     public string npcName;
     public int hp;
     public int mana;
@@ -20,7 +20,4 @@ public class SampleBaseScriptable : BaseScriptable {
     public bool[] booltypearr;
     public Vector2[] v2arr;
     public Vector3[] v3arr;
-
-
-    public SampleBaseScriptable2 sb2;
 }

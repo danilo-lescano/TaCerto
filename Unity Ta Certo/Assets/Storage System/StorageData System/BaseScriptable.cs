@@ -4,10 +4,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace UnityEngine.SaveSystem{
-    public class BaseScriptable : ScriptableObject{
+    public class BaseScriptable : ScriptableObject, IBaseVariable {
         public string ID;
 
-        public BaseModel ListValue { get; set; }
+        public BaseModel ListValue;
+
+        public System.Object value {
+            get{
+                return (System.Object) ListValue;
+            }
+            set{
+                ListValue = (BaseModel) value;
+                LoadFromList();
+            }
+        }
+
         public void Save(){
             ListValue = new BaseModel();
             Type fieldsType = this.GetType();
@@ -32,6 +43,13 @@ namespace UnityEngine.SaveSystem{
                     if(ListValue[fields[i].Name] != null)
                         fields[i].SetValue(this, ListValue[fields[i].Name].value);
             }
+        }
+        private void LoadFromList(){
+            Type fieldsType = this.GetType();
+            FieldInfo[] fields = fieldsType.GetFields(BindingFlags.Public | BindingFlags.Instance);
+            for(int i = 0; i < fields.Length; i++)
+                if(ListValue[fields[i].Name] != null)
+                    fields[i].SetValue(this, ListValue[fields[i].Name].value);
         }
         private void AddValueToList(FieldInfo f){
             IBaseVariable variable = null;

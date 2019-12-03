@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: adfcdf24ed2d6744087def8a7d82f48c, type: 3}
-  m_Name: testeSO
+  m_Name: char pai
   m_EditorClassIdentifier: 
   ID: player
   npcName: Thanos
-  hp: 1
-  mana: 28
-  stringtype: 10
-  inttype: 10
-  floattype: 10
+  hp: 5
+  mana: 5
+  stringtype: 0
+  inttype: 0
+  floattype: 0
   booltype: 0
   v2: {x: 0, y: 0}
   v3: {x: 0, y: 0, z: 0}
@@ -31,3 +31,4 @@ MonoBehaviour:
   - {x: 1, y: 0}
   v3arr:
   - {x: 1, y: 1, z: 1}
+  sb2: {fileID: 11400000, guid: 62796130c4b3d884a8699fa3ec56e35f, type: 2}
