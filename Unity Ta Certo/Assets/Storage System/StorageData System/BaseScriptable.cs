@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace UnityEngine.SaveSystem{
+namespace UnityEngine.SaveSystem {
     public class BaseScriptable : ScriptableObject, IBaseVariable {
         public string ID;
 
@@ -19,7 +19,7 @@ namespace UnityEngine.SaveSystem{
             }
         }
 
-        public void Save(){
+        public void Save() {
             ListValue = new BaseModel();
             Type fieldsType = this.GetType();
             FieldInfo[] fields = fieldsType.GetFields(BindingFlags.Public | BindingFlags.Instance);
@@ -27,18 +27,18 @@ namespace UnityEngine.SaveSystem{
                 AddValueToList(fields[i]);
             StorageData.SaveData(ListValue, ID);
         }
-        public void Load(){
+        public void Load() {
             Type fieldsType = this.GetType();
             FieldInfo[] fields = fieldsType.GetFields(BindingFlags.Public | BindingFlags.Instance);
             ListValue = StorageData.LoadData(ID);
-            if(ListValue == null){
+            if(ListValue == null) {
                 ListValue = new BaseModel();
                 for(int i = 0; i < fields.Length; i++){
                     //Debug.Log(fields[i].Name + " : " + fields[i].GetValue(this) + " : " + fields[i].ReflectedType + " : " + fields[i].FieldType);
                     AddValueToList(fields[i]);
                 }
             }
-            else{
+            else {
                 for(int i = 0; i < fields.Length; i++)
                     if(ListValue[fields[i].Name] != null)
                         fields[i].SetValue(this, ListValue[fields[i].Name].value);

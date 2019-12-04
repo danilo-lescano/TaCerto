@@ -31,4 +31,4 @@ MonoBehaviour:
   - {x: 1, y: 0}
   v3arr:
   - {x: 1, y: 1, z: 1}
-  sb2: {fileID: 11400000, guid: 62796130c4b3d884a8699fa3ec56e35f, type: 2}
+  sb2: {fileID: 0}
