@@ -5,7 +5,7 @@
         O jogo TaCerto feito para o SESI MS.
     </description>
     <author email="nq3i4fsx@hotmail.com" href="http://cordova.io">
-        SESI GAMES
+        Danilo Lima
     </author>
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
