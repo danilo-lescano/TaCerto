@@ -1,13 +1,13 @@
 using System;
-namespace UnityEngine.SaveSystem{
+namespace UnityEngine.SaveSystem {
     [Serializable]
-    public class StringVariable : IBaseVariable{
+    public class StringVariable : IBaseVariable {
         string _value;
         public System.Object value {
-            get{
+            get {
                 return (System.Object) _value;
             }
-            set{
+            set {
                 _value = (string) value;
             }
         }

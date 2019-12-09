@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: player
   npcName: Thanos
-  hp: 5
+  hp: 1
   mana: 5
   stringtype: 0
   inttype: 0
@@ -31,4 +31,4 @@ MonoBehaviour:
   - {x: 1, y: 0}
   v3arr:
   - {x: 1, y: 1, z: 1}
-  sb2: {fileID: 0}
+  sb2: {fileID: 11400000, guid: 62796130c4b3d884a8699fa3ec56e35f, type: 2}

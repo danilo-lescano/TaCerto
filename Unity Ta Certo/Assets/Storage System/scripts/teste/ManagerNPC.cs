@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SaveSystem;
-public class ManagerNPC : MonoBehaviour{
+public class ManagerNPC : MonoBehaviour {
     public TextMeshProUGUI nome, hp, mana;
     public TextMeshProUGUI nomefilho, hpfilho, manafilho;
     public SampleBaseScriptable sampleBaseScriptable;
-    void Start(){
+    void Start() {
         sampleBaseScriptable.Load();
     }
 
-    void Update(){
+    void Update() {
         nome.text = sampleBaseScriptable.npcName;
         hp.text = sampleBaseScriptable.hp.ToString();
         mana.text = sampleBaseScriptable.mana.ToString();
@@ -21,46 +21,44 @@ public class ManagerNPC : MonoBehaviour{
         manafilho.text = sampleBaseScriptable.sb2.mana.ToString();
     }
 
-    public void Save(){
+    public void Save() {
         print("Save");
         sampleBaseScriptable.Save();
     }
-    public void Load(){
+    public void Load() {
         print("Load");
         sampleBaseScriptable.Load();
     }
-    
-    public void dano(){
+    public void dano() {
         print("dano");
         sampleBaseScriptable.hp--;
     }
-    public void cura(){
+    public void cura() {
         print("cura");
         sampleBaseScriptable.hp++;
     }
-    public void magia(){
+    public void magia() {
         print("magia");
         sampleBaseScriptable.mana--;
     }
-    public void pocao(){
+    public void pocao() {
         print("pocao");
         sampleBaseScriptable.mana++;
     }
 
-    
-    public void danofilho(){
+    public void danofilho() {
         print("dano");
         sampleBaseScriptable.sb2.hp--;
     }
-    public void curafilho(){
+    public void curafilho() {
         print("cura");
         sampleBaseScriptable.sb2.hp++;
     }
-    public void magiafilho(){
+    public void magiafilho() {
         print("magia");
         sampleBaseScriptable.sb2.mana--;
     }
-    public void pocaofilho(){
+    public void pocaofilho() {
         print("pocao");
         sampleBaseScriptable.sb2.mana++;
     }

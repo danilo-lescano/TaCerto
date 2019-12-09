@@ -21,6 +21,5 @@ public class SampleBaseScriptable : BaseScriptable {
     public Vector2[] v2arr;
     public Vector3[] v3arr;
 
-
     public SampleBaseScriptable2 sb2;
 }

@@ -1,9 +1,9 @@
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
-namespace UnityEngine.SaveSystem{
-    public static class StorageData{
-        public static BaseModel LoadData(string path){
+namespace UnityEngine.SaveSystem {
+    public static class StorageData {
+        public static BaseModel LoadData(string path) {
             string fullPath = Application.persistentDataPath + "/" + path + ".tce"; // tce is ta certo extension
             if(!File.Exists(fullPath))
                 return default(BaseModel);
@@ -13,11 +13,11 @@ namespace UnityEngine.SaveSystem{
             fs.Close();
             return data;
         }
-        public static bool SaveData(BaseModel data, string path){
-            if(path == ""){
+        public static bool SaveData(BaseModel data, string path) {
+            if(path == "") {
                 Debug.LogWarning("WARNING STORAGE DATA: ID PATH NAME IS EMPTY");
             }
-            if(!data.GetType().IsSerializable){
+            if(!data.GetType().IsSerializable) {
                 Debug.LogError("StorageData.SaveData<T>: NOT SERIALIZABLE CLASS TYPE CARAI!!!");
                 return false;
             }

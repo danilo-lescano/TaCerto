@@ -1,13 +1,13 @@
 using System;
-namespace UnityEngine.SaveSystem{
+namespace UnityEngine.SaveSystem {
     [Serializable]
-    public class IntegerVariableArray : IBaseVariable{
+    public class IntegerVariableArray : IBaseVariable {
         int[] _value;
         public System.Object value {
-            get{
+            get {
                 return (System.Object) _value;
             }
-            set{
+            set {
                 _value = (int[]) value;
             }
         }
