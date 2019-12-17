@@ -10,11 +10,7 @@ namespace UnityEngine.SaveSystem {
         public BaseModel ListValue;
 
         public void Save() {
-            ListValue = new BaseModel();
-            Type fieldsType = this.GetType();
-            FieldInfo[] fields = fieldsType.GetFields(BindingFlags.Public | BindingFlags.Instance);
-            for(int i = 0; i < fields.Length; i++)
-                AddValueToList(fields[i]);
+            SaveOnList();
             StorageData.SaveData(ListValue, ID);
         }
         public void Load() {
@@ -32,27 +28,39 @@ namespace UnityEngine.SaveSystem {
                 LoadFromList();
             }
         }
-        private void LoadFromList() {
+        public void SaveOnList() {
+            ListValue = new BaseModel();
+            Type fieldsType = this.GetType();
+            FieldInfo[] fields = fieldsType.GetFields(BindingFlags.Public | BindingFlags.Instance);
+            for(int i = 0; i < fields.Length; i++)
+                AddValueToList(fields[i]);
+        }
+        public void LoadFromList() {
             Type fieldsType = this.GetType();
             FieldInfo[] fields = fieldsType.GetFields(BindingFlags.Public | BindingFlags.Instance);
             for(int i = 0; i < fields.Length; i++) {
-                if(fields[i].Name == "sb2"){
-                Debug.Log("\nName            : " + fields[i].Name);
-                Debug.Log("Declaring Type  : " + fields[i].DeclaringType);
-                Debug.Log("IsPublic        : " + fields[i].IsPublic);
-                Debug.Log("MemberType      : " + fields[i].MemberType);
-                Debug.Log("FieldType       : " + fields[i].FieldType);
-                Debug.Log("IsFamily        : " + fields[i].IsFamily);
-                Debug.Log("bool        : " + fields[i].FieldType.IsSubclassOf(typeof(BaseScriptable)));
-                }if(ListValue[fields[i].Name] != null) {
+                if(ListValue[fields[i].Name] != null) {
                     if(fields[i].FieldType.IsSubclassOf(typeof(BaseScriptable))){
-                        BaseScriptable bs = (BaseScriptable)Activator.CreateInstance(fields[i].FieldType);
+                        Debug.Log(fields[i].FieldType);
+                        BaseScriptable bs = (BaseScriptable)ScriptableObject.CreateInstance(fields[i].FieldType);
                         bs.ListValue = (BaseModel)ListValue[fields[i].Name].value;
+                        Debug.Log(bs.ListValue.Key.Count);
+                        for (int j = 0; j < bs.ListValue.Key.Count; j++){
+                            Debug.Log(bs.ListValue.Key[i] + " " + bs.ListValue.Value[i]);
+                        }
+                        bs.LoadFromList();
+                        bs.printsh();
                         fields[i].SetValue(this, (System.Object)bs);
                     }
                     else
                         fields[i].SetValue(this, ListValue[fields[i].Name].value);
                 }
+            }
+        }
+        public void printsh(){
+            Debug.Log(ListValue.Key.Count);
+            for (int i = 0; i < ListValue.Key.Count; i++){
+                Debug.Log(ListValue.Key[i] + " " + ListValue.Value[i]);
             }
         }
         private void AddValueToList(FieldInfo f) {
@@ -91,11 +99,18 @@ namespace UnityEngine.SaveSystem {
                 Debug.Log(f.FieldType);
                 Debug.Log(f.FieldType);
                 Debug.Log(f.FieldType);
+                Debug.Log(f.FieldType);
+                Debug.Log(f.FieldType);
                 //BaseScriptable bs = (BaseScriptable)Activator.CreateInstance(f.FieldType);
                 //bs.ListValue
 
                 variable = new BaseModelVariable();
-                variable.value = ((BaseScriptable)f.GetValue(this)).ListValue;
+                BaseScriptable baseScriptable = ((BaseScriptable)f.GetValue(this));
+                baseScriptable.SaveOnList();
+                variable.value = baseScriptable.ListValue;
+                Debug.Log(((BaseModel)variable.value).Key.Count);
+
+                ListValue.Add((string) f.Name, variable);
             }
         }
     }
